@@ -1,0 +1,429 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1300" width="2400" height="1300">
+  <defs>
+    <!-- Background & Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070f1e"/>
+      <stop offset="40%" stop-color="#0c192e"/>
+      <stop offset="75%" stop-color="#081426"/>
+      <stop offset="100%" stop-color="#030812"/>
+    </linearGradient>
+
+    <linearGradient id="bannerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#154273"/>
+      <stop offset="50%" stop-color="#1d5999"/>
+      <stop offset="100%" stop-color="#0f3057"/>
+    </linearGradient>
+
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e223d" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#081526" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <linearGradient id="redBadge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e63946"/>
+      <stop offset="100%" stop-color="#ba181b"/>
+    </linearGradient>
+
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00b4d8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#48cae4" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Pattern Background -->
+    <pattern id="hexGrid" width="60" height="103.923" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z M 30 103.923 L 60 86.6 L 60 51.96 L 30 69.28 L 0 51.96 L 0 86.6 Z" 
+            fill="none" stroke="#162c4a" stroke-width="1" stroke-opacity="0.35"/>
+    </pattern>
+
+    <!-- Markers -->
+    <marker id="arrowCyan" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00f5d4"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff4d6d"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffb703"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2400" height="1300" fill="url(#bgGrad)"/>
+  <rect width="2400" height="1300" fill="url(#hexGrid)"/>
+
+  <!-- Ground Plane with Clutter Zone Indicator -->
+  <rect x="0" y="1120" width="2400" height="180" fill="#050d18" stroke="#1b3554" stroke-width="2"/>
+  <rect x="0" y="980" width="2400" height="140" fill="#071829" fill-opacity="0.4"/>
+  <line x1="0" y1="980" x2="2400" y2="980" stroke="#00f5d4" stroke-width="1.5" stroke-dasharray="8 8" stroke-opacity="0.4"/>
+  <text x="50" y="970" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#00f5d4" letter-spacing="1.5">RADAR HORIZON &amp; GROUND-CLUTTER BOUNDARY (0 – 300m AGL) // UCV PENETRATION SANCTUARY</text>
+
+  <!-- TOP BANNER -->
+  <path d="M 40 40 L 1400 40 L 1330 140 L 40 140 Z" fill="url(#bannerGrad)" filter="url(#dropShadow)"/>
+  <path d="M 40 40 L 1400 40 L 1330 48 L 40 48 Z" fill="#38bdf8"/>
+  <text x="80" y="85" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="2">6. MULTI-TIER FORMATION WAVES: AIR DEFENSE SUPPRESSION (SEAD/DEAD)</text>
+  <text x="82" y="122" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#93c5fd" letter-spacing="1">Operational Combat Scenarios: Collaborative Echelons In Contested A2/AD Envelopes</text>
+
+  <!-- CLASSIFICATION & HEADER BADGE -->
+  <g transform="translate(1820, 50)">
+    <rect width="520" height="70" rx="8" fill="#0e223d" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="260" y="32" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="2">UWE DOCTRINAL ARCHITECTURE SPECIFICATION</text>
+    <text x="260" y="55" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle">UNCLASSIFIED // DEFENSE ONE SPECIAL FEATURE</text>
+  </g>
+
+  <!-- LEFT LEGEND PANEL (1 to 5 Tiers) -->
+  <g transform="translate(60, 170)">
+    <rect width="680" height="380" rx="12" fill="url(#panelGrad)" stroke="#1e3a5f" stroke-width="2" filter="url(#dropShadow)"/>
+    <text x="30" y="42" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#ffffff" letter-spacing="1.5">COLLABORATIVE FORMATION ECHELONS</text>
+    <line x1="30" y1="56" x2="650" y2="56" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- 1 -->
+    <circle cx="50" cy="95" r="18" fill="url(#redBadge)"/>
+    <text x="50" y="102" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#fff" text-anchor="middle">1</text>
+    <text x="85" y="93" font-family="'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Standoff C4ISR &amp; Airborne Electronic Attack (ISR/EA Orbit)</text>
+    <text x="85" y="112" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Winged UAV Relay [AL-PE-HR] in safe orbit (40–80 km behind FLOT), SAR/ESM &amp; Jamming</text>
+
+    <!-- 2 -->
+    <circle cx="50" cy="155" r="18" fill="url(#redBadge)"/>
+    <text x="50" y="162" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+    <text x="85" y="153" font-family="'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Stand-in Decoys, Emitter Stimulation &amp; Forward Relay</text>
+    <text x="85" y="172" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Decoy swarms [AH-EE-MO] forcing enemy radars to radiate; airborne mesh gateways</text>
+
+    <!-- 3 -->
+    <circle cx="50" cy="215" r="18" fill="url(#redBadge)"/>
+    <text x="50" y="222" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#fff" text-anchor="middle">3</text>
+    <text x="85" y="213" font-family="'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Short-Range Loitering Munitions &amp; Terminal SEAD Strike</text>
+    <text x="85" y="232" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#00f5d4">Tactical Winged UAV [AH-EA-MO] &amp; Combat UCV [CH-EA-MO] (0–300m ground clutter dive)</text>
+
+    <!-- 4 -->
+    <circle cx="50" cy="275" r="18" fill="url(#redBadge)"/>
+    <text x="50" y="282" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#fff" text-anchor="middle">4</text>
+    <text x="85" y="273" font-family="'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Extended-Range Loitering Interdiction (Tactical Depth)</text>
+    <text x="85" y="292" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Autonomous hunting of radar trailers, reloading TELs, and command posts [AL-EA-MA]</text>
+
+    <!-- 5 -->
+    <circle cx="50" cy="335" r="18" fill="url(#redBadge)"/>
+    <text x="50" y="342" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#fff" text-anchor="middle">5</text>
+    <text x="85" y="333" font-family="'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Deep Standoff Kinetic Interdiction (Long-Range Strikes)</text>
+    <text x="85" y="352" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">High-speed saturation strikes neutralizing strategic SAM battery command complexes</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- LEFT SIDE: LAUNCH & C2 INFRASTRUCTURE -->
+  <!-- ========================================== -->
+  <g transform="translate(100, 1020)">
+    <!-- Heavy Mobile Carrier / Launcher Platform -->
+    <rect x="0" y="40" width="180" height="50" rx="6" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <circle cx="30" cy="90" r="16" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+    <circle cx="70" cy="90" r="16" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+    <circle cx="110" cy="90" r="16" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+    <circle cx="150" cy="90" r="16" fill="#0f172a" stroke="#64748b" stroke-width="3"/>
+    <!-- Cab & Launch Rails -->
+    <rect x="110" y="15" width="60" height="30" rx="4" fill="#334155" stroke="#64748b" stroke-width="1.5"/>
+    <line x1="30" y1="40" x2="30" y2="-60" stroke="#94a3b8" stroke-width="4"/> <!-- Telescoping Mast -->
+    <polygon points="30,-75 20,-60 40,-60" fill="#38bdf8"/>
+    <!-- Launch Rail Angle -->
+    <line x1="45" y1="35" x2="115" y2="-15" stroke="#f59e0b" stroke-width="5"/>
+    <text x="90" y="130" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#cbd5e1" text-anchor="middle">DISPERSED MOBILE C2</text>
+    <text x="90" y="148" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#00f5d4" text-anchor="middle">&amp; SWARM LAUNCH VEHICLE</text>
+  </g>
+
+  <!-- LAUNCH TRAJECTORY VECTORS (From Launcher to Tiers) -->
+  <!-- Vector 5 -->
+  <path d="M 190 990 L 320 620 L 700 620" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="10 5" marker-end="url(#arrowBlue)"/>
+  <!-- Vector 4 -->
+  <path d="M 180 1000 L 300 740 L 700 740" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="10 5" marker-end="url(#arrowBlue)"/>
+  <!-- Vector 3 -->
+  <path d="M 170 1010 L 280 840 L 700 840" fill="none" stroke="#00f5d4" stroke-width="3.5" stroke-dasharray="10 5" marker-end="url(#arrowCyan)"/>
+
+  <!-- Tier Labels on Trajectory Traces -->
+  <circle cx="210" cy="620" r="16" fill="url(#redBadge)"/>
+  <text x="210" y="626" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">5</text>
+  <circle cx="210" cy="740" r="16" fill="url(#redBadge)"/>
+  <text x="210" y="746" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">4</text>
+  <circle cx="210" cy="840" r="16" fill="url(#redBadge)"/>
+  <text x="210" y="846" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">3</text>
+
+  <!-- ========================================== -->
+  <!-- TIER 1: HIGH-ALTITUDE STANDOFF C4ISR & EA -->
+  <!-- ========================================== -->
+  <g transform="translate(850, 240)">
+    <!-- Standoff Racetrack Orbit (Figure-8 Dash) -->
+    <path d="M 600 60 C 680 0, 780 0, 820 60 C 860 120, 960 120, 1000 60 C 960 0, 860 0, 820 60 C 780 120, 680 120, 600 60 Z" 
+          fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="8 6" filter="url(#cyanGlow)"/>
+    <circle cx="820" cy="60" r="18" fill="url(#redBadge)"/>
+    <text x="820" y="67" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#fff" text-anchor="middle">1</text>
+    
+    <!-- Winged Standoff UAV Relay [AL-PE-HR] (Silhouette) -->
+    <g transform="translate(680, 20) scale(0.9)">
+      <!-- Fuselage -->
+      <path d="M 0 35 L 70 35 L 80 40 L 70 45 L 0 45 Z" fill="#e2e8f0"/>
+      <!-- Main High-Aspect Wings -->
+      <polygon points="25,35 15,-50 35,-50 45,35" fill="#cbd5e1"/>
+      <polygon points="25,45 15,130 35,130 45,45" fill="#cbd5e1"/>
+      <!-- V-Tail -->
+      <polygon points="5,35 -10,15 0,15 15,35" fill="#94a3b8"/>
+      <polygon points="5,45 -10,65 0,65 15,45" fill="#94a3b8"/>
+    </g>
+
+    <!-- Standoff UAV Sensor Eye -->
+    <g transform="translate(870, 150)">
+      <circle cx="0" cy="0" r="28" fill="#0f2744" stroke="#38bdf8" stroke-width="2.5"/>
+      <path d="M -18 0 C -10 -12, 10 -12, 18 0 C 10 12, -10 12, -18 0 Z" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="6" fill="#38bdf8"/>
+      <text x="0" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">SAR / ESM SENSOR</text>
+    </g>
+
+    <!-- Electronic Attack Lightning Beams -->
+    <path d="M 860 170 L 890 260 L 870 270 L 920 380 L 1080 680" 
+          fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-dasharray="6 4" filter="url(#cyanGlow)"/>
+    <path d="M 880 170 L 940 240 L 920 250 L 1020 360 L 1280 720" 
+          fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="6 4" filter="url(#cyanGlow)"/>
+    
+    <text x="960" y="270" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#38bdf8" transform="rotate(32, 960, 270)">STANDOFF EA / BEAMFORMING JAMMING</text>
+  </g>
+
+  <!-- Ingress Flight Vectors for Tier 1 -->
+  <g transform="translate(820, 310)">
+    <g transform="translate(0, 0) scale(0.6)">
+      <polygon points="40,20 0,0 10,20 0,40" fill="#e2e8f0"/>
+      <polygon points="10,20 -30,-20 -20,-20 15,20" fill="#cbd5e1"/>
+      <polygon points="10,20 -30,60 -20,60 15,20" fill="#cbd5e1"/>
+    </g>
+    <g transform="translate(-80, 50) scale(0.6)">
+      <polygon points="40,20 0,0 10,20 0,40" fill="#e2e8f0"/>
+      <polygon points="10,20 -30,-20 -20,-20 15,20" fill="#cbd5e1"/>
+      <polygon points="10,20 -30,60 -20,60 15,20" fill="#cbd5e1"/>
+    </g>
+    <path d="M 60 20 L 400 20" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrowBlue)"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- TIER 2: DECOYS & FORWARD SENSORS -->
+  <!-- ========================================== -->
+  <g transform="translate(900, 560)">
+    <line x1="0" y1="0" x2="900" y2="0" stroke="#38bdf8" stroke-width="2" stroke-dasharray="8 6"/>
+    
+    <!-- Forward Sensor Eye 1 -->
+    <g transform="translate(250, 0)">
+      <circle cx="0" cy="-35" r="14" fill="#020617" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="0" cy="-35" r="6" fill="#ef4444"/>
+      <circle cx="0" cy="0" r="18" fill="url(#redBadge)"/>
+      <text x="0" y="6" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+      <polygon points="30,-15 10,-30 15,-15 10,0" fill="#94a3b8"/>
+    </g>
+
+    <!-- Forward Sensor Eye 2 -->
+    <g transform="translate(520, 0)">
+      <circle cx="0" cy="-35" r="14" fill="#020617" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="0" cy="-35" r="6" fill="#ef4444"/>
+      <circle cx="0" cy="0" r="18" fill="url(#redBadge)"/>
+      <text x="0" y="6" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+      <polygon points="30,-15 10,-30 15,-15 10,0" fill="#94a3b8"/>
+    </g>
+
+    <!-- Forward Sensor Eye 3 -->
+    <g transform="translate(790, 0)">
+      <circle cx="0" cy="-35" r="14" fill="#020617" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="0" cy="-35" r="6" fill="#ef4444"/>
+      <circle cx="0" cy="0" r="18" fill="url(#redBadge)"/>
+      <text x="0" y="6" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+      <polygon points="30,-15 10,-30 15,-15 10,0" fill="#94a3b8"/>
+    </g>
+
+    <!-- Forward Emitter Stimulation Beams -->
+    <path d="M 540 10 L 680 180" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrowAmber)"/>
+    <path d="M 800 10 L 920 180" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrowAmber)"/>
+    <text x="690" y="90" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#fbbf24">RADAR EMITTER STIMULATION</text>
+  </g>
+
+  <!-- Forward Eyes Row (Mid Altitude Sensors) -->
+  <g transform="translate(900, 640)">
+    <line x1="0" y1="0" x2="900" y2="0" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="8 6"/>
+    <g transform="translate(250, 0)">
+      <circle cx="0" cy="0" r="22" fill="#0f2744" stroke="#38bdf8" stroke-width="2"/>
+      <path d="M -14 0 C -8 -9, 8 -9, 14 0 C 8 9, -8 9, -14 0 Z" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#38bdf8"/>
+    </g>
+    <g transform="translate(520, 0)">
+      <circle cx="0" cy="0" r="22" fill="#0f2744" stroke="#38bdf8" stroke-width="2"/>
+      <path d="M -14 0 C -8 -9, 8 -9, 14 0 C 8 9, -8 9, -14 0 Z" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#38bdf8"/>
+    </g>
+    <g transform="translate(790, 0)">
+      <circle cx="0" cy="0" r="22" fill="#0f2744" stroke="#38bdf8" stroke-width="2"/>
+      <path d="M -14 0 C -8 -9, 8 -9, 14 0 C 8 9, -8 9, -14 0 Z" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="#38bdf8"/>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- TIER 3: KINETIC STRIKE VECTORS & DIVES -->
+  <!-- ========================================== -->
+  <g transform="translate(520, 580) scale(0.85)">
+    <!-- Winged Strike UAV [AH-EA-MO] -->
+    <g transform="translate(0, 0)">
+      <polygon points="50,20 0,5 15,20 0,35" fill="#00f5d4"/>
+      <line x1="20" y1="20" x2="-20" y2="-20" stroke="#00f5d4" stroke-width="4"/>
+      <line x1="20" y1="20" x2="-20" y2="60" stroke="#00f5d4" stroke-width="4"/>
+    </g>
+    <g transform="translate(100, 20)">
+      <polygon points="50,20 0,5 15,20 0,35" fill="#00f5d4"/>
+      <line x1="20" y1="20" x2="-20" y2="-20" stroke="#00f5d4" stroke-width="4"/>
+      <line x1="20" y1="20" x2="-20" y2="60" stroke="#00f5d4" stroke-width="4"/>
+    </g>
+    <g transform="translate(50, 70)">
+      <polygon points="50,20 0,5 15,20 0,35" fill="#00f5d4"/>
+      <line x1="20" y1="20" x2="-20" y2="-20" stroke="#00f5d4" stroke-width="4"/>
+      <line x1="20" y1="20" x2="-20" y2="60" stroke="#00f5d4" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- Steep Dive Trajectories (SEAD Terminal Strikes on Russian/Iranian IADS) -->
+  <path d="M 1080 720 L 1260 880 L 1360 990" fill="none" stroke="#ff4d6d" stroke-width="3.5" stroke-dasharray="8 4" marker-end="url(#arrowRed)" filter="url(#dropShadow)"/>
+  <path d="M 1320 720 L 1480 870 L 1600 980" fill="none" stroke="#ff4d6d" stroke-width="3.5" stroke-dasharray="8 4" marker-end="url(#arrowRed)" filter="url(#dropShadow)"/>
+
+  <!-- Low Altitude Ingress Multirotor UCV Swarm (Tier 3) -->
+  <g transform="translate(1120, 860) scale(0.8)">
+    <g transform="translate(0, 0) rotate(45)">
+      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#00f5d4" stroke-width="3.5"/>
+      <line x1="-20" y1="-20" x2="20" y2="-20" stroke="#00f5d4" stroke-width="3.5"/>
+      <circle cx="0" cy="0" r="8" fill="#e2e8f0"/>
+      <circle cx="-20" cy="-20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="20" cy="20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="-20" cy="20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="20" cy="-20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(60, 60) rotate(45)">
+      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#00f5d4" stroke-width="3.5"/>
+      <line x1="-20" y1="-20" x2="20" y2="-20" stroke="#00f5d4" stroke-width="3.5"/>
+      <circle cx="0" cy="0" r="8" fill="#e2e8f0"/>
+      <circle cx="-20" cy="-20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="20" cy="20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="-20" cy="20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="20" cy="-20" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    </g>
+    
+    <text x="-60" y="-15" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#00f5d4">TIER 3: COMBAT UCV STRIKE</text>
+    <text x="-60" y="5" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">[CH-EA-MO] HIGH-G DIVE ENVELOPE</text>
+  </g>
+
+  <!-- Winged Loitering Munitions (Tier 3 Winged UAV) -->
+  <g transform="translate(1420, 840) scale(0.85)">
+    <g transform="translate(0, 0) rotate(35)">
+      <polygon points="40,15 0,5 10,15 0,25" fill="#ff4d6d"/>
+      <line x1="15" y1="15" x2="-25" y2="-15" stroke="#ff4d6d" stroke-width="4"/>
+      <line x1="15" y1="15" x2="-25" y2="45" stroke="#ff4d6d" stroke-width="4"/>
+    </g>
+    <g transform="translate(70, 45) rotate(35)">
+      <polygon points="40,15 0,5 10,15 0,25" fill="#ff4d6d"/>
+      <line x1="15" y1="15" x2="-25" y2="-15" stroke="#ff4d6d" stroke-width="4"/>
+      <line x1="15" y1="15" x2="-25" y2="45" stroke="#ff4d6d" stroke-width="4"/>
+    </g>
+    <text x="-80" y="-15" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#ff4d6d">TIER 3: WINGED LOITERING UAV</text>
+    <text x="-80" y="5" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">[AH-EA-MO] OPTICAL TERMINAL HOMING</text>
+  </g>
+
+  <!-- Low Altitude Drones on Right (CAP / Interceptor Vectors) -->
+  <g transform="translate(1860, 680) scale(0.7)">
+    <polygon points="50,20 0,5 15,20 0,35" fill="#94a3b8"/>
+    <line x1="20" y1="20" x2="-20" y2="-20" stroke="#94a3b8" stroke-width="4"/>
+    <line x1="20" y1="20" x2="-20" y2="60" stroke="#94a3b8" stroke-width="4"/>
+  </g>
+  <g transform="translate(1820, 750) scale(0.7)">
+    <polygon points="50,20 0,5 15,20 0,35" fill="#94a3b8"/>
+    <line x1="20" y1="20" x2="-20" y2="-20" stroke="#94a3b8" stroke-width="4"/>
+    <line x1="20" y1="20" x2="-20" y2="60" stroke="#94a3b8" stroke-width="4"/>
+  </g>
+  <g transform="translate(1780, 820) scale(0.7)">
+    <polygon points="50,20 0,5 15,20 0,35" fill="#94a3b8"/>
+    <line x1="20" y1="20" x2="-20" y2="-20" stroke="#94a3b8" stroke-width="4"/>
+    <line x1="20" y1="20" x2="-20" y2="60" stroke="#94a3b8" stroke-width="4"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RIGHT SIDE: ADVERSARY IADS TARGET COMPLEX -->
+  <!-- ========================================== -->
+  
+  <!-- Target 1: Tor-M2 / Pantsir SHORAD -->
+  <g transform="translate(1250, 1030)">
+    <rect x="0" y="30" width="130" height="40" rx="4" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <circle cx="20" cy="70" r="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <circle cx="50" cy="70" r="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <circle cx="80" cy="70" r="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <circle cx="110" cy="70" r="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <rect x="35" y="10" width="60" height="20" fill="#334155"/>
+    <rect x="75" y="-15" width="25" height="25" rx="3" fill="#475569" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="20" y1="10" x2="50" y2="-25" stroke="#ef4444" stroke-width="4"/>
+    <line x1="28" y1="10" x2="58" y2="-25" stroke="#ef4444" stroke-width="4"/>
+    <text x="65" y="105" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f87171" text-anchor="middle">TOR-M2 / PANTSIR-S1</text>
+    <text x="65" y="122" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">SHORAD &amp; COUNTER-UAS</text>
+  </g>
+
+  <!-- Target 2: Buk-M3 TELAR -->
+  <g transform="translate(1500, 1020)">
+    <rect x="0" y="40" width="160" height="45" rx="4" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <circle cx="25" cy="85" r="15" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <circle cx="60" cy="85" r="15" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <circle cx="95" cy="85" r="15" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <circle cx="130" cy="85" r="15" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+    <polygon points="50,40 120,40 105,15 65,15" fill="#334155"/>
+    <circle cx="85" cy="5" r="18" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="85" y1="5" x2="70" y2="-15" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="40" y1="20" x2="110" y2="-40" stroke="#f1f5f9" stroke-width="6"/>
+    <polygon points="110,-40 100,-42 105,-32" fill="#ef4444"/>
+    <line x1="55" y1="25" x2="125" y2="-35" stroke="#f1f5f9" stroke-width="6"/>
+    <polygon points="125,-35 115,-37 120,-27" fill="#ef4444"/>
+    <text x="80" y="115" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f87171" text-anchor="middle">BUK-M3 TELAR</text>
+    <text x="80" y="132" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">MEDIUM-RANGE SAM &amp; RADAR</text>
+  </g>
+
+  <!-- Target 3: S-300 / S-400 TEL -->
+  <g transform="translate(1800, 990)">
+    <rect x="0" y="70" width="220" height="45" rx="5" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <circle cx="25" cy="115" r="15" fill="#0f172a" stroke="#475569" stroke-width="3"/>
+    <circle cx="65" cy="115" r="15" fill="#0f172a" stroke="#475569" stroke-width="3"/>
+    <circle cx="140" cy="115" r="15" fill="#0f172a" stroke="#475569" stroke-width="3"/>
+    <circle cx="180" cy="115" r="15" fill="#0f172a" stroke="#475569" stroke-width="3"/>
+    <rect x="150" y="40" width="60" height="35" rx="3" fill="#334155" stroke="#475569" stroke-width="1.5"/>
+    <rect x="25" y="-120" width="18" height="190" rx="4" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="47" y="-120" width="18" height="190" rx="4" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="69" y="-120" width="18" height="190" rx="4" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="91" y="-120" width="18" height="190" rx="4" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    <text x="110" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f87171" text-anchor="middle">S-300 / S-400 (5P85 TEL)</text>
+    <text x="110" y="162" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">STRATEGIC AIR DEFENSE SYSTEM</text>
+  </g>
+
+  <!-- Adversary Radar Warning Dome -->
+  <path d="M 1250 990 C 1350 450, 1850 450, 2020 990" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="8 6" stroke-opacity="0.3"/>
+  <text x="1650" y="470" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#f87171" text-anchor="middle" letter-spacing="1">ADVERSARY S-300/BUK IADS ENGAGEMENT ENVELOPE (HIGH ALTITUDE RADAR COVERAGE)</text>
+
+  <!-- BOTTOM CALLOUT BOX -->
+  <g transform="translate(60, 1150)">
+    <rect width="2280" height="110" rx="8" fill="#081426" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="30" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#00f5d4" letter-spacing="1">THE HEAVY GIMBAL PARADOX &amp; TIER 3 COLLABORATIVE STRIKE CODES:</text>
+    <text x="30" y="58" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">
+      • Exquisite MALE platforms require 50-kg stabilized EO/IR gimbals (Wescam MX / Trillium HD80) to observe from standoff altitudes—yet altitude offers only an illusory sanctuary against Russian (S-300V4, Buk-M3) and Iranian ("358") IADS.
+    </text>
+    <text x="30" y="82" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">
+      • The formation decomposes this problem: Standoff UAVs [AL-PE-HR] (Tier 1) provide jamming and mesh relays, while Tier 3 forward strike vectors—Winged UAVs [AH-EA-MO] and Combat UCVs [CH-EA-MO]—exploit the 0–300m ground clutter to kill radars with optical Edge-AI.
+    </text>
+  </g>
+
+</svg>
