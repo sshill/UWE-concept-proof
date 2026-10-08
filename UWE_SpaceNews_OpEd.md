@@ -16,10 +16,10 @@ This commentary demonstrates why true spacepower resilience requires operational
 
 ---
 
-## Technical & Legal Disclaimer
+## Technical & Operational Disclaimer
 
-> **DISCLAIMER ON MATERIAL STATUS:**  
-> This commentary presents an independent architectural concept authored by Serhii Khylevych (Principal Systems Architect) for defense-industrial and academic evaluation. The models and taxonomies are derived exclusively from unclassified open-source intelligence (OSINT), published U.S. space doctrines (including Space Doctrine Publication 1-0 *Spacepower*), and open civil standards (CCSDS, POSIX, OMG DDS). It contains no proprietary contractor IP, classified operational data, or ITAR/EAR-controlled technical data.
+> **DISCLAIMER ON SOURCES AND OEM ENCODING VALIDATION:**  
+> All operational models, taxonomies, and architectural frameworks presented herein are derived exclusively from unclassified open-source intelligence (OSINT), public military doctrine publications, and open international engineering standards (CCSDS, POSIX, OMG DDS). Specific vehicle classifications and alphanumeric codes cited as examples serve as illustrative architectural benchmarks. Formal operational adoption, baseline encoding, and deployment of these classifications require empirical validation and certification by original equipment manufacturers (OEMs) and military acquisition authorities against current certified technical performance specifications (TTX).
 
 ---
 

@@ -61,6 +61,13 @@ LinkedIn: https://www.linkedin.com/in/serhii-khylevych-aa152322/
 
 ---
 
+### Technical & Operational Disclaimer
+
+> **DISCLAIMER ON SOURCES AND OEM ENCODING VALIDATION:**  
+> All operational models, taxonomies, hydrodynamic formulas, and architectural frameworks presented herein are derived exclusively from unclassified open-source intelligence (OSINT), published naval doctrine (including Wayne Hughes’ Salvo Equations and Ronald O'Rourke's CRS analyses), and open international engineering standards (POSIX, OMG DDS). Specific vehicle classifications and alphanumeric codes cited as examples serve as illustrative architectural benchmarks. Formal operational adoption, baseline encoding, and deployment of these classifications require empirical validation and certification by original equipment manufacturers (OEMs) and naval acquisition authorities against current certified technical performance specifications (TTX). This document contains no proprietary contractor data or ITAR/EAR-controlled information.
+
+---
+
 ### Introduction: The Asymmetric Insolvency of Exquisite Fleets
 
 Modern naval power is in an existential procurement crisis. The systematic neutralization of Russia’s Black Sea Fleet—culminating in the loss of guided-missile cruisers, frigates, and amphibious landing ships to low-profile unmanned surface vessels (USVs)—has shattered century-old naval architectural assumptions. Concurrently, in the Red Sea and Gulf of Aden, Western naval task forces have found themselves trapped in a mathematically unsustainable exchange: expending \$2M to \$4M Standard and Aster air-defense missiles to intercept \$20k loitering munitions and asymmetric craft.

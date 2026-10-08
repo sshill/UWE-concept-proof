@@ -57,12 +57,10 @@ LinkedIn: https://www.linkedin.com/in/serhii-khylevych-aa152322/
 
 ---
 
-### Technical & Legal Disclaimer
+### Technical & Operational Disclaimer
 
-> **DISCLAIMER ON MATERIAL STATUS:**  
-> This operational and architectural analysis represents an original, independent engineering concept authored by Serhii Khylevych (Principal Systems Architect) for open academic and aerospace-defense evaluation. The orbital models, kinematic formulas, and architectural taxonomies presented herein are derived exclusively from unclassified open-source intelligence (OSINT), published space doctrines (including U.S. Space Force Space Doctrine Publication 1-0 *Spacepower*), declassified historical literature, and open international engineering standards (CCSDS, POSIX, OMG DDS).  
-> 
-> This document contains no proprietary defense contractor technical data, classified operational plans, or export-controlled information under ITAR or EAR. It is published to foster objective discourse on resilient space architectures and distributed autonomous systems.
+> **DISCLAIMER ON SOURCES AND OEM ENCODING VALIDATION:**  
+> All operational models, taxonomies, and architectural frameworks presented herein are derived exclusively from unclassified open-source intelligence (OSINT), public military doctrine publications (including U.S. Space Force Space Doctrine Publication 1-0 *Spacepower*), and open international engineering standards (CCSDS, POSIX, OMG DDS). Specific vehicle classifications and alphanumeric codes cited as examples serve as illustrative architectural benchmarks. Formal operational adoption, baseline encoding, and deployment of these classifications require empirical validation and certification by original equipment manufacturers (OEMs) and military acquisition authorities against current certified technical performance specifications (TTX). This document contains no proprietary contractor data or ITAR/EAR-controlled information.
 
 ---
 

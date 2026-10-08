@@ -16,12 +16,10 @@ True naval scalability requires treating unmanned craft not as isolated remote-c
 
 ---
 
-## Technical & Legal Disclaimer
+## Technical & Operational Disclaimer
 
-> **DISCLAIMER ON MATERIAL STATUS:**  
-> This analysis presents an original, independent architectural framework developed by Serhii Khylevych (Principal Systems Architect) for open academic and defense-industrial evaluation. The operational models, kinetic exchange formulas, and algorithmic sequences described herein are derived exclusively from unclassified open-source intelligence (OSINT), published naval doctrine (including Wayne Hughes’ Salvo Equations), and civil-commercial open systems architecture standards (POSIX, Object Management Group Data Distribution Service — OMG DDS, and containerized microservices).  
-> 
-> This document contains no proprietary defense contractor IP, classified operational tactics, techniques, or procedures (TTPs), or export-controlled technical data under ITAR/EAR. It is intended solely to advance the public discourse on autonomous maritime defense, modular software engineering, and littoral security.
+> **DISCLAIMER ON SOURCES AND OEM ENCODING VALIDATION:**  
+> All operational models, taxonomies, kinetic formulas, and architectural frameworks presented herein are derived exclusively from unclassified open-source intelligence (OSINT), published naval doctrine (including Wayne Hughes’ Salvo Equations), and open international engineering standards (POSIX, OMG DDS). Specific vehicle classifications and alphanumeric codes cited as examples serve as illustrative architectural benchmarks. Formal operational adoption, baseline encoding, and deployment of these classifications require empirical validation and certification by original equipment manufacturers (OEMs) and naval acquisition authorities against current certified technical performance specifications (TTX). This document contains no proprietary contractor data or ITAR/EAR-controlled information.
 
 ---
 
