@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="803px" preserveAspectRatio="none" style="width:1130px;height:803px;" version="1.1" viewBox="0 0 1130 803" width="1130px" zoomAndPan="magnify"><defs/><g><!--MD5=[f6509276e9098811e20f5c8668a53ac8]
+cluster COL1--><path d="M26,24 L293,24 A6,6 0 0 1 297,28 L304,62.6882 L344,62.6882 A4,4 0 0 1 348,66.6882 L348,779.5 A4,4 0 0 1 344,783.5 L26,783.5 A4,4 0 0 1 22,779.5 L22,28 A4,4 0 0 1 26,24 " fill="#F5F8FA" style="stroke: #2C3E50; stroke-width: 1.5;"/><line style="stroke: #2C3E50; stroke-width: 1.5;" x1="22" x2="304" y1="62.6882" y2="62.6882"/><text fill="#000000" font-family="Arial" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="265" x="28" y="38.8281">COLUMN 1: MDO (Multi-Domain Operations)</text><text fill="#000000" font-family="Arial" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="269" x="26" y="55.1722">[ Doctrinal Framework: FM 3-0, JP 3-0, JP 3-12 ]</text><!--MD5=[8adc7c2826c8e9df8f4b232bae16c0d1]
+cluster COL2--><path d="M376,24 L752,24 A6,6 0 0 1 756,28 L763,62.6882 L762,62.6882 A4,4 0 0 1 766,66.6882 L766,779.5 A4,4 0 0 1 762,783.5 L376,783.5 A4,4 0 0 1 372,779.5 L372,28 A4,4 0 0 1 376,24 " fill="#F8FBF7" style="stroke: #2C3E50; stroke-width: 1.5;"/><line style="stroke: #2C3E50; stroke-width: 1.5;" x1="372" x2="763" y1="62.6882" y2="62.6882"/><text fill="#000000" font-family="Arial" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="378" x="376" y="38.8281">COLUMN 2: UWE CORE PLATFORM (Unmanned Warfare Engine)</text><text fill="#000000" font-family="Arial" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="289" x="420.5" y="55.1722">[ Cyber-Physical Integration Layer &amp; Feasibility ]</text><!--MD5=[c26bc359680d6959236e76cbb24bf374]
+cluster COL3--><path d="M794,24 L1104,24 A6,6 0 0 1 1108,28 L1115,62.6882 L1114,62.6882 A4,4 0 0 1 1118,66.6882 L1118,787 A4,4 0 0 1 1114,791 L794,791 A4,4 0 0 1 790,787 L790,28 A4,4 0 0 1 794,24 " fill="#FDFBF8" style="stroke: #2C3E50; stroke-width: 1.5;"/><line style="stroke: #2C3E50; stroke-width: 1.5;" x1="790" x2="1115" y1="62.6882" y2="62.6882"/><text fill="#000000" font-family="Arial" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="247" x="826.5" y="38.8281">COLUMN 3: CPS (Cyber-Physical Systems)</text><text fill="#000000" font-family="Arial" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="312" x="794" y="55.1722">[ Embedded Hardware, Actuators &amp; Physical Probes ]</text><!--MD5=[002762695fcac941b83caf34ac28d0a3]
+entity MDO_SPACE--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="264" x="65" y="75"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="206" x="75" y="96.7589">MDO SPACE DOMAIN (JP 3-14 / SDP 1-0)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="207" x="75" y="111.7408">• Exoatmospheric Reconnaissance &amp; ISR</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="237" x="75" y="126.7227">• Resilient High-Throughput SATCOM Uplinks</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="244" x="75" y="141.7046">• Strategic Threat Early Warning Constellations</text><!--MD5=[568cceb9fe8ddf5935e76a66724983bf]
+entity MDO_AIR--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="288" x="44" y="190"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="186" x="54" y="211.7589">MDO AIR DOMAIN (FM 3-0 / JP 3-30)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="268" x="54" y="226.7408">• Deep Fires Convergence &amp; Theater Air Superiority</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="263" x="54" y="241.7227">• Counter-Air Operations &amp; Strike Synchronization</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="260" x="54" y="256.7046">• Persistent High-Altitude Theater Reconnaissance</text><!--MD5=[eb4921e6911496ed8c37e1b60551f09c]
+entity MDO_LAND--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="279" x="51.5" y="305"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="207" x="61.5" y="326.7589">MDO LAND DOMAIN (FM 3-0 / ATP 3-90)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="245" x="61.5" y="341.7408">• Combined Arms Close Maneuver &amp; Breaching</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="205" x="61.5" y="356.7227">• Dispersed Force Protection &amp; Survival</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="259" x="61.5" y="371.7046">• Trench Line Penetration &amp; Forward Fortification</text><!--MD5=[88eba5291330906c37af8abbb578ab2d]
+entity MDO_SEA--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="251" x="65.5" y="420"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="231" x="75.5" y="441.7589">MDO MARITIME DOMAIN (JP 3-32 / NWP 3-0)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="224" x="75.5" y="456.7408">• Sea Denial &amp; Littoral Choke-Point Control</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="214" x="75.5" y="471.7227">• Surface Fast Attack &amp; Strike Interdiction</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="218" x="75.5" y="486.7046">• Anti-Submarine Warfare (ASW) Shielding</text><!--MD5=[228e16825b64d2c44ad4ea15acae29ba]
+entity MDO_ENV--><rect fill="#FFFFFF" height="94.9094" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="294" x="38" y="535"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="210" x="48" y="556.7589">METOC &amp; OPERATIONAL ENVIRONMENT</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="165" x="48" y="571.7408">(JP 3-59 / JP 2-01.3 / ATP 3-34.80)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="248" x="48" y="586.7227">• Meteorological &amp; Oceanographic Ops (JP 3-59)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="274" x="48" y="601.7046">• Terrain OAKOC &amp; Soil Terramechanics (ATP 3-34.80)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="250" x="48" y="616.6865">• The '1812' Operational Reality: Physics Primacy</text><!--MD5=[7e504767b963965fce079464617efd85]
+entity MDO_CYBER--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="290" x="41" y="687.5"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="263" x="51" y="709.2589">MDO CYBERSPACE &amp; EW (JP 3-12 / NIST SP 800-160)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="270" x="51" y="724.2408">• Non-Kinetic Electromagnetic Spectrum Operations</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="229" x="51" y="739.2227">• Zero Trust High-Assurance C2 Architecture</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="268" x="51" y="754.2046">• Resilient Cross-Medium Self-Healing Data Routing</text><!--MD5=[d788d49669079c78358fcf60cb96600d]
+entity UWE_UOV--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="281" x="432.5" y="75"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="160" x="442.5" y="96.7589">Namespace UOV (Space HLD-1)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="260" x="442.5" y="111.7408">• Orbital Ephemeris Ingestion &amp; VLEO Drag Decay</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="261" x="442.5" y="126.7227">• Cold-Gas / Reaction Wheel Attitude Management</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="252" x="442.5" y="141.7046">• Autonomous De-Orbit &amp; Station-Keeping Loop</text><!--MD5=[0e4c5792539e9ae08cd29e7c2d16a257]
+entity UWE_AIR--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="266" x="440" y="190"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="184" x="450" y="211.7589">Namespaces UAV &amp; UCV (Air HLD-1)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="246" x="450" y="226.7408">• Aerodynamic Polars &amp; Disc Loading Dynamics</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="238" x="450" y="241.7227">• Heavy Mothercraft Air Carriage Architecture</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="238" x="450" y="256.7046">• Airfield Runways &amp; Hangar Shelters (Tier C4)</text><!--MD5=[07bf0f9b13f2917d66d14d8c0b992ebf]
+entity UWE_UGV--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="289" x="428.5" y="305"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="170" x="438.5" y="326.7589">Namespace UGV (Ground HLD-1)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="269" x="438.5" y="341.7408">• Terramechanics Ingest &amp; Bekker-Wong Soil Matrix</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="221" x="438.5" y="356.7227">• Ground Pressure &amp; Soil Shear Evaluation</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="230" x="438.5" y="371.7046">• Wheeled/Tracked Trench Obstacle Mobility</text><!--MD5=[e72591063efbd0d8eb5db6e8ba3b964d]
+entity UWE_MAR--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="290" x="428" y="420"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="216" x="438" y="441.7589">Namespaces USV &amp; UUV (Maritime HLD-1)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="270" x="438" y="456.7408">• Hydrodynamic Wave Slamming Spectra (15G Limit)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="207" x="438" y="471.7227">• Biomimetic Ribbon-Fin Surf Maneuver</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="231" x="438" y="486.7046">• Variable Ballast &amp; Subsea Acoustic Ranging</text><!--MD5=[be589aff3deaf86f36842df9abe507c2]
+entity UWE_EAL--><rect fill="#FFFFFF" height="94.9094" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="258" x="432" y="535"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="238" x="442" y="556.7589">EAL: Environmental Abstraction Layer (HLD-0)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="220" x="442" y="571.7408">[ CPS World Model &amp; Dynamic 4D Tensor ]</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="238" x="442" y="586.7227">• Standards: NIST SP 1500-201 / ISO/IEC 21823</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="227" x="442" y="601.7046">• Continuous Ingest of Soil, Waves, Ice &amp; RF</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="218" x="442" y="616.6865">• Algorithmic Pre-Flight Feasibility Barrier</text><!--MD5=[77e0493b75b5de619963060ee3e8cff8]
+entity UWE_CYBER--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="297" x="428.5" y="687.5"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="253" x="438.5" y="709.2589">Resilient Transport Mesh &amp; Feasibility (HLD-2 / 3)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="277" x="438.5" y="724.2408">• Deterministic Pre-Flight Feasibility: Phi = F(K,L,E,C,T)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="257" x="438.5" y="739.2227">• Cognitive Dual-Read [XX]-[YY]-[ZZ] Token Matrix</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="235" x="438.5" y="754.2046">• 48-bit Microsecond Bitmask C2 Packet Mesh</text><!--MD5=[d4f884ef890d356418f9afb9df149ac1]
+entity HAL_UOV--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="283" x="806.5" y="75"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="182" x="816.5" y="96.7589">UOV-HAL Domain Driver (HAL LLD)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="263" x="816.5" y="111.7408">• Reaction Wheels, Cold-Gas Thrusters &amp; Solenoids</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="213" x="816.5" y="126.7227">• Spacecraft Bus Decoupling Architecture</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="221" x="816.5" y="141.7046">• Cold-Gas Micro-Impulse Attitude Control</text><!--MD5=[5cceaa3a3f0af206dcffee8e0d8865ce]
+entity HAL_AIR--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="279" x="806.5" y="190"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="206" x="816.5" y="211.7589">UAV/UCV-HAL Domain Driver (HAL LLD)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="230" x="816.5" y="226.7408">• Field-Oriented Control (FOC) ESC Inverters</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="259" x="816.5" y="241.7227">• 15G Terminal Divert Overrides on Target Impact</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="207" x="816.5" y="256.7046">• Dynamic Active Propeller Deceleration</text><!--MD5=[251bf241ea84d7b9670601bc646dd5a7]
+entity HAL_UGV--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="256" x="811" y="305"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="181" x="821" y="326.7589">UGV-HAL Domain Driver (HAL LLD)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="206" x="821" y="341.7408">• Differential Skid-Steer Torque Control</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="236" x="821" y="356.7227">• Dynamic Track Slip Sensing &amp; Adaptive Trim</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="212" x="821" y="371.7046">• Bidirectional V2V Charging BMS Bridge</text><!--MD5=[bc05c84aee5ce77d84beeedbd2464123]
+entity HAL_MAR--><rect fill="#FFFFFF" height="79.9276" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="259" x="809.5" y="420"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="206" x="819.5" y="441.7589">USV/UUV-HAL Domain Driver (HAL LLD)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="231" x="819.5" y="456.7408">• Steerable Waterjets &amp; Vector Thrust Servos</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="239" x="819.5" y="471.7227">• Biomimetic Ribbon-Fin Articulated Actuators</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="218" x="819.5" y="486.7046">• Deep-Dive Acoustic Transceiver Modems</text><!--MD5=[c14c65110347a1e82d2e2c5230072e73]
+entity HAL_EAL--><rect fill="#FFFFFF" height="94.9094" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="274" x="806" y="535"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="194" x="816" y="556.7589">EAL Physical Sensory Probes (LLD-E0)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="218" x="816" y="571.7408">(IEEE 1451 / STANAG 4754 / MIL-STD-810H)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="221" x="816" y="586.7227">• GPR &amp; Dynamic Cone Soil Penetrometers</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="243" x="816" y="601.7046">• CTD Ocean Buoyancy Profilers &amp; ADCP Sonar</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="254" x="816" y="616.6865">• Micro-LIDAR Wind Sensors &amp; SDR Jam Scanners</text><!--MD5=[edf9ce2a5db7738fd3736b09badb34cd]
+entity HAL_CYBER--><rect fill="#FFFFFF" height="94.9094" rx="4" ry="4" style="stroke: #000000; stroke-width: 1.2;" width="292" x="806" y="680"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="213" x="816" y="701.7589">Universal HAL Interfaces (HAL HLD / LLD)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="192" x="816" y="716.7408">(STANAG 4754 / MOSA 10 U.S.C. 4401)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="262" x="816" y="731.7227">• IPowerEnergy: BMS &amp; Deep Sleep 'Zhdun' (&lt;5mA)</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="272" x="816" y="746.7046">• IPayloadAttachment: Detonator &amp; OWM Decorator</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="224" x="816" y="761.6865">• ITokenRegistry: 48-bit MCU Bitmask Filter</text><!--MD5=[ec0b2801e756b623febc478c74be44a2]
+link MDO_SPACE to MDO_AIR--><!--MD5=[25d811afdae3ef2fcea2b9b5f346b35c]
+link MDO_AIR to MDO_LAND--><!--MD5=[afb61a33f62089213dac7b06fccbcbd2]
+link MDO_LAND to MDO_SEA--><!--MD5=[2a68baf7b3f415c090a5a151b54947da]
+link MDO_SEA to MDO_ENV--><!--MD5=[13e565c387c55b525cfbd2696f79b3aa]
+link MDO_ENV to MDO_CYBER--><!--MD5=[f938be247dd77f64c334ba055be02621]
+link UWE_UOV to UWE_AIR--><!--MD5=[39c030a9df7ba0a5652f6b18fcb24559]
+link UWE_AIR to UWE_UGV--><!--MD5=[96d168a46742b17d996ba511c6ec3bd2]
+link UWE_UGV to UWE_MAR--><!--MD5=[7f02a27c8068567b8bda63cb8cdf8e94]
+link UWE_MAR to UWE_EAL--><!--MD5=[1b9cae302cf3f59c302ddc3b02b4d451]
+link UWE_EAL to UWE_CYBER--><!--MD5=[1b9cae302cf3f59c302ddc3b02b4d451]
+link UWE_EAL to UWE_CYBER--><path d="M566.24,630.32 C568.11,647.01 570.2,665.73 572.04,682.2 " fill="none" id="UWE_EAL-&gt;UWE_CYBER-1" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="572.61,687.23,575.5828,677.8405,572.0531,682.2611,567.6325,678.7315,572.61,687.23" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="95" x="570" y="659.7589">Medium Cost Map</text><!--MD5=[91faed62fa72a2c1f00a7a83cbe7fa42]
+link HAL_UOV to HAL_AIR--><!--MD5=[8685b575a60e45d6abe8bcd41f4740ab]
+link HAL_AIR to HAL_UGV--><!--MD5=[ae84689c42646afc1e37e2c238c12142]
+link HAL_UGV to HAL_MAR--><!--MD5=[b3ac6ed56b6ada6b20b293e81bc9426a]
+link HAL_MAR to HAL_EAL--><!--MD5=[17ec811fca34258be442b8ba6f16f198]
+link HAL_EAL to HAL_CYBER--><!--MD5=[54b26d115625361213f59501711c42de]
+link MDO_SPACE to UWE_UOV--><path d="M329.19,115 C361.73,115 394.28,115 426.82,115 " fill="none" id="MDO_SPACE-&gt;UWE_UOV" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="432.05,115,423.05,111,427.05,115,423.05,119,432.05,115" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1067db528ff7985874748a50be5e6978]
+link UWE_UOV to HAL_UOV--><path d="M713.62,115 C742.76,115 771.9,115 801.04,115 " fill="none" id="UWE_UOV-&gt;HAL_UOV" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="806.09,115,797.09,111,801.09,115,797.09,119,806.09,115" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[f763ec87c7c4d5fb9de637feee20d20a]
+link MDO_AIR to UWE_AIR--><path d="M332.38,230 C366.57,230 400.76,230 434.95,230 " fill="none" id="MDO_AIR-&gt;UWE_AIR" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="440,230,431,226,435,230,431,234,440,230" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[5cd82ab39cd0080cf0e55eac1b7612ee]
+link UWE_AIR to HAL_AIR--><path d="M706.32,230 C738.02,230 769.71,230 801.41,230 " fill="none" id="UWE_AIR-&gt;HAL_AIR" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="806.5,230,797.5,226,801.5,230,797.5,234,806.5,230" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[8d7fba42b4cdb4fafd025ca7d360ed36]
+link MDO_LAND to UWE_UGV--><path d="M330.52,345 C361.26,345 392,345 422.74,345 " fill="none" id="MDO_LAND-&gt;UWE_UGV" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="428.08,345,419.08,341,423.08,345,419.08,349,428.08,345" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[789b173b32d53146da427c985e04f1b1]
+link UWE_UGV to HAL_UGV--><path d="M717.76,345 C747.03,345 776.31,345 805.58,345 " fill="none" id="UWE_UGV-&gt;HAL_UGV" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="810.66,345,801.66,341,805.66,345,801.66,349,810.66,345" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[f52758795f0234738baf19dce00813f9]
+link MDO_SEA to UWE_MAR--><path d="M316.72,460 C352.02,460 387.33,460 422.63,460 " fill="none" id="MDO_SEA-&gt;UWE_MAR" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="427.84,460,418.84,456,422.84,460,418.84,464,427.84,460" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[803ca2143e7d2ee325309fef6468bbd6]
+link UWE_MAR to HAL_MAR--><path d="M718.11,460 C746.68,460 775.24,460 803.81,460 " fill="none" id="UWE_MAR-&gt;HAL_MAR" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="809.14,460,800.14,456,804.14,460,800.14,464,809.14,460" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[915e9650f93165c94967acc2d6fa0de7]
+link MDO_ENV to UWE_EAL--><path d="M332.24,582.5 C363.77,582.5 395.29,582.5 426.82,582.5 " fill="none" id="MDO_ENV-&gt;UWE_EAL" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="431.88,582.5,422.88,578.5,426.88,582.5,422.88,586.5,431.88,582.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[e969e1bfbeaba693c63a9d31533f643a]
+reverse link UWE_EAL to HAL_EAL--><path d="M695.32,582.5 C731.12,582.5 769.84,582.5 805.79,582.5 " fill="none" id="UWE_EAL&lt;-HAL_EAL" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="690.06,582.5,699.06,586.5,695.06,582.5,699.06,578.5,690.06,582.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="88" x="704" y="576.2589">Telemetry Ingest</text><!--MD5=[6aa0443cb66424d80174af747afb0f3b]
+link MDO_CYBER to UWE_CYBER--><path d="M331.1,727.5 C361.67,727.5 392.24,727.5 422.81,727.5 " fill="none" id="MDO_CYBER-&gt;UWE_CYBER" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="428.11,727.5,419.11,723.5,423.11,727.5,419.11,731.5,428.11,727.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[04f133e454a58f9e4436a5864d62e0fc]
+link UWE_CYBER to HAL_CYBER--><path d="M725.68,727.5 C750.68,727.5 775.69,727.5 800.69,727.5 " fill="none" id="UWE_CYBER-&gt;HAL_CYBER" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="805.69,727.5,796.69,723.5,800.69,727.5,796.69,731.5,805.69,727.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[92e4853d0a30b53be57ef8b7fe3eee82]
+reverse link HAL_EAL to UWE_CYBER--><path d="M819.17,631.88 C772.87,649.97 720.9,670.28 677.02,687.42 " fill="none" id="HAL_EAL&lt;-UWE_CYBER" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="823.92,630.03,814.0807,629.596,819.2659,631.8574,817.0045,637.0426,823.92,630.03" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="771" y="659.7589">Probe Tasking</text><!--MD5=[44b39cac69290800dc2d56aeba7b0632]
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam roundCorner 8
+skinparam shadowing false
+skinparam packagePadding 14
+skinparam nodesep 26
+skinparam ranksep 34
+
+skinparam package {
+    BorderColor #2C3E50
+    BorderThickness 1.5
+    FontSize 12
+    FontStyle bold
+}
+
+skinparam rectangle {
+    BorderThickness 1.2
+    FontSize 10.5
+}
+
+package "COLUMN 1: MDO (Multi-Domain Operations)\n[ Doctrinal Framework: FM 3-0, JP 3-0, JP 3-12 ]" as COL1 #F5F8FA {
+    rectangle "MDO SPACE DOMAIN (JP 3-14 / SDP 1-0)\n• Exoatmospheric Reconnaissance & ISR\n• Resilient High-Throughput SATCOM Uplinks\n• Strategic Threat Early Warning Constellations" as MDO_SPACE #FFFFFF
+    
+    rectangle "MDO AIR DOMAIN (FM 3-0 / JP 3-30)\n• Deep Fires Convergence & Theater Air Superiority\n• Counter-Air Operations & Strike Synchronization\n• Persistent High-Altitude Theater Reconnaissance" as MDO_AIR #FFFFFF
+    
+    rectangle "MDO LAND DOMAIN (FM 3-0 / ATP 3-90)\n• Combined Arms Close Maneuver & Breaching\n• Dispersed Force Protection & Survival\n• Trench Line Penetration & Forward Fortification" as MDO_LAND #FFFFFF
+    
+    rectangle "MDO MARITIME DOMAIN (JP 3-32 / NWP 3-0)\n• Sea Denial & Littoral Choke-Point Control\n• Surface Fast Attack & Strike Interdiction\n• Anti-Submarine Warfare (ASW) Shielding" as MDO_SEA #FFFFFF
+    
+    rectangle "METOC & OPERATIONAL ENVIRONMENT\n(JP 3-59 / JP 2-01.3 / ATP 3-34.80)\n• Meteorological & Oceanographic Ops (JP 3-59)\n• Terrain OAKOC & Soil Terramechanics (ATP 3-34.80)\n• The '1812' Operational Reality: Physics Primacy" as MDO_ENV #FFFFFF
+    
+    rectangle "MDO CYBERSPACE & EW (JP 3-12 / NIST SP 800-160)\n• Non-Kinetic Electromagnetic Spectrum Operations\n• Zero Trust High-Assurance C2 Architecture\n• Resilient Cross-Medium Self-Healing Data Routing" as MDO_CYBER #FFFFFF
+
+    MDO_SPACE -[hidden]down-> MDO_AIR
+    MDO_AIR -[hidden]down-> MDO_LAND
+    MDO_LAND -[hidden]down-> MDO_SEA
+    MDO_SEA -[hidden]down-> MDO_ENV
+    MDO_ENV -[hidden]down-> MDO_CYBER
+}
+
+package "COLUMN 2: UWE CORE PLATFORM (Unmanned Warfare Engine)\n[ Cyber-Physical Integration Layer & Feasibility ]" as COL2 #F8FBF7 {
+    rectangle "Namespace UOV (Space HLD-1)\n• Orbital Ephemeris Ingestion & VLEO Drag Decay\n• Cold-Gas / Reaction Wheel Attitude Management\n• Autonomous De-Orbit & Station-Keeping Loop" as UWE_UOV #FFFFFF
+    
+    rectangle "Namespaces UAV & UCV (Air HLD-1)\n• Aerodynamic Polars & Disc Loading Dynamics\n• Heavy Mothercraft Air Carriage Architecture\n• Airfield Runways & Hangar Shelters (Tier C4)" as UWE_AIR #FFFFFF
+    
+    rectangle "Namespace UGV (Ground HLD-1)\n• Terramechanics Ingest & Bekker-Wong Soil Matrix\n• Ground Pressure & Soil Shear Evaluation\n• Wheeled/Tracked Trench Obstacle Mobility" as UWE_UGV #FFFFFF
+    
+    rectangle "Namespaces USV & UUV (Maritime HLD-1)\n• Hydrodynamic Wave Slamming Spectra (15G Limit)\n• Biomimetic Ribbon-Fin Surf Maneuver\n• Variable Ballast & Subsea Acoustic Ranging" as UWE_MAR #FFFFFF
+    
+    rectangle "EAL: Environmental Abstraction Layer (HLD-0)\n[ CPS World Model & Dynamic 4D Tensor ]\n• Standards: NIST SP 1500-201 / ISO/IEC 21823\n• Continuous Ingest of Soil, Waves, Ice & RF\n• Algorithmic Pre-Flight Feasibility Barrier" as UWE_EAL #FFFFFF
+    
+    rectangle "Resilient Transport Mesh & Feasibility (HLD-2 / 3)\n• Deterministic Pre-Flight Feasibility: Phi = F(K,L,E,C,T)\n• Cognitive Dual-Read [XX]-[YY]-[ZZ] Token Matrix\n• 48-bit Microsecond Bitmask C2 Packet Mesh" as UWE_CYBER #FFFFFF
+
+    UWE_UOV -[hidden]down-> UWE_AIR
+    UWE_AIR -[hidden]down-> UWE_UGV
+    UWE_UGV -[hidden]down-> UWE_MAR
+    UWE_MAR -[hidden]down-> UWE_EAL
+    UWE_EAL -[hidden]down-> UWE_CYBER
+}
+
+package "COLUMN 3: CPS (Cyber-Physical Systems)\n[ Embedded Hardware, Actuators & Physical Probes ]" as COL3 #FDFBF8 {
+    rectangle "UOV-HAL Domain Driver (HAL LLD)\n• Reaction Wheels, Cold-Gas Thrusters & Solenoids\n• Spacecraft Bus Decoupling Architecture\n• Cold-Gas Micro-Impulse Attitude Control" as HAL_UOV #FFFFFF
+    
+    rectangle "UAV/UCV-HAL Domain Driver (HAL LLD)\n• Field-Oriented Control (FOC) ESC Inverters\n• 15G Terminal Divert Overrides on Target Impact\n• Dynamic Active Propeller Deceleration" as HAL_AIR #FFFFFF
+    
+    rectangle "UGV-HAL Domain Driver (HAL LLD)\n• Differential Skid-Steer Torque Control\n• Dynamic Track Slip Sensing & Adaptive Trim\n• Bidirectional V2V Charging BMS Bridge" as HAL_UGV #FFFFFF
+    
+    rectangle "USV/UUV-HAL Domain Driver (HAL LLD)\n• Steerable Waterjets & Vector Thrust Servos\n• Biomimetic Ribbon-Fin Articulated Actuators\n• Deep-Dive Acoustic Transceiver Modems" as HAL_MAR #FFFFFF
+    
+    rectangle "EAL Physical Sensory Probes (LLD-E0)\n(IEEE 1451 / STANAG 4754 / MIL-STD-810H)\n• GPR & Dynamic Cone Soil Penetrometers\n• CTD Ocean Buoyancy Profilers & ADCP Sonar\n• Micro-LIDAR Wind Sensors & SDR Jam Scanners" as HAL_EAL #FFFFFF
+    
+    rectangle "Universal HAL Interfaces (HAL HLD / LLD)\n(STANAG 4754 / MOSA 10 U.S.C. 4401)\n• IPowerEnergy: BMS & Deep Sleep 'Zhdun' (<5mA)\n• IPayloadAttachment: Detonator & OWM Decorator\n• ITokenRegistry: 48-bit MCU Bitmask Filter" as HAL_CYBER #FFFFFF
+
+    HAL_UOV -[hidden]down-> HAL_AIR
+    HAL_AIR -[hidden]down-> HAL_UGV
+    HAL_UGV -[hidden]down-> HAL_MAR
+    HAL_MAR -[hidden]down-> HAL_EAL
+    HAL_EAL -[hidden]down-> HAL_CYBER
+}
+
+MDO_SPACE -right-> UWE_UOV
+UWE_UOV -right-> HAL_UOV
+
+MDO_AIR -right-> UWE_AIR
+UWE_AIR -right-> HAL_AIR
+
+MDO_LAND -right-> UWE_UGV
+UWE_UGV -right-> HAL_UGV
+
+MDO_SEA -right-> UWE_MAR
+UWE_MAR -right-> HAL_MAR
+
+MDO_ENV -right-> UWE_EAL
+HAL_EAL -left-> UWE_EAL : Telemetry Ingest
+
+MDO_CYBER -right-> UWE_CYBER
+UWE_CYBER -right-> HAL_CYBER
+
+UWE_EAL .down.> UWE_CYBER : Medium Cost Map
+UWE_CYBER .up.> HAL_EAL : Probe Tasking
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 12:22:07 EET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 17.0.20.1+1-1-deb12u1-Debian
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

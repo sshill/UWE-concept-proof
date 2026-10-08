@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 880" width="2400" height="880">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040811"/>
+      <stop offset="50%" stop-color="#06111f"/>
+      <stop offset="100%" stop-color="#091629"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f223d"/>
+      <stop offset="100%" stop-color="#081426"/>
+    </linearGradient>
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="50%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#0077b6"/>
+    </linearGradient>
+    <pattern id="tacticalGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#13233a" stroke-width="0.6" stroke-opacity="0.35"/>
+      <circle cx="36" cy="36" r="1" fill="#00d2ff" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .font-sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: 'Consolas', 'Roboto Mono', 'Courier New', monospace; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="2400" height="880" fill="url(#bgGrad)"/>
+  <rect width="2400" height="880" fill="url(#tacticalGrid)"/>
+  <rect x="0" y="0" width="2400" height="5" fill="url(#accentCyan)"/>
+
+  <!-- ==================== HEADER (ENLARGED) ==================== -->
+  <g transform="translate(25, 24)">
+    <rect x="0" y="0" width="240" height="26" rx="5" fill="#0c2340" stroke="#00a8e8" stroke-width="1.2"/>
+    <text x="120" y="18" fill="#00f5d4" class="font-sans" font-size="13" font-weight="700" letter-spacing="1.8" text-anchor="middle">MILTECH ARCHITECTURE</text>
+    
+    <text x="0" y="62" fill="#ffffff" class="font-sans" font-size="34" font-weight="900" letter-spacing="0.5">THE UNIVERSAL UWE CONTAINERIZATION CONTINUUM</text>
+    <text x="0" y="94" fill="#94a3b8" class="font-sans" font-size="19">
+      Cross-Domain Logistical Footprint &amp; Deployment Regimes (<tspan fill="#00f5d4" font-weight="700">C0 to C4</tspan> across Space, Air, Ground, Maritime &amp; Subsea)
+    </text>
+
+    <!-- Top Right Doctrinal Box -->
+    <g transform="translate(1780, 2)">
+      <rect x="0" y="0" width="570" height="96" rx="7" fill="#09182a" stroke="#1d385c" stroke-width="1.3"/>
+      <text x="20" y="28" fill="#38bdf8" class="font-sans" font-size="15" font-weight="700" letter-spacing="0.8">UWE DOCTRINAL INVARIANT LAW II</text>
+      <text x="20" y="54" fill="#cbd5e1" class="font-sans" font-size="15.5">"Logistical friction scales from soldier pocket to strategic base."</text>
+      <text x="20" y="80" fill="#94a3b8" class="font-sans" font-size="14.5">Runway (C4) ≡ Drydock (C4) ≡ Spaceport (C4) — Vulnerability Equivalence</text>
+    </g>
+  </g>
+  <g transform="translate(0, 142)">    <rect x="25" y="0" width="120" height="56" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="29" y1="54" x2="141" y2="54" stroke="#00b4d8" stroke-width="2"/>    <text x="85.0" y="35" fill="#00f5d4" class="font-sans" font-size="18" font-weight="800" letter-spacing="1.5" text-anchor="middle">TIER</text>    <rect x="145" y="0" width="360" height="56" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="149" y1="54" x2="501" y2="54" stroke="#00b4d8" stroke-width="2"/>    <text x="161" y="35" fill="#f8fafc" class="font-sans" font-size="17.5" font-weight="800" letter-spacing="0.3">📦  LOGISTICAL CATEGORY</text>    <rect x="505" y="0" width="375" height="56" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="509" y1="54" x2="876" y2="54" stroke="#00b4d8" stroke-width="2"/>    <text x="521" y="35" fill="#f8fafc" class="font-sans" font-size="17.5" font-weight="800" letter-spacing="0.3">✈️  AIR (UAV / UCV)</text>    <rect x="880" y="0" width="370" height="56" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="884" y1="54" x2="1246" y2="54" stroke="#00b4d8" stroke-width="2"/>    <text x="896" y="35" fill="#f8fafc" class="font-sans" font-size="17.5" font-weight="800" letter-spacing="0.3">🚜  GROUND (UGV)</text>    <rect x="1250" y="0" width="380" height="56" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="1254" y1="54" x2="1626" y2="54" stroke="#00b4d8" stroke-width="2"/>    <text x="1266" y="35" fill="#f8fafc" class="font-sans" font-size="17.5" font-weight="800" letter-spacing="0.3">🚤  MARITIME (USV)</text>    <rect x="1630" y="0" width="370" height="56" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="1634" y1="54" x2="1996" y2="54" stroke="#00b4d8" stroke-width="2"/>    <text x="1646" y="35" fill="#f8fafc" class="font-sans" font-size="17.5" font-weight="800" letter-spacing="0.3">⚓  SUB-SURFACE (UUV)</text>    <rect x="2000" y="0" width="375" height="56" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="2004" y1="54" x2="2371" y2="54" stroke="#00b4d8" stroke-width="2"/>    <text x="2016" y="35" fill="#f8fafc" class="font-sans" font-size="17.5" font-weight="800" letter-spacing="0.3">🛰️  SPACE (UOV)</text>  </g>
+  <!-- Row C-0 -->  <g transform="translate(0, 204)">    <rect x="25" y="0" width="120" height="98" rx="6" fill="#032621" stroke="#00f5d4" stroke-width="1.5"/>
+    <g transform="translate(85.0, 36)">
+      <rect x="-42" y="-18" width="84" height="36" rx="6" fill="#061322" stroke="#00f5d4" stroke-width="1.6"/>
+      <text x="0" y="7" fill="#00f5d4" class="font-mono" font-size="22" font-weight="900" text-anchor="middle">C-0</text>
+    </g>
+    <text x="85.0" y="78" fill="#94a3b8" class="font-mono" font-size="15.5" font-weight="700" text-anchor="middle">[H]</text>    <rect x="145" y="0" width="360" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="145" y1="8" x2="145" y2="90" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(163, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Handheld / Pocket</text>
+      <text x="0" y="74" fill="#00f5d4" class="font-sans" font-size="19" font-weight="500">Micro-Canister [H]</text>
+    </g>    <rect x="505" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="505" y1="8" x2="505" y2="90" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(523, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Pocket micro-copter</text>
+      <text x="0" y="74" fill="#00f5d4" class="font-sans" font-size="19" font-weight="500">Black Hornet, tube</text>
+    </g>    <rect x="880" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="880" y1="8" x2="880" y2="90" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(898, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Micro scout crawler</text>
+      <text x="0" y="74" fill="#00f5d4" class="font-sans" font-size="19" font-weight="500">in soldier pouch</text>
+    </g>    <rect x="1250" y="0" width="380" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1250" y1="8" x2="1250" y2="90" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1268, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Inflatable micro-buoy</text>
+      <text x="0" y="74" fill="#00f5d4" class="font-sans" font-size="19" font-weight="500">fairway marker</text>
+    </g>    <rect x="1630" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1630" y1="8" x2="1630" y2="90" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1648, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Diver sonar beacon</text>
+      <text x="0" y="74" fill="#00f5d4" class="font-sans" font-size="19" font-weight="500">micro-transponder</text>
+    </g>    <rect x="2000" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="2000" y1="8" x2="2000" y2="90" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(2018, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">ChipSat /</text>
+      <text x="0" y="74" fill="#00f5d4" class="font-sans" font-size="19" font-weight="500">Picosat 0.1U</text>
+    </g>  </g>
+  <!-- Row C-1 -->  <g transform="translate(0, 308)">    <rect x="25" y="0" width="120" height="98" rx="6" fill="#062236" stroke="#38bdf8" stroke-width="1.5"/>
+    <g transform="translate(85.0, 36)">
+      <rect x="-42" y="-18" width="84" height="36" rx="6" fill="#061322" stroke="#38bdf8" stroke-width="1.6"/>
+      <text x="0" y="7" fill="#38bdf8" class="font-mono" font-size="22" font-weight="900" text-anchor="middle">C-1</text>
+    </g>
+    <text x="85.0" y="78" fill="#94a3b8" class="font-mono" font-size="15.5" font-weight="700" text-anchor="middle">[B]</text>    <rect x="145" y="0" width="360" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="145" y1="8" x2="145" y2="90" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(163, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Crew-Served /</text>
+      <text x="0" y="74" fill="#38bdf8" class="font-sans" font-size="19" font-weight="500">Backpack [B]</text>
+    </g>    <rect x="505" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="505" y1="8" x2="505" y2="90" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(523, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Operator backpack,</text>
+      <text x="0" y="74" fill="#38bdf8" class="font-sans" font-size="19" font-weight="500">pneumatic rail</text>
+    </g>    <rect x="880" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="880" y1="8" x2="880" y2="90" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(898, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Squad litter,</text>
+      <text x="0" y="74" fill="#38bdf8" class="font-sans" font-size="19" font-weight="500">combat EOD crawler</text>
+    </g>    <rect x="1250" y="0" width="380" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1250" y1="8" x2="1250" y2="90" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1268, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Small tactical RIB,</text>
+      <text x="0" y="74" fill="#38bdf8" class="font-sans" font-size="19" font-weight="500">commando inflatable</text>
+    </g>    <rect x="1630" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1630" y1="8" x2="1630" y2="90" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1648, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Torpedo-tube launch</text>
+      <text x="0" y="74" fill="#38bdf8" class="font-sans" font-size="19" font-weight="500">(324 mm man-portable)</text>
+    </g>    <rect x="2000" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="2000" y1="8" x2="2000" y2="90" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(2018, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">CubeSat 1U–12U</text>
+      <text x="0" y="74" fill="#38bdf8" class="font-sans" font-size="19" font-weight="500">dispenser</text>
+    </g>  </g>
+  <!-- Row C-2 -->  <g transform="translate(0, 412)">    <rect x="25" y="0" width="120" height="98" rx="6" fill="#291d05" stroke="#fbbf24" stroke-width="1.5"/>
+    <g transform="translate(85.0, 36)">
+      <rect x="-42" y="-18" width="84" height="36" rx="6" fill="#061322" stroke="#fbbf24" stroke-width="1.6"/>
+      <text x="0" y="7" fill="#fbbf24" class="font-mono" font-size="22" font-weight="900" text-anchor="middle">C-2</text>
+    </g>
+    <text x="85.0" y="78" fill="#94a3b8" class="font-mono" font-size="15.5" font-weight="700" text-anchor="middle">[L]</text>    <rect x="145" y="0" width="360" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="145" y1="8" x2="145" y2="90" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(163, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Tactical Mobility /</text>
+      <text x="0" y="74" fill="#fbbf24" class="font-sans" font-size="19" font-weight="500">Light Carrier [L]</text>
+    </g>    <rect x="505" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="505" y1="8" x2="505" y2="90" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(523, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Pickup rail launch,</text>
+      <text x="0" y="74" fill="#fbbf24" class="font-sans" font-size="19" font-weight="500">ATV tube cluster</text>
+    </g>    <rect x="880" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="880" y1="8" x2="880" y2="90" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(898, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Light buggy trailer,</text>
+      <text x="0" y="74" fill="#fbbf24" class="font-sans" font-size="19" font-weight="500">pickup bed carrier</text>
+    </g>    <rect x="1250" y="0" width="380" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1250" y1="8" x2="1250" y2="90" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1268, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">4x4 trailer slipway,</text>
+      <text x="0" y="74" fill="#fbbf24" class="font-sans" font-size="19" font-weight="500">beach surf launch</text>
+    </g>    <rect x="1630" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1630" y1="8" x2="1630" y2="90" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1648, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Davit crane on cutter,</text>
+      <text x="0" y="74" fill="#fbbf24" class="font-sans" font-size="19" font-weight="500">towed sonar cradle</text>
+    </g>    <rect x="2000" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="2000" y1="8" x2="2000" y2="90" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(2018, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">ESPA Ring,</text>
+      <text x="0" y="74" fill="#fbbf24" class="font-sans" font-size="19" font-weight="500">Rideshare</text>
+    </g>  </g>
+  <!-- Row C-3 -->  <g transform="translate(0, 516)">    <rect x="25" y="0" width="120" height="98" rx="6" fill="#2d1606" stroke="#fb923c" stroke-width="1.5"/>
+    <g transform="translate(85.0, 36)">
+      <rect x="-42" y="-18" width="84" height="36" rx="6" fill="#061322" stroke="#fb923c" stroke-width="1.6"/>
+      <text x="0" y="7" fill="#fb923c" class="font-mono" font-size="22" font-weight="900" text-anchor="middle">C-3</text>
+    </g>
+    <text x="85.0" y="78" fill="#94a3b8" class="font-mono" font-size="15.5" font-weight="700" text-anchor="middle">[T]</text>    <rect x="145" y="0" width="360" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="145" y1="8" x2="145" y2="90" stroke="#fb923c" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(163, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Operational Mobile /</text>
+      <text x="0" y="74" fill="#fb923c" class="font-sans" font-size="19" font-weight="500">Heavy Container [T]</text>
+    </g>    <rect x="505" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="505" y1="8" x2="505" y2="90" stroke="#fb923c" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(523, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">6x6 Heavy truck,</text>
+      <text x="0" y="74" fill="#fb923c" class="font-sans" font-size="19" font-weight="500">sealed launch canister</text>
+    </g>    <rect x="880" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="880" y1="8" x2="880" y2="90" stroke="#fb923c" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(898, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Heavy lowboy trailer,</text>
+      <text x="0" y="74" fill="#fb923c" class="font-sans" font-size="19" font-weight="500">armored recovery bay</text>
+    </g>    <rect x="1250" y="0" width="380" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1250" y1="8" x2="1250" y2="90" stroke="#fb923c" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1268, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">20-ft ISO container,</text>
+      <text x="0" y="74" fill="#fb923c" class="font-sans" font-size="19" font-weight="500">stern launch slipway</text>
+    </g>    <rect x="1630" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1630" y1="8" x2="1630" y2="90" stroke="#fb923c" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1648, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">533 mm Torpedo Tube,</text>
+      <text x="0" y="74" fill="#fb923c" class="font-sans" font-size="19" font-weight="500">deep mine canister</text>
+    </g>    <rect x="2000" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="2000" y1="8" x2="2000" y2="90" stroke="#fb923c" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(2018, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Dedicated</text>
+      <text x="0" y="74" fill="#fb923c" class="font-sans" font-size="19" font-weight="500">Falcon 9 FEU</text>
+    </g>  </g>
+  <!-- Row C-4 -->  <g transform="translate(0, 620)">    <rect x="25" y="0" width="120" height="98" rx="6" fill="#2e0912" stroke="#f43f5e" stroke-width="1.5"/>
+    <g transform="translate(85.0, 36)">
+      <rect x="-42" y="-18" width="84" height="36" rx="6" fill="#061322" stroke="#f43f5e" stroke-width="1.6"/>
+      <text x="0" y="7" fill="#f43f5e" class="font-mono" font-size="22" font-weight="900" text-anchor="middle">C-4</text>
+    </g>
+    <text x="85.0" y="78" fill="#94a3b8" class="font-mono" font-size="15.5" font-weight="700" text-anchor="middle">[I]</text>    <rect x="145" y="0" width="360" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="145" y1="8" x2="145" y2="90" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(163, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Strategic Fixed</text>
+      <text x="0" y="74" fill="#f43f5e" class="font-sans" font-size="19" font-weight="500">Infrastructure [I]</text>
+    </g>    <rect x="505" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="505" y1="8" x2="505" y2="90" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(523, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Hardened runway, hangar,</text>
+      <text x="0" y="74" fill="#f43f5e" class="font-sans" font-size="19" font-weight="500">arresting cables</text>
+    </g>    <rect x="880" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="880" y1="8" x2="880" y2="90" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(898, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Railhead ramp, arsenal,</text>
+      <text x="0" y="74" fill="#f43f5e" class="font-sans" font-size="19" font-weight="500">static repair bunker</text>
+    </g>    <rect x="1250" y="0" width="380" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1250" y1="8" x2="1250" y2="90" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1268, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Naval base, drydock,</text>
+      <text x="0" y="74" fill="#f43f5e" class="font-sans" font-size="19" font-weight="500">shore boathouse, slipway</text>
+    </g>    <rect x="1630" y="0" width="370" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1630" y1="8" x2="1630" y2="90" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1648, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Submarine pen, deep</text>
+      <text x="0" y="74" fill="#f43f5e" class="font-sans" font-size="19" font-weight="500">subsea cable terminal</text>
+    </g>    <rect x="2000" y="0" width="375" height="98" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="2000" y1="8" x2="2000" y2="90" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(2018, 0)">
+      <text x="0" y="41" fill="#ffffff" class="font-sans" font-size="22" font-weight="700" letter-spacing="0.1">Fixed launch pad / silo,</text>
+      <text x="0" y="74" fill="#f43f5e" class="font-sans" font-size="19" font-weight="500">spaceport</text>
+    </g>  </g>
+  <!-- Bottom Doctrinal Takeaway Strip -->
+  <g transform="translate(25, 734)">
+    <rect x="0" y="0" width="2350" height="84" rx="7" fill="#081422" stroke="#182f4e" stroke-width="1.2"/>
+    
+    <g transform="translate(24, 20)">
+      <circle cx="12" cy="12" r="7" fill="#00f5d4"/>
+      <text x="30" y="17" fill="#ffffff" class="font-sans" font-size="16.5" font-weight="700">C-0 &amp; C-1 (Dispersed Squad Echelon):</text>
+      <text x="30" y="44" fill="#94a3b8" class="font-sans" font-size="15">Zero base footprint, soldier-portable, immune to runway / port strikes. Instant tactical mass.</text>
+    </g>
+
+    <g transform="translate(810, 20)">
+      <circle cx="12" cy="12" r="7" fill="#fbbf24"/>
+      <text x="30" y="17" fill="#ffffff" class="font-sans" font-size="16.5" font-weight="700">C-2 (Tactical Mobility / Light Carrier):</text>
+      <text x="30" y="44" fill="#94a3b8" class="font-sans" font-size="15">4x4 trailer &amp; pickup launch from mudbanks &amp; beaches. Key driver of Black Sea naval victory.</text>
+    </g>
+
+    <g transform="translate(1620, 20)">
+      <circle cx="12" cy="12" r="7" fill="#f43f5e"/>
+      <text x="30" y="17" fill="#ffffff" class="font-sans" font-size="16.5" font-weight="700">C-3 &amp; C-4 (Operational Container / Fixed Base):</text>
+      <text x="30" y="44" fill="#94a3b8" class="font-sans" font-size="15">ISO TEU mobile logistics vs. high-vulnerability static runways, drydocks, and space launchpads.</text>
+    </g>
+  </g>
+
+  <g transform="translate(25, 854)">
+    <line x1="0" y1="0" x2="2350" y2="0" stroke="#14263b" stroke-width="1.2"/>
+    <text x="0" y="18" fill="#64748b" class="font-sans" font-size="13.5" font-weight="700" letter-spacing="1.2">UNMANNED WARFARE ENGINE (UWE)</text>
+    <text x="290" y="18" fill="#334155" class="font-sans" font-size="13.5">•</text>
+    <text x="308" y="18" fill="#94a3b8" class="font-sans" font-size="13.5">SECTION 5.1: THE UNIVERSAL CONTAINERIZATION CONTINUUM</text>
+    <text x="2350" y="18" fill="#00e5ff" class="font-sans" font-size="13.5" font-weight="700" text-anchor="end">SERHII KHYLEVYCH — SYSTEMS ARCHITECT &amp; MILTECH STRATEGIST</text>
+  </g>
+</svg>

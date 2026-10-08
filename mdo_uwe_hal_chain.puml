@@ -1,0 +1,106 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam roundCorner 8
+skinparam shadowing false
+skinparam packagePadding 14
+skinparam nodesep 26
+skinparam ranksep 34
+
+skinparam package {
+    BorderColor #2C3E50
+    BorderThickness 1.5
+    FontSize 12
+    FontStyle bold
+}
+
+skinparam rectangle {
+    BorderThickness 1.2
+    FontSize 10.5
+}
+
+package "COLUMN 1: MDO (Multi-Domain Operations)\n[ Doctrinal Framework: FM 3-0, JP 3-0, JP 3-12 ]" as COL1 #F5F8FA {
+    rectangle "MDO SPACE DOMAIN (JP 3-14 / SDP 1-0)\n• Exoatmospheric Reconnaissance & ISR\n• Resilient High-Throughput SATCOM Uplinks\n• Strategic Threat Early Warning Constellations" as MDO_SPACE #FFFFFF
+    
+    rectangle "MDO AIR DOMAIN (FM 3-0 / JP 3-30)\n• Deep Fires Convergence & Theater Air Superiority\n• Counter-Air Operations & Strike Synchronization\n• Persistent High-Altitude Theater Reconnaissance" as MDO_AIR #FFFFFF
+    
+    rectangle "MDO LAND DOMAIN (FM 3-0 / ATP 3-90)\n• Combined Arms Close Maneuver & Breaching\n• Dispersed Force Protection & Survival\n• Trench Line Penetration & Forward Fortification" as MDO_LAND #FFFFFF
+    
+    rectangle "MDO MARITIME DOMAIN (JP 3-32 / NWP 3-0)\n• Sea Denial & Littoral Choke-Point Control\n• Surface Fast Attack & Strike Interdiction\n• Anti-Submarine Warfare (ASW) Shielding" as MDO_SEA #FFFFFF
+    
+    rectangle "METOC & OPERATIONAL ENVIRONMENT\n(JP 3-59 / JP 2-01.3 / ATP 3-34.80)\n• Meteorological & Oceanographic Ops (JP 3-59)\n• Terrain OAKOC & Soil Terramechanics (ATP 3-34.80)\n• The '1812' Operational Reality: Physics Primacy" as MDO_ENV #FFFFFF
+    
+    rectangle "MDO CYBERSPACE & EW (JP 3-12 / NIST SP 800-160)\n• Non-Kinetic Electromagnetic Spectrum Operations\n• Zero Trust High-Assurance C2 Architecture\n• Resilient Cross-Medium Self-Healing Data Routing" as MDO_CYBER #FFFFFF
+
+    MDO_SPACE -[hidden]down-> MDO_AIR
+    MDO_AIR -[hidden]down-> MDO_LAND
+    MDO_LAND -[hidden]down-> MDO_SEA
+    MDO_SEA -[hidden]down-> MDO_ENV
+    MDO_ENV -[hidden]down-> MDO_CYBER
+}
+
+package "COLUMN 2: UWE CORE PLATFORM (Unmanned Warfare Engine)\n[ Cyber-Physical Integration Layer & Feasibility ]" as COL2 #F8FBF7 {
+    rectangle "Namespace UOV (Space HLD-1)\n• Orbital Ephemeris Ingestion & VLEO Drag Decay\n• Cold-Gas / Reaction Wheel Attitude Management\n• Autonomous De-Orbit & Station-Keeping Loop" as UWE_UOV #FFFFFF
+    
+    rectangle "Namespaces UAV & UCV (Air HLD-1)\n• Aerodynamic Polars & Disc Loading Dynamics\n• Heavy Mothercraft Air Carriage Architecture\n• Airfield Runways & Hangar Shelters (Tier C4)" as UWE_AIR #FFFFFF
+    
+    rectangle "Namespace UGV (Ground HLD-1)\n• Terramechanics Ingest & Bekker-Wong Soil Matrix\n• Ground Pressure & Soil Shear Evaluation\n• Wheeled/Tracked Trench Obstacle Mobility" as UWE_UGV #FFFFFF
+    
+    rectangle "Namespaces USV & UUV (Maritime HLD-1)\n• Hydrodynamic Wave Slamming Spectra (15G Limit)\n• Biomimetic Ribbon-Fin Surf Maneuver\n• Variable Ballast & Subsea Acoustic Ranging" as UWE_MAR #FFFFFF
+    
+    rectangle "EAL: Environmental Abstraction Layer (HLD-0)\n[ CPS World Model & Dynamic 4D Tensor ]\n• Standards: NIST SP 1500-201 / ISO/IEC 21823\n• Continuous Ingest of Soil, Waves, Ice & RF\n• Algorithmic Pre-Flight Feasibility Barrier" as UWE_EAL #FFFFFF
+    
+    rectangle "Resilient Transport Mesh & Feasibility (HLD-2 / 3)\n• Deterministic Pre-Flight Feasibility: Phi = F(K,L,E,C,T)\n• Cognitive Dual-Read [XX]-[YY]-[ZZ] Token Matrix\n• 48-bit Microsecond Bitmask C2 Packet Mesh" as UWE_CYBER #FFFFFF
+
+    UWE_UOV -[hidden]down-> UWE_AIR
+    UWE_AIR -[hidden]down-> UWE_UGV
+    UWE_UGV -[hidden]down-> UWE_MAR
+    UWE_MAR -[hidden]down-> UWE_EAL
+    UWE_EAL -[hidden]down-> UWE_CYBER
+}
+
+package "COLUMN 3: CPS (Cyber-Physical Systems)\n[ Embedded Hardware, Actuators & Physical Probes ]" as COL3 #FDFBF8 {
+    rectangle "UOV-HAL Domain Driver (HAL LLD)\n• Reaction Wheels, Cold-Gas Thrusters & Solenoids\n• Spacecraft Bus Decoupling Architecture\n• Cold-Gas Micro-Impulse Attitude Control" as HAL_UOV #FFFFFF
+    
+    rectangle "UAV/UCV-HAL Domain Driver (HAL LLD)\n• Field-Oriented Control (FOC) ESC Inverters\n• 15G Terminal Divert Overrides on Target Impact\n• Dynamic Active Propeller Deceleration" as HAL_AIR #FFFFFF
+    
+    rectangle "UGV-HAL Domain Driver (HAL LLD)\n• Differential Skid-Steer Torque Control\n• Dynamic Track Slip Sensing & Adaptive Trim\n• Bidirectional V2V Charging BMS Bridge" as HAL_UGV #FFFFFF
+    
+    rectangle "USV/UUV-HAL Domain Driver (HAL LLD)\n• Steerable Waterjets & Vector Thrust Servos\n• Biomimetic Ribbon-Fin Articulated Actuators\n• Deep-Dive Acoustic Transceiver Modems" as HAL_MAR #FFFFFF
+    
+    rectangle "EAL Physical Sensory Probes (LLD-E0)\n(IEEE 1451 / STANAG 4754 / MIL-STD-810H)\n• GPR & Dynamic Cone Soil Penetrometers\n• CTD Ocean Buoyancy Profilers & ADCP Sonar\n• Micro-LIDAR Wind Sensors & SDR Jam Scanners" as HAL_EAL #FFFFFF
+    
+    rectangle "Universal HAL Interfaces (HAL HLD / LLD)\n(STANAG 4754 / MOSA 10 U.S.C. 4401)\n• IPowerEnergy: BMS & Deep Sleep 'Zhdun' (<5mA)\n• IPayloadAttachment: Detonator & OWM Decorator\n• ITokenRegistry: 48-bit MCU Bitmask Filter" as HAL_CYBER #FFFFFF
+
+    HAL_UOV -[hidden]down-> HAL_AIR
+    HAL_AIR -[hidden]down-> HAL_UGV
+    HAL_UGV -[hidden]down-> HAL_MAR
+    HAL_MAR -[hidden]down-> HAL_EAL
+    HAL_EAL -[hidden]down-> HAL_CYBER
+}
+
+' Row-by-Row Direct Horizontal Mappings (Left to Right)
+MDO_SPACE -right-> UWE_UOV
+UWE_UOV -right-> HAL_UOV
+
+MDO_AIR -right-> UWE_AIR
+UWE_AIR -right-> HAL_AIR
+
+MDO_LAND -right-> UWE_UGV
+UWE_UGV -right-> HAL_UGV
+
+MDO_SEA -right-> UWE_MAR
+UWE_MAR -right-> HAL_MAR
+
+MDO_ENV -right-> UWE_EAL
+HAL_EAL -left-> UWE_EAL : Telemetry Ingest
+
+MDO_CYBER -right-> UWE_CYBER
+UWE_CYBER -right-> HAL_CYBER
+
+' Cross-coupling dependencies
+UWE_EAL .down.> UWE_CYBER : Medium Cost Map
+UWE_CYBER .up.> HAL_EAL : Probe Tasking
+
+@enduml

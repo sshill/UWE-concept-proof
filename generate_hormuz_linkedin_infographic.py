@@ -1,0 +1,1030 @@
+#!/usr/bin/env python3
+"""
+Master Infographic Generator for Strait of Hormuz 300-Second Multi-Domain Defense
+LinkedIn Technical Edition — Faithfully matching the USV Military Tactical Reference Infographic Style:
+1. Exact 16:9 LinkedIn Widescreen Format (2400 x 1350 px).
+2. Volumetric 3D Isometric Diorama Block:
+   - Elevated tactical terrain (Qeshm Island) with green plateau, rocky cliffs, and sandy beach ramp.
+   - Water surface with rich marine blue gradients, wave caustics, and protected convoy corridor.
+   - Front cutaway vertical slab with underwater bathymetry dropping into violet/navy subsea abyss.
+   - Front vertical grid partitions: LITTORAL SURF-ZONE | FAIRWAY CORRIDOR | BATTLE POINTS | SOFAR AXIS (-50M) | BENTHIC FLOOR (-80M).
+3. Holographic Cyan Wireframe / Blueprint 3D Models:
+   - Glowing electric cyan contours, translucent hulls, and waterline halos.
+   - Convoy ships: Arleigh Burke DDG Destroyer + 2x VLCC Tankers ("Ocean Pride" & "Titan Star").
+   - Effectors: USV-1 Interceptor, USV-OWM Ram, UCV Swarm Hexacopter, UGV Tracked Chassis, UAV MALE Drone, UOV Satellite, UUV Subsea Interceptor, Benthic "Zhdun" Node.
+4. Left-Hand Vertical Domain Bar:
+   - Numbered items ① to ⑥ with gradient vertical rule.
+   - Core telemetry & closed-loop summary badge.
+5. Right-Hand Technical Specification Cards with Angled Leader Lines:
+   - 6 Stacked cards for UOV, UAV, UCV, UGV, USV, UUV.
+   - Compact military metrics tables.
+   - Wireframe blueprint schematics framed by technical corner brackets [ ┌ ┐ / └ ┘ ].
+6. Bilingual Support: Generates both English (hormuz_linkedin_infographic_en.*) and Ukrainian (hormuz_linkedin_infographic.*) in SVG, PDF, PNG, JPG.
+"""
+
+import os
+import subprocess
+import xml.etree.ElementTree as ET
+
+def get_svg_content(lang="en"):
+    width = 2400
+    height = 1350
+
+    is_en = (lang == "en")
+
+    # Strings Dictionary
+    T = {
+        "title": "SURFACE &amp; MULTI-DOMAIN CORRIDOR DEFENSE: STRAIT OF HORMUZ" if is_en else "МУЛЬТИДОМЕННА ОБОРОНА МОРСЬКИХ КОРИДОРІВ: ОРМУЗЬКА ПРОТОКА",
+        "subtitle": "UWE 6-DOMAIN CYBER-PHYSICAL MARITIME FABRIC • 300-SECOND TACTICAL DILEMMA" if is_en else "6-ДОМЕННА КІБЕРФІЗИЧНА ОБОРОННА ТКАНИНА UWE • 300-СЕКУНДНИЙ БОЙОВИЙ ЦИКЛ",
+        
+        # Telemetry Badges
+        "t_budget": "TIME BUDGET" if is_en else "ЧАСОВИЙ БЮДЖЕТ",
+        "t_budget_val": "296 SEC" if is_en else "296 СЕК",
+        "threats": "HOSTILE INFLUX" if is_en else "ВОРОЖИЙ НАПЛИВ",
+        "threats_val": "40+ TARGETS" if is_en else "40+ ЦІЛЕЙ",
+        "convoy_status": "CONVOY SURVIVAL" if is_en else "ВИЖИВАННЯ КОНВОЮ",
+        "convoy_status_val": "100% (INTACT)" if is_en else "100% (ЦІЛІСТЬ)",
+
+        # Left Column Domains
+        "d1_title": "① ORBITAL (SPACE)" if is_en else "① КОСМОС (UOV)",
+        "d1_sub": "VLEO / LEO (350–500 km)\nIR Early Warning &amp; Laser ISL" if is_en else "VLEO / LEO (350–500 км)\nІЧ-виявлення та лазерний ISL",
+
+        "d2_title": "② STRATOSPHERE (AIR)" if is_en else "② СТРАТОСФЕРА (UAV)",
+        "d2_sub": "MALE / HALE (8–12 km)\nC4ISR SAR &amp; AGM Missiles" if is_en else "MALE / HALE (8–12 км)\nC4ISR SAR-радар та ракети AGM",
+
+        "d3_title": "③ TACTICAL AIR (UCV)" if is_en else "③ ТАКТИЧНЕ ПОВІТРЯ (UCV)",
+        "d3_sub": "Close Convoy Umbrella (10–300 m)\nAnti-FPV Shield &amp; HEAT Drops" if is_en else "Ближній купол (10–300 м)\nПроти-FPV захист і скиди HEAT",
+
+        "d4_title": "④ LITTORAL (UGV)" if is_en else "④ БЕРЕГ ТА ПЛЯЖ (UGV)",
+        "d4_sub": "Qeshm Island Beach &amp; Cliffs\nMobile SAM vs ASCM &amp; USV Ramp" if is_en else "Скелі та пляж острова Кешм\nЗРК проти ПКР та рампа USV",
+
+        "d5_title": "⑤ SURFACE (USV)" if is_en else "⑤ ПОВЕРХНЯ (USV)",
+        "d5_sub": "50 kn Fairway Interceptor\nBattle Points &amp; OWM Ramming" if is_en else "Бойовий спринт 50 вузлів\nBattle Points та OWM таран",
+
+        "d6_title": "⑥ SUBSEA (UUV)" if is_en else "⑥ ГІДРОАКУСТИКА (UUV)",
+        "d6_sub": "SOFAR Acoustic Axis (-50 m)\nTorpedo Glider &amp; Benthic 'Zhdun'" if is_en else "Вісь каналу SOFAR (-50 м)\nТорпедний глайдер і вузол «Ждун»",
+
+        # Diorama Labels
+        "diorama_space": "SPACE: VLEO / LEO ORBITS (350–500 KM)" if is_en else "КОСМІЧНИЙ ДОМЕН: ОРБІТИ VLEO / LEO (350–500 КМ)",
+        "diorama_air": "STRATOSPHERE (UAV MALE: FL350-FL450)" if is_en else "СТРАТОСФЕРА (UAV MALE: FL350-FL450)",
+        "diorama_island": "COASTAL INTERFACE (QESHM ISLAND)" if is_en else "ПРИБЕРЕЖНИЙ ІНТЕРФЕЙС (ОСТРІВ КЕШМ)",
+        "diorama_corridor": "CONVOY SAFE NAVIGATION CORRIDOR (2 NAUTICAL MILES)" if is_en else "БЕЗПЕЧНИЙ НАВІГАЦІЙНИЙ КОРИДОР КОНВОЮ (2 МОРСЬКІ МИЛІ)",
+        "diorama_bp": "BATTLE POINTS SAFE PERIMETER (R = 1200 M)" if is_en else "РУБІЖ BATTLE POINTS (R = 1200 М)",
+        "radar_shadow": "Radar Blind Shadow" if is_en else "Радарна тінь острова",
+        
+        # Front Slab Labels
+        "slab_col1": "LITTORAL\nSURF-ZONE" if is_en else "ПРИБЕРЕЖНА\nСУРФ-ЗОНА",
+        "slab_col2": "FAIRWAY\nCORRIDOR" if is_en else "СУДНОПЛАВНИЙ\nФАРВАТЕР",
+        "slab_col3": "BATTLE POINTS\nMARGIN" if is_en else "РУБІЖ BATTLE\nPOINTS",
+        "slab_col4": "SOFAR CHANNEL\n(-50 M)" if is_en else "КАНАЛ SOFAR\n(-50 М)",
+        "slab_col5": "BENTHIC SEABED\n(-80 M)" if is_en else "ДОННИЙ БЕНТОС\n(-80 М)",
+
+        # Card 1: UOV
+        "c1_title": "UOV: ORBITAL EARLY WARNING" if is_en else "UOV: ОРБІТАЛЬНЕ РАННЄ ВИЯВЛЕННЯ",
+        "c1_line1": "Orbit: VLEO / LEO (350–500 km)" if is_en else "Орбіта: VLEO / LEO (350–500 км)",
+        "c1_line2": "Sensors: MWIR/LWIR Flash Sensors" if is_en else "Сенсори: ІЧ-детектори факелів пуску",
+        "c1_line3": "Comms: 10 Gbps Intersatellite Laser ISL" if is_en else "Зв'язок: 10 Гбіт/с лазерні канали ISL",
+        "c1_time": "Reaction: T+0s — T+30s (Early Warning)" if is_en else "Хронометраж: T+0с — T+30с (Виявлення)",
+
+        # Card 2: UAV
+        "c2_title": "UAV: HIGH-ALTITUDE MALE (C4ISR)" if is_en else "UAV: ВИСОТНИЙ MALE (C4ISR ТА УДАР)",
+        "c2_line1": "Altitude: FL350–FL450 (10 km)" if is_en else "Висота: FL350–FL450 (10 км)",
+        "c2_line2": "Radar: Synthetic Aperture Radar (SAR)" if is_en else "Радар: SAR із синтезованою апертурою",
+        "c2_line3": "Strike: 4x Precision AGM Missiles" if is_en else "Удар: 4x високоточні ракети AGM",
+        "c2_time": "Reaction: T+30s — T+260s (Surveillance)" if is_en else "Хронометраж: T+30с — T+260с (Удар / C4ISR)",
+
+        # Card 3: UCV
+        "c3_title": "UCV: TACTICAL SWARM HEXACOPTER" if is_en else "UCV: ТАКТИЧНИЙ РОЙОВИЙ КУПОЛ",
+        "c3_line1": "Domain: Convoy Low Air (10–300 m)" if is_en else "Середовище: Ближнє повітря (10–300 м)",
+        "c3_line2": "Shield: Kinetic Anti-FPV Mesh &amp; Net" if is_en else "Щит: Сітковий та кінетичний проти-FPV",
+        "c3_line3": "Munitions: HEAT Tandem Shaped-Charge" if is_en else "Боєприпаси: Кумулятивні скиди HEAT",
+        "c3_time": "Reaction: T+75s — T+300s (Air Umbrella)" if is_en else "Хронометраж: T+75с — T+300с (Купол)",
+
+        # Card 4: UGV
+        "c4_title": "UGV: LITTORAL COMBAT &amp; EXTRACTOR" if is_en else "UGV: БЕРЕГОВА ППО ТА ЕКСТРАКТОР",
+        "c4_line1": "Chassis: Low Ground Pressure Tracked" if is_en else "Шасі: Гусеничне наднизького тиску",
+        "c4_line2": "SAM: 4-Canister Missile Launcher" if is_en else "ППО: 4-контейнерний ЗРК проти ПКР",
+        "c4_line3": "Logistics: Stern USV/UUV Winch Ramp" if is_en else "Логістика: Кормова лебідка спуску катерів",
+        "c4_time": "Reaction: T+75s — T+300s (Coastal SAM)" if is_en else "Хронометраж: T+75с — T+300с (Берегове ППО)",
+
+        # Card 5: USV
+        "c5_title": "USV: MAGURA V5 COMBAT INTERCEPTOR" if is_en else "USV: БОЙОВИЙ ПЕРЕХОПЛЮВАЧ MAGURA",
+        "c5_line1": "Speed: 50+ knots (Dual Waterjets)" if is_en else "Швидкість: 50+ вузлів (Водомети)",
+        "c5_line2": "Turret: 30-mm Bushmaster Airburst (1:20)" if is_en else "Гармата: 30-мм Bushmaster Airburst (1:20)",
+        "c5_line3": "Doctrine: Battle Points &amp; OWM 15G Ram" if is_en else "Режим: Рубіж Battle Points та таран OWM",
+        "c5_time": "Reaction: T+130s — T+300s (Kinetic Shock)" if is_en else "Хронометраж: T+130с — T+300с (Кінетика)",
+
+        # Card 6: UUV
+        "c6_title": "UUV: SUBSEA GLIDER &amp; BENTHIC NODE" if is_en else "UUV: ПІДВОДНИЙ ГЛАЙДЕР ТА «ЖДУН»",
+        "c6_line1": "Depth: SOFAR Channel Axis (-20 to -85 m)" if is_en else "Глибина: Вісь каналу SOFAR (-20..-85 м)",
+        "c6_line2": "Kinetic: Supercavitating Micro-Torpedoes" if is_en else "Зброя: Суперкавітаційні мікроторпеди",
+        "c6_line3": "Seabed Node: 'Zhdun' Ultra-Low Power &lt; 5 mA" if is_en else "Донний вузол: «Ждун» у режимі сну &lt; 5 мА",
+        "c6_time": "Reaction: T+0s — T+300s (Fairway Screen)" if is_en else "Хронометраж: T+0с — T+300с (Санація)",
+
+        # Bottom Left Closed Loop
+        "c2_loop_title": "MDO ➔ UWE ➔ CPS CLOSED-LOOP FABRIC" if is_en else "MDO ➔ UWE ➔ CPS ЗАМКНЕНИЙ ЦИКЛ ОБОРОНИ",
+        "c2_line_sensing": "• SENSING: Multi-Domain Probes (UOV + UUV)" if is_en else "• СЕНСОРИКА: Мультидоменні датчики (UOV + UUV)",
+        "c2_line_c2": "• C2: Edge-AI Threat Vector Prioritization" if is_en else "• C2 ЯДРО: Edge-AI класифікація загроз за 1.5 с",
+        "c2_line_kinetic": "• KINETIC: Distributed Multi-Medium Effectors" if is_en else "• КІНЕТИКА: Розподілені ефектори (Airburst, Ram)",
+        "c2_line_logistics": "• LOGISTICS: Shore V2V Automated Power Bank" if is_en else "• ЛОГІСТИКА: Автономна швидка V2V зарядка",
+    }
+
+    svg_parts = []
+
+    # 1. Header & Definitions
+    svg_parts.append(f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
+  <defs>
+    <!-- Background Canvas -->
+    <linearGradient id="bgMaster" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#010613"/>
+      <stop offset="45%" stop-color="#030c22"/>
+      <stop offset="100%" stop-color="#01040d"/>
+    </linearGradient>
+
+    <!-- Sky / Air Gradient above Diorama -->
+    <linearGradient id="skyGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#023b63" stop-opacity="0.85"/>
+      <stop offset="25%" stop-color="#02568c" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#010613" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Water Surface Gradient (Marine Cyan-Blue to Cobalt) -->
+    <linearGradient id="waterSurfaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#023359"/>
+      <stop offset="25%" stop-color="#034b80"/>
+      <stop offset="60%" stop-color="#026da8"/>
+      <stop offset="100%" stop-color="#028ac9"/>
+    </linearGradient>
+
+    <!-- Water Surface Specular Sheen -->
+    <linearGradient id="waterSheenGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00e5ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Front Cutaway Face Depth Gradient (Violet / Navy Abyss) -->
+    <linearGradient id="depthSlabGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#034878"/>
+      <stop offset="15%" stop-color="#082b5c"/>
+      <stop offset="40%" stop-color="#1e1045"/>
+      <stop offset="70%" stop-color="#2a084e"/>
+      <stop offset="100%" stop-color="#0e021c"/>
+    </linearGradient>
+
+    <!-- Land Top Surface Gradient (Tactical Muted Green) -->
+    <linearGradient id="landTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d4529"/>
+      <stop offset="50%" stop-color="#3f5e39"/>
+      <stop offset="100%" stop-color="#4d6b47"/>
+    </linearGradient>
+
+    <!-- Land Rocky Cliff Gradient (Front/Side Cut) -->
+    <linearGradient id="landCliffGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d4529"/>
+      <stop offset="35%" stop-color="#233520"/>
+      <stop offset="70%" stop-color="#182416"/>
+      <stop offset="100%" stop-color="#0c140b"/>
+    </linearGradient>
+
+    <!-- Sandy Beach Gradient -->
+    <linearGradient id="sandBeachGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8b88a"/>
+      <stop offset="50%" stop-color="#a69466"/>
+      <stop offset="100%" stop-color="#807049"/>
+    </linearGradient>
+
+    <!-- Holographic Cyan Glow & Shading -->
+    <filter id="holoGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="holoGlowHigh" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- Markers -->
+    <marker id="mHoloCyan" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M 0 0 L 6 3 L 0 6 z" fill="#00e5ff"/>
+    </marker>
+    <marker id="mHoloRed" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M 0 0 L 6 3 L 0 6 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Deep Navy Base Canvas -->
+  <rect width="{width}" height="{height}" fill="url(#bgMaster)"/>
+""")
+
+    # 2. Top Header Bar
+    svg_parts.append(f"""
+  <!-- ============================================================ -->
+  <!-- TOP HEADER BAR: TITLE, METRICS BADGES                        -->
+  <!-- ============================================================ -->
+  <g id="topHeader">
+    <text x="60" y="58" fill="#f8fafc" font-family="'Inter', 'Segoe UI', 'Ubuntu', sans-serif" font-size="28" font-weight="900" letter-spacing="1.5">{T['title']}</text>
+    <text x="60" y="88" fill="#7dd3fc" font-family="'Inter', 'Segoe UI', 'Ubuntu', sans-serif" font-size="13" font-weight="600" letter-spacing="1.2">{T['subtitle']}</text>
+
+    <!-- Header Telemetry Metric Badges (Top Right) -->
+    <g transform="translate(1820, 32)">
+      <!-- Badge 1: Time Budget -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="165" height="52" rx="4" fill="#041228" stroke="#0284c7" stroke-width="1.2"/>
+        <text x="82" y="20" fill="#38bdf8" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['t_budget']}</text>
+        <text x="82" y="42" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="900" text-anchor="middle">{T['t_budget_val']}</text>
+      </g>
+
+      <!-- Badge 2: Hostile Influx -->
+      <g transform="translate(180, 0)">
+        <rect x="0" y="0" width="165" height="52" rx="4" fill="#24070a" stroke="#ef4444" stroke-width="1.2"/>
+        <text x="82" y="20" fill="#fca5a5" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['threats']}</text>
+        <text x="82" y="42" fill="#fef2f2" font-family="sans-serif" font-size="16" font-weight="900" text-anchor="middle">{T['threats_val']}</text>
+      </g>
+
+      <!-- Badge 3: Convoy Survival -->
+      <g transform="translate(360, 0)">
+        <rect x="0" y="0" width="160" height="52" rx="4" fill="#052414" stroke="#22c55e" stroke-width="1.2"/>
+        <text x="80" y="20" fill="#86efac" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['convoy_status']}</text>
+        <text x="80" y="42" fill="#4ade80" font-family="sans-serif" font-size="16" font-weight="900" text-anchor="middle">{T['convoy_status_val']}</text>
+      </g>
+    </g>
+  </g>
+""")
+
+    # 3. Left-Hand Column (Vertical Domain Legend & Closed-Loop C2)
+    svg_parts.append(f"""
+  <!-- ============================================================ -->
+  <!-- LEFT COLUMN: VERTICAL DOMAIN LEGEND & CLOSED-LOOP C2         -->
+  <!-- ============================================================ -->
+  <g id="leftColumn" transform="translate(60, 130)">
+    
+    <!-- Vertical Cyan Indicator Rule -->
+    <line x1="12" y1="20" x2="12" y2="820" stroke="#0284c7" stroke-width="3" opacity="0.6"/>
+    <line x1="12" y1="20" x2="12" y2="380" stroke="#00e5ff" stroke-width="3" />
+
+    <!-- Domain Item 1: Orbital Space -->
+    <g transform="translate(0, 20)">
+      <circle cx="12" cy="12" r="9" fill="#021c38" stroke="#00e5ff" stroke-width="2"/>
+      <text x="12" y="16" fill="#00e5ff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">1</text>
+      <text x="32" y="16" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800" letter-spacing="0.5">{T['d1_title']}</text>
+      <text x="32" y="34" fill="#94a3b8" font-family="sans-serif" font-size="10.5" font-weight="500">{T['d1_sub'].splitlines()[0]}</text>
+      <text x="32" y="48" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="600">{T['d1_sub'].splitlines()[1]}</text>
+    </g>
+
+    <!-- Domain Item 2: Stratosphere Air -->
+    <g transform="translate(0, 140)">
+      <circle cx="12" cy="12" r="9" fill="#021c38" stroke="#00e5ff" stroke-width="2"/>
+      <text x="12" y="16" fill="#00e5ff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">2</text>
+      <text x="32" y="16" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800" letter-spacing="0.5">{T['d2_title']}</text>
+      <text x="32" y="34" fill="#94a3b8" font-family="sans-serif" font-size="10.5" font-weight="500">{T['d2_sub'].splitlines()[0]}</text>
+      <text x="32" y="48" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="600">{T['d2_sub'].splitlines()[1]}</text>
+    </g>
+
+    <!-- Domain Item 3: Tactical Air -->
+    <g transform="translate(0, 260)">
+      <circle cx="12" cy="12" r="9" fill="#021c38" stroke="#00e5ff" stroke-width="2"/>
+      <text x="12" y="16" fill="#00e5ff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">3</text>
+      <text x="32" y="16" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800" letter-spacing="0.5">{T['d3_title']}</text>
+      <text x="32" y="34" fill="#94a3b8" font-family="sans-serif" font-size="10.5" font-weight="500">{T['d3_sub'].splitlines()[0]}</text>
+      <text x="32" y="48" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="600">{T['d3_sub'].splitlines()[1]}</text>
+    </g>
+
+    <!-- Domain Item 4: Littoral Shore -->
+    <g transform="translate(0, 380)">
+      <circle cx="12" cy="12" r="9" fill="#021c38" stroke="#22c55e" stroke-width="2"/>
+      <text x="12" y="16" fill="#22c55e" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">4</text>
+      <text x="32" y="16" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800" letter-spacing="0.5">{T['d4_title']}</text>
+      <text x="32" y="34" fill="#94a3b8" font-family="sans-serif" font-size="10.5" font-weight="500">{T['d4_sub'].splitlines()[0]}</text>
+      <text x="32" y="48" fill="#4ade80" font-family="sans-serif" font-size="10" font-weight="600">{T['d4_sub'].splitlines()[1]}</text>
+    </g>
+
+    <!-- Domain Item 5: Surface Fairway -->
+    <g transform="translate(0, 500)">
+      <circle cx="12" cy="12" r="9" fill="#021c38" stroke="#00e5ff" stroke-width="2"/>
+      <text x="12" y="16" fill="#00e5ff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">5</text>
+      <text x="32" y="16" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800" letter-spacing="0.5">{T['d5_title']}</text>
+      <text x="32" y="34" fill="#94a3b8" font-family="sans-serif" font-size="10.5" font-weight="500">{T['d5_sub'].splitlines()[0]}</text>
+      <text x="32" y="48" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="600">{T['d5_sub'].splitlines()[1]}</text>
+    </g>
+
+    <!-- Domain Item 6: Subsea Abyss -->
+    <g transform="translate(0, 620)">
+      <circle cx="12" cy="12" r="9" fill="#1b0336" stroke="#c084fc" stroke-width="2"/>
+      <text x="12" y="16" fill="#c084fc" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">6</text>
+      <text x="32" y="16" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800" letter-spacing="0.5">{T['d6_title']}</text>
+      <text x="32" y="34" fill="#94a3b8" font-family="sans-serif" font-size="10.5" font-weight="500">{T['d6_sub'].splitlines()[0]}</text>
+      <text x="32" y="48" fill="#c084fc" font-family="sans-serif" font-size="10" font-weight="600">{T['d6_sub'].splitlines()[1]}</text>
+    </g>
+
+    <!-- Closed-Loop C2 Architecture Mini Panel (Bottom Left) -->
+    <g transform="translate(0, 755)">
+      <rect x="0" y="0" width="280" height="280" rx="6" fill="#040b18" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="280" height="34" rx="4" fill="#081830" stroke="#0284c7" stroke-width="1"/>
+      <text x="140" y="22" fill="#00e5ff" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="0.5">{T['c2_loop_title']}</text>
+      
+      <text x="16" y="65" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="500">{T['c2_line_sensing']}</text>
+      <text x="16" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="500">{T['c2_line_c2']}</text>
+      <text x="16" y="131" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="500">{T['c2_line_kinetic']}</text>
+      <text x="16" y="164" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="500">{T['c2_line_logistics']}</text>
+
+      <!-- Latency & Buffer Specs -->
+      <line x1="16" y1="185" x2="264" y2="185" stroke="#1e293b" stroke-width="1"/>
+      <text x="16" y="208" fill="#94a3b8" font-family="sans-serif" font-size="9.5">• Inter-Link Latency: <tspan fill="#38bdf8" font-weight="700">&lt; 0.5 s (ISL)</tspan></text>
+      <text x="16" y="228" fill="#94a3b8" font-family="sans-serif" font-size="9.5">• Safe Margin: <tspan fill="#22c55e" font-weight="700">R = 1200 m (Battle Points)</tspan></text>
+      <text x="16" y="248" fill="#94a3b8" font-family="sans-serif" font-size="9.5">• Blast Barrier: <tspan fill="#f59e0b" font-weight="700">400 m outside Tankers</tspan></text>
+      
+      <rect x="16" y="260" width="248" height="12" rx="2" fill="#042814"/>
+      <text x="140" y="269" fill="#4ade80" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">REAL-TIME AUTONOMOUS ENGINE ENGAGED</text>
+    </g>
+
+  </g>
+""")
+
+    # 4. Center Volumetric 3D Isometric Diorama Block
+    svg_parts.append(f"""
+  <!-- ============================================================ -->
+  <!-- CENTER VOLUMETRIC 3D ISOMETRIC DIORAMA BLOCK                 -->
+  <!-- ============================================================ -->
+  <g id="centerDiorama" transform="translate(380, 110)">
+
+    <!-- Sky / Upper Atmospheric Envelope above Diorama -->
+    <g id="dioramaSky">
+      <!-- Sky polygon arched above the 3D block -->
+      <polygon points="50,180 1200,180 1200,430 50,430" fill="url(#skyGrad)"/>
+      <path d="M 60,340 Q 600,280 1200,320" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="6 4" opacity="0.3"/>
+      <path d="M 60,260 Q 600,210 1200,250" fill="none" stroke="#7dd3fc" stroke-width="0.8" stroke-dasharray="8 6" opacity="0.25"/>
+
+      <!-- Orbit Line -->
+      <path d="M 80,195 Q 600,140 1200,185" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.5"/>
+      <circle cx="150" cy="190" r="1.5" fill="#ffffff" opacity="0.8"/>
+      <circle cx="340" cy="165" r="1.2" fill="#ffffff" opacity="0.7"/>
+      <circle cx="850" cy="155" r="2.0" fill="#ffffff" opacity="0.9"/>
+      <circle cx="1100" cy="175" r="1.2" fill="#7dd3fc" opacity="0.8"/>
+
+      <!-- Sky Strata Tags -->
+      <text x="80" y="165" fill="#38bdf8" font-family="sans-serif" font-size="10.5" font-weight="700" letter-spacing="1">{T['diorama_space']}</text>
+      <text x="80" y="325" fill="#e0f2fe" font-family="sans-serif" font-size="10.5" font-weight="700" letter-spacing="1">{T['diorama_air']}</text>
+    </g>
+
+    <!-- Top Face 1: Marine Water Surface (Isometric Plane) -->
+    <g id="dioramaWaterTop">
+      <polygon points="260,420 1220,440 1220,780 80,740" fill="url(#waterSurfaceGrad)"/>
+      <polygon points="260,420 1220,440 1220,780 80,740" fill="url(#waterSheenGrad)"/>
+
+      <!-- Realistic Isometric Water Waves & Ripples -->
+      <g stroke="#38bdf8" stroke-width="1" opacity="0.35">
+        <path d="M 280,460 L 500,475 M 650,455 L 900,472 M 1020,460 L 1200,475"/>
+        <path d="M 200,520 L 480,540 M 600,515 L 950,542 M 1060,520 L 1210,538"/>
+        <path d="M 140,580 L 420,605 M 540,585 L 980,612 M 1080,585 L 1215,605"/>
+        <path d="M 100,650 L 380,675 M 500,655 L 1020,685 M 1120,655 L 1220,675"/>
+        <path d="M 85,710 L 350,735 M 480,720 L 1050,750 M 1140,725 L 1220,745"/>
+      </g>
+
+      <!-- Convoy Protected Navigation Corridor Lane (2 Nautical Miles) -->
+      <polygon points="460,470 1210,480 1180,660 360,650" fill="#00e5ff" fill-opacity="0.06" stroke="#00e5ff" stroke-width="1.2" stroke-dasharray="8 6"/>
+      <text x="780" y="495" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" text-anchor="middle">{T['diorama_corridor']}</text>
+
+      <!-- Battle Points Safe Perimeter Ring (R = 1200m Buffer Zone around Convoy) -->
+      <ellipse cx="800" cy="570" rx="380" ry="75" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="8 5"  opacity="0.85"/>
+      <text x="800" y="660" fill="#4ade80" font-family="sans-serif" font-size="10.5" font-weight="800" text-anchor="middle">{T['diorama_bp']}</text>
+    </g>
+
+    <!-- Top Face 2: Qeshm Island Littoral Terrain -->
+    <g id="dioramaLand">
+      <polygon points="50,380 320,385 410,460 360,580 220,630 50,560" fill="url(#landTopGrad)" stroke="#22c55e" stroke-width="1.2"/>
+      <polygon points="220,630 360,580 410,460 435,480 380,605 235,655" fill="url(#sandBeachGrad)" stroke="#a69466" stroke-width="0.8"/>
+      
+      <!-- Deployment & Extraction Ramp for USV/UGV -->
+      <polygon points="260,590 320,580 345,615 285,625" fill="#3f6212" stroke="#84cc16" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <line x1="285" y1="625" x2="310" y2="655" stroke="#4ade80" stroke-width="1.8" stroke-dasharray="3 2"/>
+
+      <!-- Island Contour & Elevation Lines -->
+      <path d="M 80,410 Q 180,400 280,425" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+      <path d="M 70,450 Q 170,440 270,465" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+      <path d="M 60,490 Q 160,480 250,505" fill="none" stroke="#22c55e" stroke-width="0.8" opacity="0.5"/>
+
+      <!-- Island Label Tag -->
+      <rect x="60" y="395" width="235" height="22" rx="3" fill="#041f0f" stroke="#22c55e" stroke-width="1"/>
+      <text x="70" y="410" fill="#86efac" font-family="sans-serif" font-size="10" font-weight="800">{T['diorama_island']}</text>
+
+      <!-- Island Radar Blind Zone -->
+      <polygon points="360,490 520,480 560,540 380,560" fill="#b91c1c" fill-opacity="0.25" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="400" y="525" fill="#fca5a5" font-family="sans-serif" font-size="9.5" font-weight="700">{T['radar_shadow']}</text>
+
+      <!-- Left Vertical Edge of Island Cliff -->
+      <polygon points="50,560 220,630 235,655 50,680" fill="url(#landCliffGrad)"/>
+    </g>
+
+    <!-- FRONT CUTAWAY VERTICAL SLAB (SUBSEA BATHYMETRY & PARTITION COLUMNS) -->
+    <g id="dioramaDepthCutaway">
+      <polygon points="50,680 80,740 1220,780 1220,1180 50,1140" fill="url(#depthSlabGrad)"/>
+
+      <!-- Bathymetric Seabed Floor Profile dropping from coast down to abyss -->
+      <path d="M 50,760 Q 180,820 320,890 T 600,1020 T 950,1090 L 1220,1110 L 1220,1180 L 50,1140 Z" fill="#090114" stroke="#581c87" stroke-width="1.5"/>
+
+      <!-- SOFAR Acoustic Waveguide Channel (-50 m) Axis Line in Violet Depth -->
+      <path d="M 50,920 Q 300,900 650,940 T 1220,950" fill="none" stroke="#a855f7" stroke-width="1.8" stroke-dasharray="8 5" opacity="0.7"/>
+      <path d="M 380,940 Q 600,900 850,940 T 1150,940" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.4"/>
+      <text x="70" y="915" fill="#e9d5ff" font-family="sans-serif" font-size="10" font-weight="700">-50 m (SOFAR Acoustic Axis)</text>
+
+      <path d="M 50,820 Q 300,810 650,840 T 1220,850" fill="none" stroke="#7e22ce" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+      <text x="70" y="815" fill="#c084fc" font-family="sans-serif" font-size="10" font-weight="600">-25 m (Continental Shelf)</text>
+
+      <path d="M 50,1040 Q 300,1030 650,1060 T 1220,1070" fill="none" stroke="#581c87" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+      <text x="70" y="1035" fill="#a855f7" font-family="sans-serif" font-size="10" font-weight="600">-80 m (Navigation Fairway Floor)</text>
+
+      <!-- Vertical Cross-Section Partition Grid Lines -->
+      <line x1="260" y1="745" x2="260" y2="1148" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>
+      <line x1="500" y1="753" x2="500" y2="1156" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>
+      <line x1="750" y1="762" x2="750" y2="1165" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>
+      <line x1="1000" y1="772" x2="1000" y2="1173" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>
+
+      <!-- Front Slab Column Text Labels -->
+      <g transform="translate(0, 1125)" font-family="sans-serif" font-size="9.5" font-weight="800" text-anchor="middle">
+        <text x="155" y="0" fill="#93c5fd">{T['slab_col1'].splitlines()[0]}</text>
+        <text x="155" y="12" fill="#60a5fa">{T['slab_col1'].splitlines()[1]}</text>
+
+        <text x="380" y="0" fill="#93c5fd">{T['slab_col2'].splitlines()[0]}</text>
+        <text x="380" y="12" fill="#60a5fa">{T['slab_col2'].splitlines()[1]}</text>
+
+        <text x="625" y="0" fill="#93c5fd">{T['slab_col3'].splitlines()[0]}</text>
+        <text x="625" y="12" fill="#60a5fa">{T['slab_col3'].splitlines()[1]}</text>
+
+        <text x="875" y="0" fill="#c084fc">{T['slab_col4'].splitlines()[0]}</text>
+        <text x="875" y="12" fill="#a855f7">{T['slab_col4'].splitlines()[1]}</text>
+
+        <text x="1110" y="0" fill="#e9d5ff">{T['slab_col5'].splitlines()[0]}</text>
+        <text x="1110" y="12" fill="#c084fc">{T['slab_col5'].splitlines()[1]}</text>
+      </g>
+    </g>
+
+    <!-- HOLOGRAPHIC CYAN WIREFRAME / BLUEPRINT 3D MODELS -->
+    <g id="holo3DModels">
+
+      <!-- MODEL 1: DESTROYER DDG (ARLEIGH BURKE FLIGHT III) -->
+      <g id="holoDDG" transform="translate(730, 540)">
+        <ellipse cx="90" cy="22" rx="100" ry="12" fill="#00e5ff" fill-opacity="0.08" stroke="#00e5ff" stroke-width="0.8" opacity="0.6"/>
+        <line x1="-10" y1="22" x2="-80" y2="22" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.6"/>
+
+        <polygon points="0,18 45,8 145,8 180,18 150,26 10,26" fill="#00e5ff" fill-opacity="0.12" stroke="#00e5ff" stroke-width="1.4" />
+        <polygon points="0,18 45,8 145,8 180,18" fill="#e0f2fe" fill-opacity="0.15"/>
+        
+        <circle cx="140" cy="13" r="3.5" fill="#021c38" stroke="#00e5ff" stroke-width="1"/>
+        <line x1="140" y1="13" x2="165" y2="11" stroke="#e0f2fe" stroke-width="1.5"/>
+        <rect x="120" y="10" width="12" height="5" fill="#032b54" stroke="#38bdf8" stroke-width="0.8"/>
+
+        <polygon points="70,10 115,10 110,-8 75,-8" fill="#0284c7" fill-opacity="0.25" stroke="#7dd3fc" stroke-width="1.2"/>
+        <polygon points="102,4 108,-3 108,-7 102,0" fill="#00e5ff" fill-opacity="0.8" stroke="#ffffff" stroke-width="0.8"/>
+        
+        <line x1="90" y1="-8" x2="90" y2="-24" stroke="#e0f2fe" stroke-width="1.5"/>
+        <line x1="84" y1="-16" x2="96" y2="-16" stroke="#38bdf8" stroke-width="1"/>
+        <line x1="82" y1="-24" x2="98" y2="-24" stroke="#00e5ff" stroke-width="1.8" />
+
+        <rect x="25" y="11" width="25" height="11" fill="#032b54" stroke="#38bdf8" stroke-width="0.8"/>
+        <polygon points="62,10 68,10 66,-2 60,-2" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8"/>
+        <polygon points="48,10 54,10 52,-2 46,-2" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8"/>
+
+        <circle cx="105" cy="-4" r="28" fill="none" stroke="#00e5ff" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+        <circle cx="105" cy="-4" r="50" fill="none" stroke="#00e5ff" stroke-width="0.6" stroke-dasharray="4 4" opacity="0.3"/>
+      </g>
+
+
+      <!-- MODEL 2: VLCC SUPERTANKER #1 ("Ocean Pride", 300,000 DWT) -->
+      <g id="holoTanker1" transform="translate(420, 565)">
+        <ellipse cx="100" cy="22" rx="115" ry="14" fill="#00e5ff" fill-opacity="0.05" stroke="#38bdf8" stroke-width="0.6"/>
+        <line x1="-15" y1="22" x2="-80" y2="22" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+
+        <polygon points="0,20 30,8 190,8 215,18 195,28 15,28" fill="#00e5ff" fill-opacity="0.08" stroke="#38bdf8" stroke-width="1.3"/>
+        <polygon points="20,16 40,10 185,10 195,16" fill="#ef4444" fill-opacity="0.25" stroke="#f87171" stroke-width="0.8"/>
+
+        <line x1="50" y1="13" x2="175" y2="13" stroke="#fca5a5" stroke-width="1.2"/>
+        <line x1="110" y1="12" x2="110" y2="2" stroke="#f87171" stroke-width="1.2"/>
+        <line x1="140" y1="12" x2="140" y2="2" stroke="#f87171" stroke-width="1.2"/>
+
+        <polygon points="10,16 28,16 26,-2 8,-2" fill="#e0f2fe" fill-opacity="0.5" stroke="#94a3b8" stroke-width="1"/>
+        <rect x="12" y="0" width="12" height="2.5" fill="#0284c7"/>
+        <polygon points="14,-2 19,-2 18,-8 15,-8" fill="#dc2626" stroke="#7f1d1d" stroke-width="0.8"/>
+      </g>
+
+
+      <!-- MODEL 3: VLCC SUPERTANKER #2 ("Titan Star") -->
+      <g id="holoTanker2" transform="translate(960, 580)">
+        <ellipse cx="90" cy="20" rx="100" ry="12" fill="#00e5ff" fill-opacity="0.05" stroke="#38bdf8" stroke-width="0.6"/>
+        <line x1="-15" y1="20" x2="-70" y2="20" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+
+        <polygon points="0,20 28,8 170,8 190,18 175,26 12,26" fill="#00e5ff" fill-opacity="0.08" stroke="#38bdf8" stroke-width="1.3"/>
+        <polygon points="18,16 35,10 165,10 175,16" fill="#ef4444" fill-opacity="0.25" stroke="#f87171" stroke-width="0.8"/>
+        <line x1="45" y1="13" x2="155" y2="13" stroke="#fca5a5" stroke-width="1.2"/>
+        <line x1="100" y1="12" x2="100" y2="2" stroke="#f87171" stroke-width="1.2"/>
+
+        <polygon points="10,16 26,16 24,-2 8,-2" fill="#e0f2fe" fill-opacity="0.5" stroke="#94a3b8" stroke-width="1"/>
+        <rect x="12" y="0" width="10" height="2.5" fill="#0284c7"/>
+      </g>
+
+
+      <!-- EFFECTOR 1: UOV (ORBITAL SATELLITE CONSTELLATION - SPACE) -->
+      <g id="holoUOV" transform="translate(630, 200)">
+        <polygon points="25,12 35,4 45,12 45,26 35,34 25,26" fill="#ca8a04" fill-opacity="0.6" stroke="#fde047" stroke-width="1.2" />
+        <circle cx="35" cy="30" r="3.5" fill="#00e5ff" stroke="#ffffff" stroke-width="0.8"/>
+
+        <polygon points="25,15 -10,10 -10,24 25,22" fill="#1e40af" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+        <polygon points="45,15 80,10 80,24 45,22" fill="#1e40af" fill-opacity="0.7" stroke="#60a5fa" stroke-width="1"/>
+
+        <circle cx="-10" cy="17" r="3" fill="#00e5ff" />
+        <circle cx="80" cy="17" r="3" fill="#00e5ff" />
+        <line x1="80" y1="17" x2="160" y2="10" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <line x1="-10" y1="17" x2="-80" y2="22" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+        <polygon points="35,34 -20,280 240,280" fill="#00e5ff" fill-opacity="0.05"/>
+        <line x1="35" y1="34" x2="-20" y2="280" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.4"/>
+        <line x1="35" y1="34" x2="240" y2="280" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.4"/>
+      </g>
+
+
+      <!-- EFFECTOR 2: UAV (HIGH-ALTITUDE MALE DRONE - STRATOSPHERE) -->
+      <g id="holoUAV" transform="translate(380, 350)">
+        <polygon points="45,16 -25,5 -23,9 42,18" fill="#00e5ff" fill-opacity="0.2" stroke="#00e5ff" stroke-width="1.2" />
+        <polygon points="55,16 125,5 123,9 58,18" fill="#00e5ff" fill-opacity="0.2" stroke="#00e5ff" stroke-width="1.2" />
+        
+        <path d="M 50,18 C 42,14 43,5 50,4 C 56,4 57,14 50,18 Z" fill="#e0f2fe" fill-opacity="0.8" stroke="#38bdf8" stroke-width="1"/>
+        <line x1="50" y1="18" x2="50" y2="35" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="50" y1="34" x2="40" y2="42" stroke="#94a3b8" stroke-width="1.8"/>
+        <line x1="50" y1="34" x2="60" y2="42" stroke="#94a3b8" stroke-width="1.8"/>
+
+        <circle cx="50" cy="15" r="3.5" fill="#0284c7" stroke="#00e5ff" stroke-width="1"/>
+        <rect x="15" y="13" width="8" height="2" fill="#ef4444"/>
+        <rect x="75" y="13" width="8" height="2" fill="#ef4444"/>
+
+        <polygon points="50,18 -40,160 180,160" fill="#00e5ff" fill-opacity="0.05"/>
+      </g>
+
+
+      <!-- EFFECTOR 3: UCV (TACTICAL AIR DEFENSE HEXACOPTER SWARM) -->
+      <g id="holoUCV" transform="translate(680, 465)">
+        <line x1="25" y1="16" x2="-2" y2="5" stroke="#38bdf8" stroke-width="2"/>
+        <line x1="25" y1="16" x2="52" y2="5" stroke="#38bdf8" stroke-width="2"/>
+        <line x1="25" y1="16" x2="-4" y2="23" stroke="#38bdf8" stroke-width="2"/>
+        <line x1="25" y1="16" x2="54" y2="23" stroke="#38bdf8" stroke-width="2"/>
+
+        <ellipse cx="-2" cy="5" rx="10" ry="3.5" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="0.8" />
+        <ellipse cx="52" cy="5" rx="10" ry="3.5" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="0.8" />
+        <ellipse cx="-4" cy="23" rx="10" ry="3.5" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="0.8" />
+        <ellipse cx="54" cy="23" rx="10" ry="3.5" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="0.8" />
+
+        <polygon points="18,12 32,12 36,20 14,20" fill="#0f172a" stroke="#00e5ff" stroke-width="1"/>
+        <circle cx="25" cy="16" r="2.5" fill="#38bdf8" />
+        <rect x="22" y="20" width="6" height="4" fill="#ef4444"/>
+
+        <g transform="translate(55, -18) scale(0.6)">
+          <line x1="25" y1="16" x2="-2" y2="5" stroke="#38bdf8" stroke-width="2"/>
+          <line x1="25" y1="16" x2="52" y2="5" stroke="#38bdf8" stroke-width="2"/>
+          <ellipse cx="-2" cy="5" rx="10" ry="3.5" fill="#00e5ff" fill-opacity="0.25" stroke="#00e5ff" stroke-width="0.8"/>
+          <ellipse cx="52" cy="5" rx="10" ry="3.5" fill="#00e5ff" fill-opacity="0.25" stroke="#00e5ff" stroke-width="0.8"/>
+        </g>
+      </g>
+
+
+      <!-- EFFECTOR 4: UGV (LITTORAL COMBAT ROBOT & EXTRACTOR) -->
+      <g id="holoUGV" transform="translate(250, 585)">
+        <polygon points="0,20 48,10 65,20 15,30" fill="#14532d" fill-opacity="0.5" stroke="#22c55e" stroke-width="1.2" />
+        <polygon points="-4,22 12,32 58,22 42,12" fill="#052e16" stroke="#16a34a" stroke-width="0.8"/>
+        <circle cx="8" cy="27" r="2.5" fill="#22c55e"/>
+        <circle cx="23" cy="24" r="2.5" fill="#22c55e"/>
+        <circle cx="38" cy="21" r="2.5" fill="#22c55e"/>
+        <circle cx="51" cy="18" r="2.5" fill="#22c55e"/>
+
+        <polygon points="18,15 35,15 42,5 25,5" fill="#166534" stroke="#4ade80" stroke-width="0.8"/>
+        <line x1="25" y1="5" x2="52" y2="-9" stroke="#22c55e" stroke-width="2.5" />
+        <line x1="28" y1="8" x2="55" y2="-6" stroke="#22c55e" stroke-width="2.5" />
+
+        <line x1="4" y1="18" x2="-18" y2="28" stroke="#86efac" stroke-width="1.5" stroke-dasharray="2 2"/>
+      </g>
+
+
+      <!-- EFFECTOR 5: USV (MAGURA V5 COMBAT TRIMARAN) -->
+      <g id="holoUSV" transform="translate(520, 595)">
+        <polygon points="-60,10 -5,6 -5,14 -60,12" fill="#00e5ff" fill-opacity="0.25"/>
+        <line x1="-5" y1="10" x2="-80" y2="10" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 3" opacity="0.8"/>
+
+        <polygon points="0,10 35,3 65,10 58,16 0,14" fill="#00e5ff" fill-opacity="0.2" stroke="#00e5ff" stroke-width="1.4" />
+        <polygon points="8,4 32,0 42,4 35,7 8,6" fill="#0284c7" stroke="#00e5ff" stroke-width="0.6"/>
+        <polygon points="12,15 36,18 46,15 39,12 12,13" fill="#0369a1" stroke="#00e5ff" stroke-width="0.6"/>
+
+        <circle cx="28" cy="8" r="3.5" fill="#f8fafc" stroke="#38bdf8" stroke-width="0.8"/>
+        
+        <circle cx="48" cy="10" r="3" fill="#0f172a" stroke="#00e5ff" stroke-width="1"/>
+        <line x1="48" y1="10" x2="66" y2="8" stroke="#00e5ff" stroke-width="1.8" />
+
+        <polygon points="66,8 -30,-40 -20,-55" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3 2"/>
+      </g>
+
+
+      <!-- EFFECTOR 5B: USV-OWM (RAMMING DRONE IN TERMINAL SPRINT) -->
+      <g id="holoUSV_OWM" transform="translate(660, 585)">
+        <polygon points="0,8 26,2 45,8 40,12 0,11" fill="#b91c1c" fill-opacity="0.5" stroke="#ef4444" stroke-width="1.2" />
+        <line x1="0" y1="9" x2="-45" y2="9" stroke="#fca5a5" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <circle cx="34" cy="7" r="2.5" fill="#ffffff" />
+      </g>
+
+
+      <!-- THREAT CLUSTERS & INTERCEPTS ON WATER -->
+      <g transform="translate(410, 560)">
+        <polygon points="0,4 8,0 10,4 2,5" fill="#7f1d1d" stroke="#ef4444" stroke-width="0.8"/>
+        <circle cx="4" cy="3" r="10" fill="#f59e0b" fill-opacity="0.5" />
+        <circle cx="4" cy="3" r="4" fill="#ffffff"/>
+      </g>
+      <g transform="translate(320, 480)">
+        <circle cx="8" cy="3" r="12" fill="#22c55e" fill-opacity="0.4" />
+        <circle cx="8" cy="3" r="4" fill="#ffffff"/>
+        <line x1="280" y1="585" x2="328" y2="483" stroke="#22c55e" stroke-width="1.8" stroke-dasharray="4 2"/>
+      </g>
+
+
+      <!-- EFFECTOR 6: UUV (SUBSEA INTERCEPTOR IN DEPTH SLAB) -->
+      <g id="holoUUV" transform="translate(580, 945)">
+        <ellipse cx="32" cy="11" rx="34" ry="8" fill="#a855f7" fill-opacity="0.3" stroke="#c084fc" stroke-width="1.2" />
+        <path d="M 58,7 C 68,9 68,13 58,15 Z" fill="#38bdf8" stroke="#00e5ff" stroke-width="0.8"/>
+        <circle cx="63" cy="11" r="1.5" fill="#ffffff"/>
+
+        <line x1="2" y1="4" x2="11" y2="11" stroke="#e9d5ff" stroke-width="1.5"/>
+        <line x1="2" y1="18" x2="11" y2="11" stroke="#e9d5ff" stroke-width="1.5"/>
+        <line x1="60" y1="11" x2="100" y2="11" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="3 2" />
+
+        <line x1="-5" y1="11" x2="-60" y2="11" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+      </g>
+
+
+      <!-- EFFECTOR 6B: BENTHIC NODE "ZHDUN" (ON SEABED FLOOR) -->
+      <g id="holoBenthic" transform="translate(900, 1055)">
+        <polygon points="0,15 20,8 60,8 78,15 58,20 12,20" fill="#120124" fill-opacity="0.8" stroke="#7e22ce" stroke-width="1"/>
+        <line x1="38" y1="10" x2="38" y2="-12" stroke="#c084fc" stroke-width="1.5"/>
+        <circle cx="38" cy="-13" r="3" fill="#00e5ff" />
+
+        <circle cx="38" cy="-13" r="20" fill="none" stroke="#a855f7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+        <circle cx="38" cy="-13" r="36" fill="none" stroke="#a855f7" stroke-width="0.6" stroke-dasharray="4 4" opacity="0.4"/>
+      </g>
+
+    </g>
+
+  </g>
+""")
+
+    # 5. Right-Hand Column: 6 Stacked Technical Cards with Wireframe Schematics in Brackets
+    svg_parts.append(f"""
+  <!-- ============================================================ -->
+  <!-- RIGHT-HAND COLUMN: 6 TECHNICAL CARDS WITH SCHEMATICS         -->
+  <!-- ============================================================ -->
+  <g id="rightColumn" transform="translate(1640, 130)">
+
+    <!-- CARD 1: UOV (ORBITAL EARLY WARNING SATELLITE) -->
+    <g id="cardUOV" transform="translate(0, 0)">
+      <rect x="0" y="0" width="700" height="175" rx="6" fill="#040c1c" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="5" height="175" rx="2" fill="#38bdf8"/>
+
+      <g transform="translate(20, 16)">
+        <rect x="0" y="0" width="60" height="18" rx="3" fill="#0c4a6e"/>
+        <text x="30" y="13" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">1. UOV</text>
+        <text x="70" y="14" fill="#ffffff" font-family="sans-serif" font-size="13.5" font-weight="900" letter-spacing="0.5">{T['c1_title']}</text>
+
+        <text x="0" y="44" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c1_line1']}</text>
+        <text x="0" y="64" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c1_line2']}</text>
+        <text x="0" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c1_line3']}</text>
+
+        <rect x="0" y="104" width="410" height="20" rx="3" fill="#082f49"/>
+        <text x="205" y="118" fill="#7dd3fc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['c1_time']}</text>
+      </g>
+
+      <g transform="translate(470, 18)">
+        <path d="M 0,16 L 0,0 L 16,0" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,0 L 200,0 L 200,16" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 0,124 L 0,140 L 16,140" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,140 L 200,140 L 200,124" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <g transform="translate(100, 70)">
+          <polygon points="-12,-16 12,-16 18,0 12,16 -12,16 -18,0" fill="#032642" stroke="#38bdf8" stroke-width="1.2"/>
+          <circle cx="0" cy="0" r="5" fill="#00e5ff" />
+          <rect x="-70" y="-10" width="52" height="20" fill="#041f3d" stroke="#00e5ff" stroke-width="1"/>
+          <line x1="-52" y1="-10" x2="-52" y2="10" stroke="#38bdf8" stroke-width="0.8"/>
+          <line x1="-35" y1="-10" x2="-35" y2="10" stroke="#38bdf8" stroke-width="0.8"/>
+          <rect x="18" y="-10" width="52" height="20" fill="#041f3d" stroke="#00e5ff" stroke-width="1"/>
+          <line x1="35" y1="-10" x2="35" y2="10" stroke="#38bdf8" stroke-width="0.8"/>
+          <line x1="52" y1="-10" x2="52" y2="10" stroke="#38bdf8" stroke-width="0.8"/>
+          <line x1="-70" y1="0" x2="-80" y2="0" stroke="#00e5ff" stroke-width="1.5"/>
+          <line x1="70" y1="0" x2="80" y2="0" stroke="#00e5ff" stroke-width="1.5"/>
+        </g>
+        <text x="100" y="132" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">LEO ORBITAL BUS • 10 Gbps ISL</text>
+      </g>
+    </g>
+
+
+    <!-- CARD 2: UAV (HIGH-ALTITUDE MALE) -->
+    <g id="cardUAV" transform="translate(0, 190)">
+      <rect x="0" y="0" width="700" height="175" rx="6" fill="#040c1c" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="5" height="175" rx="2" fill="#00e5ff"/>
+
+      <g transform="translate(20, 16)">
+        <rect x="0" y="0" width="60" height="18" rx="3" fill="#075985"/>
+        <text x="30" y="13" fill="#00e5ff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">2. UAV</text>
+        <text x="70" y="14" fill="#ffffff" font-family="sans-serif" font-size="13.5" font-weight="900" letter-spacing="0.5">{T['c2_title']}</text>
+
+        <text x="0" y="44" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c2_line1']}</text>
+        <text x="0" y="64" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c2_line2']}</text>
+        <text x="0" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c2_line3']}</text>
+
+        <rect x="0" y="104" width="410" height="20" rx="3" fill="#03486a"/>
+        <text x="205" y="118" fill="#bae6fd" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['c2_time']}</text>
+      </g>
+
+      <g transform="translate(470, 18)">
+        <path d="M 0,16 L 0,0 L 16,0" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,0 L 200,0 L 200,16" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 0,124 L 0,140 L 16,140" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,140 L 200,140 L 200,124" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <g transform="translate(100, 68)">
+          <polygon points="-80,-4 80,-4 75,3 -75,3" fill="#032642" stroke="#00e5ff" stroke-width="1.2"/>
+          <path d="M 0,-30 C -8,-20 -6,18 0,32 C 6,18 8,-20 0,-30 Z" fill="#041f3d" stroke="#38bdf8" stroke-width="1.2"/>
+          <ellipse cx="0" cy="-22" rx="4" ry="7" fill="#0284c7" stroke="#00e5ff" stroke-width="0.8"/>
+          <line x1="0" y1="28" x2="-22" y2="40" stroke="#00e5ff" stroke-width="1.5"/>
+          <line x1="0" y1="28" x2="22" y2="40" stroke="#00e5ff" stroke-width="1.5"/>
+          <rect x="-35" y="-1" width="12" height="3" rx="1" fill="#ef4444"/>
+          <rect x="23" y="-1" width="12" height="3" rx="1" fill="#ef4444"/>
+        </g>
+        <text x="100" y="132" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">MALE C4ISR • SAR RADOME • AGM-114</text>
+      </g>
+    </g>
+
+
+    <!-- CARD 3: UCV (TACTICAL SWARM MULTIROTOR) -->
+    <g id="cardUCV" transform="translate(0, 380)">
+      <rect x="0" y="0" width="700" height="175" rx="6" fill="#040c1c" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="5" height="175" rx="2" fill="#38bdf8"/>
+
+      <g transform="translate(20, 16)">
+        <rect x="0" y="0" width="60" height="18" rx="3" fill="#0369a1"/>
+        <text x="30" y="13" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">3. UCV</text>
+        <text x="70" y="14" fill="#ffffff" font-family="sans-serif" font-size="13.5" font-weight="900" letter-spacing="0.5">{T['c3_title']}</text>
+
+        <text x="0" y="44" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c3_line1']}</text>
+        <text x="0" y="64" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c3_line2']}</text>
+        <text x="0" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c3_line3']}</text>
+
+        <rect x="0" y="104" width="410" height="20" rx="3" fill="#024164"/>
+        <text x="205" y="118" fill="#7dd3fc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['c3_time']}</text>
+      </g>
+
+      <g transform="translate(470, 18)">
+        <path d="M 0,16 L 0,0 L 16,0" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,0 L 200,0 L 200,16" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 0,124 L 0,140 L 16,140" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,140 L 200,140 L 200,124" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <g transform="translate(100, 68)">
+          <line x1="-36" y1="-22" x2="36" y2="22" stroke="#38bdf8" stroke-width="2"/>
+          <line x1="-36" y1="22" x2="36" y2="-22" stroke="#38bdf8" stroke-width="2"/>
+          <line x1="-42" y1="0" x2="42" y2="0" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="-36" cy="-22" r="14" fill="#00e5ff" fill-opacity="0.15" stroke="#00e5ff" stroke-width="0.8"/>
+          <circle cx="36" cy="22" r="14" fill="#00e5ff" fill-opacity="0.15" stroke="#00e5ff" stroke-width="0.8"/>
+          <circle cx="-36" cy="22" r="14" fill="#00e5ff" fill-opacity="0.15" stroke="#00e5ff" stroke-width="0.8"/>
+          <circle cx="36" cy="-22" r="14" fill="#00e5ff" fill-opacity="0.15" stroke="#00e5ff" stroke-width="0.8"/>
+          <circle cx="-42" cy="0" r="14" fill="#00e5ff" fill-opacity="0.15" stroke="#00e5ff" stroke-width="0.8"/>
+          <circle cx="42" cy="0" r="14" fill="#00e5ff" fill-opacity="0.15" stroke="#00e5ff" stroke-width="0.8"/>
+          <polygon points="-12,-8 12,-8 16,8 -16,8" fill="#021c38" stroke="#ffffff" stroke-width="1.2"/>
+          <circle cx="0" cy="0" r="4" fill="#ef4444"/>
+        </g>
+        <text x="100" y="132" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">OCTO/HEXA PLATFORM • ANTI-FPV MESH</text>
+      </g>
+    </g>
+
+
+    <!-- CARD 4: UGV (LITTORAL COMBAT & EXTRACTOR) -->
+    <g id="cardUGV" transform="translate(0, 570)">
+      <rect x="0" y="0" width="700" height="175" rx="6" fill="#040c1c" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="5" height="175" rx="2" fill="#22c55e"/>
+
+      <g transform="translate(20, 16)">
+        <rect x="0" y="0" width="60" height="18" rx="3" fill="#14532d"/>
+        <text x="30" y="13" fill="#22c55e" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">4. UGV</text>
+        <text x="70" y="14" fill="#ffffff" font-family="sans-serif" font-size="13.5" font-weight="900" letter-spacing="0.5">{T['c4_title']}</text>
+
+        <text x="0" y="44" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c4_line1']}</text>
+        <text x="0" y="64" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c4_line2']}</text>
+        <text x="0" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c4_line3']}</text>
+
+        <rect x="0" y="104" width="410" height="20" rx="3" fill="#0f391b"/>
+        <text x="205" y="118" fill="#86efac" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['c4_time']}</text>
+      </g>
+
+      <g transform="translate(470, 18)">
+        <path d="M 0,16 L 0,0 L 16,0" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,0 L 200,0 L 200,16" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 0,124 L 0,140 L 16,140" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,140 L 200,140 L 200,124" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <g transform="translate(100, 72)">
+          <rect x="-46" y="8" width="92" height="16" rx="6" fill="#052e16" stroke="#22c55e" stroke-width="1.2"/>
+          <circle cx="-32" cy="16" r="5" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+          <circle cx="-16" cy="16" r="5" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+          <circle cx="0" cy="16" r="5" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+          <circle cx="16" cy="16" r="5" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+          <circle cx="32" cy="16" r="5" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+          <polygon points="-36,8 36,8 30,-6 -30,-6" fill="#04200f" stroke="#4ade80" stroke-width="1.2"/>
+          <rect x="-18" y="-24" width="46" height="14" rx="2" fill="#0f391b" stroke="#22c55e" stroke-width="1.2" transform="rotate(-18)"/>
+          <circle cx="24" cy="-24" r="2.5" fill="#ef4444"/>
+          <circle cx="20" cy="-18" r="2.5" fill="#ef4444"/>
+        </g>
+        <text x="100" y="132" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">AMPHIBIOUS CHASSIS • 4x SAM CANISTER</text>
+      </g>
+    </g>
+
+
+    <!-- CARD 5: USV (MAGURA V5 COMBAT TRIMARAN) -->
+    <g id="cardUSV" transform="translate(0, 760)">
+      <rect x="0" y="0" width="700" height="175" rx="6" fill="#040c1c" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="5" height="175" rx="2" fill="#00e5ff"/>
+
+      <g transform="translate(20, 16)">
+        <rect x="0" y="0" width="60" height="18" rx="3" fill="#0369a1"/>
+        <text x="30" y="13" fill="#00e5ff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">5. USV</text>
+        <text x="70" y="14" fill="#ffffff" font-family="sans-serif" font-size="13.5" font-weight="900" letter-spacing="0.5">{T['c5_title']}</text>
+
+        <text x="0" y="44" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c5_line1']}</text>
+        <text x="0" y="64" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c5_line2']}</text>
+        <text x="0" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c5_line3']}</text>
+
+        <rect x="0" y="104" width="410" height="20" rx="3" fill="#083344"/>
+        <text x="205" y="118" fill="#67e8f9" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['c5_time']}</text>
+      </g>
+
+      <g transform="translate(470, 18)">
+        <path d="M 0,16 L 0,0 L 16,0" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,0 L 200,0 L 200,16" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 0,124 L 0,140 L 16,140" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,140 L 200,140 L 200,124" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <g transform="translate(100, 72)">
+          <polygon points="-75,10 -20,3 70,-4 75,5 50,14 -70,14" fill="#02213d" stroke="#00e5ff" stroke-width="1.4" />
+          <polygon points="-70,14 45,14 65,8 -65,8" fill="#00e5ff" fill-opacity="0.2"/>
+          <circle cx="20" cy="0" r="5" fill="#0f172a" stroke="#00e5ff" stroke-width="1"/>
+          <line x1="20" y1="0" x2="60" y2="-6" stroke="#00e5ff" stroke-width="2.5" />
+          <line x1="-15" y1="3" x2="-15" y2="-16" stroke="#e0f2fe" stroke-width="1.2"/>
+          <circle cx="-15" cy="-16" r="4.5" fill="#ffffff" stroke="#38bdf8" stroke-width="0.8"/>
+          <line x1="-75" y1="12" x2="-95" y2="12" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3 2"/>
+        </g>
+        <text x="100" y="132" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">50 KNOTS • 30-MM BUSHMASTER • 15G RAM</text>
+      </g>
+    </g>
+
+
+    <!-- CARD 6: UUV (SUBSEA INTERCEPTOR & BENTHIC NODE) -->
+    <g id="cardUUV" transform="translate(0, 950)">
+      <rect x="0" y="0" width="700" height="175" rx="6" fill="#040c1c" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="5" height="175" rx="2" fill="#c084fc"/>
+
+      <g transform="translate(20, 16)">
+        <rect x="0" y="0" width="60" height="18" rx="3" fill="#581c87"/>
+        <text x="30" y="13" fill="#c084fc" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">6. UUV</text>
+        <text x="70" y="14" fill="#ffffff" font-family="sans-serif" font-size="13.5" font-weight="900" letter-spacing="0.5">{T['c6_title']}</text>
+
+        <text x="0" y="44" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c6_line1']}</text>
+        <text x="0" y="64" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c6_line2']}</text>
+        <text x="0" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">{T['c6_line3']}</text>
+
+        <rect x="0" y="104" width="410" height="20" rx="3" fill="#3b0764"/>
+        <text x="205" y="118" fill="#f0abfc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">{T['c6_time']}</text>
+      </g>
+
+      <g transform="translate(470, 18)">
+        <path d="M 0,16 L 0,0 L 16,0" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,0 L 200,0 L 200,16" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 0,124 L 0,140 L 16,140" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+        <path d="M 184,140 L 200,140 L 200,124" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+        <g transform="translate(100, 70)">
+          <ellipse cx="-15" cy="-8" rx="55" ry="12" fill="#1b0336" stroke="#c084fc" stroke-width="1.3" />
+          <path d="M 28,-14 C 42,-8 42,-2 28,4 Z" fill="#38bdf8" stroke="#00e5ff" stroke-width="0.8"/>
+          <line x1="-70" y1="-18" x2="-55" y2="-8" stroke="#e9d5ff" stroke-width="2"/>
+          <line x1="-70" y1="2" x2="-55" y2="-8" stroke="#e9d5ff" stroke-width="2"/>
+          <polygon points="35,26 50,18 75,18 85,26 70,30 40,30" fill="#2d0b4e" stroke="#a855f7" stroke-width="1"/>
+          <line x1="60" y1="20" x2="60" y2="4" stroke="#00e5ff" stroke-width="1.2"/>
+          <circle cx="60" cy="3" r="2.5" fill="#00e5ff"/>
+        </g>
+        <text x="100" y="132" fill="#64748b" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle">SOFAR GLIDER • MICRO-TORPEDO • BENTHIC NODE</text>
+      </g>
+    </g>
+
+  </g>
+""")
+
+    # 6. High-Precision Tactical Leader Lines Linking Models to Right Cards
+    svg_parts.append("""
+  <!-- ============================================================ -->
+  <!-- HIGH-PRECISION ANGLED LEADER LINES (MODEL ➔ TECH CARD)        -->
+  <!-- ============================================================ -->
+  <g id="angledLeaderLines">
+    <!-- LEADER 1: UOV Satellite (Space: 985, 220) -> Card 1 (1640, 215) -->
+    <polyline points="985,220 1380,218 1640,215" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <circle cx="985" cy="220" r="3.5" fill="#38bdf8"/>
+    <circle cx="1640" cy="215" r="3.5" fill="#38bdf8"/>
+
+    <!-- LEADER 2: UAV MALE Drone (Air: 750, 368) -> Card 2 (1640, 405) -->
+    <polyline points="750,368 1350,385 1640,405" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <circle cx="750" cy="368" r="3.5" fill="#00e5ff"/>
+    <circle cx="1640" cy="405" r="3.5" fill="#00e5ff"/>
+
+    <!-- LEADER 3: UCV Swarm Hexacopter (Above Convoy: 1025, 481) -> Card 3 (1640, 595) -->
+    <polyline points="1025,481 1400,540 1640,595" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <circle cx="1025" cy="481" r="3.5" fill="#38bdf8"/>
+    <circle cx="1640" cy="595" r="3.5" fill="#38bdf8"/>
+
+    <!-- LEADER 4: UGV Coastal Robot (Island Beach: 605, 605) -> Card 4 (1640, 785) -->
+    <polyline points="605,605 1250,720 1640,785" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <circle cx="605" cy="605" r="3.5" fill="#22c55e"/>
+    <circle cx="1640" cy="785" r="3.5" fill="#22c55e"/>
+
+    <!-- LEADER 5: USV Magura V5 (Surface: 875, 605) -> Card 5 (1640, 975) -->
+    <polyline points="875,605 1380,850 1640,975" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <circle cx="875" cy="605" r="3.5" fill="#00e5ff"/>
+    <circle cx="1640" cy="975" r="3.5" fill="#00e5ff"/>
+
+    <!-- LEADER 6: UUV Subsea Interceptor (Underwater: 935, 956) -> Card 6 (1640, 1165) -->
+    <polyline points="935,956 1380,1080 1640,1165" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <circle cx="935" cy="956" r="3.5" fill="#c084fc"/>
+    <circle cx="1640" cy="1165" r="3.5" fill="#c084fc"/>
+  </g>
+</svg>""")
+
+    full_svg = "".join(svg_parts)
+    # XML verification
+    ET.fromstring(full_svg)
+    return full_svg
+
+def export_all(base_name, lang="en"):
+    work_dir = "/home/hills/Documents/UWS"
+    svg_path = os.path.join(work_dir, f"{base_name}.svg")
+    pdf_path = os.path.join(work_dir, f"{base_name}.pdf")
+    png_path = os.path.join(work_dir, f"{base_name}.png")
+    jpg_path = os.path.join(work_dir, f"{base_name}.jpg")
+
+    svg_content = get_svg_content(lang)
+    with open(svg_path, "w", encoding="utf-8") as f:
+        f.write(svg_content)
+    print(f"Generated SVG: {svg_path}")
+
+    # Export to PDF via LibreOffice headless
+    lo_profile = "file:///home/hills/Documents/UWS/.lo_user"
+    cmd_pdf = [
+        "libreoffice",
+        f"-env:UserInstallation={lo_profile}",
+        "--headless",
+        "--convert-to", "pdf",
+        svg_path,
+        "--outdir", work_dir
+    ]
+    subprocess.run(cmd_pdf, check=True)
+    print(f"Generated PDF: {pdf_path}")
+
+    # Export to high-res PNG (150 DPI)
+    tmp_prefix = os.path.join(work_dir, f"{base_name}_render")
+    cmd_png = [
+        "pdftoppm",
+        "-png",
+        "-r", "150",
+        pdf_path,
+        tmp_prefix
+    ]
+    subprocess.run(cmd_png, check=True)
+    rendered_png = f"{tmp_prefix}-1.png"
+    if os.path.exists(rendered_png):
+        if os.path.exists(png_path):
+            os.remove(png_path)
+        os.rename(rendered_png, png_path)
+        print(f"Generated PNG: {png_path}")
+
+    # Export to JPG (150 DPI)
+    cmd_jpg = [
+        "pdftoppm",
+        "-jpeg",
+        "-r", "150",
+        pdf_path,
+        tmp_prefix
+    ]
+    subprocess.run(cmd_jpg, check=True)
+    rendered_jpg = f"{tmp_prefix}-1.jpg"
+    if os.path.exists(rendered_jpg):
+        if os.path.exists(jpg_path):
+            os.remove(jpg_path)
+        os.rename(rendered_jpg, jpg_path)
+        print(f"Generated JPG: {jpg_path}")
+
+if __name__ == "__main__":
+    print("=== Generating English LinkedIn Edition ===")
+    export_all("hormuz_linkedin_infographic_en", lang="en")
+
+    print("\n=== Generating Ukrainian LinkedIn Edition ===")
+    export_all("hormuz_linkedin_infographic", lang="ua")

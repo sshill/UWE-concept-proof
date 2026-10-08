@@ -1,0 +1,328 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Hardware Abstraction Layer (HAL) Specification: HLD to LLD</title><style>
+body{font-family: Calibri, Arial, sans-serif; line-height: 1.5; font-size: 11pt; color: #111; max-width: 900px; margin: 0 auto; padding: 20px;}
+h1{font-size: 20pt; color: #003366; margin-top: 24px; margin-bottom: 8px;}
+h2{font-size: 16pt; color: #003366; border-bottom: 1px solid #ccc; padding-bottom: 4px; margin-top: 20px; margin-bottom: 8px;}
+h3{font-size: 13pt; color: #222; margin-top: 16px; margin-bottom: 6px;}
+h4{font-size: 11pt; color: #333; margin-top: 12px; margin-bottom: 4px; font-weight: bold;}
+h5{font-size: 11pt; color: #444; margin-top: 10px; margin-bottom: 4px; font-weight: bold;}
+blockquote{border-left: 4px solid #0066cc; margin: 10px 0; padding: 10px 15px; background: #f4f8fa; color: #333;}
+pre{background: #f0f0f0; padding: 10px; border-radius: 4px; font-family: Consolas, monospace; font-size: 9.5pt; overflow-x: auto; white-space: pre-wrap; line-height: 1.2;}
+a{color: #0066cc; text-decoration: underline;}
+hr{border: 0; border-top: 1px solid #ddd; margin: 20px 0;}
+table{border-collapse: collapse; width: 100%; margin: 15px 0;}
+th, td{border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 10pt; vertical-align: top;}
+th{background-color: #f2f5f8; color: #003366; font-weight: bold;}
+code{font-family: Consolas, monospace; background: #f0f0f0; padding: 2px 4px; border-radius: 3px; font-size: 10pt;}
+ul{margin: 8px 0 8px 20px; padding: 0;}
+ol{margin: 8px 0 8px 20px; padding: 0;}
+li{margin-bottom: 4px;}
+p{margin: 8px 0;}
+</style></head><body>
+<h1>Hardware Abstraction Layer (HAL) Specification: HLD to LLD</h1>
+<h3>The Cyber-Physical Interface Architecture of the Unmanned Warfare Engine (UWE)</h3>
+<hr>
+<h2>1. Context & Architectural Framing: HAL as the Bridge</h2>
+<p>In the <strong>Unmanned Warfare Engine (UWE)</strong>, the <strong>Hardware Abstraction Layer (HAL)</strong> is the definitive boundary separating the <em>physical universe of actuators, soils, and fluids</em> from the <em>logical universe of algorithmic kill webs and autonomous swarm planning</em>.</p>
+<p>When we stratify UWE:</p>
+<ul>
+<li><strong>UWE HLD</strong> establishes the multi-domain namespaces, resilient mesh routing, and feasibility mathematics.</li>
+<li><strong>UWE LLD</strong> executes the six operational combat and sustainment services (Kill Web, EVAC/Power Bank, Tabor/Zhdun, Gateways, Breaching, API-ification).</li>
+<li><strong>The HAL is the physical implementation layer that turns these concepts into code and voltage.</strong></li>
+</ul>
+<p>To understand HAL completely, we must decompose it into:</p>
+<ol>
+<li><strong>HAL as HLD (High-Level Design):</strong> The abstract contracts, interface definitions, and architectural boundaries governing any unmanned platform.</li>
+<li><strong>HAL as LLD (Low-Level Design):</strong> The embedded drivers, protocol buses (CAN-FD, Ethernet, RS-485), power electronics state machines, payload pinouts, bit-level token registers, and direct API mappings powering the six combat services of UWE.</li>
+</ol>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                           THE COMPLETE UWE ARCHITECTURAL STACK                          │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [ UWE HLD ]                                                                             │
+│ • Namespaces (UOV, UAV, UCV, UGV, USV, UUV)                                            │
+│ • Resilient Self-Healing Mesh Topology                                                  │
+│ • Mission Feasibility Function Φ = F(K, L, E, C, T)                                     │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [ UWE LLD: Operational Combat Services ]                                                │
+│ • LLD-1: Kill Web   • LLD-2: Sustainment/Power • LLD-3: Tabor/Zhdun                     │
+│ • LLD-4: Gateways   • LLD-5: Breaching/OWM     • LLD-6: Hardware API-ification          │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ ▲                                                                                     ▲ │
+│ └─────────────────────────────── EQUIPPED ON ─────────────────────────────────────────┘ │
+│                                                                                         │
+│ [ HAL HLD: Abstract Subsystem Contracts ]                                               │
+│ • IKinematicDrive    • IPowerEnergy     • IPayloadAttachment                            │
+│ • ITransceiverPHY    • IContainerState  • ITokenRegistry                                │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│ [ HAL LLD: Concrete Implementation &amp; Drivers ]                                          │
+│ • FOC Motor ESCs     • Bi-directional   • OWM Detonation FSM                            │
+│ • High-G G-Limiter     BMS / V2V Bus    • STANAG 4754 Pinouts                           │
+│ • Deep Sleep Wakeup  • Media PHY Layer  • Bit-packed Token Reg                          │
+└─────────────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+<h2>2. HAL HLD: The Abstract Platform Contracts</h2>
+<p>At the High-Level Design (HLD) stage, the HAL treats any autonomous vehicle—whether an orbital hunter, a tracked mud-crawler, or a benthic submarine—as an <strong>instantiation of six abstract subsystem interfaces</strong>.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                             HAL HLD: THE SIX CORE INTERFACES                            │
+├───────────────────────┬─────────────────────────────────────────────────────────────────┤
+│ INTERFACE CONTRACT    │ ARCHITECTURAL ROLE &amp; ABSTRACTION SCOPE                          │
+├───────────────────────┼─────────────────────────────────────────────────────────────────┤
+│ 1. IKinematicDrive    │ Encapsulates medium propulsion, vectoring, and stability loops. │
+│ 2. IPowerEnergy       │ Encapsulates energy storage, bidirectional flow, and sleep FSM. │
+│ 3. IPayloadAttachment │ Encapsulates detachable mission kits, weapons, and OWM fuzing.  │
+│ 4. ITransceiverPHY    │ Encapsulates physical link hardware (RF, Laser, Fiber, Acoustic)│
+│ 5. IContainerState    │ Encapsulates deployment friction, latches, and ejection triggers│
+│ 6. ITokenRegistry     │ Encapsulates the immutable 6-character physical capability code.│
+└───────────────────────┴─────────────────────────────────────────────────────────────────┘</code></pre>
+<h3>2.1 Interface Definition Schemas (Pseudo-IDL)</h3>
+<h4>1. __<em>CODE</em>TOKEN<em>0</em>__</h4>
+<p>Abstracts fluid/soil interaction from navigation software. The mission autopilot commands acceleration and vectors; the driver translates this into motor RPM, track differential, or fin undulation:</p>
+<pre><code>interface IKinematicDrive {
+    fn set_maneuver_vector(thrust: Vector3, torque: Vector3) -&gt; Result&lt;DriveTelemetry&gt;;
+    fn get_kinematic_limits() -&gt; KinematicBoundaries; // Max G, stall speed, slip ratio
+    fn override_recovery_coefficients(mode: OperationMode); // Recalibrates for OWM / high-G
+}</code></pre>
+<h4>2. __<em>CODE</em>TOKEN<em>0</em>__</h4>
+<p>Abstracts battery chemistry, fuel cell, or ICE telemetry. Provides power budget guarantees and lifecycle state switching:</p>
+<pre><code>interface IPowerEnergy {
+    fn get_energy_reserve() -&gt; EnergyState; // Watt-hours, burnoff mass delta, thermal load
+    fn set_power_state(state: PowerState);  // ACTIVE_MISSION, SLEEP_ZHDUN, V2V_CHARGE_OUT
+    fn configure_bus_voltage(rail_id: RailID, voltage: Volts, current_limit: Amperes);
+}</code></pre>
+<h4>3. __<em>CODE</em>TOKEN<em>0</em>__</h4>
+<p>Abstracts payload lethality, sensors, and sacrificial triggers:</p>
+<pre><code>interface IPayloadAttachment {
+    fn enumerate_payload_modules() -&gt; List&lt;ModuleDescriptor&gt;;
+    fn arm_demolition_train(auth_token: CryptoSignature) -&gt; ArmingStatus;
+    fn trigger_release_or_fire(channel_id: ChannelID) -&gt; ExecutionResult;
+    fn get_recoil_compensation_profile() -&gt; RecoilProfile;
+}</code></pre>
+<h4>4. __<em>CODE</em>TOKEN<em>0</em>__</h4>
+<p>Abstracts the physical transmission medium. The upper network layer passes byte buffers; the PHY driver handles frequency hopping, optical steering, or acoustic pulse forming:</p>
+<pre><code>interface ITransceiverPHY {
+    fn transmit_frame(frame: PhysicalFrame, medium: LinkMedium) -&gt; TxResult;
+    fn get_link_quality_metric(medium: LinkMedium) -&gt; LQM; // RSSI, BER, acoustic SNR
+    fn fallback_to_hardwired(active_spool: SpoolID) -&gt; Bool; // Switch to optical fiber
+}</code></pre>
+<h4>5. __<em>CODE</em>TOKEN<em>0</em>__</h4>
+<p>Abstracts deployment mechanics from the logistics tier (<em>C<em>0 … C</em>4</em>):</p>
+<pre><code>interface IContainerState {
+    fn get_deployment_status() -&gt; DeploymentStatus; // STOWED, EJECTING, SUSTAINED
+    fn trigger_deployment_release(actuator: LatchID) -&gt; ReleaseResult;
+    fn report_container_environment() -&gt; EnvironmentalTelemetry; // Shock, tube pressure
+}</code></pre>
+<h4>6. __<em>CODE</em>TOKEN<em>0</em>__</h4>
+<p>Encapsulates the immutable 6-character dual-read code as a deterministic bit-packed register:</p>
+<pre><code>interface ITokenRegistry {
+    fn read_token() -&gt; UWEPlatformToken; // e.g., &quot;VM-TP-MQ&quot; or &quot;CR-MC-BY&quot;
+    fn match_compatibility(required_profile: FilterMask) -&gt; Bool;
+}</code></pre>
+<hr>
+<h2>3. HAL LLD: Concrete Implementation & Driver Architecture</h2>
+<p>The <strong>Low-Level Design (LLD)</strong> of HAL bridges the abstract interfaces to microcontrollers (STM32, NXP, TI DSP), field-programmable gate arrays (FPGAs), motor inverters, power switches, and physical bus wiring.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                             HAL LLD: SYSTEM BUS &amp; DRIVER TOPOLOGY                       │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│   ┌─────────────────────────────────────────────────────────────────────────────────┐   │
+│   │                          MISSION COMPUTER (EDGE AI / OS)                        │   │
+│   │         [ UWE LLD Combat Microservices (Kill Web, EVAC, Tabor, Breaching) ]     │   │
+│   └────────────────────────────────────────┬────────────────────────────────────────┘   │
+│                                            │ (High-Speed Ethernet 100BASE-T1 / USB 3.0) │
+│                                            ▼                                            │
+│   ┌─────────────────────────────────────────────────────────────────────────────────┐   │
+│   │                      HAL CONTROLLER GATEWAY (MCU / FPGA CORE)                   │   │
+│   │   [ Kinematics Driver ]   [ BMS / Power FSM ]   [ Payload &amp; Detonation FSM ]    │   │
+│   └────────┬───────────────────────┬──────────────────────────┬─────────────────────┘   │
+│            │ (CAN-FD Bus)          │ (PMBus / I2C / SPI)      │ (STANAG 4754 / RS-485)  │
+│            ▼                       ▼                          ▼                         │
+│     [ Motor ESCs &amp; ]         [ Bidirectional ]         [ Modular Weapon / ]             │
+│     [ Actuator Servos ]      [ Power Rail BMS]         [ Sensor Payloads  ]             │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+<h3>3.1 Kinematics & Propulsion Driver Architecture (HAL LLD)</h3>
+<ol>
+<li><strong>Field-Oriented Control (FOC) Inverter Interface:</strong></li>
+</ol>
+<ul>
+<ul>
+<li><strong>Protocol:</strong> CAN-FD at 5 Mbps (UAVCAN / Cyphal v1.0 standard).</li>
+<li><strong>Control Frequency:</strong> 10 kHz current loop, 1 kHz velocity loop, 400 Hz attitude update.</li>
+<li><strong>G-Limiter Dynamic Saturation:</strong> In normal flight/transit, acceleration commands are clamped to vehicle structural margins (<em>n_{limit} = +4.0G / -2.0G</em>).</li>
+<li><strong>OWM Mode Recalibration:</strong> Upon receipt of the One-Way Mission runtime decorator, the driver disables thermal conservation envelopes and lifts structural limits to inverter breakdown capacity (<em>n_{limit} → +15.0G</em>), allowing high-speed terminal diving and evasive maneuvers without motor cutoff.</li>
+</ul>
+</ul>
+<ol>
+<li><strong>Cross-Domain Kinematic Adapters:</strong></li>
+</ol>
+<ul>
+<ul>
+<li><strong>__<em>CODE</em>TOKEN<em>0<strong><em>:</strong> Translates </em></strong>CODE</em>TOKEN<em>1</em>__ commands into left/right continuous track torque split with active slip-ratio monitoring via wheel hall-effect sensors.</li>
+<li><strong>__<em>CODE</em>TOKEN<em>0</em>__:</strong> Controls bucket deflector angle and impeller RPM with automatic anti-cavitation throttling during Sea State 4 crest slams.</li>
+<li><strong>__<em>CODE</em>TOKEN<em>0</em>__:</strong> Controls travelling wave oscillations along multi-joint servo strings for ribbon-fin mud/sand crawling.</li>
+</ul>
+</ul>
+<hr>
+<h3>3.2 Power Management & "Zhdun" Deep Sleep FSM (HAL LLD)</h3>
+<p>To power the <strong>LLD-2 (Mobile Power Bank)</strong> and <strong>LLD-3 (Zhdun / Sleeper Mode)</strong> services, the power HAL features a specialized dual-mode power electronics architecture:</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                         HAL LLD: FINITE STATE MACHINE (FSM) OF POWER                    │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│  [ POWER_BOOT ]                                                                         │
+│        │                                                                                │
+│        ▼                                                                                │
+│  [ ACTIVE_MISSION ] ──── (Target Loss / Wait Command) ────► [ ZHDUN_DEEP_SLEEP ]        │
+│        ▲                                                            │                   │
+│        │                                                            │ (Interrupt:       │
+│        │ ◄─── (Tripwire: Acoustic / Seismic / RF / Optical) ────────┘  Seismic/Optical) │
+│        │                                                                                │
+│        ├──── (V2V Docking Handshake) ─────────────────────► [ V2V_POWER_BANK_OUT ]      │
+│        │                                                                                │
+│        └──── (OWM Command + Fuze Arm) ────────────────────► [ OWM_KINETIC_TERMINAL ]    │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<ol>
+<li><strong>The "Zhdun" Deep Sleep Driver:</strong></li>
+</ol>
+<ul>
+<ul>
+<li><strong>Physical State:</strong> All high-power DC/DC converters, primary compute modules, and motor inverters are electrically isolated via solid-state MOSFET switches.</li>
+<li><strong>Quiescent Current Consumption:</strong> <em>< 5.0 mA</em> at 24V bus (<em>< 0.12 W</em>).</li>
+<li><strong>Wakeup Interrupt Controllers:</strong> Ultra-low-power auxiliary DSP listening on dedicated SPI bus to:</li>
+<ul>
+<li><em>Acoustic/Seismic Sensor:</em> Micro-power hydrophone or geophone listening for tank/vessel acoustics.</li>
+<li><em>Optical Tripwire:</em> Ambient light change / micro-power PIR camera detecting target line-of-sight.</li>
+<li><em>Deep-Space / RF Paging:</em> Low-bitrate sub-gigahertz LoRa or orbital transponder wake-up frame.</li>
+</ul>
+<li><strong>Wake-to-Fire Transition Latency:</strong> <em>< 250 ms</em> from sleep interrupt to motor spin-up and targeting activation.</li>
+</ul>
+</ul>
+<ol>
+<li><strong>Bidirectional Vehicle-to-Vehicle (V2V) Energy Transfer Driver:</strong></li>
+</ol>
+<ul>
+<ul>
+<li><strong>Hardware:</strong> Synchronous buck-boost converter with isolated CAN PMBus telemetry.</li>
+<li><strong>Operational Mode:</strong> When a UGV connects to an infantry trench line or lands a quadcopter on its cargo bed, the HAL switches from battery consumption to <strong>Reverse Energy Ingestion / Supply Mode</strong> (delivering up to 48V @ 30A / 1.4 kW continuous), fulfilling the mobile power bank service.</li>
+</ul>
+</ul>
+<hr>
+<h3>3.3 Modular Payload & Demolition Train Architecture (HAL LLD)</h3>
+<p>To prevent proprietary payload silos and ensure safe OWM terminal execution:</p>
+<ol>
+<li><strong>Mechanical/Electrical Standard Connector (STANAG 4754 / UWE Pinout):</strong></li>
+</ol>
+<ul>
+<ul>
+<li><strong>Pinout Spec:</strong></li>
+<ul>
+<li>Pins 1–4: High-Current VBUS (24V–48V, up to 40A continuous).</li>
+<li>Pins 5–6: CAN-FD Differential Data Pair (__<em>CODE</em>TOKEN<em>0<strong><em>, </em></strong>CODE</em>TOKEN<em>1</em>__).</li>
+<li>Pins 7–8: 100BASE-T1 Single-Pair Ethernet (__<em>CODE</em>TOKEN<em>0<strong><em>, </em></strong>CODE</em>TOKEN<em>1</em>__).</li>
+<li>Pin 9: Hardwired Hardware Interlock (__<em>CODE</em>TOKEN<em>0</em>__).</li>
+<li>Pin 10: Dedicated Detonation Pulse Line (__<em>CODE</em>TOKEN<em>0</em>__).</li>
+</ul>
+</ul>
+</ul>
+<ol>
+<li><strong>OWM Detonation FSM & Hardware Interlock:</strong></li>
+</ol>
+<ul>
+<ul>
+<li><strong>Fail-Safe Mechanism:</strong> Software commands alone cannot initiate detonation. Arming requires a hardware high-signal on Pin 9 (pull-wire released upon launch from container/chassis) AND a cryptographic token handshake signed by the mission controller's private key.</li>
+<li><strong>Recoil Telemetry Loop:</strong> When a stabilized gun or ATGM fires from a UGV/UCV, the payload driver sends an advance trigger interrupt (<em>5 ms</em> prior to propellant ignition) to the __<em>CODE</em>TOKEN<em>0</em>__ controller, which pre-stiffens suspension dampers and pulses counter-thrust to maintain optical lock-on.</li>
+</ul>
+</ul>
+<hr>
+<h3>3.4 Cross-Medium Transceiver Gateway Architecture (HAL LLD)</h3>
+<p>To power <strong>LLD-4 (Cross-Medium Gateway Translation)</strong>:</p>
+<ol>
+<li><strong>Multiplexed Physical Link Switcher (PHY Layer Abstraction):</strong></li>
+</ol>
+<ul>
+<ul>
+<li>The transceiver HAL manages an array of hardware interfaces over a unified virtual network driver (__<em>CODE</em>TOKEN<em>0</em>__ network interface).</li>
+<li><strong>Link Quality Monitor (LQM):</strong> Continuously scores channel metrics:</li>
+<ul>
+<li><em>RF / COFDM:</em> Bit Error Rate (BER), RSSI, jamming noise floor.</li>
+<li><em>Optical / Laser:</em> Pointing-error angle, atmospheric scintillation attenuation.</li>
+<li><em>Subsea Acoustic:</em> Multipath reverberation time, sound speed profile (SSP) gradient.</li>
+</ul>
+<li><strong>Automatic Link Fallback Logic:</strong> If the LQM of the primary satellite/RF carrier drops below <em>-12 dB</em> SNR (indicating active jamming), the driver executes a non-blocking hardware interrupt to deploy the secondary medium: spooling out optical fiber (__<em>CODE</em>TOKEN<em>0<strong><em>) or switching to optical laser transceivers (</em></strong>CODE</em>TOKEN<em>1</em>__).</li>
+</ul>
+</ul>
+<hr>
+<h3>3.5 Token Registry: Bit-Packed 48-bit Firmware Register (HAL LLD)</h3>
+<p>To ensure tactical edge processors parse the 6-character matrix in <strong>microsecond CPU cycles</strong>, the HAL encodes the 6 characters into a 48-bit deterministic register:</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                      48-BIT PACKED UWE TOKEN REGISTER ARCHITECTURE                      │
+├──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┤
+│ BYTE 0       │ BYTE 1       │ BYTE 2       │ BYTE 3       │ BYTE 4       │ BYTE 5       │
+│ Char 1 (8b)  │ Char 2 (8b)  │ Char 3 (8b)  │ Char 4 (8b)  │ Char 5 (8b)  │ Char 6 (8b)  │
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Horizon /    │ Container /  │ Powerplant / │ Mission Mode │ Tactical     │ Comms Media /│
+│ Domain (O/A) │ Deploy (P/H) │ Lifecycle(E) │ / Kit (M/T)  │ Doctrine (T) │ Signal (C/S) │
+└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘</code></pre>
+<h4>Microcontroller C-Struct Implementation:</h4>
+<pre><code>typedef union {
+    uint8_t raw_bytes[6];
+    struct {
+        uint8_t medium_horizon;    // &#x27;V&#x27;, &#x27;L&#x27;, &#x27;M&#x27;, &#x27;G&#x27;, &#x27;E&#x27;, &#x27;C&#x27;
+        uint8_t container_tier;    // &#x27;M&#x27;, &#x27;E&#x27;, &#x27;H&#x27;, &#x27;Q&#x27;, &#x27;D&#x27;, &#x27;O&#x27;
+        uint8_t powerplant_type;   // &#x27;T&#x27;, &#x27;S&#x27;, &#x27;C&#x27;, &#x27;F&#x27;, &#x27;B&#x27;, &#x27;I&#x27;
+        uint8_t mission_mode;      // &#x27;P&#x27;, &#x27;L&#x27;, &#x27;A&#x27;, &#x27;S&#x27;, &#x27;R&#x27;, &#x27;O&#x27;
+        uint8_t tactical_doctrine; // &#x27;M&#x27;, &#x27;D&#x27;, &#x27;H&#x27;, &#x27;S&#x27;, &#x27;W&#x27;
+        uint8_t comms_signal;      // &#x27;Q&#x27;, &#x27;D&#x27;, &#x27;L&#x27;, &#x27;K&#x27;, &#x27;P&#x27;, &#x27;F&#x27;
+    } fields;
+    uint64_t bitpacked_word : 48;
+} __attribute__((packed)) UWE_HAL_Token_t;</code></pre>
+<h4>Bitwise Heuristic Filtering in Tactical AI Routers:</h4>
+<p>When an incoming friendly or autonomous node enters an operational cell, the AI router executes a <strong>single bitwise mask instruction</strong>:</p>
+<pre><code>// Verify in 1 CPU cycle if node can act as an optical laser relay (Byte 5 == &#x27;L&#x27;)
+// and has continuous power reserve (Byte 2 == &#x27;S&#x27; or &#x27;C&#x27;)
+#define CAN_ACT_AS_LASER_RELAY(token) \
+    ((token.fields.comms_signal == &#x27;L&#x27;) &amp;&amp; \
+     (token.fields.powerplant_type == &#x27;S&#x27; || token.fields.powerplant_type == &#x27;C&#x27;))</code></pre>
+<p>This eliminates database lookups, JSON serialization, and machine-learning inference latency, preserving onboard GPU compute exclusively for computer-vision targeting.</p>
+<hr>
+<h2>4. End-to-End Traceability: HAL LLD to UWE LLD Combat Services</h2>
+<p>The following matrix documents the exact operational linkage between the Low-Level Design drivers of HAL and the high-level combat services of UWE:</p>
+<pre><code>┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        DIRECT MAPPING: HAL LLD DRIVERS ──► UWE LLD COMBAT SERVICES                     │
+├────────────────────────────────────┬───────────────────────────────────┬───────────────────────────────┤
+│ HAL LLD DRIVER SUBSYSTEM           │ UWE LLD COMBAT SERVICE            │ CONCRETE FRONTLINE ACTION     │
+├────────────────────────────────────┼───────────────────────────────────┼───────────────────────────────┤
+│ 1. Kinematics G-Limiter Overrides  │ • LLD-1: Kill Web Microsecond     │ Unlocks 15G evasive burns and │
+│    &amp; FOC Motor Driver              │   Strike Execution                │ terminal dive velocities.     │
+│                                    │ • LLD-5: Sacrificial Breaching    │ Drives ribbon fins through    │
+│                                    │   &amp; Surf/Mud Traversal            │ mud/kelp without shaft fouling│
+├────────────────────────────────────┼───────────────────────────────────┼───────────────────────────────┤
+│ 2. Bidirectional Power Rail &amp;      │ • LLD-2: Autonomous Energy        │ Reverses power bus to recharge│
+│    V2V Synchronous Converter       │   Sustainment (Power Bank)        │ trench electronics and drones.│
+├────────────────────────────────────┼───────────────────────────────────┼───────────────────────────────┤
+│ 3. Deep Sleep FSM (&lt;5mA) &amp;         │ • LLD-3: Choke-Point Denial &amp;     │ Powers down all emitters;     │
+│    Micro-Power DSP Wakeup Triggers │   &quot;Zhdun&quot; Sleeper Pickets         │ wakes platform in 250ms upon  │
+│                                    │                                   │ seismic target detection.     │
+├────────────────────────────────────┼───────────────────────────────────┼───────────────────────────────┤
+│ 4. Multiplexed Transceiver Switch  │ • LLD-4: Cross-Medium Physical    │ Translates acoustic subsea    │
+│    &amp; Optical/Fiber Fallback Driver │   Gateway Translation             │ frames into satellite uplink; │
+│                                    │                                   │ deploys fiber spool in jamming│
+├────────────────────────────────────┼───────────────────────────────────┼───────────────────────────────┤
+│ 5. STANAG 4754 Pinout, Interlock   │ • LLD-5: Sacrificial Breaching    │ Safely detonates HE charge on │
+│    &amp; Detonation FSM Controller     │   &amp; One-Way Mission (OWM)         │ contact without accidental    │
+│                                    │                                   │ transport stage detonation.   │
+├────────────────────────────────────┼───────────────────────────────────┼───────────────────────────────┤
+│ 6. 48-bit Bit-Packed Token         │ • LLD-6: Industrial Hardware      │ Instantly validates vehicle   │
+│    Firmware Register               │   API-ification &amp; Edge AI Routing │ capabilities in 1 CPU cycle   │
+│                                    │                                   │ without vendor lock-in.       │
+└────────────────────────────────────┴───────────────────────────────────┴───────────────────────────────┘</code></pre>
+<hr>
+<h2>5. Architectural Summary</h2>
+<p>By treating the Hardware Abstraction Layer as a formal systems architecture:</p>
+<ul>
+<li><strong>HAL HLD</strong> guarantees that autonomous software remains completely agnostic of the physical platform shape, vehicle size, or proprietary vendor firmware.</li>
+<li><strong>HAL LLD</strong> guarantees that real-world frontline combat requirements—surviving in mud, operating as a sleeper in acoustic silence, recharging peer drones, and detonating on target at machine speed—are hardcoded directly into motor inverters, power buses, and microsecond firmware registers.</li>
+</ul>
+<p>This synthesis establishes UWE as a battle-tested, production-ready cyber-physical architecture for multi-domain autonomous warfare.</p>
+</body></html>

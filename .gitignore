@@ -1,0 +1,19 @@
+# LibreOffice staging & locks
+.lo_user/
+.~lock.*
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Temporary conversion scratch dumps
+test_*.png
+test_*.pdf
+test_*.svg
+test_right*
+usv_temp_*
+
+# System & Editor artifacts
+.DS_Store
+Thumbs.db

@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#112240"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#172a45"/>
+      <stop offset="100%" stop-color="#0f1e36"/>
+    </linearGradient>
+    <linearGradient id="hostileGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="friendlyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="killzoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <marker id="arrowHostile" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowFriendly" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1600" height="1000" fill="url(#bgGrad)"/>
+  
+  <!-- GRID LINES (Subtle nautical chart) -->
+  <g stroke="#1e3a5f" stroke-width="0.7" stroke-dasharray="4,8" opacity="0.4">
+    <line x1="50" y1="120" x2="1550" y2="120"/>
+    <line x1="50" y1="300" x2="1550" y2="300"/>
+    <line x1="50" y1="500" x2="1550" y2="500"/>
+    <line x1="50" y1="700" x2="1550" y2="700"/>
+    <line x1="300" y1="100" x2="300" y2="950"/>
+    <line x1="600" y1="100" x2="600" y2="950"/>
+    <line x1="900" y1="100" x2="900" y2="950"/>
+    <line x1="1200" y1="100" x2="1200" y2="950"/>
+  </g>
+
+  <!-- ==================== HEADER ==================== -->
+  <rect x="40" y="25" width="1520" height="75" rx="8" fill="#172a45" stroke="#1e4976" stroke-width="1.5"/>
+  <text x="70" y="58" fill="#38bdf8" font-size="13" font-weight="700" letter-spacing="2">NAVAL NEWS TECHNICAL CASE STUDY // TACTICAL ARCHITECTURE</text>
+  <text x="70" y="84" fill="#ffffff" font-size="22" font-weight="800" letter-spacing="0.5">THE PERSIAN GULF 300-SECOND DILEMMA: ASYMMETRIC SWARM AMBUSH &amp; UWE COUNTER-MEASURES</text>
+  
+  <rect x="1270" y="42" width="260" height="42" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+  <text x="1285" y="60" fill="#94a3b8" font-size="10" font-weight="600">THEATER // BOTTLENECK</text>
+  <text x="1285" y="76" fill="#38bdf8" font-size="13" font-weight="700">Strait of Hormuz (2 NM Transit)</text>
+
+  <!-- ==================== LEFT PANEL: SPATIAL TACTICAL GEOMETRY (X: 40 to 980) ==================== -->
+  <rect x="40" y="115" width="940" height="540" rx="8" fill="url(#panelGrad)" stroke="#1e4976" stroke-width="1.5"/>
+  
+  <!-- Panel Title -->
+  <path d="M 40 123 Q 40 115 48 115 L 972 115 Q 980 115 980 123 L 980 150 L 40 150 Z" fill="#1e3a5f"/>
+  <text x="60" y="139" fill="#38bdf8" font-size="14" font-weight="700">1. TACTICAL ENGAGEMENT GEOMETRY // 4.0 NM RADAR-BREAKOUT AMBUSH</text>
+  <text x="780" y="139" fill="#94a3b8" font-size="11" font-weight="500">Range: 7.4 km | Speed: 48 kts | Window: 300s</text>
+
+  <!-- Coastline & Island Coves (Radar Blindzone) -->
+  <path d="M 60 170 Q 140 190 220 175 Q 310 160 380 200 Q 420 225 400 270 Q 370 310 440 330 Q 520 340 500 400 Q 480 440 540 470 L 40 470 Z" fill="#1c2d42" stroke="#334e68" stroke-width="2"/>
+  <text x="90" y="240" fill="#94a3b8" font-size="13" font-weight="700" letter-spacing="1">HOSTILE COASTLINE / ISLAND COVES</text>
+  <text x="90" y="260" fill="#64748b" font-size="11">(Radar Shadow / Thermal Inversion Zone)</text>
+  <text x="90" y="280" fill="#f87171" font-size="11" font-weight="600">38–40 FIAC / OWM Attack Craft Breakout</text>
+
+  <!-- Hostile Swarm Vectors (Red Arrows) -->
+  <g opacity="0.9">
+    <!-- Swarm Cluster 1 -->
+    <path d="M 420 260 L 620 320" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrowHostile)"/>
+    <path d="M 440 280 L 630 345" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrowHostile)"/>
+    <path d="M 410 300 L 610 365" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrowHostile)"/>
+    
+    <!-- Swarm Cluster 2 -->
+    <path d="M 460 340 L 640 400" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrowHostile)"/>
+    <path d="M 480 370 L 650 430" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrowHostile)"/>
+    <path d="M 510 410 L 670 465" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrowHostile)"/>
+
+    <!-- FIAC Hull Icons -->
+    <circle cx="420" cy="260" r="4" fill="#ef4444"/>
+    <circle cx="440" cy="280" r="4" fill="#ef4444"/>
+    <circle cx="410" cy="300" r="4" fill="#ef4444"/>
+    <circle cx="460" cy="340" r="4" fill="#ef4444"/>
+    <circle cx="480" cy="370" r="4" fill="#ef4444"/>
+    <circle cx="510" cy="410" r="4" fill="#ef4444"/>
+    <circle cx="390" cy="280" r="3.5" fill="#f87171"/>
+    <circle cx="430" cy="320" r="3.5" fill="#f87171"/>
+    <circle cx="470" cy="390" r="3.5" fill="#f87171"/>
+    <circle cx="490" cy="430" r="3.5" fill="#f87171"/>
+  </g>
+
+  <!-- KILL-ZONE / SYMPATHETIC DETONATION AREA -->
+  <ellipse cx="640" cy="390" rx="90" ry="120" fill="url(#killzoneGrad)" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <text x="590" y="300" fill="#fbbf24" font-size="11" font-weight="700">KILL-ZONE</text>
+  <text x="560" y="316" fill="#fde68a" font-size="10">Sympathetic Detonation</text>
+  <text x="560" y="330" fill="#fde68a" font-size="10">Blast Multiplier: 1:20 Ratio</text>
+
+  <!-- Chain Detonation Visual Wave -->
+  <circle cx="630" cy="370" r="28" fill="#ef4444" opacity="0.35" filter="url(#glow)"/>
+  <circle cx="630" cy="370" r="14" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="630" cy="370" r="6" fill="#ffffff"/>
+  <text x="645" y="375" fill="#ffffff" font-size="9" font-weight="700">500kg HE Warhead Shockwave</text>
+
+  <!-- INTERCEPTOR USVs AT BATTLE POINTS -->
+  <!-- Interceptor 1 -->
+  <g transform="translate(730, 310)">
+    <rect x="-18" y="-12" width="36" height="24" rx="4" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+    <text x="0" y="4" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">USV-1</text>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3"/>
+    <!-- Gun engagement line -->
+    <line x1="-15" y1="5" x2="-80" y2="45" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="-120" y="30" fill="#38bdf8" font-size="9" font-weight="700">30mm ABM Burst</text>
+  </g>
+
+  <!-- Interceptor 2 -->
+  <g transform="translate(740, 440)">
+    <rect x="-18" y="-12" width="36" height="24" rx="4" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+    <text x="0" y="4" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">USV-2</text>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3"/>
+    <!-- Gun engagement line -->
+    <line x1="-15" y1="-10" x2="-85" y2="-40" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,2"/>
+  </g>
+
+  <!-- Reserve Interceptor USV-3 -->
+  <g transform="translate(805, 375)">
+    <rect x="-15" y="-10" width="30" height="20" rx="3" fill="#0369a1" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2"/>
+    <text x="0" y="4" fill="#bae6fd" font-size="8" font-weight="700" text-anchor="middle">RES-3</text>
+    <text x="0" y="24" fill="#94a3b8" font-size="9" text-anchor="middle">Tactical Reserve</text>
+  </g>
+
+  <!-- Overhead UCV Screen -->
+  <g transform="translate(735, 230)">
+    <polygon points="0,-10 10,10 -10,10" fill="#10b981" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="16" y="2" fill="#6ee7b7" font-size="10" font-weight="700">UCV Screen (x4 Multirotors)</text>
+    <text x="16" y="15" fill="#94a3b8" font-size="9">Altitude: 300m | EO/MWIR BDA</text>
+  </g>
+
+  <!-- 1,200m STANDOFF PERIMETER LINE -->
+  <path d="M 760 180 Q 710 380 770 580" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
+  <text x="770" y="200" fill="#38bdf8" font-size="11" font-weight="700" transform="rotate(78 770 200)">1,200m BATTLE POINTS STANDOFF</text>
+
+  <!-- FRIENDLY CONVOY (Protected Task Group) -->
+  <g transform="translate(880, 370)">
+    <!-- DDG-51 Destroyer -->
+    <rect x="-14" y="-35" width="28" height="70" rx="5" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <text x="0" y="-8" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">DDG</text>
+    <text x="0" y="5" fill="#94a3b8" font-size="7" font-weight="700" text-anchor="middle">AEGIS</text>
+    <text x="0" y="52" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">$2B Destroyer</text>
+    <text x="0" y="66" fill="#64748b" font-size="9" text-anchor="middle">Point-Defense Exh: 180s</text>
+
+    <!-- Tanker 1 -->
+    <rect x="40" y="-70" width="32" height="60" rx="3" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+    <text x="56" y="-35" fill="#94a3b8" font-size="8" font-weight="600" text-anchor="middle">VLCC 1</text>
+
+    <!-- Tanker 2 -->
+    <rect x="40" y="20" width="32" height="60" rx="3" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+    <text x="56" y="55" fill="#94a3b8" font-size="8" font-weight="600" text-anchor="middle">VLCC 2</text>
+  </g>
+
+  <!-- Distance Measurement Bracket -->
+  <line x1="740" y1="520" x2="880" y2="520" stroke="#f59e0b" stroke-width="1.5" marker-start="url(#arrowGold)" marker-end="url(#arrowGold)"/>
+  <text x="810" y="513" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">1,200 m (Outside Frag Radius)</text>
+
+  <!-- ==================== RIGHT PANEL: METRIC / COMPARISON MATRIX (X: 1000 to 1560) ==================== -->
+  <rect x="1000" y="115" width="560" height="540" rx="8" fill="url(#panelGrad)" stroke="#1e4976" stroke-width="1.5"/>
+  
+  <path d="M 1000 123 Q 1000 115 1008 115 L 1552 115 Q 1560 115 1560 123 L 1560 150 L 1000 150 Z" fill="#1e3a5f"/>
+  <text x="1020" y="139" fill="#38bdf8" font-size="14" font-weight="700">2. DOCTRINAL PARADOX // CONVENTIONAL VS UWE COUNTER-SWARM</text>
+
+  <!-- Comparison Card 1: Conventional Response (Red) -->
+  <rect x="1020" y="165" width="520" height="150" rx="6" fill="#1e1e2d" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="1035" y="190" fill="#f87171" font-size="12" font-weight="800">LEGACY DEFENSE: CONVENTIONAL DOCTRINAL FAILURE</text>
+  
+  <text x="1035" y="212" fill="#ffffff" font-size="11" font-weight="700">• Strategic Air (B-1B / Lancer Fallacy):</text>
+  <text x="1035" y="228" fill="#94a3b8" font-size="10.5">Scramble transit from Al Udeid / Diego Garcia takes 25–35 min. Ambush ends in 5 min.</text>
+  
+  <text x="1035" y="250" fill="#ffffff" font-size="11" font-weight="700">• Shipboard Point Defense Saturation:</text>
+  <text x="1035" y="266" fill="#94a3b8" font-size="10.5">5-inch gun max 16 rpm (1 target/min). Phalanx CIWS dual-mounts empty ammo in 20s.</text>
+  
+  <text x="1035" y="288" fill="#ffffff" font-size="11" font-weight="700">• Cost Inversion:</text>
+  <text x="1035" y="302" fill="#ef4444" font-size="10.5" font-weight="600">Firing $2M–$4M ESSM/SM-2 against $50k craft exhausts magazines in 180s.</text>
+
+  <!-- Comparison Card 2: UWE Edge Swarm Defense (Cyan/Emerald) -->
+  <rect x="1020" y="330" width="520" height="185" rx="6" fill="#0f253e" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="1035" y="355" fill="#38bdf8" font-size="12" font-weight="800">UWE SOLUTION: IN-SITU EDGE CYBER-PHYSICAL SHIELD</text>
+  
+  <text x="1035" y="377" fill="#ffffff" font-size="11" font-weight="700">• 1:20 Kinetic Exchange Ratio:</text>
+  <text x="1035" y="393" fill="#bae6fd" font-size="10.5">Two 30mm Bushmaster USVs fire 435 ABM rounds; neutralize 38 hostile hulls in 180s.</text>
+  
+  <text x="1035" y="415" fill="#ffffff" font-size="11" font-weight="700">• Sympathetic Detonation Weaponization:</text>
+  <text x="1035" y="431" fill="#bae6fd" font-size="10.5">Airburst penetrations ignite 500kg RDX warheads; shockwaves swamp adjacent wingmen.</text>
+  
+  <text x="1035" y="453" fill="#ffffff" font-size="11" font-weight="700">• Zero Acoustic/Shock Damage to Convoy:</text>
+  <text x="1035" y="469" fill="#bae6fd" font-size="10.5">Engagement resolved at 1,200m standoff—far outside 250m blast / 600m frag limits.</text>
+
+  <text x="1035" y="492" fill="#ffffff" font-size="11" font-weight="700">• Instant Reset for Wave 2 (Cycle N+1):</text>
+  <text x="1035" y="506" fill="#34d399" font-size="10.5" font-weight="600">Reserve USV steps into screen; battle logged to mesh ledger before alert reaches HQ.</text>
+
+  <!-- Callout Stats Banner -->
+  <g transform="translate(1020, 530)">
+    <rect x="0" y="0" width="165" height="110" rx="5" fill="#172a45" stroke="#1e4976" stroke-width="1"/>
+    <text x="82" y="30" fill="#f87171" font-size="24" font-weight="800" text-anchor="middle">300 SEC</text>
+    <text x="82" y="50" fill="#94a3b8" font-size="10" font-weight="700" text-anchor="middle">TOTAL WINDOW</text>
+    <text x="82" y="72" fill="#cbd5e1" font-size="9" text-anchor="middle">Breakout to impact</text>
+    <text x="82" y="88" fill="#64748b" font-size="8.5" text-anchor="middle">at 48 knots (4 NM)</text>
+
+    <rect x="178" y="0" width="165" height="110" rx="5" fill="#172a45" stroke="#1e4976" stroke-width="1"/>
+    <text x="260" y="30" fill="#38bdf8" font-size="24" font-weight="800" text-anchor="middle">1 : 20</text>
+    <text x="260" y="50" fill="#94a3b8" font-size="10" font-weight="700" text-anchor="middle">EXCHANGE RATIO</text>
+    <text x="260" y="72" fill="#cbd5e1" font-size="9" text-anchor="middle">1 USV kills 20 FIAC</text>
+    <text x="260" y="88" fill="#38bdf8" font-size="8.5" text-anchor="middle">via 30mm Airburst</text>
+
+    <rect x="355" y="0" width="165" height="110" rx="5" fill="#172a45" stroke="#1e4976" stroke-width="1"/>
+    <text x="437" y="30" fill="#34d399" font-size="24" font-weight="800" text-anchor="middle">1,200 M</text>
+    <text x="437" y="50" fill="#94a3b8" font-size="10" font-weight="700" text-anchor="middle">SAFE STANDOFF</text>
+    <text x="437" y="72" fill="#cbd5e1" font-size="9" text-anchor="middle">Guaranteed zero</text>
+    <text x="437" y="88" fill="#34d399" font-size="8.5" text-anchor="middle">damage to hull plating</text>
+  </g>
+
+  <!-- ==================== BOTTOM PANEL: 6-PHASE OODA TIMELINE (X: 40 to 1560) ==================== -->
+  <rect x="40" y="675" width="1520" height="295" rx="8" fill="url(#panelGrad)" stroke="#1e4976" stroke-width="1.5"/>
+  
+  <path d="M 40 683 Q 40 675 48 675 L 1552 675 Q 1560 675 1560 683 L 1560 708 L 40 708 Z" fill="#1e3a5f"/>
+  <text x="60" y="698" fill="#38bdf8" font-size="14" font-weight="700">3. UWE 6-PHASE AUTONOMOUS COUNTER-SWARM EXECUTION SEQUENCE // SECOND-BY-SECOND OODA LOOP</text>
+
+  <!-- 6 Phase Cards -->
+  <!-- Phase 1 -->
+  <g transform="translate(60, 725)">
+    <rect x="0" y="0" width="235" height="230" rx="6" fill="#112240" stroke="#1e4976" stroke-width="1.2"/>
+    <rect x="0" y="0" width="235" height="30" rx="6" fill="#172a45"/>
+    <text x="12" y="20" fill="#38bdf8" font-size="11" font-weight="800">PHASE 1 // T+00–30s</text>
+    <text x="12" y="50" fill="#ffffff" font-size="12" font-weight="700">Multi-Modal Detection</text>
+    <text x="12" y="75" fill="#94a3b8" font-size="10.5">• Forward USV pickets detect radar &amp; IR breakout surge</text>
+    <text x="12" y="110" fill="#94a3b8" font-size="10.5">• Edge-AI models filter thermal inversions &amp; water glint</text>
+    <text x="12" y="145" fill="#94a3b8" font-size="10.5">• Rejects false-positive dhows; classifies 38 military hulls</text>
+    <text x="12" y="180" fill="#38bdf8" font-size="10" font-weight="600">Latency: &lt;50ms Edge Vision</text>
+  </g>
+
+  <!-- Phase 2 -->
+  <g transform="translate(310, 725)">
+    <rect x="0" y="0" width="235" height="230" rx="6" fill="#112240" stroke="#1e4976" stroke-width="1.2"/>
+    <rect x="0" y="0" width="235" height="30" rx="6" fill="#172a45"/>
+    <text x="12" y="20" fill="#38bdf8" font-size="11" font-weight="800">PHASE 2 // T+30–75s</text>
+    <text x="12" y="50" fill="#ffffff" font-size="12" font-weight="700">Target Allocation</text>
+    <text x="12" y="75" fill="#94a3b8" font-size="10.5">• Computes CPA &amp; Time-to-Impact across 38 vectors</text>
+    <text x="12" y="110" fill="#94a3b8" font-size="10.5">• Dynamic threat weighting: collision vectors = Wmax</text>
+    <text x="12" y="145" fill="#94a3b8" font-size="10.5">• Solves real-time bipartite matching for firing sectors</text>
+    <text x="12" y="180" fill="#38bdf8" font-size="10" font-weight="600">Zero Voice Radio Dependency</text>
+  </g>
+
+  <!-- Phase 3 -->
+  <g transform="translate(560, 725)">
+    <rect x="0" y="0" width="235" height="230" rx="6" fill="#112240" stroke="#1e4976" stroke-width="1.2"/>
+    <rect x="0" y="0" width="235" height="30" rx="6" fill="#172a45"/>
+    <text x="12" y="20" fill="#38bdf8" font-size="11" font-weight="800">PHASE 3 // T+75–130s</text>
+    <text x="12" y="50" fill="#ffffff" font-size="12" font-weight="700">Strike Sizing &amp; Reserve</text>
+    <text x="12" y="75" fill="#94a3b8" font-size="10.5">• Allocates 2 forward USVs (800 rd capacity vs 450 need)</text>
+    <text x="12" y="110" fill="#94a3b8" font-size="10.5">• Strict reserve rule: 1 USV held 800m rear for leakers</text>
+    <text x="12" y="145" fill="#94a3b8" font-size="10.5">• 4 UCV aerial multirotors launched for overhead paint</text>
+    <text x="12" y="180" fill="#38bdf8" font-size="10" font-weight="600">Ammo Budget Pre-Calculated</text>
+  </g>
+
+  <!-- Phase 4 -->
+  <g transform="translate(810, 725)">
+    <rect x="0" y="0" width="235" height="230" rx="6" fill="#112240" stroke="#1e4976" stroke-width="1.2"/>
+    <rect x="0" y="0" width="235" height="30" rx="6" fill="#172a45"/>
+    <text x="12" y="20" fill="#38bdf8" font-size="11" font-weight="800">PHASE 4 // T+130–210s</text>
+    <text x="12" y="50" fill="#ffffff" font-size="12" font-weight="700">Sprint to Battle Points</text>
+    <text x="12" y="75" fill="#94a3b8" font-size="10.5">• USVs sprint at 48–52 kts via tunnel waterjets (P: J)</text>
+    <text x="12" y="110" fill="#94a3b8" font-size="10.5">• Lateral geometry sprint avoids inefficient tail-chase</text>
+    <text x="12" y="145" fill="#94a3b8" font-size="10.5">• Locks 1,200m standoff crossfire perimeter at gates</text>
+    <text x="12" y="180" fill="#38bdf8" font-size="10" font-weight="600">Proportional Navigation</text>
+  </g>
+
+  <!-- Phase 5 -->
+  <g transform="translate(1060, 725)">
+    <rect x="0" y="0" width="235" height="230" rx="6" fill="#112240" stroke="#1e4976" stroke-width="1.2"/>
+    <rect x="0" y="0" width="235" height="30" rx="6" fill="#172a45"/>
+    <text x="12" y="20" fill="#f87171" font-size="11" font-weight="800">PHASE 5 // T+210–290s</text>
+    <text x="12" y="50" fill="#ffffff" font-size="12" font-weight="700">Kinetic Chain Detonation</text>
+    <text x="12" y="75" fill="#94a3b8" font-size="10.5">• 30mm Mk44 fires 5-to-7 round airburst bursts</text>
+    <text x="12" y="110" fill="#94a3b8" font-size="10.5">• Hits 500kg bow warheads; high-order blast propagation</text>
+    <text x="12" y="145" fill="#94a3b8" font-size="10.5">• Swamps adjacent wingmen; 38 targets neutralized</text>
+    <text x="12" y="180" fill="#f87171" font-size="10" font-weight="600">1:20 Defensive Multiplier</text>
+  </g>
+
+  <!-- Phase 6 -->
+  <g transform="translate(1310, 725)">
+    <rect x="0" y="0" width="230" height="230" rx="6" fill="#112240" stroke="#1e4976" stroke-width="1.2"/>
+    <rect x="0" y="0" width="230" height="30" rx="6" fill="#172a45"/>
+    <text x="12" y="20" fill="#34d399" font-size="11" font-weight="800">PHASE 6 // T+290–360s</text>
+    <text x="12" y="50" fill="#ffffff" font-size="12" font-weight="700">BDA &amp; Reset Cycle N+1</text>
+    <text x="12" y="75" fill="#94a3b8" font-size="10.5">• Overhead UCVs confirm zero surface radar contacts</text>
+    <text x="12" y="110" fill="#94a3b8" font-size="10.5">• Logs ammo expenditure &amp; telemetry to mesh ledger</text>
+    <text x="12" y="145" fill="#94a3b8" font-size="10.5">• Reserve USV steps up; screen fully reset in 50s</text>
+    <text x="12" y="180" fill="#34d399" font-size="10" font-weight="600">Mesh State Synchronized</text>
+  </g>
+
+</svg>

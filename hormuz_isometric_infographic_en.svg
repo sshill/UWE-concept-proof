@@ -1,0 +1,1050 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1600" width="2400" height="1600">
+  <defs>
+    <!-- Master Background -->
+    <linearGradient id="bgMaster" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02050e"/>
+      <stop offset="50%" stop-color="#040816"/>
+      <stop offset="100%" stop-color="#010307"/>
+    </linearGradient>
+
+    <!-- Space: Cyan to Cosmic Pitch Black -->
+    <linearGradient id="spaceGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#025282"/>
+      <stop offset="25%" stop-color="#04274f"/>
+      <stop offset="60%" stop-color="#030d22"/>
+      <stop offset="100%" stop-color="#010207"/>
+    </linearGradient>
+
+    <!-- Air: Sharp Step from Marine Blue to Bright Aero Cyan -->
+    <linearGradient id="airGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#023b63"/>
+      <stop offset="12%" stop-color="#02568c"/>
+      <stop offset="40%" stop-color="#0284c7"/>
+      <stop offset="75%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#7dd3fc"/>
+    </linearGradient>
+
+    <!-- Land: Rich Green Littoral Coastline -->
+    <linearGradient id="landTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="40%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <linearGradient id="landCliffGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="50%" stop-color="#0d3b1e"/>
+      <stop offset="100%" stop-color="#041a0c"/>
+    </linearGradient>
+
+    <!-- Water Surface: Marine Deep Blue to Cobalt Gradient -->
+    <linearGradient id="waterSurfaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02213d"/>
+      <stop offset="35%" stop-color="#034375"/>
+      <stop offset="75%" stop-color="#026aa7"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="waterSlabSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#024570"/>
+      <stop offset="50%" stop-color="#0f214e"/>
+      <stop offset="100%" stop-color="#2b0a50"/>
+    </linearGradient>
+
+    <!-- Depth (Subsea): Violet / Deep Purple Gradient -->
+    <linearGradient id="depthVioletGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d0b4e"/>
+      <stop offset="25%" stop-color="#3b0764"/>
+      <stop offset="60%" stop-color="#250346"/>
+      <stop offset="100%" stop-color="#110122"/>
+    </linearGradient>
+    <linearGradient id="seabedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d0119"/>
+      <stop offset="50%" stop-color="#200436"/>
+      <stop offset="100%" stop-color="#0f011d"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowAmber" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowRed" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowPurple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="mCyan" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+      <polygon points="0 1, 9 5, 0 9, 2 5" fill="#00e5ff"/>
+    </marker>
+    <marker id="mGreen" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+      <polygon points="0 1, 9 5, 0 9, 2 5" fill="#22c55e"/>
+    </marker>
+    <marker id="mAmber" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+      <polygon points="0 1, 9 5, 0 9, 2 5" fill="#f59e0b"/>
+    </marker>
+    <marker id="mRed" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+      <polygon points="0 1, 9 5, 0 9, 2 5" fill="#ef4444"/>
+    </marker>
+    <marker id="mPurple" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+      <polygon points="0 1, 9 5, 0 9, 2 5" fill="#c084fc"/>
+    </marker>
+  </defs>
+
+  <!-- Master Canvas Background -->
+  <rect x="0" y="0" width="2400" height="1600" fill="url(#bgMaster)"/>
+
+  <!-- HEADER SECTION -->
+  <g id="headerBanner" transform="translate(60, 25)">
+    <rect x="0" y="0" width="1780" height="92" rx="10" fill="#070f24" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="6" height="92" rx="3" fill="#00e5ff"/>
+    
+    <text x="25" y="36" fill="#f8fafc" font-family="'Inter', 'Segoe UI', 'Ubuntu', sans-serif" font-size="24" font-weight="900" letter-spacing="1">UWE: MULTI-DOMAIN MARITIME CORRIDOR DEFENSE (STRAIT OF HORMUZ — 300-SECOND DILEMMA)</text>
+    <text x="25" y="66" fill="#94a3b8" font-family="'Inter', 'Segoe UI', 'Ubuntu', sans-serif" font-size="14.5" font-weight="500">
+      Synchronized Multi-Domain Cyber-Physical Defense Fabric (DDG Destroyer + 2 VLCC Tankers) Against Mass Asymmetric Attack
+    </text>
+
+    <!-- Key Metrics Badges in Header -->
+    <g transform="translate(1330, 16)">
+      <rect x="0" y="0" width="135" height="60" rx="6" fill="#0b1329" stroke="#38bdf8" stroke-width="1.3"/>
+      <text x="67" y="24" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">TIME BUDGET</text>
+      <text x="67" y="48" fill="#f8fafc" font-family="sans-serif" font-size="19" font-weight="900" text-anchor="middle">296 SEC</text>
+    </g>
+    <g transform="translate(1480, 16)">
+      <rect x="0" y="0" width="135" height="60" rx="6" fill="#0b1329" stroke="#f59e0b" stroke-width="1.3"/>
+      <text x="67" y="24" fill="#f59e0b" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">HOSTILE INFLUX</text>
+      <text x="67" y="48" fill="#f8fafc" font-family="sans-serif" font-size="19" font-weight="900" text-anchor="middle">40+ TARGETS</text>
+    </g>
+    <g transform="translate(1630, 16)">
+      <rect x="0" y="0" width="135" height="60" rx="6" fill="#0b1329" stroke="#22c55e" stroke-width="1.3"/>
+      <text x="67" y="24" fill="#22c55e" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">CONVOY LOSSES</text>
+      <text x="67" y="48" fill="#4ade80" font-family="sans-serif" font-size="19" font-weight="900" text-anchor="middle">0% (INTACT)</text>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ISOMETRIC ENVIRONMENTAL THEATER                              -->
+  <!-- ============================================================ -->
+  <g id="isometricTheater">
+
+    <!-- 1. SPACE DOMAIN (SPACE: GRADIENT CYAN TO PITCH BLACK) -->
+    <g id="envSpace">
+      <polygon points="60,135 1840,135 1840,375 60,375" fill="url(#spaceGrad)" opacity="0.95"/>
+      
+      <!-- Stars & Nebula Specks -->
+      <circle cx="150" cy="175" r="1.5" fill="#ffffff" opacity="0.8"/>
+      <circle cx="280" cy="215" r="1.0" fill="#93c5fd" opacity="0.7"/>
+      <circle cx="430" cy="155" r="2.0" fill="#ffffff" opacity="0.9"/>
+      <circle cx="620" cy="235" r="1.2" fill="#bae6fd" opacity="0.6"/>
+      <circle cx="850" cy="165" r="1.8" fill="#ffffff" opacity="0.8"/>
+      <circle cx="1040" cy="205" r="1.2" fill="#7dd3fc" opacity="0.7"/>
+      <circle cx="1280" cy="160" r="1.5" fill="#ffffff" opacity="0.85"/>
+      <circle cx="1510" cy="225" r="1.0" fill="#bae6fd" opacity="0.6"/>
+      <circle cx="1720" cy="170" r="2.2" fill="#ffffff" opacity="0.95"/>
+
+      <!-- Orbital Inclination Rings & Trajectory -->
+      <path d="M 120,270 Q 950,140 1780,230" fill="none" stroke="#00e5ff" stroke-width="1.8" stroke-dasharray="8 6" opacity="0.55"/>
+      <path d="M 200,310 Q 1000,180 1820,280" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/>
+      
+      <!-- Space Stratum Label Badge -->
+      <rect x="80" y="150" width="310" height="26" rx="4" fill="#030a1c" stroke="#0284c7" stroke-width="1.2" opacity="0.9"/>
+      <text x="95" y="168" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="700">SPACE DOMAIN: VLEO / LEO ORBITS (350–500 KM)</text>
+    </g>
+
+
+    <!-- 2. AIR DOMAIN (AIR: SHARP STEP FROM DEEP BLUE TO AERO CYAN) -->
+    <g id="envAir">
+      <polygon points="60,375 1840,375 1840,730 60,730" fill="url(#airGrad)" opacity="0.88"/>
+      
+      <!-- Atmospheric Strata Division Lines -->
+      <line x1="60" y1="465" x2="1840" y2="465" stroke="#bae6fd" stroke-width="0.8" stroke-dasharray="10 8" opacity="0.35"/>
+      <line x1="60" y1="580" x2="1840" y2="580" stroke="#e0f2fe" stroke-width="0.8" stroke-dasharray="12 6" opacity="0.25"/>
+      
+      <!-- Altitude scale indicators -->
+      <rect x="80" y="390" width="240" height="24" rx="4" fill="#032642" stroke="#38bdf8" stroke-width="0.8" opacity="0.85"/>
+      <text x="95" y="406" fill="#e0f2fe" font-family="sans-serif" font-size="11" font-weight="700">STRATOSPHERE (UAV MALE: FL350–FL450)</text>
+
+      <rect x="80" y="595" width="240" height="24" rx="4" fill="#033e6b" stroke="#7dd3fc" stroke-width="0.8" opacity="0.85"/>
+      <text x="95" y="611" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="700">TACTICAL AIR (UCV / SHORAD: 50–500 M)</text>
+
+      <!-- Atmospheric Wind & Cloud Streaks -->
+      <path d="M 350,435 Q 600,425 850,440 T 1350,430" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.25"/>
+      <path d="M 900,530 Q 1200,520 1500,535" fill="none" stroke="#ffffff" stroke-width="1.0" opacity="0.2"/>
+    </g>
+
+
+    <!-- 3. SUBSEA DEPTH (VIOLET / PURPLE GRADIENT & SEABED) -->
+    <g id="envDepth">
+      <!-- Cutaway Face from Surface down to seabed -->
+      <polygon points="60,940 1840,940 1840,1475 60,1475" fill="url(#depthVioletGrad)"/>
+
+      <!-- Benthic Seabed Topography -->
+      <path d="M 60,1385 Q 250,1345 480,1375 T 900,1355 T 1350,1385 T 1700,1345 L 1840,1365 L 1840,1475 L 60,1475 Z" fill="url(#seabedGrad)" stroke="#4a044e" stroke-width="1"/>
+
+      <!-- Bathymetric Depth Isolines -->
+      <path d="M 60,1050 Q 500,1030 1000,1060 T 1840,1040" fill="none" stroke="#7e22ce" stroke-width="1.2" stroke-dasharray="6 6" opacity="0.5"/>
+      <text x="80" y="1045" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="600">-25 m (Continental Shelf)</text>
+
+      <path d="M 60,1160 Q 600,1140 1200,1170 T 1840,1150" fill="none" stroke="#9333ea" stroke-width="1.2" stroke-dasharray="6 6" opacity="0.5"/>
+      <text x="80" y="1155" fill="#d8b4fe" font-family="sans-serif" font-size="11" font-weight="600">-50 m (SOFAR Acoustic Channel Axis)</text>
+
+      <path d="M 60,1275 Q 550,1255 1100,1285 T 1840,1265" fill="none" stroke="#a855f7" stroke-width="1.2" stroke-dasharray="6 6" opacity="0.5"/>
+      <text x="80" y="1270" fill="#e9d5ff" font-family="sans-serif" font-size="11" font-weight="600">-80 m (Navigation Fairway / Benthic Nodes)</text>
+
+      <!-- Acoustic SOFAR Propagation Waves in Violet Depth -->
+      <path d="M 520,1220 Q 750,1170 1000,1220 T 1450,1220" fill="none" stroke="#c084fc" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
+      <path d="M 520,1240 Q 750,1190 1000,1240 T 1450,1240" fill="none" stroke="#c084fc" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.4"/>
+      
+      <!-- Depth Domain Label -->
+      <rect x="80" y="960" width="310" height="26" rx="4" fill="#1e0538" stroke="#a855f7" stroke-width="1.2" opacity="0.9"/>
+      <text x="95" y="978" fill="#f0abfc" font-family="sans-serif" font-size="12" font-weight="700">SUBSEA DOMAIN (UUV): ABYSS &amp; SHELF (-85 M)</text>
+    </g>
+
+
+    <!-- 4. WATER SURFACE (WATER SURFACE: BLUE GRADIENT IN ISOMETRIC PLANE) -->
+    <g id="envWaterSurface">
+      <polygon points="60,730 1840,730 1840,940 60,940" fill="url(#waterSurfaceGrad)"/>
+
+      <!-- Water Surface Side Rim -->
+      <polygon points="60,940 1840,940 1840,950 60,950" fill="url(#waterSlabSide)"/>
+
+      <!-- Isometric Sea Wave Rhythms & Ripples -->
+      <path d="M 120,760 L 350,775 M 500,755 L 750,770 M 900,750 L 1250,772 M 1400,755 L 1750,775" stroke="#38bdf8" stroke-width="1" opacity="0.4"/>
+      <path d="M 80,820 L 400,840 M 550,815 L 900,838 M 1050,815 L 1450,840 M 1550,820 L 1800,838" stroke="#7dd3fc" stroke-width="1.2" opacity="0.35"/>
+      <path d="M 150,880 L 450,900 M 600,875 L 1050,902 M 1200,878 L 1650,905" stroke="#bae6fd" stroke-width="1" opacity="0.3"/>
+
+      <!-- Convoy Safe Navigation Corridor (2-Mile Sea Lane) -->
+      <polygon points="600,738 1800,738 1750,935 440,935" fill="#0284c7" fill-opacity="0.12" stroke="#00e5ff" stroke-width="1.2" stroke-dasharray="8 6"/>
+      <text x="1100" y="755" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">CONVOY SAFE NAVIGATION CORRIDOR (2 NAUTICAL MILES)</text>
+
+      <!-- Battle Points Safe Perimeter Ring (1200m Buffer Zone around Convoy) -->
+      <ellipse cx="1080" cy="840" rx="430" ry="85" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 4" filter="url(#glowGreen)"/>
+      <text x="1430" y="820" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="800">BATTLE POINTS LINE (R = 1200 M)</text>
+      <text x="1430" y="836" fill="#86efac" font-family="sans-serif" font-size="9.5">Safe Blast &amp; Fragmentation Standoff Margin</text>
+
+      <!-- Water Surface Domain Label -->
+      <rect x="80" y="745" width="280" height="24" rx="4" fill="#022a4a" stroke="#38bdf8" stroke-width="1" opacity="0.9"/>
+      <text x="95" y="761" fill="#7dd3fc" font-family="sans-serif" font-size="11" font-weight="700">SURFACE DOMAIN: STRAIT OF HORMUZ</text>
+    </g>
+
+
+    <!-- 5. LAND DOMAIN (LITTORAL LAND: TACTICAL GREEN AT INTERFACE) -->
+    <g id="envLandLittoral">
+      <polygon points="60,670 380,680 430,760 380,890 260,920 60,900" fill="url(#landTopGrad)" stroke="#16a34a" stroke-width="1.5"/>
+      <polygon points="260,920 380,890 430,760 440,780 390,915 265,945 60,925 60,900" fill="url(#landCliffGrad)" stroke="#052e16" stroke-width="1"/>
+
+      <!-- Coastline Beach / Unimproved Ramp for USV/UGV Deployment -->
+      <polygon points="360,860 410,850 435,885 385,895" fill="#3f6212" stroke="#84cc16" stroke-width="1.2"/>
+      <text x="320" y="905" fill="#a3e635" font-family="sans-serif" font-size="10" font-weight="700">Launch / Recovery Ramp</text>
+
+      <!-- Island Contour Lines & Terrain Elevation -->
+      <path d="M 100,700 Q 240,690 340,720" fill="none" stroke="#4ade80" stroke-width="1" opacity="0.6"/>
+      <path d="M 120,740 Q 250,730 360,760" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+      <path d="M 80,780 Q 200,770 320,810" fill="none" stroke="#16a34a" stroke-width="1" opacity="0.6"/>
+
+      <!-- Coastal Domain Label -->
+      <rect x="70" y="655" width="240" height="24" rx="4" fill="#052e16" stroke="#22c55e" stroke-width="1"/>
+      <text x="80" y="671" fill="#86efac" font-family="sans-serif" font-size="10.5" font-weight="700">COASTAL INTERFACE (QESHM ISLAND)</text>
+
+      <!-- Ambush / Radar Shadow Zone Indicator Behind Island -->
+      <path d="M 380,695 L 530,675 L 570,725 L 410,745 Z" fill="#b91c1c" fill-opacity="0.2" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="440" y="705" fill="#fca5a5" font-family="sans-serif" font-size="10.5" font-weight="700">Island Radar Shadow</text>
+    </g>
+
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- REALISTIC SEMI-TRANSPARENT PROTOTYPE MODELS                  -->
+  <!-- ============================================================ -->
+  <g id="modelsLayer">
+
+    <!-- PROTECTED ASSET 1: DESTROYER DDG (ARLEIGH BURKE FLIGHT III) -->
+    <!-- Translucent naval gray hull with phased arrays & VLS -->
+    <g id="modelDestroyer" transform="translate(1010, 785)">
+      <!-- Stern Wake -->
+      <polygon points="10,42 -70,25 -70,58" fill="#e0f2fe" fill-opacity="0.35"/>
+      <line x1="10" y1="42" x2="-95" y2="15" stroke="#bae6fd" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+      <line x1="10" y1="42" x2="-95" y2="70" stroke="#bae6fd" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+
+      <!-- Lower Hull (Waterline boot-top in red) -->
+      <polygon points="0,44 45,27 165,27 202,44 158,57 30,57" fill="#7f1d1d" fill-opacity="0.6" stroke="#991b1b" stroke-width="0.8"/>
+      <!-- Main Hull (Translucent Naval Gray #334155) -->
+      <polygon points="0,42 45,25 165,25 198,42 155,55 30,55" fill="#1e293b" fill-opacity="0.85" stroke="#64748b" stroke-width="1.2"/>
+      <!-- Main Deck Surface -->
+      <polygon points="10,40 50,24 165,24 192,40 150,51 25,51" fill="#334155" fill-opacity="0.8" stroke="#94a3b8" stroke-width="1"/>
+
+      <!-- Forward 5-inch 127mm Mk 45 Gun Turret with long sloped barrel -->
+      <polygon points="152,34 164,32 170,38 158,40" fill="#475569" stroke="#cbd5e1" stroke-width="0.8"/>
+      <line x1="170" y1="35" x2="188" y2="31" stroke="#e2e8f0" stroke-width="2.4"/>
+
+      <!-- Forward Mk 41 VLS Missile Cell Grid (32-cell hatch) -->
+      <rect x="130" y="29" width="18" height="10" rx="1" fill="#0f172a" stroke="#00e5ff" stroke-width="0.9"/>
+      <line x1="139" y1="29" x2="139" y2="39" stroke="#38bdf8" stroke-width="0.5"/>
+      <line x1="130" y1="34" x2="148" y2="34" stroke="#38bdf8" stroke-width="0.5"/>
+
+      <!-- Faceted Aegis Superstructure Tower with SPY-1 Radar Arrays -->
+      <polygon points="75,22 120,22 125,37 70,37" fill="#475569" fill-opacity="0.85" stroke="#94a3b8" stroke-width="1.2"/>
+      <polygon points="80,10 115,10 120,22 75,22" fill="#64748b" fill-opacity="0.9" stroke="#cbd5e1" stroke-width="1"/>
+      
+      <!-- Aegis AN/SPY-1D Octagonal Phased Array Radar Panel (Glowing Blue) -->
+      <polygon points="106,13 115,13 119,19 115,24 106,24 102,19" fill="#0284c7" stroke="#38bdf8" stroke-width="1.2" filter="url(#glowCyan)"/>
+
+      <!-- Tripod Main Mast & Radar Scanners -->
+      <line x1="96" y1="10" x2="96" y2="-9" stroke="#e2e8f0" stroke-width="2"/>
+      <line x1="88" y1="-4" x2="104" y2="-4" stroke="#38bdf8" stroke-width="1.8"/>
+      <circle cx="96" cy="-10" r="3" fill="#00e5ff" filter="url(#glowCyan)"/>
+
+      <!-- Twin Angled Exhaust Stacks -->
+      <polygon points="54,16 68,16 66,28 52,28" fill="#334155" stroke="#1e293b" stroke-width="0.8"/>
+      <polygon points="36,18 48,18 46,28 34,28" fill="#334155" stroke="#1e293b" stroke-width="0.8"/>
+
+      <!-- Helo Flight Deck Grid & Hangar -->
+      <polygon points="12,40 38,40 38,49 12,49" fill="#1e293b" stroke="#64748b" stroke-width="0.8"/>
+      <line x1="18" y1="44" x2="32" y2="44" stroke="#ffffff" stroke-width="0.8" opacity="0.7"/>
+
+      <!-- Asset Label Tag -->
+      <g transform="translate(45, 62)">
+        <rect x="0" y="0" width="200" height="30" rx="4" fill="#0b1329" stroke="#38bdf8" stroke-width="1.3" filter="url(#cardShadow)"/>
+        <text x="10" y="15" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="800">GUIDED MISSILE DESTROYER</text>
+        <text x="10" y="26" fill="#94a3b8" font-family="sans-serif" font-size="9">Arleigh Burke Flight III (Aegis SPY-1)</text>
+      </g>
+    </g>
+
+
+    <!-- PROTECTED ASSET 2: VLCC OIL TANKER 1 ("OCEAN PRIDE") -->
+    <!-- Translucent crimson/dark hull with deck piping network -->
+    <g id="modelTanker1" transform="translate(670, 835)">
+      <!-- Stern Wake -->
+      <polygon points="10,50 -85,32 -85,68" fill="#e0f2fe" fill-opacity="0.3"/>
+      
+      <!-- Hull -->
+      <polygon points="0,50 50,28 230,28 275,50 222,68 40,68" fill="#7f1d1d" fill-opacity="0.85" stroke="#991b1b" stroke-width="1.2"/>
+      <polygon points="15,48 55,30 225,30 265,48 217,65 35,65" fill="#1e293b" fill-opacity="0.85" stroke="#64748b" stroke-width="1"/>
+
+      <!-- Longitudinal & Cross Cargo Pipeline Racks -->
+      <line x1="75" y1="43" x2="215" y2="43" stroke="#e2e8f0" stroke-width="1.8"/>
+      <line x1="75" y1="49" x2="215" y2="49" stroke="#e2e8f0" stroke-width="1.8"/>
+      <line x1="75" y1="55" x2="215" y2="55" stroke="#e2e8f0" stroke-width="1.8"/>
+      <rect x="115" y="39" width="10" height="18" fill="#f59e0b" stroke="#78350f" stroke-width="0.8"/>
+      <rect x="165" y="39" width="10" height="18" fill="#f59e0b" stroke="#78350f" stroke-width="0.8"/>
+
+      <!-- Bridge Castle Accommodation & Exhaust Funnel -->
+      <polygon points="25,27 54,27 54,43 25,43" fill="#f8fafc" fill-opacity="0.9" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="28" y="15" width="22" height="13" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
+      <rect x="18" y="17" width="8" height="12" fill="#dc2626" stroke="#991b1b" stroke-width="0.8"/>
+
+      <!-- Tanker 1 Label -->
+      <g transform="translate(75, 75)">
+        <rect x="0" y="0" width="190" height="28" rx="4" fill="#0b1329" stroke="#f59e0b" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#f59e0b" font-family="sans-serif" font-size="10.5" font-weight="800">VLCC CRUDE TANKER #1</text>
+        <text x="10" y="24" fill="#cbd5e1" font-family="sans-serif" font-size="9">"Ocean Pride" (300,000 DWT)</text>
+      </g>
+    </g>
+
+
+    <!-- PROTECTED ASSET 3: VLCC OIL TANKER 2 ("TITAN STAR") -->
+    <g id="modelTanker2" transform="translate(1300, 825)">
+      <!-- Stern Wake -->
+      <polygon points="10,50 -85,32 -85,68" fill="#e0f2fe" fill-opacity="0.3"/>
+      
+      <!-- Hull -->
+      <polygon points="0,50 50,28 230,28 275,50 222,68 40,68" fill="#7f1d1d" fill-opacity="0.85" stroke="#991b1b" stroke-width="1.2"/>
+      <polygon points="15,48 55,30 225,30 265,48 217,65 35,65" fill="#1e293b" fill-opacity="0.85" stroke="#64748b" stroke-width="1"/>
+
+      <!-- Cargo Deck Pipelines -->
+      <line x1="75" y1="43" x2="215" y2="43" stroke="#e2e8f0" stroke-width="1.8"/>
+      <line x1="75" y1="49" x2="215" y2="49" stroke="#e2e8f0" stroke-width="1.8"/>
+      <line x1="75" y1="55" x2="215" y2="55" stroke="#e2e8f0" stroke-width="1.8"/>
+      <rect x="125" y="39" width="10" height="18" fill="#f59e0b" stroke="#78350f" stroke-width="0.8"/>
+
+      <!-- Bridge Castle & Funnel -->
+      <polygon points="25,27 54,27 54,43 25,43" fill="#f8fafc" fill-opacity="0.9" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="28" y="15" width="22" height="13" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
+      <rect x="18" y="17" width="8" height="12" fill="#dc2626" stroke="#991b1b" stroke-width="0.8"/>
+
+      <!-- Tanker 2 Label -->
+      <g transform="translate(75, 75)">
+        <rect x="0" y="0" width="190" height="28" rx="4" fill="#0b1329" stroke="#f59e0b" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#f59e0b" font-family="sans-serif" font-size="10.5" font-weight="800">VLCC CRUDE TANKER #2</text>
+        <text x="10" y="24" fill="#cbd5e1" font-family="sans-serif" font-size="9">"Titan Star" (Escort Channel)</text>
+      </g>
+    </g>
+
+
+    <!-- UNMANNED SYSTEM 1: UOV (ORBITAL SATELLITE CONSTELLATION) -->
+    <!-- Starshield / LEO Satellite prototype with gold MLI bus and solar arrays -->
+    <g id="modelUOV" transform="translate(1120, 185)">
+      <!-- Laser Inter-Satellite Link (ISL) Beams across Space -->
+      <line x1="-320" y1="-30" x2="0" y2="0" stroke="#00e5ff" stroke-width="1.6" stroke-dasharray="6 4" filter="url(#glowCyan)"/>
+      <line x1="0" y1="0" x2="350" y2="35" stroke="#00e5ff" stroke-width="1.6" stroke-dasharray="6 4" filter="url(#glowCyan)"/>
+
+      <!-- Solar Panel Wings with Photovoltaic Cell Grids -->
+      <polygon points="-85,-15 -24,-7 -24,18 -85,10" fill="#1e3a8a" fill-opacity="0.85" stroke="#60a5fa" stroke-width="1.2"/>
+      <line x1="-54" y1="-11" x2="-54" y2="14" stroke="#93c5fd" stroke-width="0.8"/>
+      <line x1="-24" y1="5" x2="-85" y2="-2" stroke="#93c5fd" stroke-width="0.6"/>
+
+      <polygon points="24,-7 85,-15 85,10 24,18" fill="#1e3a8a" fill-opacity="0.85" stroke="#60a5fa" stroke-width="1.2"/>
+      <line x1="54" y1="-11" x2="54" y2="14" stroke="#93c5fd" stroke-width="0.8"/>
+      <line x1="24" y1="5" x2="85" y2="-2" stroke="#93c5fd" stroke-width="0.6"/>
+
+      <!-- Gold Multilayer Insulation Satellite Body -->
+      <polygon points="-18,-13 18,-13 22,20 -18,20" fill="#d97706" fill-opacity="0.85" stroke="#fbbf24" stroke-width="1.3"/>
+      <!-- Optical Lens Aperture -->
+      <circle cx="2" cy="20" r="5.5" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+
+      <!-- Optical Inter-Satellite Laser Terminals (Gimbals) -->
+      <circle cx="-16" cy="4" r="3.5" fill="#00e5ff" filter="url(#glowCyan)"/>
+      <circle cx="16" cy="4" r="3.5" fill="#00e5ff" filter="url(#glowCyan)"/>
+
+      <!-- Sensor Beam Downward to Convoy -->
+      <polygon points="2,25 920,780 1280,780" fill="#00e5ff" fill-opacity="0.05"/>
+      <line x1="2" y1="25" x2="1080" y2="800" stroke="#00e5ff" stroke-width="1.2" stroke-dasharray="8 6" opacity="0.6"/>
+
+      <!-- UOV Label -->
+      <g transform="translate(-105, -45)">
+        <rect x="0" y="0" width="210" height="30" rx="4" fill="#020b21" stroke="#00e5ff" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <text x="10" y="15" fill="#00e5ff" font-family="sans-serif" font-size="11" font-weight="800">UOV: ORBITAL CONSTELLATION</text>
+        <text x="10" y="26" fill="#93c5fd" font-family="sans-serif" font-size="9">IR Early Launch Detection (1.5 s)</text>
+      </g>
+    </g>
+
+    <!-- Additional Constellation Nodes in Space -->
+    <g transform="translate(800, 155)">
+      <circle cx="0" cy="0" r="4.5" fill="#38bdf8" filter="url(#glowCyan)"/>
+      <line x1="-12" y1="0" x2="12" y2="0" stroke="#60a5fa" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(1470, 220)">
+      <circle cx="0" cy="0" r="4.5" fill="#38bdf8" filter="url(#glowCyan)"/>
+      <line x1="-12" y1="0" x2="12" y2="0" stroke="#60a5fa" stroke-width="1.5"/>
+    </g>
+
+
+    <!-- UNMANNED SYSTEM 2: UAV (HIGH-ALTITUDE C4ISR MALE - MQ-9/AKINCI STYLE) -->
+    <!-- Translucent aerodynamic composite airframe with radome, SAR, and missiles -->
+    <g id="modelUAV" transform="translate(620, 435)">
+      <!-- High-aspect ratio wings -->
+      <polygon points="-98,-6 0,0 0,7 -98,1" fill="#cbd5e1" fill-opacity="0.85" stroke="#475569" stroke-width="1"/>
+      <polygon points="0,0 120,-14 120,-7 0,7" fill="#e2e8f0" fill-opacity="0.85" stroke="#64748b" stroke-width="1"/>
+
+      <!-- Fuselage with SATCOM nose fairing -->
+      <polygon points="-28,0 48,6 66,11 44,15 -22,9" fill="#f8fafc" fill-opacity="0.9" stroke="#94a3b8" stroke-width="1.2"/>
+      <ellipse cx="55" cy="9" rx="11" ry="4.5" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
+      <!-- Ventral SAR Radar Pod -->
+      <ellipse cx="22" cy="12" rx="14" ry="4" fill="#0284c7" fill-opacity="0.8" stroke="#38bdf8" stroke-width="1.2"/>
+      <!-- Chin EO/IR Gimbal -->
+      <circle cx="62" cy="12" r="3.5" fill="#00e5ff" filter="url(#glowCyan)"/>
+
+      <!-- V-Tail Stabilizers -->
+      <polygon points="-28,0 -38,-16 -33,-16 -23,2" fill="#94a3b8" fill-opacity="0.9"/>
+      <polygon points="-28,7 -38,20 -33,20 -23,9" fill="#64748b" fill-opacity="0.9"/>
+
+      <!-- Pylon Underwing Missiles (Air-to-Surface AGM) -->
+      <rect x="32" y="8" width="14" height="3.5" rx="1" fill="#f59e0b" stroke="#78350f" stroke-width="0.6"/>
+      <rect x="-44" y="3" width="14" height="3.5" rx="1" fill="#f59e0b" stroke="#78350f" stroke-width="0.6"/>
+
+      <!-- Radar Scan Cone Downward to Ambush Island -->
+      <polygon points="22,15 420,700 580,720" fill="#38bdf8" fill-opacity="0.08"/>
+      <line x1="22" y1="15" x2="500" y2="710" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.6"/>
+
+      <!-- UAV Label -->
+      <g transform="translate(-100, -40)">
+        <rect x="0" y="0" width="205" height="30" rx="4" fill="#031c33" stroke="#38bdf8" stroke-width="1.4" filter="url(#cardShadow)"/>
+        <text x="10" y="15" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="800">UAV: C4ISR MALE (10 KM)</text>
+        <text x="10" y="26" fill="#e0f2fe" font-family="sans-serif" font-size="9">SAR Radar + Precision AGM Strike</text>
+      </g>
+    </g>
+
+
+    <!-- UNMANNED SYSTEM 3: UCV (TACTICAL SWARM AIR DEFENSE HEXACOPTER) -->
+    <!-- Realistic heavy tactical multirotor with payload dropper & spinning discs -->
+    <g id="modelUCV" transform="translate(1040, 620)">
+      <!-- Center Fuselage Pod -->
+      <ellipse cx="32" cy="22" rx="14" ry="8.5" fill="#0f172a" fill-opacity="0.9" stroke="#00e5ff" stroke-width="1.5"/>
+      
+      <!-- 6 Rotor Spinning Blur Discs (Translucent Cyan) -->
+      <ellipse cx="6" cy="11" rx="11" ry="4" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="1"/>
+      <ellipse cx="32" cy="6" rx="11" ry="4" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="1"/>
+      <ellipse cx="58" cy="11" rx="11" ry="4" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="1"/>
+      <ellipse cx="6" cy="33" rx="11" ry="4" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="1"/>
+      <ellipse cx="32" cy="38" rx="11" ry="4" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="1"/>
+      <ellipse cx="58" cy="33" rx="11" ry="4" fill="#00e5ff" fill-opacity="0.35" stroke="#00e5ff" stroke-width="1"/>
+
+      <!-- Carbon Booms -->
+      <line x1="6" y1="11" x2="58" y2="33" stroke="#94a3b8" stroke-width="1.8"/>
+      <line x1="6" y1="33" x2="58" y2="11" stroke="#94a3b8" stroke-width="1.8"/>
+      <line x1="32" y1="6" x2="32" y2="38" stroke="#94a3b8" stroke-width="1.8"/>
+
+      <!-- Underslung Shaped-Charge Warhead Rack -->
+      <rect x="27" y="24" width="10" height="11" rx="1.5" fill="#ef4444" stroke="#7f1d1d" stroke-width="0.9"/>
+      <!-- Downward Sensor Gimbal -->
+      <circle cx="32" cy="22" r="4" fill="#00e5ff" filter="url(#glowCyan)"/>
+
+      <!-- Escort Formation Drones -->
+      <g transform="translate(-60, -15)">
+        <ellipse cx="20" cy="12" rx="9" ry="5" fill="#0f172a" fill-opacity="0.8" stroke="#00e5ff" stroke-width="1"/>
+        <ellipse cx="8" cy="6" rx="6" ry="2" fill="#00e5ff" fill-opacity="0.3" stroke="#00e5ff" stroke-width="0.8"/>
+        <ellipse cx="32" cy="18" rx="6" ry="2" fill="#00e5ff" fill-opacity="0.3" stroke="#00e5ff" stroke-width="0.8"/>
+      </g>
+      <g transform="translate(100, -8)">
+        <ellipse cx="20" cy="12" rx="9" ry="5" fill="#0f172a" fill-opacity="0.8" stroke="#00e5ff" stroke-width="1"/>
+        <ellipse cx="8" cy="6" rx="6" ry="2" fill="#00e5ff" fill-opacity="0.3" stroke="#00e5ff" stroke-width="0.8"/>
+        <ellipse cx="32" cy="18" rx="6" ry="2" fill="#00e5ff" fill-opacity="0.3" stroke="#00e5ff" stroke-width="0.8"/>
+      </g>
+
+      <!-- UCV Label -->
+      <g transform="translate(-85, -42)">
+        <rect x="0" y="0" width="200" height="30" rx="4" fill="#091b2e" stroke="#00e5ff" stroke-width="1.3" filter="url(#cardShadow)"/>
+        <text x="10" y="15" fill="#00e5ff" font-family="sans-serif" font-size="11" font-weight="800">UCV: TACTICAL SWARM DOME</text>
+        <text x="10" y="26" fill="#7dd3fc" font-family="sans-serif" font-size="9">HEAT Munition Drops / V2V Logistics</text>
+      </g>
+    </g>
+
+
+    <!-- UNMANNED SYSTEM 4: UGV (COASTAL SHORAD SAM + EXTRACTOR - THEMIS STYLE) -->
+    <!-- Translucent tracked robotic chassis with SAM pod & crane arm -->
+    <g id="modelUGV" transform="translate(170, 755)">
+      <!-- Track Sponsons with Road Wheels -->
+      <polygon points="0,35 65,30 90,46 25,53" fill="#14532d" fill-opacity="0.85" stroke="#166534" stroke-width="1.2"/>
+      <ellipse cx="22" cy="45" rx="8" ry="4.5" fill="#052e16" stroke="#22c55e" stroke-width="0.8"/>
+      <ellipse cx="40" cy="42" rx="8" ry="4.5" fill="#052e16" stroke="#22c55e" stroke-width="0.8"/>
+      <ellipse cx="58" cy="39" rx="8" ry="4.5" fill="#052e16" stroke="#22c55e" stroke-width="0.8"/>
+      <ellipse cx="76" cy="37" rx="8" ry="4.5" fill="#052e16" stroke="#22c55e" stroke-width="0.8"/>
+
+      <!-- Low Armored Deck -->
+      <polygon points="15,28 68,24 80,34 25,40" fill="#166534" fill-opacity="0.9" stroke="#22c55e" stroke-width="1"/>
+
+      <!-- 4-Canister SAM Air Defense Pod Angled at 45 deg -->
+      <polygon points="38,14 80,7 86,18 44,25" fill="#1e293b" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.2"/>
+      <circle cx="81" cy="10" r="2.5" fill="#ef4444"/>
+      <circle cx="84" cy="15" r="2.5" fill="#ef4444"/>
+
+      <!-- Articulated Hydraulic Recovery Crane / Davit -->
+      <line x1="25" y1="28" x2="10" y2="10" stroke="#84cc16" stroke-width="2.5"/>
+      <line x1="10" y1="10" x2="-5" y2="22" stroke="#84cc16" stroke-width="2"/>
+      <polygon points="-8,22 -2,22 -5,28" fill="#eab308"/>
+
+      <!-- High-Voltage V2V Fast-Charging Cable to Water Ramp -->
+      <path d="M 15,38 Q 60,60 140,75" fill="none" stroke="#eab308" stroke-width="2.2" stroke-dasharray="5 3"/>
+
+      <!-- UGV Label - Placed cleanly on terrain below chassis -->
+      <g transform="translate(-105, 48)">
+        <rect x="0" y="0" width="220" height="30" rx="4" fill="#042110" stroke="#22c55e" stroke-width="1.4" filter="url(#cardShadow)"/>
+        <text x="10" y="15" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="800">UGV: COASTAL SAM + EXTRACTOR</text>
+        <text x="10" y="26" fill="#a7f3d0" font-family="sans-serif" font-size="9">ASCM Intercept + USV/UUV Recovery Ramp</text>
+      </g>
+    </g>
+
+
+    <!-- UNMANNED SYSTEM 5: USV (HIGH-SPEED SURFACE INTERCEPTOR - MAGURA STYLE) -->
+    <!-- USV-1 at Battle Point: Translucent wave-piercing stealth hull + 30-mm turret -->
+    <g id="modelUSV1" transform="translate(560, 770)">
+      <!-- 50-Knot High-Pressure Rooster Spray -->
+      <polygon points="-5,18 -55,10 -55,26" fill="#e0f2fe" fill-opacity="0.6"/>
+      <path d="M -5,18 Q -40,5 -65,12 T -90,8" fill="none" stroke="#bae6fd" stroke-width="2" opacity="0.8"/>
+      <path d="M -5,18 Q -40,30 -65,24 T -90,28" fill="none" stroke="#bae6fd" stroke-width="2" opacity="0.8"/>
+
+      <!-- Planing Trimaran Stealth Hull -->
+      <polygon points="0,18 20,8 72,8 88,18 68,24 15,24" fill="#1e293b" fill-opacity="0.85" stroke="#475569" stroke-width="1"/>
+      <polygon points="5,17 22,9 70,9 83,17 65,22 18,22" fill="#334155" fill-opacity="0.9" stroke="#38bdf8" stroke-width="0.8"/>
+
+      <!-- Stabilized 30-mm Bushmaster II RWS Turret -->
+      <polygon points="46,10 60,10 62,18 43,18" fill="#0f172a" stroke="#00e5ff" stroke-width="1"/>
+      <line x1="60" y1="13" x2="85" y2="8" stroke="#38bdf8" stroke-width="2.5"/>
+      <circle cx="85" cy="8" r="1.5" fill="#f59e0b"/>
+
+      <!-- Satcom & FLIR Mast -->
+      <line x1="30" y1="11" x2="30" y2="0" stroke="#cbd5e1" stroke-width="1.2"/>
+      <circle cx="30" cy="-1" r="2.5" fill="#ffffff" stroke="#0284c7" stroke-width="0.8"/>
+
+      <!-- USV-1 Label -->
+      <g transform="translate(30, 42)">
+        <rect x="0" y="0" width="195" height="28" rx="4" fill="#03182e" stroke="#38bdf8" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#38bdf8" font-family="sans-serif" font-size="10.5" font-weight="800">USV-1: BATTLE POINT ALPHA</text>
+        <text x="10" y="24" fill="#94a3b8" font-family="sans-serif" font-size="9">30-mm Bushmaster Airburst (50 kn)</text>
+      </g>
+    </g>
+
+    <!-- USV-2 in OWM Terminal Ramming Mode -->
+    <g id="modelUSV_OWM" transform="translate(830, 725)">
+      <!-- Red/Charcoal Camouflage Hull -->
+      <polygon points="-5,16 -50,8 -50,24" fill="#fca5a5" fill-opacity="0.4"/>
+      <polygon points="0,16 18,7 62,7 78,16 60,22 12,22" fill="#450a0a" fill-opacity="0.85" stroke="#ef4444" stroke-width="1.2"/>
+      <polygon points="70,12 80,16 70,20" fill="#dc2626" stroke="#ef4444" stroke-width="1"/>
+      <line x1="48" y1="9" x2="70" y2="4" stroke="#fca5a5" stroke-width="1.8"/>
+
+      <!-- OWM Badge -->
+      <g transform="translate(-10, -32)">
+        <rect x="0" y="0" width="180" height="26" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1.3" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#fca5a5" font-family="sans-serif" font-size="10.5" font-weight="800">USV-OWM: RAMMING MODE</text>
+        <text x="10" y="23" fill="#ffffff" font-family="sans-serif" font-size="8">400 m Standoff Detonation</text>
+      </g>
+    </g>
+
+
+    <!-- UNMANNED SYSTEM 6: UUV (SUBSEA INTERCEPTOR & BENTHIC STATION - TOLOKA STYLE) -->
+    <!-- UUV Interceptor Swimming in Violet Depth -->
+    <g id="modelUUV" transform="translate(730, 1140)">
+      <line x1="-10" y1="15" x2="-80" y2="15" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+      
+      <!-- Torpedo Hull with Translucent Composite Skin -->
+      <ellipse cx="38" cy="15" rx="38" ry="11" fill="#2e1065" fill-opacity="0.85" stroke="#a855f7" stroke-width="1.5"/>
+      <path d="M 66,7 A 13,13 0 0,1 66,23" fill="none" stroke="#00e5ff" stroke-width="2" filter="url(#glowCyan)"/>
+      <line x1="5" y1="6" x2="-6" y2="-1" stroke="#c084fc" stroke-width="2"/>
+      <line x1="5" y1="24" x2="-6" y2="31" stroke="#c084fc" stroke-width="2"/>
+
+      <!-- Micro-Torpedo Launch -->
+      <rect x="55" y="12" width="20" height="5.5" rx="2" fill="#38bdf8" stroke="#00e5ff" stroke-width="1"/>
+      <line x1="77" y1="15" x2="120" y2="15" stroke="#00e5ff" stroke-width="1.6" stroke-dasharray="4 2"/>
+
+      <!-- UUV Label - Cleanly placed above glider -->
+      <g transform="translate(10, -32)">
+        <rect x="0" y="0" width="190" height="28" rx="4" fill="#1b0336" stroke="#c084fc" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#e9d5ff" font-family="sans-serif" font-size="10.5" font-weight="800">UUV: SUBSEA INTERCEPTOR</text>
+        <text x="10" y="24" fill="#c084fc" font-family="sans-serif" font-size="9">Supercavitating Torpedoes (-80 m)</text>
+      </g>
+    </g>
+
+    <!-- Benthic Seabed UUV Station ("Zhdun" Node on Seabed) -->
+    <g id="modelUUV_Benthic" transform="translate(1140, 1340)">
+      <polygon points="0,20 25,12 80,12 102,20 75,26 15,26" fill="#1f0738" fill-opacity="0.9" stroke="#7e22ce" stroke-width="1"/>
+      <line x1="48" y1="14" x2="48" y2="-16" stroke="#c084fc" stroke-width="1.6"/>
+      <circle cx="48" cy="-17" r="3.5" fill="#00e5ff" filter="url(#glowCyan)"/>
+
+      <circle cx="48" cy="-17" r="24" fill="none" stroke="#a855f7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+      <circle cx="48" cy="-17" r="44" fill="none" stroke="#a855f7" stroke-width="0.6" stroke-dasharray="4 4" opacity="0.4"/>
+
+      <!-- "Zhdun" Label -->
+      <g transform="translate(65, -35)">
+        <rect x="0" y="0" width="190" height="28" rx="4" fill="#120124" stroke="#a855f7" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#f0abfc" font-family="sans-serif" font-size="10.5" font-weight="800">BENTHIC NODE "ZHDUN"</text>
+        <text x="10" y="24" fill="#d8b4fe" font-family="sans-serif" font-size="9">Sleep Mode &lt; 5 mA (Passive Sonar)</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- ASYMMETRIC THREATS & COUNTERACTION DEFENSE VECTORS           -->
+  <!-- ============================================================ -->
+  <g id="threatsAndVectors">
+
+    <!-- THREAT CLUSTER 1: HOSTILE FIAC / OWM FAST BOATS -->
+    <g id="hostileSwarm">
+      <!-- Boat 1 -->
+      <g transform="translate(470, 740)">
+        <polygon points="0,5 13,0 16,5 3,8" fill="#ef4444" stroke="#7f1d1d" stroke-width="0.8"/>
+        <line x1="0" y1="5" x2="-22" y2="3" stroke="#fca5a5" stroke-width="1.2" opacity="0.6"/>
+      </g>
+      <!-- Boat 2 -->
+      <g transform="translate(430, 760)">
+        <polygon points="0,5 13,0 16,5 3,8" fill="#ef4444" stroke="#7f1d1d" stroke-width="0.8"/>
+        <line x1="0" y1="5" x2="-22" y2="3" stroke="#fca5a5" stroke-width="1.2" opacity="0.6"/>
+      </g>
+      <!-- Boat 3 (Leaker approaching Tanker) -->
+      <g transform="translate(775, 735)">
+        <polygon points="0,5 13,0 16,5 3,8" fill="#ef4444" stroke="#7f1d1d" stroke-width="1"/>
+        <line x1="0" y1="5" x2="-28" y2="3" stroke="#fca5a5" stroke-width="1.5" opacity="0.8"/>
+        <circle cx="8" cy="5" r="15" fill="none" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3 3"/>
+      </g>
+      <!-- Boat 4 (Destroyed) -->
+      <g transform="translate(510, 725)">
+        <polygon points="0,4 9,0 11,4 2,6" fill="#7f1d1d"/>
+        <circle cx="5" cy="4" r="10" fill="#f59e0b" fill-opacity="0.6" filter="url(#glowAmber)"/>
+        <circle cx="5" cy="4" r="4.5" fill="#ffffff"/>
+      </g>
+
+      <!-- Swarm Threat Influx Label -->
+      <g transform="translate(370, 640)">
+        <rect x="0" y="0" width="220" height="28" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1.3" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#fca5a5" font-family="sans-serif" font-size="11" font-weight="800">HOSTILE FIAC / OWM SWARM</text>
+        <text x="10" y="24" fill="#fecaca" font-family="sans-serif" font-size="9">40 Kamikaze Speedboats (48–52 kn)</text>
+      </g>
+    </g>
+
+
+    <!-- THREAT CLUSTER 2: LOW-ALTITUDE CRUISE MISSILES (ASCM) -->
+    <g id="hostileCruiseMissiles">
+      <g transform="translate(480, 615)">
+        <line x1="0" y1="0" x2="26" y2="6" stroke="#ef4444" stroke-width="2.5"/>
+        <polygon points="26,6 20,4 20,8" fill="#ef4444"/>
+        <line x1="0" y1="0" x2="-38" y2="-8" stroke="#fca5a5" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.7"/>
+      </g>
+      <!-- Missile Intercepted -->
+      <g transform="translate(390, 565)">
+        <circle cx="10" cy="4" r="14" fill="#f59e0b" fill-opacity="0.5" filter="url(#glowAmber)"/>
+        <circle cx="10" cy="4" r="5" fill="#ffffff"/>
+        <rect x="28" y="-6" width="125" height="20" rx="3" fill="#3b0707" stroke="#ef4444" stroke-width="1"/>
+        <text x="35" y="8" fill="#fca5a5" font-family="sans-serif" font-size="9.5" font-weight="800">ASCM DESTROYED</text>
+      </g>
+    </g>
+
+
+    <!-- THREAT CLUSTER 3: HOSTILE MIDGET SUB & TORPEDO IN DEPTH -->
+    <g id="hostileSubsea" transform="translate(450, 1270)">
+      <ellipse cx="28" cy="16" rx="30" ry="10" fill="#18181b" stroke="#71717a" stroke-width="1"/>
+      <rect x="25" y="3" width="9" height="7" fill="#27272a"/>
+      <line x1="50" y1="16" x2="80" y2="16" stroke="#ef4444" stroke-width="2" stroke-dasharray="3 3"/>
+      <rect x="80" y="14" width="15" height="4.5" rx="1.5" fill="#ef4444"/>
+
+      <!-- Label -->
+      <g transform="translate(-10, 32)">
+        <rect x="0" y="0" width="180" height="24" rx="3" fill="#1c1917" stroke="#ef4444" stroke-width="1"/>
+        <text x="8" y="16" fill="#fca5a5" font-family="sans-serif" font-size="10" font-weight="700">Hostile Midget Sub (Ghadir)</text>
+      </g>
+    </g>
+
+
+    <!-- ========================================================== -->
+    <!-- DEFENSIVE COUNTERACTION VECTORS                            -->
+    <!-- ========================================================== -->
+
+    <!-- VECTOR 1: USV 30-mm Bushmaster II Airburst Cone -->
+    <!-- Note: Label cleanly lowered to Y=885 in clear ocean to avoid covering any ships or wakes! -->
+    <g id="vecUSV_Bushmaster">
+      <polygon points="640,778 490,735 480,755" fill="#00e5ff" fill-opacity="0.25" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="4 2"/>
+      <line x1="640" y1="778" x2="485" y2="745" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#mAmber)" filter="url(#glowAmber)"/>
+      <circle cx="485" cy="745" r="9" fill="#f59e0b" fill-opacity="0.8" filter="url(#glowAmber)"/>
+
+      <!-- Clean leader line down to the lowered label box -->
+      <line x1="485" y1="755" x2="440" y2="880" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.7"/>
+      
+      <!-- LOWERED LABEL BOX: Positioned at Y=885 in unobstructed water -->
+      <g transform="translate(330, 885)">
+        <rect x="0" y="0" width="220" height="28" rx="4" fill="#02172b" stroke="#f59e0b" stroke-width="1.3" filter="url(#cardShadow)"/>
+        <text x="10" y="14" fill="#f59e0b" font-family="sans-serif" font-size="10" font-weight="800">USV FIRE VECTOR (30-MM)</text>
+        <text x="10" y="24" fill="#fde68a" font-family="sans-serif" font-size="9">450 Airburst Rounds / 24 Boats Neutralized</text>
+      </g>
+    </g>
+
+
+    <!-- VECTOR 2: USV-OWM Terminal Kinetic Ramming Intercept Vector -->
+    <g id="vecUSV_OWM_Ram">
+      <line x1="835" y1="738" x2="795" y2="738" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 3" marker-end="url(#mRed)" filter="url(#glowRed)"/>
+      <circle cx="790" cy="738" r="20" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3 3" filter="url(#glowAmber)"/>
+    </g>
+
+
+    <!-- VECTOR 3: UGV Shore-to-Air SAM Intercept Vector -->
+    <g id="vecUGV_SAM">
+      <path d="M 250,760 Q 320,635 390,565" fill="none" stroke="#22c55e" stroke-width="3" marker-end="url(#mGreen)" filter="url(#glowGreen)"/>
+      
+      <g transform="translate(200, 615)">
+        <rect x="0" y="0" width="185" height="28" rx="4" fill="#042110" stroke="#22c55e" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="8" y="14" fill="#4ade80" font-family="sans-serif" font-size="10" font-weight="800">UGV SHORE SAM INTERCEPT</text>
+        <text x="8" y="24" fill="#bbf7d0" font-family="sans-serif" font-size="9">12 ASCMs Destroyed Over Water</text>
+      </g>
+    </g>
+
+
+    <!-- VECTOR 4: UAV High-Altitude Precision Strike -->
+    <g id="vecUAV_Strike">
+      <line x1="660" y1="450" x2="480" y2="710" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 4" marker-end="url(#mCyan)" filter="url(#glowCyan)"/>
+      
+      <g transform="translate(540, 520)">
+        <rect x="0" y="0" width="190" height="28" rx="4" fill="#061c38" stroke="#38bdf8" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="8" y="14" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="800">UAV PRECISION STRIKE</text>
+        <text x="8" y="24" fill="#e0f2fe" font-family="sans-serif" font-size="9">Command &amp; Control Boats Neutralized</text>
+      </g>
+    </g>
+
+
+    <!-- VECTOR 5: UCV Tactical Close-In Drop -->
+    <g id="vecUCV_Drop">
+      <path d="M 1060,670 Q 940,700 790,735" fill="none" stroke="#00e5ff" stroke-width="2.2" stroke-dasharray="5 3" marker-end="url(#mCyan)"/>
+      <circle cx="880" cy="710" r="3.5" fill="#00e5ff" filter="url(#glowCyan)"/>
+    </g>
+
+
+    <!-- VECTOR 6: UUV Subsea Counter-Torpedo Intercept -->
+    <g id="vecUUV_Torpedo">
+      <line x1="800" y1="1155" x2="550" y2="1280" stroke="#c084fc" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#mPurple)" filter="url(#glowPurple)"/>
+      <ellipse cx="550" cy="1280" rx="18" ry="9" fill="none" stroke="#e879f9" stroke-width="2" stroke-dasharray="3 3"/>
+
+      <g transform="translate(530, 1205)">
+        <rect x="0" y="0" width="190" height="28" rx="4" fill="#20033d" stroke="#c084fc" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <text x="8" y="14" fill="#f0abfc" font-family="sans-serif" font-size="10" font-weight="800">UUV SUBSEA COUNTER-TORPEDO</text>
+        <text x="8" y="24" fill="#f5d0fe" font-family="sans-serif" font-size="9">Hostile Midget Sub Destroyed (-80 m)</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT-HAND VERTICAL COLUMN: UWE 6-DOMAIN FABRIC (HEADERS)    -->
+  <!-- ============================================================ -->
+  <g id="rightDomainColumn">
+    
+    <!-- Sidebar Container Panel -->
+    <rect x="1870" y="135" width="480" height="1265" rx="12" fill="#040916" stroke="#1e293b" stroke-width="2" filter="url(#cardShadow)"/>
+    
+    <!-- Sidebar Header -->
+    <g transform="translate(1890, 155)">
+      <rect x="0" y="0" width="440" height="44" rx="6" fill="#0f172a" stroke="#00e5ff" stroke-width="1.5"/>
+      <text x="220" y="27" fill="#00e5ff" font-family="sans-serif" font-size="14" font-weight="900" letter-spacing="1" text-anchor="middle">UWE 6-DOMAIN CONTROL FABRIC</text>
+    </g>
+
+    <!-- CARD 1: UOV (ORBITAL DOMAIN / SPACE) -->
+    <g id="cardUOV" transform="translate(1890, 220)">
+      <rect x="0" y="0" width="440" height="110" rx="8" fill="#06122c" stroke="#38bdf8" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6" height="110" rx="3" fill="#38bdf8"/>
+      
+      <rect x="18" y="14" width="70" height="22" rx="4" fill="#0c4a6e"/>
+      <text x="53" y="29" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle">1. UOV</text>
+      <text x="98" y="30" fill="#f8fafc" font-family="sans-serif" font-size="13.5" font-weight="800">ORBITAL DOMAIN (SPACE)</text>
+      
+      <text x="20" y="56" fill="#93c5fd" font-family="sans-serif" font-size="11.5" font-weight="600">Medium: Low / Medium Earth Orbit (VLEO / LEO, 350–500 km)</text>
+      <text x="20" y="74" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="500">Role: IR Early Warning (1.5 s) • Intersatellite Laser ISL Links</text>
+
+      <rect x="20" y="84" width="400" height="18" rx="3" fill="#082f49"/>
+      <text x="220" y="97" fill="#7dd3fc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Reaction: T+0s — T+30s (Phase 1: Multi-Domain Detection)</text>
+    </g>
+
+
+    <!-- CARD 2: UAV (HIGH-ALTITUDE AVIATION / AIR MALE/HALE) -->
+    <g id="cardUAV" transform="translate(1890, 350)">
+      <rect x="0" y="0" width="440" height="110" rx="8" fill="#071a33" stroke="#00e5ff" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6" height="110" rx="3" fill="#00e5ff"/>
+      
+      <rect x="18" y="14" width="70" height="22" rx="4" fill="#075985"/>
+      <text x="53" y="29" fill="#00e5ff" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle">2. UAV</text>
+      <text x="98" y="30" fill="#f8fafc" font-family="sans-serif" font-size="13.5" font-weight="800">HIGH-ALTITUDE AIR (MALE / HALE)</text>
+      
+      <text x="20" y="56" fill="#7dd3fc" font-family="sans-serif" font-size="11.5" font-weight="600">Medium: Stratosphere &amp; Upper Troposphere (8–12 km)</text>
+      <text x="20" y="74" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="500">Role: C4ISR SAR Radar • Precision Air-to-Surface Missile Strikes</text>
+
+      <rect x="20" y="84" width="400" height="18" rx="3" fill="#03486a"/>
+      <text x="220" y="97" fill="#bae6fd" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Reaction: T+30s — T+260s (Phases 2, 4, 5: Surveillance &amp; Strike)</text>
+    </g>
+
+
+    <!-- CARD 3: UCV (TACTICAL SWARM AIR DEFENSE / MULTIROTOR) -->
+    <g id="cardUCV" transform="translate(1890, 480)">
+      <rect x="0" y="0" width="440" height="110" rx="8" fill="#052438" stroke="#38bdf8" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6" height="110" rx="3" fill="#38bdf8"/>
+      
+      <rect x="18" y="14" width="70" height="22" rx="4" fill="#0369a1"/>
+      <text x="53" y="29" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle">3. UCV</text>
+      <text x="98" y="30" fill="#f8fafc" font-family="sans-serif" font-size="13.5" font-weight="800">TACTICAL SWARM DOME (UCV)</text>
+      
+      <text x="20" y="56" fill="#38bdf8" font-family="sans-serif" font-size="11.5" font-weight="600">Medium: Low Tactical Air (10–300 m directly above convoy)</text>
+      <text x="20" y="74" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="500">Role: Close Anti-FPV Shield • HEAT Munition Drops • V2V Logistics</text>
+
+      <rect x="20" y="84" width="400" height="18" rx="3" fill="#024164"/>
+      <text x="220" y="97" fill="#7dd3fc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Reaction: T+75s — T+300s (Phases 3, 5, 6, 7: Tactical Cover)</text>
+    </g>
+
+
+    <!-- CARD 4: UGV (LITTORAL / GROUND DOMAIN / LAND) -->
+    <g id="cardUGV" transform="translate(1890, 610)">
+      <rect x="0" y="0" width="440" height="110" rx="8" fill="#062412" stroke="#22c55e" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6" height="110" rx="3" fill="#22c55e"/>
+      
+      <rect x="18" y="14" width="70" height="22" rx="4" fill="#14532d"/>
+      <text x="53" y="29" fill="#22c55e" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle">4. UGV</text>
+      <text x="98" y="30" fill="#f8fafc" font-family="sans-serif" font-size="13.5" font-weight="800">LITTORAL / GROUND DOMAIN (LAND)</text>
+      
+      <text x="20" y="56" fill="#4ade80" font-family="sans-serif" font-size="11.5" font-weight="600">Medium: Rocky Shorelines, Coastal Islands, Unimproved Beaches</text>
+      <text x="20" y="74" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="500">Role: Mobile Island SAM vs ASCM • USV/UUV Deployment &amp; V2V BMS</text>
+
+      <rect x="20" y="84" width="400" height="18" rx="3" fill="#0f391b"/>
+      <text x="220" y="97" fill="#86efac" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Reaction: T+75s — T+300s (Phases 3, 5, 7: Air Defense &amp; Recovery)</text>
+    </g>
+
+
+    <!-- CARD 5: USV (SURFACE INTERCEPT DOMAIN / SEA SURFACE) -->
+    <g id="cardUSV" transform="translate(1890, 740)">
+      <rect x="0" y="0" width="440" height="110" rx="8" fill="#041d36" stroke="#00e5ff" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6" height="110" rx="3" fill="#00e5ff"/>
+      
+      <rect x="18" y="14" width="70" height="22" rx="4" fill="#0369a1"/>
+      <text x="53" y="29" fill="#00e5ff" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle">5. USV</text>
+      <text x="98" y="30" fill="#f8fafc" font-family="sans-serif" font-size="13.5" font-weight="800">SURFACE INTERCEPT DOMAIN (SEA)</text>
+      
+      <text x="20" y="56" fill="#38bdf8" font-family="sans-serif" font-size="11.5" font-weight="600">Medium: Dynamic Sea Surface (48–52 knots operational speed)</text>
+      <text x="20" y="74" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="500">Role: Battle Points Line • 30-mm Bushmaster Airburst (1:20) • OWM Ram</text>
+
+      <rect x="20" y="84" width="400" height="18" rx="3" fill="#083344"/>
+      <text x="220" y="97" fill="#67e8f9" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Reaction: T+130s — T+300s (Phases 4, 5, 6: Kinetic Intercept)</text>
+    </g>
+
+
+    <!-- CARD 6: UUV (SUBSEA HYDROACOUSTIC DOMAIN / SUBSEA) -->
+    <g id="cardUUV" transform="translate(1890, 870)">
+      <rect x="0" y="0" width="440" height="110" rx="8" fill="#1b0633" stroke="#c084fc" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6" height="110" rx="3" fill="#c084fc"/>
+      
+      <rect x="18" y="14" width="70" height="22" rx="4" fill="#581c87"/>
+      <text x="53" y="29" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle">6. UUV</text>
+      <text x="98" y="30" fill="#f8fafc" font-family="sans-serif" font-size="13.5" font-weight="800">SUBSEA HYDROACOUSTIC DOMAIN</text>
+      
+      <text x="20" y="56" fill="#d8b4fe" font-family="sans-serif" font-size="11.5" font-weight="600">Medium: SOFAR Acoustic Axis &amp; Benthic Seabed (-20 to -85 m)</text>
+      <text x="20" y="74" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="500">Role: Benthic Sleep &lt; 5 mA ("Zhdun") • Micro-Torpedo Intercept</text>
+
+      <rect x="20" y="84" width="400" height="18" rx="3" fill="#3b0764"/>
+      <text x="220" y="97" fill="#f0abfc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">Reaction: T+0s — T+300s (Phases 1, 5, 7: Fairway Sanitization)</text>
+    </g>
+
+    <!-- Operational Architecture Summary Card in Sidebar -->
+    <g transform="translate(1890, 1000)">
+      <rect x="0" y="0" width="440" height="380" rx="8" fill="#081024" stroke="#1e293b" stroke-width="1.2"/>
+      <text x="20" y="28" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="800">SYNCHRONIZATION TELEMETRY SPECIFICATION</text>
+      <line x1="20" y1="38" x2="420" y2="38" stroke="#1e293b" stroke-width="1"/>
+      
+      <text x="20" y="62" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">• <tspan fill="#ffffff" font-weight="700">Multi-Domain Inter-Link Latency:</tspan> &lt; 0.5 s (Space ISL)</text>
+      <text x="20" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">• <tspan fill="#ffffff" font-weight="700">Threat CPA Classification Engine:</tspan> Edge-AI 1.5 s resolution</text>
+      <text x="20" y="106" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">• <tspan fill="#ffffff" font-weight="700">Autonomous OWM Runtime Decorator:</tspan> 15G structural limit</text>
+      <text x="20" y="128" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">• <tspan fill="#ffffff" font-weight="700">Battle Points Safe Perimeter:</tspan> R = 1000–1200 m buffer</text>
+      <text x="20" y="150" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">• <tspan fill="#ffffff" font-weight="700">Standoff Blast Barrier:</tspan> 400 m outside VLCC hull radius</text>
+      <text x="20" y="172" fill="#cbd5e1" font-family="sans-serif" font-size="10.5">• <tspan fill="#ffffff" font-weight="700">Total Convoy Survival Rate:</tspan> 100% (Zero Hull Penetration)</text>
+
+      <!-- Mini Architecture Badge -->
+      <g transform="translate(20, 200)">
+        <rect x="0" y="0" width="400" height="155" rx="6" fill="#040b1a" stroke="#0284c7" stroke-width="1"/>
+        <text x="200" y="24" fill="#00e5ff" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">MDO ➔ UWE ➔ CPS CLOSED-LOOP CYCLE</text>
+        <line x1="20" y1="34" x2="380" y2="34" stroke="#033e6b" stroke-width="0.8"/>
+        
+        <text x="25" y="55" fill="#94a3b8" font-family="sans-serif" font-size="10">1. SENSING:</text>
+        <text x="110" y="55" fill="#e2e8f0" font-family="sans-serif" font-size="10" font-weight="600">Cross-Medium Probes (UOV + UUV)</text>
+
+        <text x="25" y="78" fill="#94a3b8" font-family="sans-serif" font-size="10">2. C2 KERNEL:</text>
+        <text x="110" y="78" fill="#e2e8f0" font-family="sans-serif" font-size="10" font-weight="600">UWE Edge-AI Threat Allocation</text>
+
+        <text x="25" y="101" fill="#94a3b8" font-family="sans-serif" font-size="10">3. KINETIC:</text>
+        <text x="110" y="101" fill="#e2e8f0" font-family="sans-serif" font-size="10" font-weight="600">Distributed Multi-Domain Effectors</text>
+
+        <text x="25" y="124" fill="#94a3b8" font-family="sans-serif" font-size="10">4. LOGISTICS:</text>
+        <text x="110" y="124" fill="#e2e8f0" font-family="sans-serif" font-size="10" font-weight="600">Autonomous V2V Shore Power Bank</text>
+        
+        <rect x="25" y="134" width="350" height="12" rx="2" fill="#052e16"/>
+        <text x="200" y="143" fill="#4ade80" font-family="sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">STATUS: AUTONOMOUS REAL-TIME EXECUTION ACTIVE</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- TACTICAL CROSS-DOMAIN LINK LINES                             -->
+  <!-- ============================================================ -->
+  <g id="tacticalLinkLines">
+    
+    <!-- LINK 1: Card UOV -> Satellite (Space) -->
+    <path d="M 1890,275 C 1600,260 1420,205 1225,200" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" filter="url(#glowCyan)"/>
+    <circle cx="1890" cy="275" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="1225" cy="200" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- LINK 2: Card UAV -> Fixed-Wing MALE (Air) -->
+    <path d="M 1890,405 C 1450,420 1080,440 725,445" fill="none" stroke="#00e5ff" stroke-width="2.2" stroke-dasharray="6 4" filter="url(#glowCyan)"/>
+    <circle cx="1890" cy="405" r="5" fill="#00e5ff" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="725" cy="445" r="5" fill="#00e5ff" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- LINK 3: Card UCV -> Multirotor Swarm Dome (Over Convoy) -->
+    <path d="M 1890,535 C 1550,560 1350,635 1120,635" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" filter="url(#glowCyan)"/>
+    <circle cx="1890" cy="535" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="1120" cy="635" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- LINK 4: Card UGV -> Ground Platform (Land) - Routed below water surface plane -->
+    <path d="M 1890,665 C 1350,710 650,910 250,795" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-dasharray="6 4" filter="url(#glowGreen)"/>
+    <circle cx="1890" cy="665" r="5" fill="#22c55e" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="250" cy="795" r="5" fill="#22c55e" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- LINK 5: Card USV -> Surface Interceptor (Water Surface) -->
+    <path d="M 1890,795 C 1350,810 920,840 630,795" fill="none" stroke="#00e5ff" stroke-width="2.2" stroke-dasharray="6 4" filter="url(#glowCyan)"/>
+    <circle cx="1890" cy="795" r="5" fill="#00e5ff" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="630" cy="795" r="5" fill="#00e5ff" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- LINK 6: Card UUV -> Subsea Interceptor (Violet Depth) -->
+    <path d="M 1890,925 C 1450,1050 1100,1160 780,1150" fill="none" stroke="#c084fc" stroke-width="2.2" stroke-dasharray="6 4" filter="url(#glowPurple)"/>
+    <circle cx="1890" cy="925" r="5" fill="#c084fc" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="780" cy="1150" r="5" fill="#c084fc" stroke="#ffffff" stroke-width="1.5"/>
+
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- BOTTOM CHRONOLOGICAL 300-SECOND BATTLE CYCLE TIMELINE        -->
+  <!-- ============================================================ -->
+  <g id="bottomTimeline" transform="translate(60, 1490)">
+    <rect x="0" y="0" width="1780" height="85" rx="8" fill="#050d1e" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Timeline Axis Bar -->
+    <line x1="40" y1="36" x2="1740" y2="36" stroke="#334155" stroke-width="4"/>
+    <line x1="40" y1="36" x2="1740" y2="36" stroke="#00e5ff" stroke-width="2" stroke-dasharray="10 5" opacity="0.6"/>
+
+    <!-- Phase 1: T+0s -->
+    <g transform="translate(60, 15)">
+      <circle cx="0" cy="21" r="9" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+      <text x="0" y="25" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">1</text>
+      <text x="0" y="4" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">T+0s — T+30s</text>
+      <text x="0" y="48" fill="#f8fafc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">DETECTION</text>
+      <text x="0" y="60" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">UOV (IR) + UUV (Sonar)</text>
+    </g>
+
+    <!-- Phase 2: T+30s -->
+    <g transform="translate(320, 15)">
+      <circle cx="0" cy="21" r="9" fill="#0369a1" stroke="#38bdf8" stroke-width="2"/>
+      <text x="0" y="25" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">2</text>
+      <text x="0" y="4" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">T+30s — T+75s</text>
+      <text x="0" y="48" fill="#f8fafc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">CPA SELECTION</text>
+      <text x="0" y="60" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">Edge-AI Threat Prioritization</text>
+    </g>
+
+    <!-- Phase 3: T+75s -->
+    <g transform="translate(600, 15)">
+      <circle cx="0" cy="21" r="9" fill="#15803d" stroke="#22c55e" stroke-width="2"/>
+      <text x="0" y="25" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">3</text>
+      <text x="0" y="4" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">T+75s — T+130s</text>
+      <text x="0" y="48" fill="#f8fafc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">DEPLOYMENT</text>
+      <text x="0" y="60" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">UGV Ramp Launch + UCV Scramble</text>
+    </g>
+
+    <!-- Phase 4: T+130s -->
+    <g transform="translate(890, 15)">
+      <circle cx="0" cy="21" r="9" fill="#0284c7" stroke="#00e5ff" stroke-width="2"/>
+      <text x="0" y="25" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">4</text>
+      <text x="0" y="4" fill="#00e5ff" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">T+130s — T+210s</text>
+      <text x="0" y="48" fill="#f8fafc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">50-KNOT SPRINT</text>
+      <text x="0" y="60" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">Battle Points Ingress (1200 m)</text>
+    </g>
+
+    <!-- Phase 5: T+210s -->
+    <g transform="translate(1190, 15)">
+      <circle cx="0" cy="21" r="9" fill="#d97706" stroke="#f59e0b" stroke-width="2"/>
+      <text x="0" y="25" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">5</text>
+      <text x="0" y="4" fill="#f59e0b" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">T+210s — T+260s</text>
+      <text x="0" y="48" fill="#f8fafc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">KINETIC SHOCK</text>
+      <text x="0" y="60" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">Bushmaster II + Island SAM</text>
+    </g>
+
+    <!-- Phase 6: T+260s -->
+    <g transform="translate(1470, 15)">
+      <circle cx="0" cy="21" r="9" fill="#b91c1c" stroke="#ef4444" stroke-width="2"/>
+      <text x="0" y="25" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">6</text>
+      <text x="0" y="4" fill="#ef4444" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">T+260s — T+300s</text>
+      <text x="0" y="48" fill="#f8fafc" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">OWM TERMINAL RAM</text>
+      <text x="0" y="60" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">Leakers Destroyed at 400 m</text>
+    </g>
+
+    <!-- Phase 7: T>300s -->
+    <g transform="translate(1710, 15)">
+      <circle cx="0" cy="21" r="9" fill="#15803d" stroke="#4ade80" stroke-width="2"/>
+      <text x="0" y="25" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="900" text-anchor="middle">7</text>
+      <text x="0" y="4" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="800" text-anchor="middle">T &gt; 300s</text>
+      <text x="0" y="48" fill="#4ade80" font-family="sans-serif" font-size="9.5" font-weight="800" text-anchor="middle">V2V REGENERATION</text>
+      <text x="0" y="60" fill="#86efac" font-family="sans-serif" font-size="8" text-anchor="middle">BMS Fast-Charge + Benthic Sleep</text>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,538 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1350" width="2400" height="1350">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040811"/>
+      <stop offset="40%" stop-color="#06111f"/>
+      <stop offset="100%" stop-color="#091629"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f223d"/>
+      <stop offset="100%" stop-color="#081426"/>
+    </linearGradient>
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="50%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <pattern id="tacticalGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#13233a" stroke-width="0.6" stroke-opacity="0.35"/>
+      <circle cx="36" cy="36" r="1" fill="#00d2ff" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .font-sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: 'Consolas', 'Roboto Mono', 'Courier New', monospace; }
+  </style>
+
+  <!-- Background -->
+  <rect width="2400" height="1350" fill="url(#bgGrad)"/>
+  <rect width="2400" height="1350" fill="url(#tacticalGrid)"/>
+  <rect x="0" y="0" width="2400" height="5" fill="url(#accentCyan)"/>
+
+  <!-- ==================== HEADER ==================== -->
+  <g transform="translate(25, 22)">
+    <rect x="0" y="0" width="240" height="26" rx="5" fill="#0c2340" stroke="#00a8e8" stroke-width="1.2"/>
+    <text x="120" y="18" fill="#00f5d4" class="font-sans" font-size="13" font-weight="700" letter-spacing="1.8" text-anchor="middle">MILTECH ARCHITECTURE</text>
+    
+    <text x="0" y="62" fill="#ffffff" class="font-sans" font-size="34" font-weight="900" letter-spacing="0.5">UNIFIED UWE CROSS-DOMAIN EMPIRICAL VALIDATION MATRIX</text>
+    <text x="0" y="94" fill="#94a3b8" class="font-sans" font-size="18.5">
+      Standardized 6-Character Cyber-Physical Benchmarks Across <tspan fill="#00f5d4" font-weight="700">Space, Air, Ground, Maritime &amp; Subsea Domains</tspan>
+    </text>
+
+    <!-- Top Right Meta Card -->
+    <g transform="translate(1780, 2)">
+      <rect x="0" y="0" width="570" height="96" rx="7" fill="#09182a" stroke="#1d385c" stroke-width="1.3"/>
+      <text x="20" y="27" fill="#38bdf8" class="font-sans" font-size="14.5" font-weight="700" letter-spacing="0.8">HARDWARE ABSTRACTION LAYER (HAL) RIGOR</text>
+      <text x="20" y="52" fill="#cbd5e1" class="font-sans" font-size="14.5">"Chassis is invariant HAL. Lethality &amp; OWM are runtime decorators."</text>
+      <text x="20" y="78" fill="#94a3b8" class="font-sans" font-size="13.5">Full Traceability: Field Battle Tests ≡ Cyber-Physical Invariant Laws</text>
+    </g>
+  </g>
+  <g transform="translate(0, 138)">    <rect x="25" y="0" width="165" height="52" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="29" y1="50" x2="186" y2="50" stroke="#00b4d8" stroke-width="2"/>    <text x="107.5" y="33" fill="#00f5d4" class="font-sans" font-size="16.5" font-weight="800" letter-spacing="1.2" text-anchor="middle">🌐 DOMAIN &amp; CODE</text>    <rect x="190" y="0" width="355" height="52" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="194" y1="50" x2="541" y2="50" stroke="#00b4d8" stroke-width="2"/>    <text x="206" y="33" fill="#f8fafc" class="font-sans" font-size="16.5" font-weight="800" letter-spacing="0.4">🎯  REFERENCE PLATFORM</text>    <rect x="545" y="0" width="300" height="52" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="549" y1="50" x2="841" y2="50" stroke="#00b4d8" stroke-width="2"/>    <text x="561" y="33" fill="#f8fafc" class="font-sans" font-size="16.5" font-weight="800" letter-spacing="0.4">🏭  OEM / OPERATOR</text>    <rect x="845" y="0" width="325" height="52" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="849" y1="50" x2="1166" y2="50" stroke="#00b4d8" stroke-width="2"/>    <text x="861" y="33" fill="#f8fafc" class="font-sans" font-size="16.5" font-weight="800" letter-spacing="0.4">🌊  HORIZON / MEDIUM</text>    <rect x="1170" y="0" width="365" height="52" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="1174" y1="50" x2="1531" y2="50" stroke="#00b4d8" stroke-width="2"/>    <text x="1186" y="33" fill="#f8fafc" class="font-sans" font-size="16.5" font-weight="800" letter-spacing="0.4">⚖️  DIMENSIONS &amp; MASS</text>    <rect x="1535" y="0" width="410" height="52" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="1539" y1="50" x2="1941" y2="50" stroke="#00b4d8" stroke-width="2"/>    <text x="1551" y="33" fill="#f8fafc" class="font-sans" font-size="16.5" font-weight="800" letter-spacing="0.4">⚡  POWERPLANT &amp; ENERGY</text>    <rect x="1945" y="0" width="430" height="52" rx="6" fill="url(#hdrGrad)" stroke="#1a3556" stroke-width="1.2"/>    <line x1="1949" y1="50" x2="2371" y2="50" stroke="#00b4d8" stroke-width="2"/>    <text x="1961" y="33" fill="#f8fafc" class="font-sans" font-size="16.5" font-weight="800" letter-spacing="0.4">📡  COMMS &amp; AUTONOMY</text>  </g>
+  <!-- Row 1: UOV - LR-SL-MD -->  <g transform="translate(0, 196)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#1a0f2e" stroke="#c084fc" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🛰️ UOV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#c084fc" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#c084fc" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">LR-SL-MD</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Starshield / v2 Mini</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Direct-to-Cell Satellite</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">SpaceX</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">(USA)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">LEO (550 km)</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Exoatmospheric Orbit</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">800 kg; 30 m wingspan</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">30 m high-efficiency solar</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Solar + Krypton/Argon</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Hall Ion Electric Thruster</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Laser ISL + Ku/Ka AESA</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Direct-to-Cell cellular link</text>
+    </g>  </g>
+  <!-- Row 2: UOV - CR-SP-DX -->  <g transform="translate(0, 275)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#1a0f2e" stroke="#c084fc" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🛰️ UOV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#c084fc" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#c084fc" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">CR-SP-DX</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">CAPSTONE / Oracle</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Cislunar Nav Probe (CHPS)</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">NASA / USSF / Adv. Space</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">(USA)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Cislunar NRHO, L1–L2</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Deep Space Gravity Wells</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">25 kg total mass</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">CubeSat 12U form-factor</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Solar Arrays + Chemical</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Micro-Hydrazine Thrusters</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#c084fc" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Deep Space Network (DSN)</text>
+      <text x="0" y="57" fill="#c084fc" class="font-sans" font-size="15.5" font-weight="500">Autonomous optical IMU nav</text>
+    </g>  </g>
+  <!-- Row 3: UAV - AL-PE-HR -->  <g transform="translate(0, 360)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#061e33" stroke="#38bdf8" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">✈️ UAV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#38bdf8" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">AL-PE-HR</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Bayraktar TB2 / Reaper</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">Strategic MALE Picket</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Baykar / General Atomics</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">(Turkey / USA)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">MALE (5–8 km)</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">Tropospheric Wing Flight</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">650 kg MTOW, 12 m span</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">150 kg payload capacity</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Rotax 912 Piston ICE</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">100 hp Avgas/Mogas engine</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Directional COFDM C2</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">STANAG 4586 compliant link</text>
+    </g>  </g>
+  <!-- Row 4: UAV - AL-CO-MO -->  <g transform="translate(0, 439)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#061e33" stroke="#38bdf8" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">✈️ UAV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#38bdf8" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">AL-CO-MO</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Shahed-136 / Scalpel</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">Long-Range Strike Wing</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Adversary OEM / MilTech</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">(Global Threat)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Low-Altitude Wing</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">50–3,000 m Ingress</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">200 kg gross, 2.5 m span</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">50 kg PBX shaped warhead</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">MD-550 50 hp 2-stroke ICE</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">Solid rocket booster start</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Radio-Silent (Quiet Mode)</text>
+      <text x="0" y="57" fill="#38bdf8" class="font-sans" font-size="15.5" font-weight="500">CRPA GNSS + Optical OWM</text>
+    </g>  </g>
+  <!-- Row 5: UCV - CH-EA-MO -->  <g transform="translate(0, 524)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#032620" stroke="#00f5d4" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🚁 UCV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#00f5d4" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#00f5d4" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">CH-EA-MO</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Tactical Strike FPV</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">Combat Quadcopter 7–10"</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Frontline Ecosystem</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">(Ukraine / Global)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Tactical Boundary Layer</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">0–500 m AGL Envelope</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">1.2–3.5 kg frame</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">1.5 kg shaped-charge RPG</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">6S2P Li-ion / LiPo pack</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">4x Brushless FOC ESCs</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">5.8 GHz Analog / FHSS</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">Micro-Fiber-Optic spool tether</text>
+    </g>  </g>
+  <!-- Row 6: UCV - CL-EL-DW -->  <g transform="translate(0, 603)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#032620" stroke="#00f5d4" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🚁 UCV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#00f5d4" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#00f5d4" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">CL-EL-DW</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Vampire ("Baba Yaga")</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">Heavy Bomber / Relay</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">SkyFall Ecosystem</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">(Ukraine)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Night Low-Altitude</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">50–400 m AGL Operations</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">25–40 kg hexacopter</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">15 kg multi-drop bomb rack</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">12S LiFePO4 battery bank</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">High-torque brushless motors</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#00f5d4" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Encrypted FHSS Radio</text>
+      <text x="0" y="57" fill="#00f5d4" class="font-sans" font-size="15.5" font-weight="500">Thermal IR + Edge-AI lock</text>
+    </g>  </g>
+  <!-- Row 7: UGV - GL-EB-DW -->  <g transform="translate(0, 688)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#261a04" stroke="#fbbf24" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🚜 UGV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#fbbf24" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#fbbf24" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">GL-EB-DW</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">THeMIS Combined Arms</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">Logistic &amp; Weapon Hub</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Milrem Robotics</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">(Estonia)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">High-Obstacle Mud &amp; Rubble</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">Trenches, Off-Road Terrain</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">1,630 kg; 2.4 × 2.0 m</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">1,200 kg payload capacity</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Diesel-Electric Hybrid</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">Li-ion pack + V2V power bus</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Encrypted MIMO Mesh</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">3D LiDAR SLAM obstacle map</text>
+    </g>  </g>
+  <!-- Row 8: UGV - GB-EA-HA -->  <g transform="translate(0, 767)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#261a04" stroke="#fbbf24" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🚜 UGV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#fbbf24" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#fbbf24" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">GB-EA-HA</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Shablya Remote Turret</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">Automated Sleeper Bunker</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Brave1 Ecosystem</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">(Ukraine)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Static Hardened Position</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">Trench / Bunker Parapet</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">40–180 kg total mass</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">7.62mm / 12.7mm weapon</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">24V External Battery Pack</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">Deep Sleep FSM (&lt;5 mA standby)</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Hardwired Fiber / Wire</text>
+      <text x="0" y="57" fill="#fbbf24" class="font-sans" font-size="15.5" font-weight="500">Low-power secure Wi-Fi relay</text>
+    </g>  </g>
+  <!-- Row 9: USV - SL-PA-MO -->  <g transform="translate(0, 852)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#081d36" stroke="#60a5fa" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🚤 USV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#60a5fa" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#60a5fa" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">SL-PA-MO</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Magura V5 / Sea Baby</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Wave-Piercing Strike USV</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Special Technotrade / SSU</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">(Ukraine)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Marine Littoral Waters</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Sea State 4–5 Waves</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">1,000 kg; 5.5 m length</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">450–850 kg shaped warhead</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Turbo Marine ICE / Diesel</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Low-cavitation tunnel waterjet</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Dual Starlink + Kymeta AESA</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Encrypted LoS mesh fallback</text>
+    </g>  </g>
+  <!-- Row 10: USV - ST-EL-DR -->  <g transform="translate(0, 931)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#081d36" stroke="#60a5fa" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">🚤 USV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#60a5fa" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#60a5fa" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">ST-EL-DR</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Saildrone Voyager</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Autonomous Ocean Picket</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Saildrone Inc.</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">(USA)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Open Ocean Pelagic</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Sea State 6+ Endurance</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">4,000 kg; 10.0 m length</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Multi-beam survey sonar</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Rigid Wing Sail + Solar</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Auxiliary diesel generator</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Iridium Certus + Inmarsat</text>
+      <text x="0" y="57" fill="#60a5fa" class="font-sans" font-size="15.5" font-weight="500">Optical AIS + autonomous nav</text>
+    </g>  </g>
+  <!-- Row 11: UUV - UT-EB-SQ -->  <g transform="translate(0, 1016)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#121536" stroke="#818cf8" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">⚓ UUV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#818cf8" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#818cf8" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">UT-EB-SQ</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">HUGIN 6000</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">Deep Benthic Survey Picket</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Kongsberg Maritime</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">(Norway)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Deep Benthic Seabed</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">200–6,000 m Bathymetry</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">2,200 kg; 6.5 m length</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">High-resolution SAS sonar</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">48 kWh Solid-State Li-ion</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">Pressure-tolerant battery bank</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Acoustic HiPAP Modem</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">Ring Laser Gyro (RLG) INS</text>
+    </g>  </g>
+  <!-- Row 12: UUV - UB-EA-MA -->  <g transform="translate(0, 1095)">    <rect x="25" y="0" width="165" height="75" rx="6" fill="#121536" stroke="#818cf8" stroke-width="1.3"/>
+    <g transform="translate(41, 30)">
+      <text x="0" y="0" fill="#ffffff" class="font-sans" font-size="18" font-weight="800">⚓ UUV</text>
+    </g>
+    <g transform="translate(39, 54)">
+      <rect x="0" y="-14" width="136" height="24" rx="4" fill="#061220" stroke="#818cf8" stroke-width="1.2"/>
+      <text x="68" y="3" fill="#818cf8" class="font-mono" font-size="14.5" font-weight="800" text-anchor="middle">UB-EA-MA</text>
+    </g>    <rect x="190" y="0" width="355" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="190" y1="8" x2="190" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(206, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Marichka Long-Range</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">Strike Submersible UUV</text>
+    </g>    <rect x="545" y="0" width="300" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="545" y1="8" x2="545" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(561, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">AMMO.UKRAINE / Brave1</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">(Ukraine)</text>
+    </g>    <rect x="845" y="0" width="325" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="845" y1="8" x2="845" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(861, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Subsea Shelf &amp; Pelagic</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">0–100 m Operating Depth</text>
+    </g>    <rect x="1170" y="0" width="365" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1170" y1="8" x2="1170" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1186, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">1,000 kg; 6.0 × 1.0 m</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">450 kg PBX demolition charge</text>
+    </g>    <rect x="1535" y="0" width="410" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1535" y1="8" x2="1535" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1551, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">100 kWh Custom LiFePO4</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">Electric ring pod thruster</text>
+    </g>    <rect x="1945" y="0" width="430" height="75" rx="6" fill="#091424" stroke="#15263d" stroke-width="1.1"/>
+    <line x1="1945" y1="8" x2="1945" y2="67" stroke="#818cf8" stroke-width="3.5" stroke-linecap="round"/>
+    <g transform="translate(1961, 0)">
+      <text x="0" y="31" fill="#ffffff" class="font-sans" font-size="18" font-weight="700" letter-spacing="0.1">Passive Sonar + INS</text>
+      <text x="0" y="57" fill="#818cf8" class="font-sans" font-size="15.5" font-weight="500">Deployable fiber / RF mast</text>
+    </g>  </g>
+  <!-- Bottom Doctrinal Takeaway Strip -->
+  <g transform="translate(25, 1190)">
+    <rect x="0" y="0" width="2350" height="86" rx="7" fill="#081422" stroke="#182f4e" stroke-width="1.2"/>
+    
+    <g transform="translate(24, 21)">
+      <circle cx="12" cy="12" r="7" fill="#c084fc"/>
+      <text x="30" y="17" fill="#ffffff" class="font-sans" font-size="16.5" font-weight="700">Space &amp; Air (UOV / UAV):</text>
+      <text x="30" y="44" fill="#94a3b8" class="font-sans" font-size="15">Orbital laser mesh &amp; high-altitude C4ISR overwatch. Direct phone-to-drone command &amp; SAR mapping.</text>
+    </g>
+
+    <g transform="translate(810, 21)">
+      <circle cx="12" cy="12" r="7" fill="#00f5d4"/>
+      <text x="30" y="17" fill="#ffffff" class="font-sans" font-size="16.5" font-weight="700">Tactical Air &amp; Ground (UCV / UGV):</text>
+      <text x="30" y="44" fill="#94a3b8" class="font-sans" font-size="15">Massed fiber FPV strikes, automated robotic logistics, V2V powerbanks, and sub-5mA silent sleeper turrets.</text>
+    </g>
+
+    <g transform="translate(1620, 21)">
+      <circle cx="12" cy="12" r="7" fill="#60a5fa"/>
+      <text x="30" y="17" fill="#ffffff" class="font-sans" font-size="16.5" font-weight="700">Maritime Surface &amp; Subsea (USV / UUV):</text>
+      <text x="30" y="44" fill="#94a3b8" class="font-sans" font-size="15">Wave-piercing strike swarms &amp; benthic 30-day sleeper subs. Total littoral access denial at zero crew risk.</text>
+    </g>
+  </g>
+
+  <g transform="translate(25, 1324)">
+    <line x1="0" y1="0" x2="2350" y2="0" stroke="#14263b" stroke-width="1.2"/>
+    <text x="0" y="18" fill="#64748b" class="font-sans" font-size="13.5" font-weight="700" letter-spacing="1.2">UNMANNED WARFARE ENGINE (UWE)</text>
+    <text x="290" y="18" fill="#334155" class="font-sans" font-size="13.5">•</text>
+    <text x="308" y="18" fill="#94a3b8" class="font-sans" font-size="13.5">SECTION 6.1: UNIFIED CROSS-DOMAIN EMPIRICAL VALIDATION MATRIX</text>
+    <text x="2350" y="18" fill="#00e5ff" class="font-sans" font-size="13.5" font-weight="700" text-anchor="end">SERHII KHYLEVYCH — SYSTEMS ARCHITECT &amp; MILTECH STRATEGIST</text>
+  </g>
+</svg>
