@@ -95,26 +95,6 @@ The fundamental architectural error of modern defense procurement is domain silo
 
 The Unmanned Ground Vehicle is the **connective tissue** of the entire battle network. Airborne systems and orbital constellations possess high vantage points but lack physical persistence. A Low Earth Orbit (LEO) satellite traverses the horizon in minutes; a fixed-wing reconnaissance UAV must orbit standoff orbits to survive air defenses; tactical multirotors exhaust their energy in half an hour. Only the UGV possesses **infinite terrestrial dwell time**. It does not burn kilowatt-hours overcoming gravity.
 
-```
-       ┌────────────────────────────────────────────────────────┐
-       │         UOV: ORBITAL LEO LAYER (PWSA TRACKING)         │
-       └───────────────────────────┬────────────────────────────┘
-                                   │ (Direct Ephemeris Downlink)
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│               THE TERRESTRIAL ANCHOR (UGV CENTRAL NODE)                │
-│  • Ground-Truth Calibration      • Persistent Kilowatt Power           │
-│  • Containerized UCV Staging     • Zero-Signature Sleeper Hold         │
-└───────────────────────▲────────────────────────▲───────────────────────┘
-                        │                        │
-         (Law II Containerization)       (Littoral Amphibious Handoff)
-                        │                        │
-┌───────────────────────┴────────┐      ┌────────┴───────────────────────┐
-│     AIRBORNE UCV FORMATIONS    │      │      LITTORAL USV ECHELON      │
-│  Recon, Bomber, Attack & OWM   │      │  High-Speed Coastal Delivery   │
-└────────────────────────────────┘      └────────────────────────────────┘
-```
-
 The UGV anchors three distinct cross-domain interfaces:
 
 1. **Space Domain (UOV $\leftrightarrow$ UGV):** Through the Space Development Agency's Proliferated Warfighter Space Architecture (PWSA) Tracking Layer, Unmanned Orbital Vehicles (UOV) detect ballistic launches and vehicle thermal blooms from orbit. However, orbital sensors cannot determine whether a bunker entrance is obstructed or if anti-tank wire has been laid across a ditch. The UGV acts as a ground-level calibration node, ingesting LEO tracks and conducting micro-level sensory verification using ground lidar, thermal imagers, and seismic arrays.

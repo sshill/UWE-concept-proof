@@ -63,23 +63,6 @@
 <h3 style="font-size: 13pt; font-weight: 700; color: #0369a1; margin-top: 16pt; margin-bottom: 8pt; line-height: 1.35;">The Connective Backbone: UGV as Cross-Domain Convergence Node</h3>
 <p style="margin: 8pt 0; line-height: 1.6; text-align: justify; color: #1e293b; font-size: 10.5pt;">The fundamental architectural error of modern defense procurement is domain siloization. Air programs procure drones; ground commands procure trucks; maritime forces procure patrol craft. In modern warfare, this functional segregation is fatal.</p>
 <p style="margin: 8pt 0; line-height: 1.6; text-align: justify; color: #1e293b; font-size: 10.5pt;">The Unmanned Ground Vehicle is the <strong>connective tissue</strong> of the entire battle network. Airborne systems and orbital constellations possess high vantage points but lack physical persistence. A Low Earth Orbit (LEO) satellite traverses the horizon in minutes; a fixed-wing reconnaissance UAV must orbit standoff orbits to survive air defenses; tactical multirotors exhaust their energy in half an hour. Only the UGV possesses <strong>infinite terrestrial dwell time</strong>. It does not burn kilowatt-hours overcoming gravity.</p>
-<pre style="background: #0f172a; color: #e2e8f0; padding: 10pt 14pt; border-radius: 6pt; font-family: Consolas, monospace; font-size: 8.5pt; line-height: 1.35; overflow-x: auto; margin: 12pt 0; border: 1px solid #1e293b;">       ┌────────────────────────────────────────────────────────┐
-       │         UOV: ORBITAL LEO LAYER (PWSA TRACKING)         │
-       └───────────────────────────┬────────────────────────────┘
-                                   │ (Direct Ephemeris Downlink)
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│               THE TERRESTRIAL ANCHOR (UGV CENTRAL NODE)                │
-│  • Ground-Truth Calibration      • Persistent Kilowatt Power           │
-│  • Containerized UCV Staging     • Zero-Signature Sleeper Hold         │
-└───────────────────────▲────────────────────────▲───────────────────────┘
-                        │                        │
-         (Law II Containerization)       (Littoral Amphibious Handoff)
-                        │                        │
-┌───────────────────────┴────────┐      ┌────────┴───────────────────────┐
-│     AIRBORNE UCV FORMATIONS    │      │      LITTORAL USV ECHELON      │
-│  Recon, Bomber, Attack &amp; OWM   │      │  High-Speed Coastal Delivery   │
-└────────────────────────────────┘      └────────────────────────────────┘</pre>
 <p style="margin: 8pt 0; line-height: 1.6; text-align: justify; color: #1e293b; font-size: 10.5pt;">The UGV anchors three distinct cross-domain interfaces:</p>
 <ol style="margin: 8pt 0 8pt 20pt; padding-left: 0; line-height: 1.55;">
 <li style="margin-bottom: 4pt; color: #1e293b;"><strong>Space Domain (UOV ≤ftrightarrow UGV):</strong> Through the Space Development Agency's Proliferated Warfighter Space Architecture (PWSA) Tracking Layer, Unmanned Orbital Vehicles (UOV) detect ballistic launches and vehicle thermal blooms from orbit. However, orbital sensors cannot determine whether a bunker entrance is obstructed or if anti-tank wire has been laid across a ditch. The UGV acts as a ground-level calibration node, ingesting LEO tracks and conducting micro-level sensory verification using ground lidar, thermal imagers, and seismic arrays.</li>
