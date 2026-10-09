@@ -30,11 +30,15 @@ I have completed an in-depth analytical essay (~2,750 words) drawing on four yea
 
 **"The Death of MALE Sanctuaries and the Rise of the Collaborative Kill Web: Why Contested Air Dominance Belongs to Ground-Clutter Formations and Software-Defined Swarms"**
 
-The essay examines four core operational transitions necessary for Western air power to survive peer-to-peer conflict:
-1. **The Physics of the Ground-Clutter Layer:** Exploiting Earth-curvature geometry ($d \approx 4.12[\sqrt{h_1} + \sqrt{h_2}]$) to demonstrate why the 0–300 meter low-altitude clutter layer is the only survivable ingress corridor against advanced acquisition and engagement radars.
-2. **The Multi-Tier Formation Battle Loop (Figure 1):** Decomposing air defense suppression (SEAD/DEAD) into five synchronized echelons—from standoff C4ISR orbits (Tier 1 `AL-PE-HR`) and active decoy stimulation (Tier 2 `AH-EE-MO`) to low-altitude strike vectors combining winged loitering UAVs (`AH-EA-MO`) and agile combat copters (`CH-EA-MO`).
-3. **Tactical Invariants & The "Zhdun" (Sleeper) Ambush:** Overcoming multirotor battery limitations by landing forward copters on rooftops and tree lines in power-down sleeper mode (zero thermal and acoustic signature), launching in 1.5 seconds upon radar stimulation and executing terminal dive attacks via onboard optical Edge-AI under total electronic warfare jamming.
-4. **The Cyber-Physical UCV Standard & Hardware Abstraction (Figure 2):** Retiring consumer "FPV" slang for the formal Unmanned Copter Vehicle (UCV) engineering standard, and deploying a software-defined Hardware Abstraction Layer (HAL) on POSIX/CCSDS interfaces to defeat prime-contractor vendor lock-in for the Pentagon’s Replicator initiative.
+The essay examines four core operational transitions necessary for Western air power to survive peer conflict:
+
+1. **The Tactical Reconnaissance Imperative (Target Detection vs. Flight Ceilings):** Demonstrating why tactical reconnaissance utility is governed strictly by the physical resolution required to detect, recognize, and identify small NATO Class I (tactical drones, weapon teams) and Class II (mobile air defense radars, launchers) targets in contested terrain—not by arbitrary platform flight ceilings. High-altitude standoff MALE cannot solve this equation through cloud decks, foliage, and slant-range distortion, forcing tactical reconnaissance into forward, survivable low-altitude profiles.
+
+2. **The Physics of the Ground-Clutter Boundary:** Showing how the geometry of Earth's curvature and electromagnetic surface clutter transform the 0–300 meter low-altitude envelope into the only survivable ingress corridor against advanced acquisition and engagement radars.
+
+3. **The Multi-Tier Collaborative Battle Loop (Figure 1):** Decomposing air defense suppression (SEAD/DEAD) into five synchronized echelons—from standoff C4ISR orbits and expendable decoy stimulation to low-altitude strike waves of winged loitering UAVs and agile combat copters executing rapid-launch "sleeper" ambushes.
+
+4. **The Cyber-Physical UCV Standard & Software-Defined Mass (Figure 2):** Retiring consumer "FPV" terminology for the formal Unmanned Copter Vehicle (UCV) military engineering standard, and deploying an open Hardware Abstraction Layer (HAL) to defeat prime-contractor vendor lock-in for the Pentagon’s Replicator initiative.
 
 The complete manuscript is attached in Microsoft Word (`.docx`) and reference PDF (`.pdf`) formats, accompanied by two high-resolution tactical architecture diagrams illustrating the complete multi-tier battle loop and the software-defined hardware abstraction layer.
 
