@@ -7,7 +7,7 @@
 | **Target Publication** | **Modern War Institute at West Point** (`mwi.westpoint.edu`) |
 | **Publisher** | United States Military Academy (USMA), West Point, NY |
 | **Section** | Tactical & Operational Analysis / Future Warfare & Human-Machine Integration |
-| **Recipient Editors** | **John Amble**, Editor-in-Chief (`john.amble@westpoint.edu`)<br>**Charlie Faint**, Managing Editor (`charles.faint@westpoint.edu`)<br>**General Editorial Desk**: `mwi.submissions@westpoint.edu` |
+| **Recipient Editors** | **John Amble**, Editor-in-Chief (`john.amble@westpoint.edu`)<br>**Charlie Faint**, Managing Editor (`charles.faint@westpoint.edu`)<br>**General Editorial Desk**: `MWIsubmissions@westpoint.edu` |
 | **Submission Category** | Doctrinal Commentary & Technical Analysis (~2,150 words) |
 | **Author** | **Serhii Khylevych**, Principal Systems Architect |
 | **Author Profile** | [LinkedIn: Serhii Khylevych](https://www.linkedin.com/in/serhii-khylevych-aa152322/) |
@@ -18,7 +18,7 @@
 
 ## PART 1: THE EDITORIAL PITCH (Cover Query to MWI Editorial Desk)
 
-**To:** `john.amble@westpoint.edu`, `charles.faint@westpoint.edu`, `mwi.submissions@westpoint.edu`  
+**To:** `john.amble@westpoint.edu`, `charles.faint@westpoint.edu`, `MWIsubmissions@westpoint.edu`  
 **Subject:** SUBMISSION: The Autonomous Trench — Why 1-to-1 Teleoperation Fails in the Sensor-Rich Kill Zone and Demands an Unmanned Warfare Engine
 
 Dear John, Charlie, and the Modern War Institute Editorial Team,
