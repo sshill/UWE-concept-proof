@@ -1,0 +1,661 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1350" width="2400" height="1350">
+  <defs>
+    <!-- Background Canvas -->
+    <linearGradient id="bgMaster" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020817"/>
+      <stop offset="35%" stop-color="#061329"/>
+      <stop offset="70%" stop-color="#081b38"/>
+      <stop offset="100%" stop-color="#020914"/>
+    </linearGradient>
+
+    <!-- Header Banner Gradient -->
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2547"/>
+      <stop offset="50%" stop-color="#154273"/>
+      <stop offset="100%" stop-color="#0a1f3a"/>
+    </linearGradient>
+
+    <!-- Echelon Panel Gradients -->
+    <linearGradient id="spaceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#140152" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#22007c" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#080121" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="airGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0c2d54" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#14427b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#081e38" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#063842" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#085261" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#04232a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e2d08" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#314810" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#131c05" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="doctrinalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a0e17" stop-opacity="0.92"/>
+      <stop offset="50%" stop-color="#781d28" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#3b0810" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Glowing accents -->
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="100%" stop-color="#00b4d8"/>
+    </linearGradient>
+
+    <linearGradient id="amberGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#fb8500"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1a33" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#050e1c" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <!-- Filter Shadows -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-title { font-family: 'Georgia', serif; font-weight: bold; }
+    .font-sans { font-family: 'Arial', sans-serif; }
+    .font-mono { font-family: 'Consolas', 'Courier New', monospace; }
+  </style>
+
+  <!-- Master Canvas Background -->
+  <rect width="2400" height="1350" fill="url(#bgMaster)"/>
+
+  <!-- Subtle Tactical Grid Lines -->
+  <g stroke="#122744" stroke-width="0.7" opacity="0.35">
+    <line x1="0" y1="0" x2="0" y2="1350"/>
+    <line x1="100" y1="0" x2="100" y2="1350"/>
+    <line x1="200" y1="0" x2="200" y2="1350"/>
+    <line x1="300" y1="0" x2="300" y2="1350"/>
+    <line x1="400" y1="0" x2="400" y2="1350"/>
+    <line x1="500" y1="0" x2="500" y2="1350"/>
+    <line x1="600" y1="0" x2="600" y2="1350"/>
+    <line x1="700" y1="0" x2="700" y2="1350"/>
+    <line x1="800" y1="0" x2="800" y2="1350"/>
+    <line x1="900" y1="0" x2="900" y2="1350"/>
+    <line x1="1000" y1="0" x2="1000" y2="1350"/>
+    <line x1="1100" y1="0" x2="1100" y2="1350"/>
+    <line x1="1200" y1="0" x2="1200" y2="1350"/>
+    <line x1="1300" y1="0" x2="1300" y2="1350"/>
+    <line x1="1400" y1="0" x2="1400" y2="1350"/>
+    <line x1="1500" y1="0" x2="1500" y2="1350"/>
+    <line x1="1600" y1="0" x2="1600" y2="1350"/>
+    <line x1="1700" y1="0" x2="1700" y2="1350"/>
+    <line x1="1800" y1="0" x2="1800" y2="1350"/>
+    <line x1="1900" y1="0" x2="1900" y2="1350"/>
+    <line x1="2000" y1="0" x2="2000" y2="1350"/>
+    <line x1="2100" y1="0" x2="2100" y2="1350"/>
+    <line x1="2200" y1="0" x2="2200" y2="1350"/>
+    <line x1="2300" y1="0" x2="2300" y2="1350"/>
+    <line x1="2400" y1="0" x2="2400" y2="1350"/>
+    <line x1="0" y1="0" x2="2400" y2="0"/>
+    <line x1="0" y1="100" x2="2400" y2="100"/>
+    <line x1="0" y1="200" x2="2400" y2="200"/>
+    <line x1="0" y1="300" x2="2400" y2="300"/>
+    <line x1="0" y1="400" x2="2400" y2="400"/>
+    <line x1="0" y1="500" x2="2400" y2="500"/>
+    <line x1="0" y1="600" x2="2400" y2="600"/>
+    <line x1="0" y1="700" x2="2400" y2="700"/>
+    <line x1="0" y1="800" x2="2400" y2="800"/>
+    <line x1="0" y1="900" x2="2400" y2="900"/>
+    <line x1="0" y1="1000" x2="2400" y2="1000"/>
+    <line x1="0" y1="1100" x2="2400" y2="1100"/>
+    <line x1="0" y1="1200" x2="2400" y2="1200"/>
+    <line x1="0" y1="1300" x2="2400" y2="1300"/>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- HEADER & STRATEGIC BANNER                                      -->
+  <!-- ============================================================== -->
+  <rect x="40" y="25" width="2320" height="110" rx="10" fill="url(#headerGrad)" stroke="#1d5999" stroke-width="1.8"/>
+
+  <text x="70" y="66" class="font-title" font-size="28" fill="#ffffff" letter-spacing="1.2">
+    VERTICAL INTEGRATION KILL WEB: SPACE (UOV), AIR (UAV) &amp; GROUND-CLUTTER (UCV) SYNERGY UNDER UWE
+  </text>
+  <text x="70" y="98" class="font-sans" font-size="16" fill="#00f5d4" font-weight="bold" letter-spacing="0.8">
+    DE-CENTERING THE PILOT: AUTONOMOUS MACHINE-TO-MACHINE FIRE CONTROL, FLYING MISSILE BATTERIES &amp; LEO SATCOM
+  </text>
+  <text x="70" y="120" class="font-mono" font-size="12" fill="#8da9c4">
+    ARCHITECTURAL BENCHMARK • SERHII KHYLEVYCH, PRINCIPAL SYSTEMS ARCHITECT • AIR &amp; SPACE FORCES MAGAZINE
+  </text>
+
+  <!-- Header Telemetry Badges (Right Aligned) -->
+  <g transform="translate(1780, 40)">
+    <rect x="0" y="0" width="130" height="75" rx="6" fill="#051326" stroke="#00f5d4" stroke-width="1.2"/>
+    <text x="65" y="25" class="font-mono" font-size="11" fill="#8da9c4" text-anchor="middle">KILL WEB LATENCY</text>
+    <text x="65" y="52" class="font-mono" font-size="20" fill="#00f5d4" font-weight="bold" text-anchor="middle">&lt; 1.5 SEC</text>
+    <text x="65" y="68" class="font-sans" font-size="10" fill="#2ec4b6" text-anchor="middle">M2M Deterministic</text>
+
+    <rect x="140" y="0" width="130" height="75" rx="6" fill="#051326" stroke="#ffb703" stroke-width="1.2"/>
+    <text x="205" y="25" class="font-mono" font-size="11" fill="#8da9c4" text-anchor="middle">PILOT COGNITIVE LOAD</text>
+    <text x="205" y="52" class="font-mono" font-size="20" fill="#ffb703" font-weight="bold" text-anchor="middle">0% (TACTICAL)</text>
+    <text x="205" y="68" class="font-sans" font-size="10" fill="#fb8500" text-anchor="middle">De-Centered Pilot</text>
+
+    <rect x="280" y="0" width="130" height="75" rx="6" fill="#051326" stroke="#48cae4" stroke-width="1.2"/>
+    <text x="345" y="25" class="font-mono" font-size="11" fill="#8da9c4" text-anchor="middle">AAR PERSISTENCE</text>
+    <text x="345" y="52" class="font-mono" font-size="20" fill="#48cae4" font-weight="bold" text-anchor="middle">24/7 NON-STOP</text>
+    <text x="345" y="68" class="font-sans" font-size="10" fill="#90e0ef" text-anchor="middle">MQ-25 / Boom RelNav</text>
+
+    <rect x="420" y="0" width="140" height="75" rx="6" fill="#051326" stroke="#e63946" stroke-width="1.2"/>
+    <text x="490" y="25" class="font-mono" font-size="11" fill="#8da9c4" text-anchor="middle">PARADIGM SHIFT</text>
+    <text x="490" y="52" class="font-mono" font-size="16" fill="#e63946" font-weight="bold" text-anchor="middle">DRONES KILL</text>
+    <text x="490" y="68" class="font-sans" font-size="10" fill="#f28482" text-anchor="middle">DRONES (Soldier Ref)</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- LEFT COLUMN: VERTICAL ECHELONS ARCHITECTURE (Width: 1620)      -->
+  <!-- ============================================================== -->
+
+  <!-- ============================================================== -->
+  <!-- ECHELON 1: ORBITAL SPACE TRACKING LAYER (UOV)                  -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 155)">
+    <rect x="0" y="0" width="1620" height="195" rx="8" fill="url(#spaceGrad)" stroke="#7209b7" stroke-width="1.5"/>
+    <rect x="15" y="15" width="220" height="30" rx="4" fill="#3a0ca3" stroke="#b5179e" stroke-width="1"/>
+    <text x="125" y="35" class="font-mono" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle">ECHELON 1: SPACE (UOV)</text>
+    
+    <text x="250" y="36" class="font-title" font-size="18" fill="#f72585">
+      SDA PWSA TRANCHE 1/2 TRACKING LAYER + MDA HBTSS FIRE-CONTROL CONSTELLATION
+    </text>
+    <text x="250" y="56" class="font-sans" font-size="12" fill="#c77dff">
+      Low Earth Orbit (LEO 400–1,000 km) • "Reagan's SDI Realized in Metal" • Overhead IR/Optical Fire-Control
+    </text>
+
+    <!-- Content 3 Columns -->
+    <g transform="translate(25, 70)">
+      <!-- Col 1 -->
+      <rect x="0" y="0" width="500" height="110" rx="6" fill="#0b0126" stroke="#4a154b" stroke-width="1"/>
+      <text x="15" y="24" class="font-mono" font-size="13" fill="#00f5d4" font-weight="bold">OVERHEAD FIRE-CONTROL QUALITY TRACKS</text>
+      <text x="15" y="46" class="font-sans" font-size="12" fill="#e0aaff">
+        • Bypasses Earth curvature and radar horizon limits (d &gt; 400+ km)
+      </text>
+      <text x="15" y="66" class="font-sans" font-size="12" fill="#e0aaff">
+        • Detects high-altitude aerodynamic, ballistic &amp; hypersonic gliders
+      </text>
+      <text x="15" y="86" class="font-sans" font-size="12" fill="#e0aaff">
+        • Direct fire-control handover (SM-6, GPI, AMRAAM) without ground radar
+      </text>
+      <text x="15" y="104" class="font-mono" font-size="10" fill="#9d4edd">SDA Tranche 1/2 WFOV + HBTSS MFOV Precision Tracking</text>
+
+      <!-- Col 2 -->
+      <rect x="520" y="0" width="510" height="110" rx="6" fill="#0b0126" stroke="#4a154b" stroke-width="1"/>
+      <text x="535" y="24" class="font-mono" font-size="13" fill="#00f5d4" font-weight="bold">OPTICAL INTERSATELLITE LINKS (OISL)</text>
+      <text x="535" y="46" class="font-sans" font-size="12" fill="#e0aaff">
+        • 10 Gbps cross-link laser mesh: zero radio-frequency footprint
+      </text>
+      <text x="535" y="66" class="font-sans" font-size="12" fill="#e0aaff">
+        • Sub-second global track distribution across proliferated LEO constellation
+      </text>
+      <text x="535" y="86" class="font-sans" font-size="12" fill="#e0aaff">
+        • Immune to terrestrial surface electronic warfare and GPS jamming
+      </text>
+      <text x="535" y="104" class="font-mono" font-size="10" fill="#9d4edd">Space-to-Air Direct Tactical Link • Non-Geostationary Mesh</text>
+
+      <!-- Col 3 -->
+      <rect x="1050" y="0" width="515" height="110" rx="6" fill="#0b0126" stroke="#4a154b" stroke-width="1"/>
+      <text x="1065" y="24" class="font-mono" font-size="13" fill="#00f5d4" font-weight="bold">DEFEATING RADAR HORIZON BLINDNESS</text>
+      <text x="1065" y="46" class="font-sans" font-size="12" fill="#e0aaff">
+        • Surface radars blind below horizon: d ≈ 4.12·(√h_radar + √h_target)
+      </text>
+      <text x="1065" y="66" class="font-sans" font-size="12" fill="#e0aaff">
+        • Overhead look-down geometry eliminates terrain shadowing completely
+      </text>
+      <text x="1065" y="86" class="font-sans" font-size="12" fill="#e0aaff">
+        • Queues airborne "flying batteries" prior to target radar line-of-sight
+      </text>
+      <text x="1065" y="104" class="font-mono" font-size="10" fill="#9d4edd">Pre-Horizon Intercept Geometry • SDI Evolution Benchmark</text>
+    </g>
+  </g>
+
+  <!-- Downward Flow Vector 1 -->
+  <g transform="translate(850, 355)" stroke="#00f5d4" stroke-width="2.5" fill="none">
+    <line x1="0" y1="0" x2="0" y2="18"/>
+    <polygon points="0,22 -6,14 6,14" fill="#00f5d4"/>
+    <text x="15" y="15" class="font-mono" font-size="10" fill="#00f5d4" font-weight="bold">Space-to-Air Fire-Control Track &lt; 200 ms</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- ECHELON 2: AIRBORNE STANDOFF "FLYING MISSILE BATTERY" (UAV)   -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 380)">
+    <rect x="0" y="0" width="1620" height="215" rx="8" fill="url(#airGrad)" stroke="#1d5999" stroke-width="1.5"/>
+    <rect x="15" y="15" width="220" height="30" rx="4" fill="#0f3057" stroke="#00b4d8" stroke-width="1"/>
+    <text x="125" y="35" class="font-mono" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle">ECHELON 2: AIR (UAV)</text>
+
+    <text x="250" y="36" class="font-title" font-size="18" fill="#48cae4">
+      AUTONOMOUS FLYING MISSILE BATTERY (HEAVY CCA) + NON-STOP AAR REFUELING
+    </text>
+    <text x="250" y="56" class="font-sans" font-size="12" fill="#90e0ef">
+      Standoff Orbit: FL300–FL350 (80–120 km behind FLOT) • MQ-28A Ghost Bat Block 3 / AIM-120 • MQ-25 / CRONUS Loop
+    </text>
+
+    <!-- Content 3 Columns -->
+    <g transform="translate(25, 70)">
+      <!-- Col 1 -->
+      <rect x="0" y="0" width="500" height="130" rx="6" fill="#061a33" stroke="#1d5999" stroke-width="1"/>
+      <text x="15" y="24" class="font-mono" font-size="13" fill="#00f5d4" font-weight="bold">MQ-28 GHOST BAT: FLYING MAGAZINE</text>
+      <text x="15" y="46" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Woomera Dec 2025 Test Precedent: successful live AIM-120 AMRAAM firing
+      </text>
+      <text x="15" y="66" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Block 3 Expansion: enlarged wing + internal bays (AIM-120 / SDB GBU-39)
+      </text>
+      <text x="15" y="86" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Operates as "Missile Truck" releasing kinetic salvos on space/off-board cues
+      </text>
+      <text x="15" y="106" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Exercise Valiant Shield 2026: multi-domain teaming alongside F-22 &amp; F-35
+      </text>
+      <text x="15" y="123" class="font-mono" font-size="10" fill="#48cae4">Internal Carriage Stealth • Autonomous Standoff Magazine</text>
+
+      <!-- Col 2 -->
+      <rect x="520" y="0" width="510" height="130" rx="6" fill="#061a33" stroke="#1d5999" stroke-width="1"/>
+      <text x="535" y="24" class="font-mono" font-size="13" fill="#00f5d4" font-weight="bold">AUTONOMOUS AERIAL REFUELING (AAR)</text>
+      <text x="535" y="46" class="font-sans" font-size="12" fill="#cfe0f2">
+        • MQ-25A Stingray: operational flight April 2026 (VUQ-11 carrier integration)
+      </text>
+      <text x="535" y="66" class="font-sans" font-size="12" fill="#cfe0f2">
+        • AFRL CRONUS: Boom Automation + RelNav (Relative Navigation) uncrewed loop
+      </text>
+      <text x="535" y="86" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Continuous Combat Air Patrol (CAP): non-stop endurance without aircrew fatigue
+      </text>
+      <text x="535" y="106" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Enables deep penetration strike analogous to B-1B / B-21 long-range bomber
+      </text>
+      <text x="535" y="123" class="font-mono" font-size="10" fill="#48cae4">Automated Boom Rendezvous • Pacific Theater Range Extension</text>
+
+      <!-- Col 3 -->
+      <rect x="1050" y="0" width="515" height="130" rx="6" fill="#061a33" stroke="#1d5999" stroke-width="1"/>
+      <text x="1065" y="24" class="font-mono" font-size="13" fill="#00f5d4" font-weight="bold">COST-EXCHANGE RATIO INVERSION</text>
+      <text x="1065" y="46" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Replaces $300M crewed NGAD with $12M–$18M attritable flying batteries
+      </text>
+      <text x="1065" y="66" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Fires long-range interceptors from outside adversary SAM engagement zones
+      </text>
+      <text x="1065" y="86" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Offloads sensing to space/ground-clutter: platform remains clean and survivable
+      </text>
+      <text x="1065" y="106" class="font-sans" font-size="12" fill="#cfe0f2">
+        • Neutralizes adversary air dominance without risking allied aviators
+      </text>
+      <text x="1065" y="123" class="font-mono" font-size="10" fill="#48cae4">Asymmetric Air Dominance • Unmanned Missile Carrier</text>
+    </g>
+  </g>
+
+  <!-- Downward Flow Vector 2 -->
+  <g transform="translate(850, 600)" stroke="#00f5d4" stroke-width="2.5" fill="none">
+    <line x1="0" y1="0" x2="0" y2="18"/>
+    <polygon points="0,22 -6,14 6,14" fill="#00f5d4"/>
+    <text x="15" y="15" class="font-mono" font-size="10" fill="#00f5d4" font-weight="bold">Cross-Domain LEO Data Fabric &amp; Direct-to-Cell</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- ECHELON 3: CONNECTIVITY & DISTRIBUTED EDGE-AI BACKBONE         -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 625)">
+    <rect x="0" y="0" width="1620" height="195" rx="8" fill="url(#dataGrad)" stroke="#00b4d8" stroke-width="1.5"/>
+    <rect x="15" y="15" width="220" height="30" rx="4" fill="#02414d" stroke="#00f5d4" stroke-width="1"/>
+    <text x="125" y="35" class="font-mono" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle">ECHELON 3: DATA FABRIC</text>
+
+    <text x="250" y="36" class="font-title" font-size="18" fill="#00f5d4">
+      DIRECT-TO-CELL LEO SATCOM + DISTRIBUTED EDGE-TO-CLOUD AI BACKBONE
+    </text>
+    <text x="250" y="56" class="font-sans" font-size="12" fill="#90e0ef">
+      Bypassing Line-of-Sight (LOS) Radio Collapse in Ground Clutter • Anti-Jam Telemetry • Open Mission Systems (OMS/UCI)
+    </text>
+
+    <!-- Content 3 Columns -->
+    <g transform="translate(25, 70)">
+      <!-- Col 1 -->
+      <rect x="0" y="0" width="500" height="110" rx="6" fill="#021c22" stroke="#00778f" stroke-width="1"/>
+      <text x="15" y="24" class="font-mono" font-size="13" fill="#ffb703" font-weight="bold">OVERCOMING LINE-OF-SIGHT (LOS) COLLAPSE</text>
+      <text x="15" y="46" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Traditional airborne radio (Link 16) fails when drones drop behind terrain
+      </text>
+      <text x="15" y="66" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Direct-to-Cell / LEO micro-links maintain continuous orbital connectivity
+      </text>
+      <text x="15" y="86" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Real-time low-bandwidth telemetry + burst optical video on final dive
+      </text>
+      <text x="15" y="104" class="font-mono" font-size="10" fill="#2ec4b6">Eliminates Line-of-Sight Blindness • Starshield / Cellular Hybrid</text>
+
+      <!-- Col 2 -->
+      <rect x="520" y="0" width="510" height="110" rx="6" fill="#021c22" stroke="#00778f" stroke-width="1"/>
+      <text x="535" y="24" class="font-mono" font-size="13" fill="#ffb703" font-weight="bold">DISTRIBUTED AI VS. ONBOARD MONOLITH</text>
+      <text x="535" y="46" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Monolithic onboard AI causes avionics computational bottlenecking in swarms
+      </text>
+      <text x="535" y="66" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Edge-AI on platform handles microsecond stabilization &amp; optical lock
+      </text>
+      <text x="535" y="86" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Heavy multi-agent swarm allocation offloaded to space/cloud compute
+      </text>
+      <text x="535" y="104" class="font-mono" font-size="10" fill="#2ec4b6">Two-Tier Compute Architecture • Low-SWaP Attritable Avionics</text>
+
+      <!-- Col 3 -->
+      <rect x="1050" y="0" width="515" height="110" rx="6" fill="#021c22" stroke="#00778f" stroke-width="1"/>
+      <text x="1065" y="24" class="font-mono" font-size="13" fill="#ffb703" font-weight="bold">UNMANNED WARFARE ENGINE (UWE HAL)</text>
+      <text x="1065" y="46" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Software Hardware Abstraction Layer (HAL) on POSIX/CCSDS interfaces
+      </text>
+      <text x="1065" y="66" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Translates CJADC2 / DAF Battle Network missions to diverse effector swarms
+      </text>
+      <text x="1065" y="86" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Defeats prime-contractor vendor lock-in for the Pentagon's Replicator
+      </text>
+      <text x="1065" y="104" class="font-mono" font-size="10" fill="#2ec4b6">Interoperable Cross-Domain Bridge • Zero Vendor Lock-in</text>
+    </g>
+  </g>
+
+  <!-- Downward Flow Vector 3 -->
+  <g transform="translate(850, 825)" stroke="#00f5d4" stroke-width="2.5" fill="none">
+    <line x1="0" y1="0" x2="0" y2="18"/>
+    <polygon points="0,22 -6,14 6,14" fill="#00f5d4"/>
+    <text x="15" y="15" class="font-mono" font-size="10" fill="#00f5d4" font-weight="bold">Terminal Swarm Vectoring (0–300m Clutter Ingress)</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- ECHELON 4: TACTICAL GROUND-CLUTTER STRIKE & RECON (UCV)       -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 850)">
+    <rect x="0" y="0" width="1620" height="215" rx="8" fill="url(#groundGrad)" stroke="#588157" stroke-width="1.5"/>
+    <rect x="15" y="15" width="220" height="30" rx="4" fill="#283618" stroke="#606c38" stroke-width="1"/>
+    <text x="125" y="35" class="font-mono" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle">ECHELON 4: CLUTTER (UCV)</text>
+
+    <text x="250" y="36" class="font-title" font-size="18" fill="#dda15e">
+      TACTICAL COMBAT COPTERS (UCV), LOITERING UAVS &amp; "ZHDUN" SLEEPER AMBUSH
+    </text>
+    <text x="250" y="56" class="font-sans" font-size="12" fill="#dda15e">
+      Ground-Clutter Envelope: 0–300 m AGL • Doppler Notch (V_radial ≤ 25 m/s) • Neutralizing NATO Class I &amp; II IADS
+    </text>
+
+    <!-- Content 3 Columns -->
+    <g transform="translate(25, 70)">
+      <!-- Col 1 -->
+      <rect x="0" y="0" width="500" height="130" rx="6" fill="#111a07" stroke="#3a5a40" stroke-width="1"/>
+      <text x="15" y="24" class="font-mono" font-size="13" fill="#dda15e" font-weight="bold">NATO CLASS I &amp; II TARGET ELIMINATION</text>
+      <text x="15" y="46" class="font-sans" font-size="12" fill="#dad7cd">
+        • Class I Targets (&lt;150 kg): FPV launch teams, MANPADS posts, tactical squads
+      </text>
+      <text x="15" y="66" class="font-sans" font-size="12" fill="#dad7cd">
+        • Class II Targets (150–600 kg): 9S18M1 Kupol radar masts, Tor/Buk mobile SAMs
+      </text>
+      <text x="15" y="86" class="font-sans" font-size="12" fill="#dad7cd">
+        • Johnson's DRI resolution: millimeter target identification under tree canopy
+      </text>
+      <text x="15" y="106" class="font-sans" font-size="12" fill="#dad7cd">
+        • Proves mission formula: E_recon = f(R_detect, clutter) &gt;&gt; f(H_ceiling)
+      </text>
+      <text x="15" y="123" class="font-mono" font-size="10" fill="#a3b18f">Terrain Masking Penetration • Clutter Dominance</text>
+
+      <!-- Col 2 -->
+      <rect x="520" y="0" width="510" height="130" rx="6" fill="#111a07" stroke="#3a5a40" stroke-width="1"/>
+      <text x="535" y="24" class="font-mono" font-size="13" fill="#dda15e" font-weight="bold">"ZHDUN" (SLEEPER) GROUND AMBUSH</text>
+      <text x="535" y="46" class="font-sans" font-size="12" fill="#dad7cd">
+        • Forward perching on treelines/rooftops: ultra-low power standby (&lt;5 mA)
+      </text>
+      <text x="535" y="66" class="font-sans" font-size="12" fill="#dad7cd">
+        • Zero acoustic and thermal signature: completely invisible to adversary IRST
+      </text>
+      <text x="535" y="86" class="font-sans" font-size="12" fill="#dad7cd">
+        • Rapid launch in 1.5 s upon radar emission cue from Space/Standoff layer
+      </text>
+      <text x="535" y="106" class="font-sans" font-size="12" fill="#dad7cd">
+        • Terminal dive attack at 120–160 km/h: absolute ECCM immunity (fiber/Edge-AI)
+      </text>
+      <text x="535" y="123" class="font-mono" font-size="10" fill="#a3b18f">Repositionable Minefield • Sub-Second Reactive Ambush</text>
+
+      <!-- Col 3 -->
+      <rect x="1050" y="0" width="515" height="130" rx="6" fill="#111a07" stroke="#3a5a40" stroke-width="1"/>
+      <text x="1065" y="24" class="font-mono" font-size="13" fill="#dda15e" font-weight="bold">THE CYBER-PHYSICAL UCV STANDARD</text>
+      <text x="1065" y="46" class="font-sans" font-size="12" fill="#dad7cd">
+        • Retires hobbyist "FPV" slang for formal Unmanned Copter Vehicle (UCV)
+      </text>
+      <text x="1065" y="66" class="font-sans" font-size="12" fill="#dad7cd">
+        • Dynamic thrust-to-weight T/W ≥ 2.5: terminal dive ballistics in crosswinds
+      </text>
+      <text x="1065" y="86" class="font-sans" font-size="12" fill="#dad7cd">
+        • MIL-STD-1316 certified electronic safe-and-arm modular warhead trains
+      </text>
+      <text x="1065" y="106" class="font-sans" font-size="12" fill="#dad7cd">
+        • High-discharge 21700 cylindrical cells (45–60C burst) for aggressive egress
+      </text>
+      <text x="1065" y="123" class="font-mono" font-size="10" fill="#a3b18f">Industrial Scalability • Certified Combat Readiness</text>
+    </g>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- CENTRAL DOCTRINAL BANNER: "DRONES KILL DRONES" (Kurt Russell)   -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 1085)">
+    <rect x="0" y="0" width="1620" height="235" rx="10" fill="url(#doctrinalGrad)" stroke="#e63946" stroke-width="2"/>
+    
+    <rect x="25" y="18" width="310" height="34" rx="4" fill="#a4161a" stroke="#ff4d6d" stroke-width="1.2"/>
+    <text x="180" y="41" class="font-mono" font-size="16" fill="#ffffff" font-weight="bold" text-anchor="middle">
+      CENTRAL DOCTRINAL IMPERATIVE
+    </text>
+
+    <text x="355" y="42" class="font-title" font-size="24" fill="#ffffff">
+      "DRONES KILL DRONES" — DE-CENTERING THE HUMAN PILOT (THE SOLDIER PARADIGM)
+    </text>
+    <text x="355" y="66" class="font-sans" font-size="13" fill="#ffccd5">
+      Direct doctrinal parallel to the iconic military principle: "Soldiers kill soldiers." In 21st-century contested peer warfare, machines must autonomously fight machines.
+    </text>
+
+    <!-- Two Side-by-Side Comparison Panels -->
+    <g transform="translate(25, 80)">
+      <!-- Left Panel: Legacy Failure -->
+      <rect x="0" y="0" width="765" height="135" rx="6" fill="#200508" stroke="#d90429" stroke-width="1.2"/>
+      <rect x="15" y="12" width="220" height="22" rx="3" fill="#590d22"/>
+      <text x="125" y="27" class="font-mono" font-size="11" fill="#ff758f" font-weight="bold" text-anchor="middle">THE LEGACY PILOT-CENTRIC TRAP</text>
+      
+      <text x="15" y="55" class="font-sans" font-size="12" fill="#ffb3c1">
+        • Single-seat F-35 pilot forced to act as airborne drone manager under enemy fire
+      </text>
+      <text x="15" y="75" class="font-sans" font-size="12" fill="#ffb3c1">
+        • Mitchell Institute Study (H. Penney): severe cognitive saturation collapses decision loop
+      </text>
+      <text x="15" y="95" class="font-sans" font-size="12" fill="#ffb3c1">
+        • Mission duration strictly tethered to pilot physical endurance (dehydration, G-force fatigue)
+      </text>
+      <text x="15" y="115" class="font-sans" font-size="12" fill="#ffb3c1">
+        • Single Point of Failure: destroying or jamming the crewed leader eliminates entire swarm
+      </text>
+
+      <!-- Right Panel: The UWE Autonomous Kill Web -->
+      <rect x="805" y="0" width="765" height="135" rx="6" fill="#041f17" stroke="#2ec4b6" stroke-width="1.2"/>
+      <rect x="820" y="12" width="250" height="22" rx="3" fill="#0f4c3a"/>
+      <text x="945" y="27" class="font-mono" font-size="11" fill="#00f5d4" font-weight="bold" text-anchor="middle">THE UWE MACHINE-TO-MACHINE PARADIGM</text>
+
+      <text x="820" y="55" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Humans establish strategic Rules of Engagement (ROE) and high-level mission intent
+      </text>
+      <text x="820" y="75" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Tactical kill web executes machine-to-machine at microsecond wire speed (&lt; 1.5 sec)
+      </text>
+      <text x="820" y="95" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Autonomous Flying Batteries (MQ-28/AIM-120) engage hostile drones without pilot cueing
+      </text>
+      <text x="820" y="115" class="font-sans" font-size="12" fill="#b7e4c7">
+        • Non-stop persistent patrols: rotating AAR-refueled uncrewed magazines sanitize airspace
+      </text>
+    </g>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- RIGHT COLUMN: 5 TECHNICAL SPECIFICATION CARDS (Width: 670)     -->
+  <!-- Styled after hormuz_linkedin_infographic corner brackets       -->
+  <!-- ============================================================== -->
+  <g transform="translate(1690, 155)">
+
+    <!-- Card 1: UOV Specification -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="670" height="180" rx="6" fill="url(#cardGrad)" stroke="#7209b7" stroke-width="1.5"/>
+      <!-- Corner brackets -->
+      <path d="M 0,25 L 0,0 L 25,0" stroke="#f72585" stroke-width="2.5" fill="none"/>
+      <path d="M 645,0 L 670,0 L 670,25" stroke="#f72585" stroke-width="2.5" fill="none"/>
+      <path d="M 0,155 L 0,180 L 25,180" stroke="#f72585" stroke-width="2.5" fill="none"/>
+      <path d="M 645,180 L 670,180 L 670,155" stroke="#f72585" stroke-width="2.5" fill="none"/>
+
+      <rect x="20" y="15" width="80" height="24" rx="3" fill="#3a0ca3"/>
+      <text x="60" y="32" class="font-mono" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">UOV-1</text>
+      <text x="110" y="32" class="font-title" font-size="16" fill="#f72585">SDA PWSA LEO TRACKING LAYER SATELLITE</text>
+
+      <text x="20" y="62" class="font-mono" font-size="12" fill="#8da9c4">ORBIT: <tspan fill="#ffffff">LEO 400–1,000 km (Multi-Plane Proliferated Mesh)</tspan></text>
+      <text x="20" y="84" class="font-mono" font-size="12" fill="#8da9c4">PAYLOAD: <tspan fill="#ffffff">WFOV Optical/MWIR Overhead Early Warning Sensor</tspan></text>
+      <text x="20" y="106" class="font-mono" font-size="12" fill="#8da9c4">FIRE CONTROL: <tspan fill="#00f5d4">MDA HBTSS Precision Tracks for Direct Intercept</tspan></text>
+      <text x="20" y="128" class="font-mono" font-size="12" fill="#8da9c4">OPTICAL CROSSLINK: <tspan fill="#ffffff">10 Gbps Intersatellite Laser (OISL)</tspan></text>
+      <text x="20" y="150" class="font-mono" font-size="12" fill="#8da9c4">HORIZON ADVANTAGE: <tspan fill="#f72585">Zero Terrestrial Curvature Masking</tspan></text>
+      <text x="20" y="168" class="font-mono" font-size="10" fill="#7209b7">BENCHMARK: Space Development Agency Tranche 1/2 Architecture</text>
+    </g>
+
+    <!-- Card 2: UAV Heavy CCA Specification -->
+    <g transform="translate(0, 195)">
+      <rect x="0" y="0" width="670" height="195" rx="6" fill="url(#cardGrad)" stroke="#00b4d8" stroke-width="1.5"/>
+      <!-- Corner brackets -->
+      <path d="M 0,25 L 0,0 L 25,0" stroke="#00f5d4" stroke-width="2.5" fill="none"/>
+      <path d="M 645,0 L 670,0 L 670,25" stroke="#00f5d4" stroke-width="2.5" fill="none"/>
+      <path d="M 0,170 L 0,195 L 25,195" stroke="#00f5d4" stroke-width="2.5" fill="none"/>
+      <path d="M 645,195 L 670,195 L 670,170" stroke="#00f5d4" stroke-width="2.5" fill="none"/>
+
+      <rect x="20" y="15" width="80" height="24" rx="3" fill="#0f3057"/>
+      <text x="60" y="32" class="font-mono" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">UAV-BAT</text>
+      <text x="110" y="32" class="font-title" font-size="16" fill="#00f5d4">MQ-28A GHOST BAT BLOCK 3 (FLYING BATTERY)</text>
+
+      <text x="20" y="62" class="font-mono" font-size="12" fill="#8da9c4">MISSION PROFILE: <tspan fill="#ffffff">Standoff Air-to-Air Magazine &amp; SEAD Suppressor</tspan></text>
+      <text x="20" y="84" class="font-mono" font-size="12" fill="#8da9c4">ARMAMENT: <tspan fill="#00f5d4">Internal Carriage: AIM-120 AMRAAM &amp; GBU-39 SDB</tspan></text>
+      <text x="20" y="106" class="font-mono" font-size="12" fill="#8da9c4">LIVE PRECEDENT: <tspan fill="#ffb703">Woomera Dec 2025 Test-Fire • Valiant Shield 2026</tspan></text>
+      <text x="20" y="128" class="font-mono" font-size="12" fill="#8da9c4">RANGE EXPANSION: <tspan fill="#ffffff">Block 3 High-Aspect Ratio Wing (R &gt; 3,700 km)</tspan></text>
+      <text x="20" y="150" class="font-mono" font-size="12" fill="#8da9c4">COST PER AIRFRAME: <tspan fill="#48cae4">$12M–$18M (Attritable Mass Ratio 1:20 vs NGAD)</tspan></text>
+      <text x="20" y="172" class="font-mono" font-size="10" fill="#00b4d8">BENCHMARK: Royal Australian Air Force / Boeing Collaborative Aircraft</text>
+    </g>
+
+    <!-- Card 3: Autonomous Refueling Specification -->
+    <g transform="translate(0, 405)">
+      <rect x="0" y="0" width="670" height="180" rx="6" fill="url(#cardGrad)" stroke="#48cae4" stroke-width="1.5"/>
+      <!-- Corner brackets -->
+      <path d="M 0,25 L 0,0 L 25,0" stroke="#90e0ef" stroke-width="2.5" fill="none"/>
+      <path d="M 645,0 L 670,0 L 670,25" stroke="#90e0ef" stroke-width="2.5" fill="none"/>
+      <path d="M 0,155 L 0,180 L 25,180" stroke="#90e0ef" stroke-width="2.5" fill="none"/>
+      <path d="M 645,180 L 670,180 L 670,155" stroke="#90e0ef" stroke-width="2.5" fill="none"/>
+
+      <rect x="20" y="15" width="80" height="24" rx="3" fill="#034078"/>
+      <text x="60" y="32" class="font-mono" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">AAR-SYS</text>
+      <text x="110" y="32" class="font-title" font-size="16" fill="#90e0ef">MQ-25 STINGRAY &amp; AFRL CRONUS BOOM SYSTEM</text>
+
+      <text x="20" y="62" class="font-mono" font-size="12" fill="#8da9c4">ROLE: <tspan fill="#ffffff">Autonomous Air-to-Air Refueling for Uncrewed Wings</tspan></text>
+      <text x="20" y="84" class="font-mono" font-size="12" fill="#8da9c4">FLEET STATUS: <tspan fill="#00f5d4">Maiden Flight April 2026 • VUQ-11 Operational Unit</tspan></text>
+      <text x="20" y="106" class="font-mono" font-size="12" fill="#8da9c4">AUTOMATION CORE: <tspan fill="#ffffff">AFRL CRONUS Boom Automation &amp; RelNav Rendezvous</tspan></text>
+      <text x="20" y="128" class="font-mono" font-size="12" fill="#8da9c4">MISSION IMPACT: <tspan fill="#ffb703">Non-Stop Persistent CAP • Strategic Depth Strike</tspan></text>
+      <text x="20" y="150" class="font-mono" font-size="12" fill="#8da9c4">CREW COMPARISON: <tspan fill="#ffffff">Eliminates Pilot Fatigue Limits • 24/7 Air Sanctuary</tspan></text>
+      <text x="20" y="168" class="font-mono" font-size="10" fill="#48cae4">BENCHMARK: US Navy Carrier Air Wing &amp; USAF Tanker Modernization</text>
+    </g>
+
+    <!-- Card 4: Direct-to-Cell & Distributed AI Specification -->
+    <g transform="translate(0, 600)">
+      <rect x="0" y="0" width="670" height="185" rx="6" fill="url(#cardGrad)" stroke="#ffb703" stroke-width="1.5"/>
+      <!-- Corner brackets -->
+      <path d="M 0,25 L 0,0 L 25,0" stroke="#fb8500" stroke-width="2.5" fill="none"/>
+      <path d="M 645,0 L 670,0 L 670,25" stroke="#fb8500" stroke-width="2.5" fill="none"/>
+      <path d="M 0,160 L 0,185 L 25,185" stroke="#fb8500" stroke-width="2.5" fill="none"/>
+      <path d="M 645,185 L 670,185 L 670,160" stroke="#fb8500" stroke-width="2.5" fill="none"/>
+
+      <rect x="20" y="15" width="80" height="24" rx="3" fill="#804e00"/>
+      <text x="60" y="32" class="font-mono" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">SAT-AI</text>
+      <text x="110" y="32" class="font-title" font-size="16" fill="#ffb703">DIRECT-TO-CELL LEO &amp; DISTRIBUTED EDGE FABRIC</text>
+
+      <text x="20" y="62" class="font-mono" font-size="12" fill="#8da9c4">LINK ARCHITECTURE: <tspan fill="#ffffff">Non-Line-of-Sight (NLOS) Satellite Micro-Links</tspan></text>
+      <text x="20" y="84" class="font-mono" font-size="12" fill="#8da9c4">DATA PROTOCOL: <tspan fill="#00f5d4">Real-Time Telemetry &lt; 50 ms + Terminal Video Burst</tspan></text>
+      <text x="20" y="106" class="font-mono" font-size="12" fill="#8da9c4">COMPUTE DIVISION: <tspan fill="#ffffff">Edge-AI (Flight/Lock) vs Cloud-AI (Swarm Battle Logic)</tspan></text>
+      <text x="20" y="128" class="font-mono" font-size="12" fill="#8da9c4">AVIONICS RESILIENCE: <tspan fill="#ffb703">Zero Local Bottleneck in 100+ Drone Swarms</tspan></text>
+      <text x="20" y="150" class="font-mono" font-size="12" fill="#ffffff">INTEROPERABILITY: <tspan fill="#ffffff">Open Mission Systems (OMS) &amp; UCI Protocol Compliant</tspan></text>
+      <text x="20" y="170" class="font-mono" font-size="10" fill="#fb8500">BENCHMARK: Starshield / Commercial Cellular Direct-to-Device LEO</text>
+    </g>
+
+    <!-- Card 5: UCV Tactical Clutter Effector Specification -->
+    <g transform="translate(0, 800)">
+      <rect x="0" y="0" width="670" height="195" rx="6" fill="url(#cardGrad)" stroke="#588157" stroke-width="1.5"/>
+      <!-- Corner brackets -->
+      <path d="M 0,25 L 0,0 L 25,0" stroke="#dda15e" stroke-width="2.5" fill="none"/>
+      <path d="M 645,0 L 670,0 L 670,25" stroke="#dda15e" stroke-width="2.5" fill="none"/>
+      <path d="M 0,170 L 0,195 L 25,195" stroke="#dda15e" stroke-width="2.5" fill="none"/>
+      <path d="M 645,195 L 670,195 L 670,170" stroke="#dda15e" stroke-width="2.5" fill="none"/>
+
+      <rect x="20" y="15" width="80" height="24" rx="3" fill="#283618"/>
+      <text x="60" y="32" class="font-mono" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">UCV-CLUT</text>
+      <text x="110" y="32" class="font-title" font-size="16" fill="#dda15e">UNMANNED COPTER VEHICLE &amp; SLEEPER NODE</text>
+
+      <text x="20" y="62" class="font-mono" font-size="12" fill="#8da9c4">OPERATING DOMAIN: <tspan fill="#ffffff">0–300 m Ground Clutter Boundary (Low RCS Vector)</tspan></text>
+      <text x="20" y="84" class="font-mono" font-size="12" fill="#8da9c4">TARGET CRITERIA: <tspan fill="#00f5d4">NATO Class I (&lt;150 kg) &amp; Class II (150–600 kg) Assets</tspan></text>
+      <text x="20" y="106" class="font-mono" font-size="12" fill="#8da9c4">AMBUSH DOCTRINE: <tspan fill="#ffb703">"Zhdun" Dormant Node (&lt; 5 mA) • 1.5s Reactive Launch</tspan></text>
+      <text x="20" y="128" class="font-mono" font-size="12" fill="#8da9c4">TERMINAL KINEMATICS: <tspan fill="#ffffff">T/W ≥ 2.5 • Dive Velocity 120–160 km/h in Crosswinds</tspan></text>
+      <text x="20" y="150" class="font-mono" font-size="12" fill="#8da9c4">WARHEAD SAFETY: <tspan fill="#dda15e">MIL-STD-1316 Modular Electronic Safe-and-Arm (ESAD)</tspan></text>
+      <text x="20" y="172" class="font-mono" font-size="10" fill="#588157">BENCHMARK: Frontline Combat-Tested Ukraine Drone Engineering Standards</text>
+    </g>
+
+    <!-- Card 6: UWE Architecture Specification -->
+    <g transform="translate(0, 1010)">
+      <rect x="0" y="0" width="670" height="155" rx="6" fill="url(#cardGrad)" stroke="#e63946" stroke-width="1.5"/>
+      <!-- Corner brackets -->
+      <path d="M 0,25 L 0,0 L 25,0" stroke="#f28482" stroke-width="2.5" fill="none"/>
+      <path d="M 645,0 L 670,0 L 670,25" stroke="#f28482" stroke-width="2.5" fill="none"/>
+      <path d="M 0,130 L 0,155 L 25,155" stroke="#f28482" stroke-width="2.5" fill="none"/>
+      <path d="M 645,155 L 670,155 L 670,130" stroke="#f28482" stroke-width="2.5" fill="none"/>
+
+      <rect x="20" y="15" width="80" height="24" rx="3" fill="#6a040f"/>
+      <text x="60" y="32" class="font-mono" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">UWE-CORE</text>
+      <text x="110" y="32" class="font-title" font-size="16" fill="#f28482">UNMANNED WARFARE ENGINE (CJADC2 FABRIC)</text>
+
+      <text x="20" y="60" class="font-mono" font-size="12" fill="#8da9c4">CORE MISSION: <tspan fill="#ffffff">Machine-to-Machine Closed-Loop Kill Web Orchestration</tspan></text>
+      <text x="20" y="80" class="font-mono" font-size="12" fill="#8da9c4">SIX-CHAR TAXONOMY: <tspan fill="#00f5d4">[Regime·Launch] - [Power·Mission] - [Autonomy·Control]</tspan></text>
+      <text x="20" y="100" class="font-mono" font-size="12" fill="#8da9c4">VENDOR ABSTRACTION: <tspan fill="#ffb703">POSIX / CCSDS Standards Defeating OEM Lock-in</tspan></text>
+      <text x="20" y="120" class="font-mono" font-size="12" fill="#8da9c4">OPERATIONAL PHILOSOPHY: <tspan fill="#f28482">"Drones Kill Drones" at Wire Speed (&lt; 1.5s)</tspan></text>
+      <text x="20" y="140" class="font-mono" font-size="10" fill="#e63946">BENCHMARK: Universal Autonomous Warfare Operating Standard v0.7.1</text>
+    </g>
+
+    <!-- Bottom Metadata Block -->
+    <g transform="translate(0, 1180)">
+      <rect x="0" y="0" width="670" height="140" rx="6" fill="#040b17" stroke="#1f3b5c" stroke-width="1"/>
+      <text x="20" y="25" class="font-mono" font-size="12" fill="#8da9c4" font-weight="bold">SYSTEM VALIDATION &amp; PUBLICATION METADATA</text>
+      <text x="20" y="48" class="font-sans" font-size="11" fill="#cbd5e1">
+        • Target: Air &amp; Space Forces Magazine (Air &amp; Space Forces Association)
+      </text>
+      <text x="20" y="68" class="font-sans" font-size="11" fill="#cbd5e1">
+        • Scope: Cross-Domain Multi-Tier Integration (Space UOV + Air UAV + Clutter UCV)
+      </text>
+      <text x="20" y="88" class="font-sans" font-size="11" fill="#cbd5e1">
+        • Standards: DoD CJADC2, USAF ABMS, Open Mission Systems (OMS/UCI), STANAG 4670
+      </text>
+      <text x="20" y="108" class="font-sans" font-size="11" fill="#cbd5e1">
+        • Disclaimer: Derived strictly from unclassified OSINT and frontline engineering data
+      </text>
+      <text x="20" y="128" class="font-mono" font-size="10" fill="#00f5d4">
+        Author: Serhii Khylevych • Principal Systems Architect • Kyiv, Ukraine • 2026
+      </text>
+    </g>
+
+  </g>
+
+</svg>
