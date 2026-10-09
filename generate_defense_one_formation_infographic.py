@@ -434,7 +434,7 @@ def create_svg():
     <rect width="2280" height="110" rx="8" fill="#081426" stroke="#1e3a5f" stroke-width="1.5"/>
     <text x="30" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#00f5d4" letter-spacing="1">THE HEAVY GIMBAL PARADOX &amp; TIER 3 COLLABORATIVE STRIKE CODES:</text>
     <text x="30" y="58" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">
-      • Exquisite MALE platforms require 50-kg stabilized EO/IR gimbals (Wescam MX / Trillium HD80) to observe from standoff altitudes—yet altitude offers only an illusory sanctuary against Russian (S-300V4, Buk-M3) and Iranian ("358") IADS.
+      • Exquisite MALE platforms require 50-kg stabilized EO/IR gimbals (Wescam MX / FLIR Star SAFIRE 380-HD) to observe from standoff altitudes—yet altitude offers only an illusory sanctuary against Russian (S-300V4, Buk-M3) and Iranian ("358") IADS.
     </text>
     <text x="30" y="82" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">
       • The formation decomposes this problem: Standoff UAVs [AL-PE-HR] (Tier 1) provide jamming and mesh relays, while Tier 3 forward strike vectors—Winged UAVs [AH-EA-MO] and Combat UCVs [CH-EA-MO]—exploit the 0–300m ground clutter to kill radars with optical Edge-AI.

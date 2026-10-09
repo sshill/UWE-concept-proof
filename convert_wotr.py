@@ -29,14 +29,22 @@ def parse_math_to_html(formula_str):
     s = re.sub(r"\\text\{\s*([^}]+)\s*\}", r"\1", s)
     s = re.sub(r"[\t\\]+ext\{\s*([^}]+)\s*\}", r"\1", s)
 
-    # Step 3: Math symbols
+    # Step 3: Math symbols and greek letters
     s = s.replace(r"\approx", "≈")
     s = s.replace(r"\cdot", "·")
     s = s.replace(r"\times", "×")
     s = s.replace(r"\pm", "±")
+    s = re.sub(r"\\gg\b", "≫", s)
+    s = re.sub(r"\\ll\b", "≪", s)
     s = re.sub(r"\\le\b", "≤", s)
     s = re.sub(r"\\ge\b", "≥", s)
     s = re.sub(r"\\ne\b", "≠", s)
+    s = s.replace(r"\sigma", "σ")
+    s = s.replace(r"\tau", "τ")
+    s = s.replace(r"\Delta", "Δ")
+    s = s.replace(r"\lambda", "λ")
+    s = s.replace(r"\nabla", "∇")
+    s = s.replace(r"\mu", "μ")
     s = s.replace(r"\,", " ")
     s = s.replace(r"\;", " ")
     s = s.replace(r"\ ", " ")

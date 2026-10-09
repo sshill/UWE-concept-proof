@@ -28,7 +28,8 @@
 * **The Russian & Iranian Threat:** Russian multi-channel systems (S-300V4, Buk-M3, Tor-M2) and Iranian-designed interceptors—like the **"358" loitering surface-to-air missile**—make high altitude a death trap.
 * **The Paradox Defined:**
   - To survive outside the missile envelope (40–80 km away), you need massive focal lengths.
-  - That requires a **50-kg stabilized EO/IR turret** (like Wescam MX-15/20 or Trillium HD80).
+  - That requires a **50-kg stabilized EO/IR turret** (like L3Harris Wescam MX-15/20 or Teledyne FLIR Star SAFIRE 380-HD).
+  - **The Reconnaissance Formula:** Tactical reconnaissance value is governed by **detecting NATO Class I (<150 kg) and Class II (150–600 kg) targets** within the clutter layer under Johnson's criteria, NOT by theoretical flight ceilings (STANAG 4670). Standoff MALE cannot solve this at 20,000 ft.
   - A 50-kg gimbal inflates the drone to thousands of kilograms, pushing unit costs to **$20M–$30M**.
   - But at high altitude, a large drone is an illuminated radar beacon! **Altitude provides only an illusion of sanctuary.**
 
