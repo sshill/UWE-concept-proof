@@ -59,6 +59,15 @@ Principal Systems Architect | Creator of the Unmanned Warfare Engine (UWE)
 
 **By Serhii Khylevych**
 
+---
+
+### Technical & Operational Disclaimer
+
+> **DISCLAIMER ON SOURCES AND OEM ENCODING VALIDATION:**  
+> All operational models, taxonomies, kinetic formulas, and architectural frameworks presented herein are derived exclusively from unclassified open-source intelligence (OSINT), public military doctrine publications (including U.S. Army FM 3-0 *Operations* and AFC Pamphlet 71-20-9 *Human-Machine Integration*), and open international engineering standards (POSIX, CCSDS, OMG DDS). Specific vehicle classifications and alphanumeric codes cited as examples serve as illustrative architectural benchmarks. Formal operational adoption, baseline encoding, and deployment of these classifications require empirical validation and certification by original equipment manufacturers (OEMs) and military acquisition authorities against current certified technical performance specifications (TTX). This document contains no proprietary contractor data or ITAR/EAR-controlled information.
+
+---
+
 ### The Teleoperation Paradox: An 85-Year Tactical Cul-de-Sac
 
 Across the proving grounds of the National Training Center and during Project Convergence Capstone rotations, the visual spectacle of modern ground robotics is seductive: an infantry squad advances through a mock urban complex while an operator crouched behind cover steers an unmanned ground vehicle via a ruggedized touchscreen, suppressing a simulated bunker. To defense procurement boards, this vision represents the fulfillment of Army Futures Command’s Human-Machine Integration (HMI) concept.
