@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "domain": "land_warfare_media",
+  "last_updated": "2026-10-09",
+  "entries": [
+    {
+      "id": "mwi_swj_profile",
+      "file": "docs/knowledge/mwi_swj_editorial_profile.md",
+      "sha256": "ea0a4cc149fc829e69604cc60fd58f605d5dd687d7c2934143c1286a43409d5f",
+      "outlets": [
+        "Modern War Institute",
+        "Small Wars Journal"
+      ],
+      "focus": [
+        "UGV",
+        "Land Robotics",
+        "HMI",
+        "Trench & Urban Warfare"
+      ]
+    }
+  ]
+}
