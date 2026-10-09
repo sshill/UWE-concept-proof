@@ -24,7 +24,7 @@ Dear Ryan, Nick, and the War on the Rocks Editorial Team,
 
 For three decades, Western air power operated under an operational luxury that has now permanently vanished: uncontested medium-altitude loitering. In the skies above Ukraine and the Red Sea, the icons of the counter-insurgency era—exquisite, non-stealthy Medium-Altitude Long-Endurance (MALE) platforms like the MQ-9 Reaper and Bayraktar TB2—have been systematically driven from contested airspace by layered Russian and Iranian integrated air defense systems (IADS).
 
-In response, defense acquisition risks falling into a fatal procurement trap: attempting to preserve high-altitude standoff surveillance by building ever-larger drones to carry 50-kilogram optical turrets. This creates what I term **The Heavy Gimbal Paradox**—inflating airframes to multi-ton, $30 million price tags that commanders cannot afford to lose, while offering merely an illusion of sanctuary against modern multi-channel surface-to-air missiles.
+In response, defense acquisition risks falling into a fatal procurement trap: attempting to preserve high-altitude standoff surveillance by building ever-larger drones to carry 50-kilogram optical turrets. This creates what I term **The Heavy Gimbal Paradox**—inflating airframes to multi-ton, 30 million dollars price tags that commanders cannot afford to lose, while offering merely an illusion of sanctuary against modern multi-channel surface-to-air missiles.
 
 I have completed an in-depth analytical essay (~2,750 words) drawing on four years of direct frontline engineering under bombardment in Ukraine to outline the physical, tactical, and software architecture required to replace the collapsing MALE paradigm:
 
@@ -73,7 +73,7 @@ LinkedIn: https://www.linkedin.com/in/serhii-khylevych-aa152322/
 
 For three decades after the Cold War, Western air power took for granted an operational luxury that was mistaken for a permanent law of warfare: uncontested aerial sanctuary. From the Balkans and Iraq to Afghanistan, allied aircraft operated in permissive skies where the unmanned aerial vehicle matured into its modern form.
 
-The gold standard was the exquisite, non-stealthy Medium-Altitude Long-Endurance (MALE) turboprop—epitomized by the American MQ-9 Reaper and Turkish Bayraktar TB2. These systems achieved dominance against adversaries lacking radar and electronic attack. A single $30 million aircraft could loiter unchallenged at 15,000 to 25,000 feet for 24 hours, transmitting high-definition video and delivering laser-guided munitions.
+The gold standard was the exquisite, non-stealthy Medium-Altitude Long-Endurance (MALE) turboprop—epitomized by the American MQ-9 Reaper and Turkish Bayraktar TB2. These systems achieved dominance against adversaries lacking radar and electronic attack. A single 30 million dollars aircraft could loiter unchallenged at 15,000 to 25,000 feet for 24 hours, transmitting high-definition video and delivering laser-guided munitions.
 
 The battlefields of Ukraine and the Middle East have shattered this sanctuary forever. Over airspaces saturated with Russian multi-layered ground-based air defenses (GBAD) and Iranian interceptors, non-stealthy MALE airframes have been systematically driven from contested skies.
 
@@ -96,7 +96,7 @@ To resolve tactical targets—such as identifying a command post, radar mast, or
 Carrying a 50-kilogram turret while preserving 20 hours of endurance triggers an airframe inflation spiral:
 1. Wing surface area, structural mass, and turbine or piston powerplant requirements multiply.
 2. Fuel capacity and electrical demands balloon gross takeoff weight to thousands of kilograms.
-3. Unit procurement costs surge to $20 million to $35 million, accompanied by proprietary avionics and heavy logistical footprints.
+3. Unit procurement costs surge to 20 million dollars to 35 million dollars, accompanied by proprietary avionics and heavy logistical footprints.
 
 Yet this staggering expenditure yields only an **illusion of sanctuary**. Against modern active electronically scanned array (AESA) radars and multi-channel interceptors, a large, non-maneuvering MALE platform is an easy target. The monolithic platform is economically and tactically bankrupt. Air dominance requires **software-defined functional segregation** across collaborative formations.
 
@@ -108,18 +108,17 @@ If medium altitude is a death trap, where does an attritable unmanned force oper
 
 The geometric line-of-sight distance ($d$) between a surface-based radar antenna and an airborne target is governed by the standard radar horizon equation, accounting for standard atmospheric refraction ($4/3$ Earth radius model):
 
-$$d_{	ext{horizon}} pprox 4.12 \cdot \left(\sqrt{h_{	ext{radar}}} + \sqrt{h_{	ext{target}}}
-ight)$$
+$$d_{\text{horizon}} \approx 4.12 \cdot (\sqrt{h_{\text{radar}}} + \sqrt{h_{\text{target}}})$$
 
-where $d_{	ext{horizon}}$ is expressed in kilometers, and antenna heights $h_{	ext{radar}}$ and target altitude $h_{	ext{target}}$ are in meters.
+where $d_{\text{horizon}}$ is expressed in kilometers, and antenna heights $h_{\text{radar}}$ and target altitude $h_{\text{target}}$ are in meters.
 
 Consider the operational contrast between traditional medium-altitude flight and ground-clutter ingress:
-* **The MALE Profile:** An aircraft loitering at an altitude of $5,000	ext{ m}$ against a Russian 9S18M1 "Kupol" search radar elevated on a $15	ext{ m}$ mast has a theoretical line-of-sight exposure exceeding **$307	ext{ kilometers}$**. Even accounting for atmospheric attenuation and electronic jamming, the platform is tracked and queued for engagement hundreds of kilometers before it can employ tactical munitions.
-* **The Ground-Clutter Profile:** An unmanned vector operating at an altitude of $30	ext{ m}$ against the same $15	ext{ m}$ radar mast drops the geometric line-of-sight horizon to approximately **$38.5	ext{ kilometers}$**. Over undulating terrain, urban infrastructure, or forested tree lines, topographical screening (terrain masking) compresses this detection threshold to under **$12	ext{ kilometers}$**.
+* **The MALE Profile:** An aircraft loitering at an altitude of 5,000 meters against a Russian 9S18M1 "Kupol" search radar elevated on a 15-meter mast has a theoretical line-of-sight exposure exceeding **307 kilometers**. Even accounting for atmospheric attenuation and electronic jamming, the platform is tracked and queued for engagement hundreds of kilometers before it can employ tactical munitions.
+* **The Ground-Clutter Profile:** An unmanned vector operating at an altitude of 30 meters against the same 15-meter radar mast drops the geometric line-of-sight horizon to approximately **38.5 kilometers**. Over undulating terrain, urban infrastructure, or forested tree lines, topographical screening (terrain masking) compresses this detection threshold to under **12 kilometers**.
 
 Beyond geometric line-of-sight masking, low-altitude flight between **0 and 300 meters above ground level (AGL)** exploits electromagnetic backscatter. When an adversary acquisition radar transmits radio-frequency energy toward the Earth's surface, reflections from terrain, vegetation, buildings, and ground features generate massive **clutter returns**. 
 
-While modern pulse-Doppler radars employ moving target indication (MTI) filters to separate moving targets from stationary terrain, ground clutter significantly degrades radar signal-to-noise ratios. Furthermore, when low-altitude unmanned aircraft maneuver across radial vectors or fly below the radar's minimum Doppler clutter notch velocity ($V_{	ext{radial}} \le 25	ext{ m/s}$), they become virtually indistinguishable from ambient ground reflections.
+While modern pulse-Doppler radars employ moving target indication (MTI) filters to separate moving targets from stationary terrain, ground clutter significantly degrades radar signal-to-noise ratios. Furthermore, when low-altitude unmanned aircraft maneuver across radial vectors or fly below the radar's minimum Doppler clutter notch velocity ($V_{\text{radial}} \le 25\text{ m/s}$), they become virtually indistinguishable from ambient ground reflections.
 
 By abandoning the false sanctuary of altitude and forcing combat operations into the 0–300 meter clutter layer, unmanned strike forces invert the economic calculus of integrated air defense. A surface-to-air missile battery designed to intercept Mach 3 aircraft at 30,000 feet cannot efficiently engage hundreds of small, low-RCS vectors skimming over tree lines and ravines.
 
@@ -196,10 +195,10 @@ This terminology is doctrinally catastrophic. First Person View (FPV) describes 
 To transition from ad-hoc commercial improvisation to an industrial-scale defense manufacturing base, the Pentagon must retire "FPV" and formally establish the **Unmanned Copter Vehicle (UCV)** military engineering standard.
 
 A combat-grade UCV is defined by four non-negotiable cyber-physical invariants:
-1. **Terminal Guidance Physics & Aerodynamic Ballistics:** Unlike horizontal-flight cruise munitions, a tactical multirotor operates across agile vertical and dive vectors. Maintaining aerodynamic control at terminal dive velocities of 120 to 160 km/h in crosswinds requires high rotor disk loadings and dynamic thrust-to-weight ratios ($T/W \ge 2.5$).
+1. **Terminal Guidance Physics & Aerodynamic Ballistics:** Unlike horizontal-flight cruise munitions, a tactical multirotor operates across agile vertical and dive vectors. Maintaining aerodynamic control at terminal dive velocities of 120 to 160 km/h in crosswinds requires high rotor disk loadings and dynamic thrust-to-weight ratios (T/W ≥ 2.5).
 2. **Electronic Counter-Countermeasures (ECCM):** Commercial video transmitters collapse within minutes of encountering military-grade electronic attack. A combat UCV mandates frequency-hopping spread spectrum (FHSS) links, circularly polarized anti-jam GNSS arrays, or zero-emission fiber-optic micro-tethers offering absolute immunity to radio-frequency jamming.
 3. **Modular Warhead Train Safety (MIL-STD-1316):** Battlefield utility requires transitioning from dangerous, improvised wire contacts to certified electronic safe-and-arm devices (ESAD), modular shaped charges, and programmable impact/proximity fuzes.
-4. **Energy Chemistry & High-Rate Discharge Profiles:** Consumer batteries overheat and sag under combat acceleration. Combat UCVs require specialized high-rate lithium-ion (21700 cylindrical cells) or lithium-polymer packs engineered for continuous high-discharge rates ($45	ext{–}60	ext{C}$ burst) during terminal egress and evasive maneuvers.
+4. **Energy Chemistry & High-Rate Discharge Profiles:** Consumer batteries overheat and sag under combat acceleration. Combat UCVs require specialized high-rate lithium-ion (21700 cylindrical cells) or lithium-polymer packs engineered for continuous high-discharge rates (45–60C burst) during terminal egress and evasive maneuvers.
 
 #### The Universal Six-Character UWE Syntax
 To enable human combat commanders and autonomous AI microservices to manipulate these disparate assets across joint command-and-control networks, the UWE architecture introduces an idempotent, dual-read six-character syntax:

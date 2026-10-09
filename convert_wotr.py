@@ -12,40 +12,51 @@ import html
 import subprocess
 import shutil
 
-def format_math_symbols(content):
-    replacements = [
-        (r'\\approx', '≈'),
-        (r'\\le', '≤'),
-        (r'\\ge', '≥'),
-        (r'\\ne', '≠'),
-        (r'\\pm', '±'),
-        (r'\\times', '×'),
-        (r'\\cdot', '·'),
-        (r'\\to', '→'),
-        (r'\\rightarrow', '→'),
-        (r'\\leftarrow', '←'),
-        (r'\\Delta', 'Δ'),
-        (r'\\lambda', 'λ'),
-        (r'\\nabla', '∇'),
-        (r'\\mu', 'μ'),
-        (r'\\dots', '…'),
-        (r'\\cdots', '⋯'),
-        (r'\\in', '∈'),
-        (r'\\infty', '∞'),
-        (r'\\mathbf{([^}]+)}', r'<b>\1</b>'),
-        (r'\\text{([^}]+)}', r'\1'),
-        (r'\\textsubscript{([^}]+)}', r'<sub>\1</sub>'),
-        (r'\\textsuperscript{([^}]+)}', r'<sup>\1</sup>'),
-        (r'\^{([0-9A-Za-z\-+]+)}', r'<sup>\1</sup>'),
-        (r'\^([0-9]+)', r'<sup>\1</sup>'),
-        (r'_\{([0-9A-Za-z\-+]+)\}', r'<sub>\1</sub>'),
-        (r'_([0-9A-Za-z])', r'<sub>\1</sub>'),
-        (r'\\,', ' '),
-        (r'\\;', ' '),
-    ]
-    for pattern, repl in replacements:
-        content = re.sub(pattern, repl, content)
-    return content
+def parse_math_to_html(formula_str):
+    s = formula_str.strip()
+    if s.startswith("$$") and s.endswith("$$"):
+        s = s[2:-2].strip()
+    elif s.startswith("$") and s.endswith("$"):
+        s = s[1:-1].strip()
+
+    # Step 1: Strip \left and \right delimiters
+    s = re.sub(r"\\left\s*([(\[{|])", r"\1", s)
+    s = re.sub(r"\\right\s*([)\]}|])", r"\1", s)
+    s = re.sub(r"\\left\b", "", s)
+    s = re.sub(r"\\right\b", "", s)
+
+    # Step 2: Strip \text{...} and tab+ext{...}
+    s = re.sub(r"\\text\{\s*([^}]+)\s*\}", r"\1", s)
+    s = re.sub(r"[\t\\]+ext\{\s*([^}]+)\s*\}", r"\1", s)
+
+    # Step 3: Math symbols
+    s = s.replace(r"\approx", "≈")
+    s = s.replace(r"\cdot", "·")
+    s = s.replace(r"\times", "×")
+    s = s.replace(r"\pm", "±")
+    s = re.sub(r"\\le\b", "≤", s)
+    s = re.sub(r"\\ge\b", "≥", s)
+    s = re.sub(r"\\ne\b", "≠", s)
+    s = s.replace(r"\,", " ")
+    s = s.replace(r"\;", " ")
+    s = s.replace(r"\ ", " ")
+
+    # Step 4: \mathbf
+    s = re.sub(r"\\mathbf\{\s*([^}]+)\s*\}", r"<b>\1</b>", s)
+
+    # Step 5: \sqrt with nested braces
+    s = re.sub(r"\\sqrt\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}", r"√(\1)", s)
+    s = re.sub(r"\\sqrt\s*([0-9a-zA-Z])", r"√\1", s)
+
+    # Step 6: Subscripts and superscripts
+    s = re.sub(r"_\{([^}]+)\}", r"<sub>\1</sub>", s)
+    s = re.sub(r"_([0-9A-Za-z])", r"<sub>\1</sub>", s)
+    s = re.sub(r"\^\{([^}]+)\}", r"<sup>\1</sup>", s)
+    s = re.sub(r"\^([0-9A-Za-z])", r"<sup>\1</sup>", s)
+
+    # Step 7: Clean leftover backslashes
+    s = s.replace("\\", "")
+    return s
 
 def inline_formatting(text):
     # 1. Protect code spans
@@ -72,16 +83,22 @@ def inline_formatting(text):
         return f"{{{{LINKTOKEN:{len(link_tokens)-1}}}}}"
     text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', save_link, text)
 
-    # 4. Bold and Italic
+    # 4. Parse inline math ($...$)
+    def repl_inline_math(m):
+        math_content = m.group(1)
+        # Avoid matching empty or invalid
+        if not math_content.strip():
+            return "$$"
+        return parse_math_to_html(math_content)
+    text = re.sub(r'\$([^\$]+)\$', repl_inline_math, text)
+
+    # 5. Bold and Italic
     text = re.sub(r'\*\*\*([^*]+)\*\*\*', r'<b><i>\1</i></b>', text)
     text = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', text)
     text = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', text)
     text = re.sub(r'___([^_]+)___', r'<b><i>\1</i></b>', text)
     text = re.sub(r'__([^_]+)__', r'<b>\1</b>', text)
     text = re.sub(r'_([^_]+)_', r'<i>\1</i>', text)
-
-    # 5. Math symbols
-    text = format_math_symbols(text)
 
     # 6. Restore links
     for idx, (label, url) in enumerate(link_tokens):
@@ -281,8 +298,8 @@ def md_to_html(md_content, title="War on the Rocks Essay"):
                 if i < len(lines):
                     math_block.append(lines[i])
             full_math = "\n".join(math_block)
-            rendered_math = inline_formatting(full_math)
-            html_lines.append(f'<div style="text-align: center; margin: 8pt 0; font-family: \'Times New Roman\', serif; font-size: 11pt; font-weight: bold;">{rendered_math}</div>')
+            rendered_math = parse_math_to_html(full_math)
+            html_lines.append(f'<div style="text-align: center; margin: 10pt 0; font-family: \'Georgia\', \'Times New Roman\', serif; font-size: 11pt; font-weight: bold; color: #0b1f3a; page-break-inside: avoid;">{rendered_math}</div>')
             i += 1
             continue
 
@@ -385,7 +402,6 @@ def convert():
     with open(md_file, "r", encoding="utf-8") as f:
         full_content = f.read()
 
-    # Extract strictly Part 2
     part2_marker = "## PART 2: THE COMPLETE ANALYTICAL ESSAY"
     if part2_marker in full_content:
         manuscript_md = full_content.split(part2_marker)[1].strip()
