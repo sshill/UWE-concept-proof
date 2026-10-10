@@ -1,5 +1,7 @@
 # LibreOffice staging & locks
 .lo_user/
+.lo_user_rusi/
+.lo_staging_rusi/
 .~lock.*
 
 # Python caches
