@@ -2,7 +2,7 @@
 
 * **Author:** Serhii Khylevych (Principal Systems Architect)
 * **Affiliation:** Unmanned Warfare Engine (UWE) Architectural Group
-* **Last Updated:** 15 October 2026, 11:55 EEST
+* **Last Updated:** 15 October 2026, 12:00 EEST
 * **Repository:** `/home/hills/Documents/UWS` (Branch: `main`)
 
 ---
@@ -55,6 +55,10 @@
 * **Редакційний перебіг та наступні дії:**
   1. **Текстова колонка (Op-Ed):** Bradley Peniston офіційно підтвердив прийняття статті (*"I love the idea of a standard nomenclature for small UAVs—sorry, UCVs—and I would like to take this article"*). Надіслано відредагований варіант (`D1-Khylevych-Serhii-UAV-nomenclature-BP.docx`).
   2. **Відеоінтерв'ю / Подкаст:** Patrick Tucker запросив автора на відеоінтерв'ю через Google Meet для нового медіапроєкту/шоу Defense One (*"Are you open to a video interview on this over Google Meet for a new podcast / show we are putting together?"*). Очікує узгодження тайм-слоту автором.
+* **Графік та процедура перевірки публікації (Release Monitoring Schedule):**
+  * **Редакційний цикл *Defense One Ideas / Commentary*:** Статті публікуються в онлайн-стрічці у робочі дні (понеділок–п'ятниця) переважно в робочий час Східного узбережжя США (09:00–16:00 US Eastern Time / 16:00–23:00 EEST за Києвом).
+  * **Протокол моніторингу онлайн-релізу:** Регулярний щоденний моніторинг розділу `defenseone.com/ideas/` та пошук за прізвищем автора (*Serhii Khylevych*) або терміном *UCV* на предмет виходу публікації.
+  * **Поштовий трекінг:** Моніторинг вхідних повідомлень від Bradley Peniston (`bpeniston@defenseone.com`) щодо фінального підтвердження дати або надсилання прямого посилання (live URL) на статтю.
 
 ### [2026-10-15] The Space Review (Weekly Spacepower Journal, USA)
 * **Назва рукопису:** *The Kondratyuk Paradigm: Why Resilient Orbital Defense Demands a Decentralized Nodal Architecture, Not Monolithic Satellites*
@@ -83,7 +87,7 @@
 |---|---|---|---|---|---|
 | **1** | **Modern War Institute (MWI) at West Point**<br>*(Вест-Пойнт, США)* | **The Autonomous Trench: Why 1-to-1 Teleoperation Fails in the Sensor-Rich Kill Zone and Demands an Unmanned Warfare Engine**<br>*(Сухопутна війна, тактичний сон «ждун», критика 1-до-1 телеоперації)* | • `UWE_MWI_West_Point_Essay.docx`<br>• `UWE_MWI_West_Point_Essay.pdf`<br>• Схема бою 16:9 | `MWIsubmissions@westpoint.edu`<br>`john.amble@westpoint.edu`<br>`charles.faint@westpoint.edu` | ⏳ **ПОДАНО / НА РОЗГЛЯДІ**<br>Подано 15.10.2026. Шлюз USMA прийняв пакет; 0 реджектів (синтаксис валідовано). Очікується вердикт: 22–29.10. |
 | **2** | **War on the Rocks (WOTR)**<br>*(США)* | **The Death of MALE Sanctuaries and the Rise of the Collaborative Kill Web**<br>*(Повітряна війна, приземний ешелон 0–300 м, SEAD/DEAD)* | • `UWE_War_on_the_Rocks_Essay.docx`<br>• `UWE_War_on_the_Rocks_Essay.pdf`<br>• 2 тактичні інфографіки | `submissions@warontherocks.com` | 🟡 **ПІТЧ ЗВЕДЕНО / РЕЗЕРВ**<br>Супровідний пітч зафіксовано в `fc1136c`. Готовий до відправки після проходження RUSI. |
-| **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Bradley Peniston (`bpeniston@defenseone.com`)<br>Patrick Tucker (`ptucker@defenseone.com`) | 🟢 **ПРИЙНЯТО ДО ДРУКУ (In Production)**<br>Драфт прийнято редактором Bradley Peniston. Запрошено на відеоподкаст Patrick Tucker. |
+| **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Bradley Peniston (`bpeniston@defenseone.com`)<br>Patrick Tucker (`ptucker@defenseone.com`) | 🟢 **ПРИЙНЯТО ДО ДРУКУ (In Production)**<br>Драфт прийнято Bradley Peniston. Щоденний моніторинг `defenseone.com/ideas/` (Пн–Пт, 16:00–23:00 EEST). Очікує запису подкасту. |
 | **4** | **Air & Space Forces Magazine / TWZ** | **The Low-Altitude Reconnaissance Imperative: Target Acquisition Geometry vs. High-Standoff Myths** | • `UWE_Air_Space_Forces_Feature.docx`<br>• `UWE_Air_Space_Forces_Feature.pdf` | Редакція AFA / TWZ | 🟢 **ГОТОВО ДО НАДСИЛАННЯ** |
 | **5** | **CIMSEC / Naval News** | **Functional Disaggregation of the Warship: Black Sea Lessons for Littoral Strike** | • `UWE_Naval_News_OpEd.docx`<br>• `UWE_CIMSEC_Submission.docx` | `director@cimsec.org` | ⏸️ **АРХІВ / РЕЗЕРВ**<br>Попередню скриньку редактора (`dmitry.filipoff@cimsec.org`) деактивовано (User Unknown); фокус перенесено на RUSI. |
 | **6** | **The Space Review**<br>*(США)* | **The Kondratyuk Paradigm: Why Resilient Orbital Defense Demands a Decentralized Nodal Architecture, Not Monolithic Satellites**<br>*(Орбітальна оборона, спадщина Кондратюка, UOV таксономія)* | • `UWE_Space_Review_Submission.docx`<br>• `UWE_Space_Review_Submission.pdf`<br>• 300 DPI інфографіка | Jeff Foust (`jeff@thespacereview.com`) | ⏳ **НА РОЗГЛЯДІ РЕДАКТОРА (Under Review)**<br>Отримано підтвердження від Jeff Foust. Очікування випуску; щотижневий моніторинг по понеділках ввечері (US EST) / вівторок ранок (Київ). |
