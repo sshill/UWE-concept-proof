@@ -23,6 +23,8 @@
 
 Dear John, Charlie, and the Modern War Institute Editorial Team,
 
+The core thesis of *Strategy Strikes Back*—monolithic imperial platforms doomed by distributed asymmetric mass—is literally today's Ukraine kill zone. In that operational crucible, 1-to-1 UGV teleoperation has become just another Death Star exhaust port.
+
 As the U.S. Army accelerates its Human-Machine Integration (HMI) experiments through Project Convergence and units rotate through "Transforming in Contact" deployments, land warfare doctrine stands at a dangerous conceptual impasse. We are continuing to field ground robotics under a flawed mental model: the assumption of **1-to-1 teleoperation**.
 
 Whether evaluating the Squad Multipurpose Equipment Transport (SMET) or testing multi-million-dollar Robotic Combat Vehicles (RCV), current concepts assume a soldier in a fighting vehicle or trench can continuously pilot a remote ground machine via a dedicated radio link and a ruggedized tablet. Drawing on four years of direct frontline systems engineering under continuous electronic warfare and loitering munition bombardment in Ukraine, I can state unequivocally: **1-to-1 teleoperation is dead on arrival in a contested peer conflict.**

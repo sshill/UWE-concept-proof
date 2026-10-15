@@ -2,7 +2,7 @@
 
 * **Author:** Serhii Khylevych (Principal Systems Architect)
 * **Affiliation:** Unmanned Warfare Engine (UWE) Architectural Group
-* **Last Updated:** 14 October 2026, 12:35 EEST
+* **Last Updated:** 15 October 2026, 11:35 EEST
 * **Repository:** `/home/hills/Documents/UWS` (Branch: `main`)
 
 ---
@@ -27,17 +27,46 @@
   * *Тиждень 1 (14–21 жовтня 2026):* Внутрішній тріаж та первинний огляд редактора (Justin Bronk) та профільного експерта з морської сили (Sidharth Kaushal).
   * *Тиждень 2–3 (28 жовтня – 4 листопада 2026):* Вікно очікування офіційного підтвердження прийняття до друку / коментарів рецензентів. У разі відсутності реакції — санкціоновано ввічливий follow-up запит.
 
+### [2026-10-15] Modern War Institute (MWI) at West Point (USMA, NY)
+* **Назва рукопису:** *The Autonomous Trench: Why 1-to-1 Teleoperation Fails in the Sensor-Rich Kill Zone and Demands an Unmanned Warfare Engine*
+* **Адресати:**
+  * **To:** General Editorial Desk (`MWIsubmissions@westpoint.edu`), John Amble, Editor-in-Chief (`john.amble@westpoint.edu`)
+  * **Cc:** Charlie Faint, Managing Editor (`charles.faint@westpoint.edu`)
+* **Подані матеріали:**
+  1. `UWE_MWI_West_Point_Essay.docx` (чистий рукопис для верстки, ~2,150 слів)
+  2. `UWE_MWI_West_Point_Essay.pdf` (еталонна версія з кольоровою тактичною схемою 16:9)
+  3. Тіло листа з прямою апеляцією до книги Джона Ембла *Strategy Strikes Back* (деконструкція 1-to-1 телеоперації як чергового "Death Star exhaust port" перед обличчям розподіленої асиметричної маси)
+* **Статус доставки (Delivery Verification):**
+  * 🟢 **ДОСТАВЛЕНО УСПІШНО (Delivered / Zero Bounces)**
+  * Поштовий шлюз Microsoft 365 / USMA Exchange Online Protection прийняв пакет; поштових реджектів (Bounce, Mail Delivery Subsystem / NDR `550 5.4.1 DBEB`) **НЕ надходило**. Попередню помилку синтаксису адреси (із крапкою) повністю локалізовано й виправлено.
+* **Поточний редакційний статус:**
+  * ⏳ **НА РЕДАКЦІЙНОМУ РОЗГЛЯДІ (Under Editorial Review / Triage)**
+* **Графік моніторингу та зворотного зв'язку (Follow-up Timeline):**
+  * *Вікно первинного розгляду (15–22 жовтня 2026):* Редакційний тріаж Джоном Емблом та Чарлі Фейнтом.
+  * *Вікно очікування вердикту / коментарів (22–29 жовтня 2026):* Очікування відповіді щодо публікації або доопрацювання.
+
+### [2026-10-15] Defense One (Atlantic Media / GovExec, Washington, D.C.)
+* **Назва матеріалу:** *Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard*
+* **Адресати:**
+  * **Executive Editor:** Bradley Peniston (`bpeniston@defenseone.com`)
+  * **Technology Editor:** Patrick Tucker (`ptucker@defenseone.com`)
+* **Поточний статус:**
+  * 🟢 **ПРИЙНЯТО ДО ДРУКУ / У ВИРОБНИЦТВІ (Accepted / In Production)**
+* **Редакційний перебіг та наступні дії:**
+  1. **Текстова колонка (Op-Ed):** Bradley Peniston офіційно підтвердив прийняття статті (*"I love the idea of a standard nomenclature for small UAVs—sorry, UCVs—and I would like to take this article"*). Надіслано відредагований варіант (`D1-Khylevych-Serhii-UAV-nomenclature-BP.docx`).
+  2. **Відеоінтерв'ю / Подкаст:** Patrick Tucker запросив автора на відеоінтерв'ю через Google Meet для нового медіапроєкту/шоу Defense One (*"Are you open to a video interview on this over Google Meet for a new podcast / show we are putting together?"*). Очікує узгодження тайм-слоту автором.
+
 ---
 
 ## 2. Статус підготовлених до подання матеріалів (Submission Pipeline)
 
 | # | Цільове видання | Назва матеріалу / Спрямування | Матеріали & Формати | Контактні дані | Поточний статус & Зворотний зв'язок |
 |---|---|---|---|---|---|
-| **1** | **Modern War Institute (MWI) at West Point**<br>*(Вест-Пойнт, США)* | **The Software-Defined Front: Algorithmic Mass, Ground Clutter, and the Collapse of Heavy Armor Dominance**<br>*(Сухопутна війна, тактичний сон «ждун», критика важкої броні)* | • `UWE_MWI_West_Point_Essay.docx`<br>• `UWE_MWI_West_Point_Essay.pdf`<br>• Схема бою 16:9 | `MWIsubmissions@westpoint.edu`<br>John Amble (LinkedIn) | 🟢 **ГОТОВО ДО НАДСИЛАННЯ**<br>Редакційний пакет скомпільовано. Очікує ініціації відправки автором. |
+| **1** | **Modern War Institute (MWI) at West Point**<br>*(Вест-Пойнт, США)* | **The Autonomous Trench: Why 1-to-1 Teleoperation Fails in the Sensor-Rich Kill Zone and Demands an Unmanned Warfare Engine**<br>*(Сухопутна війна, тактичний сон «ждун», критика 1-до-1 телеоперації)* | • `UWE_MWI_West_Point_Essay.docx`<br>• `UWE_MWI_West_Point_Essay.pdf`<br>• Схема бою 16:9 | `MWIsubmissions@westpoint.edu`<br>`john.amble@westpoint.edu`<br>`charles.faint@westpoint.edu` | ⏳ **ПОДАНО / НА РОЗГЛЯДІ**<br>Подано 15.10.2026. Шлюз USMA прийняв пакет; 0 реджектів (синтаксис валідовано). Очікується вердикт: 22–29.10. |
 | **2** | **War on the Rocks (WOTR)**<br>*(США)* | **The Death of MALE Sanctuaries and the Rise of the Collaborative Kill Web**<br>*(Повітряна війна, приземний ешелон 0–300 м, SEAD/DEAD)* | • `UWE_War_on_the_Rocks_Essay.docx`<br>• `UWE_War_on_the_Rocks_Essay.pdf`<br>• 2 тактичні інфографіки | `submissions@warontherocks.com` | 🟡 **ПІТЧ ЗВЕДЕНО / РЕЗЕРВ**<br>Супровідний пітч зафіксовано в `fc1136c`. Готовий до відправки після проходження RUSI. |
-| **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Редакційна колегія Defense One | 🟢 **ГОТОВО ДО НАДСИЛАННЯ**<br>Колонка 1 200 слів зі стандартами апаратного абстрагування. |
+| **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Bradley Peniston (`bpeniston@defenseone.com`)<br>Patrick Tucker (`ptucker@defenseone.com`) | 🟢 **ПРИЙНЯТО ДО ДРУКУ (In Production)**<br>Драфт прийнято редактором Bradley Peniston. Запрошено на відеоподкаст Patrick Tucker. |
 | **4** | **Air & Space Forces Magazine / TWZ** | **The Low-Altitude Reconnaissance Imperative: Target Acquisition Geometry vs. High-Standoff Myths** | • `UWE_Air_Space_Forces_Feature.docx`<br>• `UWE_Air_Space_Forces_Feature.pdf` | Редакція AFA / TWZ | 🟢 **ГОТОВО ДО НАДСИЛАННЯ** |
-| **5** | **CIMSEC / Naval News** | **Functional Disaggregation of the Warship: Black Sea Lessons for Littoral Strike** | • `UWE_Naval_News_OpEd.docx`<br>• `UWE_CIMSEC_Submission.docx` | `director@cimsec.org` | ⏸️ **АРХІВ / РЕЗЕРВ**<br>Попередні запити за тематикою USV/UUV без відповіді тривалий час; фокус перенесено на RUSI Defence Systems. |
+| **5** | **CIMSEC / Naval News** | **Functional Disaggregation of the Warship: Black Sea Lessons for Littoral Strike** | • `UWE_Naval_News_OpEd.docx`<br>• `UWE_CIMSEC_Submission.docx` | `director@cimsec.org` | ⏸️ **АРХІВ / РЕЗЕРВ**<br>Попередню скриньку редактора (`dmitry.filipoff@cimsec.org`) деактивовано (User Unknown); фокус перенесено на RUSI. |
 | **6** | **SpaceNews / The Space Review** | **The Sub-Orbital Mesh: Linking Low-Altitude Autonomous Clusters with LEO Constellations** | • `UWE_SpaceNews_OpEd.docx`<br>• `UWE_Space_Review_Submission.pdf` | Редакції SpaceNews / TSR | 🟢 **РЕЗЕРВ (Staged)** |
 
 ---
