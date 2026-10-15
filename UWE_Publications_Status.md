@@ -2,7 +2,7 @@
 
 * **Author:** Serhii Khylevych (Principal Systems Architect)
 * **Affiliation:** Unmanned Warfare Engine (UWE) Architectural Group
-* **Last Updated:** 15 October 2026, 11:35 EEST
+* **Last Updated:** 15 October 2026, 11:55 EEST
 * **Repository:** `/home/hills/Documents/UWS` (Branch: `main`)
 
 ---
@@ -56,6 +56,25 @@
   1. **Текстова колонка (Op-Ed):** Bradley Peniston офіційно підтвердив прийняття статті (*"I love the idea of a standard nomenclature for small UAVs—sorry, UCVs—and I would like to take this article"*). Надіслано відредагований варіант (`D1-Khylevych-Serhii-UAV-nomenclature-BP.docx`).
   2. **Відеоінтерв'ю / Подкаст:** Patrick Tucker запросив автора на відеоінтерв'ю через Google Meet для нового медіапроєкту/шоу Defense One (*"Are you open to a video interview on this over Google Meet for a new podcast / show we are putting together?"*). Очікує узгодження тайм-слоту автором.
 
+### [2026-10-15] The Space Review (Weekly Spacepower Journal, USA)
+* **Назва рукопису:** *The Kondratyuk Paradigm: Why Resilient Orbital Defense Demands a Decentralized Nodal Architecture, Not Monolithic Satellites*
+* **Адресат:**
+  * **Editor & Publisher:** Jeff Foust (`jeff@thespacereview.com`)
+* **Подані матеріали:**
+  1. `UWE_Space_Review_Submission.docx` (чистий рукопис для верстки, ~2,450 слів)
+  2. `UWE_Space_Review_Submission.pdf` (еталонна версія з кольоровою тактичною інфографікою 16:9)
+  3. Тактична схема вертикальної інтеграції космос–поверхня (300 DPI, `air_space_vertical_integration_fitted.png`)
+  4. Доктринальний супровідний лист із викладом 6-символьної таксономічної матриці UOV ($[\mathbf{OP}] - [\mathbf{EM}] - [\mathbf{TC}]$)
+* **Статус доставки та підтвердження отримання:**
+  * 🟢 **ДОСТАВЛЕНО ТА ОТРИМАНО ВІДПОВІДЬ (Delivered & Acknowledged by Editor)**
+  * Jeff Foust особисто підтвердив отримання рукопису та взяття в роботу: *"Thanks for sending this. I will review it soon and get back to you with any comments about it."*
+* **Поточний редакційний статус:**
+  * ⏳ **НА ОСОБИСТОМУ РОЗГЛЯДІ РЕДАКТОРА (Under Editorial Review by Jeff Foust)**
+* **Графік моніторингу та перевірки онлайн-випусків (Release Monitoring Schedule):**
+  * **Редакційний цикл публікацій *The Space Review*:** Нові щотижневі випуски видаються **щопонеділка ввечері за часом США (US Eastern Time)**, що відповідає **вівторку рано-вранці за київським часом (02:00–06:00 EEST)**.
+  * **Протокол моніторингу:** Регламентна перевірка нових онлайн-публікацій та змісту щотижневого випуску на `thespacereview.com` щопонеділка ввечері (US EST) / вівторка вранці (Київ) на предмет виходу статті *The Kondratyuk Paradigm*.
+  * **Follow-up вікно:** З моменту первинного підтвердження (4 жовтня) минуло 11 днів; поточне вікно (15–20 жовтня) є активним періодом очікування публікації у найближчому випуску.
+
 ---
 
 ## 2. Статус підготовлених до подання матеріалів (Submission Pipeline)
@@ -67,7 +86,7 @@
 | **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Bradley Peniston (`bpeniston@defenseone.com`)<br>Patrick Tucker (`ptucker@defenseone.com`) | 🟢 **ПРИЙНЯТО ДО ДРУКУ (In Production)**<br>Драфт прийнято редактором Bradley Peniston. Запрошено на відеоподкаст Patrick Tucker. |
 | **4** | **Air & Space Forces Magazine / TWZ** | **The Low-Altitude Reconnaissance Imperative: Target Acquisition Geometry vs. High-Standoff Myths** | • `UWE_Air_Space_Forces_Feature.docx`<br>• `UWE_Air_Space_Forces_Feature.pdf` | Редакція AFA / TWZ | 🟢 **ГОТОВО ДО НАДСИЛАННЯ** |
 | **5** | **CIMSEC / Naval News** | **Functional Disaggregation of the Warship: Black Sea Lessons for Littoral Strike** | • `UWE_Naval_News_OpEd.docx`<br>• `UWE_CIMSEC_Submission.docx` | `director@cimsec.org` | ⏸️ **АРХІВ / РЕЗЕРВ**<br>Попередню скриньку редактора (`dmitry.filipoff@cimsec.org`) деактивовано (User Unknown); фокус перенесено на RUSI. |
-| **6** | **SpaceNews / The Space Review** | **The Sub-Orbital Mesh: Linking Low-Altitude Autonomous Clusters with LEO Constellations** | • `UWE_SpaceNews_OpEd.docx`<br>• `UWE_Space_Review_Submission.pdf` | Редакції SpaceNews / TSR | 🟢 **РЕЗЕРВ (Staged)** |
+| **6** | **The Space Review**<br>*(США)* | **The Kondratyuk Paradigm: Why Resilient Orbital Defense Demands a Decentralized Nodal Architecture, Not Monolithic Satellites**<br>*(Орбітальна оборона, спадщина Кондратюка, UOV таксономія)* | • `UWE_Space_Review_Submission.docx`<br>• `UWE_Space_Review_Submission.pdf`<br>• 300 DPI інфографіка | Jeff Foust (`jeff@thespacereview.com`) | ⏳ **НА РОЗГЛЯДІ РЕДАКТОРА (Under Review)**<br>Отримано підтвердження від Jeff Foust. Очікування випуску; щотижневий моніторинг по понеділках ввечері (US EST) / вівторок ранок (Київ). |
 
 ---
 
