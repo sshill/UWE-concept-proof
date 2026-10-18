@@ -18,19 +18,11 @@ Twenty-first-century industrial warfare has reached a catastrophic impasse:
 
 The **Unmanned Warfare Engine (UWE)** is neither a single drone model nor a vendor catalog. It is an **open cyber-physical operating architecture and universal hardware abstraction layer (HAL)** forged in Kyiv and validated by four years of high-intensity operational warfare in Ukraine (2022–2026):
 
-```
-                     ┌────────────────────────────────────────┐
-                     │   ORBIT (UOV) — Persistent C4ISR Eye   │
-                     └───────────────────┬────────────────────┘
-                                         ▼ (< 1.8 seconds)
-     ┌───────────────────────────────────┼───────────────────────────────────┐
-     ▼                                   ▼                                   ▼
-┌─────────────────────────┐ ┌─────────────────────────┐ ┌─────────────────────────┐
-│   AIR (UAV / UCV)       │ │   GROUND (UGV)          │ │   MARITIME (USV / UUV)  │
-│   Low-altitude screen,  │ │   Dormant sleepers,     │ │   Distributed escort,   │
-│   runway-free intercept │ │   casualty evacuation   │ │   seabed critical infra │
-└─────────────────────────┘ └─────────────────────────┘ └─────────────────────────┘
-```
+### The Four Operational Dimensions of the Unified Shield:
+* 🛰️ **Orbital Domain (UOV):** Space-based nodal constellations providing 24/7 battle space awareness and direct sub-1.8-second targeting hand-off to surface assets.
+* ✈️ **Air Domain (UAV / UCV):** Low-altitude defensive screens and runway-independent vertical-lift copters intercepting aerial threats at the tactical edge.
+* 🚜 **Terrestrial Domain (UGV):** Autonomous ground machines executing casualty evacuation, mine clearance, logistics, and dormant perimeter holds without exposing infantry.
+* ⚓ **Maritime Domain (USV / UUV):** Autonomous surface formations and subsea sentinels safeguarding littoral borders, ports, and critical seabed infrastructure.
 
 ### The 4 Pillars in Plain Terms:
 1. **Humans Out of the Kill Zone:** Lethal, high-risk operational burdens (forward scouting, trench perimeter defense, minefield clearance, tactical logistics) are fully transferred to autonomous robotic nodes. Soldiers step back into secure command-and-control shelters as strategic orchestrators.
