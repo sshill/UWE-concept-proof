@@ -2,7 +2,7 @@
 
 * **Author:** Serhii Khylevych (Principal Systems Architect)
 * **Affiliation:** Unmanned Warfare Engine (UWE) Architectural Group
-* **Last Updated:** 15 October 2026, 12:00 EEST
+* **Last Updated:** 19 October 2026, 21:10 EEST
 * **Repository:** `/home/hills/Documents/UWS` (Branch: `main`)
 
 ---
@@ -79,6 +79,46 @@
   * **Протокол моніторингу:** Регламентна перевірка нових онлайн-публікацій та змісту щотижневого випуску на `thespacereview.com` щопонеділка ввечері (US EST) / вівторка вранці (Київ) на предмет виходу статті *The Kondratyuk Paradigm*.
   * **Follow-up вікно:** З моменту первинного підтвердження (4 жовтня) минуло 11 днів; поточне вікно (15–20 жовтня) є активним періодом очікування публікації у найближчому випуску.
 
+### [2026-10-19] Naval News / LinkedIn Direct Push (Exail USVs & Wave-Piercing Autonomy)
+* **Цільовий майданчик:** *Naval News* (Editor-in-Chief: Xavier Vavasseur) / Профільний пост щодо оцінки USVs Exail (DriX H-9 та Oryx O-16) для US Navy та USCG.
+* **Пряме посилання на обговорення:** [Naval News Exail Post on LinkedIn](https://lnkd.in/p/dr7xpMVU)
+* **Формат взаємодії:** Цільовий технічний коментар-пітч (Targeted Architectural Outreach & Direct Injection) для встановлення контакту з редакцією *Naval News* та морською інженерною спільнотою (US Navy ONR / PMS 406, USCG, Exail).
+* **Опублікований артефакт (Technical Payload, відкалібровано на -67 символів):**
+  ```text
+  Naval News on Exail USVs tested by U.S. Navy (DriX H-9 C-UAS) & USCG (Oryx O-16 ASW) marks a shift from sprint planing hulls to persistent wave-piercing autonomy.
+
+  🏷️ UWE CLASSIFICATION:
+
+  1. Exail DriX H-9 (ONR C-UAS Testbed):
+  USV: SL-PA-DR
+  (C2 Crane/Slip 9m | Diesel | Active C-UAS Picket | Defend/Escort | MESH/SATCOM)
+
+  2. Exail Oryx O-16 (USCG Oceanic ASW):
+  USV: ST-PL-DD
+  (C3 Trans-Oceanic 16m | Hybrid | Persistent ASW Loiter | Defend/Picket | Direct SATCOM)
+
+  🟢 WHY WAVE-PIERCING + DROP KEEL WINS:
+
+  🔹 Slender Hull Physics:
+  Planing hulls take brutal wave slamming (>5-8 g), fatiguing hulls and saturating optical gimbals. Exail’s wave-piercer keeps vertical loads <1.5 g in Sea State 5, enabling jitter-free C-UAS fire control and 90-day endurance.
+
+  🔹 Drop Keel (+15-20 dB SNR):
+  Placing acoustic arrays 2m below the hull escapes surface cavitation and bubble sweep-down noise, delivering critical gain for quiet submarine detection.
+
+  ⚡ HAL CONTRACT:
+  "Open-ocean USVs require the IHydrodynamicDropKeelDrive HAL contract to trim sensor gondolas below cavitation layers for max ASW SNR while damping wave-piercing hulls in Sea State 5+."
+  ```
+* **Ключові архітектурні тези UWE:**
+  1. *Таксономія UWE:* Чітке позиціонування платформ у мультідоменному класифікаторі (`USV: SL-PA-DR` та `USV: ST-PL-DD`).
+  2. *Гідродинаміка:* Перехід від високоперевантажувальних глісуючих корпусів (>5–8 g) до хвилепрорізної океанської автономії (<1.5 g у Sea State 5).
+  3. *Гідроакустика ASW:* Досягнення +15–20 dB акустичного виграшу завдяки опусканню гондоли (Drop Keel) нижче приповерхневої кавітації та бульбашкового шару (bubble sweep-down).
+  4. *HAL-контракт:* Стандартизований інтерфейс `IHydrodynamicDropKeelDrive` для апаратного балансування та керування заглибленням сенсорів.
+* **Поточний статус:**
+  * 🟢 **ОПУБЛІКОВАНО / АКТИВНИЙ АУТРІЧ (Live Technical Push)**
+* **Наступні кроки та моніторинг:**
+  * Моніторинг реакцій Xavier Vavasseur, команди Exail та офіцерів US Navy/USCG.
+  * У разі зворотного зв'язку — ескалація до повноформатної аналітичної колонки на шпальтах *Naval News*.
+
 ---
 
 ## 2. Статус підготовлених до подання матеріалів (Submission Pipeline)
@@ -89,7 +129,7 @@
 | **2** | **War on the Rocks (WOTR)**<br>*(США)* | **The Death of MALE Sanctuaries and the Rise of the Collaborative Kill Web**<br>*(Повітряна війна, приземний ешелон 0–300 м, SEAD/DEAD)* | • `UWE_War_on_the_Rocks_Essay.docx`<br>• `UWE_War_on_the_Rocks_Essay.pdf`<br>• 2 тактичні інфографіки | `submissions@warontherocks.com` | 🟡 **ПІТЧ ЗВЕДЕНО / РЕЗЕРВ**<br>Супровідний пітч зафіксовано в `fc1136c`. Готовий до відправки після проходження RUSI. |
 | **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Bradley Peniston (`bpeniston@defenseone.com`)<br>Patrick Tucker (`ptucker@defenseone.com`) | 🟢 **ПРИЙНЯТО ДО ДРУКУ (In Production)**<br>Драфт прийнято Bradley Peniston. Щоденний моніторинг `defenseone.com/ideas/` (Пн–Пт, 16:00–23:00 EEST). Очікує запису подкасту. |
 | **4** | **Air & Space Forces Magazine / TWZ** | **The Low-Altitude Reconnaissance Imperative: Target Acquisition Geometry vs. High-Standoff Myths** | • `UWE_Air_Space_Forces_Feature.docx`<br>• `UWE_Air_Space_Forces_Feature.pdf` | Редакція AFA / TWZ | 🟢 **ГОТОВО ДО НАДСИЛАННЯ** |
-| **5** | **CIMSEC / Naval News** | **Functional Disaggregation of the Warship: Black Sea Lessons for Littoral Strike** | • `UWE_Naval_News_OpEd.docx`<br>• `UWE_CIMSEC_Submission.docx` | `director@cimsec.org` | ⏸️ **АРХІВ / РЕЗЕРВ**<br>Попередню скриньку редактора (`dmitry.filipoff@cimsec.org`) деактивовано (User Unknown); фокус перенесено на RUSI. |
+| **5** | **Naval News**<br>*(Париж / Вашингтон)* | **Persistent Wave-Piercing Autonomy vs Planing Hulls: Open-Ocean ASW & C-UAS Integration**<br>*(Гідродинаміка, Drop Keel +15-20 dB SNR, HAL IHydrodynamicDropKeelDrive)* | • Direct LinkedIn Technical Push ([Пост](https://lnkd.in/p/dr7xpMVU))<br>• Доктринальний драфт колонки | Xavier Vavasseur (`xavier@navalnews.com`), редакція Naval News | 🟢 **АКТИВНИЙ ПУШ / OUTREACH**<br>Опубліковано цільовий технічний коментар-пітч 19.10.2026. Моніторинг фідбеку та підготовка повноформатної колонки. |
 | **6** | **The Space Review**<br>*(США)* | **The Kondratyuk Paradigm: Why Resilient Orbital Defense Demands a Decentralized Nodal Architecture, Not Monolithic Satellites**<br>*(Орбітальна оборона, спадщина Кондратюка, UOV таксономія)* | • `UWE_Space_Review_Submission.docx`<br>• `UWE_Space_Review_Submission.pdf`<br>• 300 DPI інфографіка | Jeff Foust (`jeff@thespacereview.com`) | ⏳ **НА РОЗГЛЯДІ РЕДАКТОРА (Under Review)**<br>Отримано підтвердження від Jeff Foust. Очікування випуску; щотижневий моніторинг по понеділках ввечері (US EST) / вівторок ранок (Київ). |
 
 ---
