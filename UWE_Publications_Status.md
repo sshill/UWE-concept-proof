@@ -2,7 +2,7 @@
 
 * **Author:** Serhii Khylevych (Principal Systems Architect)
 * **Affiliation:** Unmanned Warfare Engine (UWE) Architectural Group
-* **Last Updated:** 19 October 2026, 21:10 EEST
+* **Last Updated:** 19 October 2026, 21:30 EEST
 * **Repository:** `/home/hills/Documents/UWS` (Branch: `main`)
 
 ---
@@ -79,7 +79,7 @@
   * **Протокол моніторингу:** Регламентна перевірка нових онлайн-публікацій та змісту щотижневого випуску на `thespacereview.com` щопонеділка ввечері (US EST) / вівторка вранці (Київ) на предмет виходу статті *The Kondratyuk Paradigm*.
   * **Follow-up вікно:** З моменту первинного підтвердження (4 жовтня) минуло 11 днів; поточне вікно (15–20 жовтня) є активним періодом очікування публікації у найближчому випуску.
 
-### [2026-10-19] Naval News / LinkedIn Direct Push (Exail USVs & Wave-Piercing Autonomy)
+### [2026-10-19] Naval News / LinkedIn Direct Push #1 (Exail USVs & Wave-Piercing Autonomy)
 * **Цільовий майданчик:** *Naval News* (Editor-in-Chief: Xavier Vavasseur) / Профільний пост щодо оцінки USVs Exail (DriX H-9 та Oryx O-16) для US Navy та USCG.
 * **Пряме посилання на обговорення:** [Naval News Exail Post on LinkedIn](https://lnkd.in/p/dr7xpMVU)
 * **Формат взаємодії:** Цільовий технічний коментар-пітч (Targeted Architectural Outreach & Direct Injection) для встановлення контакту з редакцією *Naval News* та морською інженерною спільнотою (US Navy ONR / PMS 406, USCG, Exail).
@@ -119,6 +119,39 @@
   * Моніторинг реакцій Xavier Vavasseur, команди Exail та офіцерів US Navy/USCG.
   * У разі зворотного зв'язку — ескалація до повноформатної аналітичної колонки на шпальтах *Naval News*.
 
+### [2026-10-19] Naval News / LinkedIn Direct Push #2 (AUKUS Undersea Milestone: Ghost Shark & BlueBottle)
+* **Цільовий майданчик:** *Naval News* (Editor-in-Chief: Xavier Vavasseur) / Профільний пост щодо оголошення австралійської програми AUKUS з інтеграції корисних навантажень для безпілотників Ghost Shark, Speartooth та BlueBottle.
+* **Пряме посилання на обговорення:** [Naval News Australia AUKUS Undersea Post on LinkedIn](https://lnkd.in/p/deY-rctz)
+* **Формат взаємодії:** Цільовий технічний коментар-пітч (Targeted Architectural Outreach & Direct Injection) від Сергія Хилевича.
+* **Опублікований артефакт (Technical Payload, Verbatim Live):**
+  ```text
+  Naval News on Australia’s AUKUS undersea milestone highlights modular payloads for Ghost Shark (XL-AUV), Speartooth (LUUV), and BlueBottle (USV, not UUV as reported).
+  🏷️ UWE CLASSIFICATION:
+  1. Anduril Ghost Shark:
+  UUV: PT-RM-DA
+  (Pelagic 1000m | C3 Slipway | Battery | 12 Mines + ALTIUS UAVs | Denial/Strike | Acoustic/Sat Mast)
+  2. Ocius BlueBottle:
+  USV: SL-EL-DR
+  (Surface | C2 Trailer 7m | Solar/Sail/Wave | ASW Towed Array & Gateway | Picket | SATCOM/MESH)
+  🟢 ARCHITECTURAL DELTAS:
+  🔹 Decoupled Lethality:
+  Ghost Shark validates the invariant carrier law: deploying 12 naval sea mines, tube-launching ALTIUS UAVs from depth into airspace, and placing SOF caches without altering the pressure hull.
+  🔹 Subsea-to-Orbit Gateway:
+  BlueBottle USV acts as the persistent surface node, bridging Ghost Shark's subsea acoustic telemetry to orbital SATCOM so the subsea carrier never has to surface and break acoustic silence.
+  ⚡ HAL CONTRACT:
+  "Heterogeneous undersea networks require ISubseaLaunchController for buoyancy compensation during mine salvo release (ΔB = -∑m_mine) and submerged UAV launch, while IAcousticSurfaceGateway bridges subsea acoustic links to orbital SATCOM."
+  ```
+* **Ключові архітектурні тези UWE:**
+  1. *Виправлення номенклатури:* Уточнення класифікації Ocius BlueBottle як **USV** (поверхневий дрон із сонячно-вітрильно-хвильовим рушієм), а не UUV.
+  2. *Таксономія UWE:* Чітке кодування платформ: Anduril Ghost Shark (`UUV: PT-RM-DA`) та Ocius BlueBottle (`USV: SL-EL-DR`).
+  3. *Decoupled Lethality (Інваріантний закон носія):* Модульне корисне навантаження (12 морських мін, пускові контейнери БПЛА ALTIUS з-під води в повітря, закладка схронів SOF) реалізується без перепроєктування та розгерметизації міцного титанового/композитного корпусу.
+  4. *Subsea-to-Orbit Gateway (Крос-доменне шлюзування):* BlueBottle USV виступає персистентним поверхневим шлюзом, що ретранслює гідроакустичні сигнали Ghost Shark на орбітальну угруповання SATCOM, зберігаючи скритність підводного апарата (Zero Acoustic Breakout).
+  5. *HAL-контракти:* `ISubseaLaunchController` (динамічна компенсація диференту й плавучості під час залпу мін $\Delta B = -\sum m_{\text{mine}}$) та `IAcousticSurfaceGateway`.
+* **Поточний статус:**
+  * 🟢 **ОПУБЛІКОВАНО / АКТИВНИЙ АУТРІЧ (Live Technical Push #2)**
+* **Наступні кроки та моніторинг:**
+  * Моніторинг реакцій та коментарів від представників Royal Australian Navy, Anduril Industries, Ocius Technology та редакції *Naval News*.
+
 ---
 
 ## 2. Статус підготовлених до подання матеріалів (Submission Pipeline)
@@ -129,7 +162,7 @@
 | **2** | **War on the Rocks (WOTR)**<br>*(США)* | **The Death of MALE Sanctuaries and the Rise of the Collaborative Kill Web**<br>*(Повітряна війна, приземний ешелон 0–300 м, SEAD/DEAD)* | • `UWE_War_on_the_Rocks_Essay.docx`<br>• `UWE_War_on_the_Rocks_Essay.pdf`<br>• 2 тактичні інфографіки | `submissions@warontherocks.com` | 🟡 **ПІТЧ ЗВЕДЕНО / РЕЗЕРВ**<br>Супровідний пітч зафіксовано в `fc1136c`. Готовий до відправки після проходження RUSI. |
 | **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Bradley Peniston (`bpeniston@defenseone.com`)<br>Patrick Tucker (`ptucker@defenseone.com`) | 🟢 **ПРИЙНЯТО ДО ДРУКУ (In Production)**<br>Драфт прийнято Bradley Peniston. Щоденний моніторинг `defenseone.com/ideas/` (Пн–Пт, 16:00–23:00 EEST). Очікує запису подкасту. |
 | **4** | **Air & Space Forces Magazine / TWZ** | **The Low-Altitude Reconnaissance Imperative: Target Acquisition Geometry vs. High-Standoff Myths** | • `UWE_Air_Space_Forces_Feature.docx`<br>• `UWE_Air_Space_Forces_Feature.pdf` | Редакція AFA / TWZ | 🟢 **ГОТОВО ДО НАДСИЛАННЯ** |
-| **5** | **Naval News**<br>*(Париж / Вашингтон)* | **Persistent Wave-Piercing Autonomy vs Planing Hulls: Open-Ocean ASW & C-UAS Integration**<br>*(Гідродинаміка, Drop Keel +15-20 dB SNR, HAL IHydrodynamicDropKeelDrive)* | • Direct LinkedIn Technical Push ([Пост](https://lnkd.in/p/dr7xpMVU))<br>• Доктринальний драфт колонки | Xavier Vavasseur (`xavier@navalnews.com`), редакція Naval News | 🟢 **АКТИВНИЙ ПУШ / OUTREACH**<br>Опубліковано цільовий технічний коментар-пітч 19.10.2026. Моніторинг фідбеку та підготовка повноформатної колонки. |
+| **5** | **Naval News**<br>*(Париж / Вашингтон)* | **Cross-Domain Maritime Autonomy: Persistent Surface USVs & Undersea XL-AUVs**<br>*(Exail Wave-Piercers, Ghost Shark Carrier Law, Drop Keel & Acoustic Gateway HAL)* | • Push #1: Exail USVs ([Пост](https://lnkd.in/p/dr7xpMVU))<br>• Push #2: Ghost Shark AUKUS ([Пост](https://lnkd.in/p/deY-rctz))<br>• Доктринальний драфт колонки | Xavier Vavasseur (`xavier@navalnews.com`), редакція Naval News | 🟢 **АКТИВНИЙ ПУШ / OUTREACH (x2)**<br>Опубліковано 2 цільові архітектурні ін'єкції 19.10.2026. Моніторинг фідбеку та підготовка повноформатної колонки. |
 | **6** | **The Space Review**<br>*(США)* | **The Kondratyuk Paradigm: Why Resilient Orbital Defense Demands a Decentralized Nodal Architecture, Not Monolithic Satellites**<br>*(Орбітальна оборона, спадщина Кондратюка, UOV таксономія)* | • `UWE_Space_Review_Submission.docx`<br>• `UWE_Space_Review_Submission.pdf`<br>• 300 DPI інфографіка | Jeff Foust (`jeff@thespacereview.com`) | ⏳ **НА РОЗГЛЯДІ РЕДАКТОРА (Under Review)**<br>Отримано підтвердження від Jeff Foust. Очікування випуску; щотижневий моніторинг по понеділках ввечері (US EST) / вівторок ранок (Київ). |
 
 ---
