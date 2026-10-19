@@ -15,6 +15,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 4 | **Mach 6 Hypersonic Waverider (Corvus)** | Theoretical / XQ-91 | `UAV: AI-CP-HL` | `IThermalPlasmaLink` | Mach 6 boundary layer heating ($T_0 > 1850^\circ\text{C}$) blinds forward optical sensors; plasma sheath ($\omega_p > 30\text{ GHz}$) induces RF blackout, enforcing aft Laser ISL uplinks to orbital anchor node `UOV: LR-SL-MD`. | 2026-10-19 |
 | 5 | **Autonomous Sickle Wing (Tailless Hypersonic)** | [FB Reel](https://www.facebook.com/reel/1818239552508775) | `UAV: AI-CP-HL` | `IActiveFlowControlDrive` | Tailless crescent layout eliminates vertical radar cross-section; yaw control at Mach 5/75k ft cannot rely on mechanical drag rudders (aerothermal ablation and shock-boundary separation) and mandates Active Flow Control (AFC) bleed-air blowing or Fluidic Thrust Vectoring (FTV). | 2026-10-19 |
 | 6 | **Exail DriX H-9 & Oryx O-16 USVs** | [Naval News](https://www.navalnews.com/event-news/euronaval-2026/2026/10/exail-usvs-set-for-u-s-navy-and-coast-guard-evaluations/) | `USV: SL-PA-DR` (DriX H-9)<br>`USV: ST-PL-DD` (Oryx O-16) | `IHydrodynamicDropKeelDrive` | Slender wave-piercing displacement monohulls cut vertical g-shocks (<1.5g in Sea State 5) enabling long endurance (90 days at sea) and jitter-free C-UAS fire control; 2m submerged drop-keel isolates sonars from cavitation/surface bubble noise (+15-20 dB SNR for ASW); small transverse metacentric height ($GM_T$) mandates active roll damping and pendulum ballast. | 2026-10-19 |
+| 7 | **Anduril Ghost Shark XL-AUV & Ocius BlueBottle USV** | [Naval News](https://lnkd.in/p/dd2v4jnD) | `UUV: PT-RM-DA` (Ghost Shark)<br>`USV: SL-EL-DR` (BlueBottle) | `ISubseaLaunchController` & `IAcousticSurfaceGateway` | Heterogeneous cross-domain warfare validates Decoupled Lethality: Ghost Shark discharges 12 naval mines, tube-launches ALTIUS UAVs into airspace, and drops SOF caches; BlueBottle solar/sail USV provides the persistent acoustic-to-SATCOM gateway. | 2026-10-19 |
 
 ---
 
@@ -59,3 +60,24 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 * **Architectural Lesson for UWE:**
   * Validates the **Law of Decoupled Lethality**: an invariant hydrodynamic carrier can switch between oceanographic hydrography and active kinetic/directed-energy Counter-UAS picket duty.
   * Establishes the hydrodynamic boundary for Article 5 (USV): sprint planing hulls belong to sprint strike/kamikaze doctrines, whereas persistent ocean denial and ASW belong strictly to wave-piercing displacement forms.
+
+---
+
+## 4. Case Study #7: Anduril Ghost Shark XL-AUV & Ocius BlueBottle USV (AUKUS)
+
+* **Target Source:** [LinkedIn / Naval News](https://lnkd.in/p/dd2v4jnD)
+* **Date Analyzed:** 2026-10-19
+* **UWE 6-Character Tokens:**
+  * **Anduril Ghost Shark:** `UUV: PT-RM-DA` (Pelagic 1000m, C3 Slipway, Battery-electric, Multi-payload: 12 Mines + ALTIUS UAVs, Denial/Strike, Acoustic/Sat mast)
+  * **Ocius BlueBottle:** `USV: SL-EL-DR` (Surface marine, C2 Trailer 7m, Solar/Sail/Wave harvesting, ASW towed array, Overwatch picket, SATCOM/MESH)
+* **Hardware Abstraction Layer (HAL) Contract:**
+  * Interfaces: `ISubseaLaunchController` & `IAcousticSurfaceGateway`
+  * One-Sentence Definition: *"Heterogeneous subsea architectures require the ISubseaLaunchController contract for buoyancy compensation during mine salvo release (ΔB = -∑m_mine) and submerged UAV launch, while IAcousticSurfaceGateway bridges subsea acoustic links to orbital SATCOM without compromising carrier acoustic stealth."*
+* **Physical Advantages (🟢):**
+  * Decoupled lethality on Ghost Shark: an invariant pelagic hull converts between offensive sea denial (12 naval mines), cross-domain air reconnaissance/strike (tube-launched ALTIUS UAVs), and covert SOF resupply.
+  * BlueBottle persistent energy harvesting (solar + rigid wing/sail + wave flipper keel) allows infinite station-keeping as a surface acoustic gateway and thin-line towed array ASW picket.
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * Subsea buoyancy transient: salvo drop of 12 heavy naval mines creates sudden positive buoyancy spike ($\Delta B$), requiring rapid ballast flooding to prevent uncontrolled depth broaching.
+  * Submerged UAV ejection requires water-tight capsule broaching and booster ignition at sea surface without acoustic signature leakage.
+* **Architectural Lesson for UWE:**
+  * Validates Cross-Domain Heterogeneous Orchestration: undersea combat effectiveness is achieved by tightly coupled UUV (carrier) + USV (energy-harvesting gateway) + UAV (airborne kinetic/sensor effector) meshes.
