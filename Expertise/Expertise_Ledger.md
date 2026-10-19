@@ -17,6 +17,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 6 | **Exail DriX H-9 & Oryx O-16 USVs** | [Naval News](https://www.navalnews.com/event-news/euronaval-2026/2026/10/exail-usvs-set-for-u-s-navy-and-coast-guard-evaluations/) | `USV: SL-PA-DR` (DriX H-9)<br>`USV: ST-PL-DD` (Oryx O-16) | `IHydrodynamicDropKeelDrive` | Slender wave-piercing displacement monohulls cut vertical g-shocks (<1.5g in Sea State 5) enabling long endurance (90 days at sea) and jitter-free C-UAS fire control; 2m submerged drop-keel isolates sonars from cavitation/surface bubble noise (+15-20 dB SNR for ASW); small transverse metacentric height ($GM_T$) mandates active roll damping and pendulum ballast. | 2026-10-19 |
 | 7 | **Anduril Ghost Shark XL-AUV & Ocius BlueBottle USV** | [Naval News](https://lnkd.in/p/dd2v4jnD) | `UUV: PT-RM-DA` (Ghost Shark)<br>`USV: SL-EL-DR` (BlueBottle) | `ISubseaLaunchController` & `IAcousticSurfaceGateway` | Heterogeneous cross-domain warfare validates Decoupled Lethality: Ghost Shark discharges 12 naval mines, tube-launches ALTIUS UAVs into airspace, and drops SOF caches; BlueBottle solar/sail USV provides the persistent acoustic-to-SATCOM gateway. | 2026-10-19 |
 | 8 | **UNEX Amphibious Prime Mover (ABRIS)** | [LinkedIn](https://lnkd.in/p/dvJEuUV5) | `UGV: GH-ET-DL` | `IDrawbarTractionController` | Electric motors break static friction on 3.2t D-30 + 1.2t ammo, but unbraked artillery risks jackknifing on downhills; off-road drawbar pull is bounded by soil adhesion ($F_{\text{pull}} = \mu \cdot m_{\text{ugv}} \cdot g$), making 10t claims asphalt-only. | 2026-10-19 |
+| 9 | **CAPSTONE Coaxial Heavy-Lift UAV (Certo / BAE)** | [FB Reel](https://www.facebook.com/reel/4404808966462700) | `UAV: RL-PM-DR` | `ICoaxialRotorDrive` | Coaxial counter-rotating rotors eliminate tail-rotor power drain (12–15%), achieving an unprecedented 50% payload ratio (300kg on 600kg MTOW) and compact footprint; primary physical hazard is blade clashing on violent cyclic inputs, requiring strict HAL angular rate bounding. | 2026-10-19 |
 
 ---
 
@@ -101,3 +102,24 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * Bekker-Wong soil traction limits: drawbar pull is bounded by tire-soil friction ($F = \mu \cdot m_{\text{ugv}} \cdot g$), rendering 10-tonne towing claims invalid in off-road field conditions regardless of electric motor kW.
 * **Architectural Lesson for UWE:**
   * Establishes the distinction between prime mover motor torque and ground adhesion traction: unmanned artillery movement requires active electronic braking integration on the towed gun carriage or dynamic anti-jackknife yaw damping.
+
+---
+
+## 6. Case Study #9: CAPSTONE Coaxial Heavy-Lift UAV (Certo Aerospace / BAE FalconWorks)
+
+* **Target Source:** [Facebook Reel](https://www.facebook.com/reel/4404808966462700)
+* **Date Analyzed:** 2026-10-19
+* **UWE 6-Character Token:** `UAV: RL-PM-DR` (Rotary Wing, C2 Light trailer/skid footprint, Piston heavy-fuel, Multi-payload 300kg, Defend/Escort/ASW, Redundant MESH/SATCOM)
+* **Hardware Abstraction Layer (HAL) Contract:**
+  * Interface: `ICoaxialRotorDrive`
+  * One-Sentence Definition: *"Heavy coaxial rotorcraft UAVs require the ICoaxialRotorDrive HAL contract to govern yaw via differential collective pitch between counter-rotating rotors while algorithmically clamping pitch and roll rate limits to prevent dynamic blade flapping intermeshing under high-G maneuvers."*
+* **Physical Advantages (🟢):**
+  * **100% Useful Lift Power:** Eliminating the mechanical tail rotor recovers 12–15% of engine shaft power that conventional helicopters waste solely on anti-torque counter-rotation, directly enabling an extreme 50% structural payload fraction (300 kg useful payload on a 600 kg MTOW airframe).
+  * **Compact Deck & Clearing Footprint:** Contra-rotating coaxial blades yield a ~35% smaller rotor disc diameter for the same disk loading compared to single-rotor platforms, while the absence of a long tail boom enables landing on unprepared frigate flight decks, confined forest clearings, or forward logistics nodes.
+  * **Symmetrical Transonic High-Speed Lift:** The retreating blade stall on one rotor is aerodynamically balanced by the advancing blade of the opposing counter-rotating rotor, eliminating asymmetric lift roll divergence at airspeeds >90–100 kts.
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * **Catastrophic Blade Clashing (Intermeshing Risk):** Severe cyclic pitch or roll inputs induce dynamic blade flapping; if flapping amplitude exceeds rotor mast vertical separation, top and bottom composite blades collide in-flight, destroying the airframe.
+  * **Complex Coaxial Swashplate Hub:** Requires dual counter-rotating concentric swashplates, coaxial transmission shafts, and complex pitch control pushrods, significantly raising field maintenance hours and sensitivity to sand/dust ingestion compared to simple multirotors.
+* **Architectural Lesson for UWE:**
+  * Demolishes the marketing narrative of "Not helicopter, not drone": CAPSTONE is an optimal coaxial rotorcraft executing classic vertical lift physics.
+  * Demonstrates that for heavy-lift long-endurance logistics (300 kg payload, 10h loiter), coaxial rotorcraft outperform both multirotors (which suffer severe scaling inefficiency $\eta \propto 1/\sqrt{A}$) and single-rotor helicopters (burdened by dead tail-rotor parasitic drag and power loss).
