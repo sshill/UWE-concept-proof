@@ -388,11 +388,12 @@ $$\Phi_{\text{mission}} = \mathcal{F}\Big(\mathcal{K}_{\text{medium}}, \mathcal{
 Where:
 * **$\mathcal{K}_{\text{medium}}$ (Kinematic Interface Match):** Evaluates if the chassis propulsor/suspension can traverse the medium (e.g., ground pressure vs. soil shear strength, wave slamming vs. hull yield stress).
 * **$\mathcal{L}_{\text{container}}$ (Logistical Deployment Friction):** Evaluates whether the required launch vector ($C_0 \dots C_4$) is physically accessible within the theater.
-* **$\mathcal{E}_{\text{energy}}$ (Energy & Range Reserve):** Verifies the powerplant density against transit distance, hover duration, and the "Zhdun" reserve.
+* **$\mathcal{E}_{\text{energy}}$ (Piecewise Multi-Phase Energy Balance):** Computes exact phase integrals ($P_{\text{hover}}$ vs $P_{\text{cruise}}$) and dual-bus reserves (chemical fuel vs battery C-rating) rather than flat commercial "flight hours." Enforces the "Hover Time Exchange Rate" (1 min hover $\approx$ 5–7 min cruise).
 * **$\mathcal{C}_{\text{signal}}$ (Communications Integrity):** Verifies whether the asset possesses an un-jammable signal domain (RF, satellite, optical laser, acoustic, or hardwired fiber).
 * **$\mathcal{T}_{\text{threat}}$ (Threat & Attrition Coefficient):** Determines whether the mission profile requires reusable asset survival or triggers the One-Way Mission (OWM) sacrificial decorator.
+* **$\vec{\Theta}_{\text{airframe}}$ (Hardware Degradation Vector / "Tired Machine" Law):** Rejects brochure constants. Mission planning dynamically ingests physical entropy $[SOH_{\text{batt}}, R_{\text{int}}, \eta_{\text{power}}, (L/D)_{\text{actual}}, \Delta C_{D0}]$ to prevent low-voltage cutoff failures during high-load recovery.
 
-If $\Phi_{\text{mission}} \ge 1.0$, the mission is validated, the 6-character profile is tokenized, and algorithmic deployment commences. If $\Phi_{\text{mission}} < 1.0$, the platform is rejected before costly kinetic failure occurs.
+If $\Phi_{\text{mission}}(\vec{\Theta}) \ge 1.0$, the mission is validated, the 6-character profile is tokenized, and algorithmic deployment commences. If $\Phi_{\text{mission}} < 1.0$, the platform is locked from deployment (`MAINTENANCE_LOCKED`) before costly kinetic failure occurs.
 
 ---
 
