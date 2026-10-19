@@ -18,6 +18,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 7 | **Anduril Ghost Shark XL-AUV & Ocius BlueBottle USV** | [Naval News](https://lnkd.in/p/dd2v4jnD) | `UUV: PT-RM-DA` (Ghost Shark)<br>`USV: SL-EL-DR` (BlueBottle) | `ISubseaLaunchController` & `IAcousticSurfaceGateway` | Heterogeneous cross-domain warfare validates Decoupled Lethality: Ghost Shark discharges 12 naval mines, tube-launches ALTIUS UAVs into airspace, and drops SOF caches; BlueBottle solar/sail USV provides the persistent acoustic-to-SATCOM gateway. | 2026-10-19 |
 | 8 | **UNEX Amphibious Prime Mover (ABRIS)** | [LinkedIn](https://lnkd.in/p/dvJEuUV5) | `UGV: GH-ET-DL` | `IDrawbarTractionController` | Electric motors break static friction on 3.2t D-30 + 1.2t ammo, but unbraked artillery risks jackknifing on downhills; off-road drawbar pull is bounded by soil adhesion ($F_{\text{pull}} = \mu \cdot m_{\text{ugv}} \cdot g$), making 10t claims asphalt-only. | 2026-10-19 |
 | 9 | **CAPSTONE Coaxial Heavy-Lift UCV (Certo / BAE)** | [FB Reel](https://www.facebook.com/reel/4404808966462700) | `UCV: CL-PM-DR` | `ICoaxialRotorDrive` | Zero fixed wings and pure rotor disc loading mandate classification as UCV under Law of Kinematic Primacy; eliminates tail-rotor power drain (12–15%), achieving 50% payload ratio (300kg on 600kg MTOW); blade clashing on high-G cyclic inputs requires strict HAL angular rate clamping. | 2026-10-19 |
+| 10 | **Orbital Guardian (NextGen Arsenal ADR Hunter)** | [FB Reel](https://www.facebook.com/reel/2177636083099811) | `UOV: LM-CA-HR` | `ITumblingTargetCapture` | Active debris removal / satellite hunting operates under Keplerian two-body mechanics and Tsiolkovsky $\Delta V$ limits; 15° inclination plane changes at LEO require ~2,000 m/s $\Delta V$ restricting chemical chasers to single co-planar targets; non-cooperative tumbling targets mandate rate-matching via CMGs before impedance-controlled grappling to prevent Kessler fragmentation. | 2026-10-19 |
 
 ---
 
@@ -123,3 +124,24 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 * **Architectural Lesson for UWE:**
   * Validates the **Law of Kinematic Primacy**: without fixed wings, stall speed ($V_{\text{stall}} = 0$), or wing glide ratio ($L/D$), all vertical-lift disc-loaded rotary platforms belong strictly to the **UCV (Unmanned Copter Vehicle)** namespace, demolishing both marketing jargon ("not drone, not helicopter") and legacy STANAG UAV conflation.
   * Demonstrates that for heavy-lift long-endurance logistics (300 kg payload, 10h loiter), coaxial rotorcraft outperform both multirotors (which suffer severe scaling inefficiency $\eta \propto 1/\sqrt{A}$) and single-rotor helicopters (burdened by dead tail-rotor parasitic drag and power loss).
+
+---
+
+## 7. Case Study #10: Orbital Guardian ADR Satellite Hunter (NextGen Arsenal)
+
+* **Target Source:** [Facebook Reel](https://www.facebook.com/reel/2177636083099811)
+* **Date Analyzed:** 2026-10-19
+* **UWE 6-Character Token:** `UOV: LM-CA-HR` (Unmanned Orbital Vehicle, LEO Horizon 350–1000 km, Standard ESPA slot 150–300 kg, Chemical stored sprint thrusters, Active RPO & grappling mode, Solo autonomous hunter doctrine, RF phased array telemetry)
+* **Hardware Abstraction Layer (HAL) Contract:**
+  * Interfaces: `IOrbitalRendezvousDocking` & `ITumblingTargetCapture`
+  * One-Sentence Definition: *"Autonomous orbital servicing and debris interception platforms require the ITumblingTargetCapture HAL contract to solve Clohessy-Wiltshire relative kinematics in the LVLH frame, synchronize chaser attitude rates with the 3-axis angular momentum vector of uncooperative tumbling targets via high-torque reaction wheels, and execute impedance-controlled robotic grappling without inducing kinetic collision impulses that generate secondary orbital fragmentation."*
+* **Physical Advantages (🟢):**
+  * **Direct Non-Cooperative Capture:** Standardizes proximity operations (RPO) and physical robotic capture (harpoon, clamp, magnetic docking), transforming passive orbital space into an active interception domain.
+  * **Operational Convergence with ASAT / Counter-Space:** Dual-use architecture proves that Active Debris Removal (ADR) and offensive anti-satellite (ASAT / OSC) capabilities share 100% invariant hardware contracts (RPO navigation, relative pose estimation, kinetic grappling, and retro-burn de-orbiting).
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * **The $\Delta V$ Attrition Trap (Tsiolkovsky Law):** Popular media depicts satellite hunters cruising between disparate orbital targets; however, plane change $\Delta v = 2v\sin(\Delta i/2)$ at LEO costs $\sim 2\,000\text{ м/с}$ for a $15^\circ$ inclination shift. Chemical chasers are strictly bounded to single-target or narrow co-planar orbital nodal drift envelopes.
+  * **Angular Momentum Transfer on Tumbling Targets:** Dead satellites tumble unpredictably across 3 axes. Latching onto a rotating target without matching $\vec{\omega}_{\text{target}}$ violently transfers angular momentum into the chaser, risking mechanical shear or attitude loss.
+  * **Secondary Kessler Fragmentation:** Relative impact speeds $>0.1\text{ m/s}$ during docking shatter brittle solar arrays, generating clouds of hypervelocity debris.
+* **Architectural Lesson for UWE:**
+  * Validates the **Law of Decoupled Lethality** in the orbital domain: an invariant `UOV` servicing bus transitions between environmental debris mitigation and offensive counter-space interception simply by altering the mission payload and software doctrine.
+  * Demolishes sci-fi free-flight orbital tropes: multi-target orbital sweepers require high-power nuclear-electric / magnetoplasma propulsion (VASIMR / DFD), while chemical sprint platforms remain single-mission expendable effectors.
