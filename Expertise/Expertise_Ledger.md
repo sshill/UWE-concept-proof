@@ -16,6 +16,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 5 | **Autonomous Sickle Wing (Tailless Hypersonic)** | [FB Reel](https://www.facebook.com/reel/1818239552508775) | `UAV: AI-CP-HL` | `IActiveFlowControlDrive` | Tailless crescent layout eliminates vertical radar cross-section; yaw control at Mach 5/75k ft cannot rely on mechanical drag rudders (aerothermal ablation and shock-boundary separation) and mandates Active Flow Control (AFC) bleed-air blowing or Fluidic Thrust Vectoring (FTV). | 2026-10-19 |
 | 6 | **Exail DriX H-9 & Oryx O-16 USVs** | [Naval News](https://www.navalnews.com/event-news/euronaval-2026/2026/10/exail-usvs-set-for-u-s-navy-and-coast-guard-evaluations/) | `USV: SL-PA-DR` (DriX H-9)<br>`USV: ST-PL-DD` (Oryx O-16) | `IHydrodynamicDropKeelDrive` | Slender wave-piercing displacement monohulls cut vertical g-shocks (<1.5g in Sea State 5) enabling long endurance (90 days at sea) and jitter-free C-UAS fire control; 2m submerged drop-keel isolates sonars from cavitation/surface bubble noise (+15-20 dB SNR for ASW); small transverse metacentric height ($GM_T$) mandates active roll damping and pendulum ballast. | 2026-10-19 |
 | 7 | **Anduril Ghost Shark XL-AUV & Ocius BlueBottle USV** | [Naval News](https://lnkd.in/p/dd2v4jnD) | `UUV: PT-RM-DA` (Ghost Shark)<br>`USV: SL-EL-DR` (BlueBottle) | `ISubseaLaunchController` & `IAcousticSurfaceGateway` | Heterogeneous cross-domain warfare validates Decoupled Lethality: Ghost Shark discharges 12 naval mines, tube-launches ALTIUS UAVs into airspace, and drops SOF caches; BlueBottle solar/sail USV provides the persistent acoustic-to-SATCOM gateway. | 2026-10-19 |
+| 8 | **UNEX Amphibious Prime Mover (ABRIS)** | [LinkedIn](https://lnkd.in/p/dvJEuUV5) | `UGV: GH-ET-DL` | `IDrawbarTractionController` | Electric motors break static friction on 3.2t D-30 + 1.2t ammo, but unbraked artillery risks jackknifing on downhills; off-road drawbar pull is bounded by soil adhesion ($F_{\text{pull}} = \mu \cdot m_{\text{ugv}} \cdot g$), making 10t claims asphalt-only. | 2026-10-19 |
 
 ---
 
@@ -81,3 +82,22 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * Submerged UAV ejection requires water-tight capsule broaching and booster ignition at sea surface without acoustic signature leakage.
 * **Architectural Lesson for UWE:**
   * Validates Cross-Domain Heterogeneous Orchestration: undersea combat effectiveness is achieved by tightly coupled UUV (carrier) + USV (energy-harvesting gateway) + UAV (airborne kinetic/sensor effector) meshes.
+
+---
+
+## 5. Case Study #8: UNEX Amphibious Prime Mover (Artillery Towing Analysis)
+
+* **Target Source:** [LinkedIn / Tim De Zitter / Militarnyi](https://lnkd.in/p/dvJEuUV5)
+* **Date Analyzed:** 2026-10-19
+* **UWE 6-Character Token:** `UGV: GH-ET-DL` (Ground Amphibious, C3 Heavy Flatbed trailer, Electric battery, Heavy Towing & Logistics, Rear/Forward Replenishment, Starlink/RF)
+* **Hardware Abstraction Layer (HAL) Contract:**
+  * Interface: `IDrawbarTractionController` & `IArtilleryTowingDrive`
+  * One-Sentence Definition: *"Robotic prime movers require the IDrawbarTractionController HAL contract to limit torque to soil slip ratios (s < 0.2) and manage deceleration against hitch angles to stop unbraked howitzers from jackknifing the tractor."*
+* **Physical Advantages (🟢):**
+  * Instant 0-RPM electric motor torque overcomes static breakaway friction on a 3.2t D-30 without mechanical clutch slip or thermal stall.
+  * Carrying 1.2t of onboard ammunition adds critical ballast to the prime mover, increasing normal force and tractive ground adhesion.
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * Trailing unbraked mass: on muddy downhills, 3.2t of trailing howitzer mass exerts forward inertial thrust ($m_{\text{gun}} \cdot a$), inducing severe jackknife instability against the lighter UGV.
+  * Bekker-Wong soil traction limits: drawbar pull is bounded by tire-soil friction ($F = \mu \cdot m_{\text{ugv}} \cdot g$), rendering 10-tonne towing claims invalid in off-road field conditions regardless of electric motor kW.
+* **Architectural Lesson for UWE:**
+  * Establishes the distinction between prime mover motor torque and ground adhesion traction: unmanned artillery movement requires active electronic braking integration on the towed gun carriage or dynamic anti-jackknife yaw damping.
