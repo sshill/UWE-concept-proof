@@ -165,7 +165,7 @@ Radio frequencies and satellite signals cannot penetrate seawater. A surface USV
 * **Anti-Submarine Defense:** Patrolling choke-points silently on electric drives to track acoustic submarine signatures and autonomously sow stealth mine barriers.
 
 ### 7. Surf-Zone Amphibious Logistics
-With ultra-shallow draft and reinforced composite bottoms, USVs surge through breaking surf, shallow sandbanks, and mudflats to deliver critical supplies, evacuate personnel, or lower a bow ramp to deploy autonomous ground crawling robots (UGVs) directly onto hostile beaches.
+With ultra-shallow draft and reinforced composite bottoms, USVs surge through breaking surf, shallow sandbanks, and mudflats to deliver critical supplies, evacuate personnel, or lower a bow ramp to deploy autonomous ground crawling robots (UGVs) directly onto hostile beaches—an operational breakthrough empirically demonstrated in Ukrainian combat operations during the world's first fully robotic amphibious beach landing ([NBC News Verified Field Video](https://www.facebook.com/reel/914730374404774)).
 
 ---
 

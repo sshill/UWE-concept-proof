@@ -178,6 +178,7 @@ To see how UWE solves high-density asymmetric combat, consider the classic tacti
 ### 7. Amphibious Infiltration & Littoral Logistics
 * **Surf-Zone Breaching:** Ultra-shallow draft and high composite impact strength allow high-speed transit across breaking surf, sandbanks, and tidal shoals impassable to standard landing craft.
 * **Autonomous Ground Staging:** Direct carrier for amphibious Unmanned Ground Vehicles (UGVs). The USV lowers a bow ramp directly onto hostile shores, deploying robotic ground assault and logistics units without risking human troops.
+  * ⚔️ **Empirical Combat Proof:** Operationalized in Ukrainian littoral warfare—marked by the world's first fully robotic amphibious beach landing where a naval USV beached and deployed a machine-gun-armed UGV onto an enemy shoreline ([NBC News Verified Field Video](https://www.facebook.com/reel/914730374404774)).
 
 ---
 

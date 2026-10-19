@@ -388,6 +388,7 @@ The entire engagement loop is resolved **locally, autonomously, and strictly wit
 * **The Surf-Zone Breach:** The ultra-shallow draft and high strength-to-weight composite construction of the USV enable high-speed transitions across breaking surf, sandbars, and rocky tidal shoals.
 * **Special Operations Insertion & Medical Extraction:** The platform performs covert insertion of naval special warfare units (SOF/DRG) onto hostile coastlines, followed by silent coastal loiter and high-speed casualty evacuation (MEDEVAC).
 * **Autonomous Ground Staging:** The USV acts as a dynamic carrier for amphibious Unmanned Ground Vehicles (UGVs). Upon reaching the shoreline, the bow opens or lowers a ramp, deploying tracked or wheeled combat robots directly onto unprepared beaches, achieving seamless cross-domain amphibious assault without manned landing craft.
+  * *Empirical Combat Validation:* Confirmed in Ukrainian combat operations demonstrating the world's first fully unmanned robotic amphibious beach landing—where an uncrewed surface vessel (USV) transited contested waters, beached on a hostile shore, and lowered a bow ramp to deploy a combat Unmanned Ground Vehicle (UGV) equipped with a remote machine gun turret to suppress enemy positions without risking human personnel (see [NBC News Combat Field Report](https://www.facebook.com/reel/914730374404774)).
 
 ---
 
