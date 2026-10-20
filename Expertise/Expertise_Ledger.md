@@ -19,6 +19,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 8 | **UNEX Amphibious Prime Mover (ABRIS)** | [LinkedIn](https://lnkd.in/p/dvJEuUV5) | `UGV: GH-ET-DL` | `IDrawbarTractionController` | Electric motors break static friction on 3.2t D-30 + 1.2t ammo, but unbraked artillery risks jackknifing on downhills; off-road drawbar pull is bounded by soil adhesion ($F_{\text{pull}} = \mu \cdot m_{\text{ugv}} \cdot g$), making 10t claims asphalt-only. | 2026-10-19 |
 | 9 | **CAPSTONE Coaxial Heavy-Lift UCV (Certo / BAE)** | [FB Reel](https://www.facebook.com/reel/4404808966462700) | `UCV: CL-PM-DR` | `ICoaxialRotorDrive` | Zero fixed wings and pure rotor disc loading mandate classification as UCV under Law of Kinematic Primacy; eliminates tail-rotor power drain (12–15%), achieving 50% payload ratio (300kg on 600kg MTOW); blade clashing on high-G cyclic inputs requires strict HAL angular rate clamping. | 2026-10-19 |
 | 10 | **Orbital Guardian (NextGen Arsenal ADR Hunter)** | [FB Reel](https://www.facebook.com/reel/2177636083099811) | `UOV: LM-CA-HR` | `ITumblingTargetCapture` | Active debris removal / satellite hunting operates under Keplerian two-body mechanics and Tsiolkovsky $\Delta V$ limits; 15° inclination plane changes at LEO require ~2,000 m/s $\Delta V$ restricting chemical chasers to single co-planar targets; non-cooperative tumbling targets mandate rate-matching via CMGs before impedance-controlled grappling to prevent Kessler fragmentation. | 2026-10-19 |
+| 11 | **Lockheed Martin Lamprey MMAUV** | [FB Reel](https://www.facebook.com/reel/2203326470200241) | `UUV: CV-IS-HQ` | `IParasiticAttachmentDrive` & `IHydrokineticHarvesting` | Solves the UUV battery endurance bottleneck via parasitic trans-oceanic transit on host warship/submarine hulls; in-transit hydro-generators harvest energy from flow; 24 cu ft bay enables decoupled lethality (torpedoes, EW, UAV launch); executes seabed ambush (*Zhdun* posture) with zero acoustic/thermal signature; high-speed detachment risks Bernoulli suction into host hull/propellers. | 2026-10-19 |
+| 12 | **Boeing MQ-25 Stingray CBARS (U.S. Navy)** | [FB Video](https://www.facebook.com/SecretaryoftheNavy/videos/1123057570114063/) | `UAV: AI-TF-DR` | `IAerialRefuelingHoseDrogueDrive` & `ICarrierCatobarDeckOps` | Relieves F/A-18 buddy-tanker fatigue (25% sorties); doubles F-35C/Super Hornet strike radius to 900+ nmi pushing CVNs outside DF-21D/DF-26 A2/AD range; serves as airborne energy backbone for persistent autonomous UAV barrier formations along the containment line; drogue basket requires microsecond active tension trim against receiver bow wave. | 2026-10-20 |
 
 ---
 
@@ -145,3 +147,47 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 * **Architectural Lesson for UWE:**
   * Validates the **Law of Decoupled Lethality** in the orbital domain: an invariant `UOV` servicing bus transitions between environmental debris mitigation and offensive counter-space interception simply by altering the mission payload and software doctrine.
   * Demolishes sci-fi free-flight orbital tropes: multi-target orbital sweepers require high-power nuclear-electric / magnetoplasma propulsion (VASIMR / DFD), while chemical sprint platforms remain single-mission expendable effectors.
+
+---
+
+## 8. Case Study #11: Lockheed Martin Lamprey MMAUV
+
+* **Target Source:** [Facebook Reel](https://www.facebook.com/reel/2203326470200241)
+* **Date Analyzed:** 2026-10-19
+* **UWE 6-Character Token:** `UUV: CV-IS-HQ` (Unmanned Undersea Vehicle, Continental Shelf 0-500m, Vessel-Attached / Hull hitchhiking, Intermittent hydrokinetic charging, Seabed ambush mode / Zhdun posture, Solo hunter doctrine, RF/Acoustic Silent)
+* **Hardware Abstraction Layer (HAL) Contract:**
+  * Interfaces: `IParasiticAttachmentDrive` & `IHydrokineticHarvesting`
+  * One-Sentence Definition: *"Parasitic undersea autonomous platforms require the IParasiticAttachmentDrive and IHydrokineticHarvesting HAL contracts to dynamically govern boundary-layer clamping pressure to unmodified host hulls, regulate turbine generation impedance from relative water flow, and safely separate into the ISeabedRestingSentinel posture for silent acoustic ambush."*
+* **Physical Advantages (🟢):**
+  * **Zero Transit Battery Drain via Parasitic Logistics:** Overcomes the fatal energy density bottleneck of autonomous undersea vehicles. Instead of depleting 80–90% of onboard battery capacity on slow, self-propelled transit to contested operational boxes, Lamprey magnetically and via suction clamps attaches to the hull of surface warships or submarines. In-transit hydrokinetic turbines harvest electrical power directly from the 15–20 knot boundary layer, allowing the vehicle to arrive on station with 100% state-of-charge.
+  * **Seabed Ambush ("Zhdun" Posture):** Upon detachment in strategic chokepoints (Taiwan Strait, GIUK Gap), the vehicle settles onto the continental shelf seafloor, completely shutting down all propulsion. Zero thermal, magnetic, and acoustic signatures render it virtually undetectable to passive/active sonar arrays, allowing persistent passive listening for weeks.
+  * **Decoupled Lethality via Open Modular Bay:** A 24 cubic foot internal payload bay accommodates lightweight torpedoes, anti-submarine sensors, electronic warfare decoys, or undersea-launched UAVs, strictly separating host mobility from mission payload.
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * **Boundary Layer Shear Stress ($\tau_w$):** Cruising at host speeds exceeding 20–25 knots produces massive hydrodynamic drag and boundary layer turbulence, threatening clamp separation; simultaneously, turbine cavitation noise risks degrading the host vessel's acoustic stealth.
+  * **Bernoulli Suction Hazard during Detachment:** Separating from a hull traveling at 15–20 knots induces a dangerous low-pressure zone (Bernoulli effect) that draws the detaching UUV back toward the host hull or screw propellers, mandating high-force pneumatic or pyrotechnic positive-ejection pushers.
+  * **Seafloor Silt Fouling:** Direct bottoming on soft silt risks clogging waterjet inlets and blinding optical/acoustic lenses, necessitating precision neutral-buoyancy station keeping millimeters above the sediment.
+* **Architectural Lesson for UWE:**
+  * Codifies Parasitic Maritime Logistics as a cyber-physical transport paradigm in UWE.
+  * Confirms the **Law of Decoupled Lethality** in undersea warfare: host platform mobility and robotic effector lethality operate under completely independent kinetic and energy cycles.
+
+---
+
+## 9. Case Study #12: Boeing MQ-25 Stingray CBARS (U.S. Navy)
+
+* **Target Source:** [Facebook Video](https://www.facebook.com/SecretaryoftheNavy/videos/1123057570114063/)
+* **Date Analyzed:** 2026-10-20
+* **UWE 6-Character Token:** `UAV: AI-TF-DR` (Unmanned Aerial Vehicle, Atmospheric winged flight, C4 CATOBAR Carrier/Base infrastructure, Turbofan AE 3007N, Fuel Tanker Cobham ARS mode, Defend / Range Extension & Persistent Shield Doctrine, Resilient MESH/COMSAT)
+* **Hardware Abstraction Layer (HAL) Contract:**
+  * Interfaces: `IAerialRefuelingHoseDrogueDrive`, `ICarrierCatobarDeckOps`, `IPersistentAirborneSecurityScreen`
+  * One-Sentence Definition: *"Carrier-borne autonomous tanker UAVs require the IAerialRefuelingHoseDrogueDrive and ICarrierCatobarDeckOps HAL contracts to govern fuel offload center-of-gravity compensation, actively counteract receiver aerodynamic bow wave displacement with microsecond hose-reel tension damping, execute autonomous carrier deck trap arrestment, and sustain persistent airborne refueling orbits for autonomous security formations."*
+* **Physical Advantages (🟢):**
+  * **Eliminating Carrier Air Wing Tanker Fatigue:** Solves the tactical aviation fleet crisis where 20–25% of F/A-18E/F Super Hornet combat sorties and airframe fatigue life were squandered on "buddy-tanking" missions instead of delivering offensive ordnance.
+  * **Standoff Range Extension Beyond A2/AD Envelopes:** Delivers 15,000 lbs of fuel at 500 nmi, extending the combat strike radius of F-35C and F/A-18 from ~450–500 nmi to >900–1,000 nmi. This enables Carrier Strike Groups (CSGs) to launch standoff kinetic strikes while operating outside the lethal envelope of Chinese DF-21D and DF-26 anti-ship ballistic missiles.
+  * **Airborne Energy Backbone for Persistent Autonomous Lines (UWE Core Doctrine):** Extends far beyond naval aviation: serves as the vital energy backbone for persistent autonomous Collaborative Combat Aircraft (CCA) and robotic UAV formations. Guarantees 24/7 continuous loiter along distributed containment lines and automated interdiction shields without requiring autonomous combat airframes to constantly cycle back to distant terrestrial or maritime bases.
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * **Aerodynamic Bow Wave Effect & Drogue Basket Whip:** The high-pressure bow wave of an approaching supersonic receiver aircraft (F-35C) deflects the lightweight drogue basket just prior to probe engagement. Without active high-frequency hose-reel tension damping, basket oscillations cause probe misalignment, canopy impacts, or fuel spray into jet intakes.
+  * **Dense Flight Deck Taxi Autonomy:** Maneuvering a 44,000 lb (20-tonne) unmanned aircraft amidst yellow-shirt directors, moving tractors, and catapult launch zones under rolling seas and 120 dB acoustic noise requires robust computer vision gesture recognition and failsafe deck-control wand teleoperation.
+  * **Dynamic Slosh under 4G Arrested Landing:** Rapid deceleration during 4G cable arrestment induces violent internal fuel slosh that severely shifts the aircraft's center-of-gravity, requiring active internal baffle fuel management and reinforced landing gear kinematics.
+* **Architectural Lesson for UWE:**
+  * Validates the **Law of Decoupled Lethality** in strategic logistics: autonomous tankers operate as non-kinetic force multipliers that exponentially expand the reach and persistence of both manned strike aircraft and autonomous robotic swarms.
+  * Proves that scalable, autonomous containment lines depend fundamentally on distributed aerial refueling infrastructure (`UAV: AI-TF-DR` / `AL-TF-DR`) rather than unsustainable single-sortie airframe ranges.
