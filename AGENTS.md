@@ -96,6 +96,9 @@ LinkedIn's editor and mobile app severely distort standard Markdown or HTML tabl
 ## 5. Technical Environment & Synchronization Tooling
 
 * **Local Workspace:** `/home/hills/Documents/UWS`
+* **GitHub Repository:** `https://github.com/sshill/UWE-concept-proof`
+* **GitHub Pages Portal:** `https://sshill.github.io/UWE-concept-proof/`
+* **GitHub Projects Space:** `https://github.com/users/sshill/projects/1`
 * **Google Drive Sync:**
   * Remote Name: `GDdisk` (configured via `rclone` at `~/.config/rclone/rclone.conf`)
   * Target Folder ID: `10ICgE21Po26Tqo2KfxcqlFrIwnROFcx0`
