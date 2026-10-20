@@ -19,3 +19,13 @@ usv_temp_*
 # System & Editor artifacts
 .DS_Store
 Thumbs.db
+
+# Scratch, Personal Documents & Local Staging
+mailbox/
+rems.txt
+scratch/
+Untitled*
+*CV*.pdf
+*BP*.docx
+*interseptor/
+
