@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGV Domain Taxonomy | Unmanned Warfare Engine</title>
+  <meta name="description" content="Unmanned Ground Vehicles (Tactical Robotics & Prime Movers) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <link rel="canonical" href="https://uwe-standard.github.io/domains/ugv.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container">
+    <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
+    
+    <div class="hero-box">
+      <span class="badge badge-ugv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UGV</span>
+      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Ground Vehicles (Tactical Robotics & Prime Movers)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem;">Terrestrial & Amphibious Terrain</p>
+      
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+        <strong>Cyber-Physical Governing Laws:</strong>
+        <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios.</p>
+      </div>
+
+      <div class="lesson-box" style="margin-top:1rem;">
+        <strong>The Legacy Classification Trap:</strong> Amateur slang ('vozyk', 'cart') and marketing claims of 10-tonne towing based on electric motor kW while ignoring soil shear failure in mud.
+      </div>
+    </div>
+
+    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UGV (2 Cases)</h2>
+    <div>
+      <article class="reddit-card case-item" data-domain="UGV" id="case-02">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#frontline-ua" class="badge badge-vendor">Ukrainian Frontline Engineering</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/02-slimak-ugv.html">Case #02: НРК SlimAk (Articulated Chassis UGV)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GL-EP-WR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Ground Land • C1 Hand-Deployable / Man-Portable • Electric Battery • Patrol / Forward Recon • All-Terrain Wheeled • Redundant RF Mesh</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IArticulatedChassis"><code>IArticulatedChassis</code></a></div>
+    <div><em>"Articulated off-road robotic chassis require the IArticulatedChassis HAL contract to decouple central joint roll compliance from active yaw steering, eliminating tire slip scrub in deep mud."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Articulated two-section frame provides passive mechanical roll conformity across rugged shell craters and trenches.</li><li>Eliminates skid-steer scrubbing in viscous mud, reducing drivetrain electrical energy consumption by 30-40%.</li><li>Continuous 4-wheel soil contact maximizes normal force and Bekker soil traction adhesion.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Central articulating hinge is a primary mechanical stress concentrator and single-point-of-failure under blast shocks.</li><li>High exposure of steering hydraulic/linear electric actuators to small-arms fire and soil grit ingress.</li><li>Zero active roll suspension damping: passive geometric hinge is not adaptive suspension.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Demolishes marketing confusion: a passive articulating mechanical hinge is a chassis topology, NOT an adaptive suspension system.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1572864870891828" target="_blank" rel="noopener">Facebook Reel / Frontline Field Prototype ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a>
+      <a href="../cases/02-slimak-ugv.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" id="case-08">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#unex" class="badge badge-vendor">UNEX (Tim De Zitter / Militarnyi)</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/08-unex-artillery.html">Case #08: UNEX Amphibious Prime Mover (ABRIS)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GH-ET-DL</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Ground Heavy / Amphibious • C3 Heavy Flatbed • Electric Battery • Artillery Towing & Ammo Replenishment • Rear/Forward Logistics • Starlink/RF</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IDrawbarTractionController"><code>IDrawbarTractionController</code></a></div>
+    <div><em>"Robotic prime movers require IDrawbarTractionController to govern wheel torque to Bekker soil slip ratios (s < 0.2) and actively pulse anti-jackknife braking against unbraked towed artillery loads."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Instant 0-RPM electric motor torque overcomes static breakaway friction on 3.2-tonne D-30 howitzer without clutch burn.</li><li>Carrying 1.2 tonnes of onboard ammunition adds critical ballast to prime mover wheels, boosting normal tractive force.</li><li>Zero acoustic and thermal exhaust signature during covert artillery displacement under drone surveillance.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Trailing unbraked mass: on muddy downhills, 3.2 tonnes of trailing artillery creates forward inertial thrust, jackknifing the UGV.</li><li>Soil adhesion bounds: off-road drawbar pull is strictly limited by soil shear strength (F = μ * m * g), invalidating 10-tonne asphalt claims.</li><li>Heavy battery pack mass limits amphibious freeboard and waterjet swimming velocity in river crossings.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Demolishes marketing motor claims: towing capacity in war is dictated by Bekker soil mechanics and tractor ballast, not electric motor kilowatts.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dvJEuUV5" target="_blank" rel="noopener">LinkedIn / Technical Analysis / Militarnyi ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a>
+      <a href="../cases/08-unex-artillery.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case #09: CAPSTONE Coaxial Heavy-Lift UCV | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of CAPSTONE Coaxial Heavy-Lift UCV (UCV: CL-PM-DR). Physical advantages, failure modes, and HAL contract ICoaxialRotorDrive.">
+  <link rel="canonical" href="https://uwe-standard.github.io/cases/09-capstone-coaxial.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "UWE Case #09: CAPSTONE Coaxial Heavy-Lift UCV \u2014 Cyber-Physical Architectural Analysis",
+  "description": "Empirical evaluation of CAPSTONE Coaxial Heavy-Lift UCV (UCV: CL-PM-DR) under Hardware Abstraction Layer ICoaxialRotorDrive. Validates the Law of Kinematic Primacy: without fixed wings or stall speed, all rotor disc-loaded vertical lift systems belong strictly to UCV (Unmanned Copter Vehicles).",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "datePublished": "2026-10-19",
+  "url": "https://uwe-standard.github.io/cases/09-capstone-coaxial.html",
+  "keywords": [
+    "UCV",
+    "UCV: CL-PM-DR",
+    "ICoaxialRotorDrive",
+    "Certo Aerospace & BAE FalconWorks",
+    "UWE Standard",
+    "STANAG 4670 replacement"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="active">13 Benchmarks</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 13 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: 2026-10-19</span>
+        <span>•</span>
+        <a href="../domains/ucv.html" class="badge badge-ucv">UCV</a>
+        <a href="../vendors/index.html#bae-falconworks" class="badge badge-vendor">Certo Aerospace & BAE FalconWorks</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #09: CAPSTONE Coaxial Heavy-Lift UCV
+      </h1>
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>UCV: CL-PM-DR</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">UCV: Copter Lift (Coaxial) • C2 Light Mobile Footprint • Piston Heavy-Fuel • Multi-Payload 300kg / ASW / Logistics • Escort/Denial • MESH/SATCOM</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#ICoaxialRotorDrive"><code>ICoaxialRotorDrive</code></a></div>
+        <div style="line-height:1.5;"><em>"Heavy coaxial rotorcraft UCVs mandate ICoaxialRotorDrive to govern differential collective yaw while algorithmically clamping cyclic pitch rate limits to prevent catastrophic blade clashing under high-G gusts."</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points"><li>100% Useful Lift Power: eliminating the tail rotor recovers 12-15% of engine shaft power, directly enabling a 50% structural payload fraction (300kg on 600kg MTOW).</li><li>Compact footprint: contra-rotating blades yield ~35% smaller rotor disc diameter compared to single-rotor helicopters, enabling confined deck landings.</li><li>Symmetrical high-speed lift: retreating blade stall on one rotor is balanced by advancing blade of opposing rotor, eliminating roll divergence at >100 kts.</li></ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points"><li>Catastrophic Blade Clashing: severe cyclic inputs cause dynamic blade flapping; if flapping exceeds mast separation, top and bottom blades collide.</li><li>Complex coaxial swashplate hub: dual counter-rotating swashplates and concentric shafts increase maintenance and dust vulnerability.</li><li>Severe rotor-induced downwash turbulence during cargo sling hooking operations.</li></ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> Validates the Law of Kinematic Primacy: without fixed wings or stall speed, all rotor disc-loaded vertical lift systems belong strictly to UCV (Unmanned Copter Vehicles).
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="https://www.facebook.com/reel/4404808966462700" target="_blank" rel="noopener">Facebook Reel / Flight Testing Demonstration ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>Certo Aerospace & BAE FalconWorks</strong></div>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/reel/4404808966462700" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        <p style="margin:0.25rem 0;"><a href="01-honda-evtol.html" class="badge badge-hal">Case #01 Study →</a></p><p style="margin:0.25rem 0;"><a href="13-fury-ghostbat.html" class="badge badge-hal">Case #13 Study →</a></p>
+      </div>
+    </article>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

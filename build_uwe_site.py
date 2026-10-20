@@ -1,0 +1,1208 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# [AI_PROVENANCE: TIER_2_GROQ | MODEL: openai/gpt-oss-120b]
+import sys
+import os
+import re
+import json
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+
+WORKSPACE = Path(__file__).resolve().parent
+DOCS = WORKSPACE / "docs"
+BASE_URL = "https://uwe-standard.github.io"
+
+# 13 Empirical Platform Benchmarks Metadata & Deep Cyber-Physical Content
+CASES_DATA = [
+    {
+        "id": "01",
+        "slug": "01-honda-evtol",
+        "domain": "UAV",
+        "name": "Honda eVTOL (GT-HEV Lift+Cruise)",
+        "token": "UAV: AL-TL-HR",
+        "token_full": "UAV: Atmospheric Lift • C2 Light Logistics (5-8 pax) • GT-HEV Gas Turbine Hybrid • Loiter/Cruise Transit • High Survivability Reserve • Redundant MESH/SATCOM",
+        "hal": "IVtolTransitionDrive",
+        "hal_def": "Lift+Cruise eVTOL architectures mandate IVtolTransitionDrive to dynamically crossfade rotor lift to aerodynamic wing loading (rotor throttle α: 1.0 -> 0.0) without mechanical tiltrotor pitch instability.",
+        "vendor": "Honda Aircraft Company",
+        "vendor_slug": "honda",
+        "date": "2026-10-19",
+        "source_name": "Facebook Reel / Honda Aviation Field Test",
+        "source_url": "https://www.facebook.com/reel/1409577227898837",
+        "advantages": [
+            "Decoupled Lift+Cruise eliminates tiltrotor single-point mechanical failure by isolating hover props from horizontal cruise pusher.",
+            "Gas turbine hybrid-electric powertrain (GT-HEV) breaks the chemical battery energy density bottleneck (12,000 Wh/kg vs 250 Wh/kg).",
+            "Piecewise energy budget proves hover power drain is ~6x cruise power (P_hover ≈ 6 * P_cruise), allowing small cruise engines."
+        ],
+        "vulnerabilities": [
+            "Internal cell resistance voltage sag (ΔV = I * R_int) on terminal hover descent under degraded battery state of health.",
+            "Airframe parasitic drag penalty (ΔC_D0) from eight locked vertical lift rotors during high-speed cruise.",
+            "Dual-system thermal and acoustic signature from gas turbine exhaust reducing acoustic stealth."
+        ],
+        "lesson": "Validates the Law of Decoupled Powerplants in UWE: pure battery VTOL is kinetically unviable for theater logistics; hybrid turbine generation is mandatory.",
+        "related": ["03-stealth-ucav", "09-capstone-coaxial", "12-mq25-stingray"]
+    },
+    {
+        "id": "02",
+        "slug": "02-slimak-ugv",
+        "domain": "UGV",
+        "name": "НРК SlimAk (Articulated Chassis UGV)",
+        "token": "UGV: GL-EP-WR",
+        "token_full": "UGV: Ground Land • C1 Hand-Deployable / Man-Portable • Electric Battery • Patrol / Forward Recon • All-Terrain Wheeled • Redundant RF Mesh",
+        "hal": "IArticulatedChassis",
+        "hal_def": "Articulated off-road robotic chassis require the IArticulatedChassis HAL contract to decouple central joint roll compliance from active yaw steering, eliminating tire slip scrub in deep mud.",
+        "vendor": "Ukrainian Frontline Engineering",
+        "vendor_slug": "frontline-ua",
+        "date": "2026-10-19",
+        "source_name": "Facebook Reel / Frontline Field Prototype",
+        "source_url": "https://www.facebook.com/reel/1572864870891828",
+        "advantages": [
+            "Articulated two-section frame provides passive mechanical roll conformity across rugged shell craters and trenches.",
+            "Eliminates skid-steer scrubbing in viscous mud, reducing drivetrain electrical energy consumption by 30-40%.",
+            "Continuous 4-wheel soil contact maximizes normal force and Bekker soil traction adhesion."
+        ],
+        "vulnerabilities": [
+            "Central articulating hinge is a primary mechanical stress concentrator and single-point-of-failure under blast shocks.",
+            "High exposure of steering hydraulic/linear electric actuators to small-arms fire and soil grit ingress.",
+            "Zero active roll suspension damping: passive geometric hinge is not adaptive suspension."
+        ],
+        "lesson": "Demolishes marketing confusion: a passive articulating mechanical hinge is a chassis topology, NOT an adaptive suspension system.",
+        "related": ["08-unex-artillery"]
+    },
+    {
+        "id": "03",
+        "slug": "03-stealth-ucav",
+        "domain": "UAV",
+        "name": "Transonic / Supersonic Stealth UCAV",
+        "token": "UAV: AH-PA-HO",
+        "token_full": "UAV: Atmospheric High-Altitude • C3 Strategic Runway • Jet Propulsion • Air Superiority • Heavy Payload Strike • Optical/Laser Resilient",
+        "hal": "IAerodynamicTrim",
+        "hal_def": "Supersonic tailless unmanned combat airframes mandate IAerodynamicTrim to dynamically bias elevon reflex angles against boundary-layer separation and shock-induced pitching moments.",
+        "vendor": "Defense Aerospace Research",
+        "vendor_slug": "global-aerospace",
+        "date": "2026-10-19",
+        "source_name": "Facebook Reel / Aerodynamic Wind Tunnel Model",
+        "source_url": "https://www.facebook.com/reel/1625827525885877",
+        "advantages": [
+            "Tailless blended wing-body yields ultra-low radar cross-section (RCS < -30 dBsm) across VHF to X-band radar frequencies.",
+            "Internal conformal weapons bay prevents weapon drag divergence and maintains stealth during supersonic cruise.",
+            "High structural fuel fraction enables extended unrefueled combat radius (>1,500 km)."
+        ],
+        "vulnerabilities": [
+            "Prominent roof bubble canopy creates transonic wave drag divergence (ΔC_D0) and distorts boundary layer entering dorsal intake.",
+            "Severe total pressure recovery loss in serpentine S-duct engine inlet under high angles of attack.",
+            "High yaw divergence sensitivity at supersonic speeds due to absence of vertical stabilizing fins."
+        ],
+        "lesson": "Confirms the Law of Kinematic Primacy: cosmetic design tropes (bubble cockpits on unmanned airframes) destroy transonic aerodynamic efficiency.",
+        "related": ["04-waverider-corvus", "05-sickle-wing", "13-fury-ghostbat"]
+    },
+    {
+        "id": "04",
+        "slug": "04-waverider-corvus",
+        "domain": "UAV",
+        "name": "Mach 6 Hypersonic Waverider (Corvus)",
+        "token": "UAV: AI-CP-HL",
+        "token_full": "UAV: Atmospheric Interceptor / Hypersonic • C4 Strategic Launch • Scramjet / Rocket Boost • Deep Penetration Strike • High-Altitude • Laser ISL Link",
+        "hal": "IThermalPlasmaLink",
+        "hal_def": "Hypersonic waverider vehicles require the IThermalPlasmaLink HAL contract to command aft-directed laser optical links to orbital relay satellites, bypassing the Mach 6 plasma blackout sheath.",
+        "vendor": "DARPA / Skunk Works Experimental",
+        "vendor_slug": "darpa",
+        "date": "2026-10-19",
+        "source_name": "Defense OSINT / Theoretical Mach 6 Aerothermal Benchmark",
+        "source_url": "https://www.facebook.com/reel/1625827525885877",
+        "advantages": [
+            "Compression lift generation: rides its own shockwave yielding high hypersonic lift-to-drag ratio (L/D > 4.5 at Mach 6).",
+            "Kinetic survivability: Mach 6 velocity and 30 km altitude render all current short/medium-range SAM interceptors kinematically obsolete.",
+            "Near-instantaneous time-critical strike capability across intercontinental theater arcs."
+        ],
+        "vulnerabilities": [
+            "Stagnation point aerothermal heating exceeding 1,850°C blinds forward optical and infrared imaging sensors.",
+            "Ionized plasma sheath (electron density ω_p > 30 GHz) completely blocks RF communications, GPS, and radar altimeters.",
+            "Extremely narrow scramjet unstart margins during rapid dynamic maneuvering."
+        ],
+        "lesson": "Proves the necessity of cross-domain orbital integration: hypersonic atmospheric vehicles cannot communicate via terrestrial RF and must link to orbital UOV anchors.",
+        "related": ["05-sickle-wing", "10-orbital-guardian"]
+    },
+    {
+        "id": "05",
+        "slug": "05-sickle-wing",
+        "domain": "UAV",
+        "name": "Autonomous Sickle Wing (Tailless Hypersonic)",
+        "token": "UAV: AI-CP-HL",
+        "token_full": "UAV: Atmospheric Interceptor • C3 Dispersed Base • Scramjet Cruise • High-Altitude Interdiction • Stealth Penetration • Laser Link",
+        "hal": "IActiveFlowControlDrive",
+        "hal_def": "Tailless hypersonic sickle-wing configurations mandate IActiveFlowControlDrive to generate dynamic yaw and roll control moments via supersonic bleed-air blowing, replacing mechanical control surfaces.",
+        "vendor": "Next-Gen Hypersonic Consortium",
+        "vendor_slug": "hypersonic-consortium",
+        "date": "2026-10-19",
+        "source_name": "Facebook Reel / Hypersonic Aerodynamic Planform",
+        "source_url": "https://www.facebook.com/reel/1818239552508775",
+        "advantages": [
+            "Crescent sickle leading-edge geometry delays supersonic shock detachment and reduces wave drag across Mach 3 to Mach 6.",
+            "Total absence of vertical empennage slashes side-aspect radar cross-section (RCS).",
+            "Fluidic Thrust Vectoring (FTV) eliminates mechanical hinge gaps that cause boundary layer trip and extreme localized heating."
+        ],
+        "vulnerabilities": [
+            "Complex pneumatic bleed-air ducting adds internal mass and parasitic engine compressor power loss.",
+            "High aerothermal ablation along sharp leading edges requires carbon-carbon composite matrix refurbishing.",
+            "Severe directional stability instability at low takeoff and landing approach speeds."
+        ],
+        "lesson": "Validates the UWE Law of Kinematic Primacy: mechanical control surfaces fail under hypersonic aerothermal loads; flight control becomes fluidic and software-driven.",
+        "related": ["03-stealth-ucav", "04-waverider-corvus"]
+    },
+    {
+        "id": "06",
+        "slug": "06-exail-usv",
+        "domain": "USV",
+        "name": "Exail DriX H-9 & Oryx O-16 USVs",
+        "token": "USV: SL-PA-DR",
+        "token_full": "USV: Surface Marine • C2 Light 9m / C3 Heavy 16m • Diesel-Electric • Counter-UAS Escort / ASW Loiter • Persistent Picket • Dual MESH/SATCOM",
+        "hal": "IHydrodynamicDropKeelDrive",
+        "hal_def": "Open-ocean unmanned surface platforms require IHydrodynamicDropKeelDrive to dynamically lower sonar payloads 2m below surface cavitation and bubble sweep-down noise, enabling ASW acoustic SNR > 20 dB in Sea State 5.",
+        "vendor": "Exail Marine & U.S. Navy Evaluations",
+        "vendor_slug": "exail",
+        "date": "2026-10-19",
+        "source_name": "Naval News Euronaval 2026 / U.S. Navy & Coast Guard Trials",
+        "source_url": "https://www.navalnews.com/event-news/euronaval-2026/2026/10/exail-usvs-set-for-u-s-navy-and-coast-guard-evaluations/",
+        "advantages": [
+            "Slender wave-piercing displacement monohull slashes vertical heave accelerations (<1.5g in Sea State 5 vs >6g for planing hulls).",
+            "2-meter drop keel isolates sonars and acoustic sensors from hull surface bubble sweep-down, yielding +15-20 dB SNR for submarine tracking.",
+            "Extreme endurance: 90 consecutive days on station demonstrated in U.S. 4th Fleet operations."
+        ],
+        "vulnerabilities": [
+            "Narrow beam (L/B ≈ 9) causes low transverse metacentric height (GM_T), making roll stability dependent on active pendulum ballast.",
+            "Submerged gondola draft prevents shallow littoral navigation unless actively retracted.",
+            "Displacement hull limits maximum sprint speed to 15-20 knots, making it vulnerable to high-speed interceptor swarms."
+        ],
+        "lesson": "Establishes the hydrodynamic boundary for UWE Article 5 (USV): sprint planing hulls belong to kamikaze strike, while persistent ocean denial belongs strictly to wave-piercing displacement forms.",
+        "related": ["07-ghostshark-auv"]
+    },
+    {
+        "id": "07",
+        "slug": "07-ghostshark-auv",
+        "domain": "UUV",
+        "name": "Anduril Ghost Shark XL-AUV & Ocius BlueBottle USV",
+        "token": "UUV: PT-RM-DA",
+        "token_full": "UUV: Pelagic 1000m Depth • C3 Heavy Slipway • Battery Electric • Multi-Payload: 12 Naval Mines + ALTIUS UAV Launch • Strategic Denial • Acoustic/RF",
+        "hal": "ISubseaLaunchController",
+        "hal_def": "Heterogeneous subsea architectures require ISubseaLaunchController to dynamically manage buoyancy transients (ΔB = -∑m_payload) during mine salvo release and submerged capsule UAV launch.",
+        "vendor": "Anduril Industries & Ocius Technology (AUKUS)",
+        "vendor_slug": "anduril",
+        "date": "2026-10-19",
+        "source_name": "Naval News / Royal Australian Navy AUKUS Milestone",
+        "source_url": "https://lnkd.in/p/dd2v4jnD",
+        "advantages": [
+            "Decoupled Lethality: invariant pelagic hull converts between laying 12 naval mines, tube-launching ALTIUS UAVs, and covert SOF delivery.",
+            "Persistent solar/sail/wave harvesting on companion BlueBottle USV provides infinite station-keeping acoustic gateway to orbital SATCOM.",
+            "Deep ocean shelf transit (1,000m depth) completely bypasses shallow surface ASW acoustic barriers."
+        ],
+        "vulnerabilities": [
+            "Rapid positive buoyancy spike upon salvo mine drop threatens accidental depth broaching if ballast flooding lags.",
+            "Submerged UAV launch requires surface broaching and rocket booster ignition without compromising carrier acoustic stealth.",
+            "Battery endurance constraints for high-speed underwater sprints without nuclear/parasitic assistance."
+        ],
+        "lesson": "Validates UWE Cross-Domain Orchestration: subsea combat supremacy is achieved by heterogeneous UUV (subsea carrier) + USV (energy gateway) + UAV (airborne effector) teams.",
+        "related": ["06-exail-usv", "11-lockheed-lamprey"]
+    },
+    {
+        "id": "08",
+        "slug": "08-unex-artillery",
+        "domain": "UGV",
+        "name": "UNEX Amphibious Prime Mover (ABRIS)",
+        "token": "UGV: GH-ET-DL",
+        "token_full": "UGV: Ground Heavy / Amphibious • C3 Heavy Flatbed • Electric Battery • Artillery Towing & Ammo Replenishment • Rear/Forward Logistics • Starlink/RF",
+        "hal": "IDrawbarTractionController",
+        "hal_def": "Robotic prime movers require IDrawbarTractionController to govern wheel torque to Bekker soil slip ratios (s < 0.2) and actively pulse anti-jackknife braking against unbraked towed artillery loads.",
+        "vendor": "UNEX (Tim De Zitter / Militarnyi)",
+        "vendor_slug": "unex",
+        "date": "2026-10-19",
+        "source_name": "LinkedIn / Technical Analysis / Militarnyi",
+        "source_url": "https://lnkd.in/p/dvJEuUV5",
+        "advantages": [
+            "Instant 0-RPM electric motor torque overcomes static breakaway friction on 3.2-tonne D-30 howitzer without clutch burn.",
+            "Carrying 1.2 tonnes of onboard ammunition adds critical ballast to prime mover wheels, boosting normal tractive force.",
+            "Zero acoustic and thermal exhaust signature during covert artillery displacement under drone surveillance."
+        ],
+        "vulnerabilities": [
+            "Trailing unbraked mass: on muddy downhills, 3.2 tonnes of trailing artillery creates forward inertial thrust, jackknifing the UGV.",
+            "Soil adhesion bounds: off-road drawbar pull is strictly limited by soil shear strength (F = μ * m * g), invalidating 10-tonne asphalt claims.",
+            "Heavy battery pack mass limits amphibious freeboard and waterjet swimming velocity in river crossings."
+        ],
+        "lesson": "Demolishes marketing motor claims: towing capacity in war is dictated by Bekker soil mechanics and tractor ballast, not electric motor kilowatts.",
+        "related": ["02-slimak-ugv"]
+    },
+    {
+        "id": "09",
+        "slug": "09-capstone-coaxial",
+        "domain": "UCV",
+        "name": "CAPSTONE Coaxial Heavy-Lift UCV",
+        "token": "UCV: CL-PM-DR",
+        "token_full": "UCV: Copter Lift (Coaxial) • C2 Light Mobile Footprint • Piston Heavy-Fuel • Multi-Payload 300kg / ASW / Logistics • Escort/Denial • MESH/SATCOM",
+        "hal": "ICoaxialRotorDrive",
+        "hal_def": "Heavy coaxial rotorcraft UCVs mandate ICoaxialRotorDrive to govern differential collective yaw while algorithmically clamping cyclic pitch rate limits to prevent catastrophic blade clashing under high-G gusts.",
+        "vendor": "Certo Aerospace & BAE FalconWorks",
+        "vendor_slug": "bae-falconworks",
+        "date": "2026-10-19",
+        "source_name": "Facebook Reel / Flight Testing Demonstration",
+        "source_url": "https://www.facebook.com/reel/4404808966462700",
+        "advantages": [
+            "100% Useful Lift Power: eliminating the tail rotor recovers 12-15% of engine shaft power, directly enabling a 50% structural payload fraction (300kg on 600kg MTOW).",
+            "Compact footprint: contra-rotating blades yield ~35% smaller rotor disc diameter compared to single-rotor helicopters, enabling confined deck landings.",
+            "Symmetrical high-speed lift: retreating blade stall on one rotor is balanced by advancing blade of opposing rotor, eliminating roll divergence at >100 kts."
+        ],
+        "vulnerabilities": [
+            "Catastrophic Blade Clashing: severe cyclic inputs cause dynamic blade flapping; if flapping exceeds mast separation, top and bottom blades collide.",
+            "Complex coaxial swashplate hub: dual counter-rotating swashplates and concentric shafts increase maintenance and dust vulnerability.",
+            "Severe rotor-induced downwash turbulence during cargo sling hooking operations."
+        ],
+        "lesson": "Validates the Law of Kinematic Primacy: without fixed wings or stall speed, all rotor disc-loaded vertical lift systems belong strictly to UCV (Unmanned Copter Vehicles).",
+        "related": ["01-honda-evtol", "13-fury-ghostbat"]
+    },
+    {
+        "id": "10",
+        "slug": "10-orbital-guardian",
+        "domain": "UOV",
+        "name": "Orbital Guardian ADR Satellite Hunter",
+        "token": "UOV: LM-CA-HR",
+        "token_full": "UOV: Low Earth Orbit (350-1000km) • ESPA Class 150-300kg • Chemical Stored Thrusters • Active Rendezvous & Grappling • Solo Hunter • Phased Array RF",
+        "hal": "ITumblingTargetCapture",
+        "hal_def": "Autonomous orbital proximity and interception platforms require ITumblingTargetCapture to solve Clohessy-Wiltshire kinematics, match target 3-axis tumble momentum via CMGs, and execute impedance grappling without kinetic fragmentation.",
+        "vendor": "NextGen Arsenal",
+        "vendor_slug": "nextgen-arsenal",
+        "date": "2026-10-19",
+        "source_name": "Facebook Reel / Orbital Proximity Docking Animation",
+        "source_url": "https://www.facebook.com/reel/2177636083099811",
+        "advantages": [
+            "Standardized robotic grappling transforms passive orbital space into an active interception and debris removal domain.",
+            "Dual-use operational convergence: Active Debris Removal (ADR) and offensive anti-satellite (ASAT/OSC) share 100% identical hardware contracts.",
+            "Direct Keplerian Clohessy-Wiltshire navigation enables micro-impulse station keeping."
+        ],
+        "vulnerabilities": [
+            "The Tsiolkovsky ΔV Attrition Trap: orbital plane changes cost ~2,000 m/s for a 15° inclination shift at LEO; chemical chasers are restricted to single targets.",
+            "Angular momentum transfer: latching onto an uncooperative tumbling satellite violently transfers spin, risking mechanical shear.",
+            "Secondary Kessler syndrome: relative docking impacts >0.1 m/s risk shattering solar panels and generating clouds of hypervelocity shrapnel."
+        ],
+        "lesson": "Demolishes sci-fi free-flight orbital tropes: multi-target orbital sweepers require high-power nuclear-electric propulsion; chemical platforms remain single-mission effectors.",
+        "related": ["04-waverider-corvus"]
+    },
+    {
+        "id": "11",
+        "slug": "11-lockheed-lamprey",
+        "domain": "UUV",
+        "name": "Lockheed Martin Lamprey MMAUV",
+        "token": "UUV: CV-IS-HQ",
+        "token_full": "UUV: Continental Shelf 0-500m • Vessel-Attached / Hull Hitchhiker • Hydrokinetic Harvesting • Seabed Ambush (Zhdun Posture) • Solo Hunter • Silent Acoustic",
+        "hal": "IParasiticAttachmentDrive",
+        "hal_def": "Parasitic undersea autonomous platforms require IParasiticAttachmentDrive and IHydrokineticHarvesting to govern hull boundary-layer suction, harvest power from 20-knot flow, and command positive separation into seabed resting sentinel posture.",
+        "vendor": "Lockheed Martin Skunk Works",
+        "vendor_slug": "lockheed-martin",
+        "date": "2026-10-19",
+        "source_name": "Facebook Reel / Undersea Modular Subsystem Concept",
+        "source_url": "https://www.facebook.com/reel/2203326470200241",
+        "advantages": [
+            "Zero Transit Battery Drain: hitchhikes on host submarine/warship hulls; in-transit hydrokinetic turbines arrive on station with 100% battery state-of-charge.",
+            "Seabed Ambush (Zhdun Posture): rests on continental shelf with all propulsion off, yielding zero acoustic and thermal signature for weeks of passive listening.",
+            "Decoupled Lethality: 24 cu ft modular bay accommodates torpedoes, mine layers, EW jammers, or air-defense UAV launchers."
+        ],
+        "vulnerabilities": [
+            "Boundary layer shear stress: 20-25 knot transit creates massive hydrodynamic drag, risking clamp detachment or acoustic cavitation revealing host sub.",
+            "Bernoulli Suction Hazard: separating from moving hull induces low-pressure suction toward host screw propellers, requiring pyrotechnic positive ejection.",
+            "Seafloor silt fouling: direct resting on silt risks clogging waterjet impellers and acoustic sonar transducers."
+        ],
+        "lesson": "Codifies Parasitic Maritime Logistics in UWE: host platform mobility and autonomous robotic effector lethality operate under completely independent energy cycles.",
+        "related": ["06-exail-usv", "07-ghostshark-auv"]
+    },
+    {
+        "id": "12",
+        "slug": "12-mq25-stingray",
+        "domain": "UAV",
+        "name": "Boeing MQ-25 Stingray CBARS",
+        "token": "UAV: AI-TF-DR",
+        "token_full": "UAV: Atmospheric Winged • C4 CATOBAR Carrier Base • Turbofan AE 3007N • Airborne Fuel Tanker (Cobham ARS) • Fleet Escort & Persistent Shield • MESH/COMSAT",
+        "hal": "IAerialRefuelingHoseDrogueDrive",
+        "hal_def": "Carrier-borne tanker UAVs require IAerialRefuelingHoseDrogueDrive to actively damp drogue basket whip against receiver supersonic bow wave displacement while compensating center-of-gravity shifts during 15,000-lb fuel offloads.",
+        "vendor": "Boeing Defense & U.S. Navy",
+        "vendor_slug": "boeing",
+        "date": "2026-10-20",
+        "source_name": "U.S. Navy / NAVAIR Carrier Demonstration Video",
+        "source_url": "https://www.facebook.com/SecretaryoftheNavy/videos/1123057570114063/",
+        "advantages": [
+            "Eliminates carrier air wing fatigue: relieves F/A-18 Super Hornets from wasting 25% of combat flight hours on wasteful buddy-tanking sorties.",
+            "Doubles strike radius: pushes F-35C and CCA strike reach from 450 to >900 nmi, allowing carrier strike groups to operate outside DF-21D A2/AD envelopes.",
+            "Airborne energy backbone: forms the continuous in-flight refueling lifeline for autonomous Collaborative Combat Aircraft (CCA) along containment lines."
+        ],
+        "vulnerabilities": [
+            "Aerodynamic bow wave whip: receiver aircraft nose pressure wave pushes drogue basket off-center, causing probe strikes and canopy impacts.",
+            "Flight deck taxi density: autonomous taxi among tractors and catapults under 120 dB acoustic noise requires robust computer vision wand failsafes.",
+            "4G carrier cable trap deceleration creates violent internal fuel slosh, requiring active internal baffles and reinforced gear."
+        ],
+        "lesson": "Proves UWE Strategic Doctrine: autonomous interdiction shields and containment lines depend fundamentally on distributed aerial refueling infrastructure, not bespoke single-sortie ranges.",
+        "related": ["01-honda-evtol", "13-fury-ghostbat"]
+    },
+    {
+        "id": "13",
+        "slug": "13-fury-ghostbat",
+        "domain": "UAV",
+        "name": "Anduril Fury & Boeing MQ-28 Ghost Bat (CCA Triad)",
+        "token": "UAV: AL-TC-DR",
+        "token_full": "UAV: Atmospheric Transonic M 0.95 • C2 Dispersed Runway • Turbofan FJ44 • Air-to-Air Interceptor (AIM-120 Conformal Bay) • Escort Air Superiority • Lattice OS / MESH",
+        "hal": "IHighGEvasiveManeuverDrive",
+        "hal_def": "Autonomous air-to-air Collaborative Combat Aircraft mandate IHighGEvasiveManeuverDrive and IAutonomousWeaponSeparation to execute machine-speed 9G intercepts and command >40G positive ejection to suppress transonic cavity resonance (Rossiter modes).",
+        "vendor": "Anduril Industries & Boeing Australia",
+        "vendor_slug": "anduril",
+        "date": "2026-10-20",
+        "source_name": "CBS 60 Minutes (Palmer Luckey) & Australian MoD Test Flight",
+        "source_url": "https://www.cbsnews.com/news/anduril-ceo-unveils-the-fury-unmanned-fighter-jet-60-minutes/",
+        "advantages": [
+            "Transonic 9G Kinetic Agility: carbon-composite monocoque construction eliminates pilot G-limits, sustaining 9G evasive missile-breakaway maneuvers.",
+            "Low-Observable Conformal Weapons Carriage: internal bays carry AIM-120 and AIM-9X missiles while preserving very-low-observable (VLO) radar signature.",
+            "Lattice OS Edge Autonomy: distributed sensor-fusion enables machine-speed radar triangulation, pincer intercepts, and silent forward scouting."
+        ],
+        "vulnerabilities": [
+            "Weapons Bay Cavity Resonance (Rossiter Modes): opening doors at Mach 0.95 creates severe acoustic pressure waves; requires high-force positive ejection.",
+            "Internal fuel deficit: compact 9G airframe loiter is limited to <1.5h without aerial refueling, creating an operational dependency on MQ-25 Stingray.",
+            "High unit attritability threshold compared to mass-produced FPV multirotors."
+        ],
+        "lesson": "Validates the Closed UWE Aerial Containment Triad: 1) Kinetic Dogfighter (Fury), 2) Modular Sensor Anchor (MQ-28), 3) Persistent Energy Hub (MQ-25 Tanker) sustaining 24/7 robotic borders.",
+        "related": ["03-stealth-ucav", "04-waverider-corvus", "12-mq25-stingray"]
+    }
+]
+
+VENDORS_DATA = [
+    {"slug": "anduril", "name": "Anduril Industries", "origin": "USA", "platforms": ["Anduril Fury (CCA)", "Ghost Shark XL-AUV", "ALTIUS Series"], "focus": "Autonomous defense-tech, Lattice OS, Collaborative Combat Aircraft, attritable robotic mass."},
+    {"slug": "boeing", "name": "Boeing Defense, Space & Security", "origin": "USA / Australia", "platforms": ["MQ-25 Stingray CBARS", "MQ-28 Ghost Bat"], "focus": "Carrier-based unmanned aviation, aerial refueling infrastructure, modular CCA airframes."},
+    {"slug": "lockheed-martin", "name": "Lockheed Martin (Skunk Works)", "origin": "USA", "platforms": ["Lamprey MMAUV", "U-2 / RQ-170 Heritage"], "focus": "Parasitic subsea autonomous systems, advanced stealth aerostructures, low-observable naval technologies."},
+    {"slug": "exail", "name": "Exail Marine", "origin": "France", "platforms": ["DriX H-9 USV", "Oryx O-16 USV"], "focus": "Slender wave-piercing displacement unmanned surface vessels, drop-keel ASW hydrography, Sea State 5 endurance."},
+    {"slug": "bae-falconworks", "name": "BAE Systems & Certo Aerospace", "origin": "UK", "platforms": ["CAPSTONE Coaxial Heavy-Lift UCV"], "focus": "Coaxial rotorcraft disc loading, 50% structural payload fraction, naval frigate deck operations."},
+    {"slug": "unex", "name": "UNEX Automation", "origin": "Belgium / Ukraine", "platforms": ["ABRIS Amphibious Prime Mover"], "focus": "Heavy electric all-terrain logistics, robotic artillery towing, Bekker soil traction management."},
+    {"slug": "honda", "name": "Honda Aircraft Company", "origin": "Japan / USA", "platforms": ["Honda eVTOL (GT-HEV)"], "focus": "Decoupled Lift+Cruise aerodynamics, gas turbine hybrid-electric powertrains, inter-city logistics."},
+    {"slug": "frontline-ua", "name": "Ukrainian Frontline Defense-Tech", "origin": "Ukraine", "platforms": ["НРК SlimAk UGV", "Combat Multirotors", "Black Sea USVs"], "focus": "Asymmetric robotic warfare, articulated mud-conforming chassis, electronic warfare resilience, kinetic field prototyping."},
+    {"slug": "nextgen-arsenal", "name": "NextGen Arsenal", "origin": "International", "platforms": ["Orbital Guardian ADR Hunter"], "focus": "Active Debris Removal, proximity operations (RPO), non-cooperative tumbling target capture, dual-use counter-space."}
+]
+
+DOMAINS_DATA = [
+    {
+        "code": "UAV",
+        "name": "Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic)",
+        "medium": "Atmospheric Airspace (0 to 30 km)",
+        "governing_laws": "Aerodynamic Lift-to-Drag (L/D), Mach number shock detachment, boundary-layer aerothermodynamics, wing loading.",
+        "legacy_trap": "STANAG 4670 & DoD MTOW/HALE/MALE classifications rely on arbitrary weight and altitude boxes, ignoring kinetic threat omission limits and FPV interceptor speeds.",
+        "cases": ["01-honda-evtol", "03-stealth-ucav", "04-waverider-corvus", "05-sickle-wing", "12-mq25-stingray", "13-fury-ghostbat"]
+    },
+    {
+        "code": "UCV",
+        "name": "Unmanned Copter Vehicles (Combat Multirotors & Coaxials)",
+        "medium": "Low-Altitude Disc-Loaded Aerodynamics",
+        "governing_laws": "Rotor disc loading (T/A), zero stall speed (V_stall = 0), momentum theory, advancing/retreating blade flapping dynamics.",
+        "legacy_trap": "Conflating combat rotorcraft with hobbyist slang ('FPV'). FPV is a pilot screen mode, not a cyber-physical combat aircraft category.",
+        "cases": ["09-capstone-coaxial"]
+    },
+    {
+        "code": "UGV",
+        "name": "Unmanned Ground Vehicles (Tactical Robotics & Prime Movers)",
+        "medium": "Terrestrial & Amphibious Terrain",
+        "governing_laws": "Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios.",
+        "legacy_trap": "Amateur slang ('vozyk', 'cart') and marketing claims of 10-tonne towing based on electric motor kW while ignoring soil shear failure in mud.",
+        "cases": ["02-slimak-ugv", "08-unex-artillery"]
+    },
+    {
+        "code": "UUV",
+        "name": "Unmanned Undersea Vehicles (Sub-Surface Robotics)",
+        "medium": "Sub-surface Hydrospace (0 to 11,000m)",
+        "governing_laws": "Hydrostatic pressure gradient (1 atm / 10m), acoustic transmission loss, acoustic cavitation, boundary-layer drag, parasitic energy harvesting.",
+        "legacy_trap": "Classifying submersibles by geometric hull form factors (torpedo vs box) rather than physical Depth Horizons (D0 to D5) and acoustic signatures.",
+        "cases": ["07-ghostshark-auv", "11-lockheed-lamprey"]
+    },
+    {
+        "code": "USV",
+        "name": "Unmanned Surface Vehicles (Littoral & Marine Vessels)",
+        "medium": "Ocean Surface Boundary Layer (Air-Sea Interface)",
+        "governing_laws": "Froude number, wave-piercing slender hull dynamics, Sea State (Beaufort scale) vertical g-shock limits, transverse metacentric height (GM_T).",
+        "legacy_trap": "Using fragile recreational planing speedboats for open-ocean missions; high vertical g-shocks (>6g) destroy gimbal sensors and break hulls in Sea State 4+.",
+        "cases": ["06-exail-usv"]
+    },
+    {
+        "code": "UOV",
+        "name": "Unmanned Orbital Vehicles (Counter-Space & Interceptors)",
+        "medium": "Low Earth Orbit & Cislunar Space (160 to 36,000 km)",
+        "governing_laws": "Keplerian two-body celestial mechanics, Clohessy-Wiltshire relative equations, Tsiolkovsky rocket equation ΔV limits, solar radiation pressure.",
+        "legacy_trap": "Sci-fi free-flight orbital tropes: changing orbital inclination by 15° at LEO costs ~2,000 m/s ΔV, locking chemical hunters into narrow co-planar targets.",
+        "cases": ["10-orbital-guardian"]
+    }
+]
+
+def write_file(rel_path, content):
+    dest = DOCS / rel_path
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(content.strip() + "\n", encoding="utf-8")
+    print(f"  [PAGE WRITTEN] docs/{rel_path}")
+
+def generate_css():
+    css = """/* UWE Scientific-Practical Reddit/ArXiv Technical Dark Theme */
+:root {
+  --bg-dark: #0d1117;
+  --surface: #161b22;
+  --surface-alt: #21262d;
+  --border: #30363d;
+  --border-light: #484f58;
+  --text-main: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-hover: #1f6feb;
+  --green: #2ea043;
+  --green-bg: #122616;
+  --red: #f85149;
+  --red-bg: #2d1617;
+  --amber: #d29922;
+  --amber-bg: #2d2206;
+  --purple: #bc8cff;
+  --purple-bg: #27173e;
+  --cyan: #38bdf8;
+  --cyan-bg: #07273d;
+  --code-font: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+  --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--sans-font);
+  line-height: 1.6;
+  font-size: 15px;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+header.top-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: #fff; display: flex; align-items: center; gap: 0.5rem; }
+.nav-links { display: flex; gap: 1.25rem; font-size: 0.9rem; align-items: center; }
+.nav-links a { color: var(--text-muted); }
+.nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+.container { max-width: 1150px; margin: 0 auto; padding: 2rem 1.25rem; }
+.hero-box {
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(22,27,34,0.4) 100%);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+}
+.hero-title { font-size: 2.2rem; margin: 0 0 0.5rem 0; line-height: 1.2; color: #fff; }
+.hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin: 0 0 1.5rem 0; }
+.author-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.author-pill strong { color: var(--text-main); }
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--code-font);
+  border: 1px solid transparent;
+}
+.badge-uav { background: var(--green-bg); color: #3fb950; border-color: var(--green); }
+.badge-ucv { background: var(--amber-bg); color: var(--amber); border-color: #9e6a03; }
+.badge-ugv { background: var(--purple-bg); color: var(--purple); border-color: #8957e5; }
+.badge-uuv { background: #0c2340; color: #58a6ff; border-color: #1f6feb; }
+.badge-usv { background: var(--cyan-bg); color: var(--cyan); border-color: #0284c7; }
+.badge-uov { background: #361608; color: #ff7b72; border-color: #d03801; }
+.badge-vendor { background: var(--surface-alt); color: var(--text-muted); border-color: var(--border); }
+.badge-hal { background: #161b22; color: #a5d6ff; border-color: #388bfd; font-family: var(--code-font); }
+
+/* Reddit/ArXiv Post Card */
+.reddit-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.15s ease;
+}
+.reddit-card:hover { border-color: var(--border-light); }
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.card-title { font-size: 1.35rem; margin: 0 0 0.75rem 0; color: #fff; }
+.card-title a { color: #fff; }
+.card-title a:hover { color: var(--accent); }
+.token-banner {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-family: var(--code-font);
+  font-size: 0.9rem;
+}
+.token-banner strong { color: #58a6ff; }
+.hal-box {
+  background: #111827;
+  border: 1px solid #1f2937;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+.hal-box .hal-title { font-family: var(--code-font); color: #60a5fa; font-weight: 600; margin-bottom: 0.35rem; }
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+@media (max-width: 768px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+.col-pro { background: var(--green-bg); border: 1px solid #1b4724; border-radius: 6px; padding: 1rem; }
+.col-con { background: var(--red-bg); border: 1px solid #571b1d; border-radius: 6px; padding: 1rem; }
+.col-pro h4 { color: #3fb950; margin: 0 0 0.5rem 0; font-size: 0.9rem; }
+.col-con h4 { color: #f85149; margin: 0 0 0.5rem 0; font-size: 0.9rem; }
+ul.points { margin: 0; padding-left: 1.25rem; font-size: 0.88rem; }
+ul.points li { margin-bottom: 0.4rem; }
+.lesson-box {
+  background: var(--surface-alt);
+  border-left: 4px solid var(--amber);
+  padding: 0.85rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.citation-box {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.search-bar { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); color: #fff; border-radius: 6px; font-size: 1rem; margin-bottom: 1.5rem; }
+.search-bar:focus { outline: none; border-color: var(--accent); }
+.filter-pills { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.filter-pill { background: var(--surface); border: 1px solid var(--border); padding: 0.4rem 0.85rem; border-radius: 20px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; }
+.filter-pill:hover, .filter-pill.active { background: var(--surface-alt); color: #fff; border-color: var(--accent); }
+footer.page-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 3rem; }
+"""
+    write_file("assets/css/style.css", css)
+
+def generate_js():
+    js = """// Instant Client-Side Filter & Search for UWE Cases
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('case-search');
+  const cards = document.querySelectorAll('.case-item');
+  const pills = document.querySelectorAll('.filter-pill');
+  let activeDomain = 'ALL';
+
+  function applyFilter() {
+    const q = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const domain = card.getAttribute('data-domain') || '';
+      const domainMatch = (activeDomain === 'ALL' || domain === activeDomain);
+      const textMatch = !q || text.includes(q);
+      card.style.display = (domainMatch && textMatch) ? 'block' : 'none';
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeDomain = pill.getAttribute('data-filter') || 'ALL';
+      applyFilter();
+    });
+  });
+});
+"""
+    write_file("assets/js/search.js", js)
+
+def render_header(active_nav="home", depth=0):
+    rel = "../" * depth
+    return f"""<header class="top-nav">
+  <div class="nav-brand">
+    <a href="{rel}index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="{rel}index.html" class="{'active' if active_nav=='home' else ''}">Hub</a>
+    <a href="{rel}domains/index.html" class="{'active' if active_nav=='domains' else ''}">Taxonomy & Domains</a>
+    <a href="{rel}cases/index.html" class="{'active' if active_nav=='cases' else ''}">13 Benchmarks</a>
+    <a href="{rel}vendors/index.html" class="{'active' if active_nav=='vendors' else ''}">Vendors & OEMs</a>
+    <a href="{rel}hal/index.html" class="{'active' if active_nav=='hal' else ''}">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>"""
+
+def render_footer():
+    return """<footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>"""
+
+def render_case_card(case, depth=0):
+    rel = "../" * depth
+    pros_li = "".join(f"<li>{p}</li>" for p in case["advantages"])
+    cons_li = "".join(f"<li>{c}</li>" for c in case["vulnerabilities"])
+    related_badges = "".join(f'<a href="{rel}cases/{r}.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #{r[:2]}</a>' for r in case.get("related", []))
+    
+    return f"""<article class="reddit-card case-item" data-domain="{case['domain']}" id="case-{case['id']}">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>{case['date']}</span>
+    <span>•</span>
+    <a href="{rel}domains/{case['domain'].lower()}.html" class="badge badge-{case['domain'].lower()}">{case['domain']}</a>
+    <a href="{rel}vendors/index.html#{case['vendor_slug']}" class="badge badge-vendor">{case['vendor']}</a>
+  </div>
+  <h2 class="card-title">
+    <a href="{rel}cases/{case['slug']}.html">Case #{case['id']}: {case['name']}</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>{case['token']}</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">{case['token_full']}</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="{rel}hal/index.html#{case['hal']}"><code>{case['hal']}</code></a></div>
+    <div><em>"{case['hal_def']}"</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points">{pros_li}</ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points">{cons_li}</ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> {case['lesson']}
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="{case['source_url']}" target="_blank" rel="noopener">{case['source_name']} ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      {related_badges}
+      <a href="{rel}cases/{case['slug']}.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>"""
+
+def build_index():
+    cases_html = "\n".join(render_case_card(c, depth=0) for c in CASES_DATA)
+    jsonld = {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Unmanned Warfare Engine (UWE) — Cyber-Physical Matrix & Autonomous Defense Standard",
+        "description": "Standardizing autonomous robotic fleets across air, copter, ground, subsea, surface, and orbital domains. Replaces obsolete STANAG 4670 with 4 Invariant Laws and Hardware Abstraction Layer (HAL).",
+        "author": {
+            "@type": "Person",
+            "name": "Serhii Khylevych",
+            "jobTitle": "Systems Architect",
+            "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Unmanned Warfare Engine Initiative"
+        },
+        "datePublished": "2026-10-19",
+        "dateModified": "2026-10-20",
+        "mainEntityOfPage": f"{BASE_URL}/index.html"
+    }
+
+    html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unmanned Warfare Engine (UWE) — Cyber-Physical Robotics Standard</title>
+  <meta name="description" content="Autonomous warfare doctrine, 6-character cyber-physical matrix, and 13 empirical platform benchmarks replacing legacy STANAG 4670. Authored by Serhii Khylevych.">
+  <link rel="canonical" href="{BASE_URL}/index.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+{json.dumps(jsonld, indent=2)}
+  </script>
+</head>
+<body>
+  {render_header("home", depth=0)}
+  <div class="container">
+    <div class="hero-box">
+      <div class="author-pill">
+        <span>Architect:</span> <strong>Serhii Khylevych</strong> <span>• Kyiv Wartime Operational Context</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:1rem;">Unmanned Warfare Engine (UWE)</h1>
+      <p class="hero-subtitle">
+        The Unified Cyber-Physical Framework for Software-Defined Robotic Fleets.<br>
+        Replacing human casualties and single bespoke "Wunderwaffen" with an algorithmic, hardware-abstracted containment line.
+      </p>
+      
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-top:1.5rem;">
+        <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#58a6ff;">1. Law of Kinematic Primacy</strong>
+          <p style="margin:0.25rem 0 0 0; font-size:0.82rem; color:var(--text-muted);">Physical interface strictly dictates domain (L/D, ground pressure, hydrodynamics). No hybrid marketing tropes.</p>
+        </div>
+        <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#58a6ff;">2. Law of Hierarchical Containerization</strong>
+          <p style="margin:0.25rem 0 0 0; font-size:0.82rem; color:var(--text-muted);">Strict logistics tiers from C0 (Micro/Handheld) to C4 (Strategic Base/CATOBAR). Logistics limits dictate mass.</p>
+        </div>
+        <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#58a6ff;">3. Law of Decoupled Lethality</strong>
+          <p style="margin:0.25rem 0 0 0; font-size:0.82rem; color:var(--text-muted);">Invariant chassis decoupled from interchangeable payloads and One-Way Mission (OWM) decorators.</p>
+        </div>
+        <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#58a6ff;">4. Dual-Read Cognitive Synchronization</strong>
+          <p style="margin:0.25rem 0 0 0; font-size:0.82rem; color:var(--text-muted);">Monolithic 6-character token dual-read by human commander and tactical edge AI in microseconds.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:2rem;">
+      <h2 style="font-size:1.4rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
+        🔬 13 Empirical Platform Benchmarks & Architectural Mapping
+      </h2>
+      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.25rem;">
+        Scientific-practical stress-testing of western OEMs, Ukrainian frontline prototypes, and global systems against the 4 Invariant Laws of UWE.
+      </p>
+
+      <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor (e.g., 'Anduril', 'coaxial', 'MQ-25', 'IVtol')...">
+      
+      <div class="filter-pills">
+        <span class="filter-pill active" data-filter="ALL">All Domains (13)</span>
+        <span class="filter-pill" data-filter="UAV">UAV Fixed-Wing (6)</span>
+        <span class="filter-pill" data-filter="UCV">UCV Copter (1)</span>
+        <span class="filter-pill" data-filter="UGV">UGV Ground (2)</span>
+        <span class="filter-pill" data-filter="UUV">UUV Subsea (2)</span>
+        <span class="filter-pill" data-filter="USV">USV Surface (1)</span>
+        <span class="filter-pill" data-filter="UOV">UOV Orbital (1)</span>
+      </div>
+
+      <div id="cases-feed">
+        {cases_html}
+      </div>
+    </div>
+  </div>
+  {render_footer()}
+  <script src="assets/js/search.js"></script>
+</body>
+</html>"""
+    write_file("index.html", html)
+
+def build_case_pages():
+    for case in CASES_DATA:
+        pros_li = "".join(f"<li>{p}</li>" for p in case["advantages"])
+        cons_li = "".join(f"<li>{c}</li>" for c in case["vulnerabilities"])
+        related_links = "".join(f'<p style="margin:0.25rem 0;"><a href="{r}.html" class="badge badge-hal">Case #{r[:2]} Study →</a></p>' for r in case.get("related", []))
+
+        jsonld = {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": f"UWE Case #{case['id']}: {case['name']} — Cyber-Physical Architectural Analysis",
+            "description": f"Empirical evaluation of {case['name']} ({case['token']}) under Hardware Abstraction Layer {case['hal']}. {case['lesson']}",
+            "author": {
+                "@type": "Person",
+                "name": "Serhii Khylevych",
+                "jobTitle": "Systems Architect",
+                "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+            },
+            "datePublished": case["date"],
+            "url": f"{BASE_URL}/cases/{case['slug']}.html",
+            "keywords": [case['domain'], case['token'], case['hal'], case['vendor'], "UWE Standard", "STANAG 4670 replacement"]
+        }
+
+        html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case #{case['id']}: {case['name']} | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of {case['name']} ({case['token']}). Physical advantages, failure modes, and HAL contract {case['hal']}.">
+  <link rel="canonical" href="{BASE_URL}/cases/{case['slug']}.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{json.dumps(jsonld, indent=2)}
+  </script>
+</head>
+<body>
+  {render_header("cases", depth=1)}
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 13 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: {case['date']}</span>
+        <span>•</span>
+        <a href="../domains/{case['domain'].lower()}.html" class="badge badge-{case['domain'].lower()}">{case['domain']}</a>
+        <a href="../vendors/index.html#{case['vendor_slug']}" class="badge badge-vendor">{case['vendor']}</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #{case['id']}: {case['name']}
+      </h1>
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>{case['token']}</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">{case['token_full']}</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#{case['hal']}"><code>{case['hal']}</code></a></div>
+        <div style="line-height:1.5;"><em>"{case['hal_def']}"</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points">{pros_li}</ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points">{cons_li}</ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> {case['lesson']}
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="{case['source_url']}" target="_blank" rel="noopener">{case['source_name']} ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>{case['vendor']}</strong></div>
+        </div>
+        <div>
+          <a href="{case['source_url']}" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        {related_links}
+      </div>
+    </article>
+  </div>
+  {render_footer()}
+</body>
+</html>"""
+        write_file(f"cases/{case['slug']}.html", html)
+
+def build_cases_index():
+    cases_html = "\n".join(render_case_card(c, depth=1) for c in CASES_DATA)
+    html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empirical Case Studies Registry (13 Validated Platforms) | UWE</title>
+  <meta name="description" content="Cumulative registry of all 13 empirical defense-tech systems analyzed under the Unmanned Warfare Engine (UWE) framework.">
+  <link rel="canonical" href="{BASE_URL}/cases/index.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  {render_header("cases", depth=1)}
+  <div class="container">
+    <h1 class="hero-title" style="font-size:1.85rem;">Empirical Platform Benchmarks (13 Cases)</h1>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+      Cross-referencing western OEMs, frontline Ukrainian prototypes, and aerospace systems against the 4 Invariant Laws of UWE.
+    </p>
+
+    <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor...">
+    
+    <div class="filter-pills">
+      <span class="filter-pill active" data-filter="ALL">All Domains (13)</span>
+      <span class="filter-pill" data-filter="UAV">UAV Fixed-Wing (6)</span>
+      <span class="filter-pill" data-filter="UCV">UCV Copter (1)</span>
+      <span class="filter-pill" data-filter="UGV">UGV Ground (2)</span>
+      <span class="filter-pill" data-filter="UUV">UUV Subsea (2)</span>
+      <span class="filter-pill" data-filter="USV">USV Surface (1)</span>
+      <span class="filter-pill" data-filter="UOV">UOV Orbital (1)</span>
+    </div>
+
+    <div id="cases-feed">
+      {cases_html}
+    </div>
+  </div>
+  {render_footer()}
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>"""
+    write_file("cases/index.html", html)
+
+def build_domains():
+    # 1. Domains Master Index
+    domains_cards = ""
+    for d in DOMAINS_DATA:
+        case_pills = "".join(f'<a href="../cases/{c}.html" class="badge badge-{d["code"].lower()}" style="margin-right:0.35rem; margin-bottom:0.35rem;">Case #{c[:2]}</a>' for c in d["cases"])
+        domains_cards += f"""<div class="reddit-card">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+    <h2 style="margin:0;"><a href="{d['code'].lower()}.html">{d['name']}</a></h2>
+    <span class="badge badge-{d['code'].lower()}" style="font-size:0.85rem;">{d['code']}</span>
+  </div>
+  <p><strong>Physical Medium:</strong> {d['medium']}</p>
+  <p><strong>Governing Equations:</strong> {d['governing_laws']}</p>
+  <div class="lesson-box" style="margin:0.75rem 0;">
+    <strong>Legacy Classification Failure:</strong> {d['legacy_trap']}
+  </div>
+  <div style="margin-top:1rem;">
+    <strong style="font-size:0.85rem; color:var(--text-muted);">Empirical Benchmarks in this Domain:</strong>
+    <div style="margin-top:0.35rem;">{case_pills}</div>
+  </div>
+</div>"""
+
+    index_html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UWE Domain Taxonomy & Cyber-Physical Horizons</title>
+  <meta name="description" content="The 6 physical operational domains of UWE: UAV, UCV, UGV, UUV, USV, and UOV. Physical laws and taxonomy boundaries.">
+  <link rel="canonical" href="{BASE_URL}/domains/index.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  {render_header("domains", depth=1)}
+  <div class="container">
+    <h1 class="hero-title" style="font-size:1.85rem;">UWE Cross-Domain Taxonomy</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">
+      Replacing fragmented single-medium labels with unified cyber-physical horizons governed by the Law of Kinematic Primacy.
+    </p>
+    {domains_cards}
+  </div>
+  {render_footer()}
+</body>
+</html>"""
+    write_file("domains/index.html", index_html)
+
+    # 2. Individual Domain Pages
+    for d in DOMAINS_DATA:
+        dom_cases = [c for c in CASES_DATA if c["slug"] in d["cases"]]
+        dom_cases_cards = "\n".join(render_case_card(c, depth=1) for c in dom_cases)
+
+        dom_page = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{d['code']} Domain Taxonomy | Unmanned Warfare Engine</title>
+  <meta name="description" content="{d['name']} — physical boundaries, equations of motion, and empirical benchmarks.">
+  <link rel="canonical" href="{BASE_URL}/domains/{d['code'].lower()}.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  {render_header("domains", depth=1)}
+  <div class="container">
+    <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
+    
+    <div class="hero-box">
+      <span class="badge badge-{d['code'].lower()}" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: {d['code']}</span>
+      <h1 class="hero-title" style="margin-top:0.75rem;">{d['name']}</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem;">{d['medium']}</p>
+      
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+        <strong>Cyber-Physical Governing Laws:</strong>
+        <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">{d['governing_laws']}</p>
+      </div>
+
+      <div class="lesson-box" style="margin-top:1rem;">
+        <strong>The Legacy Classification Trap:</strong> {d['legacy_trap']}
+      </div>
+    </div>
+
+    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in {d['code']} ({len(dom_cases)} Cases)</h2>
+    <div>
+      {dom_cases_cards}
+    </div>
+  </div>
+  {render_footer()}
+</body>
+</html>"""
+        write_file(f"domains/{d['code'].lower()}.html", dom_page)
+
+def build_vendors():
+    vendor_cards = ""
+    for v in VENDORS_DATA:
+        v_cases = [c for c in CASES_DATA if c["vendor_slug"] == v["slug"]]
+        case_links = "".join(f'<a href="../cases/{c["slug"]}.html" class="badge badge-{c["domain"].lower()}" style="margin-right:0.35rem;">Case #{c["id"]} ({c["name"]}) →</a>' for c in v_cases)
+        plat_li = "".join(f"<li>{p}</li>" for p in v["platforms"])
+
+        vendor_cards += f"""<div class="reddit-card" id="{v['slug']}">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h2 style="margin:0; font-size:1.35rem;">{v['name']}</h2>
+    <span class="badge badge-vendor">{v['origin']}</span>
+  </div>
+  <p style="color:var(--text-muted); font-size:0.9rem;">{v['focus']}</p>
+  <div style="margin:0.75rem 0;">
+    <strong>Key Autonomous Programs:</strong>
+    <ul class="points">{plat_li}</ul>
+  </div>
+  <div style="margin-top:0.75rem; background:var(--surface-alt); padding:0.75rem; border-radius:6px;">
+    <strong style="font-size:0.85rem; color:#58a6ff;">Evaluated in UWE Benchmarks:</strong>
+    <div style="margin-top:0.35rem;">{case_links}</div>
+  </div>
+</div>"""
+
+    html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor & OEM Defense-Tech Mapping | UWE</title>
+  <meta name="description" content="Mapping global MilTech manufacturers and frontline developers to UWE cyber-physical contracts.">
+  <link rel="canonical" href="{BASE_URL}/vendors/index.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  {render_header("vendors", depth=1)}
+  <div class="container">
+    <h1 class="hero-title" style="font-size:1.85rem;">Defense-Tech Vendors & OEM Mapping</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">
+      Analyzing how global defense primes (Anduril, Boeing, Lockheed Martin, Exail, BAE Systems) and frontline Ukrainian innovators align with the UWE Hardware Abstraction Layer.
+    </p>
+    {vendor_cards}
+  </div>
+  {render_footer()}
+</body>
+</html>"""
+    write_file("vendors/index.html", html)
+
+def build_hal():
+    hal_rows = ""
+    for c in CASES_DATA:
+        hal_rows += f"""<div class="reddit-card" id="{c['hal']}">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>{c['hal']}</code></h3>
+    <a href="../cases/{c['slug']}.html" class="badge badge-{c['domain'].lower()}">Case #{c['id']} ({c['domain']})</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"{c['hal_def']}"</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>{c['name']}</strong> ({c['vendor']}) • Token: <code>{c['token']}</code>
+  </div>
+</div>"""
+
+    html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware Abstraction Layer (HAL) Contract Registry | UWE</title>
+  <meta name="description" content="Deterministic cyber-physical interfaces and control law contracts governing robotic fleets under UWE.">
+  <link rel="canonical" href="{BASE_URL}/hal/index.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  {render_header("hal", depth=1)}
+  <div class="container">
+    <h1 class="hero-title" style="font-size:1.85rem;">Hardware Abstraction Layer (HAL) Registry</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">
+      Autonomous vehicles are object-oriented executors. The HAL contracts standardize control laws across disparate airframes, hulls, and chassis.
+    </p>
+    {hal_rows}
+  </div>
+  {render_footer()}
+</body>
+</html>"""
+    write_file("hal/index.html", html)
+
+def build_seo_assets():
+    # 1. Sitemap.xml
+    urls = [
+        f"{BASE_URL}/index.html",
+        f"{BASE_URL}/domains/index.html",
+        f"{BASE_URL}/cases/index.html",
+        f"{BASE_URL}/vendors/index.html",
+        f"{BASE_URL}/hal/index.html",
+    ]
+    for d in DOMAINS_DATA:
+        urls.append(f"{BASE_URL}/domains/{d['code'].lower()}.html")
+    for c in CASES_DATA:
+        urls.append(f"{BASE_URL}/cases/{c['slug']}.html")
+
+    sitemap_entries = "\n".join(f"""  <url>
+    <loc>{u}</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>{'1.0' if u.endswith('index.html') and 'cases/' not in u and 'domains/' not in u else '0.8'}</priority>
+  </url>""" for u in urls)
+
+    sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{sitemap_entries}
+</urlset>"""
+    write_file("sitemap.xml", sitemap_xml)
+
+    # 2. Robots.txt
+    robots = f"""User-agent: *
+Allow: /
+Sitemap: {BASE_URL}/sitemap.xml
+"""
+    write_file("robots.txt", robots)
+
+def main():
+    print("=" * 65)
+    print("🚀 Building Unmanned Warfare Engine (UWE) Documentation Portal")
+    print(f"📁 Target Output: {DOCS}")
+    print("=" * 65)
+    
+    generate_css()
+    generate_js()
+    build_index()
+    build_cases_index()
+    build_case_pages()
+    build_domains()
+    build_vendors()
+    build_hal()
+    build_seo_assets()
+    
+    print("\n✅ Build Complete! 13 Cases, 6 Domains, Vendors & HAL Registry Generated.")
+    print("📊 All pages include Schema.org JSON-LD and pre-rendered static HTML.")
+
+if __name__ == "__main__":
+    main()
+
