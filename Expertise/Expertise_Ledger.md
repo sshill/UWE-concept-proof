@@ -21,6 +21,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 10 | **Orbital Guardian (NextGen Arsenal ADR Hunter)** | [FB Reel](https://www.facebook.com/reel/2177636083099811) | `UOV: LM-CA-HR` | `ITumblingTargetCapture` | Active debris removal / satellite hunting operates under Keplerian two-body mechanics and Tsiolkovsky $\Delta V$ limits; 15° inclination plane changes at LEO require ~2,000 m/s $\Delta V$ restricting chemical chasers to single co-planar targets; non-cooperative tumbling targets mandate rate-matching via CMGs before impedance-controlled grappling to prevent Kessler fragmentation. | 2026-10-19 |
 | 11 | **Lockheed Martin Lamprey MMAUV** | [FB Reel](https://www.facebook.com/reel/2203326470200241) | `UUV: CV-IS-HQ` | `IParasiticAttachmentDrive` & `IHydrokineticHarvesting` | Solves the UUV battery endurance bottleneck via parasitic trans-oceanic transit on host warship/submarine hulls; in-transit hydro-generators harvest energy from flow; 24 cu ft bay enables decoupled lethality (torpedoes, EW, UAV launch); executes seabed ambush (*Zhdun* posture) with zero acoustic/thermal signature; high-speed detachment risks Bernoulli suction into host hull/propellers. | 2026-10-19 |
 | 12 | **Boeing MQ-25 Stingray CBARS (U.S. Navy)** | [FB Video](https://www.facebook.com/SecretaryoftheNavy/videos/1123057570114063/) | `UAV: AI-TF-DR` | `IAerialRefuelingHoseDrogueDrive` & `ICarrierCatobarDeckOps` | Relieves F/A-18 buddy-tanker fatigue (25% sorties); doubles F-35C/Super Hornet strike radius to 900+ nmi pushing CVNs outside DF-21D/DF-26 A2/AD range; serves as airborne energy backbone for persistent autonomous UAV barrier formations along the containment line; drogue basket requires microsecond active tension trim against receiver bow wave. | 2026-10-20 |
+| 13 | **Anduril Fury & Boeing MQ-28 Ghost Bat (CCA Triad)** | [CBS 60 Mins](https://www.cbsnews.com/news/anduril-ceo-unveils-the-fury-unmanned-fighter-jet-60-minutes/) & [FB Reel](https://www.facebook.com/reel/1216136993518792) | `UAV: AL-TC-DR` | `IHighGEvasiveManeuverDrive` & `IAutonomousWeaponSeparation` | Establishes autonomous air-to-air interceptor tier with AIM-120 internal bays under 9G envelopes; solves transonic weapon bay cavity resonance (Rossiter modes) via >40G positive ejection; energy-endurance deficit of lightweight CCAs is closed by pairing with `UAV: AI-TF-DR` (MQ-25) tankers to sustain 24/7 containment line. | 2026-10-20 |
 
 ---
 
@@ -191,3 +192,26 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 * **Architectural Lesson for UWE:**
   * Validates the **Law of Decoupled Lethality** in strategic logistics: autonomous tankers operate as non-kinetic force multipliers that exponentially expand the reach and persistence of both manned strike aircraft and autonomous robotic swarms.
   * Proves that scalable, autonomous containment lines depend fundamentally on distributed aerial refueling infrastructure (`UAV: AI-TF-DR` / `AL-TF-DR`) rather than unsustainable single-sortie airframe ranges.
+
+---
+
+## 10. Case Study #13: Anduril Fury & Boeing MQ-28 Ghost Bat (Autonomous CCA Triad)
+
+* **Target Source:** [CBS News 60 Minutes (Palmer Luckey Interview)](https://www.cbsnews.com/news/anduril-ceo-unveils-the-fury-unmanned-fighter-jet-60-minutes/) & [Facebook Reel](https://www.facebook.com/reel/1216136993518792)
+* **Date Analyzed:** 2026-10-20
+* **UWE 6-Character Token:** `UAV: AL-TC-DR` (Unmanned Aerial Vehicle, Atmospheric transonic flight M 0.95, Light Tactical C2 dispersed runway ops, Turbofan Williams FJ44 / Bizjet, Combat BVR air interceptor mode with internal AIM-120/AIM-9X bay, Defend / CCA Air Superiority Escort doctrine, Resilient Lattice OS / MESH)
+* **Hardware Abstraction Layer (HAL) Contract:**
+  * Interfaces: `IHighGEvasiveManeuverDrive`, `IAutonomousWeaponSeparation`, `ILatticeEdgeAutonomy`
+  * One-Sentence Definition: *"Autonomous air-to-air Collaborative Combat Aircraft require the IHighGEvasiveManeuverDrive and IAutonomousWeaponSeparation HAL contracts to execute machine-speed 9G evasive intercept geometry, actively suppress transonic weapons bay aeroacoustic cavity resonance (Rossiter modes), and command high-G positive ejection strokes for AIM-120 missiles before thermal battery and rocket motor ignition."*
+* **Physical Advantages (🟢):**
+  * **Transonic 9G Kinetic Agility:** Overcomes the G-load physiological limitations of human pilots. Carbon-composite monocoque construction enables sustained 9G maneuvering during within-visual-range (WVR) combat and high-G missile defeat breakaways.
+  * **Low-Observable Internal Carriage:** Internal conformal weapons bay preserves full VLO (very low observable) radar cross-section (RCS) while carrying long-range radar-guided AIM-120 AMRAAM missiles, allowing silent forward sweeps ahead of crewed 5th/6th-gen fighters.
+  * **Software-Defined Edge Autonomy (Lattice OS):** Distributed multi-agent sensor fusion allows CCAs to act as distributed radar transmitters and passive RF/IRST receivers, executing pincer intercept tactics with zero human latency.
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * **Transonic Cavity Aeroacoustic Resonance (Rossiter Modes):** Opening bay doors at $M = 0.85–0.95$ creates violent acoustic pressure waves inside the open cavity. Without high-force pneumatic/pyrotechnic ejectors ($>40g$), the missile risks tipping into the turbulent boundary layer, causing pitch-up airframe collisions.
+  * **Fuel Loiter Fraction Deficit:** Compact 9G airframes carry limited internal fuel. Without aerial refueling, combat air patrol (CAP) persistence is restricted to $<1.5$ hours, creating an operational dependency on forward tanker orbits.
+* **Architectural Lesson for UWE (The Closed Containment Triad):**
+  * Validates the **UWE Software-Defined Containment Line** as an integrated 3-tier aerial ecosystem:
+    1. **Kinetic Interceptor:** Anduril Fury (`UAV: AL-TC-DR`) provides low-cost, 9G attritable mass and forward air-to-air interceptors.
+    2. **Sensor & C4ISR Anchor:** Boeing MQ-28 Ghost Bat (`UAV: AL-TC-DR`) provides modular nose sensor packages and oceanic range (>3,700 km).
+    3. **Persistent Energy Hub:** Boeing MQ-25 Stingray (`UAV: AI-TF-DR`) eliminates the fuel deficit via in-flight refueling, enabling 24/7 persistent defensive shields along contested borders without RTB cycles.
