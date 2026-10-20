@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UCV Domain Taxonomy | Unmanned Warfare Engine</title>
-  <meta name="description" content="Unmanned Copter Vehicles (Combat Multirotors & Coaxials) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <meta name="description" content="Unmanned Copter Vehicles (Combat Multirotors & Coaxials) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
   <link rel="canonical" href="https://uwe-standard.github.io/domains/ucv.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -22,15 +22,18 @@
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
   </nav>
 </header>
-  <div class="container">
+  <div class="container" style="max-width:960px;">
     <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
     
-    <div class="hero-box">
-      <span class="badge badge-ucv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UCV</span>
-      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Copter Vehicles (Combat Multirotors & Coaxials)</h1>
-      <p style="color:var(--text-muted); font-size:1.05rem;">Low-Altitude Disc-Loaded Aerodynamics</p>
+    <div class="hero-box" style="margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <span class="badge badge-ucv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UCV</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Architect: <strong style="color:#fff;">Serhii Khylevych</strong> (Kyiv Baseline)</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.75rem; margin-bottom:0.5rem;">Unmanned Copter Vehicles (Combat Multirotors & Coaxials)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:1rem;">Low-Altitude Disc-Loaded Aerodynamics</p>
       
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
         <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Rotor disc loading (T/A), zero stall speed (V_stall = 0), momentum theory, advancing/retreating blade flapping dynamics.</p>
       </div>
@@ -40,9 +43,117 @@
       </div>
     </div>
 
-    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UCV (1 Cases)</h2>
-    <div>
-      <article class="reddit-card case-item" data-domain="UCV" data-vendor="bae-falconworks" id="case-09">
+    
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:#58a6ff; margin-top:0;">1. The Historical Doctrine: Conceptual Precedent & Lineage</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Cossack Pikash Darts & Hand Caltrops ('Rogulky')</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">Zaporozhian Cossacks mastered close-quarters kinetic harassment through lightweight, hand-thrown armor-piercing iron darts ('pikash') and multi-spiked area-denial caltrops ('rogulky'). These weapons converted individual soldier agility into lethal kinetic breaches against heavy cavalry armor—the exact historical precursor to modern high-acceleration multirotor kinetic strikes.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--red);">
+      <h3 style="color:#f85149; margin-top:0;">2. The Bureaucratic Trap & Empirical De-Noising</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Conflating Combat Rotorcraft with Hobbyist Slang ('FPV')</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">'FPV' (First Person View) describes a consumer analog video headset, NOT a combat vehicle class. Conflating terminal kinetic interceptors with commercial hobby toys blinds defense procurement to essential cyber-physical laws: rotor disc loading (T/A), advance ratio (μ = V / (Ω·R)), retreating blade stall, and electronic counter-countermeasures (ECCM).</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h3 style="color:#3fb950; margin-top:0;">3. The 7 Universal Operational Vectors</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Universal mission profiles decoupling airframe/hull kinematics from tactical payload kits:</p>
+      <ul style="padding-left:1.25rem; font-size:0.92rem;">
+        <li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>CH-EE-AR: Terminal Precision Kinetic Interceptor</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>High-acceleration 7-10" frame; Mach 0.15-0.20 terminal dive with modular shaped charge.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>CL-EE-AR: Over-the-Horizon Indirect Strike</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Ballistic pitch delivery from behind tree lines using automated terminal guidance.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>CM-EE-AQ: Heavy Armor Breacher / Top-Attack Munition</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Heavy octocopter dropping thermobaric and tandem anti-tank ordnance on engine decks.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>CH-EE-AF: Fiber-Optic Electronic-Warfare Immune Penetrator</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Spooled micro-optical glass fiber (5-20 km); 100% immune to EW jammers, zero RF footprint.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>CT-GE-PR: Tethered Persistent Airborne Sentry</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Ground-powered micro-rotorcraft hovering 100m for 72+ hours as persistent radar/EW mast.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>CS-EE-SR: Perch-and-Listen Ambush Sleeper</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Dormant rooftop or tree-branch perching; activates motors only upon acoustic acoustic trigger.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>CH-EE-MA: Autonomous Anti-Air Drone Hunter</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Machine-vision high-speed interceptor engaging hostile reconnaissance UAVs at 180+ km/h.</span></li>
+      </ul>
+      <div style="background:#0d1117; border:1px dashed var(--border); padding:0.85rem 1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#e6edf3; font-size:0.88rem;">⚡ 300-Second Multi-Domain Combat Loop:</strong>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin:0.35rem 0 0 0; line-height:1.5;">T+000s: Ground acoustic sensor trips. T+015s: Sleeper UCV (CS-EE-SR) awakens. T+040s: Fiber-optic strike UCV (CH-EE-AF) launched. T+090s: Target armor acquired visually. T+110s: Kinetic breach confirmed.</p>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:#d2a8ff; margin-top:0;">4. The 6-Character Cyber-Physical Matrix: <code>[ C H ]  -  [ D E ]  -  [ T C ]</code></h3>
+      <div class="token-banner" style="font-size:1.05rem;">
+        <strong>Monolithic UWE Standard Token:</strong> <code>[ C H ]  -  [ D E ]  -  [ T C ]</code>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border); color:#58a6ff;">
+              <th style="padding:0.5rem 0.75rem;">Octet 1: Copter Horizon & Rotor Architecture [CH]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 2: Deployment & Battery C-Rate [DE]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 3: Guidance Autonomy & Comms [TC]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-muted);">
+              <td style="padding:0.6rem 0.75rem;"><b>C: Horizon</b><br>• C: Micro-Tactical (0-50m)<br>• L: Low-Altitude (0-300m)<br>• M: Medium Urban (0-1 km)<br>• H: High-Ceiling (up to 4 km)<br><br><b>H: Rotor Layout</b><br>• Q: Quadrotor Standard<br>• X: Coaxial High-Density<br>• O: Octocopter Heavy-Lift<br>• H: Hexacopter Redundant</td>
+              <td style="padding:0.6rem 0.75rem;"><b>D: Container</b><br>• H: Hand-Thrown / Backpack<br>• T: Tube / Vehicle Rack<br>• M: Mobile Mothership<br><br><b>E: Energy Bus</b><br>• E: High-Rate LiPo (60-120C)<br>• S: Solid-State Battery<br>• H: Micro-Hybrid Generator<br>• T: Tethered Ground Line</td>
+              <td style="padding:0.6rem 0.75rem;"><b>T: Tactical Mode</b><br>• A: Direct Kinetic Impact<br>• D: Bomb Drop / Retrievable<br>• P: Persistent Orbit<br>• S: Perched Sleeper<br><br><b>C: Link Security</b><br>• R: Analog/Digital SDR<br>• F: Spooled Glass Fiber<br>• Q: Radio-Silent Optical ATR<br>• M: Swarm Mesh Relay</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h3 style="color:#7ee787; margin-top:0;">5. Mobile-First Benchmark Cards</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Structured vertical cards benchmarked against frontline combat systems and global defense primes:</p>
+      
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Precision Kinetic Interceptor</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UCV: CH-EE-AR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Frontline 10" Tactical Strike Quad</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Thrust-to-weight > 8:1 | Terminal speed 180 km/h | Zero stall speed</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Soldier backpack (D: H) | 6S Li-ion/LiPo (E: E, 15 min flight)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Optical ATR lock-on | Frequency-hopping SDR 700-1000 MHz</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 1: Precision armor and trench breach at 5-15 km radius.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">EW-Immune Fiber Penetrator</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UCV: CH-EE-AF</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Frontline Fiber-Optic Guided Copter</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Rigid carbon frame | 15 km glass-fiber spool | Zero telemetry lag</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Dispersed soldier launch (D: H) | High-drain LiPo (E: E)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Human-in-the-loop 4K video | Zero RF emission, jammer-proof</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 4: Defeating EW-protected electronic warfare domes.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Heavy Coaxial Maritime/Land Carrier</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UCV: CL-PE-HR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> BAE / Certo CAPSTONE Coaxial</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Dual contra-rotating coaxial rotors | Disc loading T/A > 35 kg/m²</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Deck davit / truck bed | Heavy fuel piston generator (E: P)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Autonomous precision shipboard landing | Encrypted mesh SDR</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 3: Logistics resupply and heavy torpedo/sensor carriage.</div>
+        </div>
+        
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h3 style="color:#e3b341; margin-top:0;">6. Hardware Abstraction Layer (HAL) & Governing Physics</h3>
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Primary HAL Contract: <code>IFastInterdictor / IRotorcraftDynamics</code></div>
+        <p style="margin:0.35rem 0; font-size:0.88rem; line-height:1.5;">Controls high-rate motor ESC telemetry (DShot1200), computes aerodynamic advance ratio μ to prevent retreating blade stall during 50 m/s terminal sprints.</p>
+      </div>
+      <div style="background:#0d1117; border:1px solid var(--border); padding:1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#58a6ff; font-size:0.9rem;">📐 Cyber-Physical Governing Formula:</strong>
+        <p style="font-family:var(--code-font); color:#fff; font-size:0.95rem; margin:0.5rem 0; background:#161b22; padding:0.5rem 0.75rem; border-radius:4px; overflow-x:auto;">P_rotor = [T^{3/2} / (2 ρ A)^{1/2}] · (1 / η_figure_of_merit) + ½ ρ V³ S_fuselage C_D_parasitic</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">Rotor momentum theory: induced hover power requires maximizing disc area A, while high-speed forward dashes are limited by fuselage parasitic drag and motor C-rate limits.</p>
+      </div>
+    </section>
+    
+
+    <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UCV (1 Cases)</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UCV physical envelope:</p>
+      <div>
+        <article class="reddit-card case-item" data-domain="UCV" data-vendor="bae-falconworks" id="case-09">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -91,6 +202,7 @@
     </div>
   </div>
 </article>
+      </div>
     </div>
   </div>
   <footer class="page-footer">

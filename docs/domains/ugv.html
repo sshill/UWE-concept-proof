@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UGV Domain Taxonomy | Unmanned Warfare Engine</title>
-  <meta name="description" content="Unmanned Ground Vehicles (Tactical Robotics & Prime Movers) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <meta name="description" content="Unmanned Ground Vehicles (Tactical Robotics & Prime Movers) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
   <link rel="canonical" href="https://uwe-standard.github.io/domains/ugv.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -22,15 +22,18 @@
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
   </nav>
 </header>
-  <div class="container">
+  <div class="container" style="max-width:960px;">
     <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
     
-    <div class="hero-box">
-      <span class="badge badge-ugv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UGV</span>
-      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Ground Vehicles (Tactical Robotics & Prime Movers)</h1>
-      <p style="color:var(--text-muted); font-size:1.05rem;">Terrestrial & Amphibious Terrain</p>
+    <div class="hero-box" style="margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <span class="badge badge-ugv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UGV</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Architect: <strong style="color:#fff;">Serhii Khylevych</strong> (Kyiv Baseline)</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.75rem; margin-bottom:0.5rem;">Unmanned Ground Vehicles (Tactical Robotics & Prime Movers)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:1rem;">Terrestrial & Amphibious Terrain</p>
       
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
         <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios.</p>
       </div>
@@ -40,9 +43,117 @@
       </div>
     </div>
 
-    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UGV (2 Cases)</h2>
-    <div>
-      <article class="reddit-card case-item" data-domain="UGV" data-vendor="frontline-ua" id="case-02">
+    
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:#58a6ff; margin-top:0;">1. The Historical Doctrine: Conceptual Precedent & Lineage</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Chumak Tabor (Wagenburg) & Cossack Mobile Field Fortresses</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">15th-18th century Ukrainian Chumaks and Cossacks organized heavy trade and military convoys into 'Tabors'—interconnected wooden freight wagons forming an impenetrable, self-defending mobile perimeter. In open terrain, the Tabor functioned as a modular, terrain-conforming armored ring capable of dynamic repositioning, defending against cavalry charges without static castle walls.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--red);">
+      <h3 style="color:#f85149; margin-top:0;">2. The Bureaucratic Trap & Empirical De-Noising</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Amateur Slang ('Vozyk') & Motor kW vs Bekker Soil Mechanics</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">Calling military ground robotics 'vozyky' (carts) reduces MilTech to hobby gardening. Marketing claims boast '10-tonne towing' based on electric motor kilowatt ratings while completely ignoring Bekker-Wong soil mechanics: drawbar pull is bounded by soil shear strength (F_pull = A·c + W·tanφ), not motor torque. Without adequate ground contact area, high-torque electric motors merely dig wheels into viscous Ukrainian black soil (chernozem).</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h3 style="color:#3fb950; margin-top:0;">3. The 7 Universal Operational Vectors</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Universal mission profiles decoupling airframe/hull kinematics from tactical payload kits:</p>
+      <ul style="padding-left:1.25rem; font-size:0.92rem;">
+        <li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>WL-EE-PR: High-Threat Casualty Evacuation (CASEVAC)</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Low-profile armored litter carrier evacuating wounded under direct fire without exposing personnel.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>WL-HE-PR: Forward Munition & Energy Resupply Lifeline</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Autonomous payload delivery traversing artillery-cratered mud corridors at 15-25 km/h.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>WT-EE-AR: Remote Kinetic Turret / Ambush Platform</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Stabilized heavy machine gun (12.7mm) or anti-tank missile carrier with low acoustic signature.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>TP-DE-MR: Combat Breaching & Route Clearance</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Tracked heavy chassis with flails, rollers, and explosive line charges clearing minefields.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>WP-DE-TR: Heavy Artillery Prime Mover</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>High drawbar-pull amphibious tractor towing 155mm howitzers across swamp and deep snow.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>WS-EE-SR: Ground Sensor Emplacement & Picket</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Camouflaged seismic, acoustic, and thermal sensor anchor loitering for weeks in dormant posture.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>WL-EE-MR: Distributed Anti-Armor Minelayer</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Rapid autonomous dispersal of anti-tank bottom mines across anticipated enemy assault axes.</span></li>
+      </ul>
+      <div style="background:#0d1117; border:1px dashed var(--border); padding:0.85rem 1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#e6edf3; font-size:0.88rem;">⚡ 300-Second Multi-Domain Combat Loop:</strong>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin:0.35rem 0 0 0; line-height:1.5;">T+000s: Seismic sensor detects tank column. T+030s: Ambush UGV (WT-EE-AR) raises mast camera. T+075s: Anti-tank guided missile launched. T+120s: Minelayer UGV (WL-EE-MR) deploys flank barrier. T+240s: Withdrawal under smoke.</p>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:#d2a8ff; margin-top:0;">4. The 6-Character Cyber-Physical Matrix: <code>[ W P ]  -  [ D E ]  -  [ T C ]</code></h3>
+      <div class="token-banner" style="font-size:1.05rem;">
+        <strong>Monolithic UWE Standard Token:</strong> <code>[ W P ]  -  [ D E ]  -  [ T C ]</code>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border); color:#58a6ff;">
+              <th style="padding:0.5rem 0.75rem;">Octet 1: Running Gear & Ground Pressure [WP]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 2: Logistics Tier & Powerplant [DE]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 3: Autonomy Doctrine & Signal [TC]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-muted);">
+              <td style="padding:0.6rem 0.75rem;"><b>W: Running Gear</b><br>• W: All-Terrain Wheeled (4x4, 6x6)<br>• T: Continuous Tracked (Rubber/Steel)<br>• A: Articulated Two-Section<br>• L: Quadruped Legged / Bio<br><br><b>P: Ground Pressure</b><br>• L: Ultra-Low (<0.2 kg/cm²)<br>• M: Medium Tactical (0.2-0.5 kg/cm²)<br>• H: Heavy Armored (>0.5 kg/cm²)</td>
+              <td style="padding:0.6rem 0.75rem;"><b>D: Carrier Class</b><br>• C1: Man-Portable (<100 kg)<br>• C2: Light Tactical (100-1,000 kg)<br>• C3: Heavy Operational (1-5 tonnes)<br>• C4: Strategic Prime Mover (>5t)<br><br><b>E: Powerplant</b><br>• E: Pure Electric (Battery)<br>• H: Diesel-Electric Hybrid<br>• D: Heavy Fuel Diesel ICE</td>
+              <td style="padding:0.6rem 0.75rem;"><b>T: Tactical Posture</b><br>• P: Patrol & Transport<br>• A: Active Kinetic Combat<br>• M: Breaching / Demining<br>• S: Dormant Surveillance<br><br><b>C: Signal Backbone</b><br>• R: Mesh Radio SDR<br>• F: Spooled Fiber-Optic Cable<br>• S: LEO Satellite (Starlink)<br>• Q: Optical Visual Odometry</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h3 style="color:#7ee787; margin-top:0;">5. Mobile-First Benchmark Cards</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Structured vertical cards benchmarked against frontline combat systems and global defense primes:</p>
+      
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Articulated Off-Road Scout & Carrier</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UGV: GL-EP-WR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Frontline НРК SlimAk</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Articulated 2-section frame | Passive roll compliance | Eliminates skid-steer scrubbing</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Trailer / pickup bed (D: C1) | Electric battery (E: E, 6h autonomy)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Mesh RF remote drive | Low acoustic and thermal signature</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 2: Silent CASEVAC and ammo delivery through trenches and craters.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Heavy Amphibious Prime Mover</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UGV: WL-DE-TR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> UNEX ABRIS Amphibious Tractor</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> 8x8 high-displacement wheels | Ground pressure 0.18 kg/cm² | Amphibious swim</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Heavy flatbed transport (D: C3) | Turbocharged diesel-electric hybrid (E: H)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Autonomous convoy follow-me | High drawbar pull for 155mm howitzers</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 5: Artillery displacement and heavy recovery through muddy floodplains.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Tracked Combat Weapon Carrier</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UGV: TL-HE-AR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Milrem Robotics THeMIS</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Dual low-profile rubber tracks | Low ground pressure 0.25 kg/cm²</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Air-transportable / truck (D: C2) | Diesel-electric hybrid bus (E: H)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> MIFIK autonomous waypoint navigation | 12.7mm stabilized turret</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 3: Mobile ambush line and automated perimeter defense.</div>
+        </div>
+        
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h3 style="color:#e3b341; margin-top:0;">6. Hardware Abstraction Layer (HAL) & Governing Physics</h3>
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Primary HAL Contract: <code>IArticulatedChassis / IGroundMobility</code></div>
+        <p style="margin:0.35rem 0; font-size:0.88rem; line-height:1.5;">Decouples passive central roll conformity from active yaw steering hydraulics, computing dynamic wheel slip ratios across Bekker soil sinkage gradients.</p>
+      </div>
+      <div style="background:#0d1117; border:1px solid var(--border); padding:1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#58a6ff; font-size:0.9rem;">📐 Cyber-Physical Governing Formula:</strong>
+        <p style="font-family:var(--code-font); color:#fff; font-size:0.95rem; margin:0.5rem 0; background:#161b22; padding:0.5rem 0.75rem; border-radius:4px; overflow-x:auto;">F_drawbar = A · c + W · tan(φ) - [k_c/b + k_φ] · (z^{n+1} / (n + 1))</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">Bekker-Wong soil mechanics: traction force is governed by cohesive shear c and internal friction angle φ, minus compaction resistance scaling with sinkage depth z and wheel width b.</p>
+      </div>
+    </section>
+    
+
+    <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UGV (2 Cases)</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UGV physical envelope:</p>
+      <div>
+        <article class="reddit-card case-item" data-domain="UGV" data-vendor="frontline-ua" id="case-02">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -140,6 +251,7 @@
     </div>
   </div>
 </article>
+      </div>
     </div>
   </div>
   <footer class="page-footer">

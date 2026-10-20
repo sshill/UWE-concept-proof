@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UUV Domain Taxonomy | Unmanned Warfare Engine</title>
-  <meta name="description" content="Unmanned Undersea Vehicles (Sub-Surface Robotics) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <meta name="description" content="Unmanned Undersea Vehicles (Sub-Surface Robotics) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
   <link rel="canonical" href="https://uwe-standard.github.io/domains/uuv.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -22,15 +22,18 @@
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
   </nav>
 </header>
-  <div class="container">
+  <div class="container" style="max-width:960px;">
     <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
     
-    <div class="hero-box">
-      <span class="badge badge-uuv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UUV</span>
-      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Undersea Vehicles (Sub-Surface Robotics)</h1>
-      <p style="color:var(--text-muted); font-size:1.05rem;">Sub-surface Hydrospace (0 to 11,000m)</p>
+    <div class="hero-box" style="margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <span class="badge badge-uuv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UUV</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Architect: <strong style="color:#fff;">Serhii Khylevych</strong> (Kyiv Baseline)</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.75rem; margin-bottom:0.5rem;">Unmanned Undersea Vehicles (Sub-Surface Robotics)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:1rem;">Sub-surface Hydrospace (0 to 11,000m)</p>
       
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
         <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Hydrostatic pressure gradient (1 atm / 10m), acoustic transmission loss, acoustic cavitation, boundary-layer drag, parasitic energy harvesting.</p>
       </div>
@@ -40,9 +43,105 @@
       </div>
     </div>
 
-    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UUV (2 Cases)</h2>
-    <div>
-      <article class="reddit-card case-item" data-domain="UUV" data-vendor="anduril" id="case-07">
+    
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:#58a6ff; margin-top:0;">1. The Historical Doctrine: Conceptual Precedent & Lineage</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Cossack 'Pirnachka' Paradigm (Zhelekhivskyi, 1886) & Renaissance Engineering</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">Documented in Yevhen Zhelekhivskyi's 1886 Ukrainian-German Dictionary as 'Kalbsmagen' (calf's stomach), the Cossack Pirnachka was an open Chaika hull completely enclosed with fat-treated, watertight leather. The craft managed internal pressure and fluid ballast like an organic bladder, submerging to reed snorkel depth to evade Ottoman shore artillery—synchronous with William Bourne (1578) and Cornelis Drebbel (1620) Thames submarine trials.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--red);">
+      <h3 style="color:#f85149; margin-top:0;">2. The Bureaucratic Trap & Empirical De-Noising</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Hull Form-Factor Dogma vs Hydrostatic Depth Horizons</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">Classifying submersibles by geometric shape (torpedo tube vs box) misses the central physical reality: operational depth horizon dictates everything. Hydrostatic pressure scales at 1 atm per 10m depth (P = ρgh), demanding exponentially thicker titanium, steel, or ceramic pressure vessels that consume internal payload volume and restrict battery capacity. UWE classifies submersibles strictly by depth layers (D0 Surface to D6 Hadal).</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h3 style="color:#3fb950; margin-top:0;">3. The 7 Universal Operational Vectors</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Universal mission profiles decoupling airframe/hull kinematics from tactical payload kits:</p>
+      <ul style="padding-left:1.25rem; font-size:0.92rem;">
+        <li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>DA-RE-AQ: Dynamic Kinetic Interdictor / Undersea Strike</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Sub-surface torpedo-delivered kinetic penetrator neutralizing naval hulls from beneath.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>DC-GE-PS: Benthic Infrastructure Sentry & Pipeline Guard</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Seafloor-crawling rover inspecting and defending gas conduits and fiber cables.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>DK-IE-PR: Sub-Surface C4ISR & Acoustic Relay Anchor</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Snorkel-horizon gateway relaying acoustic seabed signals to tactical LEO satellite clouds.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>DC-RE-SQ: Coastal Chokepoint Ambush Sleeper ('Zhdun')</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Resting silent on shallow seabed shelf for weeks; awakens upon acoustic warship signature.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>DA-IE-MR: Anti-Submarine Acoustic Barrier & Tracker</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Autonomous acoustic listening array tracking hostile nuclear and diesel submarines.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>DH-GE-MS: Seabed Robotic Intervenor & Heavy Manipulator</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Heavy robotic tool arm executing micron-level sabotage or repair at 3,000-6,000m depths.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>DK-IE-MR: Cross-Domain Littoral Aerial Staging Base</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Submerged stealth platform surfacing to launch FPV and UAV swarms into enemy rear littoral.</span></li>
+      </ul>
+      <div style="background:#0d1117; border:1px dashed var(--border); padding:0.85rem 1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#e6edf3; font-size:0.88rem;">⚡ 300-Second Multi-Domain Combat Loop:</strong>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin:0.35rem 0 0 0; line-height:1.5;">T+000s: Seabed sleeper (DC-RE-SQ) detects acoustic propeller signature. T+045s: Ballast released; silent ascent to strike depth. T+120s: Hydroacoustic terminal homing active. T+180s: Keel torpedo impact confirmed.</p>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:#d2a8ff; margin-top:0;">4. The 6-Character Cyber-Physical Matrix: <code>[ D P ]  -  [ E M ]  -  [ T C ]</code></h3>
+      <div class="token-banner" style="font-size:1.05rem;">
+        <strong>Monolithic UWE Standard Token:</strong> <code>[ D P ]  -  [ E M ]  -  [ T C ]</code>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border); color:#58a6ff;">
+              <th style="padding:0.5rem 0.75rem;">Octet 1: Depth Horizon & Deployment Class [DP]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 2: Power Regeneration & Mission Mode [EM]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 3: Tactical Control & Acoustic Comms [TC]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-muted);">
+              <td style="padding:0.6rem 0.75rem;"><b>D: Depth Horizon</b><br>• S: Surface (0m)<br>• K: Snorkel (0-15m)<br>• Z: Surf Zone (0-50m)<br>• W: Shallow Water (up to 100m)<br>• C: Continental Shelf (up to 500m)<br>• A: Abyssal (500-6,000m)<br>• H: Hadal (6,000-11,000m)<br><br><b>P: Deployment Class</b><br>• D: Diver-Deployed (<50 kg)<br>• V: Vessel Davit / Slipway<br>• T: 533mm Torpedo Tube<br>• L: Large Carrier Well-Deck<br>• B: Coastal Bunker Pen</td>
+              <td style="padding:0.6rem 0.75rem;"><b>E: Powerplant</b><br>• R: Rapid Chemical (Li-Ion, 12h)<br>• I: Intermittent Snorkel AIP<br>• G: Seabed Umbilical Anchor Grid<br>• N: Nuclear Micro-Reactor<br><br><b>M: Mission Mode</b><br>• D: Direct Kinetic Attack<br>• S: Stationary Sentry ('Zhdun')<br>• B: Benthic Crawler Ground-Contact<br>• L: Cross-Domain Aerial Launcher</td>
+              <td style="padding:0.6rem 0.75rem;"><b>T: Autonomy Doctrine</b><br>• P: Passive Waypoint Navigation<br>• A: Active Acoustic Tracking<br>• M: Distributed Seabed Mesh<br>• S: Dormant Seabed Sleep<br><br><b>C: Comms Gateway</b><br>• A: Hydroacoustic Modem<br>• F: Spooled Glass Fiber Tether<br>• S: Floating Mast SATCOM<br>• Q: Radio-Silent Inertial/Terrain</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h3 style="color:#7ee787; margin-top:0;">5. Mobile-First Benchmark Cards</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Structured vertical cards benchmarked against frontline combat systems and global defense primes:</p>
+      
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Extra-Large Autonomous Undersea Vehicle (XL-AUV)</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UUV: DC-IE-MR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Anduril Ghost Shark / Boeing Orca</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Hydrodynamic modular hull | Depth 500m+ | 100+ days subsea endurance</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Shore slipway / well deck (D: L) | Heavy AIP / Li-ion hybrid bus (E: I)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Autonomous acoustic pathfinding | Floating antenna buoy SATCOM</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 1 & 5: Deep maritime interdiction and persistent choke-point mining.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Parasitic Hull-Attached Stealth Vehicle</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UUV: DC-RE-PR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Lockheed Martin Lamprey MMAUV</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Slender conformal suction profile | Attaches directly to submarine hull</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Host submarine external pylon (D: T) | Chemical solid-state cells (E: R)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Autonomous parasitic detachment and return | Radio-silent acoustic ATR</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 4: Forward acoustic screening and clandestine harbor penetration.</div>
+        </div>
+        
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h3 style="color:#e3b341; margin-top:0;">6. Hardware Abstraction Layer (HAL) & Governing Physics</h3>
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Primary HAL Contract: <code>ISubseaAcoustic / IBenthicKinematics</code></div>
+        <p style="margin:0.35rem 0; font-size:0.88rem; line-height:1.5;">Governs buoyancy engine fluid trim, computes acoustic transmission loss TL across thermoclines, and controls caterpillar benthic seabed traction.</p>
+      </div>
+      <div style="background:#0d1117; border:1px solid var(--border); padding:1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#58a6ff; font-size:0.9rem;">📐 Cyber-Physical Governing Formula:</strong>
+        <p style="font-family:var(--code-font); color:#fff; font-size:0.95rem; margin:0.5rem 0; background:#161b22; padding:0.5rem 0.75rem; border-radius:4px; overflow-x:auto;">P_hydro = ρ · g · h  |  TL = 20 · log₁₀(R) + α · R</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">Hydrostatic pressure scales linearly with depth h, while acoustic transmission loss TL governs hydroacoustic modem communications and sonar detection limits.</p>
+      </div>
+    </section>
+    
+
+    <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UUV (2 Cases)</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UUV physical envelope:</p>
+      <div>
+        <article class="reddit-card case-item" data-domain="UUV" data-vendor="anduril" id="case-07">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -140,6 +239,7 @@
     </div>
   </div>
 </article>
+      </div>
     </div>
   </div>
   <footer class="page-footer">

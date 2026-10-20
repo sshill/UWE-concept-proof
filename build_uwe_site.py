@@ -1519,6 +1519,307 @@ def build_cases_index():
 </html>"""
     write_file("cases/index.html", html)
 
+def render_domain_taxonomy_section(code):
+    tax = DOMAINS_TAXONOMY.get(code, {})
+    if not tax:
+        return ""
+    
+    # 1. Historical Doctrine
+    hist_html = f"""
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:#58a6ff; margin-top:0;">1. The Historical Doctrine: Conceptual Precedent & Lineage</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>{tax['history_title']}</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">{tax['history_body']}</div>
+    </section>
+    """
+
+    # 2. Bureaucratic Trap
+    trap_html = f"""
+    <section class="reddit-card" style="border-left:4px solid var(--red);">
+      <h3 style="color:#f85149; margin-top:0;">2. The Bureaucratic Trap & Empirical De-Noising</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>{tax['trap_title']}</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">{tax['trap_body']}</div>
+    </section>
+    """
+
+    # 3. 7 Universal Vectors
+    vectors_li = "".join(f"<li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>{v['code']}: {v['name']}</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>{v['desc']}</span></li>" for v in tax['vectors'])
+    vectors_html = f"""
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h3 style="color:#3fb950; margin-top:0;">3. The 7 Universal Operational Vectors</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Universal mission profiles decoupling airframe/hull kinematics from tactical payload kits:</p>
+      <ul style="padding-left:1.25rem; font-size:0.92rem;">
+        {vectors_li}
+      </ul>
+      <div style="background:#0d1117; border:1px dashed var(--border); padding:0.85rem 1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#e6edf3; font-size:0.88rem;">⚡ 300-Second Multi-Domain Combat Loop:</strong>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin:0.35rem 0 0 0; line-height:1.5;">{tax['combat_loop']}</p>
+      </div>
+    </section>
+    """
+
+    # 4. Monolithic 6-Character Matrix
+    matrix_html = f"""
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:#d2a8ff; margin-top:0;">4. The 6-Character Cyber-Physical Matrix: <code>{tax['matrix_token']}</code></h3>
+      <div class="token-banner" style="font-size:1.05rem;">
+        <strong>Monolithic UWE Standard Token:</strong> <code>{tax['matrix_token']}</code>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border); color:#58a6ff;">
+              <th style="padding:0.5rem 0.75rem;">Octet 1: {tax['octet1_title']}</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 2: {tax['octet2_title']}</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 3: {tax['octet3_title']}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-muted);">
+              <td style="padding:0.6rem 0.75rem;">{tax['octet1_content']}</td>
+              <td style="padding:0.6rem 0.75rem;">{tax['octet2_content']}</td>
+              <td style="padding:0.6rem 0.75rem;">{tax['octet3_content']}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    """
+
+    # 5. Mobile Benchmark Cards
+    cards_html = ""
+    for b in tax['benchmarks']:
+        cards_html += f"""
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">{b['role']}</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">{b['token']}</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> {b['platform']}</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> {b['kinematics']}</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> {b['logistics']}</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> {b['autonomy']}</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> {b['kill_web']}</div>
+        </div>
+        """
+    benchmarks_section = f"""
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h3 style="color:#7ee787; margin-top:0;">5. Mobile-First Benchmark Cards</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Structured vertical cards benchmarked against frontline combat systems and global defense primes:</p>
+      {cards_html}
+    </section>
+    """
+
+    # 6. HAL Contract & Governing Physics
+    hal_section = f"""
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h3 style="color:#e3b341; margin-top:0;">6. Hardware Abstraction Layer (HAL) & Governing Physics</h3>
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Primary HAL Contract: <code>{tax['hal_contract']}</code></div>
+        <p style="margin:0.35rem 0; font-size:0.88rem; line-height:1.5;">{tax['hal_contract_desc']}</p>
+      </div>
+      <div style="background:#0d1117; border:1px solid var(--border); padding:1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#58a6ff; font-size:0.9rem;">📐 Cyber-Physical Governing Formula:</strong>
+        <p style="font-family:var(--code-font); color:#fff; font-size:0.95rem; margin:0.5rem 0; background:#161b22; padding:0.5rem 0.75rem; border-radius:4px; overflow-x:auto;">{tax['governing_formula']}</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">{tax['formula_desc']}</p>
+      </div>
+    </section>
+    """
+
+    return hist_html + trap_html + vectors_html + matrix_html + benchmarks_section + hal_section
+
+DOMAINS_TAXONOMY = {
+    "UAV": {
+        "history_title": "Cossack Beket Signal Pyramids & Steppe Rocket Batteries (16th–18th Century)",
+        "history_body": "The Zaporozhian Sich defended a 1,000-km open steppe frontier without stone fortresses by constructing an automated, distributed optical early-warning network ('Figury'). Trihedral tar-soaked beacons on burial mounds transmitted alarm signals from the Black Sea to Kyiv in 20-30 minutes—a deterministic zero-latency optical relay mesh centuries before LEO satellites. Offensively, Cossacks deployed mobile rocket stanchions and multi-barrel 'organky', prioritizing dispersion and fire rate over static artillery armor.",
+        "trap_title": "The 'Alt-Endurance' Trap (STANAG 4670) & The Heavy Gimbal Paradox",
+        "trap_body": "NATO STANAG 4670 / DoD Class I-III categories rely on altitude and endurance—metrics that create massive radar beacons (Bayraktar TB2, MQ-9) easily engaged by S-300V4, Buk-M3, and low-cost loitering SAMs (Project 358). Furthermore, observing from 60-80 km standoff requires 50-kg optical turrets (Wescam MX-15/20) under Johnson criteria (f = 800-1200 mm), inflating MTOW to 1,500-5,000 kg and cost to $20M+. UWE shifts mass to the ground-clutter layer (0-300 m) beneath the radar horizon (R_radar ≈ 4.12(√hr + √ht)), replacing heavy glass with 35-50mm lenses and onboard Edge-AI computer vision (ATR).",
+        "vectors": [
+            {"code": "AL-PE-HR", "name": "Standoff C4ISR & Tactical Airborne Relay", "desc": "Orbiting 60-100 km behind friendly lines; directional phased RF and LEO satellite gateway unifying the tactical frontline mesh."},
+            {"code": "AH-EE-MO", "name": "Active Emitter Stimulator / Stand-in Decoy", "desc": "High-speed airframe emulating cruise missile RCS; forces SAM radars (9S18 Kupol, 9S36) to radiate and expend interceptors."},
+            {"code": "AH-EA-MO", "name": "Ground-Clutter Low-Altitude Loitering Strike", "desc": "Terrain-following cruise (30-150 m) under the radar horizon with terminal optical ATR dive onto high-value armor and air defense."},
+            {"code": "AL-EA-MA", "name": "Extended-Range Tactical Interdiction", "desc": "High-efficiency gliding (100-180 km/h) over 100-300 km depths; interdicting logistics convoys and ammunition nodes."},
+            {"code": "AL-JA-TA", "name": "Deep Strategic Kinetic Penetration", "desc": "Long-range (500-1,500+ km) one-way strike against refineries, defense plants, and airbases with anti-jam CRPA-GNSS and TERCOM."},
+            {"code": "AL-TH-HR", "name": "Autonomous Aerial Tanker & Power Lifeline", "desc": "Dispersed airborne refueling and battery-swapping orbit multiplying loiter time without forward strip turnaround."},
+            {"code": "AS-CM-HR", "name": "Collaborative Combat Aircraft (Loyal Wingman)", "desc": "Transonic Mach 0.95, 9G escort for crewed fighters; carrying forward AESA sensors and internal missile bays (Fury, MQ-28)."}
+        ],
+        "combat_loop": "T+000s: Standoff Relay (AL-PE-HR) detects radar emitter. T+045s: Decoys (AH-EE-MO) bait SAM illumination. T+180s: Low-altitude strike UAVs (AH-EA-MO) pop up under radar horizon. T+260s: Edge-AI ATR initiates radio-silent dive. T+300s: Target destroyed.",
+        "matrix_token": "[ A H ]  -  [ D E ]  -  [ T C ]",
+        "octet1_title": "Aerodynamic Horizon & Wing Regime [AH]",
+        "octet1_content": "<b>A: Horizon</b><br>• A: Atmospheric (0-3 km)<br>• S: Stratospheric (12-25 km)<br>• T: Transonic (M 0.7-0.98)<br>• H: Hypersonic (M 5.0+)<br><br><b>H: Wing Planform</b><br>• L: High-Aspect (AR≥20)<br>• D: Delta / BWB<br>• S: Swept High-Speed<br>• F: Tailless Flying Wing<br>• C: Canard / Foldable<br>• V: VTOL Crossfade",
+        "octet2_title": "Containerization & Powerplant [DE]",
+        "octet2_content": "<b>D: Deployment</b><br>• H: Hand / Bungee<br>• C: Canister / Pneumatic<br>• R: Rail / JATO Boost<br>• L: Light Dispersed Runway<br>• I: Fixed Infrastructure<br><br><b>E: Powerplant</b><br>• E: Battery Electric<br>• P: Piston ICE (Rotax)<br>• T: Turbojet / Turbofan<br>• H: Hybrid Electric/Gas<br>• R: Rocket Solid/Liquid",
+        "octet3_title": "Tactical Autonomy & Comms [TC]",
+        "octet3_content": "<b>T: Tactical Posture</b><br>• P: Passive Orbit / Relay<br>• A: Active Attack / Strike<br>• M: Mass Swarm Mesh<br>• S: Sleeper / Standby<br>• D: Decoy / Penetrator<br>• H: Collaborative Manned<br><br><b>C: Comms Gateway</b><br>• R: Directional Phased RF<br>• S: LEO Satellite (Starlink)<br>• F: Fiber-Optic Tether<br>• Q: Radio-Silent Optical ATR<br>• L: Laser Free-Space Link",
+        "benchmarks": [
+            {"role": "Standoff Airborne C4ISR & Relay Orbit", "token": "UAV: AL-PE-HR", "platform": "TEKEVER AR5 / MQ-9 Reaper", "kinematics": "High-aspect glider (AR≥20) | Ceiling 8,000-12,000m | L/D > 22", "logistics": "Dispersed/Fixed Runway (D: I) | Turbocharged ICE (E: P, 24-30h)", "autonomy": "Autonomous waypoint patrol | Directional Ku/Ka SATCOM & SDR", "kill_web": "Vector 1: Primary C4ISR backbone and EW gateway outside SAM reach."},
+            {"role": "Ground-Clutter Low-Altitude Strike", "token": "UAV: AH-EA-MO", "platform": "WB Group Warmate / Switchblade 600", "kinematics": "Canard folding wing | Cruise 120-150 km/h, terminal dive 220 km/h", "logistics": "Pneumatic canister tube (D: C) | Li-ion electric motor (E: E)", "autonomy": "Edge-AI ATR terminal lock | Radio-silent terminal flight (C: Q)", "kill_web": "Vector 3: Surgical destruction of radars and armor at 0-300m altitude."},
+            {"role": "Collaborative Combat Aircraft (Loyal Wingman)", "token": "UAV: AS-CM-HR", "platform": "Anduril Fury (YFQ-44A) / Boeing MQ-28", "kinematics": "Stealth swept wing | Transonic Mach 0.95 | Ceiling 15,000m | 9G sustained", "logistics": "Dispersed runway / rocket rail | Williams turbofan (E: T)", "autonomy": "Lattice OS autonomous teaming | AESA phased array & MADL bus", "kill_web": "Vector 7: Escort strike packages, absorb missile salvos, forward missile magazine."}
+        ],
+        "hal_contract": "IVtolTransitionDrive / IFixedWingKinematics",
+        "hal_contract_desc": "Governs dynamic crossfade transition from vertical hover to aerodynamic wing lift (SetTransitionRatio(α)) and validates boundary layer flight envelopes under nap-of-the-earth radar clutter.",
+        "governing_formula": "E_total = ∫ P_hover dt + ∫ [½ ρ V³ S (C_D0 + C_L² / (π·AR·e))] dt + ∫ P_dash dt",
+        "formula_desc": "Piecewise multi-phase aerodynamic energy equation: hover disc power scales with (T/A)^0.5, while cruise power is minimized at high aspect ratio AR and low zero-lift drag C_D0."
+    },
+    "UCV": {
+        "history_title": "Cossack Pikash Darts & Hand Caltrops ('Rogulky')",
+        "history_body": "Zaporozhian Cossacks mastered close-quarters kinetic harassment through lightweight, hand-thrown armor-piercing iron darts ('pikash') and multi-spiked area-denial caltrops ('rogulky'). These weapons converted individual soldier agility into lethal kinetic breaches against heavy cavalry armor—the exact historical precursor to modern high-acceleration multirotor kinetic strikes.",
+        "trap_title": "Conflating Combat Rotorcraft with Hobbyist Slang ('FPV')",
+        "trap_body": "'FPV' (First Person View) describes a consumer analog video headset, NOT a combat vehicle class. Conflating terminal kinetic interceptors with commercial hobby toys blinds defense procurement to essential cyber-physical laws: rotor disc loading (T/A), advance ratio (μ = V / (Ω·R)), retreating blade stall, and electronic counter-countermeasures (ECCM).",
+        "vectors": [
+            {"code": "CH-EE-AR", "name": "Terminal Precision Kinetic Interceptor", "desc": "High-acceleration 7-10\" frame; Mach 0.15-0.20 terminal dive with modular shaped charge."},
+            {"code": "CL-EE-AR", "name": "Over-the-Horizon Indirect Strike", "desc": "Ballistic pitch delivery from behind tree lines using automated terminal guidance."},
+            {"code": "CM-EE-AQ", "name": "Heavy Armor Breacher / Top-Attack Munition", "desc": "Heavy octocopter dropping thermobaric and tandem anti-tank ordnance on engine decks."},
+            {"code": "CH-EE-AF", "name": "Fiber-Optic Electronic-Warfare Immune Penetrator", "desc": "Spooled micro-optical glass fiber (5-20 km); 100% immune to EW jammers, zero RF footprint."},
+            {"code": "CT-GE-PR", "name": "Tethered Persistent Airborne Sentry", "desc": "Ground-powered micro-rotorcraft hovering 100m for 72+ hours as persistent radar/EW mast."},
+            {"code": "CS-EE-SR", "name": "Perch-and-Listen Ambush Sleeper", "desc": "Dormant rooftop or tree-branch perching; activates motors only upon acoustic acoustic trigger."},
+            {"code": "CH-EE-MA", "name": "Autonomous Anti-Air Drone Hunter", "desc": "Machine-vision high-speed interceptor engaging hostile reconnaissance UAVs at 180+ km/h."}
+        ],
+        "combat_loop": "T+000s: Ground acoustic sensor trips. T+015s: Sleeper UCV (CS-EE-SR) awakens. T+040s: Fiber-optic strike UCV (CH-EE-AF) launched. T+090s: Target armor acquired visually. T+110s: Kinetic breach confirmed.",
+        "matrix_token": "[ C H ]  -  [ D E ]  -  [ T C ]",
+        "octet1_title": "Copter Horizon & Rotor Architecture [CH]",
+        "octet1_content": "<b>C: Horizon</b><br>• C: Micro-Tactical (0-50m)<br>• L: Low-Altitude (0-300m)<br>• M: Medium Urban (0-1 km)<br>• H: High-Ceiling (up to 4 km)<br><br><b>H: Rotor Layout</b><br>• Q: Quadrotor Standard<br>• X: Coaxial High-Density<br>• O: Octocopter Heavy-Lift<br>• H: Hexacopter Redundant",
+        "octet2_title": "Deployment & Battery C-Rate [DE]",
+        "octet2_content": "<b>D: Container</b><br>• H: Hand-Thrown / Backpack<br>• T: Tube / Vehicle Rack<br>• M: Mobile Mothership<br><br><b>E: Energy Bus</b><br>• E: High-Rate LiPo (60-120C)<br>• S: Solid-State Battery<br>• H: Micro-Hybrid Generator<br>• T: Tethered Ground Line",
+        "octet3_title": "Guidance Autonomy & Comms [TC]",
+        "octet3_content": "<b>T: Tactical Mode</b><br>• A: Direct Kinetic Impact<br>• D: Bomb Drop / Retrievable<br>• P: Persistent Orbit<br>• S: Perched Sleeper<br><br><b>C: Link Security</b><br>• R: Analog/Digital SDR<br>• F: Spooled Glass Fiber<br>• Q: Radio-Silent Optical ATR<br>• M: Swarm Mesh Relay",
+        "benchmarks": [
+            {"role": "Precision Kinetic Interceptor", "token": "UCV: CH-EE-AR", "platform": "Frontline 10\" Tactical Strike Quad", "kinematics": "Thrust-to-weight > 8:1 | Terminal speed 180 km/h | Zero stall speed", "logistics": "Soldier backpack (D: H) | 6S Li-ion/LiPo (E: E, 15 min flight)", "autonomy": "Optical ATR lock-on | Frequency-hopping SDR 700-1000 MHz", "kill_web": "Vector 1: Precision armor and trench breach at 5-15 km radius."},
+            {"role": "EW-Immune Fiber Penetrator", "token": "UCV: CH-EE-AF", "platform": "Frontline Fiber-Optic Guided Copter", "kinematics": "Rigid carbon frame | 15 km glass-fiber spool | Zero telemetry lag", "logistics": "Dispersed soldier launch (D: H) | High-drain LiPo (E: E)", "autonomy": "Human-in-the-loop 4K video | Zero RF emission, jammer-proof", "kill_web": "Vector 4: Defeating EW-protected electronic warfare domes."},
+            {"role": "Heavy Coaxial Maritime/Land Carrier", "token": "UCV: CL-PE-HR", "platform": "BAE / Certo CAPSTONE Coaxial", "kinematics": "Dual contra-rotating coaxial rotors | Disc loading T/A > 35 kg/m²", "logistics": "Deck davit / truck bed | Heavy fuel piston generator (E: P)", "autonomy": "Autonomous precision shipboard landing | Encrypted mesh SDR", "kill_web": "Vector 3: Logistics resupply and heavy torpedo/sensor carriage."}
+        ],
+        "hal_contract": "IFastInterdictor / IRotorcraftDynamics",
+        "hal_contract_desc": "Controls high-rate motor ESC telemetry (DShot1200), computes aerodynamic advance ratio μ to prevent retreating blade stall during 50 m/s terminal sprints.",
+        "governing_formula": "P_rotor = [T^{3/2} / (2 ρ A)^{1/2}] · (1 / η_figure_of_merit) + ½ ρ V³ S_fuselage C_D_parasitic",
+        "formula_desc": "Rotor momentum theory: induced hover power requires maximizing disc area A, while high-speed forward dashes are limited by fuselage parasitic drag and motor C-rate limits."
+    },
+    "UGV": {
+        "history_title": "Chumak Tabor (Wagenburg) & Cossack Mobile Field Fortresses",
+        "history_body": "15th-18th century Ukrainian Chumaks and Cossacks organized heavy trade and military convoys into 'Tabors'—interconnected wooden freight wagons forming an impenetrable, self-defending mobile perimeter. In open terrain, the Tabor functioned as a modular, terrain-conforming armored ring capable of dynamic repositioning, defending against cavalry charges without static castle walls.",
+        "trap_title": "Amateur Slang ('Vozyk') & Motor kW vs Bekker Soil Mechanics",
+        "trap_body": "Calling military ground robotics 'vozyky' (carts) reduces MilTech to hobby gardening. Marketing claims boast '10-tonne towing' based on electric motor kilowatt ratings while completely ignoring Bekker-Wong soil mechanics: drawbar pull is bounded by soil shear strength (F_pull = A·c + W·tanφ), not motor torque. Without adequate ground contact area, high-torque electric motors merely dig wheels into viscous Ukrainian black soil (chernozem).",
+        "vectors": [
+            {"code": "WL-EE-PR", "name": "High-Threat Casualty Evacuation (CASEVAC)", "desc": "Low-profile armored litter carrier evacuating wounded under direct fire without exposing personnel."},
+            {"code": "WL-HE-PR", "name": "Forward Munition & Energy Resupply Lifeline", "desc": "Autonomous payload delivery traversing artillery-cratered mud corridors at 15-25 km/h."},
+            {"code": "WT-EE-AR", "name": "Remote Kinetic Turret / Ambush Platform", "desc": "Stabilized heavy machine gun (12.7mm) or anti-tank missile carrier with low acoustic signature."},
+            {"code": "TP-DE-MR", "name": "Combat Breaching & Route Clearance", "desc": "Tracked heavy chassis with flails, rollers, and explosive line charges clearing minefields."},
+            {"code": "WP-DE-TR", "name": "Heavy Artillery Prime Mover", "desc": "High drawbar-pull amphibious tractor towing 155mm howitzers across swamp and deep snow."},
+            {"code": "WS-EE-SR", "name": "Ground Sensor Emplacement & Picket", "desc": "Camouflaged seismic, acoustic, and thermal sensor anchor loitering for weeks in dormant posture."},
+            {"code": "WL-EE-MR", "name": "Distributed Anti-Armor Minelayer", "desc": "Rapid autonomous dispersal of anti-tank bottom mines across anticipated enemy assault axes."}
+        ],
+        "combat_loop": "T+000s: Seismic sensor detects tank column. T+030s: Ambush UGV (WT-EE-AR) raises mast camera. T+075s: Anti-tank guided missile launched. T+120s: Minelayer UGV (WL-EE-MR) deploys flank barrier. T+240s: Withdrawal under smoke.",
+        "matrix_token": "[ W P ]  -  [ D E ]  -  [ T C ]",
+        "octet1_title": "Running Gear & Ground Pressure [WP]",
+        "octet1_content": "<b>W: Running Gear</b><br>• W: All-Terrain Wheeled (4x4, 6x6)<br>• T: Continuous Tracked (Rubber/Steel)<br>• A: Articulated Two-Section<br>• L: Quadruped Legged / Bio<br><br><b>P: Ground Pressure</b><br>• L: Ultra-Low (<0.2 kg/cm²)<br>• M: Medium Tactical (0.2-0.5 kg/cm²)<br>• H: Heavy Armored (>0.5 kg/cm²)",
+        "octet2_title": "Logistics Tier & Powerplant [DE]",
+        "octet2_content": "<b>D: Carrier Class</b><br>• C1: Man-Portable (<100 kg)<br>• C2: Light Tactical (100-1,000 kg)<br>• C3: Heavy Operational (1-5 tonnes)<br>• C4: Strategic Prime Mover (>5t)<br><br><b>E: Powerplant</b><br>• E: Pure Electric (Battery)<br>• H: Diesel-Electric Hybrid<br>• D: Heavy Fuel Diesel ICE",
+        "octet3_title": "Autonomy Doctrine & Signal [TC]",
+        "octet3_content": "<b>T: Tactical Posture</b><br>• P: Patrol & Transport<br>• A: Active Kinetic Combat<br>• M: Breaching / Demining<br>• S: Dormant Surveillance<br><br><b>C: Signal Backbone</b><br>• R: Mesh Radio SDR<br>• F: Spooled Fiber-Optic Cable<br>• S: LEO Satellite (Starlink)<br>• Q: Optical Visual Odometry",
+        "benchmarks": [
+            {"role": "Articulated Off-Road Scout & Carrier", "token": "UGV: GL-EP-WR", "platform": "Frontline НРК SlimAk", "kinematics": "Articulated 2-section frame | Passive roll compliance | Eliminates skid-steer scrubbing", "logistics": "Trailer / pickup bed (D: C1) | Electric battery (E: E, 6h autonomy)", "autonomy": "Mesh RF remote drive | Low acoustic and thermal signature", "kill_web": "Vector 2: Silent CASEVAC and ammo delivery through trenches and craters."},
+            {"role": "Heavy Amphibious Prime Mover", "token": "UGV: WL-DE-TR", "platform": "UNEX ABRIS Amphibious Tractor", "kinematics": "8x8 high-displacement wheels | Ground pressure 0.18 kg/cm² | Amphibious swim", "logistics": "Heavy flatbed transport (D: C3) | Turbocharged diesel-electric hybrid (E: H)", "autonomy": "Autonomous convoy follow-me | High drawbar pull for 155mm howitzers", "kill_web": "Vector 5: Artillery displacement and heavy recovery through muddy floodplains."},
+            {"role": "Tracked Combat Weapon Carrier", "token": "UGV: TL-HE-AR", "platform": "Milrem Robotics THeMIS", "kinematics": "Dual low-profile rubber tracks | Low ground pressure 0.25 kg/cm²", "logistics": "Air-transportable / truck (D: C2) | Diesel-electric hybrid bus (E: H)", "autonomy": "MIFIK autonomous waypoint navigation | 12.7mm stabilized turret", "kill_web": "Vector 3: Mobile ambush line and automated perimeter defense."}
+        ],
+        "hal_contract": "IArticulatedChassis / IGroundMobility",
+        "hal_contract_desc": "Decouples passive central roll conformity from active yaw steering hydraulics, computing dynamic wheel slip ratios across Bekker soil sinkage gradients.",
+        "governing_formula": "F_drawbar = A · c + W · tan(φ) - [k_c/b + k_φ] · (z^{n+1} / (n + 1))",
+        "formula_desc": "Bekker-Wong soil mechanics: traction force is governed by cohesive shear c and internal friction angle φ, minus compaction resistance scaling with sinkage depth z and wheel width b."
+    },
+    "USV": {
+        "history_title": "Zaporozhian Chaika (Lapstrake Clinker) & The Monitor Warning (1862)",
+        "history_body": "16th-17th century Cossack naval fleets operated clinker-built 'Chaikas' (60 ft, 50-70 crew) constructed with overlapping oak and linden planks. Chaikas featured bundles of reeds strapped along the gunwales ('remi') providing reserve buoyancy, roll dampening, and unsinkability in heavy Black Sea waves while maintaining a razor-thin visual freeboard that evaded Ottoman galleys. In 1862, the Battle of Hampton Roads proved that small, low-freeboard armored craft render high-sided wooden fleet flagships obsolete overnight.",
+        "trap_title": "The British Admiralty Rating Trap & Speedboat Conversion Myth",
+        "trap_body": "Traditional navies categorize surface ships by displacement tonnage, armor thickness, and gun caliber—a colonial fleet dogma that paralyzed the Russian Black Sea Fleet. Conversely, converting civilian fiberglass planing speedboats into military drones fails in open seas: high-speed planing into Sea State 4+ generates extreme vertical accelerations (G_z > 6-8g), snapping composite stringers and destroying optical gimbal gyros. UWE mandates slender, wave-piercing displacement or semi-submersible hulls.",
+        "vectors": [
+            {"code": "AH-PE-AQ", "name": "Littoral Long-Range Kinetic Interdictor", "desc": "Low-RCS wave-piercing surface hull delivering 300-500 kg shaped warheads against capital ships."},
+            {"code": "AL-HE-MR", "name": "Anti-Air Drone Carrier & Mothership", "desc": "Deploying short-range air-defense missile rails or FPV interceptors to neutralize attack helicopters."},
+            {"code": "AW-DE-PS", "name": "Slender Wave-Piercing Hydrographic Sentry", "desc": "High-efficiency slender monohull with drop keel maintaining persistent ASW sonar patrol for 30+ days."},
+            {"code": "AH-PE-MA", "name": "Autonomous Straits Interdiction Gate", "desc": "Swarming surface interceptors executing automated chokepoint blockades in contested maritime narrows."},
+            {"code": "AL-DE-PR", "name": "Anti-Submarine Warfare (ASW) Dipping Node", "desc": "Deploying active/passive dipping sonars and lightweight torpedoes against hostile submersibles."},
+            {"code": "AM-EE-MR", "name": "Mine Countermeasures (MCM) Shallow Sweeper", "desc": "Acoustic and magnetic signature sweeper detonating seabed mines without risking manned minesweepers."},
+            {"code": "AL-DE-TR", "name": "Dispersed Blockade-Running Logistics Transporter", "desc": "High-speed night transit delivering ammunition, fuel, and batteries to besieged coastal islands."}
+        ],
+        "combat_loop": "T+000s: Satellite radar detects enemy frigate. T+060s: Surface wolfpack (AH-PE-AQ) disperses. T+180s: Pincer convergence initiated. T+240s: Anti-air drone (AL-HE-MR) counters naval helicopter. T+300s: Synchronized hull breach confirmed.",
+        "matrix_token": "[ A H ]  -  [ D E ]  -  [ P C ]",
+        "octet1_title": "Architecture & Hull Hydrodynamics [AH]",
+        "octet1_content": "<b>A: Architecture</b><br>• P: High-Speed Planing<br>• W: Wave-Piercing Slender<br>• S: Semi-Submersible Low-Freeboard<br>• C: Hydrofoil Catamaran<br><br><b>H: Sea State Survivability</b><br>• 1: Sea State 1-2 (Calm)<br>• 3: Sea State 3-4 (Moderate, 1.5m)<br>• 5: Sea State 5-6 (Rough, 3-4m)<br>• 7: Sea State 7+ (Survival)",
+        "octet2_title": "Containerization & Powerplant [DE]",
+        "octet2_content": "<b>D: Carrier Class</b><br>• T: Trailer / Beach Launch<br>• V: Vessel Davit / Crane<br>• B: Bunker Coastal Pen<br><br><b>E: Powerplant</b><br>• P: Gasoline Waterjet ICE<br>• D: Marine Diesel Inboard<br>• H: Diesel-Electric Hybrid<br>• S: Solar-Wind Auxiliary",
+        "octet3_title": "Mission Posture & Signal Backbone [PC]",
+        "octet3_content": "<b>P: Operational Posture</b><br>• A: Direct Kinetic Impact (OWM)<br>• R: Reusable Sensor / Weapon Launch<br>• S: Persistent Sleeper Loiter<br><br><b>C: Communications Media</b><br>• S: LEO Satellite (Starlink/Kymeta)<br>• R: High-Bandwidth RF SDR<br>• Q: Optical Visual Horizon ATR<br>• L: Laser Coastal Crosslink",
+        "benchmarks": [
+            {"role": "Littoral Kinetic Interdictor", "token": "USV: AH-PE-AQ", "platform": "Magura V5 / Sea Baby", "kinematics": "Low-freeboard wave-cleaving hull | Speed 40+ knots | Range > 800 km", "logistics": "Trailer beach slipway (D: T) | High-output marine gasoline engine (E: P)", "autonomy": "Dual Starlink SATCOM + optical backup | Redundant electro-hydraulic steering", "kill_web": "Vector 1: Strategic maritime sea-denial and capital warship sinking."},
+            {"role": "Slender Wave-Piercing Hydrographic Sentry", "token": "USV: AW-DE-PS", "platform": "Exail DriX H-9 / Oryx O-16", "kinematics": "Slender wave-piercing keel | Sea State 5 stable | Roll-damping fin ballast", "logistics": "Davit crane / mothership (D: V) | Marine diesel inboard (E: D, 10-30 days)", "autonomy": "Gondola drop-keel sonar bus | Anti-collision radar and Starlink mesh", "kill_web": "Vector 3: High-resolution ASW hydrography and acoustic submarine tracking."}
+        ],
+        "hal_contract": "ISurfacePlanner / IMarineKinematics",
+        "hal_contract_desc": "Computes dynamic vertical slam acceleration G_z across incoming wave spectra, automatically trimming interceptor pitch to prevent slamming structural delamination.",
+        "governing_formula": "G_z = c · [V² / B] · [tan(β) / (1 + H_w / L)]",
+        "formula_desc": "Savitsky planing impact formula: vertical g-shock scales with velocity squared V² and deadrise angle β, inversely proportional to beam B and hull length ratio."
+    },
+    "UUV": {
+        "history_title": "Cossack 'Pirnachka' Paradigm (Zhelekhivskyi, 1886) & Renaissance Engineering",
+        "history_body": "Documented in Yevhen Zhelekhivskyi's 1886 Ukrainian-German Dictionary as 'Kalbsmagen' (calf's stomach), the Cossack Pirnachka was an open Chaika hull completely enclosed with fat-treated, watertight leather. The craft managed internal pressure and fluid ballast like an organic bladder, submerging to reed snorkel depth to evade Ottoman shore artillery—synchronous with William Bourne (1578) and Cornelis Drebbel (1620) Thames submarine trials.",
+        "trap_title": "Hull Form-Factor Dogma vs Hydrostatic Depth Horizons",
+        "trap_body": "Classifying submersibles by geometric shape (torpedo tube vs box) misses the central physical reality: operational depth horizon dictates everything. Hydrostatic pressure scales at 1 atm per 10m depth (P = ρgh), demanding exponentially thicker titanium, steel, or ceramic pressure vessels that consume internal payload volume and restrict battery capacity. UWE classifies submersibles strictly by depth layers (D0 Surface to D6 Hadal).",
+        "vectors": [
+            {"code": "DA-RE-AQ", "name": "Dynamic Kinetic Interdictor / Undersea Strike", "desc": "Sub-surface torpedo-delivered kinetic penetrator neutralizing naval hulls from beneath."},
+            {"code": "DC-GE-PS", "name": "Benthic Infrastructure Sentry & Pipeline Guard", "desc": "Seafloor-crawling rover inspecting and defending gas conduits and fiber cables."},
+            {"code": "DK-IE-PR", "name": "Sub-Surface C4ISR & Acoustic Relay Anchor", "desc": "Snorkel-horizon gateway relaying acoustic seabed signals to tactical LEO satellite clouds."},
+            {"code": "DC-RE-SQ", "name": "Coastal Chokepoint Ambush Sleeper ('Zhdun')", "desc": "Resting silent on shallow seabed shelf for weeks; awakens upon acoustic warship signature."},
+            {"code": "DA-IE-MR", "name": "Anti-Submarine Acoustic Barrier & Tracker", "desc": "Autonomous acoustic listening array tracking hostile nuclear and diesel submarines."},
+            {"code": "DH-GE-MS", "name": "Seabed Robotic Intervenor & Heavy Manipulator", "desc": "Heavy robotic tool arm executing micron-level sabotage or repair at 3,000-6,000m depths."},
+            {"code": "DK-IE-MR", "name": "Cross-Domain Littoral Aerial Staging Base", "desc": "Submerged stealth platform surfacing to launch FPV and UAV swarms into enemy rear littoral."}
+        ],
+        "combat_loop": "T+000s: Seabed sleeper (DC-RE-SQ) detects acoustic propeller signature. T+045s: Ballast released; silent ascent to strike depth. T+120s: Hydroacoustic terminal homing active. T+180s: Keel torpedo impact confirmed.",
+        "matrix_token": "[ D P ]  -  [ E M ]  -  [ T C ]",
+        "octet1_title": "Depth Horizon & Deployment Class [DP]",
+        "octet1_content": "<b>D: Depth Horizon</b><br>• S: Surface (0m)<br>• K: Snorkel (0-15m)<br>• Z: Surf Zone (0-50m)<br>• W: Shallow Water (up to 100m)<br>• C: Continental Shelf (up to 500m)<br>• A: Abyssal (500-6,000m)<br>• H: Hadal (6,000-11,000m)<br><br><b>P: Deployment Class</b><br>• D: Diver-Deployed (<50 kg)<br>• V: Vessel Davit / Slipway<br>• T: 533mm Torpedo Tube<br>• L: Large Carrier Well-Deck<br>• B: Coastal Bunker Pen",
+        "octet2_title": "Power Regeneration & Mission Mode [EM]",
+        "octet2_content": "<b>E: Powerplant</b><br>• R: Rapid Chemical (Li-Ion, 12h)<br>• I: Intermittent Snorkel AIP<br>• G: Seabed Umbilical Anchor Grid<br>• N: Nuclear Micro-Reactor<br><br><b>M: Mission Mode</b><br>• D: Direct Kinetic Attack<br>• S: Stationary Sentry ('Zhdun')<br>• B: Benthic Crawler Ground-Contact<br>• L: Cross-Domain Aerial Launcher",
+        "octet3_title": "Tactical Control & Acoustic Comms [TC]",
+        "octet3_content": "<b>T: Autonomy Doctrine</b><br>• P: Passive Waypoint Navigation<br>• A: Active Acoustic Tracking<br>• M: Distributed Seabed Mesh<br>• S: Dormant Seabed Sleep<br><br><b>C: Comms Gateway</b><br>• A: Hydroacoustic Modem<br>• F: Spooled Glass Fiber Tether<br>• S: Floating Mast SATCOM<br>• Q: Radio-Silent Inertial/Terrain",
+        "benchmarks": [
+            {"role": "Extra-Large Autonomous Undersea Vehicle (XL-AUV)", "token": "UUV: DC-IE-MR", "platform": "Anduril Ghost Shark / Boeing Orca", "kinematics": "Hydrodynamic modular hull | Depth 500m+ | 100+ days subsea endurance", "logistics": "Shore slipway / well deck (D: L) | Heavy AIP / Li-ion hybrid bus (E: I)", "autonomy": "Autonomous acoustic pathfinding | Floating antenna buoy SATCOM", "kill_web": "Vector 1 & 5: Deep maritime interdiction and persistent choke-point mining."},
+            {"role": "Parasitic Hull-Attached Stealth Vehicle", "token": "UUV: DC-RE-PR", "platform": "Lockheed Martin Lamprey MMAUV", "kinematics": "Slender conformal suction profile | Attaches directly to submarine hull", "logistics": "Host submarine external pylon (D: T) | Chemical solid-state cells (E: R)", "autonomy": "Autonomous parasitic detachment and return | Radio-silent acoustic ATR", "kill_web": "Vector 4: Forward acoustic screening and clandestine harbor penetration."}
+        ],
+        "hal_contract": "ISubseaAcoustic / IBenthicKinematics",
+        "hal_contract_desc": "Governs buoyancy engine fluid trim, computes acoustic transmission loss TL across thermoclines, and controls caterpillar benthic seabed traction.",
+        "governing_formula": "P_hydro = ρ · g · h  |  TL = 20 · log₁₀(R) + α · R",
+        "formula_desc": "Hydrostatic pressure scales linearly with depth h, while acoustic transmission loss TL governs hydroacoustic modem communications and sonar detection limits."
+    },
+    "UOV": {
+        "history_title": "Yuriy Kondratyuk (1929, LOR & Orbital Fuel Depots) Paradigm",
+        "history_body": "In his seminal 1929 work 'The Conquest of Interplanetary Spaces', Ukrainian aerospace pioneer Yuriy Kondratyuk (Oleksandr Shargei) formulated the Lunar Orbit Rendezvous (LOR) trajectory chosen by NASA for the Apollo program. Crucially, Kondratyuk established the concept of distributed orbital fuel depots and modular spacecraft decoupling, proving that space dominance relies on rendezvous logistics and staging nodes rather than single giant rockets.",
+        "trap_title": "Sci-Fi Free-Flight Tropes vs Keplerian Celestial Mechanics",
+        "trap_body": "Popular culture envisions space warfare as dogfights with free directional maneuvering. In physical reality, spacecraft are prisoners of gravity: orbital velocity at LEO is 7.8 km/s. Changing orbital inclination by just 15° costs ~2,000 m/s of ΔV—equivalent to burning 50-70% of total satellite mass in chemical propellant. Space combat is governed strictly by Keplerian two-body celestial mechanics and Clohessy-Wiltshire relative equations.",
+        "vectors": [
+            {"code": "OL-RE-AQ", "name": "Co-Orbital Kinetic Interceptor & Hunter", "desc": "Maneuvering into matching orbital planes to execute machine-speed kinetic impact or fragmentation."},
+            {"code": "OC-EE-PR", "name": "Rendezvous & Proximity Operations (RPO) Inspector", "desc": "Autonomous close-range fly-around imaging and electronic signals eavesdropping on adversary satellites."},
+            {"code": "OM-CE-PS", "name": "Orbital Refueling Depot & Life Extension Tug", "desc": "Autonomous docking and propellant transfer extending the combat lifecycle of reconnaissance platforms."},
+            {"code": "OC-EE-MA", "name": "Active Debris Removal (ADR) & Counter-Space", "desc": "Deploying harpoons, nets, and robotic clamps to capture and de-orbit hostile space assets."},
+            {"code": "OL-EE-PS", "name": "Resilient LEO Distributed Mesh Constellation", "desc": "Mass-produced SmallSats providing jam-resistant optical crosslinks and optical/SAR surveillance."},
+            {"code": "OG-HE-AR", "name": "High-Orbit Directed Energy & EW Neutralizer", "desc": "High-power radiofrequency and optical laser dazzler disabling sensor optics at geostationary altitudes."},
+            {"code": "OD-RE-AQ", "name": "Cislunar & Deep Space Kinetic Interdictor", "desc": "Operating in Lagrange point halo orbits to police cislunar transit corridors."}
+        ],
+        "combat_loop": "T+000s: Ground space-tracking radar detects hostile maneuver. T+120s: Hunter (OL-RE-AQ) calculates Clohessy-Wiltshire intercept burn. T+360s: Cold-gas thruster firing. T+600s: Non-cooperative proximity lock. T+720s: Target neutralized.",
+        "matrix_token": "[ O P ]  -  [ E M ]  -  [ T C ]",
+        "octet1_title": "Orbital Horizon & Planar Alignment [OP]",
+        "octet1_content": "<b>O: Orbital Horizon</b><br>• L: Low Earth Orbit (LEO, 160-2,000 km)<br>• M: Medium Earth Orbit (MEO, 2,000-35,786 km)<br>• G: Geostationary Orbit (GEO, 35,786 km)<br>• H: Highly Elliptical Orbit (HEO / Molniya)<br>• C: Cislunar / Lagrange Points (L1-L5)<br><br><b>P: Planar Alignment</b><br>• C: Co-Planar Shared Inclination<br>• N: Non-Co-Planar Crossing Orbit<br>• R: Retrograde High-Velocity Intercept",
+        "octet2_title": "Propellant Architecture & Mode [EM]",
+        "octet2_content": "<b>E: Powerplant & ISP</b><br>• C: Cold-Gas RCS (<75s ISP)<br>• M: Hypergolic Monoprop / Biprop (220-310s ISP)<br>• I: Ion Electric Hall-Effect (1,500-3,000s ISP)<br>• N: Nuclear Thermal Rocket (NTR, 850-1,000s ISP)<br><br><b>M: Dynamic Mission Mode</b><br>• K: Kinetic Kill (One-Way Impact)<br>• R: Rendezvous & Proximity (RPO)<br>• H: Harpoon / Net Debris Capture<br>• D: Refueling & Servicing Dock",
+        "octet3_title": "Autonomy Doctrine & Signal Gateway [TC]",
+        "octet3_content": "<b>T: Tactical Posture</b><br>• P: Persistent Orbit Surveillance<br>• A: Active Kinetic Attack<br>• M: Swarm Constellation Flocking<br>• S: Dormant Zombie Satellite<br><br><b>C: Communications Media</b><br>• L: Inter-Satellite Laser Crosslink (OISL)<br>• R: Space-to-Ground Phased S/X-Band<br>• Q: Autonomous Star-Tracker / Inertial<br>• S: Deep Space Relay Mesh",
+        "benchmarks": [
+            {"role": "Active Debris Removal & Counter-Space Hunter", "token": "UOV: OC-EE-MA", "platform": "NextGen Arsenal Orbital Guardian / Astroscale", "kinematics": "LEO sun-synchronous orbit | Cold-gas + electric propulsion | Multi-DoF robotic clamp", "logistics": "Rideshare fairing deployment (D: C) | Solar array + chemical RCS (E: M)", "autonomy": "Clohessy-Wiltshire relative navigation | Star-tracker + LiDAR rendezvous", "kill_web": "Vector 4: Non-cooperative orbital capture and targeted de-orbiting."},
+            {"role": "Geostationary Mission Extension Tug", "token": "UOV: OG-CE-PS", "platform": "Northrop Grumman MEV (Mission Extension Vehicle)", "kinematics": "GEO drift orbit | High-ISP Hall thruster propulsion | Apogee kick motor", "logistics": "Heavy launch vehicle (D: I) | Solar-electric bus (E: I, 15+ years)", "autonomy": "Autonomous mechanical docking to target liquid apogee engine nozzle", "kill_web": "Vector 3: Life-extension, orbital attitude control, and satellite relocation."}
+        ],
+        "hal_contract": "IOrbitalInterceptor / ICelestialMechanics",
+        "hal_contract_desc": "Solves Clohessy-Wiltshire relative equations for close proximity operations (RPO) and manages Tsiolkovsky delta-V budgets under non-linear orbital perturbations.",
+        "governing_formula": "ΔV = I_sp · g_0 · ln(m_0 / m_f)  |  δr̈ + 2ω × δṙ + ω × (ω × δr) = F_thrust / m",
+        "formula_desc": "Tsiolkovsky rocket equation defines maximum kinematic velocity change ΔV, while Clohessy-Wiltshire equations govern relative motion between interceptor and target spacecraft."
+    }
+}
+
 def build_domains():
     # 1. Domains Master Index
     domains_cards = ""
@@ -1537,6 +1838,9 @@ def build_domains():
   <div style="margin-top:1rem;">
     <strong style="font-size:0.85rem; color:var(--text-muted);">Empirical Benchmarks in this Domain:</strong>
     <div style="margin-top:0.35rem;">{case_pills}</div>
+  </div>
+  <div style="margin-top:1rem;">
+    <a href="{d['code'].lower()}.html" class="badge badge-hal" style="font-size:0.9rem; padding:0.4rem 0.8rem;">Explore Full 6-Block Taxonomy for {d['code']} →</a>
   </div>
 </div>"""
 
@@ -1568,6 +1872,7 @@ def build_domains():
     for d in DOMAINS_DATA:
         dom_cases = [c for c in CASES_DATA if c["slug"] in d["cases"]]
         dom_cases_cards = "\n".join(render_case_card(c, depth=1) for c in dom_cases)
+        deep_content = render_domain_taxonomy_section(d['code'])
 
         dom_page = f"""<!doctype html>
 <html lang="en">
@@ -1575,21 +1880,24 @@ def build_domains():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{d['code']} Domain Taxonomy | Unmanned Warfare Engine</title>
-  <meta name="description" content="{d['name']} — physical boundaries, equations of motion, and empirical benchmarks.">
+  <meta name="description" content="{d['name']} — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
   <link rel="canonical" href="{BASE_URL}/domains/{d['code'].lower()}.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   {render_header("domains", depth=1)}
-  <div class="container">
+  <div class="container" style="max-width:960px;">
     <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
     
-    <div class="hero-box">
-      <span class="badge badge-{d['code'].lower()}" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: {d['code']}</span>
-      <h1 class="hero-title" style="margin-top:0.75rem;">{d['name']}</h1>
-      <p style="color:var(--text-muted); font-size:1.05rem;">{d['medium']}</p>
+    <div class="hero-box" style="margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <span class="badge badge-{d['code'].lower()}" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: {d['code']}</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Architect: <strong style="color:#fff;">Serhii Khylevych</strong> (Kyiv Baseline)</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.75rem; margin-bottom:0.5rem;">{d['name']}</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:1rem;">{d['medium']}</p>
       
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
         <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">{d['governing_laws']}</p>
       </div>
@@ -1599,15 +1907,21 @@ def build_domains():
       </div>
     </div>
 
-    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in {d['code']} ({len(dom_cases)} Cases)</h2>
-    <div>
-      {dom_cases_cards}
+    {deep_content}
+
+    <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in {d['code']} ({len(dom_cases)} Cases)</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the {d['code']} physical envelope:</p>
+      <div>
+        {dom_cases_cards}
+      </div>
     </div>
   </div>
   {render_footer()}
 </body>
 </html>"""
         write_file(f"domains/{d['code'].lower()}.html", dom_page)
+
 
 def build_vendors():
     vendor_cards = ""
