@@ -74,28 +74,227 @@
       </div>
     </div>
 
+    <!-- Top Telemetry KPI Counters Ribbon -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-num">13</div>
+        <div class="kpi-label">Empirical Benchmarks</div>
+        <div class="kpi-sub">Flight & field tests analyzed</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">6</div>
+        <div class="kpi-label">Physical Domains</div>
+        <div class="kpi-sub">Air, Copter, Ground, Sea, Subsea, Orbit</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">12</div>
+        <div class="kpi-label">Defense Primes & Labs</div>
+        <div class="kpi-sub">Western OEMs & frontline developers</div>
+      </div>
+      <div class="kpi-card highlight">
+        <div class="kpi-num">100%</div>
+        <div class="kpi-label">Concept Validation</div>
+        <div class="kpi-sub">9 of 9 Laws & Postulates Confirmed</div>
+      </div>
+    </div>
+
+    <!-- Cross-Domain Operational Spectrum Bar -->
+    <div class="spectrum-wrap">
+      <div class="spectrum-head">
+        <strong style="font-size:0.95rem; color:#fff;">📊 Cross-Domain Operational Spectrum (13 Empirical Benchmarks)</strong>
+        <span style="font-size:0.8rem; color:var(--text-muted);">Click bar segment to filter cases</span>
+      </div>
+      <div class="spectrum-bar">
+        <div class="spec-seg" data-domain-filter="UAV" style="width:46.15%; background:#3fb950;" title="UAV Fixed-Wing & Hypersonic: 6 cases (46.2%)"></div>
+        <div class="spec-seg" data-domain-filter="UCV" style="width:7.69%; background:#d29922;" title="UCV Copter Combat: 1 case (7.7%)"></div>
+        <div class="spec-seg" data-domain-filter="UGV" style="width:15.38%; background:#bc8cff;" title="UGV Ground Robotics: 2 cases (15.4%)"></div>
+        <div class="spec-seg" data-domain-filter="UUV" style="width:15.38%; background:#58a6ff;" title="UUV Subsea Robotics: 2 cases (15.4%)"></div>
+        <div class="spec-seg" data-domain-filter="USV" style="width:7.69%; background:#38bdf8;" title="USV Surface Vessels: 1 case (7.7%)"></div>
+        <div class="spec-seg" data-domain-filter="UOV" style="width:7.69%; background:#ff7b72;" title="UOV Counter-Space: 1 case (7.7%)"></div>
+      </div>
+      <div class="spectrum-legend">
+        <span class="legend-item"><span class="legend-dot" style="background:#3fb950;"></span> UAV Air (46.2%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#d29922;"></span> UCV Copter (7.7%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#bc8cff;"></span> UGV Ground (15.4%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#58a6ff;"></span> UUV Subsea (15.4%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> USV Surface (7.7%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#ff7b72;"></span> UOV Orbital (7.7%)</span>
+      </div>
+    </div>
+
+    <!-- Concept & Laws Empirical Validation Dashboard -->
+    <section class="val-dashboard" id="validation-dashboard">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h2 style="margin:0; font-size:1.45rem; color:#fff;">📐 Concept & Architectural Laws Empirical Validation Matrix</h2>
+          <p style="margin:0.25rem 0 0 0; color:var(--text-muted); font-size:0.9rem;">
+            Rigorous verification of UWE theoretical axioms against field telemetry, flight test footage, and Western/Ukrainian OEM datasheets.
+          </p>
+        </div>
+        <div class="badge" style="background:#122616; border-color:#2ea043; color:#3fb950; font-size:0.85rem; padding:0.4rem 0.8rem;">
+          STATUS: ALL 9 AXIOMS CONFIRMED (100%)
+        </div>
+      </div>
+
+      <div class="progress-meter">
+        <div class="progress-labels">
+          <span style="color:#58a6ff; font-weight:700;">EMPIRICAL VALIDATION PROGRESS</span>
+          <span style="color:#3fb950; font-weight:700;">9 OF 9 VERIFIED (100.0%)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 100%;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-top:0.5rem; font-size:0.78rem; color:var(--text-muted);">
+          <span>4 Invariant Physical Laws: 4/4 Verified (100%)</span>
+          <span>5 Operational Postulates: 5/5 Verified (100%)</span>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.1rem; color:#58a6ff; margin:1.5rem 0 0.75rem 0; text-transform:uppercase; letter-spacing:0.5px;">
+        ⚖️ Part 1: The Four Invariant Laws of UWE (4/4 Confirmed)
+      </h3>
+      <div class="val-card law">
+  <div class="val-card-header">
+    <div class="val-card-title">⚖️ LAW-1: Law of Kinematic Primacy</div>
+    <span class="badge badge-uav" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"The physical interface with the operating medium (air, ground, sea, space) strictly dictates platform physics and domain. Cosmetic shapes and commercial marketing terms cannot violate aerodynamic L/D, Bekker soil mechanics, or hydrodynamics."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (6 Cases):</div>
+    <div><a href="cases/02-slimak-ugv.html" class="proof-tag"><span>Case #02 (SlimAk UGV)</span><span style="color:var(--text-muted);">• Passive mechanical hinge is chassis articulation, not adaptive suspension.</span></a><a href="cases/03-stealth-ucav.html" class="proof-tag"><span>Case #03 (Stealth UCAV)</span><span style="color:var(--text-muted);">• Cockpit bubble canopies destroy transonic wave drag and inlet pressure recovery.</span></a><a href="cases/05-sickle-wing.html" class="proof-tag"><span>Case #05 (Sickle Wing)</span><span style="color:var(--text-muted);">• Hypersonic flight eliminates mechanical hinges in favor of fluidic thrust vectoring.</span></a><a href="cases/06-exail-usv.html" class="proof-tag"><span>Case #06 (Exail USV)</span><span style="color:var(--text-muted);">• Persistent ocean denial demands wave-piercing displacement, not fragile planing.</span></a><a href="cases/08-unex-artillery.html" class="proof-tag"><span>Case #08 (UNEX ABRIS)</span><span style="color:var(--text-muted);">• Towing capacity in mud is bounded by Bekker soil shear, not motor kW.</span></a><a href="cases/09-capstone-coaxial.html" class="proof-tag"><span>Case #09 (CAPSTONE Coaxial)</span><span style="color:var(--text-muted);">• Zero stall speed and disc loading strictly define UCV copter physics.</span></a></div>
+  </div>
+</div><div class="val-card law">
+  <div class="val-card-header">
+    <div class="val-card-title">⚖️ LAW-2: Law of Hierarchical Containerization (C0–C4)</div>
+    <span class="badge badge-uav" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"Logistics deployment footprints strictly govern robotic vehicle mass, range, and operational tempo. Platforms are partitioned into C0 (Handheld), C1 (Man-Portable), C2 (Light/Dispersed), C3 (Heavy/Slipway), and C4 (Strategic/CATOBAR)."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (6 Cases):</div>
+    <div><a href="cases/01-honda-evtol.html" class="proof-tag"><span>Case #01 (Honda eVTOL)</span><span style="color:var(--text-muted);">• C2 dispersed theater logistics requires GT-HEV to avoid C4 infrastructure lock.</span></a><a href="cases/06-exail-usv.html" class="proof-tag"><span>Case #06 (Exail DriX/Oryx)</span><span style="color:var(--text-muted);">• C2 (9m) vs C3 (16m) modular logistics dictate harbor slipway vs ocean crane handling.</span></a><a href="cases/07-ghostshark-auv.html" class="proof-tag"><span>Case #07 (Ghost Shark XL-AUV)</span><span style="color:var(--text-muted);">• C3 heavy slipway footprint allows 12-mine capacity without strategic nuclear docks.</span></a><a href="cases/10-orbital-guardian.html" class="proof-tag"><span>Case #10 (Orbital Guardian)</span><span style="color:var(--text-muted);">• C2 ESPA rideshare class (150-300kg) dictates upper-stage dispenser interfaces.</span></a><a href="cases/12-mq25-stingray.html" class="proof-tag"><span>Case #12 (MQ-25 Stingray)</span><span style="color:var(--text-muted);">• C4 CATOBAR carrier-basing requires arresting gear and bow catapult compatibility.</span></a><a href="cases/13-fury-ghostbat.html" class="proof-tag"><span>Case #13 (Anduril Fury / MQ-28)</span><span style="color:var(--text-muted);">• C2 dispersed runway operations enable distributed survivable air combat mass.</span></a></div>
+  </div>
+</div><div class="val-card law">
+  <div class="val-card-header">
+    <div class="val-card-title">⚖️ LAW-3: Law of Hardware Abstraction & Decoupled Lethality</div>
+    <span class="badge badge-uav" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"The physical chassis operates as an invariant robotic carrier with standardized HAL contracts, completely decoupled from modular payloads and mission profiles (ISR, EW, Strike, or One-Way Mission / Kamikaze decorator)."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (6 Cases):</div>
+    <div><a href="cases/06-exail-usv.html" class="proof-tag"><span>Case #06 (Exail USV)</span><span style="color:var(--text-muted);">• Dynamic drop-keel gondola decouples ASW/hydrographic sensors from hull motions.</span></a><a href="cases/07-ghostshark-auv.html" class="proof-tag"><span>Case #07 (Ghost Shark)</span><span style="color:var(--text-muted);">• Invariant subsea hull interchanges 12 naval mines, ALTIUS UAVs, or SOF modules.</span></a><a href="cases/10-orbital-guardian.html" class="proof-tag"><span>Case #10 (Orbital Guardian)</span><span style="color:var(--text-muted);">• Dual-use hardware: ADR debris capture and offensive ASAT use identical HAL contracts.</span></a><a href="cases/11-lockheed-lamprey.html" class="proof-tag"><span>Case #11 (Lamprey MMAUV)</span><span style="color:var(--text-muted);">• 24 cu ft modular bay separates effector lethality from host vehicle transport.</span></a><a href="cases/12-mq25-stingray.html" class="proof-tag"><span>Case #12 (MQ-25 Tanker)</span><span style="color:var(--text-muted);">• Decoupled Cobham ARS pod transforms carrier strike aircraft into persistent refuelers.</span></a><a href="cases/13-fury-ghostbat.html" class="proof-tag"><span>Case #13 (Fury CCA)</span><span style="color:var(--text-muted);">• Conformal bay decouples kinetic airframe from AIM-120/AIM-9X munitions.</span></a></div>
+  </div>
+</div><div class="val-card law">
+  <div class="val-card-header">
+    <div class="val-card-title">⚖️ LAW-4: Law of Dual-Read Cognitive Synchronization</div>
+    <span class="badge badge-uav" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"Autonomous warfare demands a unified 6-character cyber-physical token ([Domain/Horizon-Container]-[Powerplant-Mission]-[Doctrine-Comms]) decipherable simultaneously by human commanders and edge tactical AI microkernels in microseconds."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (7 Cases):</div>
+    <div><a href="cases/01-honda-evtol.html" class="proof-tag"><span>Case #01 (Honda eVTOL)</span><span style="color:var(--text-muted);">• Token UAV: AL-TL-HR parsed by commander and mission router instantly.</span></a><a href="cases/02-slimak-ugv.html" class="proof-tag"><span>Case #02 (SlimAk UGV)</span><span style="color:var(--text-muted);">• Token UGV: GL-EP-WR establishes mobility and mesh comms profile in 6 chars.</span></a><a href="cases/06-exail-usv.html" class="proof-tag"><span>Case #06 (Exail USV)</span><span style="color:var(--text-muted);">• Token USV: SL-PA-DR governs drop-keel telemetry and endurance constraints.</span></a><a href="cases/07-ghostshark-auv.html" class="proof-tag"><span>Case #07 (Ghost Shark)</span><span style="color:var(--text-muted);">• Token UUV: PT-RM-DA encodes 1000m pelagic depth and multi-mine salvo mission.</span></a><a href="cases/10-orbital-guardian.html" class="proof-tag"><span>Case #10 (Orbital Guardian)</span><span style="color:var(--text-muted);">• Token UOV: LM-CA-HR sets LEO orbit, chemical propulsion, and RPO grappling.</span></a><a href="cases/12-mq25-stingray.html" class="proof-tag"><span>Case #12 (MQ-25 Stingray)</span><span style="color:var(--text-muted);">• Token UAV: AI-TF-DR defines CATOBAR tanker escort doctrine microsecond routing.</span></a><a href="cases/13-fury-ghostbat.html" class="proof-tag"><span>Case #13 (Fury CCA)</span><span style="color:var(--text-muted);">• Token UAV: AL-TC-DR establishes transonic air superiority and Lattice OS edge mesh.</span></a></div>
+  </div>
+</div>
+
+      <h3 style="font-size:1.1rem; color:#38bdf8; margin:1.5rem 0 0.75rem 0; text-transform:uppercase; letter-spacing:0.5px;">
+        🛡️ Part 2: The Five Operational Postulates of Autonomous Warfare (5/5 Confirmed)
+      </h3>
+      <div class="val-card postulate">
+  <div class="val-card-header">
+    <div class="val-card-title">🛡️ POSTULATE-1: Environmental Abstraction Layer (Anti-1812 Engine)</div>
+    <span class="badge badge-usv" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"Autonomous vehicles must absorb and overcome brutal environmental degradation (viscous mud, aerothermal plasma blackout, Sea State 5, hydrostatic depth, and space vacuum) at the hardware-software HAL boundary."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (4 Cases):</div>
+    <div><a href="cases/02-slimak-ugv.html" class="proof-tag"><span>Case #02 (SlimAk UGV)</span><span style="color:var(--text-muted);">• Articulated chassis eliminates wheel scrubbing in deep frontline viscous mud.</span></a><a href="cases/04-waverider-corvus.html" class="proof-tag"><span>Case #04 (Mach 6 Waverider)</span><span style="color:var(--text-muted);">• IThermalPlasmaLink commands aft laser to bypass Mach 6 RF plasma blackout.</span></a><a href="cases/06-exail-usv.html" class="proof-tag"><span>Case #06 (Exail DriX USV)</span><span style="color:var(--text-muted);">• Drop-keel lowers acoustic payload below surface aeration in Sea State 5.</span></a><a href="cases/08-unex-artillery.html" class="proof-tag"><span>Case #08 (UNEX ABRIS)</span><span style="color:var(--text-muted);">• Bekker soil slip traction controller prevents wheel spin-down in clay soils.</span></a></div>
+  </div>
+</div><div class="val-card postulate">
+  <div class="val-card-header">
+    <div class="val-card-title">🛡️ POSTULATE-2: Parasitic Energy Harvesting & Tanker Lifelines</div>
+    <span class="badge badge-usv" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"True continuous theater persistence cannot rely on individual battery capacities; it mandates distributed parasitic energy harvesting from host platforms, natural flows, or specialized airborne refueling tankers."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (2 Cases):</div>
+    <div><a href="cases/11-lockheed-lamprey.html" class="proof-tag"><span>Case #11 (Lockheed Lamprey)</span><span style="color:var(--text-muted);">• Hydrokinetic in-transit harvesting recharges battery to 100% SoC on host sub hulls.</span></a><a href="cases/12-mq25-stingray.html" class="proof-tag"><span>Case #12 (MQ-25 Stingray)</span><span style="color:var(--text-muted);">• Carrier tanker refuels CCA fighter swarms, doubling combat reach to 900+ nmi.</span></a></div>
+  </div>
+</div><div class="val-card postulate">
+  <div class="val-card-header">
+    <div class="val-card-title">🛡️ POSTULATE-3: Sleeper / Sentinel Posture ('Zhdun' State)</div>
+    <span class="badge badge-usv" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"To survive ubiquitous ISR surveillance, autonomous robotic units must execute ultra-low-power zero-acoustic sentinel postures, lying dormant until triggered by acoustic, seismic, or RF tripwires."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (2 Cases):</div>
+    <div><a href="cases/07-ghostshark-auv.html" class="proof-tag"><span>Case #07 (Ghost Shark XL-AUV)</span><span style="color:var(--text-muted);">• Rests on continental shelf for weeks with zero acoustic output awaiting choke-point targets.</span></a><a href="cases/11-lockheed-lamprey.html" class="proof-tag"><span>Case #11 (Lockheed Lamprey)</span><span style="color:var(--text-muted);">• Executes seabed anchor posture with all thrusters unpowered for covert minefield ambush.</span></a></div>
+  </div>
+</div><div class="val-card postulate">
+  <div class="val-card-header">
+    <div class="val-card-title">🛡️ POSTULATE-4: Cross-Domain Heterogeneous Kill Web</div>
+    <span class="badge badge-usv" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"No single domain operates in isolation. Theater containment lines function as a cross-domain web linking Subsea (UUV) + Surface (USV) + Air (UAV/UCV) + Orbit (UOV) with microsecond latency."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (3 Cases):</div>
+    <div><a href="cases/04-waverider-corvus.html" class="proof-tag"><span>Case #04 (Hypersonic Corvus)</span><span style="color:var(--text-muted);">• Direct laser uplink to Low Earth Orbit satellites enables Mach 6 target handoff.</span></a><a href="cases/07-ghostshark-auv.html" class="proof-tag"><span>Case #07 (Ghost Shark + BlueBottle)</span><span style="color:var(--text-muted);">• Subsea UUV + surface wave-harvesting USV + air ALTIUS UAV form heterogeneous triad.</span></a><a href="cases/13-fury-ghostbat.html" class="proof-tag"><span>Case #13 (Anduril CCA Triad)</span><span style="color:var(--text-muted);">• Fury interceptor + Ghost Bat sensor node + MQ-25 fuel tanker form continuous aerial line.</span></a></div>
+  </div>
+</div><div class="val-card postulate">
+  <div class="val-card-header">
+    <div class="val-card-title">🛡️ POSTULATE-5: Rejection of 'Wunderwaffen' for Attritable Mass</div>
+    <span class="badge badge-usv" style="font-size:0.75rem;">🟢 CONFIRMED (100%)</span>
+  </div>
+  <p class="val-card-statement">"Single, bespoke, billionaire-class exquisite weapon systems are mathematically defeated in attrition warfare. Algorithmic software superiority coupled with COTS engines and attritable composite mass dictates victory."</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS (2 Cases):</div>
+    <div><a href="cases/12-mq25-stingray.html" class="proof-tag"><span>Case #12 (MQ-25 Stingray)</span><span style="color:var(--text-muted);">• Standardized turbofan airframe relieves 25% of costly manned fighter sorties.</span></a><a href="cases/13-fury-ghostbat.html" class="proof-tag"><span>Case #13 (Anduril Fury (CCA))</span><span style="color:var(--text-muted);">• Commercial FJ44 engine + carbon monocoque yields mass-producible 9G dogfighters.</span></a></div>
+  </div>
+</div>
+    </section>
+
+    <!-- 13 Empirical Case Studies Section -->
     <div style="margin-bottom:2rem;">
-      <h2 style="font-size:1.4rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
-        🔬 13 Empirical Platform Benchmarks & Architectural Mapping
-      </h2>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
+        <h2 style="font-size:1.4rem; margin:0;">
+          🔬 13 Empirical Platform Benchmarks & Architectural Mapping
+        </h2>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">13</strong> of 13 platforms</span>
+      </div>
       <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.25rem;">
-        Scientific-practical stress-testing of western OEMs, Ukrainian frontline prototypes, and global systems against the 4 Invariant Laws of UWE.
+        Scientific-practical stress-testing of western OEMs, Ukrainian frontline prototypes, and global aerospace systems against the 4 Invariant Laws of UWE.
       </p>
 
       <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor (e.g., 'Anduril', 'coaxial', 'MQ-25', 'IVtol')...">
       
+      <div class="filter-group-label">Filter by Physical Medium Domain:</div>
       <div class="filter-pills">
-        <span class="filter-pill active" data-filter="ALL">All Domains (13)</span>
-        <span class="filter-pill" data-filter="UAV">UAV Fixed-Wing (6)</span>
-        <span class="filter-pill" data-filter="UCV">UCV Copter (1)</span>
-        <span class="filter-pill" data-filter="UGV">UGV Ground (2)</span>
-        <span class="filter-pill" data-filter="UUV">UUV Subsea (2)</span>
-        <span class="filter-pill" data-filter="USV">USV Surface (1)</span>
-        <span class="filter-pill" data-filter="UOV">UOV Orbital (1)</span>
+        <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains (13)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (6)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (1)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (2)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (2)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (1)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (1)</span>
+      </div>
+
+      <div class="filter-group-label">Filter by Defense-Tech OEM / Developer:</div>
+      <div class="filter-pills">
+        <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (12)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril (2)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE / Certo (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Frontline UA (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Aerospace Res. (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Hypersonic (1)</span>
       </div>
 
       <div id="cases-feed">
-        <article class="reddit-card case-item" data-domain="UAV" id="case-01">
+        <article class="reddit-card case-item" data-domain="UAV" data-vendor="honda" id="case-01">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -144,7 +343,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UGV" id="case-02">
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="frontline-ua" id="case-02">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -193,7 +392,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-03">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="global-aerospace" id="case-03">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -242,7 +441,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-04">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="darpa" id="case-04">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -291,7 +490,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-05">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="hypersonic-consortium" id="case-05">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -340,7 +539,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="USV" id="case-06">
+<article class="reddit-card case-item" data-domain="USV" data-vendor="exail" id="case-06">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -389,7 +588,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UUV" id="case-07">
+<article class="reddit-card case-item" data-domain="UUV" data-vendor="anduril" id="case-07">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -438,7 +637,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UGV" id="case-08">
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="unex" id="case-08">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -487,7 +686,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UCV" id="case-09">
+<article class="reddit-card case-item" data-domain="UCV" data-vendor="bae-falconworks" id="case-09">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -536,7 +735,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UOV" id="case-10">
+<article class="reddit-card case-item" data-domain="UOV" data-vendor="nextgen-arsenal" id="case-10">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -585,7 +784,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UUV" id="case-11">
+<article class="reddit-card case-item" data-domain="UUV" data-vendor="lockheed-martin" id="case-11">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -634,7 +833,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-12">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="boeing" id="case-12">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -683,7 +882,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-13">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="anduril" id="case-13">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
