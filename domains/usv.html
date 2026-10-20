@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USV Domain Taxonomy | Unmanned Warfare Engine</title>
+  <meta name="description" content="Unmanned Surface Vehicles (Littoral & Marine Vessels) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <link rel="canonical" href="https://uwe-standard.github.io/domains/usv.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container">
+    <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
+    
+    <div class="hero-box">
+      <span class="badge badge-usv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: USV</span>
+      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Surface Vehicles (Littoral & Marine Vessels)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem;">Ocean Surface Boundary Layer (Air-Sea Interface)</p>
+      
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+        <strong>Cyber-Physical Governing Laws:</strong>
+        <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Froude number, wave-piercing slender hull dynamics, Sea State (Beaufort scale) vertical g-shock limits, transverse metacentric height (GM_T).</p>
+      </div>
+
+      <div class="lesson-box" style="margin-top:1rem;">
+        <strong>The Legacy Classification Trap:</strong> Using fragile recreational planing speedboats for open-ocean missions; high vertical g-shocks (>6g) destroy gimbal sensors and break hulls in Sea State 4+.
+      </div>
+    </div>
+
+    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in USV (1 Cases)</h2>
+    <div>
+      <article class="reddit-card case-item" data-domain="USV" id="case-06">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/usv.html" class="badge badge-usv">USV</a>
+    <a href="../vendors/index.html#exail" class="badge badge-vendor">Exail Marine & U.S. Navy Evaluations</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/06-exail-usv.html">Case #06: Exail DriX H-9 & Oryx O-16 USVs</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>USV: SL-PA-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">USV: Surface Marine • C2 Light 9m / C3 Heavy 16m • Diesel-Electric • Counter-UAS Escort / ASW Loiter • Persistent Picket • Dual MESH/SATCOM</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IHydrodynamicDropKeelDrive"><code>IHydrodynamicDropKeelDrive</code></a></div>
+    <div><em>"Open-ocean unmanned surface platforms require IHydrodynamicDropKeelDrive to dynamically lower sonar payloads 2m below surface cavitation and bubble sweep-down noise, enabling ASW acoustic SNR > 20 dB in Sea State 5."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Slender wave-piercing displacement monohull slashes vertical heave accelerations (<1.5g in Sea State 5 vs >6g for planing hulls).</li><li>2-meter drop keel isolates sonars and acoustic sensors from hull surface bubble sweep-down, yielding +15-20 dB SNR for submarine tracking.</li><li>Extreme endurance: 90 consecutive days on station demonstrated in U.S. 4th Fleet operations.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Narrow beam (L/B ≈ 9) causes low transverse metacentric height (GM_T), making roll stability dependent on active pendulum ballast.</li><li>Submerged gondola draft prevents shallow littoral navigation unless actively retracted.</li><li>Displacement hull limits maximum sprint speed to 15-20 knots, making it vulnerable to high-speed interceptor swarms.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Establishes the hydrodynamic boundary for UWE Article 5 (USV): sprint planing hulls belong to kamikaze strike, while persistent ocean denial belongs strictly to wave-piercing displacement forms.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.navalnews.com/event-news/euronaval-2026/2026/10/exail-usvs-set-for-u-s-navy-and-coast-guard-evaluations/" target="_blank" rel="noopener">Naval News Euronaval 2026 / U.S. Navy & Coast Guard Trials ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/07-ghostshark-auv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #07</a>
+      <a href="../cases/06-exail-usv.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

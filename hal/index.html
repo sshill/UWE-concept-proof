@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware Abstraction Layer (HAL) Contract Registry | UWE</title>
+  <meta name="description" content="Deterministic cyber-physical interfaces and control law contracts governing robotic fleets under UWE.">
+  <link rel="canonical" href="https://uwe-standard.github.io/hal/index.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="active">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container">
+    <h1 class="hero-title" style="font-size:1.85rem;">Hardware Abstraction Layer (HAL) Registry</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">
+      Autonomous vehicles are object-oriented executors. The HAL contracts standardize control laws across disparate airframes, hulls, and chassis.
+    </p>
+    <div class="reddit-card" id="IVtolTransitionDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IVtolTransitionDrive</code></h3>
+    <a href="../cases/01-honda-evtol.html" class="badge badge-uav">Case #01 (UAV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Lift+Cruise eVTOL architectures mandate IVtolTransitionDrive to dynamically crossfade rotor lift to aerodynamic wing loading (rotor throttle α: 1.0 -> 0.0) without mechanical tiltrotor pitch instability."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Honda eVTOL (GT-HEV Lift+Cruise)</strong> (Honda Aircraft Company) • Token: <code>UAV: AL-TL-HR</code>
+  </div>
+</div><div class="reddit-card" id="IArticulatedChassis">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IArticulatedChassis</code></h3>
+    <a href="../cases/02-slimak-ugv.html" class="badge badge-ugv">Case #02 (UGV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Articulated off-road robotic chassis require the IArticulatedChassis HAL contract to decouple central joint roll compliance from active yaw steering, eliminating tire slip scrub in deep mud."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>НРК SlimAk (Articulated Chassis UGV)</strong> (Ukrainian Frontline Engineering) • Token: <code>UGV: GL-EP-WR</code>
+  </div>
+</div><div class="reddit-card" id="IAerodynamicTrim">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IAerodynamicTrim</code></h3>
+    <a href="../cases/03-stealth-ucav.html" class="badge badge-uav">Case #03 (UAV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Supersonic tailless unmanned combat airframes mandate IAerodynamicTrim to dynamically bias elevon reflex angles against boundary-layer separation and shock-induced pitching moments."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Transonic / Supersonic Stealth UCAV</strong> (Defense Aerospace Research) • Token: <code>UAV: AH-PA-HO</code>
+  </div>
+</div><div class="reddit-card" id="IThermalPlasmaLink">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IThermalPlasmaLink</code></h3>
+    <a href="../cases/04-waverider-corvus.html" class="badge badge-uav">Case #04 (UAV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Hypersonic waverider vehicles require the IThermalPlasmaLink HAL contract to command aft-directed laser optical links to orbital relay satellites, bypassing the Mach 6 plasma blackout sheath."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Mach 6 Hypersonic Waverider (Corvus)</strong> (DARPA / Skunk Works Experimental) • Token: <code>UAV: AI-CP-HL</code>
+  </div>
+</div><div class="reddit-card" id="IActiveFlowControlDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IActiveFlowControlDrive</code></h3>
+    <a href="../cases/05-sickle-wing.html" class="badge badge-uav">Case #05 (UAV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Tailless hypersonic sickle-wing configurations mandate IActiveFlowControlDrive to generate dynamic yaw and roll control moments via supersonic bleed-air blowing, replacing mechanical control surfaces."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Autonomous Sickle Wing (Tailless Hypersonic)</strong> (Next-Gen Hypersonic Consortium) • Token: <code>UAV: AI-CP-HL</code>
+  </div>
+</div><div class="reddit-card" id="IHydrodynamicDropKeelDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IHydrodynamicDropKeelDrive</code></h3>
+    <a href="../cases/06-exail-usv.html" class="badge badge-usv">Case #06 (USV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Open-ocean unmanned surface platforms require IHydrodynamicDropKeelDrive to dynamically lower sonar payloads 2m below surface cavitation and bubble sweep-down noise, enabling ASW acoustic SNR > 20 dB in Sea State 5."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Exail DriX H-9 & Oryx O-16 USVs</strong> (Exail Marine & U.S. Navy Evaluations) • Token: <code>USV: SL-PA-DR</code>
+  </div>
+</div><div class="reddit-card" id="ISubseaLaunchController">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>ISubseaLaunchController</code></h3>
+    <a href="../cases/07-ghostshark-auv.html" class="badge badge-uuv">Case #07 (UUV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Heterogeneous subsea architectures require ISubseaLaunchController to dynamically manage buoyancy transients (ΔB = -∑m_payload) during mine salvo release and submerged capsule UAV launch."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Anduril Ghost Shark XL-AUV & Ocius BlueBottle USV</strong> (Anduril Industries & Ocius Technology (AUKUS)) • Token: <code>UUV: PT-RM-DA</code>
+  </div>
+</div><div class="reddit-card" id="IDrawbarTractionController">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IDrawbarTractionController</code></h3>
+    <a href="../cases/08-unex-artillery.html" class="badge badge-ugv">Case #08 (UGV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Robotic prime movers require IDrawbarTractionController to govern wheel torque to Bekker soil slip ratios (s < 0.2) and actively pulse anti-jackknife braking against unbraked towed artillery loads."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>UNEX Amphibious Prime Mover (ABRIS)</strong> (UNEX (Tim De Zitter / Militarnyi)) • Token: <code>UGV: GH-ET-DL</code>
+  </div>
+</div><div class="reddit-card" id="ICoaxialRotorDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>ICoaxialRotorDrive</code></h3>
+    <a href="../cases/09-capstone-coaxial.html" class="badge badge-ucv">Case #09 (UCV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Heavy coaxial rotorcraft UCVs mandate ICoaxialRotorDrive to govern differential collective yaw while algorithmically clamping cyclic pitch rate limits to prevent catastrophic blade clashing under high-G gusts."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>CAPSTONE Coaxial Heavy-Lift UCV</strong> (Certo Aerospace & BAE FalconWorks) • Token: <code>UCV: CL-PM-DR</code>
+  </div>
+</div><div class="reddit-card" id="ITumblingTargetCapture">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>ITumblingTargetCapture</code></h3>
+    <a href="../cases/10-orbital-guardian.html" class="badge badge-uov">Case #10 (UOV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Autonomous orbital proximity and interception platforms require ITumblingTargetCapture to solve Clohessy-Wiltshire kinematics, match target 3-axis tumble momentum via CMGs, and execute impedance grappling without kinetic fragmentation."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Orbital Guardian ADR Satellite Hunter</strong> (NextGen Arsenal) • Token: <code>UOV: LM-CA-HR</code>
+  </div>
+</div><div class="reddit-card" id="IParasiticAttachmentDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IParasiticAttachmentDrive</code></h3>
+    <a href="../cases/11-lockheed-lamprey.html" class="badge badge-uuv">Case #11 (UUV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Parasitic undersea autonomous platforms require IParasiticAttachmentDrive and IHydrokineticHarvesting to govern hull boundary-layer suction, harvest power from 20-knot flow, and command positive separation into seabed resting sentinel posture."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Lockheed Martin Lamprey MMAUV</strong> (Lockheed Martin Skunk Works) • Token: <code>UUV: CV-IS-HQ</code>
+  </div>
+</div><div class="reddit-card" id="IAerialRefuelingHoseDrogueDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IAerialRefuelingHoseDrogueDrive</code></h3>
+    <a href="../cases/12-mq25-stingray.html" class="badge badge-uav">Case #12 (UAV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Carrier-borne tanker UAVs require IAerialRefuelingHoseDrogueDrive to actively damp drogue basket whip against receiver supersonic bow wave displacement while compensating center-of-gravity shifts during 15,000-lb fuel offloads."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Boeing MQ-25 Stingray CBARS</strong> (Boeing Defense & U.S. Navy) • Token: <code>UAV: AI-TF-DR</code>
+  </div>
+</div><div class="reddit-card" id="IHighGEvasiveManeuverDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IHighGEvasiveManeuverDrive</code></h3>
+    <a href="../cases/13-fury-ghostbat.html" class="badge badge-uav">Case #13 (UAV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Autonomous air-to-air Collaborative Combat Aircraft mandate IHighGEvasiveManeuverDrive and IAutonomousWeaponSeparation to execute machine-speed 9G intercepts and command >40G positive ejection to suppress transonic cavity resonance (Rossiter modes)."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>Anduril Fury & Boeing MQ-28 Ghost Bat (CCA Triad)</strong> (Anduril Industries & Boeing Australia) • Token: <code>UAV: AL-TC-DR</code>
+  </div>
+</div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

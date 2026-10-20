@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAV Domain Taxonomy | Unmanned Warfare Engine</title>
+  <meta name="description" content="Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <link rel="canonical" href="https://uwe-standard.github.io/domains/uav.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container">
+    <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
+    
+    <div class="hero-box">
+      <span class="badge badge-uav" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UAV</span>
+      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem;">Atmospheric Airspace (0 to 30 km)</p>
+      
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+        <strong>Cyber-Physical Governing Laws:</strong>
+        <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Aerodynamic Lift-to-Drag (L/D), Mach number shock detachment, boundary-layer aerothermodynamics, wing loading.</p>
+      </div>
+
+      <div class="lesson-box" style="margin-top:1rem;">
+        <strong>The Legacy Classification Trap:</strong> STANAG 4670 & DoD MTOW/HALE/MALE classifications rely on arbitrary weight and altitude boxes, ignoring kinetic threat omission limits and FPV interceptor speeds.
+      </div>
+    </div>
+
+    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UAV (6 Cases)</h2>
+    <div>
+      <article class="reddit-card case-item" data-domain="UAV" id="case-01">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="../vendors/index.html#honda" class="badge badge-vendor">Honda Aircraft Company</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/01-honda-evtol.html">Case #01: Honda eVTOL (GT-HEV Lift+Cruise)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AL-TL-HR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Lift • C2 Light Logistics (5-8 pax) • GT-HEV Gas Turbine Hybrid • Loiter/Cruise Transit • High Survivability Reserve • Redundant MESH/SATCOM</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IVtolTransitionDrive"><code>IVtolTransitionDrive</code></a></div>
+    <div><em>"Lift+Cruise eVTOL architectures mandate IVtolTransitionDrive to dynamically crossfade rotor lift to aerodynamic wing loading (rotor throttle α: 1.0 -> 0.0) without mechanical tiltrotor pitch instability."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Decoupled Lift+Cruise eliminates tiltrotor single-point mechanical failure by isolating hover props from horizontal cruise pusher.</li><li>Gas turbine hybrid-electric powertrain (GT-HEV) breaks the chemical battery energy density bottleneck (12,000 Wh/kg vs 250 Wh/kg).</li><li>Piecewise energy budget proves hover power drain is ~6x cruise power (P_hover ≈ 6 * P_cruise), allowing small cruise engines.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Internal cell resistance voltage sag (ΔV = I * R_int) on terminal hover descent under degraded battery state of health.</li><li>Airframe parasitic drag penalty (ΔC_D0) from eight locked vertical lift rotors during high-speed cruise.</li><li>Dual-system thermal and acoustic signature from gas turbine exhaust reducing acoustic stealth.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates the Law of Decoupled Powerplants in UWE: pure battery VTOL is kinetically unviable for theater logistics; hybrid turbine generation is mandatory.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1409577227898837" target="_blank" rel="noopener">Facebook Reel / Honda Aviation Field Test ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="../cases/09-capstone-coaxial.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #09</a><a href="../cases/12-mq25-stingray.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #12</a>
+      <a href="../cases/01-honda-evtol.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" id="case-03">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="../vendors/index.html#global-aerospace" class="badge badge-vendor">Defense Aerospace Research</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/03-stealth-ucav.html">Case #03: Transonic / Supersonic Stealth UCAV</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AH-PA-HO</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric High-Altitude • C3 Strategic Runway • Jet Propulsion • Air Superiority • Heavy Payload Strike • Optical/Laser Resilient</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IAerodynamicTrim"><code>IAerodynamicTrim</code></a></div>
+    <div><em>"Supersonic tailless unmanned combat airframes mandate IAerodynamicTrim to dynamically bias elevon reflex angles against boundary-layer separation and shock-induced pitching moments."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Tailless blended wing-body yields ultra-low radar cross-section (RCS < -30 dBsm) across VHF to X-band radar frequencies.</li><li>Internal conformal weapons bay prevents weapon drag divergence and maintains stealth during supersonic cruise.</li><li>High structural fuel fraction enables extended unrefueled combat radius (>1,500 km).</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Prominent roof bubble canopy creates transonic wave drag divergence (ΔC_D0) and distorts boundary layer entering dorsal intake.</li><li>Severe total pressure recovery loss in serpentine S-duct engine inlet under high angles of attack.</li><li>High yaw divergence sensitivity at supersonic speeds due to absence of vertical stabilizing fins.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Confirms the Law of Kinematic Primacy: cosmetic design tropes (bubble cockpits on unmanned airframes) destroy transonic aerodynamic efficiency.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1625827525885877" target="_blank" rel="noopener">Facebook Reel / Aerodynamic Wind Tunnel Model ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a><a href="../cases/05-sickle-wing.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #05</a><a href="../cases/13-fury-ghostbat.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #13</a>
+      <a href="../cases/03-stealth-ucav.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" id="case-04">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="../vendors/index.html#darpa" class="badge badge-vendor">DARPA / Skunk Works Experimental</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/04-waverider-corvus.html">Case #04: Mach 6 Hypersonic Waverider (Corvus)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AI-CP-HL</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Interceptor / Hypersonic • C4 Strategic Launch • Scramjet / Rocket Boost • Deep Penetration Strike • High-Altitude • Laser ISL Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IThermalPlasmaLink"><code>IThermalPlasmaLink</code></a></div>
+    <div><em>"Hypersonic waverider vehicles require the IThermalPlasmaLink HAL contract to command aft-directed laser optical links to orbital relay satellites, bypassing the Mach 6 plasma blackout sheath."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Compression lift generation: rides its own shockwave yielding high hypersonic lift-to-drag ratio (L/D > 4.5 at Mach 6).</li><li>Kinetic survivability: Mach 6 velocity and 30 km altitude render all current short/medium-range SAM interceptors kinematically obsolete.</li><li>Near-instantaneous time-critical strike capability across intercontinental theater arcs.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Stagnation point aerothermal heating exceeding 1,850°C blinds forward optical and infrared imaging sensors.</li><li>Ionized plasma sheath (electron density ω_p > 30 GHz) completely blocks RF communications, GPS, and radar altimeters.</li><li>Extremely narrow scramjet unstart margins during rapid dynamic maneuvering.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Proves the necessity of cross-domain orbital integration: hypersonic atmospheric vehicles cannot communicate via terrestrial RF and must link to orbital UOV anchors.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1625827525885877" target="_blank" rel="noopener">Defense OSINT / Theoretical Mach 6 Aerothermal Benchmark ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/05-sickle-wing.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #05</a><a href="../cases/10-orbital-guardian.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #10</a>
+      <a href="../cases/04-waverider-corvus.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" id="case-05">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="../vendors/index.html#hypersonic-consortium" class="badge badge-vendor">Next-Gen Hypersonic Consortium</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/05-sickle-wing.html">Case #05: Autonomous Sickle Wing (Tailless Hypersonic)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AI-CP-HL</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Interceptor • C3 Dispersed Base • Scramjet Cruise • High-Altitude Interdiction • Stealth Penetration • Laser Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IActiveFlowControlDrive"><code>IActiveFlowControlDrive</code></a></div>
+    <div><em>"Tailless hypersonic sickle-wing configurations mandate IActiveFlowControlDrive to generate dynamic yaw and roll control moments via supersonic bleed-air blowing, replacing mechanical control surfaces."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Crescent sickle leading-edge geometry delays supersonic shock detachment and reduces wave drag across Mach 3 to Mach 6.</li><li>Total absence of vertical empennage slashes side-aspect radar cross-section (RCS).</li><li>Fluidic Thrust Vectoring (FTV) eliminates mechanical hinge gaps that cause boundary layer trip and extreme localized heating.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Complex pneumatic bleed-air ducting adds internal mass and parasitic engine compressor power loss.</li><li>High aerothermal ablation along sharp leading edges requires carbon-carbon composite matrix refurbishing.</li><li>Severe directional stability instability at low takeoff and landing approach speeds.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates the UWE Law of Kinematic Primacy: mechanical control surfaces fail under hypersonic aerothermal loads; flight control becomes fluidic and software-driven.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1818239552508775" target="_blank" rel="noopener">Facebook Reel / Hypersonic Aerodynamic Planform ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a>
+      <a href="../cases/05-sickle-wing.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" id="case-12">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-20</span>
+    <span>•</span>
+    <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="../vendors/index.html#boeing" class="badge badge-vendor">Boeing Defense & U.S. Navy</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/12-mq25-stingray.html">Case #12: Boeing MQ-25 Stingray CBARS</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AI-TF-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Winged • C4 CATOBAR Carrier Base • Turbofan AE 3007N • Airborne Fuel Tanker (Cobham ARS) • Fleet Escort & Persistent Shield • MESH/COMSAT</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IAerialRefuelingHoseDrogueDrive"><code>IAerialRefuelingHoseDrogueDrive</code></a></div>
+    <div><em>"Carrier-borne tanker UAVs require IAerialRefuelingHoseDrogueDrive to actively damp drogue basket whip against receiver supersonic bow wave displacement while compensating center-of-gravity shifts during 15,000-lb fuel offloads."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Eliminates carrier air wing fatigue: relieves F/A-18 Super Hornets from wasting 25% of combat flight hours on wasteful buddy-tanking sorties.</li><li>Doubles strike radius: pushes F-35C and CCA strike reach from 450 to >900 nmi, allowing carrier strike groups to operate outside DF-21D A2/AD envelopes.</li><li>Airborne energy backbone: forms the continuous in-flight refueling lifeline for autonomous Collaborative Combat Aircraft (CCA) along containment lines.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Aerodynamic bow wave whip: receiver aircraft nose pressure wave pushes drogue basket off-center, causing probe strikes and canopy impacts.</li><li>Flight deck taxi density: autonomous taxi among tractors and catapults under 120 dB acoustic noise requires robust computer vision wand failsafes.</li><li>4G carrier cable trap deceleration creates violent internal fuel slosh, requiring active internal baffles and reinforced gear.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Proves UWE Strategic Doctrine: autonomous interdiction shields and containment lines depend fundamentally on distributed aerial refueling infrastructure, not bespoke single-sortie ranges.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/SecretaryoftheNavy/videos/1123057570114063/" target="_blank" rel="noopener">U.S. Navy / NAVAIR Carrier Demonstration Video ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/01-honda-evtol.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #01</a><a href="../cases/13-fury-ghostbat.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #13</a>
+      <a href="../cases/12-mq25-stingray.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" id="case-13">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-20</span>
+    <span>•</span>
+    <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="../vendors/index.html#anduril" class="badge badge-vendor">Anduril Industries & Boeing Australia</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/13-fury-ghostbat.html">Case #13: Anduril Fury & Boeing MQ-28 Ghost Bat (CCA Triad)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AL-TC-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Transonic M 0.95 • C2 Dispersed Runway • Turbofan FJ44 • Air-to-Air Interceptor (AIM-120 Conformal Bay) • Escort Air Superiority • Lattice OS / MESH</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IHighGEvasiveManeuverDrive"><code>IHighGEvasiveManeuverDrive</code></a></div>
+    <div><em>"Autonomous air-to-air Collaborative Combat Aircraft mandate IHighGEvasiveManeuverDrive and IAutonomousWeaponSeparation to execute machine-speed 9G intercepts and command >40G positive ejection to suppress transonic cavity resonance (Rossiter modes)."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Transonic 9G Kinetic Agility: carbon-composite monocoque construction eliminates pilot G-limits, sustaining 9G evasive missile-breakaway maneuvers.</li><li>Low-Observable Conformal Weapons Carriage: internal bays carry AIM-120 and AIM-9X missiles while preserving very-low-observable (VLO) radar signature.</li><li>Lattice OS Edge Autonomy: distributed sensor-fusion enables machine-speed radar triangulation, pincer intercepts, and silent forward scouting.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Weapons Bay Cavity Resonance (Rossiter Modes): opening doors at Mach 0.95 creates severe acoustic pressure waves; requires high-force positive ejection.</li><li>Internal fuel deficit: compact 9G airframe loiter is limited to <1.5h without aerial refueling, creating an operational dependency on MQ-25 Stingray.</li><li>High unit attritability threshold compared to mass-produced FPV multirotors.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates the Closed UWE Aerial Containment Triad: 1) Kinetic Dogfighter (Fury), 2) Modular Sensor Anchor (MQ-28), 3) Persistent Energy Hub (MQ-25 Tanker) sustaining 24/7 robotic borders.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.cbsnews.com/news/anduril-ceo-unveils-the-fury-unmanned-fighter-jet-60-minutes/" target="_blank" rel="noopener">CBS 60 Minutes (Palmer Luckey) & Australian MoD Test Flight ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a><a href="../cases/12-mq25-stingray.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #12</a>
+      <a href="../cases/13-fury-ghostbat.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

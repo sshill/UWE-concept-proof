@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UOV Domain Taxonomy | Unmanned Warfare Engine</title>
+  <meta name="description" content="Unmanned Orbital Vehicles (Counter-Space & Interceptors) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <link rel="canonical" href="https://uwe-standard.github.io/domains/uov.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container">
+    <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
+    
+    <div class="hero-box">
+      <span class="badge badge-uov" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UOV</span>
+      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Orbital Vehicles (Counter-Space & Interceptors)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem;">Low Earth Orbit & Cislunar Space (160 to 36,000 km)</p>
+      
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+        <strong>Cyber-Physical Governing Laws:</strong>
+        <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Keplerian two-body celestial mechanics, Clohessy-Wiltshire relative equations, Tsiolkovsky rocket equation ΔV limits, solar radiation pressure.</p>
+      </div>
+
+      <div class="lesson-box" style="margin-top:1rem;">
+        <strong>The Legacy Classification Trap:</strong> Sci-fi free-flight orbital tropes: changing orbital inclination by 15° at LEO costs ~2,000 m/s ΔV, locking chemical hunters into narrow co-planar targets.
+      </div>
+    </div>
+
+    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UOV (1 Cases)</h2>
+    <div>
+      <article class="reddit-card case-item" data-domain="UOV" id="case-10">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-19</span>
+    <span>•</span>
+    <a href="../domains/uov.html" class="badge badge-uov">UOV</a>
+    <a href="../vendors/index.html#nextgen-arsenal" class="badge badge-vendor">NextGen Arsenal</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/10-orbital-guardian.html">Case #10: Orbital Guardian ADR Satellite Hunter</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UOV: LM-CA-HR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UOV: Low Earth Orbit (350-1000km) • ESPA Class 150-300kg • Chemical Stored Thrusters • Active Rendezvous & Grappling • Solo Hunter • Phased Array RF</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#ITumblingTargetCapture"><code>ITumblingTargetCapture</code></a></div>
+    <div><em>"Autonomous orbital proximity and interception platforms require ITumblingTargetCapture to solve Clohessy-Wiltshire kinematics, match target 3-axis tumble momentum via CMGs, and execute impedance grappling without kinetic fragmentation."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Standardized robotic grappling transforms passive orbital space into an active interception and debris removal domain.</li><li>Dual-use operational convergence: Active Debris Removal (ADR) and offensive anti-satellite (ASAT/OSC) share 100% identical hardware contracts.</li><li>Direct Keplerian Clohessy-Wiltshire navigation enables micro-impulse station keeping.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>The Tsiolkovsky ΔV Attrition Trap: orbital plane changes cost ~2,000 m/s for a 15° inclination shift at LEO; chemical chasers are restricted to single targets.</li><li>Angular momentum transfer: latching onto an uncooperative tumbling satellite violently transfers spin, risking mechanical shear.</li><li>Secondary Kessler syndrome: relative docking impacts >0.1 m/s risk shattering solar panels and generating clouds of hypervelocity shrapnel.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Demolishes sci-fi free-flight orbital tropes: multi-target orbital sweepers require high-power nuclear-electric propulsion; chemical platforms remain single-mission effectors.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/2177636083099811" target="_blank" rel="noopener">Facebook Reel / Orbital Proximity Docking Animation ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a>
+      <a href="../cases/10-orbital-guardian.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

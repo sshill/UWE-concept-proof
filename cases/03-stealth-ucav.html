@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case #03: Transonic / Supersonic Stealth UCAV | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of Transonic / Supersonic Stealth UCAV (UAV: AH-PA-HO). Physical advantages, failure modes, and HAL contract IAerodynamicTrim.">
+  <link rel="canonical" href="https://uwe-standard.github.io/cases/03-stealth-ucav.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "UWE Case #03: Transonic / Supersonic Stealth UCAV \u2014 Cyber-Physical Architectural Analysis",
+  "description": "Empirical evaluation of Transonic / Supersonic Stealth UCAV (UAV: AH-PA-HO) under Hardware Abstraction Layer IAerodynamicTrim. Confirms the Law of Kinematic Primacy: cosmetic design tropes (bubble cockpits on unmanned airframes) destroy transonic aerodynamic efficiency.",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "datePublished": "2026-10-19",
+  "url": "https://uwe-standard.github.io/cases/03-stealth-ucav.html",
+  "keywords": [
+    "UAV",
+    "UAV: AH-PA-HO",
+    "IAerodynamicTrim",
+    "Defense Aerospace Research",
+    "UWE Standard",
+    "STANAG 4670 replacement"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="active">13 Benchmarks</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 13 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: 2026-10-19</span>
+        <span>•</span>
+        <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+        <a href="../vendors/index.html#global-aerospace" class="badge badge-vendor">Defense Aerospace Research</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #03: Transonic / Supersonic Stealth UCAV
+      </h1>
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>UAV: AH-PA-HO</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">UAV: Atmospheric High-Altitude • C3 Strategic Runway • Jet Propulsion • Air Superiority • Heavy Payload Strike • Optical/Laser Resilient</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#IAerodynamicTrim"><code>IAerodynamicTrim</code></a></div>
+        <div style="line-height:1.5;"><em>"Supersonic tailless unmanned combat airframes mandate IAerodynamicTrim to dynamically bias elevon reflex angles against boundary-layer separation and shock-induced pitching moments."</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points"><li>Tailless blended wing-body yields ultra-low radar cross-section (RCS < -30 dBsm) across VHF to X-band radar frequencies.</li><li>Internal conformal weapons bay prevents weapon drag divergence and maintains stealth during supersonic cruise.</li><li>High structural fuel fraction enables extended unrefueled combat radius (>1,500 km).</li></ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points"><li>Prominent roof bubble canopy creates transonic wave drag divergence (ΔC_D0) and distorts boundary layer entering dorsal intake.</li><li>Severe total pressure recovery loss in serpentine S-duct engine inlet under high angles of attack.</li><li>High yaw divergence sensitivity at supersonic speeds due to absence of vertical stabilizing fins.</li></ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> Confirms the Law of Kinematic Primacy: cosmetic design tropes (bubble cockpits on unmanned airframes) destroy transonic aerodynamic efficiency.
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="https://www.facebook.com/reel/1625827525885877" target="_blank" rel="noopener">Facebook Reel / Aerodynamic Wind Tunnel Model ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>Defense Aerospace Research</strong></div>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/reel/1625827525885877" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        <p style="margin:0.25rem 0;"><a href="04-waverider-corvus.html" class="badge badge-hal">Case #04 Study →</a></p><p style="margin:0.25rem 0;"><a href="05-sickle-wing.html" class="badge badge-hal">Case #05 Study →</a></p><p style="margin:0.25rem 0;"><a href="13-fury-ghostbat.html" class="badge badge-hal">Case #13 Study →</a></p>
+      </div>
+    </article>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>
