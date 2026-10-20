@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UOV Domain Taxonomy | Unmanned Warfare Engine</title>
-  <meta name="description" content="Unmanned Orbital Vehicles (Counter-Space & Interceptors) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <meta name="description" content="Unmanned Orbital Vehicles (Counter-Space & Interceptors) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
   <link rel="canonical" href="https://uwe-standard.github.io/domains/uov.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -22,15 +22,18 @@
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
   </nav>
 </header>
-  <div class="container">
+  <div class="container" style="max-width:960px;">
     <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
     
-    <div class="hero-box">
-      <span class="badge badge-uov" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UOV</span>
-      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Orbital Vehicles (Counter-Space & Interceptors)</h1>
-      <p style="color:var(--text-muted); font-size:1.05rem;">Low Earth Orbit & Cislunar Space (160 to 36,000 km)</p>
+    <div class="hero-box" style="margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <span class="badge badge-uov" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UOV</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Architect: <strong style="color:#fff;">Serhii Khylevych</strong> (Kyiv Baseline)</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.75rem; margin-bottom:0.5rem;">Unmanned Orbital Vehicles (Counter-Space & Interceptors)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:1rem;">Low Earth Orbit & Cislunar Space (160 to 36,000 km)</p>
       
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
         <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Keplerian two-body celestial mechanics, Clohessy-Wiltshire relative equations, Tsiolkovsky rocket equation ΔV limits, solar radiation pressure.</p>
       </div>
@@ -40,9 +43,105 @@
       </div>
     </div>
 
-    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UOV (1 Cases)</h2>
-    <div>
-      <article class="reddit-card case-item" data-domain="UOV" data-vendor="nextgen-arsenal" id="case-10">
+    
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:#58a6ff; margin-top:0;">1. The Historical Doctrine: Conceptual Precedent & Lineage</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Yuriy Kondratyuk (1929, LOR & Orbital Fuel Depots) Paradigm</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">In his seminal 1929 work 'The Conquest of Interplanetary Spaces', Ukrainian aerospace pioneer Yuriy Kondratyuk (Oleksandr Shargei) formulated the Lunar Orbit Rendezvous (LOR) trajectory chosen by NASA for the Apollo program. Crucially, Kondratyuk established the concept of distributed orbital fuel depots and modular spacecraft decoupling, proving that space dominance relies on rendezvous logistics and staging nodes rather than single giant rockets.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--red);">
+      <h3 style="color:#f85149; margin-top:0;">2. The Bureaucratic Trap & Empirical De-Noising</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Sci-Fi Free-Flight Tropes vs Keplerian Celestial Mechanics</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">Popular culture envisions space warfare as dogfights with free directional maneuvering. In physical reality, spacecraft are prisoners of gravity: orbital velocity at LEO is 7.8 km/s. Changing orbital inclination by just 15° costs ~2,000 m/s of ΔV—equivalent to burning 50-70% of total satellite mass in chemical propellant. Space combat is governed strictly by Keplerian two-body celestial mechanics and Clohessy-Wiltshire relative equations.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h3 style="color:#3fb950; margin-top:0;">3. The 7 Universal Operational Vectors</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Universal mission profiles decoupling airframe/hull kinematics from tactical payload kits:</p>
+      <ul style="padding-left:1.25rem; font-size:0.92rem;">
+        <li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>OL-RE-AQ: Co-Orbital Kinetic Interceptor & Hunter</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Maneuvering into matching orbital planes to execute machine-speed kinetic impact or fragmentation.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>OC-EE-PR: Rendezvous & Proximity Operations (RPO) Inspector</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Autonomous close-range fly-around imaging and electronic signals eavesdropping on adversary satellites.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>OM-CE-PS: Orbital Refueling Depot & Life Extension Tug</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Autonomous docking and propellant transfer extending the combat lifecycle of reconnaissance platforms.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>OC-EE-MA: Active Debris Removal (ADR) & Counter-Space</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Deploying harpoons, nets, and robotic clamps to capture and de-orbit hostile space assets.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>OL-EE-PS: Resilient LEO Distributed Mesh Constellation</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Mass-produced SmallSats providing jam-resistant optical crosslinks and optical/SAR surveillance.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>OG-HE-AR: High-Orbit Directed Energy & EW Neutralizer</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>High-power radiofrequency and optical laser dazzler disabling sensor optics at geostationary altitudes.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>OD-RE-AQ: Cislunar & Deep Space Kinetic Interdictor</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Operating in Lagrange point halo orbits to police cislunar transit corridors.</span></li>
+      </ul>
+      <div style="background:#0d1117; border:1px dashed var(--border); padding:0.85rem 1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#e6edf3; font-size:0.88rem;">⚡ 300-Second Multi-Domain Combat Loop:</strong>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin:0.35rem 0 0 0; line-height:1.5;">T+000s: Ground space-tracking radar detects hostile maneuver. T+120s: Hunter (OL-RE-AQ) calculates Clohessy-Wiltshire intercept burn. T+360s: Cold-gas thruster firing. T+600s: Non-cooperative proximity lock. T+720s: Target neutralized.</p>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:#d2a8ff; margin-top:0;">4. The 6-Character Cyber-Physical Matrix: <code>[ O P ]  -  [ E M ]  -  [ T C ]</code></h3>
+      <div class="token-banner" style="font-size:1.05rem;">
+        <strong>Monolithic UWE Standard Token:</strong> <code>[ O P ]  -  [ E M ]  -  [ T C ]</code>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border); color:#58a6ff;">
+              <th style="padding:0.5rem 0.75rem;">Octet 1: Orbital Horizon & Planar Alignment [OP]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 2: Propellant Architecture & Mode [EM]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 3: Autonomy Doctrine & Signal Gateway [TC]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-muted);">
+              <td style="padding:0.6rem 0.75rem;"><b>O: Orbital Horizon</b><br>• L: Low Earth Orbit (LEO, 160-2,000 km)<br>• M: Medium Earth Orbit (MEO, 2,000-35,786 km)<br>• G: Geostationary Orbit (GEO, 35,786 km)<br>• H: Highly Elliptical Orbit (HEO / Molniya)<br>• C: Cislunar / Lagrange Points (L1-L5)<br><br><b>P: Planar Alignment</b><br>• C: Co-Planar Shared Inclination<br>• N: Non-Co-Planar Crossing Orbit<br>• R: Retrograde High-Velocity Intercept</td>
+              <td style="padding:0.6rem 0.75rem;"><b>E: Powerplant & ISP</b><br>• C: Cold-Gas RCS (<75s ISP)<br>• M: Hypergolic Monoprop / Biprop (220-310s ISP)<br>• I: Ion Electric Hall-Effect (1,500-3,000s ISP)<br>• N: Nuclear Thermal Rocket (NTR, 850-1,000s ISP)<br><br><b>M: Dynamic Mission Mode</b><br>• K: Kinetic Kill (One-Way Impact)<br>• R: Rendezvous & Proximity (RPO)<br>• H: Harpoon / Net Debris Capture<br>• D: Refueling & Servicing Dock</td>
+              <td style="padding:0.6rem 0.75rem;"><b>T: Tactical Posture</b><br>• P: Persistent Orbit Surveillance<br>• A: Active Kinetic Attack<br>• M: Swarm Constellation Flocking<br>• S: Dormant Zombie Satellite<br><br><b>C: Communications Media</b><br>• L: Inter-Satellite Laser Crosslink (OISL)<br>• R: Space-to-Ground Phased S/X-Band<br>• Q: Autonomous Star-Tracker / Inertial<br>• S: Deep Space Relay Mesh</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h3 style="color:#7ee787; margin-top:0;">5. Mobile-First Benchmark Cards</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Structured vertical cards benchmarked against frontline combat systems and global defense primes:</p>
+      
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Active Debris Removal & Counter-Space Hunter</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UOV: OC-EE-MA</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> NextGen Arsenal Orbital Guardian / Astroscale</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> LEO sun-synchronous orbit | Cold-gas + electric propulsion | Multi-DoF robotic clamp</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Rideshare fairing deployment (D: C) | Solar array + chemical RCS (E: M)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Clohessy-Wiltshire relative navigation | Star-tracker + LiDAR rendezvous</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 4: Non-cooperative orbital capture and targeted de-orbiting.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Geostationary Mission Extension Tug</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UOV: OG-CE-PS</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Northrop Grumman MEV (Mission Extension Vehicle)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> GEO drift orbit | High-ISP Hall thruster propulsion | Apogee kick motor</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Heavy launch vehicle (D: I) | Solar-electric bus (E: I, 15+ years)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Autonomous mechanical docking to target liquid apogee engine nozzle</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 3: Life-extension, orbital attitude control, and satellite relocation.</div>
+        </div>
+        
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h3 style="color:#e3b341; margin-top:0;">6. Hardware Abstraction Layer (HAL) & Governing Physics</h3>
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Primary HAL Contract: <code>IOrbitalInterceptor / ICelestialMechanics</code></div>
+        <p style="margin:0.35rem 0; font-size:0.88rem; line-height:1.5;">Solves Clohessy-Wiltshire relative equations for close proximity operations (RPO) and manages Tsiolkovsky delta-V budgets under non-linear orbital perturbations.</p>
+      </div>
+      <div style="background:#0d1117; border:1px solid var(--border); padding:1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#58a6ff; font-size:0.9rem;">📐 Cyber-Physical Governing Formula:</strong>
+        <p style="font-family:var(--code-font); color:#fff; font-size:0.95rem; margin:0.5rem 0; background:#161b22; padding:0.5rem 0.75rem; border-radius:4px; overflow-x:auto;">ΔV = I_sp · g_0 · ln(m_0 / m_f)  |  δr̈ + 2ω × δṙ + ω × (ω × δr) = F_thrust / m</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">Tsiolkovsky rocket equation defines maximum kinematic velocity change ΔV, while Clohessy-Wiltshire equations govern relative motion between interceptor and target spacecraft.</p>
+      </div>
+    </section>
+    
+
+    <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UOV (1 Cases)</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UOV physical envelope:</p>
+      <div>
+        <article class="reddit-card case-item" data-domain="UOV" data-vendor="nextgen-arsenal" id="case-10">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -91,6 +190,7 @@
     </div>
   </div>
 </article>
+      </div>
     </div>
   </div>
   <footer class="page-footer">

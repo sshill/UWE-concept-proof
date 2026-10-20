@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>USV Domain Taxonomy | Unmanned Warfare Engine</title>
-  <meta name="description" content="Unmanned Surface Vehicles (Littoral & Marine Vessels) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <meta name="description" content="Unmanned Surface Vehicles (Littoral & Marine Vessels) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
   <link rel="canonical" href="https://uwe-standard.github.io/domains/usv.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -22,15 +22,18 @@
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
   </nav>
 </header>
-  <div class="container">
+  <div class="container" style="max-width:960px;">
     <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
     
-    <div class="hero-box">
-      <span class="badge badge-usv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: USV</span>
-      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Surface Vehicles (Littoral & Marine Vessels)</h1>
-      <p style="color:var(--text-muted); font-size:1.05rem;">Ocean Surface Boundary Layer (Air-Sea Interface)</p>
+    <div class="hero-box" style="margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <span class="badge badge-usv" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: USV</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Architect: <strong style="color:#fff;">Serhii Khylevych</strong> (Kyiv Baseline)</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.75rem; margin-bottom:0.5rem;">Unmanned Surface Vehicles (Littoral & Marine Vessels)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:1rem;">Ocean Surface Boundary Layer (Air-Sea Interface)</p>
       
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
         <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Froude number, wave-piercing slender hull dynamics, Sea State (Beaufort scale) vertical g-shock limits, transverse metacentric height (GM_T).</p>
       </div>
@@ -40,9 +43,105 @@
       </div>
     </div>
 
-    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in USV (1 Cases)</h2>
-    <div>
-      <article class="reddit-card case-item" data-domain="USV" data-vendor="exail" id="case-06">
+    
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:#58a6ff; margin-top:0;">1. The Historical Doctrine: Conceptual Precedent & Lineage</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Zaporozhian Chaika (Lapstrake Clinker) & The Monitor Warning (1862)</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">16th-17th century Cossack naval fleets operated clinker-built 'Chaikas' (60 ft, 50-70 crew) constructed with overlapping oak and linden planks. Chaikas featured bundles of reeds strapped along the gunwales ('remi') providing reserve buoyancy, roll dampening, and unsinkability in heavy Black Sea waves while maintaining a razor-thin visual freeboard that evaded Ottoman galleys. In 1862, the Battle of Hampton Roads proved that small, low-freeboard armored craft render high-sided wooden fleet flagships obsolete overnight.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--red);">
+      <h3 style="color:#f85149; margin-top:0;">2. The Bureaucratic Trap & Empirical De-Noising</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>The British Admiralty Rating Trap & Speedboat Conversion Myth</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">Traditional navies categorize surface ships by displacement tonnage, armor thickness, and gun caliber—a colonial fleet dogma that paralyzed the Russian Black Sea Fleet. Conversely, converting civilian fiberglass planing speedboats into military drones fails in open seas: high-speed planing into Sea State 4+ generates extreme vertical accelerations (G_z > 6-8g), snapping composite stringers and destroying optical gimbal gyros. UWE mandates slender, wave-piercing displacement or semi-submersible hulls.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h3 style="color:#3fb950; margin-top:0;">3. The 7 Universal Operational Vectors</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Universal mission profiles decoupling airframe/hull kinematics from tactical payload kits:</p>
+      <ul style="padding-left:1.25rem; font-size:0.92rem;">
+        <li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AH-PE-AQ: Littoral Long-Range Kinetic Interdictor</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Low-RCS wave-piercing surface hull delivering 300-500 kg shaped warheads against capital ships.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AL-HE-MR: Anti-Air Drone Carrier & Mothership</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Deploying short-range air-defense missile rails or FPV interceptors to neutralize attack helicopters.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AW-DE-PS: Slender Wave-Piercing Hydrographic Sentry</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>High-efficiency slender monohull with drop keel maintaining persistent ASW sonar patrol for 30+ days.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AH-PE-MA: Autonomous Straits Interdiction Gate</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Swarming surface interceptors executing automated chokepoint blockades in contested maritime narrows.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AL-DE-PR: Anti-Submarine Warfare (ASW) Dipping Node</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Deploying active/passive dipping sonars and lightweight torpedoes against hostile submersibles.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AM-EE-MR: Mine Countermeasures (MCM) Shallow Sweeper</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Acoustic and magnetic signature sweeper detonating seabed mines without risking manned minesweepers.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AL-DE-TR: Dispersed Blockade-Running Logistics Transporter</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>High-speed night transit delivering ammunition, fuel, and batteries to besieged coastal islands.</span></li>
+      </ul>
+      <div style="background:#0d1117; border:1px dashed var(--border); padding:0.85rem 1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#e6edf3; font-size:0.88rem;">⚡ 300-Second Multi-Domain Combat Loop:</strong>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin:0.35rem 0 0 0; line-height:1.5;">T+000s: Satellite radar detects enemy frigate. T+060s: Surface wolfpack (AH-PE-AQ) disperses. T+180s: Pincer convergence initiated. T+240s: Anti-air drone (AL-HE-MR) counters naval helicopter. T+300s: Synchronized hull breach confirmed.</p>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:#d2a8ff; margin-top:0;">4. The 6-Character Cyber-Physical Matrix: <code>[ A H ]  -  [ D E ]  -  [ P C ]</code></h3>
+      <div class="token-banner" style="font-size:1.05rem;">
+        <strong>Monolithic UWE Standard Token:</strong> <code>[ A H ]  -  [ D E ]  -  [ P C ]</code>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border); color:#58a6ff;">
+              <th style="padding:0.5rem 0.75rem;">Octet 1: Architecture & Hull Hydrodynamics [AH]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 2: Containerization & Powerplant [DE]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 3: Mission Posture & Signal Backbone [PC]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-muted);">
+              <td style="padding:0.6rem 0.75rem;"><b>A: Architecture</b><br>• P: High-Speed Planing<br>• W: Wave-Piercing Slender<br>• S: Semi-Submersible Low-Freeboard<br>• C: Hydrofoil Catamaran<br><br><b>H: Sea State Survivability</b><br>• 1: Sea State 1-2 (Calm)<br>• 3: Sea State 3-4 (Moderate, 1.5m)<br>• 5: Sea State 5-6 (Rough, 3-4m)<br>• 7: Sea State 7+ (Survival)</td>
+              <td style="padding:0.6rem 0.75rem;"><b>D: Carrier Class</b><br>• T: Trailer / Beach Launch<br>• V: Vessel Davit / Crane<br>• B: Bunker Coastal Pen<br><br><b>E: Powerplant</b><br>• P: Gasoline Waterjet ICE<br>• D: Marine Diesel Inboard<br>• H: Diesel-Electric Hybrid<br>• S: Solar-Wind Auxiliary</td>
+              <td style="padding:0.6rem 0.75rem;"><b>P: Operational Posture</b><br>• A: Direct Kinetic Impact (OWM)<br>• R: Reusable Sensor / Weapon Launch<br>• S: Persistent Sleeper Loiter<br><br><b>C: Communications Media</b><br>• S: LEO Satellite (Starlink/Kymeta)<br>• R: High-Bandwidth RF SDR<br>• Q: Optical Visual Horizon ATR<br>• L: Laser Coastal Crosslink</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h3 style="color:#7ee787; margin-top:0;">5. Mobile-First Benchmark Cards</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Structured vertical cards benchmarked against frontline combat systems and global defense primes:</p>
+      
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Littoral Kinetic Interdictor</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">USV: AH-PE-AQ</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Magura V5 / Sea Baby</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Low-freeboard wave-cleaving hull | Speed 40+ knots | Range > 800 km</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Trailer beach slipway (D: T) | High-output marine gasoline engine (E: P)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Dual Starlink SATCOM + optical backup | Redundant electro-hydraulic steering</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 1: Strategic maritime sea-denial and capital warship sinking.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Slender Wave-Piercing Hydrographic Sentry</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">USV: AW-DE-PS</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Exail DriX H-9 / Oryx O-16</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Slender wave-piercing keel | Sea State 5 stable | Roll-damping fin ballast</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Davit crane / mothership (D: V) | Marine diesel inboard (E: D, 10-30 days)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Gondola drop-keel sonar bus | Anti-collision radar and Starlink mesh</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 3: High-resolution ASW hydrography and acoustic submarine tracking.</div>
+        </div>
+        
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h3 style="color:#e3b341; margin-top:0;">6. Hardware Abstraction Layer (HAL) & Governing Physics</h3>
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Primary HAL Contract: <code>ISurfacePlanner / IMarineKinematics</code></div>
+        <p style="margin:0.35rem 0; font-size:0.88rem; line-height:1.5;">Computes dynamic vertical slam acceleration G_z across incoming wave spectra, automatically trimming interceptor pitch to prevent slamming structural delamination.</p>
+      </div>
+      <div style="background:#0d1117; border:1px solid var(--border); padding:1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#58a6ff; font-size:0.9rem;">📐 Cyber-Physical Governing Formula:</strong>
+        <p style="font-family:var(--code-font); color:#fff; font-size:0.95rem; margin:0.5rem 0; background:#161b22; padding:0.5rem 0.75rem; border-radius:4px; overflow-x:auto;">G_z = c · [V² / B] · [tan(β) / (1 + H_w / L)]</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">Savitsky planing impact formula: vertical g-shock scales with velocity squared V² and deadrise angle β, inversely proportional to beam B and hull length ratio.</p>
+      </div>
+    </section>
+    
+
+    <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in USV (1 Cases)</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the USV physical envelope:</p>
+      <div>
+        <article class="reddit-card case-item" data-domain="USV" data-vendor="exail" id="case-06">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -91,6 +190,7 @@
     </div>
   </div>
 </article>
+      </div>
     </div>
   </div>
   <footer class="page-footer">

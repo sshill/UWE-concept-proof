@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UAV Domain Taxonomy | Unmanned Warfare Engine</title>
-  <meta name="description" content="Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic) — physical boundaries, equations of motion, and empirical benchmarks.">
+  <meta name="description" content="Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
   <link rel="canonical" href="https://uwe-standard.github.io/domains/uav.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -22,15 +22,18 @@
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
   </nav>
 </header>
-  <div class="container">
+  <div class="container" style="max-width:960px;">
     <div style="margin-bottom:1rem;"><a href="index.html">← Back to All Domains</a></div>
     
-    <div class="hero-box">
-      <span class="badge badge-uav" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UAV</span>
-      <h1 class="hero-title" style="margin-top:0.75rem;">Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic)</h1>
-      <p style="color:var(--text-muted); font-size:1.05rem;">Atmospheric Airspace (0 to 30 km)</p>
+    <div class="hero-box" style="margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <span class="badge badge-uav" style="font-size:1rem; padding:0.35rem 0.75rem;">Domain: UAV</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Architect: <strong style="color:#fff;">Serhii Khylevych</strong> (Kyiv Baseline)</span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.75rem; margin-bottom:0.5rem;">Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic)</h1>
+      <p style="color:var(--text-muted); font-size:1.05rem; margin-bottom:1rem;">Atmospheric Airspace (0 to 30 km)</p>
       
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; margin-top:1rem; border:1px solid var(--border);">
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
         <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Aerodynamic Lift-to-Drag (L/D), Mach number shock detachment, boundary-layer aerothermodynamics, wing loading.</p>
       </div>
@@ -40,9 +43,117 @@
       </div>
     </div>
 
-    <h2 style="font-size:1.35rem; margin-bottom:1rem;">Empirical Benchmarks in UAV (6 Cases)</h2>
-    <div>
-      <article class="reddit-card case-item" data-domain="UAV" data-vendor="honda" id="case-01">
+    
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:#58a6ff; margin-top:0;">1. The Historical Doctrine: Conceptual Precedent & Lineage</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>Cossack Beket Signal Pyramids & Steppe Rocket Batteries (16th–18th Century)</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">The Zaporozhian Sich defended a 1,000-km open steppe frontier without stone fortresses by constructing an automated, distributed optical early-warning network ('Figury'). Trihedral tar-soaked beacons on burial mounds transmitted alarm signals from the Black Sea to Kyiv in 20-30 minutes—a deterministic zero-latency optical relay mesh centuries before LEO satellites. Offensively, Cossacks deployed mobile rocket stanchions and multi-barrel 'organky', prioritizing dispersion and fire rate over static artillery armor.</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--red);">
+      <h3 style="color:#f85149; margin-top:0;">2. The Bureaucratic Trap & Empirical De-Noising</h3>
+      <p style="font-size:0.95rem; line-height:1.6; color:#e6edf3;"><strong>The 'Alt-Endurance' Trap (STANAG 4670) & The Heavy Gimbal Paradox</strong></p>
+      <div style="font-size:0.9rem; line-height:1.6; color:var(--text-muted);">NATO STANAG 4670 / DoD Class I-III categories rely on altitude and endurance—metrics that create massive radar beacons (Bayraktar TB2, MQ-9) easily engaged by S-300V4, Buk-M3, and low-cost loitering SAMs (Project 358). Furthermore, observing from 60-80 km standoff requires 50-kg optical turrets (Wescam MX-15/20) under Johnson criteria (f = 800-1200 mm), inflating MTOW to 1,500-5,000 kg and cost to $20M+. UWE shifts mass to the ground-clutter layer (0-300 m) beneath the radar horizon (R_radar ≈ 4.12(√hr + √ht)), replacing heavy glass with 35-50mm lenses and onboard Edge-AI computer vision (ATR).</div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h3 style="color:#3fb950; margin-top:0;">3. The 7 Universal Operational Vectors</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Universal mission profiles decoupling airframe/hull kinematics from tactical payload kits:</p>
+      <ul style="padding-left:1.25rem; font-size:0.92rem;">
+        <li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AL-PE-HR: Standoff C4ISR & Tactical Airborne Relay</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Orbiting 60-100 km behind friendly lines; directional phased RF and LEO satellite gateway unifying the tactical frontline mesh.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AH-EE-MO: Active Emitter Stimulator / Stand-in Decoy</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>High-speed airframe emulating cruise missile RCS; forces SAM radars (9S18 Kupol, 9S36) to radiate and expend interceptors.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AH-EA-MO: Ground-Clutter Low-Altitude Loitering Strike</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Terrain-following cruise (30-150 m) under the radar horizon with terminal optical ATR dive onto high-value armor and air defense.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AL-EA-MA: Extended-Range Tactical Interdiction</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>High-efficiency gliding (100-180 km/h) over 100-300 km depths; interdicting logistics convoys and ammunition nodes.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AL-JA-TA: Deep Strategic Kinetic Penetration</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Long-range (500-1,500+ km) one-way strike against refineries, defense plants, and airbases with anti-jam CRPA-GNSS and TERCOM.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AL-TH-HR: Autonomous Aerial Tanker & Power Lifeline</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Dispersed airborne refueling and battery-swapping orbit multiplying loiter time without forward strip turnaround.</span></li><li style='margin-bottom:0.75rem;'><strong style='color:#58a6ff;'>AS-CM-HR: Collaborative Combat Aircraft (Loyal Wingman)</strong><br><span style='color:var(--text-muted); font-size:0.88rem;'>Transonic Mach 0.95, 9G escort for crewed fighters; carrying forward AESA sensors and internal missile bays (Fury, MQ-28).</span></li>
+      </ul>
+      <div style="background:#0d1117; border:1px dashed var(--border); padding:0.85rem 1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#e6edf3; font-size:0.88rem;">⚡ 300-Second Multi-Domain Combat Loop:</strong>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin:0.35rem 0 0 0; line-height:1.5;">T+000s: Standoff Relay (AL-PE-HR) detects radar emitter. T+045s: Decoys (AH-EE-MO) bait SAM illumination. T+180s: Low-altitude strike UAVs (AH-EA-MO) pop up under radar horizon. T+260s: Edge-AI ATR initiates radio-silent dive. T+300s: Target destroyed.</p>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:#d2a8ff; margin-top:0;">4. The 6-Character Cyber-Physical Matrix: <code>[ A H ]  -  [ D E ]  -  [ T C ]</code></h3>
+      <div class="token-banner" style="font-size:1.05rem;">
+        <strong>Monolithic UWE Standard Token:</strong> <code>[ A H ]  -  [ D E ]  -  [ T C ]</code>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border); color:#58a6ff;">
+              <th style="padding:0.5rem 0.75rem;">Octet 1: Aerodynamic Horizon & Wing Regime [AH]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 2: Containerization & Powerplant [DE]</th>
+              <th style="padding:0.5rem 0.75rem;">Octet 3: Tactical Autonomy & Comms [TC]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-muted);">
+              <td style="padding:0.6rem 0.75rem;"><b>A: Horizon</b><br>• A: Atmospheric (0-3 km)<br>• S: Stratospheric (12-25 km)<br>• T: Transonic (M 0.7-0.98)<br>• H: Hypersonic (M 5.0+)<br><br><b>H: Wing Planform</b><br>• L: High-Aspect (AR≥20)<br>• D: Delta / BWB<br>• S: Swept High-Speed<br>• F: Tailless Flying Wing<br>• C: Canard / Foldable<br>• V: VTOL Crossfade</td>
+              <td style="padding:0.6rem 0.75rem;"><b>D: Deployment</b><br>• H: Hand / Bungee<br>• C: Canister / Pneumatic<br>• R: Rail / JATO Boost<br>• L: Light Dispersed Runway<br>• I: Fixed Infrastructure<br><br><b>E: Powerplant</b><br>• E: Battery Electric<br>• P: Piston ICE (Rotax)<br>• T: Turbojet / Turbofan<br>• H: Hybrid Electric/Gas<br>• R: Rocket Solid/Liquid</td>
+              <td style="padding:0.6rem 0.75rem;"><b>T: Tactical Posture</b><br>• P: Passive Orbit / Relay<br>• A: Active Attack / Strike<br>• M: Mass Swarm Mesh<br>• S: Sleeper / Standby<br>• D: Decoy / Penetrator<br>• H: Collaborative Manned<br><br><b>C: Comms Gateway</b><br>• R: Directional Phased RF<br>• S: LEO Satellite (Starlink)<br>• F: Fiber-Optic Tether<br>• Q: Radio-Silent Optical ATR<br>• L: Laser Free-Space Link</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h3 style="color:#7ee787; margin-top:0;">5. Mobile-First Benchmark Cards</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Structured vertical cards benchmarked against frontline combat systems and global defense primes:</p>
+      
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Standoff Airborne C4ISR & Relay Orbit</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UAV: AL-PE-HR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> TEKEVER AR5 / MQ-9 Reaper</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> High-aspect glider (AR≥20) | Ceiling 8,000-12,000m | L/D > 22</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Dispersed/Fixed Runway (D: I) | Turbocharged ICE (E: P, 24-30h)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Autonomous waypoint patrol | Directional Ku/Ka SATCOM & SDR</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 1: Primary C4ISR backbone and EW gateway outside SAM reach.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Ground-Clutter Low-Altitude Strike</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UAV: AH-EA-MO</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> WB Group Warmate / Switchblade 600</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Canard folding wing | Cruise 120-150 km/h, terminal dive 220 km/h</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Pneumatic canister tube (D: C) | Li-ion electric motor (E: E)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Edge-AI ATR terminal lock | Radio-silent terminal flight (C: Q)</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 3: Surgical destruction of radars and armor at 0-300m altitude.</div>
+        </div>
+        
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-bottom:1rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <strong style="color:#fff; font-size:1rem;">Collaborative Combat Aircraft (Loyal Wingman)</strong>
+            <span class="badge badge-hal" style="font-family:var(--code-font); font-size:0.85rem;">UAV: AS-CM-HR</span>
+          </div>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:#58a6ff;"><strong>OEM Platform:</strong> Anduril Fury (YFQ-44A) / Boeing MQ-28</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Kinematics & Envelope:</strong> Stealth swept wing | Transonic Mach 0.95 | Ceiling 15,000m | 9G sustained</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Logistics & Power:</strong> Dispersed runway / rocket rail | Williams turbofan (E: T)</p>
+          <p style="margin:0.25rem 0; font-size:0.85rem; color:var(--text-muted);"><strong>Autonomy & C2:</strong> Lattice OS autonomous teaming | AESA phased array & MADL bus</p>
+          <div style="margin-top:0.5rem; font-size:0.83rem; color:#3fb950;"><strong>Kill Web Function:</strong> Vector 7: Escort strike packages, absorb missile salvos, forward missile magazine.</div>
+        </div>
+        
+    </section>
+    
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h3 style="color:#e3b341; margin-top:0;">6. Hardware Abstraction Layer (HAL) & Governing Physics</h3>
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Primary HAL Contract: <code>IVtolTransitionDrive / IFixedWingKinematics</code></div>
+        <p style="margin:0.35rem 0; font-size:0.88rem; line-height:1.5;">Governs dynamic crossfade transition from vertical hover to aerodynamic wing lift (SetTransitionRatio(α)) and validates boundary layer flight envelopes under nap-of-the-earth radar clutter.</p>
+      </div>
+      <div style="background:#0d1117; border:1px solid var(--border); padding:1rem; border-radius:6px; margin-top:1rem;">
+        <strong style="color:#58a6ff; font-size:0.9rem;">📐 Cyber-Physical Governing Formula:</strong>
+        <p style="font-family:var(--code-font); color:#fff; font-size:0.95rem; margin:0.5rem 0; background:#161b22; padding:0.5rem 0.75rem; border-radius:4px; overflow-x:auto;">E_total = ∫ P_hover dt + ∫ [½ ρ V³ S (C_D0 + C_L² / (π·AR·e))] dt + ∫ P_dash dt</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">Piecewise multi-phase aerodynamic energy equation: hover disc power scales with (T/A)^0.5, while cruise power is minimized at high aspect ratio AR and low zero-lift drag C_D0.</p>
+      </div>
+    </section>
+    
+
+    <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UAV (6 Cases)</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UAV physical envelope:</p>
+      <div>
+        <article class="reddit-card case-item" data-domain="UAV" data-vendor="honda" id="case-01">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -336,6 +447,7 @@
     </div>
   </div>
 </article>
+      </div>
     </div>
   </div>
   <footer class="page-footer">
