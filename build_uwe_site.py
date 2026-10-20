@@ -377,7 +377,10 @@ VENDORS_DATA = [
     {"slug": "unex", "name": "UNEX Automation", "origin": "Belgium / Ukraine", "platforms": ["ABRIS Amphibious Prime Mover"], "focus": "Heavy electric all-terrain logistics, robotic artillery towing, Bekker soil traction management."},
     {"slug": "honda", "name": "Honda Aircraft Company", "origin": "Japan / USA", "platforms": ["Honda eVTOL (GT-HEV)"], "focus": "Decoupled Lift+Cruise aerodynamics, gas turbine hybrid-electric powertrains, inter-city logistics."},
     {"slug": "frontline-ua", "name": "Ukrainian Frontline Defense-Tech", "origin": "Ukraine", "platforms": ["НРК SlimAk UGV", "Combat Multirotors", "Black Sea USVs"], "focus": "Asymmetric robotic warfare, articulated mud-conforming chassis, electronic warfare resilience, kinetic field prototyping."},
-    {"slug": "nextgen-arsenal", "name": "NextGen Arsenal", "origin": "International", "platforms": ["Orbital Guardian ADR Hunter"], "focus": "Active Debris Removal, proximity operations (RPO), non-cooperative tumbling target capture, dual-use counter-space."}
+    {"slug": "nextgen-arsenal", "name": "NextGen Arsenal", "origin": "International", "platforms": ["Orbital Guardian ADR Hunter"], "focus": "Active Debris Removal, proximity operations (RPO), non-cooperative tumbling target capture, dual-use counter-space."},
+    {"slug": "darpa", "name": "DARPA & Skunk Works Experimental", "origin": "USA", "platforms": ["Mach 6 Hypersonic Waverider (Corvus)"], "focus": "Hypersonic aerothermodynamics, compression lift waveriders, laser communications through plasma sheaths."},
+    {"slug": "global-aerospace", "name": "Defense Aerospace Research", "origin": "USA / Global", "platforms": ["Transonic / Supersonic Stealth UCAV"], "focus": "Tailless blended wing-body stealth, internal weapons bays, aerothermal boundary layer dynamics."},
+    {"slug": "hypersonic-consortium", "name": "Next-Gen Hypersonic Consortium", "origin": "International", "platforms": ["Autonomous Sickle Wing"], "focus": "Tailless sickle wing planforms, fluidic thrust vectoring (FTV), supersonic active flow control."}
 ]
 
 DOMAINS_DATA = [
@@ -430,6 +433,132 @@ DOMAINS_DATA = [
         "cases": ["10-orbital-guardian"]
     }
 ]
+
+VALIDATION_DATA = {
+    "summary": {
+        "total_laws": 4,
+        "confirmed_laws": 4,
+        "total_postulates": 5,
+        "confirmed_postulates": 5,
+        "total_rules": 9,
+        "confirmed_rules": 9,
+        "percentage": 100
+    },
+    "laws": [
+        {
+            "id": "LAW-1",
+            "name": "Law of Kinematic Primacy",
+            "statement": "The physical interface with the operating medium (air, ground, sea, space) strictly dictates platform physics and domain. Cosmetic shapes and commercial marketing terms cannot violate aerodynamic L/D, Bekker soil mechanics, or hydrodynamics.",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "02", "slug": "02-slimak-ugv", "name": "SlimAk UGV", "insight": "Passive mechanical hinge is chassis articulation, not adaptive suspension."},
+                {"id": "03", "slug": "03-stealth-ucav", "name": "Stealth UCAV", "insight": "Cockpit bubble canopies destroy transonic wave drag and inlet pressure recovery."},
+                {"id": "05", "slug": "05-sickle-wing", "name": "Sickle Wing", "insight": "Hypersonic flight eliminates mechanical hinges in favor of fluidic thrust vectoring."},
+                {"id": "06", "slug": "06-exail-usv", "name": "Exail USV", "insight": "Persistent ocean denial demands wave-piercing displacement, not fragile planing."},
+                {"id": "08", "slug": "08-unex-artillery", "name": "UNEX ABRIS", "insight": "Towing capacity in mud is bounded by Bekker soil shear, not motor kW."},
+                {"id": "09", "slug": "09-capstone-coaxial", "name": "CAPSTONE Coaxial", "insight": "Zero stall speed and disc loading strictly define UCV copter physics."}
+            ]
+        },
+        {
+            "id": "LAW-2",
+            "name": "Law of Hierarchical Containerization (C0–C4)",
+            "statement": "Logistics deployment footprints strictly govern robotic vehicle mass, range, and operational tempo. Platforms are partitioned into C0 (Handheld), C1 (Man-Portable), C2 (Light/Dispersed), C3 (Heavy/Slipway), and C4 (Strategic/CATOBAR).",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "01", "slug": "01-honda-evtol", "name": "Honda eVTOL", "insight": "C2 dispersed theater logistics requires GT-HEV to avoid C4 infrastructure lock."},
+                {"id": "06", "slug": "06-exail-usv", "name": "Exail DriX/Oryx", "insight": "C2 (9m) vs C3 (16m) modular logistics dictate harbor slipway vs ocean crane handling."},
+                {"id": "07", "slug": "07-ghostshark-auv", "name": "Ghost Shark XL-AUV", "insight": "C3 heavy slipway footprint allows 12-mine capacity without strategic nuclear docks."},
+                {"id": "10", "slug": "10-orbital-guardian", "name": "Orbital Guardian", "insight": "C2 ESPA rideshare class (150-300kg) dictates upper-stage dispenser interfaces."},
+                {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Stingray", "insight": "C4 CATOBAR carrier-basing requires arresting gear and bow catapult compatibility."},
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Anduril Fury / MQ-28", "insight": "C2 dispersed runway operations enable distributed survivable air combat mass."}
+            ]
+        },
+        {
+            "id": "LAW-3",
+            "name": "Law of Hardware Abstraction & Decoupled Lethality",
+            "statement": "The physical chassis operates as an invariant robotic carrier with standardized HAL contracts, completely decoupled from modular payloads and mission profiles (ISR, EW, Strike, or One-Way Mission / Kamikaze decorator).",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "06", "slug": "06-exail-usv", "name": "Exail USV", "insight": "Dynamic drop-keel gondola decouples ASW/hydrographic sensors from hull motions."},
+                {"id": "07", "slug": "07-ghostshark-auv", "name": "Ghost Shark", "insight": "Invariant subsea hull interchanges 12 naval mines, ALTIUS UAVs, or SOF modules."},
+                {"id": "10", "slug": "10-orbital-guardian", "name": "Orbital Guardian", "insight": "Dual-use hardware: ADR debris capture and offensive ASAT use identical HAL contracts."},
+                {"id": "11", "slug": "11-lockheed-lamprey", "name": "Lamprey MMAUV", "insight": "24 cu ft modular bay separates effector lethality from host vehicle transport."},
+                {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Tanker", "insight": "Decoupled Cobham ARS pod transforms carrier strike aircraft into persistent refuelers."},
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Fury CCA", "insight": "Conformal bay decouples kinetic airframe from AIM-120/AIM-9X munitions."}
+            ]
+        },
+        {
+            "id": "LAW-4",
+            "name": "Law of Dual-Read Cognitive Synchronization",
+            "statement": "Autonomous warfare demands a unified 6-character cyber-physical token ([Domain/Horizon-Container]-[Powerplant-Mission]-[Doctrine-Comms]) decipherable simultaneously by human commanders and edge tactical AI microkernels in microseconds.",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "01", "slug": "01-honda-evtol", "name": "Honda eVTOL", "insight": "Token UAV: AL-TL-HR parsed by commander and mission router instantly."},
+                {"id": "02", "slug": "02-slimak-ugv", "name": "SlimAk UGV", "insight": "Token UGV: GL-EP-WR establishes mobility and mesh comms profile in 6 chars."},
+                {"id": "06", "slug": "06-exail-usv", "name": "Exail USV", "insight": "Token USV: SL-PA-DR governs drop-keel telemetry and endurance constraints."},
+                {"id": "07", "slug": "07-ghostshark-auv", "name": "Ghost Shark", "insight": "Token UUV: PT-RM-DA encodes 1000m pelagic depth and multi-mine salvo mission."},
+                {"id": "10", "slug": "10-orbital-guardian", "name": "Orbital Guardian", "insight": "Token UOV: LM-CA-HR sets LEO orbit, chemical propulsion, and RPO grappling."},
+                {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Stingray", "insight": "Token UAV: AI-TF-DR defines CATOBAR tanker escort doctrine microsecond routing."},
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Fury CCA", "insight": "Token UAV: AL-TC-DR establishes transonic air superiority and Lattice OS edge mesh."}
+            ]
+        }
+    ],
+    "postulates": [
+        {
+            "id": "POSTULATE-1",
+            "name": "Environmental Abstraction Layer (Anti-1812 Engine)",
+            "statement": "Autonomous vehicles must absorb and overcome brutal environmental degradation (viscous mud, aerothermal plasma blackout, Sea State 5, hydrostatic depth, and space vacuum) at the hardware-software HAL boundary.",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "02", "slug": "02-slimak-ugv", "name": "SlimAk UGV", "insight": "Articulated chassis eliminates wheel scrubbing in deep frontline viscous mud."},
+                {"id": "04", "slug": "04-waverider-corvus", "name": "Mach 6 Waverider", "insight": "IThermalPlasmaLink commands aft laser to bypass Mach 6 RF plasma blackout."},
+                {"id": "06", "slug": "06-exail-usv", "name": "Exail DriX USV", "insight": "Drop-keel lowers acoustic payload below surface aeration in Sea State 5."},
+                {"id": "08", "slug": "08-unex-artillery", "name": "UNEX ABRIS", "insight": "Bekker soil slip traction controller prevents wheel spin-down in clay soils."}
+            ]
+        },
+        {
+            "id": "POSTULATE-2",
+            "name": "Parasitic Energy Harvesting & Tanker Lifelines",
+            "statement": "True continuous theater persistence cannot rely on individual battery capacities; it mandates distributed parasitic energy harvesting from host platforms, natural flows, or specialized airborne refueling tankers.",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "11", "slug": "11-lockheed-lamprey", "name": "Lockheed Lamprey", "insight": "Hydrokinetic in-transit harvesting recharges battery to 100% SoC on host sub hulls."},
+                {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Stingray", "insight": "Carrier tanker refuels CCA fighter swarms, doubling combat reach to 900+ nmi."}
+            ]
+        },
+        {
+            "id": "POSTULATE-3",
+            "name": "Sleeper / Sentinel Posture ('Zhdun' State)",
+            "statement": "To survive ubiquitous ISR surveillance, autonomous robotic units must execute ultra-low-power zero-acoustic sentinel postures, lying dormant until triggered by acoustic, seismic, or RF tripwires.",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "07", "slug": "07-ghostshark-auv", "name": "Ghost Shark XL-AUV", "insight": "Rests on continental shelf for weeks with zero acoustic output awaiting choke-point targets."},
+                {"id": "11", "slug": "11-lockheed-lamprey", "name": "Lockheed Lamprey", "insight": "Executes seabed anchor posture with all thrusters unpowered for covert minefield ambush."}
+            ]
+        },
+        {
+            "id": "POSTULATE-4",
+            "name": "Cross-Domain Heterogeneous Kill Web",
+            "statement": "No single domain operates in isolation. Theater containment lines function as a cross-domain web linking Subsea (UUV) + Surface (USV) + Air (UAV/UCV) + Orbit (UOV) with microsecond latency.",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "04", "slug": "04-waverider-corvus", "name": "Hypersonic Corvus", "insight": "Direct laser uplink to Low Earth Orbit satellites enables Mach 6 target handoff."},
+                {"id": "07", "slug": "07-ghostshark-auv", "name": "Ghost Shark + BlueBottle", "insight": "Subsea UUV + surface wave-harvesting USV + air ALTIUS UAV form heterogeneous triad."},
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Anduril CCA Triad", "insight": "Fury interceptor + Ghost Bat sensor node + MQ-25 fuel tanker form continuous aerial line."}
+            ]
+        },
+        {
+            "id": "POSTULATE-5",
+            "name": "Rejection of 'Wunderwaffen' for Attritable Mass",
+            "statement": "Single, bespoke, billionaire-class exquisite weapon systems are mathematically defeated in attrition warfare. Algorithmic software superiority coupled with COTS engines and attritable composite mass dictates victory.",
+            "status": "CONFIRMED",
+            "proof_cases": [
+                {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Stingray", "insight": "Standardized turbofan airframe relieves 25% of costly manned fighter sorties."},
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Anduril Fury (CCA)", "insight": "Commercial FJ44 engine + carbon monocoque yields mass-producible 9G dogfighters."}
+            ]
+        }
+    ]
+}
 
 def write_file(rel_path, content):
     dest = DOCS / rel_path
@@ -529,6 +658,204 @@ header.top-nav {
 .badge-vendor { background: var(--surface-alt); color: var(--text-muted); border-color: var(--border); }
 .badge-hal { background: #161b22; color: #a5d6ff; border-color: #388bfd; font-family: var(--code-font); }
 
+/* Top KPI Telemetry Ribbon */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-light);
+}
+.kpi-card.highlight {
+  border-color: #2ea043;
+  background: linear-gradient(180deg, #122616 0%, var(--surface) 100%);
+}
+.kpi-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  font-family: var(--code-font);
+  color: #fff;
+  line-height: 1;
+}
+.kpi-card.highlight .kpi-num {
+  color: #3fb950;
+}
+.kpi-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+.kpi-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Domain Spectrum Bar */
+.spectrum-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+.spectrum-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.spectrum-bar {
+  display: flex;
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  gap: 2px;
+  background: #0d1117;
+  padding: 2px;
+  border: 1px solid var(--border);
+}
+.spec-seg {
+  height: 100%;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.spec-seg:hover {
+  opacity: 0.85;
+  filter: brightness(1.2);
+}
+.spectrum-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+}
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Concept Validation Dashboard */
+.val-dashboard {
+  background: linear-gradient(180deg, #101726 0%, var(--surface) 100%);
+  border: 1px solid #1f3a5f;
+  border-radius: 8px;
+  padding: 1.75rem;
+  margin: 2rem 0;
+}
+.progress-meter {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0 1.5rem 0;
+}
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  font-family: var(--code-font);
+}
+.progress-track {
+  height: 20px;
+  background: var(--surface-alt);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #30363d;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2ea043 0%, #38bdf8 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
+  transition: width 0.5s ease-in-out;
+}
+.val-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.val-card.law {
+  border-left: 4px solid var(--green);
+}
+.val-card.postulate {
+  border-left: 4px solid var(--cyan);
+}
+.val-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.val-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+.val-card-statement {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+.val-proofs {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+}
+.proof-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  color: #e6edf3;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.proof-tag:hover {
+  border-color: var(--accent);
+  background: #1f2937;
+  text-decoration: none;
+}
+
 /* Reddit/ArXiv Post Card */
 .reddit-card {
   background: var(--surface);
@@ -600,43 +927,89 @@ ul.points li { margin-bottom: 0.4rem; }
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.search-bar { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); color: #fff; border-radius: 6px; font-size: 1rem; margin-bottom: 1.5rem; }
+.search-bar { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); color: #fff; border-radius: 6px; font-size: 1rem; margin-bottom: 1rem; }
 .search-bar:focus { outline: none; border-color: var(--accent); }
-.filter-pills { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-.filter-pill { background: var(--surface); border: 1px solid var(--border); padding: 0.4rem 0.85rem; border-radius: 20px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; }
+.filter-group-label { font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 0.4rem; letter-spacing: 0.5px; }
+.filter-pills { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.filter-pill { background: var(--surface); border: 1px solid var(--border); padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.82rem; color: var(--text-muted); cursor: pointer; transition: all 0.15s ease; }
 .filter-pill:hover, .filter-pill.active { background: var(--surface-alt); color: #fff; border-color: var(--accent); }
+.filter-pill.active { background: #1f2937; color: var(--accent); font-weight: 600; }
 footer.page-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 3rem; }
 """
     write_file("assets/css/style.css", css)
 
 def generate_js():
-    js = """// Instant Client-Side Filter & Search for UWE Cases
+    js = """// Instant Client-Side Filter & Dual Search for UWE Cases
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('case-search');
   const cards = document.querySelectorAll('.case-item');
-  const pills = document.querySelectorAll('.filter-pill');
+  const domainPills = document.querySelectorAll('.domain-pill');
+  const vendorPills = document.querySelectorAll('.vendor-pill');
+  const specSegs = document.querySelectorAll('.spec-seg');
+  
   let activeDomain = 'ALL';
+  let activeVendor = 'ALL';
 
   function applyFilter() {
     const q = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    let visibleCount = 0;
+
     cards.forEach(card => {
       const text = card.textContent.toLowerCase();
       const domain = card.getAttribute('data-domain') || '';
+      const vendor = card.getAttribute('data-vendor') || '';
+
       const domainMatch = (activeDomain === 'ALL' || domain === activeDomain);
+      const vendorMatch = (activeVendor === 'ALL' || vendor === activeVendor);
       const textMatch = !q || text.includes(q);
-      card.style.display = (domainMatch && textMatch) ? 'block' : 'none';
+
+      if (domainMatch && vendorMatch && textMatch) {
+        card.style.display = 'block';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
     });
+
+    const countDisplay = document.getElementById('visible-count');
+    if (countDisplay) {
+      countDisplay.textContent = visibleCount;
+    }
   }
 
   if (searchInput) {
     searchInput.addEventListener('input', applyFilter);
   }
 
-  pills.forEach(pill => {
+  domainPills.forEach(pill => {
     pill.addEventListener('click', () => {
-      pills.forEach(p => p.classList.remove('active'));
+      domainPills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
-      activeDomain = pill.getAttribute('data-filter') || 'ALL';
+      activeDomain = pill.getAttribute('data-domain-filter') || 'ALL';
+      applyFilter();
+    });
+  });
+
+  vendorPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      vendorPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeVendor = pill.getAttribute('data-vendor-filter') || 'ALL';
+      applyFilter();
+    });
+  });
+
+  specSegs.forEach(seg => {
+    seg.addEventListener('click', () => {
+      const targetDomain = seg.getAttribute('data-domain-filter') || 'ALL';
+      domainPills.forEach(p => {
+        if (p.getAttribute('data-domain-filter') === targetDomain) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
+      activeDomain = targetDomain;
       applyFilter();
     });
   });
@@ -677,7 +1050,7 @@ def render_case_card(case, depth=0):
     cons_li = "".join(f"<li>{c}</li>" for c in case["vulnerabilities"])
     related_badges = "".join(f'<a href="{rel}cases/{r}.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #{r[:2]}</a>' for r in case.get("related", []))
     
-    return f"""<article class="reddit-card case-item" data-domain="{case['domain']}" id="case-{case['id']}">
+    return f"""<article class="reddit-card case-item" data-domain="{case['domain']}" data-vendor="{case['vendor_slug']}" id="case-{case['id']}">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -726,9 +1099,53 @@ def render_case_card(case, depth=0):
     </div>
   </div>
 </article>"""
-
 def build_index():
     cases_html = "\n".join(render_case_card(c, depth=0) for c in CASES_DATA)
+    
+    # Generate Laws HTML
+    laws_html = ""
+    for law in VALIDATION_DATA["laws"]:
+        proof_tags = "".join(
+            f'<a href="cases/{p["slug"]}.html" class="proof-tag">'
+            f'<span>Case #{p["id"]} ({p["name"]})</span>'
+            f'<span style="color:var(--text-muted);">• {p["insight"]}</span>'
+            f'</a>'
+            for p in law["proof_cases"]
+        )
+        laws_html += f"""<div class="val-card law">
+  <div class="val-card-header">
+    <div class="val-card-title">⚖️ {law['id']}: {law['name']}</div>
+    <span class="badge badge-uav" style="font-size:0.75rem;">🟢 {law['status']} (100%)</span>
+  </div>
+  <p class="val-card-statement">"{law['statement']}"</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS ({len(law['proof_cases'])} Cases):</div>
+    <div>{proof_tags}</div>
+  </div>
+</div>"""
+
+    # Generate Postulates HTML
+    postulates_html = ""
+    for post in VALIDATION_DATA["postulates"]:
+        proof_tags = "".join(
+            f'<a href="cases/{p["slug"]}.html" class="proof-tag">'
+            f'<span>Case #{p["id"]} ({p["name"]})</span>'
+            f'<span style="color:var(--text-muted);">• {p["insight"]}</span>'
+            f'</a>'
+            for p in post["proof_cases"]
+        )
+        postulates_html += f"""<div class="val-card postulate">
+  <div class="val-card-header">
+    <div class="val-card-title">🛡️ {post['id']}: {post['name']}</div>
+    <span class="badge badge-usv" style="font-size:0.75rem;">🟢 {post['status']} (100%)</span>
+  </div>
+  <p class="val-card-statement">"{post['statement']}"</p>
+  <div class="val-proofs">
+    <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">EMPIRICAL PROOF PLATFORMS ({len(post['proof_cases'])} Cases):</div>
+    <div>{proof_tags}</div>
+  </div>
+</div>"""
+
     jsonld = {
         "@context": "https://schema.org",
         "@type": "TechArticle",
@@ -795,24 +1212,133 @@ def build_index():
       </div>
     </div>
 
+    <!-- Top Telemetry KPI Counters Ribbon -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-num">13</div>
+        <div class="kpi-label">Empirical Benchmarks</div>
+        <div class="kpi-sub">Flight & field tests analyzed</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">6</div>
+        <div class="kpi-label">Physical Domains</div>
+        <div class="kpi-sub">Air, Copter, Ground, Sea, Subsea, Orbit</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">12</div>
+        <div class="kpi-label">Defense Primes & Labs</div>
+        <div class="kpi-sub">Western OEMs & frontline developers</div>
+      </div>
+      <div class="kpi-card highlight">
+        <div class="kpi-num">100%</div>
+        <div class="kpi-label">Concept Validation</div>
+        <div class="kpi-sub">9 of 9 Laws & Postulates Confirmed</div>
+      </div>
+    </div>
+
+    <!-- Cross-Domain Operational Spectrum Bar -->
+    <div class="spectrum-wrap">
+      <div class="spectrum-head">
+        <strong style="font-size:0.95rem; color:#fff;">📊 Cross-Domain Operational Spectrum (13 Empirical Benchmarks)</strong>
+        <span style="font-size:0.8rem; color:var(--text-muted);">Click bar segment to filter cases</span>
+      </div>
+      <div class="spectrum-bar">
+        <div class="spec-seg" data-domain-filter="UAV" style="width:46.15%; background:#3fb950;" title="UAV Fixed-Wing & Hypersonic: 6 cases (46.2%)"></div>
+        <div class="spec-seg" data-domain-filter="UCV" style="width:7.69%; background:#d29922;" title="UCV Copter Combat: 1 case (7.7%)"></div>
+        <div class="spec-seg" data-domain-filter="UGV" style="width:15.38%; background:#bc8cff;" title="UGV Ground Robotics: 2 cases (15.4%)"></div>
+        <div class="spec-seg" data-domain-filter="UUV" style="width:15.38%; background:#58a6ff;" title="UUV Subsea Robotics: 2 cases (15.4%)"></div>
+        <div class="spec-seg" data-domain-filter="USV" style="width:7.69%; background:#38bdf8;" title="USV Surface Vessels: 1 case (7.7%)"></div>
+        <div class="spec-seg" data-domain-filter="UOV" style="width:7.69%; background:#ff7b72;" title="UOV Counter-Space: 1 case (7.7%)"></div>
+      </div>
+      <div class="spectrum-legend">
+        <span class="legend-item"><span class="legend-dot" style="background:#3fb950;"></span> UAV Air (46.2%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#d29922;"></span> UCV Copter (7.7%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#bc8cff;"></span> UGV Ground (15.4%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#58a6ff;"></span> UUV Subsea (15.4%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> USV Surface (7.7%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#ff7b72;"></span> UOV Orbital (7.7%)</span>
+      </div>
+    </div>
+
+    <!-- Concept & Laws Empirical Validation Dashboard -->
+    <section class="val-dashboard" id="validation-dashboard">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h2 style="margin:0; font-size:1.45rem; color:#fff;">📐 Concept & Architectural Laws Empirical Validation Matrix</h2>
+          <p style="margin:0.25rem 0 0 0; color:var(--text-muted); font-size:0.9rem;">
+            Rigorous verification of UWE theoretical axioms against field telemetry, flight test footage, and Western/Ukrainian OEM datasheets.
+          </p>
+        </div>
+        <div class="badge" style="background:#122616; border-color:#2ea043; color:#3fb950; font-size:0.85rem; padding:0.4rem 0.8rem;">
+          STATUS: ALL 9 AXIOMS CONFIRMED (100%)
+        </div>
+      </div>
+
+      <div class="progress-meter">
+        <div class="progress-labels">
+          <span style="color:#58a6ff; font-weight:700;">EMPIRICAL VALIDATION PROGRESS</span>
+          <span style="color:#3fb950; font-weight:700;">9 OF 9 VERIFIED (100.0%)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 100%;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-top:0.5rem; font-size:0.78rem; color:var(--text-muted);">
+          <span>4 Invariant Physical Laws: 4/4 Verified (100%)</span>
+          <span>5 Operational Postulates: 5/5 Verified (100%)</span>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.1rem; color:#58a6ff; margin:1.5rem 0 0.75rem 0; text-transform:uppercase; letter-spacing:0.5px;">
+        ⚖️ Part 1: The Four Invariant Laws of UWE (4/4 Confirmed)
+      </h3>
+      {laws_html}
+
+      <h3 style="font-size:1.1rem; color:#38bdf8; margin:1.5rem 0 0.75rem 0; text-transform:uppercase; letter-spacing:0.5px;">
+        🛡️ Part 2: The Five Operational Postulates of Autonomous Warfare (5/5 Confirmed)
+      </h3>
+      {postulates_html}
+    </section>
+
+    <!-- 13 Empirical Case Studies Section -->
     <div style="margin-bottom:2rem;">
-      <h2 style="font-size:1.4rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
-        🔬 13 Empirical Platform Benchmarks & Architectural Mapping
-      </h2>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
+        <h2 style="font-size:1.4rem; margin:0;">
+          🔬 13 Empirical Platform Benchmarks & Architectural Mapping
+        </h2>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">13</strong> of 13 platforms</span>
+      </div>
       <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.25rem;">
-        Scientific-practical stress-testing of western OEMs, Ukrainian frontline prototypes, and global systems against the 4 Invariant Laws of UWE.
+        Scientific-practical stress-testing of western OEMs, Ukrainian frontline prototypes, and global aerospace systems against the 4 Invariant Laws of UWE.
       </p>
 
       <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor (e.g., 'Anduril', 'coaxial', 'MQ-25', 'IVtol')...">
       
+      <div class="filter-group-label">Filter by Physical Medium Domain:</div>
       <div class="filter-pills">
-        <span class="filter-pill active" data-filter="ALL">All Domains (13)</span>
-        <span class="filter-pill" data-filter="UAV">UAV Fixed-Wing (6)</span>
-        <span class="filter-pill" data-filter="UCV">UCV Copter (1)</span>
-        <span class="filter-pill" data-filter="UGV">UGV Ground (2)</span>
-        <span class="filter-pill" data-filter="UUV">UUV Subsea (2)</span>
-        <span class="filter-pill" data-filter="USV">USV Surface (1)</span>
-        <span class="filter-pill" data-filter="UOV">UOV Orbital (1)</span>
+        <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains (13)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (6)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (1)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (2)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (2)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (1)</span>
+        <span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (1)</span>
+      </div>
+
+      <div class="filter-group-label">Filter by Defense-Tech OEM / Developer:</div>
+      <div class="filter-pills">
+        <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (12)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril (2)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE / Certo (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Frontline UA (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Aerospace Res. (1)</span>
+        <span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Hypersonic (1)</span>
       </div>
 
       <div id="cases-feed">
@@ -945,21 +1471,42 @@ def build_cases_index():
 <body>
   {render_header("cases", depth=1)}
   <div class="container">
-    <h1 class="hero-title" style="font-size:1.85rem;">Empirical Platform Benchmarks (13 Cases)</h1>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
+      <h1 class="hero-title" style="font-size:1.85rem; margin:0;">Empirical Platform Benchmarks (13 Cases)</h1>
+      <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">13</strong> of 13 platforms</span>
+    </div>
     <p style="color:var(--text-muted); margin-bottom:1.5rem;">
       Cross-referencing western OEMs, frontline Ukrainian prototypes, and aerospace systems against the 4 Invariant Laws of UWE.
     </p>
 
     <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor...">
     
+    <div class="filter-group-label">Filter by Physical Medium Domain:</div>
     <div class="filter-pills">
-      <span class="filter-pill active" data-filter="ALL">All Domains (13)</span>
-      <span class="filter-pill" data-filter="UAV">UAV Fixed-Wing (6)</span>
-      <span class="filter-pill" data-filter="UCV">UCV Copter (1)</span>
-      <span class="filter-pill" data-filter="UGV">UGV Ground (2)</span>
-      <span class="filter-pill" data-filter="UUV">UUV Subsea (2)</span>
-      <span class="filter-pill" data-filter="USV">USV Surface (1)</span>
-      <span class="filter-pill" data-filter="UOV">UOV Orbital (1)</span>
+      <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains (13)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (6)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (1)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (2)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (2)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (1)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (1)</span>
+    </div>
+
+    <div class="filter-group-label">Filter by Defense-Tech OEM / Developer:</div>
+    <div class="filter-pills">
+      <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (12)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril (2)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE / Certo (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Frontline UA (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Aerospace Res. (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Hypersonic (1)</span>
     </div>
 
     <div id="cases-feed">

@@ -23,25 +23,46 @@
   </nav>
 </header>
   <div class="container">
-    <h1 class="hero-title" style="font-size:1.85rem;">Empirical Platform Benchmarks (13 Cases)</h1>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
+      <h1 class="hero-title" style="font-size:1.85rem; margin:0;">Empirical Platform Benchmarks (13 Cases)</h1>
+      <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">13</strong> of 13 platforms</span>
+    </div>
     <p style="color:var(--text-muted); margin-bottom:1.5rem;">
       Cross-referencing western OEMs, frontline Ukrainian prototypes, and aerospace systems against the 4 Invariant Laws of UWE.
     </p>
 
     <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor...">
     
+    <div class="filter-group-label">Filter by Physical Medium Domain:</div>
     <div class="filter-pills">
-      <span class="filter-pill active" data-filter="ALL">All Domains (13)</span>
-      <span class="filter-pill" data-filter="UAV">UAV Fixed-Wing (6)</span>
-      <span class="filter-pill" data-filter="UCV">UCV Copter (1)</span>
-      <span class="filter-pill" data-filter="UGV">UGV Ground (2)</span>
-      <span class="filter-pill" data-filter="UUV">UUV Subsea (2)</span>
-      <span class="filter-pill" data-filter="USV">USV Surface (1)</span>
-      <span class="filter-pill" data-filter="UOV">UOV Orbital (1)</span>
+      <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains (13)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (6)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (1)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (2)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (2)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (1)</span>
+      <span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (1)</span>
+    </div>
+
+    <div class="filter-group-label">Filter by Defense-Tech OEM / Developer:</div>
+    <div class="filter-pills">
+      <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (12)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril (2)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE / Certo (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Frontline UA (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Aerospace Res. (1)</span>
+      <span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Hypersonic (1)</span>
     </div>
 
     <div id="cases-feed">
-      <article class="reddit-card case-item" data-domain="UAV" id="case-01">
+      <article class="reddit-card case-item" data-domain="UAV" data-vendor="honda" id="case-01">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -90,7 +111,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UGV" id="case-02">
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="frontline-ua" id="case-02">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -139,7 +160,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-03">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="global-aerospace" id="case-03">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -188,7 +209,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-04">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="darpa" id="case-04">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -237,7 +258,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-05">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="hypersonic-consortium" id="case-05">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -286,7 +307,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="USV" id="case-06">
+<article class="reddit-card case-item" data-domain="USV" data-vendor="exail" id="case-06">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -335,7 +356,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UUV" id="case-07">
+<article class="reddit-card case-item" data-domain="UUV" data-vendor="anduril" id="case-07">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -384,7 +405,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UGV" id="case-08">
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="unex" id="case-08">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -433,7 +454,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UCV" id="case-09">
+<article class="reddit-card case-item" data-domain="UCV" data-vendor="bae-falconworks" id="case-09">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -482,7 +503,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UOV" id="case-10">
+<article class="reddit-card case-item" data-domain="UOV" data-vendor="nextgen-arsenal" id="case-10">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -531,7 +552,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UUV" id="case-11">
+<article class="reddit-card case-item" data-domain="UUV" data-vendor="lockheed-martin" id="case-11">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -580,7 +601,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-12">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="boeing" id="case-12">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
@@ -629,7 +650,7 @@
     </div>
   </div>
 </article>
-<article class="reddit-card case-item" data-domain="UAV" id="case-13">
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="anduril" id="case-13">
   <div class="card-meta">
     <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
     <span>•</span>
