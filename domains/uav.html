@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UAV Domain Taxonomy | Unmanned Warfare Engine</title>
   <meta name="description" content="Unmanned Aerial Vehicles (Fixed-Wing & Hypersonic) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
-  <link rel="canonical" href="https://uwe-standard.github.io/domains/uav.html">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/domains/uav.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../cases/index.html" class="">17 Benchmarks</a>
     <a href="../c2/officer.html" class="">C2 Officer Symbiosis</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="">HAL Registry</a>
@@ -168,7 +168,7 @@
     
 
     <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
-      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UAV (6 Cases)</h2>
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UAV (7 Cases)</h2>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UAV physical envelope:</p>
       <div>
         <article class="reddit-card case-item" data-domain="UAV" data-vendor="honda" id="case-01">
@@ -462,6 +462,55 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="../cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a><a href="../cases/12-mq25-stingray.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #12</a>
       <a href="../cases/13-fury-ghostbat.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="haps-consortium" id="case-16">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-20</span>
+    <span>•</span>
+    <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="../vendors/index.html#haps-consortium" class="badge badge-vendor">Stratospheric Defense & HAPS Aerospace</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/16-rq81-diana.html">Case #16: 'RQ-81 Diana' / Solar HAPS Architecture</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AL-ER-DO</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Stratospheric (20km) • C2 Modular Wing-Box • Solar Photovoltaic + Secondary Battery • Persistent C4ISR Overwatch • Strategic Defense • Optical Laser ISL & MESH</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#ISolarDiurnalEnergyManagement"><code>ISolarDiurnalEnergyManagement</code></a></div>
+    <div><em>"Stratospheric solar pseudo-satellite platforms require ISolarDiurnalEnergyManagement and IAeroelasticFlutterSuppression to balance solar harvesting against nocturnal gravitational descent while actively damping aerodynamic gust-induced limit-cycle flutter across flexible wings."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Persistent Stratospheric Station-Keeping: operating at 65,000 ft (20 km) in the stratospheric wind minimum allows unattenuated solar harvesting and multi-month persistence.</li><li>Stationary Regional Persistence: provides stationary persistence over tactical theaters with microsecond optical/RF ground latency and zero rocket launch costs.</li><li>Laser Cross-Link Gateway: serves as a high-bandwidth optical laser relay bridging terrestrial drone swarms directly to orbital defense constellations.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Physics Debunking: optical line-of-sight horizon at 20 km is ~505 km (maximum theoretical area ~800,000 km², less than 8% of the US landmass, debunking viral clickbait claims).</li><li>Nocturnal Energy Deficit: low 7% air density requires climbing to 70,000 ft during daylight and descending to 50,000 ft at night to trade potential energy for aerodynamic lift.</li><li>Tropospheric Jet Stream Flutter: ultra-high-aspect-ratio flexible wings risk catastrophic limit-cycle flutter when traversing turbulent 35,000 ft jet streams.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Demarcates the boundary between aerodynamic pseudo-satellites (UAV: AL-ER-DO) and true orbital platforms (UOV); enforces physical rigor over CGI military entertainment tropes.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1080077671497853" target="_blank" rel="noopener">Facebook Reel / US NextGen Airpower (Unverified Spec) ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a><a href="../cases/10-orbital-guardian.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #10</a>
+      <a href="../cases/16-rq81-diana.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>

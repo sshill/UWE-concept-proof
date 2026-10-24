@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UGV Domain Taxonomy | Unmanned Warfare Engine</title>
   <meta name="description" content="Unmanned Ground Vehicles (Tactical Robotics & Prime Movers) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
-  <link rel="canonical" href="https://uwe-standard.github.io/domains/ugv.html">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/domains/ugv.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../cases/index.html" class="">17 Benchmarks</a>
     <a href="../c2/officer.html" class="">C2 Officer Symbiosis</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="">HAL Registry</a>
@@ -36,7 +36,7 @@
       
       <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <strong>Cyber-Physical Governing Laws:</strong>
-        <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios.</p>
+        <p style="margin:0.25rem 0 0 0; font-size:0.9rem; color:#e6edf3;">Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios, kinetic evasion velocity.</p>
       </div>
 
       <div class="lesson-box" style="margin-top:1rem;">
@@ -168,7 +168,7 @@
     
 
     <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
-      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UGV (2 Cases)</h2>
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UGV (4 Cases)</h2>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UGV physical envelope:</p>
       <div>
         <article class="reddit-card case-item" data-domain="UGV" data-vendor="frontline-ua" id="case-02">
@@ -266,6 +266,104 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a>
       <a href="../cases/08-unex-artillery.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="knds" id="case-14">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-20</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#knds" class="badge badge-vendor">KNDS France & Germany</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/14-knds-centurio.html">Case #14: KNDS CENTURIO Tactical UGV</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GL-DC-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Ground Land • C2 Light Tactical (2.8t trailer) • Diesel Hydrostatic Drive (60 kW) • ARX20/30 Autocannon RWS • Combined Arms Fire Support • Resilient LOS RF & Fiber-Optic Spool</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IAllWheelSteeringKinematics"><code>IAllWheelSteeringKinematics</code></a></div>
+    <div><em>"Tactical all-wheel-steer robotic platforms require IAllWheelSteeringKinematics and IHydrostaticTractionControl to coordinate independent four-wheel angles and hydraulic displacement, eliminating skid-steer scrubbing losses and holding 60% slopes, while IRemoteWeaponStationStabilization isolates 20mm/30mm autocannon recoil impulses."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>4WS Kinematic Primacy: 4-wheel independent steering eliminates lateral tire scrubbing, saving 35–40% traction energy during turns and enabling diagonal crab-crawling.</li><li>Hydrostatic Crawl Torque: 60 kW diesel hydrostatic drive provides high low-speed torque without mechanical clutch wear, climbing 60% grades with intrinsic hydrostatic braking.</li><li>Zero-Line Fiber-Optic Tethering: deployable optical spool provides unjammable, high-bandwidth telemetry and instant weapon trigger control in dense EW environments.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Hydrostatic Line Shrapnel Sensitivity: 250–350 bar centralized hydraulic circuits risk instant systemic pressure collapse upon fragment penetration; requires ballistic skirts.</li><li>Prominent Acoustic and Thermal IR Profile: 60 kW diesel engine exhaust and oil cooling radiators create elevated infrared and acoustic signatures.</li><li>High Gross Weight: at 2.8 tonnes, extraction requires dedicated recovery prime movers if immobilized.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates the Law of Decoupled Lethality in ground combat: the invariant 2.8t 4WS chassis serves as a mobile carrier decoupled from kinetic autocannon or sapper payloads.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/945299761633386" target="_blank" rel="noopener">Facebook Reel / Defense Advancement ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="../cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="../cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a>
+      <a href="../cases/14-knds-centurio.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="frontline-ua" id="case-17">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-24</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#frontline-ua" class="badge badge-vendor">Ukrainian Frontline Defense-Tech & Robotics</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/17-frodo-ugv.html">Case #17: НРК «Фродо» 6x6 Universal Tactical UGV</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GL-EM-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Ground Land • C2 Tactical (500-700kg gross) • Electric Quick-Swap Battery • Multi-Mission (200-400kg / CASEVAC / Buriya Turret) • Tactical Force Support • Multi-Bearer Starlink/Silvus/ELRS</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IIndependent6x6TractionControl"><code>IIndependent6x6TractionControl</code></a></div>
+    <div><em>"High-speed tactical ground robotics platforms require IIndependent6x6TractionControl and IAdaptiveClearanceSuspension to redistribute torque under single-wheel loss (N-1) and modulate ground clearance (170-330mm) for 40 km/h FPV evasion, while IMultiBearerTacticalGateway manages seamless C2 failover under dense EW."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>40 km/h Sprint Velocity as Kinetic Active Defense: cuts open-ground kill zone exposure time by 70% and breaks the terminal guidance intercept angle of enemy FPV strike drones.</li><li>6x6 Wheel Mesh with N-1 Redundancy: independent suspension across all 6 wheels provides mobility across shell craters and allows mission completion even after single-wheel combat loss.</li><li>Adaptive Clearance & Quick-Swap Battery: modulates height (170–330 mm) for terrain concealment or obstacle clearing; modular batteries swap in minutes supporting 150 km range.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>High-Speed Dynamic Suspension Fatigue: rough terrain sprint at 40 km/h induces extreme dynamic shock loads (G_z > 4–6g) requiring continuous vibration telemetry.</li><li>Visual Silhouette at Max Clearance: full 330 mm elevation raises center of gravity and increases side visual detection profile.</li><li>Battery Mass vs Ballistic Armor Trade-off: preserving 40 km/h agility limits passive armor thickness, making dynamic speed the primary defensive shield.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Codifies Kinetic Evasion as the frontline survivability standard in UGV:GL; demonstrates the value of co-designing tactical robotics with combat units (5th Assault Brigade).
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/2263655697790308" target="_blank" rel="noopener">Facebook Reel / Taurus UGV Company, 5th Assault Brigade ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="../cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="../cases/14-knds-centurio.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #14</a>
+      <a href="../cases/17-frodo-ugv.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>

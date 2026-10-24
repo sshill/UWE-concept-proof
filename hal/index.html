@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hardware Abstraction Layer (HAL) Contract Registry | UWE</title>
   <meta name="description" content="Deterministic cyber-physical interfaces and control law contracts governing robotic fleets under UWE.">
-  <link rel="canonical" href="https://uwe-standard.github.io/hal/index.html">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/hal/index.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../cases/index.html" class="">17 Benchmarks</a>
     <a href="../c2/officer.html" class="">C2 Officer Symbiosis</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="active">HAL Registry</a>
@@ -183,6 +183,54 @@
   </div>
   <div style="font-size:0.85rem; color:var(--text-muted);">
     Tested Platform: <strong>Anduril Fury & Boeing MQ-28 Ghost Bat (CCA Triad)</strong> (Anduril Industries & Boeing Australia) • Token: <code>UAV: AL-TC-DR</code>
+  </div>
+</div><div class="reddit-card" id="IAllWheelSteeringKinematics">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IAllWheelSteeringKinematics</code></h3>
+    <a href="../cases/14-knds-centurio.html" class="badge badge-ugv">Case #14 (UGV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Tactical all-wheel-steer robotic platforms require IAllWheelSteeringKinematics and IHydrostaticTractionControl to coordinate independent four-wheel angles and hydraulic displacement, eliminating skid-steer scrubbing losses and holding 60% slopes, while IRemoteWeaponStationStabilization isolates 20mm/30mm autocannon recoil impulses."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>KNDS CENTURIO Tactical UGV</strong> (KNDS France & Germany) • Token: <code>UGV: GL-DC-DR</code>
+  </div>
+</div><div class="reddit-card" id="IDigitalDisplacementHydraulicDrive">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IDigitalDisplacementHydraulicDrive</code></h3>
+    <a href="../cases/15-tekever-ar6.html" class="badge badge-ucv">Case #15 (UCV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Heavy-lift fluid-power multirotor platforms require IDigitalDisplacementHydraulicDrive to execute sub-20ms digital valve sequencing across distributed hydraulic rotor hubs, converting liquid fuel energy density into microsecond differential thrust while decoupling heavy cargo dynamics under GNSS denial."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>TEKEVER AR6 Heavy-Lift UAS</strong> (TEKEVER) • Token: <code>UCV: CL-PL-DR</code>
+  </div>
+</div><div class="reddit-card" id="ISolarDiurnalEnergyManagement">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>ISolarDiurnalEnergyManagement</code></h3>
+    <a href="../cases/16-rq81-diana.html" class="badge badge-uav">Case #16 (UAV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"Stratospheric solar pseudo-satellite platforms require ISolarDiurnalEnergyManagement and IAeroelasticFlutterSuppression to balance solar harvesting against nocturnal gravitational descent while actively damping aerodynamic gust-induced limit-cycle flutter across flexible wings."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>'RQ-81 Diana' / Solar HAPS Architecture</strong> (Stratospheric Defense & HAPS Aerospace) • Token: <code>UAV: AL-ER-DO</code>
+  </div>
+</div><div class="reddit-card" id="IIndependent6x6TractionControl">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+    <h3 style="margin:0; font-family:var(--code-font); color:#58a6ff;"><code>IIndependent6x6TractionControl</code></h3>
+    <a href="../cases/17-frodo-ugv.html" class="badge badge-ugv">Case #17 (UGV)</a>
+  </div>
+  <div style="background:#111827; padding:0.85rem; border-radius:6px; margin:0.75rem 0; border:1px solid #1f2937;">
+    <strong>One-Sentence Control Law:</strong>
+    <p style="margin:0.25rem 0 0 0; font-style:italic; font-size:0.9rem;">"High-speed tactical ground robotics platforms require IIndependent6x6TractionControl and IAdaptiveClearanceSuspension to redistribute torque under single-wheel loss (N-1) and modulate ground clearance (170-330mm) for 40 km/h FPV evasion, while IMultiBearerTacticalGateway manages seamless C2 failover under dense EW."</p>
+  </div>
+  <div style="font-size:0.85rem; color:var(--text-muted);">
+    Tested Platform: <strong>НРК «Фродо» 6x6 Universal Tactical UGV</strong> (Ukrainian Frontline Defense-Tech & Robotics) • Token: <code>UGV: GL-EM-DR</code>
   </div>
 </div>
   </div>

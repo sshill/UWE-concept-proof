@@ -2,7 +2,7 @@
 
 Live portal: **[https://sshill.github.io/UWE-concept-proof/cases/](https://sshill.github.io/UWE-concept-proof/cases/)**
 
-13 case studies validating the UWE matrix:
+17 case studies validating the UWE matrix:
 
 | # | Platform | Domain | Token | HAL |
 |---|---|---|---|---|
@@ -18,4 +18,8 @@ Live portal: **[https://sshill.github.io/UWE-concept-proof/cases/](https://sshil
 | 10 | [Guardian](10-orbital-guardian.html) | UOV | `UOV: OS-SM-HR` | `IOrbitalInterceptor` |
 | 11 | [Lamprey](11-lockheed-lamprey.html) | UUV | `UUV: SS-ES-LA` | `IBioParasiticHarvest` |
 | 12 | [MQ-25](12-mq25-stingray.html) | UAV | `UAV: AL-TH-HR` | `IAerialRefuelDirector` |
-| 13 | [Fury/MQ-28](13-fury-ghostbat.html) | UAV | `UAV: AS-CM-HR` | `ICollaborativeCombat` |
+| 13 | [Fury/MQ-28](13-fury-ghostbat.html) | UAV | `UAV: AL-TC-DR` | `IHighGEvasiveManeuverDrive` |
+| 14 | [KNDS CENTURIO](14-knds-centurio.html) | UGV | `UGV: GL-DC-DR` | `IAllWheelSteeringKinematics` |
+| 15 | [TEKEVER AR6](15-tekever-ar6.html) | UCV | `UCV: CL-PL-DR` | `IDigitalDisplacementHydraulicDrive` |
+| 16 | [RQ-81 Diana / HAPS](16-rq81-diana.html) | UAV | `UAV: AL-ER-DO` | `ISolarDiurnalEnergyManagement` |
+| 17 | [НРК «Фродо» 6x6](17-frodo-ugv.html) | UGV | `UGV: GL-EM-DR` | `IIndependent6x6TractionControl` |

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case #15: TEKEVER AR6 Heavy-Lift UAS | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of TEKEVER AR6 Heavy-Lift UAS (UCV: CL-PL-DR). Physical advantages, failure modes, and HAL contract IDigitalDisplacementHydraulicDrive.">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/cases/15-tekever-ar6.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "UWE Case #15: TEKEVER AR6 Heavy-Lift UAS \u2014 Cyber-Physical Architectural Analysis",
+  "description": "Empirical evaluation of TEKEVER AR6 Heavy-Lift UAS (UCV: CL-PL-DR) under Hardware Abstraction Layer IDigitalDisplacementHydraulicDrive. Establishes the fluid-power heavy-lift standard within UCV: pure battery power is restricted to tactical micro-strike, while operational sustainment mandates fluid-power density.",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "datePublished": "2026-10-20",
+  "url": "https://sshill.github.io/UWE-concept-proof/cases/15-tekever-ar6.html",
+  "keywords": [
+    "UCV",
+    "UCV: CL-PL-DR",
+    "IDigitalDisplacementHydraulicDrive",
+    "TEKEVER",
+    "UWE Standard",
+    "STANAG 4670 replacement"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="active">17 Benchmarks</a>
+    <a href="../c2/officer.html" class="">C2 Officer Symbiosis</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 17 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: 2026-10-20</span>
+        <span>•</span>
+        <a href="../domains/ucv.html" class="badge badge-ucv">UCV</a>
+        <a href="../vendors/index.html#tekever" class="badge badge-vendor">TEKEVER</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #15: TEKEVER AR6 Heavy-Lift UAS
+      </h1>
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>UCV: CL-PL-DR</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">UCV: Rotorcraft Disc-Loaded • C2 Light Tactical (600kg MTOW) • Piston Engine Digital Displacement Fluid Power • Heavy Logistics (200kg / 500km) • Forward Force Support • Anti-Jam & GNSS-Denied</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#IDigitalDisplacementHydraulicDrive"><code>IDigitalDisplacementHydraulicDrive</code></a></div>
+        <div style="line-height:1.5;"><em>"Heavy-lift fluid-power multirotor platforms require IDigitalDisplacementHydraulicDrive to execute sub-20ms digital valve sequencing across distributed hydraulic rotor hubs, converting liquid fuel energy density into microsecond differential thrust while decoupling heavy cargo dynamics under GNSS denial."</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points"><li>Breaking the Multirotor Specific Energy Bottleneck: liquid fuel (12,000 Wh/kg) driving digital hydraulics delivers 200+ kg payload over 500 km range in a pure VTOL footprint.</li><li>Digital Fluid Power Simplicity: eliminates failure-prone mechanical transmissions, swashplates, and pitch pushrods in favor of high-speed digital hydraulic valves.</li><li>Frontline GLOC Resupply: enables non-line-of-sight autonomous artillery shell, ammunition, and battery delivery across interdicted frontline corridors without crew exposure.</li></ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points"><li>Continuous Acoustic and Thermal Profile: internal combustion engine creates a continuous acoustic signature and thermal exhaust plume vulnerable to SHORAD.</li><li>Hydraulic Water Hammer Fatigue: rapid digital valve cycling induces hydraulic pressure transients in flexible hoses, demanding pulsation dampers and telemetry monitoring.</li><li>High Rotor Disc Downwash: heavy disc loading creates violent dust and debris downwash during forward unprepared site landings.</li></ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> Establishes the fluid-power heavy-lift standard within UCV: pure battery power is restricted to tactical micro-strike, while operational sustainment mandates fluid-power density.
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="https://lnkd.in/p/d9Ztc8D8" target="_blank" rel="noopener">LinkedIn / German Army Logistics Validation ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>TEKEVER</strong></div>
+        </div>
+        <div>
+          <a href="https://lnkd.in/p/d9Ztc8D8" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        <p style="margin:0.25rem 0;"><a href="01-honda-evtol.html" class="badge badge-hal">Case #01 Study →</a></p><p style="margin:0.25rem 0;"><a href="09-capstone-coaxial.html" class="badge badge-hal">Case #09 Study →</a></p>
+      </div>
+    </article>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>
