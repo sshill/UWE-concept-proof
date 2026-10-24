@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cyber-Physical Officer: Human-Machine Symbiosis | UWE Standard</title>
+  <meta name="description" content="Autonomous warfare command doctrine: The Moore-Plumley paradigm, APM (300-400) vs CPM (2-3) discrimination, STDFUA biometric fail-safe, and 'I Shoot As I Think' zero translation latency. Authored by Serhii Khylevych.">
+  <link rel="canonical" href="https://uwe-standard.github.io/c2/officer.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "The Cyber-Physical Officer: Human-Machine Symbiosis in the Unmanned Warfare Engine (UWE)",
+  "description": "Multi-domain C2 command doctrine, Moore-Plumley paradigm, APM vs. CPM discrimination, Fallout 4-STDFUA biometric fail-safe, and 'I Shoot As I Think' zero translation latency.",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Unmanned Warfare Engine Initiative"
+  },
+  "datePublished": "2026-10-24",
+  "mainEntityOfPage": "https://uwe-standard.github.io/c2/officer.html"
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="">13 Benchmarks</a>
+    <a href="../c2/officer.html" class="active">C2 Officer Symbiosis</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container">
+    <div style="margin-bottom:1rem; font-size:0.85rem; color:var(--text-muted);">
+      <a href="../index.html">Hub</a> &gt; <span style="color:#fff;">C2 Officer Symbiosis</span>
+    </div>
+
+    <!-- Hero Card -->
+    <div class="hero-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+        <span class="badge" style="background:#1f6feb; color:#fff; font-size:0.85rem; font-weight:700;">COMMAND & COGNITIVE SYMBIOSIS DOCTRINE</span>
+        <span style="font-size:0.85rem; color:#8b949e;">Kyiv Wartime Baseline • 2026</span>
+      </div>
+      <h1 class="hero-title" style="font-size:2.1rem;">The Cyber-Physical Officer: Human-Machine Symbiosis in UWE</h1>
+      <p class="hero-subtitle" style="font-size:1.15rem; color:#c9d1d9;">
+        Beyond "Twitch-Reflexes": The Moore-Plumley Paradigm, APM vs. CPM Discrimination, and the <em>"I Shoot As I Think"</em> Doctrine
+      </p>
+      
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-top:1px solid var(--border); padding-top:1rem; margin-top:1rem;">
+        <div>
+          <span style="color:#fff; font-weight:600;">Author:</span> Serhii Khylevych — <em>Systems Architect & MilTech Strategist</em>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/pulse/cyber-physical-officer-human-machine-symbiosis-engine-khylevych-pkjff" target="_blank" rel="noopener" class="badge badge-uav" style="font-size:0.85rem; padding:0.4rem 0.8rem; text-decoration:none;">Read Live on LinkedIn Pulse ↗</a>
+        </div>
+      </div>
+
+      <!-- Master Title Infographic Cover -->
+      <div style="margin-top:2rem; text-align:center;">
+        <img src="../assets/img/uwe_officer_trinity_collage.jpg" alt="UWE Tactical Officer Trinity & Invariant HAL" style="width:100%; max-width:1000px; height:auto; border-radius:8px; border:1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.6);">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.6rem;">
+          <em>Figure 1: Master Title Infographic Cover (2400×1350) — The Command Trinity (Hal Moore, Jordan O'Neil, Pete Maverick) orbiting the Invariant HAL Anchor (CSM Basil Plumley) across the 6-Domain Saturated Gauge.</em>
+        </p>
+      </div>
+
+      <!-- Epistemological Disclaimer -->
+      <div style="background:#161b22; border-left:4px solid var(--amber); padding:1rem; border-radius:6px; margin-top:1.5rem; font-size:0.88rem; line-height:1.6; color:#c9d1d9;">
+        <strong style="color:#d29922;">⚠️ EPISTEMOLOGICAL DISCLAIMER & SYSTEM BOUNDARIES:</strong><br>
+        The author of this architecture does not hold authorization to cite classified operational after-action reports (AARs) or restricted multi-domain tactical telemetry datasets of sovereign states. Consequently, the cinematic case studies referenced herein (<em>We Were Soldiers</em>, <em>G.I. Jane</em>, <em>Top Gun: Maverick</em>, <em>Lie to Me</em>) are utilized strictly as non-linear conceptual metaphors and qualitative cognitive models to evaluate the extreme limits of human-machine interaction, reflex synchronization, and real-time cybernetic fail-safes under high-intensity kinematic stress.
+      </div>
+    </div>
+
+    <!-- Section 1: Foundational Analogy -->
+    <section class="reddit-card" style="border-left:4px solid var(--accent);">
+      <h2 style="color:#58a6ff; margin-top:0;">1. The Foundational Analogy: Naval Fleet Scaling across 6 Domains</h2>
+      <p style="color:#e6edf3; font-size:0.95rem; line-height:1.6;">
+        In classical land warfare, command revolves around directing human bodies. In <strong>UWE</strong>, command shifts to orchestrating high-density cyber-physical fleets across six operating domains: 
+        <strong>Space (<a href="../domains/uov.html">UOV</a>)</strong>, 
+        <strong>Air (<a href="../domains/uav.html">UAV</a>)</strong>, 
+        <strong>Copter (<a href="../domains/ucv.html">UCV</a>)</strong>, 
+        <strong>Ground (<a href="../domains/ugv.html">UGV</a>)</strong>, 
+        <strong>Surface (<a href="../domains/usv.html">USV</a>)</strong>, and 
+        <strong>Subsea (<a href="../domains/uuv.html">UUV</a>)</strong>.
+      </p>
+      <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6;">
+        This operational paradigm directly mirrors <strong>Naval Fleet Operations (ВМФ)</strong>: autonomous robotic fleets operate with high technological density per unit, navigate hostile physical fluids, and execute coordinated strikes under strict electronic silence (EMCON). Command authority scales across three maritime tiers:
+      </p>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-top:1.25rem;">
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <strong style="color:#fff; font-size:1.05rem;">Tier 1: Ship Captain / Corvette</strong>
+            <span class="badge badge-uav" style="font-size:0.75rem;">TACTICAL ORDER</span>
+          </div>
+          <p style="font-size:0.85rem; color:#58a6ff; margin:0.25rem 0;"><strong>Command Unit:</strong> Single heavy platform (<code>SL-PA-MO</code>, <code>GL-EB-DW</code>) or tactical cluster.</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;"><strong>Operational Scope:</strong> Total autonomy under electronic blackout. The officer functions as a ship captain: managing hull damage, local power budgets, and executing terminal strikes without waiting for satellite pings.</p>
+        </div>
+
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <strong style="color:#fff; font-size:1.05rem;">Tier 2: Division Commander</strong>
+            <span class="badge badge-usv" style="font-size:0.75rem;">KILL WEB COORDINATOR</span>
+          </div>
+          <p style="font-size:0.85rem; color:#38bdf8; margin:0.25rem 0;"><strong>Command Unit:</strong> Multi-asset strike groups (Air-Surface-Subsea).</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;"><strong>Operational Scope:</strong> Dynamic Kill Web allocation and rapid intermodal deployment (C0-C2 Containerization) from off-road beach trailers before adversary counter-battery locks on.</p>
+        </div>
+
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <strong style="color:#fff; font-size:1.05rem;">Tier 3: Fleet Admiral</strong>
+            <span class="badge badge-uov" style="font-size:0.75rem;">STRATEGIC ARCHITECT</span>
+          </div>
+          <p style="font-size:0.85rem; color:#ff7b72; margin:0.25rem 0;"><strong>Command Unit:</strong> Entire 6-domain theater containment shield.</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;"><strong>Operational Scope:</strong> Full theater orchestration, balancing the <strong>Cost-Exchange Ratio (attrition calculus)</strong>, and integrating open-architecture APIs to out-scale adversary industrial output.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Moore-Plumley Symbiosis -->
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h2 style="color:#bc8cff; margin-top:0;">2. The Hal Moore & CSM Basil Plumley Symbiosis (E2E Combat Lifecycle)</h2>
+      <p style="color:#e6edf3; font-size:0.95rem; line-height:1.6;">
+        The primary anxiety of military commanders regarding AI is the <em>"loss of control"</em>—the fear of opaque algorithms usurping command or executing unauthorized escalations.
+      </p>
+      <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6;">
+        UWE resolves this by adopting the historical command dynamic of <strong>Lt. Col. Hal Moore and CSM Basil Plumley</strong> (Battle of Ia Drang, 1965):
+      </p>
+      
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin:1rem 0;">
+        <div style="background:#161b22; border:1px solid var(--border); border-radius:6px; padding:1rem;">
+          <h4 style="margin:0 0 0.5rem 0; color:#58a6ff;">🎖️ The Commander (Hal Moore)</h4>
+          <p style="font-size:0.88rem; color:#e6edf3; margin:0;">Holds the <strong>"Why" and "What"</strong> — strategic intent, ethical stewardship, sovereign authority under the Law of Armed Conflict, and cryptographic lethal release.</p>
+        </div>
+        <div style="background:#161b22; border:1px solid var(--border); border-radius:6px; padding:1rem;">
+          <h4 style="margin:0 0 0.5rem 0; color:#d2a8ff;">⚙️ The UWE Engine (CSM Basil Plumley)</h4>
+          <p style="font-size:0.88rem; color:#e6edf3; margin:0;">Holds the <strong>"How"</strong> — tireless discipline, terramechanics, aerodynamic drag solving, logistical containerization, and microsecond Kill Web routing.</p>
+        </div>
+      </div>
+
+      <h3 style="color:#fff; font-size:1.1rem; margin-top:1.5rem;">The Five Phases of the Combat Lifecycle</h3>
+      <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.9rem;">
+        <div style="background:#111827; padding:0.85rem 1rem; border-radius:6px; border:1px solid #1f2937;">
+          <strong style="color:#58a6ff;">Phase 1: Planning & Intent vs. Physical Reality:</strong> The Commander dictates operational vectors. UWE calculates the dynamic feasibility index against terramechanics, waves, and jamming. Like Plumley, UWE grumbles in cold numbers: <em>"Sir, your vector is 82% viable; shift deployment to C2 mobile rails for 100%."</em>
+        </div>
+        <div style="background:#111827; padding:0.85rem 1rem; border-radius:6px; border:1px solid #1f2937;">
+          <strong style="color:#58a6ff;">Phase 2: Decentralized Logistics & Sustainment:</strong> The Commander focuses on operational geometry. UWE automatically manages the supply continuum (Law II): monitoring battery SOC, routing <a href="../domains/ugv.html">UGV</a> mobile powerbanks (LLD-2), and pre-positioning munition pods.
+        </div>
+        <div style="background:#111827; padding:0.85rem 1rem; border-radius:6px; border:1px solid #1f2937;">
+          <strong style="color:#58a6ff;">Phase 3: The Kinetic Kill Web (LLD-1):</strong> The Commander tracks operational tempo. UWE binds orbital sensors (<a href="../domains/uov.html">UOV</a>) to tactical multirotors (<a href="../domains/ucv.html">UCV</a>) and surface interceptors (<a href="../domains/usv.html">USV</a>) at machine speed, resolving microsecond target handoffs without human cognitive lag.
+        </div>
+        <div style="background:#111827; padding:0.85rem 1rem; border-radius:6px; border:1px solid #1f2937;">
+          <strong style="color:#f85149;">Phase 4: Critical States & "Broken Arrow" (Law III Decoupled Lethality):</strong> When defense lines are breached, the Commander authorizes the cybernetic equivalent of "Broken Arrow." UWE activates runtime One-Way Mission (OWM / LLD-5) decorators: uncapping thermal limits, commanding 15G defensive turns, and transforming recon platforms into sacrificial kinetic rams to save human lives.
+        </div>
+        <div style="background:#111827; padding:0.85rem 1rem; border-radius:6px; border:1px solid #1f2937;">
+          <strong style="color:#3fb950;">Phase 5: Post-Engagement Recovery & Sleeper Fortresses:</strong> UWE coordinates autonomous CASEVAC, schedules 15-minute fast charging, and settles subsea nodes back into the seabed in low-power "Zhdun" sleeper mode (LLD-3). Master Sergeant UWE reports: <em>"Fleet re-armed, defensive pickets silent, awaiting orders, Sir."</em>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: APM vs CPM -->
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h2 style="color:#3fb950; margin-top:0;">3. Cognitive Discrimination: APM vs. CPM</h2>
+      <p style="color:#e6edf3; font-size:0.95rem; line-height:1.6;">
+        Military leaders rightly fear the <em>"twitch-panic"</em> scenario—the fear that an overstimulated operator will panic-click and trigger an unintended kinetic escalation. UWE neutralizes this through a strict architectural separation:
+      </p>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin:1.25rem 0;">
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <strong style="color:#3fb950; font-size:1.1rem;">APM: 300–400 Actions/min</strong>
+            <span class="badge" style="background:#122616; color:#3fb950;">MOTOR REALM</span>
+          </div>
+          <p style="font-size:0.88rem; color:#e6edf3; margin:0.25rem 0;"><strong>Function:</strong> Spatial maneuvering, sensory orientation, EW frequency hopping, re-grouping orders, and platform survival.</p>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0.25rem 0;"><strong>Mechanism:</strong> Fluid muscle memory, hotkeys, and precision manipulator inputs.</p>
+          <div style="margin-top:0.75rem; font-size:0.85rem; color:#3fb950; font-weight:600;">🛡️ ZERO LETHAL DANGER: High APM manipulates kinematics and telemetry; it cannot authorize an explosive train.</div>
+        </div>
+
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1.2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <strong style="color:#f85149; font-size:1.1rem;">CPM: 2–3 Commands/min</strong>
+            <span class="badge" style="background:#2d1617; color:#f85149;">SOVEREIGN WILL</span>
+          </div>
+          <p style="font-size:0.88rem; color:#e6edf3; margin:0.25rem 0;"><strong>Function:</strong> Legally binding lethal authorization and strategic state shifts (OWM activation).</p>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin:0.25rem 0;"><strong>Mechanism:</strong> Deliberate, conscious execution signed via individual cryptographic tokens (<strong>STANAG 4754 / ED25519</strong>).</p>
+          <div style="margin-top:0.75rem; font-size:0.85rem; color:#f85149; font-weight:600;">⚖️ SOVEREIGN ACCOUNTABILITY: Each command carries the weight of international law and sovereign defense.</div>
+        </div>
+      </div>
+
+      <div style="background:#161b22; border:1px solid var(--border); border-radius:6px; padding:1rem; margin-top:1rem;">
+        <h4 style="color:#fff; margin:0 0 0.5rem 0;">✈️ The "Nuclear Pilot" Standard & Why Pure Gamers Fail</h4>
+        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin:0;">
+          This standard mirrors a <strong>fighter pilot carrying tactical nuclear munitions</strong>: possessing superhuman subconscious motor control at 9G, paired with icy moral clarity regarding the weapon release switch. Pure esports gamers fail as combat commanders because tournaments occur in risk-free environments where defeat is merely a lost match; under kinetic artillery fire, unconditioned psychology fractures. In UWE doctrine, gamers serve strictly as <strong>Technical Instructors for ARM-SRM Simulators</strong> to drill muscle memory, while the combat seat is held exclusively by a commissioned officer bound by military oath.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Reflex Loop & Shoot As Think -->
+    <section class="reddit-card" style="border-left:4px solid var(--cyan);">
+      <h2 style="color:#38bdf8; margin-top:0;">4. The Cyber-Physical Reflex Loop & "I Shoot As I Think"</h2>
+      <p style="color:#e6edf3; font-size:0.95rem; line-height:1.6;">
+        The transition from command intent to kinetic execution requires an indivisible three-stage <strong>Cyber-Physical Reflex Loop</strong>:
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:1rem; margin:1.25rem 0;">
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem;">
+          <h4 style="color:#38bdf8; margin:0 0 0.35rem 0;">🔹 Stage I: Ergonomics of Intent — Why the Mechanical Manipulator Wins</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin:0;">
+            Futuristic concepts often push gesture control or eye-tracking. In high-intensity combat, UWE rejects these gimmicks in favor of precision mechanical manipulators (mouse or trackball). Eye-tracking suffers from involuntary saccadic micro-glances (10–30 ms), while touchscreens block visual telemetry and lack tactile feedback under mechanical vibration. A physical cursor trajectory plus an intentional tactile click with resistance requires coordinated motor-cortex activation — the ultimate biological indicator of conscious intent.
+          </p>
+        </div>
+
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem;">
+          <h4 style="color:#d2a8ff; margin:0 0 0.35rem 0;">🔹 Stage II: The Biometric Sentinel — Fallout 4-STDFUA Protocol</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin:0;">
+            Drawing on the real-time feedback loops proven in the author's technical project <strong>Fallout 4-STDFUA</strong>, UWE implements an automated multimodal biometric fail-safe monitoring Blood Glucose, Heart Rate Variability (HRV), vocal micro-tremors, and FACS facial action coding. If shrapnel impact, acute concussion, or panic is detected, erratic mouse movement is identified as an involuntary muscle spasm: <strong>the system immediately locks the lethal command line (CPM)</strong>, preventing accidental detonation, and Master Sergeant UWE transfers command up-chain while taking the fleet into defensive station-keeping.
+          </p>
+        </div>
+
+        <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem;">
+          <h4 style="color:#7ee787; margin:0 0 0.35rem 0;">🔹 Stage III: The Operational Creed — "I Shoot As I Think" (Zero Translation Latency)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin:0 0 1rem 0;">
+            In the microsecond domain of Dagger Dogfights where closing speeds reach km/s and EW pulses blind standard radios, linear decision cycles are fatal: <em>"Shoot, then think"</em> leads to fratricide; <em>"Think, then shoot"</em> leads to destruction via adversary Edge-AI translation latency.
+          </p>
+          
+          <div style="text-align:center;">
+            <img src="../assets/img/hal_moore_shoot_as_think.png" alt="Lt. Col. Hal Moore executing command and kinetic fire simultaneously" style="width:100%; max-width:850px; height:auto; border-radius:6px; border:1px solid var(--border);">
+            <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.5rem;">
+              <em>Figure 2: The Physical Embodiment of "I Shoot As I Think" — Lt. Col. Hal Moore in the Ia Drang firefight. Handset to ear coordinating sovereign multi-domain fires (CPM), while his rifle simultaneously engages charging assault waves (APM). Zero translation latency between thought, command, and kinetic delivery.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Coastal Extraction & System Rescue -->
+    <section class="reddit-card" style="border-left:4px solid var(--amber);">
+      <h2 style="color:#d29922; margin-top:0;">5. The Coastal Extraction: Jane's Cold-State Topology & System Rescue</h2>
+      <p style="color:e6edf3; font-size:0.95rem; line-height:1.6;">
+        The climax on the hostile coast in <em>G.I. Jane</em> anchors <strong>Lt. Jordan O'Neil</strong> in our human triad orbiting the <strong>Plumley Anchor (UWE Engine)</strong>:
+      </p>
+
+      <div style="text-align:center; margin:1rem 0;">
+        <img src="../assets/img/jordan_oneil_coastal_rescue.jpg" alt="Lt. Jordan O'Neil on the Hostile Coast" style="width:100%; max-width:850px; height:auto; border-radius:6px; border:1px solid var(--border);">
+        <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.5rem;">
+          <em>Figure 3: Lt. Jordan O'Neil on the Coastline — Cold calculation under mortal stress: emotional noise severed, functioning as a pure tactical processor rescuing the system when automation fractures.</em>
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1rem;">
+        <div style="background:#111827; padding:1rem; border-radius:6px; border:1px solid #1f2937;">
+          <h4 style="color:#fff; margin:0 0 0.35rem 0;">Cold-State Calculation Under Pressure</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">
+            Emotional noise is severed: her mind operates as a pure tactical processor, evaluating terrain contours and vectors with algorithmic detachment, perfectly synchronized with Master Sergeant UWE.
+          </p>
+        </div>
+        <div style="background:#111827; padding:1rem; border-radius:6px; border:1px solid #1f2937;">
+          <h4 style="color:#e3b341; margin:0 0 0.35rem 0;">System Rescue (Overriding Damaged Automation)</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">
+            Her mission on that coast is the rescue of Master Chief. In UWE doctrine, this carries vital architectural meaning: a human with this mindset <strong>saves the cyber-physical system itself</strong> when automation is damaged, blinded by EW strikes, or trapped in an algorithmic deadlock.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Character Synthesis Summary -->
+    <section class="reddit-card" style="border-left:4px solid var(--green);">
+      <h2 style="color:#7ee787; margin-top:0;">6. The Trinity of Command: Character Synthesis Summary</h2>
+      <p style="color:#e6edf3; font-size:0.95rem; line-height:1.6;">
+        Neither Maverick, Moore, nor O'Neil is a ready-made UWE Officer. What unites them is <strong>acceptance of the physical reality of combat (Law I)</strong> and non-linear decision-making. The UWE Officer is an engineered psychological alloy:
+      </p>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin:1.25rem 0;">
+        <div style="background:#161b22; border:1px solid var(--border); border-radius:6px; padding:1rem;">
+          <h4 style="color:#58a6ff; margin:0 0 0.5rem 0;">🎖️ The Hal Moore Component</h4>
+          <div style="font-size:0.82rem; color:#3fb950; font-weight:700; margin-bottom:0.4rem;">MORAL SOVEREIGNTY & CPM ANCHOR</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">
+            Absolute fidelity to the military oath, ethical command, and human stewardship. The officer never views robotic fleets as a video game; they carry sovereign accountability under the Law of Armed Conflict.
+          </p>
+        </div>
+
+        <div style="background:#161b22; border:1px solid var(--border); border-radius:6px; padding:1rem;">
+          <h4 style="color:#38bdf8; margin:0 0 0.5rem 0;">🌊 The Jordan O'Neil Component</h4>
+          <div style="font-size:0.82rem; color:#38bdf8; font-weight:700; margin-bottom:0.4rem;">SPATIAL TELEMETRY & PREDICTIVE OODA</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">
+            Compressed situational awareness and total elimination of panic. Reads compressed 6-character tokens across 6 operating domains simultaneously, anticipating edge-AI maneuvers before network bottlenecks register.
+          </p>
+        </div>
+
+        <div style="background:#161b22; border:1px solid var(--border); border-radius:6px; padding:1rem;">
+          <h4 style="color:#ff7b72; margin:0 0 0.5rem 0;">⚡ The Pete Maverick Component</h4>
+          <div style="font-size:0.82rem; color:#ff7b72; font-weight:700; margin-bottom:0.4rem;">KINEMATIC PRIMACY & 9G ADAPTATION</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin:0;">
+            Rejection of administrative dogma in favor of immutable physical laws. In high-G crises (Dagger Dogfights), pushes platforms to structural limits, overriding peacetime limiters because they know the metal will hold.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem; margin-top:0.75rem;">
+        <strong style="color:#bc8cff;">⚙️ The Basil Plumley Anchor (The Cyber-Physical Engine):</strong>
+        <p style="font-size:0.88rem; color:var(--text-muted); margin:0.35rem 0 0 0; line-height:1.5;">
+          These three human dimensions converge around the Plumley Anchor (UWE Engine): a tireless, objective master sergeant executing kinematics, containerization, and fail-safe supervision. The machine protects the human from physiological errors; the human infuses the machine with sovereign moral intent.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 7: Lexicon Mapping -->
+    <section class="reddit-card" style="border-left:4px solid var(--purple);">
+      <h2 style="color:#d2a8ff; margin-top:0;">7. Lexicon & Architectural Mapping of the UWE Master Infographic</h2>
+      <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6;">
+        To ensure total doctrinal fidelity, every visual badge, vector, and arc on the master infographic corresponds to an exact cyber-physical subsystem:
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.88rem; margin-top:1rem;">
+        <div style="background:#161b22; padding:0.85rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#fff;">1. Central Anchor (Sam Elliott / Plumley):</strong> 
+          <code style="color:#58a6ff;">[INVARIANT HAL ANCHOR | FALLOUT 4-STDFUA MULTIMODAL SUITE]</code> — The machine executor managing the pressure gauge dial across 6 saturated domains (<code>UOV</code>, <code>UAV</code>, <code>UCV</code>, <code>UGV</code>, <code>USV</code>, <code>UUV</code>).
+        </div>
+        <div style="background:#161b22; padding:0.85rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#fff;">2. Top Apex Node (Mel Gibson / Moore):</strong> 
+          <code style="color:#3fb950;">[2-3 CPM | IA DRANG DOCTRINE | 'FIRST ON GROUND, LAST TO LEAVE']</code> — Sovereign moral core and lethal authorization token holder.
+        </div>
+        <div style="background:#161b22; padding:0.85rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#fff;">3. Left Wing Node (Demi Moore / O'Neil):</strong> 
+          <code style="color:#38bdf8;">[ANTIFRAGILE COGNITIVE TOPOLOGY | PREDICTIVE SYNTHESIS]</code> — Spatial telemetry, extraction coordination, and multi-domain OODA loop.
+        </div>
+        <div style="background:#161b22; padding:0.85rem; border-radius:6px; border:1px solid var(--border);">
+          <strong style="color:#fff;">4. Right Wing Node (Tom Cruise / Maverick):</strong> 
+          <code style="color:#ff7b72;">[300-400 APM | TERMINAL INTERCEPTION | ZERO LATENCY]</code> — Tactical motor reflex and supercritical vectoring under extreme physical stress.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Deep Crosslink Matrix -->
+    <section class="reddit-card" style="border-left:4px solid var(--accent); background:rgba(31, 111, 235, 0.04);">
+      <h2 style="color:#58a6ff; margin-top:0;">8. Deep Cross-Domain & Empirical Benchmark Topology</h2>
+      <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.25rem;">
+        The Cyber-Physical Officer orchestrates across the full spectrum of UWE physical domains, empirical benchmarks, and HAL contracts:
+      </p>
+
+      <h3 style="font-size:1.05rem; color:#fff; margin-bottom:0.75rem;">🌐 Six Operating Physical Medium Domains</h3>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:1.5rem;">
+        <a href="../domains/uav.html" class="badge badge-uav" style="padding:0.6rem; font-size:0.85rem; text-align:center; text-decoration:none;">UAV • Air Troposphere</a>
+        <a href="../domains/ucv.html" class="badge badge-ucv" style="padding:0.6rem; font-size:0.85rem; text-align:center; text-decoration:none;">UCV • Combat Strike</a>
+        <a href="../domains/ugv.html" class="badge badge-ugv" style="padding:0.6rem; font-size:0.85rem; text-align:center; text-decoration:none;">UGV • Ground Terrain</a>
+        <a href="../domains/usv.html" class="badge badge-usv" style="padding:0.6rem; font-size:0.85rem; text-align:center; text-decoration:none;">USV • Surface Vessels</a>
+        <a href="../domains/uuv.html" class="badge badge-uuv" style="padding:0.6rem; font-size:0.85rem; text-align:center; text-decoration:none;">UUV • Subsea Depths</a>
+        <a href="../domains/uov.html" class="badge badge-uov" style="padding:0.6rem; font-size:0.85rem; text-align:center; text-decoration:none;">UOV • Orbital Space</a>
+      </div>
+
+      <h3 style="font-size:1.05rem; color:#fff; margin-bottom:0.75rem;">🔬 Key Empirical Benchmarks Governing C2 Symbiosis</h3>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0.75rem; margin-bottom:1.5rem;">
+        <a href="../cases/13-fury-ghostbat.html" style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:0.75rem; text-decoration:none; color:inherit; display:block;">
+          <strong style="color:#58a6ff; font-size:0.9rem;">Case #13: Anduril Fury / Ghost Bat</strong>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin:0.25rem 0 0 0;">Loyal Wingman collaborative combat aircraft validating the APM/CPM pilot handshake.</p>
+        </a>
+        <a href="../cases/01-honda-evtol.html" style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:0.75rem; text-decoration:none; color:inherit; display:block;">
+          <strong style="color:#58a6ff; font-size:0.9rem;">Case #01: Honda eVTOL GT-HEV</strong>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin:0.25rem 0 0 0;">Piecewise energy budget proving hover vs cruise power limits during transition.</p>
+        </a>
+        <a href="../cases/02-slimak-ugv.html" style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:0.75rem; text-decoration:none; color:inherit; display:block;">
+          <strong style="color:#bc8cff; font-size:0.9rem;">Case #02: НРК SlimAk UGV</strong>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin:0.25rem 0 0 0;">Articulated ground chassis kinematics vs marketing myths of adaptive suspension.</p>
+        </a>
+        <a href="../cases/06-exail-usv.html" style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:0.75rem; text-decoration:none; color:inherit; display:block;">
+          <strong style="color:#38bdf8; font-size:0.9rem;">Case #06: Exail DriX USV</strong>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin:0.25rem 0 0 0;">Wave-piercing surface hull hydrodynamics and acoustic silent station-keeping.</p>
+        </a>
+        <a href="../cases/07-ghostshark-auv.html" style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:0.75rem; text-decoration:none; color:inherit; display:block;">
+          <strong style="color:#58a6ff; font-size:0.9rem;">Case #07: Ghost Shark XL-AUV</strong>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin:0.25rem 0 0 0;">Autonomous subsea sleeper fortress resting on the continental shelf awaiting C2 activation.</p>
+        </a>
+      </div>
+
+      <div style="background:#111827; border:1px solid #1f2937; border-radius:6px; padding:1rem;">
+        <strong style="color:#d29922;">⚙️ Hardware Abstraction Layer Registry:</strong>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin:0.25rem 0 0 0;">
+          Explore the deterministic control contracts governing lift transition (<code>IVtolTransitionDrive</code>), articulated steering (<code>IArticulatedChassis</code>), and surface sea-keeping (<code>ISurfacePlanner</code>): 
+          <a href="../hal/index.html" style="color:#58a6ff; margin-left:0.5rem;">View Complete HAL Registry →</a>
+        </p>
+      </div>
+    </section>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>
