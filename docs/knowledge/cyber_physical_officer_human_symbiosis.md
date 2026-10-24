@@ -4,10 +4,13 @@
 * **Author:** Serhii Khylevych (Principal Systems Architect, MilTech Strategist)
 * **Status:** 🟢 **RELEASED & PUBLISHED (24 October 2026)**
 * **Live Canonical URL:** [LinkedIn Pulse Article](https://www.linkedin.com/pulse/cyber-physical-officer-human-machine-symbiosis-engine-khylevych-pkjff)
-* **Associated Artifacts:**
-  * Master Text: `UWE_Human_Integration_LinkedIn.md` / `.html` / `.odt` / `.docx`
-  * Tactical Infographic: `uwe_officer_trinity_collage.jpg` (2400×1350)
-  * Combat Proof: `hal_moore_shoot_as_think.png` (Ia Drang firefight)
+  * Associated Artifacts:
+    * Master Text: `UWE_Human_Integration_LinkedIn.md` / `.html` / `.odt` / `.docx`
+    * Master Infographic (Figure 1): `uwe_officer_trinity_collage.jpg` (2400×1350)
+    * Figure 2: `hal_moore_shoot_as_think.png` (Ia Drang firefight — "I Shoot As I Think")
+    * Figure 3: `jordan_oneil_coastal_rescue.jpg` (Hostile coastline — Antifragile System Rescue)
+    * Figure 4: `maverick_dagger_dogfight.png` (9G Dagger Dogfight — Kinematic Boundary Primacy)
+  * Dedications: Sam Elliott (Plumley), Mel Gibson (Moore), Demi Moore (O'Neil), Tom Cruise (Maverick) + Special Gratitude to KJ Choo.
 
 ---
 
