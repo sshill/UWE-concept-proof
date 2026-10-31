@@ -2,7 +2,7 @@
 
 * **Author:** Serhii Khylevych (Principal Systems Architect)
 * **Affiliation:** Unmanned Warfare Engine (UWE) Architectural Group
-* **Last Updated:** 19 October 2026, 21:30 EEST
+* **Last Updated:** 31 October 2026, 17:15 EEST
 * **Repository:** `/home/hills/Documents/UWS` (Branch: `main`)
 
 ---
@@ -22,10 +22,12 @@
   * 🟢 **ДОСТАВЛЕНО УСПІШНО (Delivered / Valid Recipient Mailboxes)**
   * Поштовий сервер RUSI прийняв повідомлення; поштових реджектів (Bounce, Mail Delivery Subsystem failure / NDR) **НЕ надходило**. Адреси є дійсними та активними.
 * **Поточний редакційний статус:** 
-  * ⏳ **НА РЕДАКЦІЙНОМУ РОЗГЛЯДІ (Under Editorial Review / Triage)**
-* **Графік моніторингу та зворотного зв'язку (Follow-up Timeline):**
-  * *Тиждень 1 (14–21 жовтня 2026):* Внутрішній тріаж та первинний огляд редактора (Justin Bronk) та профільного експерта з морської сили (Sidharth Kaushal).
-  * *Тиждень 2–3 (28 жовтня – 4 листопада 2026):* Вікно очікування офіційного підтвердження прийняття до друку / коментарів рецензентів. У разі відсутності реакції — санкціоновано ввічливий follow-up запит.
+  * 🔴 **ВІДХИЛЕНО ЧЕРЕЗ ФОРМАТ / ЕКСКЛЮЗИВНІСТЬ ЗНЯТО (Declined / Released)**
+  * **Офіційний вердикт (27.10.2026):** Редактор Justin Bronk (`JustinB@rusi.org`) офіційно повідомив про відмову через перевищення ліміту слів (5 610 слів рукопису проти цільових 1 200–1 400 слів RDS) та відмінність від house style.
+  * **Стратегічний статус:** Юридично та етично знято заборону на одночасне подання (Exclusivity Clause). Монографія переорієнтована на незалежні профільні видання (*Naval News*, *Navy Lookout*).
+* **Хронологія завершення циклу (Resolution Timeline):**
+  * *27 жовтня 2026 р., 13:55:* Отримано відповідь Justin Bronk з рекомендацією успіху в іншому виданні.
+  * *27 жовтня 2026 р., 15:55:* Надіслано відповідь Сергія Хилевича з подякою та збереженням інституційного мосту. Цикл подання до RDS офіційно завершено.
 
 ### [2026-10-15] Modern War Institute (MWI) at West Point (USMA, NY)
 * **Назва рукопису:** *The Autonomous Trench: Why 1-to-1 Teleoperation Fails in the Sensor-Rich Kill Zone and Demands an Unmanned Warfare Engine*
@@ -159,10 +161,10 @@
 | # | Цільове видання | Назва матеріалу / Спрямування | Матеріали & Формати | Контактні дані | Поточний статус & Зворотний зв'язок |
 |---|---|---|---|---|---|
 | **1** | **Modern War Institute (MWI) at West Point**<br>*(Вест-Пойнт, США)* | **The Autonomous Trench: Why 1-to-1 Teleoperation Fails in the Sensor-Rich Kill Zone and Demands an Unmanned Warfare Engine**<br>*(Сухопутна війна, тактичний сон «ждун», критика 1-до-1 телеоперації)* | • `UWE_MWI_West_Point_Essay.docx`<br>• `UWE_MWI_West_Point_Essay.pdf`<br>• Схема бою 16:9 | `MWIsubmissions@westpoint.edu`<br>`john.amble@westpoint.edu`<br>`charles.faint@westpoint.edu` | ⏳ **ПОДАНО / НА РОЗГЛЯДІ**<br>Подано 15.10.2026. Шлюз USMA прийняв пакет; 0 реджектів (синтаксис валідовано). Очікується вердикт: 22–29.10. |
-| **2** | **War on the Rocks (WOTR)**<br>*(США)* | **The Death of MALE Sanctuaries and the Rise of the Collaborative Kill Web**<br>*(Повітряна війна, приземний ешелон 0–300 м, SEAD/DEAD)* | • `UWE_War_on_the_Rocks_Essay.docx`<br>• `UWE_War_on_the_Rocks_Essay.pdf`<br>• 2 тактичні інфографіки | `submissions@warontherocks.com` | 🟡 **ПІТЧ ЗВЕДЕНО / РЕЗЕРВ**<br>Супровідний пітч зафіксовано в `fc1136c`. Готовий до відправки після проходження RUSI. |
+| **2** | **War on the Rocks (WOTR)**<br>*(США)* | **The Death of MALE Sanctuaries and the Rise of the Collaborative Kill Web**<br>*(Повітряна війна, приземний ешелон 0–300 м, SEAD/DEAD)* | • `UWE_War_on_the_Rocks_Essay.docx`<br>• `UWE_War_on_the_Rocks_Essay.pdf`<br>• 2 тактичні інфографіки | `submissions@warontherocks.com` | ⏳ **НА ПАУЗІ ДО 7–10.11 (Election Freeze)**<br>Реліз від RUSI отримано. Пакет повністю готовий. Запуск після проходження виборчого піку в США. |
 | **3** | **Defense One**<br>*(Вашингтон, США)* | **Retiring the "FPV" Hobbyist Slang: Why the Pentagon Needs the Open UCV Standard**<br>*(Військовий стандарт UCV, відкритий HAL для Replicator)* | • `UWE_Defense_One_OpEd.docx`<br>• `UWE_Defense_One_OpEd.pdf`<br>• Тези для подкасту | Bradley Peniston (`bpeniston@defenseone.com`)<br>Patrick Tucker (`ptucker@defenseone.com`) | 🟢 **ПРИЙНЯТО ДО ДРУКУ (In Production)**<br>Драфт прийнято Bradley Peniston. Щоденний моніторинг `defenseone.com/ideas/` (Пн–Пт, 16:00–23:00 EEST). Очікує запису подкасту. |
 | **4** | **Air & Space Forces Magazine / TWZ** | **The Low-Altitude Reconnaissance Imperative: Target Acquisition Geometry vs. High-Standoff Myths** | • `UWE_Air_Space_Forces_Feature.docx`<br>• `UWE_Air_Space_Forces_Feature.pdf` | Редакція AFA / TWZ | 🟢 **ГОТОВО ДО НАДСИЛАННЯ** |
-| **5** | **Naval News**<br>*(Париж / Вашингтон)* | **Cross-Domain Maritime Autonomy: Persistent Surface USVs & Undersea XL-AUVs**<br>*(Exail Wave-Piercers, Ghost Shark Carrier Law, Drop Keel & Acoustic Gateway HAL)* | • Push #1: Exail USVs ([Пост](https://lnkd.in/p/dr7xpMVU))<br>• Push #2: Ghost Shark AUKUS ([Пост](https://lnkd.in/p/deY-rctz))<br>• Доктринальний драфт колонки | Xavier Vavasseur (`xavier@navalnews.com`), редакція Naval News | 🟢 **АКТИВНИЙ ПУШ / OUTREACH (x2)**<br>Опубліковано 2 цільові архітектурні ін'єкції 19.10.2026. Моніторинг фідбеку та підготовка повноформатної колонки. |
+| **5** | **Naval News**<br>*(Париж / Міжнародне)* | **The Software-Defined Escort: Why Distributed Autonomous Formations and Converted Commercial Hulls Must Solve the Seabed and Escort Crises**<br>*(Морська монографія: Type 45, CUI Langeled, MAC-ships 2.0)* | • `UWE_RUSI_Defence_Systems_Monograph.docx`<br>• Інфографіка 16:9<br>• Доктринальний драфт колонки | Xavier Vavasseur (`xavier@navalnews.com`), редакція Naval News | 🟢 **ПРІОРИТЕТ №1 (Non-US Target)**<br>Опубліковано 2 цільові ін'єкції 19.10. Після релізу від RUSI (27.10) монографія переорієнтована на Naval News. Пакет у виробництві. |
 | **6** | **The Space Review**<br>*(США)* | **The Kondratyuk Paradigm: Why Resilient Orbital Defense Demands a Decentralized Nodal Architecture, Not Monolithic Satellites**<br>*(Орбітальна оборона, спадщина Кондратюка, UOV таксономія)* | • `UWE_Space_Review_Submission.docx`<br>• `UWE_Space_Review_Submission.pdf`<br>• 300 DPI інфографіка | Jeff Foust (`jeff@thespacereview.com`) | ⏳ **НА РОЗГЛЯДІ РЕДАКТОРА (Under Review)**<br>Отримано підтвердження від Jeff Foust. Очікування випуску; щотижневий моніторинг по понеділках ввечері (US EST) / вівторок ранок (Київ). |
 
 ---
