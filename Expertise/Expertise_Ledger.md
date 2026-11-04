@@ -32,6 +32,9 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 21 | **Ukrainian UCV Spectrum (8 Frontline Platforms)** | [DefPulse Guide](https://defpulse.news/8-suchasnyh-ukrayinskyh-fpv-platform-na-ozbroyenni-zsu/) | `UCV: HQ-TE-IR` (P1-Sun)<br>`UCV: LQ-HE-AF` (Жах/Хижак)<br>`UCV: LQ-HE-AQ` (Вирій PRO)<br>`UCV: LQ-ME-AP` (Шершні/Пегас)<br>`UCV: CQ-HE-AR` (Мольфар) | `IRotorcraftHighSpeedDynamics` & `IFiberOpticSpoolManager` & `IAutonomousTerminalTracker` | De-noises hobbyist "FPV" moniker into 5 cyber-physical UCV classes under UWE Article 2: 450 km/h air interceptors (P1-Sun), 10–25 km zero-RF fiber munitions (Жах/Хижак), edge-AI optical auto-trackers (Вирій PRO), heavy 14kg mine bombers/relays (Пегас/Шершні), and $400 mass attrition swarms (Мольфар). | 2026-10-26 |
 | 22 | **Stratonex VARAN UGV** | [Defence Blog](https://lnkd.in/p/dDrYcfbn) | `UGV: WM-LE-PQ` | `IDrawbarTractionController` & `IPassiveVisualOdometry` & `IActiveGeometrySuspension` | Codifies "If you can make it out of wood, make it out of wood" attrition doctrine; 500kg payload / 1t tow / 70 km/h sprint; passive 3D vision avoids active LIDAR/radar ELINT emissions; debunks marketing claim of "adaptive suspension" — VARAN uses quasi-static Active Variable-Geometry Suspension (AVGS) with motorized lever arms that multiply actuator torque and create mud failure points in black soil. | 2026-10-26 |
 | 23 | **LPP JWI-4000 C-UAS Interceptor** | [LinkedIn](https://lnkd.in/p/d6DutPRP) / [LPP](https://lp-praha.cz) | `UAV: AC-RE-AQ` | `IAirborneInterceptionDynamics` & `IAsterixRadarCueingGateway` & `ITerminalBlastDispersion` | Solves 2025 vs 2026 spec shift (70 km glide vs 10 km at 4,000m ceiling); aerodynamic parasite drag power scales with $V^3$, forcing 30–50C battery drain during 35 m/s vertical sprint and 300 km/h dash; switch from 1.5kg fragmentation to 1.8kg thermobaric warhead compensates for CEP latency at 130+ m/s closure speed; integrates ASTERIX radar cueing with terminal optical AI. | 2026-10-26 |
+| 24 | **Kill Zone Autonomy & Human-Machine Teaming (Patrick Lurtz)** | [LinkedIn](https://lnkd.in/p/d7ptMX9P) | `UGV: GL-DC-DR`<br>`UCV: HQ-TE-IR` | `IHumanMachineIntentGateway` & `IDynamicKillWebRouting` | Validates expanding kill zone (20–50 km) as a sensor-to-shooter latency system rather than static distance; exposes Western "logistics trap" (limiting UGVs to CASEVAC/ammo while adversaries mass kinetic strike swarms); breaks 1-to-1 teleoperation bottleneck by decoupling 300–400 APM reflexive vehicle dynamics from low-cadence (2–3 CPM) human lethal intent authority. | 2026-11-01 |
+| 25 | **French Army STAT / B2LT Caylus C-UAS (83 Systems / 34 OEMs)** | [LinkedIn](https://lnkd.in/p/dz9UcSrn) / Tim De Zitter | `UAV: AC-RE-AQ`<br>`UCV: HQ-TE-IR` | `ITargetTrackTelemetryBroker` & `IDecoupledEffectorGateway` & `ICounterUasArbitrationEngine` | Validates UWE core thesis: "A counter-drone defence is not the sum of its boxes, but what happens between them." Testing 83 systems from 34 vendors in unscripted terrain exposes the fatal flaw of isolated black boxes (RF/acoustic fratricide, human-in-the-loop latency); confirms necessity of UWE Hardware Abstraction Layer (HAL) to translate diverse sensors into standardized Target Track Telemetry (TTT) and effectors into uniform Execution APIs with <50ms edge arbitration. | 2026-11-04 |
+
 
 ---
 
@@ -446,3 +449,46 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 * **Architectural Lesson for UWE:**
   * Validates **UWE Article 1 (*The Alt-Endurance Trap*)**: Single flat endurance and range metrics are meaningless in combat aviation. Range and flight time are dynamic functions of kinetic climb rate and terminal dash velocity.
   * Reinforces **Decoupled Lethality**: Modular containerized launch (catapult/RATO tube) and abstracted external sensor gating (`IAsterixRadarCueingGateway`) transform low-cost fixed-wing airframes into distributed kinetic air-defense interceptor nodes.
+
+---
+
+## 21. Case Study #24: The Expanding Kill Zone & Human-Machine Teaming (Patrick Lurtz)
+
+* **Target Source:** [LinkedIn Post](https://lnkd.in/p/d7ptMX9P) / Patrick Lurtz
+* **Date Analyzed:** 2026-11-01
+* **UWE 6-Character Tokens:** `UGV: GL-DC-DR`, `UCV: HQ-TE-IR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IHumanMachineIntentGateway`, `IDynamicKillWebRouting`
+  * **One-Sentence Definition:** *"Bi-directional command bridge filtering 300–400 APM reflexive vehicle dynamics while binding lethal engagement authority strictly to cryptographically verified human intent (CPM <= 3)."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **The Kill Zone is a System, Not a Distance:** Validates UWE doctrine that effective depth (20–50 km) is dictated by sensor-to-shooter latency and kill web integration, not airframe range.
+  * **Human-Machine Teaming:** Confirms the Moore/Plumley command paradigm (Commander holds intent; system executes tactical friction at machine speed).
+* **Engineering Vulnerabilities & Legacy Gaps (🔴):**
+  * **The "Logistics Trap":** Relegating autonomy strictly to CASEVAC and ammunition resupply ignores the necessity of forward kinetic denial and sacrificial breaching (OWM).
+  * **Teleoperation Bottleneck:** Manual 1-to-1 teleoperation collapses under EW; scaling requires edge-AI terminal optical auto-tracking.
+* **Architectural Lesson for UWE:**
+  * Reinforces **Decoupled Lethality**: Software-defined kill webs must separate high-frequency APM reflex loops from low-cadence CPM command sanctions.
+
+---
+
+## 22. Case Study #25: French Army STAT / B2LT Caylus C-UAS Field Experimentation (Tim De Zitter)
+
+* **Target Source:** [LinkedIn Post](https://lnkd.in/p/dz9UcSrn) / Tim De Zitter (French Army B2LT / STAT)
+* **Date Analyzed:** 2026-11-04
+* **UWE 6-Character Tokens:** `UAV: AC-RE-AQ`, `UCV: HQ-TE-IR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ITargetTrackTelemetryBroker`, `IDecoupledEffectorGateway`, `ICounterUasArbitrationEngine`
+  * **One-Sentence Definition:** *"Multi-vendor counter-UAS architectures require the ITargetTrackTelemetryBroker and ICounterUasArbitrationEngine HAL contracts to normalize heterogeneous sensor tracks into canonical coordinate frames and arbitrate effector engagement priorities across soft-kill and hard-kill assets at sub-50ms machine speed, preventing acoustic/RF fratricide and eliminating manual command bottlenecks."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Unscripted Operational Red-Teaming:** French Army STAT/B2LT evaluated 83 systems from 34 vendors against uncharacterized, military-operated drone threats across open, urban, and live-fire terrain, demonstrating that realistic field stress unmasks vendor marketing claims.
+  * **The "Between the Boxes" Law:** Confirms UWE foundational principle: individual boxes (radar, acoustic, RF, jammers, interceptors) do not form an integrated defense without an abstracted middleware and deterministic arbitration layer.
+* **Engineering Vulnerabilities & Integration Gaps (🔴):**
+  * **The Tower of Babel Problem:** 83 proprietary systems from 34 OEMs lack common telemetry schemas, leading to mutual jamming, RF interference, and severe operator cognitive overload.
+  * **Human-in-the-Loop Latency Bottleneck:** Manual track handover between disparate displays consumes 15–30 seconds, whereas swarm interception demands closed-loop engagement in <1–2 seconds.
+* **Architectural Lesson for UWE:**
+  * Validates **UWE Core Architecture & Hardware Abstraction Layer (HAL)**: Hardware interoperability cannot rely on point-to-point bespoke integrations; it requires open HAL contracts translating sensor inputs into Target Track Telemetry (TTT) and effectors into generic Execution APIs.
+
+
+
