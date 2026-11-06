@@ -35,6 +35,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 24 | **Kill Zone Autonomy & Human-Machine Teaming (Patrick Lurtz)** | [LinkedIn](https://lnkd.in/p/d7ptMX9P) | `UGV: GL-DC-DR`<br>`UCV: HQ-TE-IR` | `IHumanMachineIntentGateway` & `IDynamicKillWebRouting` | Validates expanding kill zone (20–50 km) as a sensor-to-shooter latency system rather than static distance; exposes Western "logistics trap" (limiting UGVs to CASEVAC/ammo while adversaries mass kinetic strike swarms); breaks 1-to-1 teleoperation bottleneck by decoupling 300–400 APM reflexive vehicle dynamics from low-cadence (2–3 CPM) human lethal intent authority. | 2026-11-01 |
 | 25 | **French Army STAT / B2LT Caylus C-UAS (83 Systems / 34 OEMs)** | [LinkedIn](https://lnkd.in/p/dz9UcSrn) / Tim De Zitter | `UAV: AC-RE-AQ`<br>`UCV: HQ-TE-IR` | `ITargetTrackTelemetryBroker` & `IDecoupledEffectorGateway` & `ICounterUasArbitrationEngine` | Validates UWE core thesis: "A counter-drone defence is not the sum of its boxes, but what happens between them." Testing 83 systems from 34 vendors in unscripted terrain exposes the fatal flaw of isolated black boxes (RF/acoustic fratricide, human-in-the-loop latency); confirms necessity of UWE Hardware Abstraction Layer (HAL) to translate diverse sensors into standardized Target Track Telemetry (TTT) and effectors into uniform Execution APIs with <50ms edge arbitration. | 2026-11-04 |
 | 26 | **Kashmir Mass Swarm & Airborne AESA Sentinel (Rishabh Choudhary)** | [LinkedIn](https://lnkd.in/p/dTp-cd8z) / Rishabh Choudhary | `UAV: AM-TD-RA` | `IAerialAesaSwarmRadar` & `ISwarmTrackDisaggregationBroker` & `IInterceptorMidcourseGuidanceGateway` | Deconstructs frontline mass attrition in Kashmir (waves of 30–40 drones every 10–15 min); demonstrates ground radar physics limits (beam broadening and clutter collapse swarms into a single unresolved blob); exposes vertical racer optical bottleneck (1-to-1 terminal engagement misses 59 of 60 targets); codifies airborne MALE AESA sentinel operating Look-Down / STAP at 20,000 ft to resolve 60 discrete 3D tracks and provide midcourse vectoring to interceptor swarms. | 2026-11-06 |
+| 27 | **RUSI Rasputitsa & Environmental Abstraction Layer (Emily Ferris)** | [RUSI](https://www.rusi.org/explore-our-research/publications/commentary/why-rasputitsa-shapes-operational-and-strategic-considerations-ukraine) / Emily Ferris | `UGV: GL-EM-DR`<br>`UCV: CL-PL-DR` | `IEnvironmentalSoilImpedanceBroker` & `IDrawbarTractionController` & `IAirborneLogisticsCrossDomainGateway` | Deconstructs physical collapse of ground maneuver and rear railway logistics under rasputitsa; highlights RF $425M Azov rail project suffering a 28.5% freight collapse; validates UWE Anti-1812 Engine, Law of Kinematic Primacy, and Law of Hierarchical Containerization (shifting supply from vulnerable C3/C4 rails to 0–300m ground-clutter aerial lift via TEKEVER AR6 copters and C2 mobile container nodes). | 2026-11-06 |
 
 
 ---
@@ -510,6 +511,29 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **1-to-1 Optical Bottleneck:** Vertical racers carrying heavy optical seekers can only engage the first target in their narrow FOV ($15^\circ\text{--}30^\circ$), allowing the remaining 59 drones to penetrate.
 * **Architectural Lesson for UWE:**
   * Validates the **Airborne Sentinel & Midcourse Guidance Architecture**: Breaking mass drone attrition raids requires elevating AESA radar into the `UAV: AM-TD-RA` class to act as a midcourse vectoring hub for distributed kinetic interceptors.
+
+---
+
+## 24. Case Study #27: RUSI Rasputitsa & Environmental Abstraction Layer (Emily Ferris)
+
+* **Target Source:** [RUSI Commentary](https://www.rusi.org/explore-our-research/publications/commentary/why-rasputitsa-shapes-operational-and-strategic-considerations-ukraine) / Emily Ferris
+* **Date Analyzed:** 2026-11-06
+* **UWE 6-Character Tokens:** `UGV: GL-EM-DR`, `UCV: CL-PL-DR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IEnvironmentalSoilImpedanceBroker`, `IDrawbarTractionController`, `IAirborneLogisticsCrossDomainGateway`
+  * **One-Sentence Definition:** *"Environmental abstraction architectures require the IEnvironmentalSoilImpedanceBroker and IAirborneLogisticsCrossDomainGateway HAL contracts to dynamically detect Bekker soil strength collapse and railway foundation shear, autonomously redistributing ground logistics into the 0–300m ground-clutter aerial regime via heavy-lift fluid-power copters (UCV) to sustain combat tempo without capital infrastructure dependencies."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Ground-Clutter Air Layer Bypass:** Transits logistics in the 0–300m air layer, completely avoiding Bekker soil sinkage, rutting, and traction loss during seasonal rasputitsa.
+  * **Hierarchical Containerization Resilience:** Replaces static, vulnerable C3/C4 railway infrastructure with distributed, mobile C2 container nodes and heavy aerial lift.
+* **Engineering Vulnerabilities & Capital Rail Failures (🔴):**
+  * **Vulnerability of Fixed Railbeds:** Freeze-thaw cycles and ballast erosion caused a 28.5% freight collapse on Russia's $425M Azov rail line, illustrating the fragility of centralized ground supply lines.
+  * **Maneuver Channelization:** Soil strength collapse forces mechanized units onto road axes, multiplying fuel consumption, mechanical wear, and exposure to FPV/aerial interdiction.
+* **Architectural Lesson for UWE:**
+  * Validates the **Environmental Abstraction Layer (Anti-1812 Engine)**: Tactical operational tempo must be abstracted from soil and weather conditions by decoupling cargo mobility from ground contact via cross-domain aerial logistics.
+
+
+
 
 
 
