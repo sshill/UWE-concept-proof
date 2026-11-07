@@ -29,3 +29,10 @@ Untitled*
 *BP*.docx
 *interseptor/
 
+# Non-public / Internal analytical dossiers (Excluded from GitHub)
+*Magyar*
+*magyar*
+
+# Local agent scripts and state
+.agents
+
