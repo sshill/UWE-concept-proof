@@ -39,7 +39,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 28 | **South China Sea Reefs & Asymmetric Interdiction (Dr. KJ Choo)** | [LinkedIn](https://lnkd.in/p/dtikQNvK) / Dr. KJ Choo | `FAC: C4-RF-FX`<br>`UAV: AL-TC-DR`<br>`USV: PM-DE-AR` | `IStaticInfrastructureFragilityModeler` & `IIslandAccessChokepointInterdictionGateway` & `IRunwayIndependentDispersedLaunchController` | Deconstructs China's 5th SCS runway at Antelope Reef (5.9 km² reclamation); exposes the "unsinkable aircraft carrier" fallacy (zero mobility V=0, fixed coordinates, freshwater and jet-fuel fragility); validates UWE Law of Hierarchical Containerization (countering multi-billion dollar concrete outposts via runway-independent CCAs from container ships and distributed USV/UUV chokepoint interdiction). | 2026-11-06 |
 | 29 | **Fitburg Cargo Anchor Drag & Subsea Cable Defense (Tim De Zitter)** | [LinkedIn](https://lnkd.in/p/d8QuHvpK) / Tim De Zitter | `UUV: CV-IS-HQ`<br>`USV: SM-DE-AR`<br>`UUV: CA-RL-OW` | `ISeabedAnchorDragAcousticDetector` & `ISemiSubmersiblePropellerImmobilizer` & `ISubseaInfrastructureSacrificialBarrier` | Deconstructs the Helsinki Court verdict on cargo ship Fitburg dragging anchor for 130 km across 9 undersea cables and a gas pipeline; reveals speed-of-response gap of surface coast guard (hours) vs subsea kinetic sabotage; codifies UWE 3-tier defense: seabed acoustic pickets ("донні ждуни"), high-speed semi-submersible USVs deploying propeller nets, and sacrificial seabed UUVs/OWM cutting anchor chains and recording multibeam bathymetric forensic evidence. | 2026-11-06 |
 | 30 | **Philippine Carriers: Archipelagic Trap vs Pelagic Screen (Dr. KJ Choo)** | [LinkedIn](https://lnkd.in/p/dwM_UmJC) / Dr. KJ Choo | `FAC: C4-CV-SK`<br>`FAC: C4-CV-CT`<br>`USV: SM-DE-AR` | `ILittoralChokepointSaturationEngine` & `IDeepSeaAscentLatencyModeler` & `IPelagicCarrierScreeningGateway` | Deconstructs CNS Liaoning archipelagic entrapment (Basilan Strait/Sulu Sea) vs USS Theodore Roosevelt pelagic defense (Philippine Sea); validates UWE 300-second chokepoint saturation (Oman archetype) against STOBAR launch deficit (90-120s per J-15); quantifies abyssal seabed sentinel ("донні ждуни") ascent latency (t_ascent = h / v_climb >= 22-45 min at 4-6 km depth) that decouples deep munitions from 30+ knot carrier maneuvers. | 2026-11-06 |
-
+| 31 | **LEO Mega-Constellation ADR & Software-Defined Orbital Machine (SPM Group)** | [LinkedIn](https://www.linkedin.com/groups/2946743/) | `UOV: LM-CA-HR` | `IOrbitalManeuverDeltaVController` & `IDistributedNodalMeshGateway` | Validates the Kondratyuk Constellation Paradigm (1929) and Falcon Equivalent Unit (1.0 FEU); deconstructs the failure of legacy mass tiers (CubeSat to Heavy) in contested 50,000+ satellite LEO; establishes autonomous nodal edge evasion (<100ms) and multi-domain orbital coordination. | 2026-11-07 |
+| 32 | **Joint Cross-Domain Unmanned Operation (Izzy Fried / Fox2Sierra)** | [LinkedIn](https://lnkd.in/p/d9qXKrmm) / Izzy Fried | `C2: MB-HR-GW`<br>`UAV: AL-TC-DR`<br>`UGV: GL-EM-DR`<br>`USV: SL-PA-DR` | `ICrossDomainKillWebRouter` & `IMultiBearerCommsGateway` | Validates UWE 3-Tier Multi-Layer Architecture (MDO Strategic Intent ➔ UWE Meta-Layer Operational Engine ➔ CPS: HAL/EAL Execution); breaks proprietary point-to-point command silos by standardizing cross-domain kill-web routing, multi-bearer gateway resilience, and physical medium abstraction across air, ground, and maritime domains. | 2026-11-07 |
 
 ---
 
@@ -594,6 +595,31 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **STOBAR Sortie Generation Bottleneck:** The ski-jump ramp on CNS *Liaoning* imposes a 90–120 s launch cadence per aircraft, completely failing to match the tempo of distributed drone and USV swarms.
 * **Architectural Lesson for UWE:**
   * Validates **Geography-Dictated Carrier Vulnerability & The Law of Spatial Decoupling**: Large-deck capital ships are defensible only in open pelagic spaces with extensive screening buffers; operating inside constricted archipelagos invites fatal saturation by low-cost autonomous multi-domain swarms under 300-second kill webs.
+
+---
+
+## 28. Case Study #31: LEO Constellation ADR (SPM Group)
+
+* **Target Source:** [LinkedIn Group](https://www.linkedin.com/groups/2946743/) / SPM Group
+* **Date Analyzed:** 2026-11-07
+* **UWE Token:** `UOV: LM-CA-HR`
+* **HAL Contract:** `IOrbitalManeuverDeltaVController` & `IDistributedNodalMeshGateway`
+* **Validation (🟢):** Kondratyuk Paradigm (1.0 FEU swarms) & edge evasion (<100ms) replace monolithic satellite hardening.
+* **Trade-off (🔴):** Finite non-renewable propellant budget.
+* **Architectural Lesson:** Validates Law of Hierarchical Containerization in orbital domain.
+
+---
+
+## 29. Case Study #32: Joint Cross-Domain Unmanned Operation (Izzy Fried / Fox2Sierra)
+
+* **Target Source:** [LinkedIn Post](https://lnkd.in/p/d9qXKrmm) / Izzy Fried
+* **Date Analyzed:** 2026-11-07
+* **UWE Tokens:** `C2: MB-HR-GW`, `UAV: AL-TC-DR`, `UGV: GL-EM-DR`, `USV: SL-PA-DR`
+* **HAL Contract:** `ICrossDomainKillWebRouter` & `IMultiBearerCommsGateway`
+  * One-Sentence Definition: *"Joint cross-domain autonomy requires ICrossDomainKillWebRouter and IMultiBearerCommsGateway to resolve heterogeneous telemetry into unified execution APIs."*
+* **Validation (🟢):** Confirms UWE 3-Tier Multi-Layer Architecture (MDO Strategic Intent ➔ UWE Meta-Layer Operational Engine ➔ CPS: HAL/EAL Execution) across air, ground, and maritime domains.
+* **Vulnerability (🔴):** Proprietary point-to-point command links create vendor lock-in and collapse under multi-domain EW.
+* **Architectural Lesson:** Validates UWE Multi-Layer Stratification; heterogeneous swarms require unified HAL abstraction rather than bespoke C2 integration.
 
 
 
