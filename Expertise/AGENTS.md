@@ -129,6 +129,13 @@ Immediately persist findings into [`Expertise_Ledger.md`](file:///home/hills/Doc
 * Primary HAL interface tested.
 * Architectural lesson derived (gap detected in legacy standards, physical law validated).
 
+### Block 6: Web Portal Synchronization & Codification
+When codifying a validated platform into `Expertise_Ledger.md`, immediately sync its benchmark definition into `build_uwe_site.py` (`CASES_DATA` array):
+1. Append/update case dict: `id`, `slug`, `domain`, `name`, `token`, `hal`, `hal_def`, `vendor`, `advantages`, `vulnerabilities`, `lesson`, `related`.
+2. Verify token uniqueness against `ALLOWED_COLLISIONS`.
+3. Re-compile portal via `python3 build_uwe_site.py` ensuring `validate_uwe_integrity()` passes.
+4. Seal repository state via `./push_to_github.sh +` (Phase 5.2 Git State Seal Gate).
+
 ---
 
 ## 4. Strict Prohibitions & Anti-Patterns

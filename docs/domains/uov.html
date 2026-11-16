@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UOV Domain Taxonomy | Unmanned Warfare Engine</title>
   <meta name="description" content="Unmanned Orbital Vehicles (Counter-Space & Interceptors) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
-  <link rel="canonical" href="https://uwe-standard.github.io/domains/uov.html">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/domains/uov.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">13 Benchmarks</a>
-    <a href="../c2/officer.html" class="">C2 Officer Symbiosis</a>
+    <a href="../cases/index.html" class="">32 Benchmarks</a>
+    <a href="../c2/index.html" class="">C2 &amp; Articles</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="">HAL Registry</a>
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
@@ -156,7 +156,7 @@
     
 
     <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
-      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UOV (1 Cases)</h2>
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UOV (2 Cases)</h2>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UOV physical envelope:</p>
       <div>
         <article class="reddit-card case-item" data-domain="UOV" data-vendor="nextgen-arsenal" id="case-10">
@@ -205,6 +205,55 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a>
       <a href="../cases/10-orbital-guardian.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UOV" data-vendor="spm-group" id="case-31">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-05</span>
+    <span>•</span>
+    <a href="../domains/uov.html" class="badge badge-uov">UOV</a>
+    <a href="../vendors/index.html#spm-group" class="badge badge-vendor">SPM Group & Ukrainian Space Cluster</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/31-spm-kondratyuk.html">Case #31: SPM Group Kondratyuk 1.0 FEU LEO ADR Hunter</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UOV: LM-CA-HR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UOV: Low Earth Orbit (LEO 400-800km) • C2 SmallSat / ESPA Ring • Chemical Monopropellant & Reaction Wheels • Active Debris Removal & Co-Planar Intercept • Orbital Shield & Counter-Space • Radiation-Hardened Laser Cross-Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IRendezvousProximityOperations"><code>IRendezvousProximityOperations</code></a></div>
+    <div><em>"Unmanned orbital vehicles require IRendezvousProximityOperations and INonCooperativeDockingCapture to compute Clohessy-Wiltshire relative trajectory burns within sub-centimeter tolerances and grapple tumbling non-cooperative orbital targets without creating debris clouds."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Non-Cooperative Tumbling Capture: robotic tentacles and visual LIDAR track tumbling spent rocket stages, securing latch without docking ports.</li><li>Dual-Use Counter-Space Capability: identical proximity flight laws enable peaceful debris de-orbiting and neutralization of hostile reconnaissance satellites.</li><li>Precision Micro-Thruster Pulse: cold-gas / monopropellant thrusters deliver millinewton impulse bits for safe close-in orbital approach.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Finite Delta-V Budget: 350-500 m/s total ΔV restricts missions to 1-2 major co-planar targets; inclination changes are impossible without refueling.</li><li>Space Radiation Single-Event Upsets: intense cosmic rays and solar flares can flip memory bits in commercial grade edge processors.</li><li>Collision Cascade Risk (Kessler Syndrome): any guidance thruster failure during docking risks generating thousands of high-velocity debris fragments.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Establishes Orbital Regime in UWE: space vehicles (UOV) operate strictly under orbital mechanics laws (Kepler, Clohessy-Wiltshire) where altitude and inclination dictate energy, not aerodynamic endurance.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d9d2z_V8" target="_blank" rel="noopener">SPM Group Technical Whitepaper / Orbital Demonstration ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/10-orbital-guardian.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #10</a><a href="../cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a><a href="../cases/16-rq81-diana.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #16</a>
+      <a href="../cases/31-spm-kondratyuk.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>

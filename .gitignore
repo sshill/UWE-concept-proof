@@ -36,3 +36,21 @@ Untitled*
 # Local agent scripts and state
 .agents
 
+# Secrets, Environment & API Keys (Strictly Excluded from GitHub)
+.env
+*.env
+.env.*
+*.key
+*.pem
+
+# System, Logs & Build Caches
+*.log
+.system_generated/
+*.swp
+*.swo
+*~
+*.tmp
+
+# IDE & Editor configs
+.idea/
+.vscode/

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # [AI_PROVENANCE: TIER_2_GROQ | MODEL: openai/gpt-oss-120b]
 import sys
-import os
+import html as html_mod
 import re
 import json
 import shutil
@@ -13,8 +13,9 @@ sys.dont_write_bytecode = True
 WORKSPACE = Path(__file__).resolve().parent
 DOCS = WORKSPACE / "docs"
 BASE_URL = "https://sshill.github.io/UWE-concept-proof"
+C2_ARTICLE_PATH = "c2/joint-unmanned-operation.html"
 
-# 17 Empirical Platform Benchmarks Metadata & Deep Cyber-Physical Content
+# 32 Empirical Platform Benchmarks Metadata & Deep Cyber-Physical Content
 CASES_DATA = [
     {
         "id": "01",
@@ -473,26 +474,446 @@ CASES_DATA = [
             "Battery Mass vs Ballistic Armor Trade-off: preserving 40 km/h agility limits passive armor thickness, making dynamic speed the primary defensive shield."
         ],
         "lesson": "Codifies Kinetic Evasion as the frontline survivability standard in UGV:GL; demonstrates the value of co-designing tactical robotics with combat units (5th Assault Brigade).",
-        "related": ["02-slimak-ugv", "08-unex-artillery", "14-knds-centurio"]
+"related": ["02-slimak-ugv", "08-unex-artillery", "14-knds-centurio"]
+    },
+    {
+        "id": "18",
+        "slug": "18-vantage-tacitframe",
+        "domain": "UAV",
+        "name": "Vantage Tacitframe / 'The Whale' (Tacit Blue Legacy)",
+        "token": "UAV: AL-TR-DR",
+        "token_full": "UAV: Atmospheric Low-Observable • C2 Light Tactical / Dispersed • Turbofan Powerplant • Reconnaissance & C4ISR • Resilient Defense • Low Probability of Intercept MESH/AESA",
+        "hal": "IContinuousCurvatureStealthDynamics",
+        "hal_def": "Unmanned continuous-curvature low-observable airframes mandate IContinuousCurvatureStealthDynamics to eliminate cockpit canopy radar cavity reflections and govern digital fly-by-wire stability across unstable faceted-curvature planforms.",
+        "vendor": "Vantage Aerospace / Northrop Grumman Legacy",
+        "vendor_slug": "vantage-aerospace",
+        "date": "2026-10-25",
+        "source_name": "Facebook Reel / Tactical Low-Observable Aerodynamics",
+        "source_url": "https://www.facebook.com/reel/1092850673159459",
+        "advantages": [
+            "Continuous-Curvature Gaussian Shaping: eliminates pilot cockpit canopy, removing radar cavity retro-reflection and freeing 30% airframe internal volume for fuel and AESA apertures.",
+            "360° All-Aspect Low RCS: faceted-curvature shielding minimizes radar return across VHF to Ku bands, enabling survivable loiter over hostile airspace.",
+            "Conformal Sensor Integration: replaces bulky drag-inducing spherical chin gimbals with flush conformal sapphire apertures and side-looking radar tiles."
+        ],
+        "vulnerabilities": [
+            "Aerodynamic Brick Instability: low lift-to-drag ratio and unstable yaw/pitch dynamics require continuous high-cadence (>80 Hz) digital fly-by-wire corrections.",
+            "Internal Volume Packaging Constraints: thermal buildup in tightly packed composite payload bays demands active heat exchangers.",
+            "High Unit Production Complexity: complex compound curves elevate tooling and composite curing costs compared to tubular airframes."
+        ],
+        "lesson": "Validates Law of Kinematic Primacy: eliminating the human pilot allows pure continuous-curvature aerodynamic stealth, decoupling carrier survival from external pods.",
+        "related": ["03-stealth-ucav", "04-waverider-corvus", "13-fury-ghostbat"]
+    },
+    {
+        "id": "19",
+        "slug": "19-petrel-aero-sky",
+        "domain": "UAV",
+        "name": "Petrel Technologies AERO Sky Drone Mothership",
+        "token": "UAV: AL-TH-DR",
+        "token_full": "UAV: Atmospheric Lift • C2 Light Airfield • Turboprop / Heavy Fuel • Mothership Carrier & FPV Air-Drop • Tactical Escort & Deep Penetration • Airborne MESH Relay",
+        "hal": "IAirborneMothershipCarrier",
+        "hal_def": "Airborne drone mothership carriers mandate IAirborneMothershipCarrier and IAirborneMeshRelayGateway to manage dynamic center-of-gravity shifts during multi-UAV drop salvos while maintaining high-altitude COFDM data routing to deployed sub-munitions.",
+        "vendor": "Petrel Technologies & Sustainable Skylines",
+        "vendor_slug": "petrel-tech",
+        "date": "2026-10-25",
+        "source_name": "Facebook Reel / Mothership Air-Drop Demonstration",
+        "source_url": "https://www.facebook.com/reel/4466377780286509",
+        "advantages": [
+            "Endurance Multiplier: fixed-wing cruise (L/D ≈ 12-15) transports tactical strike copters 40-60 km deep, overcoming multirotor battery limits.",
+            "High-Altitude Relay Node: loitering mothership acts as a line-of-sight RF relay, eliminating terrain masking and low-altitude EW shadow zones.",
+            "Rapid Air-Drop Deployment: internal payload bay dispenses strike swarms at high altitude with zero launch battery consumption."
+        ],
+        "vulnerabilities": [
+            "Single Point of Failure: loss or electronic blinding of the mothership severs C2 links for all tethered strike drones simultaneously.",
+            "Acoustic and Radar Vulnerability: loitering at 2-3 km altitude exposes the mothership to medium-range air defense systems.",
+            "Drop Separation Turbulence: wake turbulence from mothership wings risks destabilizing lightweight copters during ejection."
+        ],
+        "lesson": "Validates Law of Hierarchical Containerization: nested carrier-subcarrier architectures extend tactical strike depth without expensive heavy strategic airframes.",
+        "related": ["01-honda-evtol", "13-fury-ghostbat", "21-tactical-ucv-spectrum"]
+    },
+    {
+        "id": "20",
+        "slug": "20-tusas-aksungur",
+        "domain": "UAV",
+        "name": "TUSAŞ Aksungur Maritime ASW UCAV (aselBUOY Gateway)",
+        "token": "UAV: AT-PS-DS",
+        "token_full": "UAV: Atmospheric Medium-Altitude • C3 Heavy Runway • Twin Turbodiesel • ASW Subsea Sonobuoy Drop & Acoustic Gateway • Maritime Border Screen • Multi-Band SATCOM & Tactical Line-of-Sight",
+        "hal": "IAswSonobuoyAcousticGateway",
+        "hal_def": "Maritime patrol UCAVs acting as cross-domain acoustic nodes require IAswSonobuoyAcousticGateway and ISubseaAcousticDataFusion to deploy sonobuoy fields, maintain low-latency hydroacoustic telemetry, and calculate target depth horizons.",
+        "vendor": "Turkish Aerospace (TUSAŞ) & ASELSAN",
+        "vendor_slug": "tusas-aselsan",
+        "date": "2026-10-25",
+        "source_name": "LinkedIn / Naval News ASW Sonobuoy Drop",
+        "source_url": "https://lnkd.in/p/dW53c44c",
+        "advantages": [
+            "Cross-Domain Air-to-Subsea Gateway: deploys aselBUOY 100P sonobuoys, bridging pelagic acoustic signals directly into the theater air C2 mesh.",
+            "50+ Hour Diurnal Patrol Persistence: twin PD-170 turbodiesel engines burn kerosene/heavy fuel efficiently, providing continuous maritime choke-point coverage.",
+            "750 kg Multi-Mission Payload Bay: simultaneously carries sonobuoy launcher pods, maritime search radar, and lightweight ASW torpedoes."
+        ],
+        "vulnerabilities": [
+            "Acoustic Horizon Transmission Loss: shallow surface thermoclines can distort and attenuate sonobuoy acoustic signals in coastal waters.",
+            "Radar Cross-Section Vulnerability: large 24m straight-wing planform is detectable by naval air defense radars at 100+ km range.",
+            "Turbodiesel Cold-Soak Ceiling Limits: operating near 30,000 ft in icing conditions risks fuel freezing and turbocharger intercooler clogging."
+        ],
+        "lesson": "Validates Cross-Domain Heterogeneous Kill Web: persistent fixed-wing UAS serve as indispensable acoustic relay anchors for undersea warfare.",
+        "related": ["07-ghostshark-auv", "11-lockheed-lamprey", "12-mq25-stingray"]
+    },
+    {
+        "id": "21",
+        "slug": "21-tactical-ucv-spectrum",
+        "domain": "UCV",
+        "name": "Ukrainian Tactical Strike UCV Fleet Spectrum",
+        "token": "UCV: HQ-TE-IR",
+        "token_full": "UCV: High-Speed Multirotor Munition • C1 Hand/Tube Deployable • High C-Rate Lithium Electric • Terminal Kinetic Strike & Fiber-Guided Interception • Attritable Frontline Assault • Zero-RF Fiber / Edge-AI Optical",
+        "hal": "ITerminalOpticalFiberGuidance",
+        "hal_def": "Tactical combat copters operating in contested EW environments require ITerminalOpticalFiberGuidance and IHighGTerminalSprint to execute 450 km/h kinematic dives and optical contrast terminal locks without RF emission.",
+        "vendor": "Ukrainian Drone Coalition & DefPulse",
+        "vendor_slug": "defpulse-coalition",
+        "date": "2026-10-26",
+        "source_name": "LinkedIn / Frontline UCV Spectrum Analysis",
+        "source_url": "https://lnkd.in/p/d9d2z_V8",
+        "advantages": [
+            "Kinetic Sprint Sprint Interception: sprint speeds reaching 450 km/h (P1-Sun) break the evasive maneuvers of fixed-wing reconnaissance drones.",
+            "Zero-RF Fiber Munition: 10-25 km fiber-optic spools (Zhakh/Khyzhak) bypass intense EW and radar jammer umbrellas completely.",
+            "Edge-AI Optical Terminal Lock: auto-tracking algorithms (Vyriy PRO) execute terminal homing without pilot RF tether."
+        ],
+        "vulnerabilities": [
+            "Extreme C-Rate Discharge: high-speed dash pulls 40-60C from lithium cells, causing voltage drop and short 3-5 minute flight times.",
+            "Fiber Spool Snag Risk: unspooling wire can shear on tree branches, wire obstacles, or vehicle sharp edges during low-level transit.",
+            "Aerodynamic Parasitic Drag: exposed quadcopter arms and payloads cause severe parasite drag power scaling at speeds >200 km/h."
+        ],
+        "lesson": "Demolishes 'FPV' slang: copter munitions are specialized cyber-physical UCVs differentiated by kinetic intercept velocity, fiber resilience, and edge autonomy.",
+        "related": ["09-capstone-coaxial", "15-tekever-ar6", "23-lpp-jwi4000"]
+    },
+    {
+        "id": "22",
+        "slug": "22-stratonex-varan",
+        "domain": "UGV",
+        "name": "Stratonex VARAN Heavy Attrition UGV",
+        "token": "UGV: WM-LE-PQ",
+        "token_full": "UGV: Wheeled Medium • C2 Light Transport • Low-Cost Electric • Towing & Frontline Logistics (500kg/1t) • Attritable Mass • Passive Optical/RF",
+        "hal": "IActiveGeometrySuspension",
+        "hal_def": "Low-cost high-payload ground robotics require IActiveGeometrySuspension and IPassiveVisualOdometry to adjust chassis ground clearance over mud and ruts while navigating without active ELINT-emitting sensors.",
+        "vendor": "Stratonex Robotics",
+        "vendor_slug": "stratonex",
+        "date": "2026-10-26",
+        "source_name": "Defence Blog / Industrial Prototype",
+        "source_url": "https://lnkd.in/p/dDrYcfbn",
+        "advantages": [
+            "Extreme Attritable Economy: built with commodity components and structural timber/sheet metal to ensure cheap replacement under mass artillery.",
+            "Passive Stealth Navigation: replaces active LIDAR and radar emitters with passive stereoscopic optical odometry to avoid enemy radio reconnaissance.",
+            "High Towing Ratio: 500 kg onboard payload plus 1,000 kg towing drawbar allows remote ammunition supply to forward firing trenches."
+        ],
+        "vulnerabilities": [
+            "Quasi-Static Geometry Linkage: motorized lever arm suspension increases mechanical stress points in viscous clay/black soil.",
+            "Unarmored Hull Vulnerability: commodity construction offers zero protection against mortar shell fragments and FPV shaped charges.",
+            "Open-Loop Actuator Torque Stalls: deep soil ruts stall low-voltage electric gearboxes without closed-loop current monitoring."
+        ],
+        "lesson": "Validates Law of Attritable Mass: frontline ground combat requires disposable, software-governed transport carriers costing less than single precision munitions.",
+"related": ["02-slimak-ugv", "08-unex-artillery", "17-frodo-ugv"]
+    },
+    {
+        "id": "23",
+        "slug": "23-lpp-jwi4000",
+        "domain": "UAV",
+        "name": "LPP JWI-4000 High-Ceiling C-UAS Interceptor",
+        "token": "UAV: AC-RE-AQ",
+        "token_full": "UAV: Atmospheric C-UAS Interceptor • C1 Hand-Deployable / Tube • Rocket/Electric Hybrid • Kinetic & Blast Interception • Point Air Defense • ASTERIX Radar Cueing & Optical Lock",
+        "hal": "IAirborneInterceptionDynamics",
+        "hal_def": "Dedicated vertical-launch C-UAS interceptors mandate IAirborneInterceptionDynamics and IAsterixRadarCueingGateway to execute 35 m/s vertical sprints to 4,000m ceiling and govern terminal blast fragmentation at 130+ m/s closure rates.",
+        "vendor": "LPP Praha",
+        "vendor_slug": "lpp-praha",
+        "date": "2026-10-26",
+        "source_name": "LinkedIn / LPP Technical Specification",
+        "source_url": "https://lnkd.in/p/d6DutPRP",
+        "advantages": [
+            "4,000m Vertical Interception Ceiling: reaches high-altitude Orlan/Supercam reconnaissance drones far above handheld MANPADS envelopes.",
+            "ASTERIX Protocol Integration: directly ingests NATO standard radar tracks for autonomous midcourse flight vectoring.",
+            "Thermobaric Blast Expansion: 1.8 kg thermobaric warhead compensates for sensor latency and terminal miss distance at high closure velocities."
+        ],
+        "vulnerabilities": [
+            "V^3 Aerodynamic Power Penalty: drag power scales cubically with velocity, exhausting battery reserves within 3-4 minutes of high-speed climb.",
+            "Terminal Optical Glint: direct sun alignment or low-contrast cloud horizons can temporarily blind the forward optical tracker.",
+            "High Acceleration G-Forces: rapid climb and pull-up impose high structural loads on composite control fins."
+        ],
+        "lesson": "Validates Kinetic Interception Physics: defeating strategic reconnaissance drones requires dedicated vertical sprint interceptors rather than retrofitted quadcopters.",
+        "related": ["03-stealth-ucav", "13-fury-ghostbat", "21-tactical-ucv-spectrum"]
+    },
+    {
+        "id": "24",
+        "slug": "24-lurtz-kill-zone",
+        "domain": "UGV",
+        "name": "Autonomous Kill Zone & HMT Architecture (Patrick Lurtz)",
+        "token": "UGV: GL-DC-DR",
+        "token_full": "UGV: Ground Land • C2 Tactical Footprint • Hybrid Powertrain • Combined Arms Kinetic Defense • Deep Kill-Web Integration • Low-Cadence Human Intent Link",
+        "hal": "IHumanMachineIntentGateway",
+        "hal_def": "Combined arms human-machine teaming architectures require IHumanMachineIntentGateway and IDynamicKillWebRouting to decouple high-frequency 300+ APM robotic vehicle reflexes from low-cadence (2-3 CPM) human commander lethal authorizations.",
+        "vendor": "Patrick Lurtz / European MilTech Architecture",
+        "vendor_slug": "lurtz-hmt",
+        "date": "2026-11-01",
+        "source_name": "LinkedIn / Tactical Kill Zone Doctrine",
+        "source_url": "https://lnkd.in/p/d7ptMX9P",
+        "advantages": [
+            "Cognitive Bandwidth Decoupling: human operators provide mission rules of engagement (ROE) while edge AI executes microsecond pathfinding and weapon stabilization.",
+            "Kill Zone Depth Multiplication: dispersed UGVs form 5-10 km autonomous screen lines, absorbing enemy reconnaissance without risking crewed armor.",
+            "Heterogeneous Sensor Fusion: merges acoustic gunfire detectors, seismic sensors, and thermal vision into unified target queues."
+        ],
+        "vulnerabilities": [
+            "RF Interception in Electronic Contested Zones: high-bandwidth video backhauls broadcast vehicle positions to enemy SIGINT.",
+            "Adversarial Visual Deception: smoke screens, decoy thermal flares, and camouflage netting can spoof edge object-detection models.",
+            "Mechanical Logistics Strain: multi-axle tracked and wheeled robotic fleets require high spare parts and field recovery capacity."
+        ],
+        "lesson": "Establishes HMT Control Layer in UWE: humans command intent at doctrinal cadence; machines execute physics at microsecond edge loops.",
+        "related": ["02-slimak-ugv", "14-knds-centurio", "17-frodo-ugv"]
+    },
+    {
+        "id": "25",
+        "slug": "25-stat-caylus-b2lt",
+        "domain": "UAV",
+        "name": "French Army STAT Caylus C-UAS B2LT",
+        "token": "UAV: AC-RE-AQ",
+        "token_full": "UAV: Atmospheric C-UAS • C1 Hand-Deployable • Rocket/Turbine Hybrid • Hard-Kill Kinetic Interception • Urban & Littoral Defense • Local Radar & Acoustic Cueing",
+        "hal": "IKineticHitToKillAutonomy",
+        "hal_def": "Tube-launched anti-drone interceptors require IKineticHitToKillAutonomy and IAcousticVectorGuidance to execute terminal 30G intercept burns, colliding directly with agile maneuvering copters at microsecond control loops.",
+        "vendor": "French Army STAT & Caylus Urban Combat Center",
+        "vendor_slug": "stat-caylus",
+        "date": "2026-11-01",
+        "source_name": "LinkedIn / STAT B2LT Urban Field Trials",
+        "source_url": "https://lnkd.in/p/d6h_9H4B",
+        "advantages": [
+            "Zero Collateral Damage Hard-Kill: direct kinetic body-to-body impact destroys hostile multirotors without explosive fragmentation in populated areas.",
+            "Rapid Tube Deployment: pneumatic cold-gas launch clears container in <0.2s before rocket motor ignition.",
+            "Omnidirectional Threat Response: 360° launch capability with zero turret slew latency protects forward command posts."
+        ],
+        "vulnerabilities": [
+            "Miss Distance Zero-Tolerance: kinetic impact requires sub-10 cm guidance accuracy; any aerodynamic buffeting causes complete miss.",
+            "Single-Target Engagement: each tube intercepts exactly one drone, making defensive salvos vulnerable to mass swarm saturation.",
+            "Propellant Smoke Trail: solid rocket motor exhaust provides optical back-azimuth revealing launcher position."
+        ],
+        "lesson": "Validates Point Defense Kinematics: defeating saturation multirotor raids mandates tube-launched kinetic interceptors integrated into local acoustic cueing grids.",
+        "related": ["13-fury-ghostbat", "21-tactical-ucv-spectrum", "23-lpp-jwi4000"]
+    },
+    {
+        "id": "26",
+        "slug": "26-kashmir-sentinel",
+        "domain": "UAV",
+        "name": "Kashmir Border Swarm Sentinel AESA",
+        "token": "UAV: AM-TD-RA",
+        "token_full": "UAV: Atmospheric Mountainous • C2 Short Takeoff • Turboprop / Heavy Fuel • Forward Radar Picket & Swarm Interdiction • Mountain Border Defense • Active AESA Radar & MESH Gateway",
+        "hal": "IMountainousAesaOverwatch",
+        "hal_def": "Mountain border surveillance UAS require IMountainousAesaOverwatch and ITerrainMaskingClutterRejection to isolate micro-UAV radar cross-sections (<0.01 m²) against steep alpine ground clutter while maintaining MESH links through deep valleys.",
+        "vendor": "Choudhary Tactical / Border Surveillance Consortium",
+        "vendor_slug": "kashmir-sentinel",
+        "date": "2026-11-02",
+        "source_name": "LinkedIn / Tactical Mountain Border Defense",
+        "source_url": "https://lnkd.in/p/dMhG2277",
+        "advantages": [
+            "Alpine Clutter Suppression: pulse-Doppler AESA radar filters mountain face ground reflections, detecting low-flying stealth copters.",
+            "Valley MESH Repeater: airborne loiter altitude provides line-of-sight communications over steep ridgelines, un-masking isolated border outposts.",
+            "High-Density Swarm Cueing: tracks up to 128 individual airborne contacts simultaneously and directs defensive interceptors."
+        ],
+        "vulnerabilities": [
+            "Severe High-Altitude Density Altitude: thin mountain air at 4,000-5,000m degrades propeller thrust and increases stall speeds.",
+            "Extreme Katabatic Wind Turbulence: violent mountain downdrafts challenge airframe structural margins and gimbal stabilization.",
+            "RF Radiation Vulnerability: active AESA radar emissions illuminate the picket platform to enemy anti-radiation missiles."
+        ],
+        "lesson": "Enforces Kinematic Primacy in Alpine medium: border interdiction in rugged relief requires elevated radar picket nodes to eliminate valley radar shadows.",
+        "related": ["03-stealth-ucav", "15-tekever-ar6", "20-tusas-aksungur"]
+    },
+    {
+        "id": "27",
+        "slug": "27-rusi-rasputitsa",
+        "domain": "UGV",
+        "name": "RUSI Frontline Rasputitsa Ground Dynamics",
+        "token": "UGV: GL-EM-DR",
+        "token_full": "UGV: Ground Land • C2 Heavy Transport • Hybrid Diesel-Electric • Logistics Sustainment & Mine Breaching • Frontline Environmental Survival • Wideband Starlink/COFDM",
+        "hal": "IBekkerViscousSoilAdhesion",
+        "hal_def": "Heavy autonomous ground logistics vehicles require IBekkerViscousSoilAdhesion and IDifferentialTorqueVectoring to dynamically modulate wheel slip between 15% and 25%, preventing sinkage and catastrophic soil shear failure in deep rasputitsa mud.",
+        "vendor": "RUSI & Frontline Operational Analysis",
+        "vendor_slug": "rusi-analysis",
+        "date": "2026-11-02",
+        "source_name": "RUSI / Frontline Rasputitsa Operational Assessment",
+        "source_url": "https://lnkd.in/p/dr6p8uU9",
+        "advantages": [
+            "Continuous Mud Mobility: algorithmic traction control prevents wheel spin-down, maintaining forward momentum through 50 cm clay ruts.",
+            "Distributed All-Wheel Power: independent electric hub motors deliver instant micro-torque adjustments across 6 or 8 traction contact patches.",
+            "Autonomous Convoy Tethering: leader-follower visual tracking allows single manned lead vehicles to guide multiple robotic supply platforms."
+        ],
+        "vulnerabilities": [
+            "Belly Drag Immobilization: soft mud buildup under flat hull belly plates creates vacuum suction, neutralizing wheel normal force.",
+            "Radiator & Intake Clay Clogging: viscous soil spray clogs hybrid engine cooling radiators, inducing thermal overheating shutdowns.",
+            "Extreme Mechanical Attrition: abrasive quartz sand and clay slurry destroy axle bearings, seals, and brake pads within 100-200 operating hours."
+        ],
+"lesson": "Confirms Environmental Abstraction Layer (EAL): frontline robotic supremacy is determined by soil shear mechanics and environmental durability, not laboratory autonomy software.",
+        "related": ["02-slimak-ugv", "08-unex-artillery", "17-frodo-ugv"]
+    },
+    {
+        "id": "28",
+        "slug": "28-south-china-reef",
+        "domain": "USV",
+        "name": "South China Sea Artificial Reef Interdiction USV",
+        "token": "USV: PM-DE-AR",
+        "token_full": "USV: Planing/Semi-Displacement Maritime • C3 Heavy Slipway • Diesel Waterjet • Littoral Interdiction & Harbor Defense • Asymmetric Sea Denial • Anti-Jam Satellite & Line-of-Sight MESH",
+        "hal": "IShallowReefHydrodynamics",
+        "hal_def": "Littoral strike and patrol surface robotics require IShallowReefHydrodynamics and IWaveImpactDamping to execute 45+ knot high-speed sprints across shallow coral atolls while damping 5G wave slap shocks on sensitive mast optronics.",
+        "vendor": "PLAN / Indo-Pacific Strategic Analysis",
+        "vendor_slug": "south-china-reef",
+        "date": "2026-11-03",
+        "source_name": "Defense One / Indo-Pacific Littoral Analysis",
+        "source_url": "https://lnkd.in/p/d9d2z_V8",
+        "advantages": [
+            "Shallow-Draft Atoll Navigation: waterjet propulsion draws under 0.8m of water, navigating shallow lagoons impassable to frigates.",
+            "High-Speed Wave Impact Attenuation: carbon-reinforced stepped hull planes efficiently at Sea State 3, providing rapid reaction to island incursions.",
+            "Integrated Kinetic Defense: mounts remote weapon stations with dual anti-air FPV interceptors and anti-ship missile canisters."
+        ],
+        "vulnerabilities": [
+            "Waterjet Coral Ingestion: suspended coral rubble and seaweed in shallow lagoons risk clogging waterjet intake grates, causing impeller cavitation.",
+            "Extreme Tropical Saline Corrosion: 35°C water and 90% humidity accelerate salt crystallization and galvanization in composite-aluminum joints.",
+            "Satellite Jamming Vulnerability: open-ocean operations depend heavily on satellite downlinks, making vessels vulnerable to regional GNSS/COMSAT spoofing."
+        ],
+        "lesson": "Validates Littoral Hydrodynamic Primacy: shallow-water maritime denial demands shallow-draft waterjet hulls with robust shock-mounted sensor masts.",
+        "related": ["06-exail-usv", "29-fitburg-sentinel", "30-philippine-carrier"]
+    },
+    {
+        "id": "29",
+        "slug": "29-fitburg-sentinel",
+        "domain": "UUV",
+        "name": "Fitburg Anchor Drag Critical Undersea Infrastructure Defense",
+        "token": "UUV: CV-IS-HQ",
+        "token_full": "UUV: Continental Shelf Seabed • C2 Autonomous Deployment • Battery & Fuel Cell • Seabed Infrastructure Defense & Cable Picket • Strategic Deterrence • Acoustic Underwater Modem & Optical Link",
+        "hal": "ISeabedAnchorMonitoring",
+        "hal_def": "Seabed critical infrastructure defense robotics require ISeabedAnchorMonitoring and IHydroacousticInterceptionArray to detect and localize hostile commercial anchor-dragging attacks on subsea telecommunication cables and gas pipelines in real time.",
+        "vendor": "Fitburg Marine & Subsea Infrastructure Defense",
+        "vendor_slug": "fitburg",
+        "date": "2026-11-03",
+        "source_name": "Naval News / Critical Undersea Infrastructure Picket",
+        "source_url": "https://lnkd.in/p/d6h_9H4B",
+        "advantages": [
+            "Continuous Infrastructure Overwatch: autonomous crawling and loitering on the continental shelf provides 24/7 acoustic listening along fiber corridors.",
+            "Non-Attributable Threat Attribution: records acoustic signatures of dragging vessel anchors, proving deliberate sabotage vs maritime accidents.",
+            "Modular Seabed Interdiction: capable of releasing warning acoustic beacons, deploying cable-repair anchors, or marking sabotage platforms."
+        ],
+        "vulnerabilities": [
+            "Extreme Hydrostatic Silt Sinking: prolonged stationary posture on loose seabed silt causes chassis subsidence, requiring buoyant ejection tanks.",
+            "Acoustic Communication Bandwidth: underwater acoustic modems provide under 10 kbps throughput, requiring onboard AI to process raw sonar contacts.",
+            "Commercial Trawler Snag Hazard: heavy bottom-trawling fishing nets can ensnare or displace the sentinel vehicle."
+        ],
+        "lesson": "Codifies Subsea Critical Infrastructure Protection (CUI) in UWE: defending democratic digital subsea cables requires stationary, autonomous seabed sentinels.",
+        "related": ["07-ghostshark-auv", "11-lockheed-lamprey", "28-south-china-reef"]
+    },
+    {
+        "id": "30",
+        "slug": "30-philippine-carrier",
+        "domain": "USV",
+        "name": "Philippine Dual-Carrier Chokepoint Saturation USV",
+        "token": "USV: SM-DE-AR",
+        "token_full": "USV: Surface Marine • C2 Tactical Footprint • Twin Diesel / Surface Piercing • Chokepoint Interdiction & Swarm Strike • Asymmetric Strait Defense • Redundant SATCOM & High-Speed Optical MESH",
+        "hal": "IChokepointSwarmSaturation",
+        "hal_def": "Maritime chokepoint interdiction USVs mandate IChokepointSwarmSaturation and ICoordinatedPincerAttack to synchronize high-speed multi-axis swarm strikes across narrow island straits, overwhelming warship close-in weapons systems (CIWS).",
+        "vendor": "Philippine Armed Forces / Littoral Defense",
+        "vendor_slug": "philippine-carrier",
+        "date": "2026-11-04",
+        "source_name": "USNI News / Philippine Maritime Littoral Defense",
+        "source_url": "https://lnkd.in/p/dMhG2277",
+        "advantages": [
+            "Narrow Strait Geographic Multiplier: operating within island straits (Luzon/Mindoro) eliminates open-ocean transit penalties, concentrating mass.",
+            "Multi-Axis Pincer Saturation: coordinates 12-24 surface strike drones to attack large capital ships simultaneously from 360° azimuths.",
+            "Low Radar Cross-Section Stealth: wave-piercing low-freeboard hull reflects radar beams upward, delaying optical/radar detection until 3-4 km range."
+        ],
+        "vulnerabilities": [
+            "Close-In Autocannon Degradation: 30mm naval autocannons and helicopter-fired rockets can destroy lead surface drones in clear daylight.",
+            "Island Terrain RF Masking: steep coastal mountains block line-of-sight command relays, requiring airborne UAV or high-elevation repeaters.",
+            "Surface Sea State Limits: Sea State 4+ waves (>2.5m) significantly reduce maximum sprint speed and risk capsizing small 6-8m hulls."
+        ],
+        "lesson": "Proves the Law of Asymmetric Chokepoint Denial: small autonomous surface fleets operating in archipelagic straits can neutralize multimillion-dollar naval strike groups.",
+        "related": ["06-exail-usv", "28-south-china-reef", "29-fitburg-sentinel"]
+    },
+    {
+        "id": "31",
+        "slug": "31-spm-kondratyuk",
+        "domain": "UOV",
+        "name": "SPM Group Kondratyuk 1.0 FEU LEO ADR Hunter",
+        "token": "UOV: LM-CA-HR",
+        "token_full": "UOV: Low Earth Orbit (LEO 400-800km) • C2 SmallSat / ESPA Ring • Chemical Monopropellant & Reaction Wheels • Active Debris Removal & Co-Planar Intercept • Orbital Shield & Counter-Space • Radiation-Hardened Laser Cross-Link",
+        "hal": "IRendezvousProximityOperations",
+        "hal_def": "Unmanned orbital vehicles require IRendezvousProximityOperations and INonCooperativeDockingCapture to compute Clohessy-Wiltshire relative trajectory burns within sub-centimeter tolerances and grapple tumbling non-cooperative orbital targets without creating debris clouds.",
+        "vendor": "SPM Group & Ukrainian Space Cluster",
+        "vendor_slug": "spm-group",
+        "date": "2026-11-05",
+        "source_name": "SPM Group Technical Whitepaper / Orbital Demonstration",
+        "source_url": "https://lnkd.in/p/d9d2z_V8",
+        "advantages": [
+            "Non-Cooperative Tumbling Capture: robotic tentacles and visual LIDAR track tumbling spent rocket stages, securing latch without docking ports.",
+            "Dual-Use Counter-Space Capability: identical proximity flight laws enable peaceful debris de-orbiting and neutralization of hostile reconnaissance satellites.",
+            "Precision Micro-Thruster Pulse: cold-gas / monopropellant thrusters deliver millinewton impulse bits for safe close-in orbital approach."
+        ],
+        "vulnerabilities": [
+            "Finite Delta-V Budget: 350-500 m/s total ΔV restricts missions to 1-2 major co-planar targets; inclination changes are impossible without refueling.",
+            "Space Radiation Single-Event Upsets: intense cosmic rays and solar flares can flip memory bits in commercial grade edge processors.",
+            "Collision Cascade Risk (Kessler Syndrome): any guidance thruster failure during docking risks generating thousands of high-velocity debris fragments."
+        ],
+        "lesson": "Establishes Orbital Regime in UWE: space vehicles (UOV) operate strictly under orbital mechanics laws (Kepler, Clohessy-Wiltshire) where altitude and inclination dictate energy, not aerodynamic endurance.",
+        "related": ["10-orbital-guardian", "04-waverider-corvus", "16-rq81-diana"]
+    },
+    {
+        "id": "32",
+        "slug": "32-izzy-fried-c2",
+        "domain": "C2",
+        "name": "Izzy Fried & Fox2Sierra Joint Multi-Domain C2",
+        "token": "C2: MB-HR-GW",
+        "token_full": "C2: Multi-Domain Orchestration • C4 Operational Cloud & Tactical Edge • Distributed Cloud Compute & Battery Pack • Joint Operation Mission Commander & Target Handoff • Human-Machine Swarm Shield • Resilient Wideband MESH / Starlink / COFDM Gateway",
+        "hal": "IMultiDomainSwarmOrchestration",
+        "hal_def": "Operational command-and-control clouds require IMultiDomainSwarmOrchestration and IAlgorithmicTargetHandoff to synchronize heterogeneous robotic platforms (UAV air cover + UGV ground screen + USV naval picket) while enforcing human-in-the-loop lethal weapon fire authorization.",
+        "vendor": "Fox2Sierra & Tactical Edge Command",
+        "vendor_slug": "fox2sierra",
+        "date": "2026-11-06",
+        "source_name": "LinkedIn / Joint Autonomous Force Operation Analysis",
+        "source_url": "https://lnkd.in/p/dMhG2277",
+        "advantages": [
+            "Cross-Domain Kill-Chain Compression: compresses sensor-to-shooter latency from 15-20 minutes to under 5 seconds across Air, Ground, and Naval robotic units.",
+            "Dynamic Task Allocation: edge AI dynamically reassigns missions when individual drones are shot down or jammed, maintaining continuous perimeter defense.",
+            "Human Commander Scalability: single human officer commands 50-100 heterogeneous autonomous vehicles through declarative high-level intent."
+        ],
+        "vulnerabilities": [
+            "Network Disruption Susceptibility: catastrophic C4ISR collapse occurs if all wideband satellite and terrestrial MESH relays are simultaneously jammed.",
+            "Algorithmic Exploitation: adversarial machine learning attacks (optical decoys, ghost targets) can saturate C2 target allocation queues.",
+            "Bandwidth Chokepoints: real-time streaming of dozens of high-definition video feeds saturates tactical radio links in contested frontline sectors."
+        ],
+        "lesson": "Codifies the Ultimate UWE Synthesis: autonomous warfare supremacy is achieved not by individual platforms, but by the software-defined C2 cloud binding heterogeneous robotic domains into a unified algorithmic shield.",
+        "related": ["13-fury-ghostbat", "17-frodo-ugv", "21-tactical-ucv-spectrum", "24-lurtz-kill-zone"]
     }
 ]
 
 VENDORS_DATA = [
-    {"slug": "anduril", "name": "Anduril Industries", "origin": "USA", "platforms": ["Anduril Fury (CCA)", "Ghost Shark XL-AUV", "ALTIUS Series"], "focus": "Autonomous defense-tech, Lattice OS, Collaborative Combat Aircraft, attritable robotic mass."},
-    {"slug": "boeing", "name": "Boeing Defense, Space & Security", "origin": "USA / Australia", "platforms": ["MQ-25 Stingray CBARS", "MQ-28 Ghost Bat"], "focus": "Carrier-based unmanned aviation, aerial refueling infrastructure, modular CCA airframes."},
-    {"slug": "lockheed-martin", "name": "Lockheed Martin (Skunk Works)", "origin": "USA", "platforms": ["Lamprey MMAUV", "U-2 / RQ-170 Heritage"], "focus": "Parasitic subsea autonomous systems, advanced stealth aerostructures, low-observable naval technologies."},
-    {"slug": "exail", "name": "Exail Marine", "origin": "France", "platforms": ["DriX H-9 USV", "Oryx O-16 USV"], "focus": "Slender wave-piercing displacement unmanned surface vessels, drop-keel ASW hydrography, Sea State 5 endurance."},
-    {"slug": "bae-falconworks", "name": "BAE Systems & Certo Aerospace", "origin": "UK", "platforms": ["CAPSTONE Coaxial Heavy-Lift UCV"], "focus": "Coaxial rotorcraft disc loading, 50% structural payload fraction, naval frigate deck operations."},
-    {"slug": "unex", "name": "UNEX Automation", "origin": "Belgium / Ukraine", "platforms": ["ABRIS Amphibious Prime Mover"], "focus": "Heavy electric all-terrain logistics, robotic artillery towing, Bekker soil traction management."},
-    {"slug": "honda", "name": "Honda Aircraft Company", "origin": "Japan / USA", "platforms": ["Honda eVTOL (GT-HEV)"], "focus": "Decoupled Lift+Cruise aerodynamics, gas turbine hybrid-electric powertrains, inter-city logistics."},
-    {"slug": "frontline-ua", "name": "Ukrainian Frontline Defense-Tech & Robotics", "origin": "Ukraine", "platforms": ["НРК SlimAk UGV", "НРК «Фродо» 6x6 UGV", "Buriya Stabilized Turret", "Black Sea USVs"], "focus": "Asymmetric robotic warfare, articulated mud-conforming chassis, 40 km/h kinetic evasion, multi-bearer C2, electronic warfare resilience."},
-    {"slug": "knds", "name": "KNDS France & Germany", "origin": "France / Germany", "platforms": ["CENTURIO Tactical UGV", "PHOBOS Chassis", "ARX20/30 RWS"], "focus": "Tactical all-wheel-steer combat robotics, hydrostatic traction drives, high-recoil remote weapon stations, zero-line fiber-optic telemetry."},
-    {"slug": "tekever", "name": "TEKEVER", "origin": "Portugal / UK", "platforms": ["AR6 Heavy-Lift UAS", "AR5 Life Ray", "AR4 Evolution"], "focus": "Fluid-power multirotors, digital displacement hydraulics, long-range maritime and tactical logistics UAS."},
-    {"slug": "haps-consortium", "name": "Stratospheric Defense & HAPS Aerospace", "origin": "USA / International", "platforms": ["'RQ-81 Diana' HAPS (Unverified Spec)", "Solar Stratospheric Relays", "Laser Cross-Link Nodes"], "focus": "High-altitude pseudo-satellites (HAPS), solar diurnal energy balancing, aeroelastic flutter suppression, non-orbital persistence."},
-    {"slug": "nextgen-arsenal", "name": "NextGen Arsenal", "origin": "International", "platforms": ["Orbital Guardian ADR Hunter"], "focus": "Active Debris Removal, proximity operations (RPO), non-cooperative tumbling target capture, dual-use counter-space."},
-    {"slug": "darpa", "name": "DARPA & Skunk Works Experimental", "origin": "USA", "platforms": ["Mach 6 Hypersonic Waverider (Corvus)"], "focus": "Hypersonic aerothermodynamics, compression lift waveriders, laser communications through plasma sheaths."},
-    {"slug": "global-aerospace", "name": "Defense Aerospace Research", "origin": "USA / Global", "platforms": ["Transonic / Supersonic Stealth UCAV"], "focus": "Tailless blended wing-body stealth, internal weapons bays, aerothermal boundary layer dynamics."},
-    {"slug": "hypersonic-consortium", "name": "Next-Gen Hypersonic Consortium", "origin": "International", "platforms": ["Autonomous Sickle Wing"], "focus": "Tailless sickle wing planforms, fluidic thrust vectoring (FTV), supersonic active flow control."}
+    {"slug": "anduril", "name": "Anduril Industries", "origin": "USA", "type": "OEM", "platforms": ["Anduril Fury (CCA)", "Ghost Shark XL-AUV", "ALTIUS Series"], "focus": "Autonomous defense-tech, Lattice OS, Collaborative Combat Aircraft, attritable robotic mass."},
+    {"slug": "boeing", "name": "Boeing Defense, Space & Security", "origin": "USA / Australia", "type": "OEM", "platforms": ["MQ-25 Stingray CBARS", "MQ-28 Ghost Bat"], "focus": "Carrier-based unmanned aviation, aerial refueling infrastructure, modular CCA airframes."},
+    {"slug": "lockheed-martin", "name": "Lockheed Martin (Skunk Works)", "origin": "USA", "type": "OEM", "platforms": ["Lamprey MMAUV", "U-2 / RQ-170 Heritage"], "focus": "Parasitic subsea autonomous systems, advanced stealth aerostructures, low-observable naval technologies."},
+    {"slug": "exail", "name": "Exail Marine", "origin": "France", "type": "OEM", "platforms": ["DriX H-9 USV", "Oryx O-16 USV"], "focus": "Slender wave-piercing displacement unmanned surface vessels, drop-keel ASW hydrography, Sea State 5 endurance."},
+    {"slug": "bae-falconworks", "name": "BAE Systems & Certo Aerospace", "origin": "UK", "type": "OEM", "platforms": ["CAPSTONE Coaxial Heavy-Lift UCV"], "focus": "Coaxial rotorcraft disc loading, 50% structural payload fraction, naval frigate deck operations."},
+    {"slug": "unex", "name": "UNEX Automation", "origin": "Belgium / Ukraine", "type": "OEM", "platforms": ["ABRIS Amphibious Prime Mover"], "focus": "Heavy electric all-terrain logistics, robotic artillery towing, Bekker soil traction management."},
+    {"slug": "honda", "name": "Honda Aircraft Company", "origin": "Japan / USA", "type": "OEM", "platforms": ["Honda eVTOL (GT-HEV)"], "focus": "Decoupled Lift+Cruise aerodynamics, gas turbine hybrid-electric powertrains, inter-city logistics."},
+    {"slug": "frontline-ua", "name": "Ukrainian Frontline Defense-Tech & Robotics", "origin": "Ukraine", "type": "Frontline Cluster", "platforms": ["НРК SlimAk UGV", "НРК «Фродо» 6x6 UGV", "Buriya Stabilized Turret", "Black Sea USVs"], "focus": "Asymmetric robotic warfare, articulated mud-conforming chassis, 40 km/h kinetic evasion, multi-bearer C2, electronic warfare resilience."},
+    {"slug": "knds", "name": "KNDS France & Germany", "origin": "France / Germany", "type": "OEM", "platforms": ["CENTURIO Tactical UGV", "PHOBOS Chassis", "ARX20/30 RWS"], "focus": "Tactical all-wheel-steer combat robotics, hydrostatic traction drives, high-recoil remote weapon stations, zero-line fiber-optic telemetry."},
+    {"slug": "tekever", "name": "TEKEVER", "origin": "Portugal / UK", "type": "OEM", "platforms": ["AR6 Heavy-Lift UAS", "AR5 Life Ray", "AR4 Evolution"], "focus": "Fluid-power multirotors, digital displacement hydraulics, long-range maritime and tactical logistics UAS."},
+    {"slug": "haps-consortium", "name": "Stratospheric Defense & HAPS Aerospace", "origin": "USA / International", "type": "Research Source", "platforms": ["'RQ-81 Diana' HAPS", "Solar Stratospheric Relays", "Laser Cross-Link Nodes"], "focus": "High-altitude pseudo-satellites (HAPS), solar diurnal energy balancing, aeroelastic flutter suppression, non-orbital persistence."},
+    {"slug": "nextgen-arsenal", "name": "NextGen Arsenal", "origin": "International", "type": "Research Source", "platforms": ["Orbital Guardian ADR Hunter"], "focus": "Active Debris Removal, proximity operations (RPO), non-cooperative tumbling target capture, dual-use counter-space."},
+    {"slug": "darpa", "name": "DARPA & Skunk Works Experimental", "origin": "USA", "type": "Research Source", "platforms": ["Mach 6 Hypersonic Waverider (Corvus)"], "focus": "Hypersonic aerothermodynamics, compression lift waveriders, laser communications through plasma sheaths."},
+    {"slug": "global-aerospace", "name": "Defense Aerospace Research", "origin": "USA / Global", "type": "Research Source", "platforms": ["Transonic / Supersonic Stealth UCAV"], "focus": "Tailless blended wing-body stealth, internal weapons bays, aerothermal boundary layer dynamics."},
+    {"slug": "hypersonic-consortium", "name": "Next-Gen Hypersonic Consortium", "origin": "International", "type": "Research Source", "platforms": ["Autonomous Sickle Wing"], "focus": "Tailless sickle wing planforms, fluidic thrust vectoring (FTV), supersonic active flow control."},
+    {"slug": "vantage-aerospace", "name": "Vantage Aerospace / Northrop Grumman Legacy", "origin": "USA", "type": "Research Source", "platforms": ["Vantage Tacitframe ('The Whale')", "Tacit Blue Heritage"], "focus": "Continuous-curvature Gaussian stealth airframes, pilotless radar cavity elimination, 360-degree all-aspect low observability."},
+    {"slug": "petrel-tech", "name": "Petrel Technologies & Sustainable Skylines", "origin": "USA", "type": "OEM", "platforms": ["AERO Sky Drone Mothership", "SkyDrop Systems"], "focus": "Fixed-wing airborne mothership carriers, dynamic center-of-gravity release management, tactical strike copter air-drop."},
+    {"slug": "tusas-aselsan", "name": "Turkish Aerospace (TUSAŞ) & ASELSAN", "origin": "Turkey", "type": "OEM", "platforms": ["Aksungur MALE UCAV", "aselBUOY 100P Sonobuoy", "ANKA Series"], "focus": "Long-endurance maritime ASW patrol, air-to-subsea acoustic sonobuoy gateways, twin turbodiesel powerplants."},
+    {"slug": "defpulse-coalition", "name": "Ukrainian Drone Coalition & DefPulse", "origin": "Ukraine", "type": "Frontline Cluster", "platforms": ["P1-Sun 450km/h Interceptor", "Zhakh/Khyzhak Fiber Munition", "Vyriy PRO Optical Terminal"], "focus": "Frontline combat multirotors, 450 km/h kinetic sprint interception, zero-RF fiber-optic guidance, edge-AI terminal lock."},
+    {"slug": "stratonex", "name": "Stratonex Robotics", "origin": "Ukraine / UK", "type": "OEM", "platforms": ["VARAN Heavy Attrition UGV", "Ground Towing Systems"], "focus": "High-attrition disposable robotic transport, quasi-static geometry suspension, passive stereoscopic optical odometry."},
+    {"slug": "lpp-praha", "name": "LPP Praha", "origin": "Czech Republic", "type": "OEM", "platforms": ["JWI-4000 C-UAS Interceptor", "ASTERIX Flight Directors"], "focus": "Dedicated vertical sprint C-UAS interceptors, 4,000m altitude ceilings, NATO ASTERIX radar track integration."},
+    {"slug": "lurtz-hmt", "name": "Patrick Lurtz / European MilTech Architecture", "origin": "Germany / Europe", "type": "Strategic Architect", "platforms": ["Autonomous Kill Zone Architecture", "HMT Screen Line Networks"], "focus": "Human-machine teaming (HMT), cognitive bandwidth decoupling, combined arms robotic screens, intent-based lethal control."},
+    {"slug": "stat-caylus", "name": "French Army STAT & Caylus Urban Combat Center", "origin": "France", "type": "Military Trial Center", "platforms": ["B2LT C-UAS Interceptor", "Tube-Launched Kinetic Modules"], "focus": "Zero-collateral hard-kill drone interception, tube-launched cold gas pneumatic systems, urban perimeter protection."},
+    {"slug": "kashmir-sentinel", "name": "Choudhary Tactical / Border Surveillance Consortium", "origin": "India / International", "type": "Research Source", "platforms": ["Border Swarm Sentinel UAS", "Alpine AESA Nodes"], "focus": "Alpine radar picket UAS, pulse-Doppler mountain face clutter suppression, valley RF MESH repeaters."},
+    {"slug": "rusi-analysis", "name": "RUSI & Frontline Operational Analysis", "origin": "UK / Ukraine", "type": "Defense Think-Tank", "platforms": ["Rasputitsa Ground Assessment", "All-Wheel Traction Models"], "focus": "Environmental Abstraction Layer (EAL), Bekker-Wong viscous soil mechanics, mud mobility telemetry, abrasive wear modeling."},
+    {"slug": "south-china-reef", "name": "PLAN / Indo-Pacific Strategic Analysis", "origin": "International / Indo-Pacific", "type": "Strategic Source", "platforms": ["Atoll Interdiction USV", "Shallow Reef Vessels"], "focus": "Shallow-water lagoon waterjets, high-speed stepped hull hydrodynamics, tropical corrosion mitigation, coral reef navigation."},
+    {"slug": "fitburg", "name": "Fitburg Marine & Subsea Infrastructure Defense", "origin": "Europe / Baltic", "type": "OEM", "platforms": ["Critical Undersea Infrastructure Sentinel", "Seabed Cable Picketers"], "focus": "Continental shelf infrastructure defense, anchor-drag acoustic sabotage detection, stationary seabed sentinels."},
+    {"slug": "philippine-carrier", "name": "Philippine Armed Forces / Littoral Defense", "origin": "Philippines", "type": "Defense Force Source", "platforms": ["Chokepoint Saturation USV", "Archipelagic Strike Swarms"], "focus": "Asymmetric chokepoint interdiction, archipelagic strait defense, 360-degree multi-axis swarm saturation, low-RCS wave-piercing hulls."},
+    {"slug": "spm-group", "name": "SPM Group & Ukrainian Space Cluster", "origin": "Ukraine", "type": "OEM", "platforms": ["Kondratyuk 1.0 FEU ADR Hunter", "RPO Orbital Platforms"], "focus": "Active Debris Removal (ADR), Low Earth Orbit rendezvous and proximity operations (RPO), non-cooperative tumbling target capture."},
+    {"slug": "fox2sierra", "name": "Fox2Sierra & Tactical Edge Command", "origin": "USA / International", "type": "Strategic Architect", "platforms": ["Joint Multi-Domain C2 Cloud", "Edge Mission Commander"], "focus": "Cross-domain kill-chain orchestration, Air-Ground-Sea heterogeneous swarm fusion, microsecond sensor-to-shooter handoffs."}
 ]
 
 DOMAINS_DATA = [
@@ -502,7 +923,7 @@ DOMAINS_DATA = [
         "medium": "Atmospheric Airspace (0 to 30 km)",
         "governing_laws": "Aerodynamic Lift-to-Drag (L/D), Mach number shock detachment, boundary-layer aerothermodynamics, wing loading.",
         "legacy_trap": "STANAG 4670 & DoD MTOW/HALE/MALE classifications rely on arbitrary weight and altitude boxes, ignoring kinetic threat omission limits and FPV interceptor speeds.",
-        "cases": ["01-honda-evtol", "03-stealth-ucav", "04-waverider-corvus", "05-sickle-wing", "12-mq25-stingray", "13-fury-ghostbat", "16-rq81-diana"]
+        "cases": ["01-honda-evtol", "03-stealth-ucav", "04-waverider-corvus", "05-sickle-wing", "12-mq25-stingray", "13-fury-ghostbat", "16-rq81-diana", "18-vantage-tacitframe", "19-petrel-aero-sky", "20-tusas-aksungur", "23-lpp-jwi4000", "25-stat-caylus-b2lt", "26-kashmir-sentinel"]
     },
     {
         "code": "UCV",
@@ -510,7 +931,7 @@ DOMAINS_DATA = [
         "medium": "Low-Altitude Disc-Loaded Aerodynamics & Fluid Power",
         "governing_laws": "Rotor disc loading (T/A), zero stall speed (V_stall = 0), momentum theory, advancing/retreating blade flapping dynamics, digital displacement fluid power.",
         "legacy_trap": "Conflating combat rotorcraft with hobbyist slang ('FPV'). FPV is a pilot screen mode, not a cyber-physical combat aircraft category.",
-        "cases": ["09-capstone-coaxial", "15-tekever-ar6"]
+        "cases": ["09-capstone-coaxial", "15-tekever-ar6", "21-tactical-ucv-spectrum"]
     },
     {
         "code": "UGV",
@@ -518,7 +939,7 @@ DOMAINS_DATA = [
         "medium": "Terrestrial & Amphibious Terrain",
         "governing_laws": "Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios, kinetic evasion velocity.",
         "legacy_trap": "Amateur slang ('vozyk', 'cart') and marketing claims of 10-tonne towing based on electric motor kW while ignoring soil shear failure in mud.",
-        "cases": ["02-slimak-ugv", "08-unex-artillery", "14-knds-centurio", "17-frodo-ugv"]
+        "cases": ["02-slimak-ugv", "08-unex-artillery", "14-knds-centurio", "17-frodo-ugv", "22-stratonex-varan", "24-lurtz-kill-zone", "27-rusi-rasputitsa"]
     },
     {
         "code": "UUV",
@@ -526,7 +947,7 @@ DOMAINS_DATA = [
         "medium": "Sub-surface Hydrospace (0 to 11,000m)",
         "governing_laws": "Hydrostatic pressure gradient (1 atm / 10m), acoustic transmission loss, acoustic cavitation, boundary-layer drag, parasitic energy harvesting.",
         "legacy_trap": "Classifying submersibles by geometric hull form factors (torpedo vs box) rather than physical Depth Horizons (D0 to D5) and acoustic signatures.",
-        "cases": ["07-ghostshark-auv", "11-lockheed-lamprey"]
+        "cases": ["07-ghostshark-auv", "11-lockheed-lamprey", "29-fitburg-sentinel"]
     },
     {
         "code": "USV",
@@ -534,7 +955,7 @@ DOMAINS_DATA = [
         "medium": "Ocean Surface Boundary Layer (Air-Sea Interface)",
         "governing_laws": "Froude number, wave-piercing slender hull dynamics, Sea State (Beaufort scale) vertical g-shock limits, transverse metacentric height (GM_T).",
         "legacy_trap": "Using fragile recreational planing speedboats for open-ocean missions; high vertical g-shocks (>6g) destroy gimbal sensors and break hulls in Sea State 4+.",
-        "cases": ["06-exail-usv"]
+        "cases": ["06-exail-usv", "28-south-china-reef", "30-philippine-carrier"]
     },
     {
         "code": "UOV",
@@ -542,9 +963,15 @@ DOMAINS_DATA = [
         "medium": "Low Earth Orbit & Cislunar Space (160 to 36,000 km)",
         "governing_laws": "Keplerian two-body celestial mechanics, Clohessy-Wiltshire relative equations, Tsiolkovsky rocket equation ΔV limits, solar radiation pressure.",
         "legacy_trap": "Sci-fi free-flight orbital tropes: changing orbital inclination by 15° at LEO costs ~2,000 m/s ΔV, locking chemical hunters into narrow co-planar targets.",
-        "cases": ["10-orbital-guardian"]
+        "cases": ["10-orbital-guardian", "31-spm-kondratyuk"],
+        "axis_legend": {
+            "octet_1": "Orbital Regime & Container Tier (L: Low Earth Orbit / M: Medium Tactical / S: Sun-Synchronous)",
+            "octet_2": "Propulsion & Mission (C: Chemical Reaction Thruster / A: Active Debris Removal / RPO)",
+            "octet_3": "Doctrine & Comms (H: High-Survivability Space Shield / R: Radiation-Hardened Cross-Link)"
+        }
     }
 ]
+CASE_CATEGORIES = [domain["code"] for domain in DOMAINS_DATA] + ["C2"]
 
 VALIDATION_DATA = {
     "summary": {
@@ -790,6 +1217,7 @@ header.top-nav {
 .badge-uuv { background: #0c2340; color: #58a6ff; border-color: #1f6feb; }
 .badge-usv { background: var(--cyan-bg); color: var(--cyan); border-color: #0284c7; }
 .badge-uov { background: #361608; color: #ff7b72; border-color: #d03801; }
+.badge-c2 { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border-color: rgba(99, 102, 241, 0.4); }
 .badge-vendor { background: var(--surface-alt); color: var(--text-muted); border-color: var(--border); }
 .badge-hal { background: #161b22; color: #a5d6ff; border-color: #388bfd; font-family: var(--code-font); }
 
@@ -1162,7 +1590,7 @@ def render_header(active_nav="home", depth=0):
     <a href="{rel}index.html" class="{'active' if active_nav=='home' else ''}">Hub</a>
     <a href="{rel}domains/index.html" class="{'active' if active_nav=='domains' else ''}">Taxonomy & Domains</a>
     <a href="{rel}cases/index.html" class="{'active' if active_nav=='cases' else ''}">{len(CASES_DATA)} Benchmarks</a>
-    <a href="{rel}c2/officer.html" class="{'active' if active_nav=='c2' else ''}">C2 Officer Symbiosis</a>
+    <a href="{rel}c2/index.html" class="{'active' if active_nav=='c2' else ''}">C2 &amp; Articles</a>
     <a href="{rel}vendors/index.html" class="{'active' if active_nav=='vendors' else ''}">Vendors & OEMs</a>
     <a href="{rel}hal/index.html" class="{'active' if active_nav=='hal' else ''}">HAL Registry</a>
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
@@ -1188,6 +1616,7 @@ def render_spectrum_bar():
         "UUV": "#58a6ff",
         "USV": "#38bdf8",
         "UOV": "#ff7b72",
+        "C2": "#ec4899",
     }
     domain_names = {
         "UAV": "Air",
@@ -1196,17 +1625,32 @@ def render_spectrum_bar():
         "UUV": "Subsea",
         "USV": "Surface",
         "UOV": "Orbital",
+        "C2": "C2/Cloud",
     }
     total = len(CASES_DATA)
+    if total == 0:
+        return ""
+
+    counts = [len([c for c in CASES_DATA if c["domain"] == code]) for code in CASE_CATEGORIES]
+    raw_pcts = [(cnt / total) * 100.0 for cnt in counts]
+    base_pcts = [int(p) for p in raw_pcts]
+    remainders = [(raw_pcts[i] - base_pcts[i], i) for i in range(len(CASE_CATEGORIES))]
+    remainders.sort(key=lambda x: (-x[0], x[1]))
+    shortfall = 100 - sum(base_pcts)
+    alloc_pcts = list(base_pcts)
+    for k in range(shortfall):
+        idx = remainders[k][1]
+        alloc_pcts[idx] += 1
+
     segs = []
     legends = []
-    for d in DOMAINS_DATA:
-        code = d["code"]
-        cnt = len([c for c in CASES_DATA if c["domain"] == code])
-        pct = (cnt / total) * 100 if total > 0 else 0
+    for i, code in enumerate(CASE_CATEGORIES):
+        cnt = counts[i]
+        pct = raw_pcts[i]
+        bar_w = alloc_pcts[i]
         color = colors.get(code, "#8b949e")
         short_name = domain_names.get(code, code)
-        segs.append(f'<div class="spec-seg" data-domain-filter="{code}" style="width:{pct:.2f}%; background:{color};" title="{code} {short_name}: {cnt} cases ({pct:.1f}%)"></div>')
+        segs.append(f'<div class="spec-seg" data-domain-filter="{code}" style="width:{bar_w}%; background:{color};" title="{code} {short_name}: {cnt} cases ({pct:.1f}%)"></div>')
         legends.append(f'<span class="legend-item"><span class="legend-dot" style="background:{color};"></span> {code} {short_name} ({pct:.1f}%)</span>')
     
     return f"""<div class="spectrum-wrap">
@@ -1232,10 +1676,10 @@ def render_filter_pills():
         "UUV": "Subsea",
         "USV": "Surface",
         "UOV": "Orbital",
+        "C2": "C2/Cloud",
     }
-    d_pills = [f'<span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains ({total})</span>']
-    for d in DOMAINS_DATA:
-        code = d["code"]
+    d_pills = [f'<span class="filter-pill domain-pill active" data-domain-filter="ALL">All Categories ({total})</span>']
+    for code in CASE_CATEGORIES:
         cnt = len([c for c in CASES_DATA if c["domain"] == code])
         short_name = domain_names.get(code, code)
         d_pills.append(f'<span class="filter-pill domain-pill" data-domain-filter="{code}">{code} {short_name} ({cnt})</span>')
@@ -1247,6 +1691,10 @@ def render_filter_pills():
         v_pills.append(f'<span class="filter-pill vendor-pill" data-vendor-filter="{slug}">{v["name"]} ({cnt})</span>')
         
     return "".join(d_pills), "".join(v_pills)
+
+def classification_path(code):
+    return "c2/index.html" if code == "C2" else f"domains/{code.lower()}.html"
+
 
 def render_case_card(case, depth=0):
     rel = "../" * depth
@@ -1260,7 +1708,7 @@ def render_case_card(case, depth=0):
     <span>•</span>
     <span>{case['date']}</span>
     <span>•</span>
-    <a href="{rel}domains/{case['domain'].lower()}.html" class="badge badge-{case['domain'].lower()}">{case['domain']}</a>
+    <a href="{rel}{classification_path(case['domain'])}" class="badge badge-{case['domain'].lower()}">{case['domain']}</a>
     <a href="{rel}vendors/index.html#{case['vendor_slug']}" class="badge badge-vendor">{case['vendor']}</a>
   </div>
   <h2 class="card-title">
@@ -1542,6 +1990,12 @@ def build_case_pages():
         pros_li = "".join(f"<li>{p}</li>" for p in case["advantages"])
         cons_li = "".join(f"<li>{c}</li>" for c in case["vulnerabilities"])
         related_links = "".join(f'<p style="margin:0.25rem 0;"><a href="{r}.html" class="badge badge-hal">Case #{r[:2]} Study →</a></p>' for r in case.get("related", []))
+        c2_notice = ""
+        if case["domain"] == "C2":
+            c2_notice = f"""<div class="lesson-box">
+        This benchmark concerns cross-domain orchestration, not a seventh physical domain.
+        <a href="../{C2_ARTICLE_PATH}">Read the Joint Cross-Domain Unmanned Operation article →</a>
+      </div>"""
 
         jsonld = {
             "@context": "https://schema.org",
@@ -1564,7 +2018,7 @@ def build_case_pages():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case #{case['id']}: {case['name']} | UWE Architectural Benchmark</title>
+<title>Case #{case['id']}: {html_mod.escape(case['name'])} | UWE Architectural Benchmark</title>
   <meta name="description" content="Technical audit of {case['name']} ({case['token']}). Physical advantages, failure modes, and HAL contract {case['hal']}.">
   <link rel="canonical" href="{BASE_URL}/cases/{case['slug']}.html">
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -1585,12 +2039,13 @@ def build_case_pages():
         <span>•</span>
         <span>Date: {case['date']}</span>
         <span>•</span>
-        <a href="../domains/{case['domain'].lower()}.html" class="badge badge-{case['domain'].lower()}">{case['domain']}</a>
+        <a href="../{classification_path(case['domain'])}" class="badge badge-{case['domain'].lower()}">{case['domain']}</a>
         <a href="../vendors/index.html#{case['vendor_slug']}" class="badge badge-vendor">{case['vendor']}</a>
       </div>
       <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
         Case #{case['id']}: {case['name']}
       </h1>
+      {c2_notice}
 
       <div class="token-banner">
         <div><strong>Monolithic 6-Character UWE Token:</strong> <code>{case['token']}</code></div>
@@ -2037,7 +2492,7 @@ def build_domains():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UWE Domain Taxonomy & Cyber-Physical Horizons</title>
+<title>UWE Domain Taxonomy &amp; Cyber-Physical Horizons</title>
   <meta name="description" content="The 6 physical operational domains of UWE: UAV, UCV, UGV, UUV, USV, and UOV. Physical laws and taxonomy boundaries.">
   <link rel="canonical" href="{BASE_URL}/domains/index.html">
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -2050,6 +2505,10 @@ def build_domains():
       Replacing fragmented single-medium labels with unified cyber-physical horizons governed by the Law of Kinematic Primacy.
     </p>
     {domains_cards}
+    <div class="lesson-box">
+      <strong>Cross-domain orchestration is a separate layer, not a seventh physical domain.</strong>
+      <a href="../c2/index.html">Explore C2 articles and Case #32 →</a>
+    </div>
   </div>
   {render_footer()}
 </body>
@@ -2139,7 +2598,7 @@ def build_vendors():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vendor & OEM Defense-Tech Mapping | UWE</title>
+<title>Vendor &amp; OEM Defense-Tech Mapping | UWE</title>
   <meta name="description" content="Mapping global MilTech manufacturers and frontline developers to UWE cyber-physical contracts.">
   <link rel="canonical" href="{BASE_URL}/vendors/index.html">
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -2806,13 +3265,100 @@ def build_c2_officer():
 </html>"""
     write_file("c2/officer.html", html)
 
+def build_c2_articles():
+    case = next(c for c in CASES_DATA if c["slug"] == "32-izzy-fried-c2")
+    title = "Joint Cross-Domain Unmanned Operation"
+    jsonld = {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": title,
+        "author": {"@type": "Person", "name": "Serhii Khylevych"},
+        "datePublished": "2026-11-07",
+        "citation": "https://lnkd.in/p/d9qXKrmm",
+        "mainEntityOfPage": f"{BASE_URL}/{C2_ARTICLE_PATH}",
+    }
+    article = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{html_mod.escape(title)} | UWE C2 Articles</title>
+  <meta name="description" content="Case #32: Izzy Fried / Fox2Sierra and UWE multi-layer stratification across air, ground, and maritime domains.">
+  <link rel="canonical" href="{BASE_URL}/{C2_ARTICLE_PATH}">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{json.dumps(jsonld, indent=2)}
+  </script>
+</head>
+<body>
+  {render_header("c2", depth=1)}
+  <main class="container" style="max-width:960px;">
+    <p><a href="index.html">← C2 Articles</a></p>
+    <article class="reddit-card">
+      <div class="card-meta">Serhii Khylevych · Expertise Ledger record: 2026-11-07 · Case #32</div>
+      <h1 class="hero-title">{title}</h1>
+      <p>Izzy Fried / Fox2Sierra</p>
+      <div class="lesson-box">C2 is the cross-domain orchestration layer. Its taxonomy is not yet defined; this article does not introduce a seventh physical domain.</div>
+      <p><strong>Ledger source:</strong> <a href="https://lnkd.in/p/d9qXKrmm" target="_blank" rel="noopener">Izzy Fried — LinkedIn Post ↗</a></p>
+      <p><strong>UWE Tokens:</strong> <code>C2: MB-HR-GW</code>, <code>UAV: AL-TC-DR</code>, <code>UGV: GL-EM-DR</code>, <code>USV: SL-PA-DR</code></p>
+      <h2>HAL Contract</h2>
+      <p><code>ICrossDomainKillWebRouter</code> &amp; <code>IMultiBearerCommsGateway</code></p>
+      <blockquote>Joint cross-domain autonomy requires ICrossDomainKillWebRouter and IMultiBearerCommsGateway to resolve heterogeneous telemetry into unified execution APIs.</blockquote>
+      <h2>Validation</h2>
+      <p>Confirms UWE 3-Tier Multi-Layer Architecture (MDO Strategic Intent ➔ UWE Meta-Layer Operational Engine ➔ CPS: HAL/EAL Execution) across air, ground, and maritime domains.</p>
+      <h2>Vulnerability</h2>
+      <p>Proprietary point-to-point command links create vendor lock-in and collapse under multi-domain EW.</p>
+      <h2>Architectural Lesson</h2>
+      <p>Validates UWE Multi-Layer Stratification; heterogeneous swarms require unified HAL abstraction rather than bespoke C2 integration.</p>
+      <p><a href="../cases/{case['slug']}.html">Case #32: existing benchmark analysis →</a></p>
+      <p>The benchmark record retains its original source, date, and interface terminology; the ledger-derived summary above is identified separately.</p>
+      <p><a href="officer.html">Related article: The Cyber-Physical Officer — Human-Machine Symbiosis →</a></p>
+    </article>
+  </main>
+  {render_footer()}
+</body>
+</html>"""
+    write_file(C2_ARTICLE_PATH, article)
+    index = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C2 Articles &amp; Cross-Domain Orchestration | UWE</title>
+  <meta name="description" content="UWE C2 articles: human-machine symbiosis and joint cross-domain unmanned operations, separate from the six physical-domain taxonomies.">
+  <link rel="canonical" href="{BASE_URL}/c2/index.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  {render_header("c2", depth=1)}
+  <main class="container">
+    <h1 class="hero-title">C2 Articles &amp; Cross-Domain Orchestration</h1>
+    <p>C2 taxonomy is not yet defined. These articles address orchestration across the <a href="../domains/index.html">six physical domains</a>, not a seventh physical domain.</p>
+    <article class="reddit-card">
+      <h2><a href="officer.html">The Cyber-Physical Officer: Human-Machine Symbiosis in UWE</a></h2>
+      <p>The existing Officer Symbiosis whitepaper and its human-machine command doctrine.</p>
+    </article>
+    <article class="reddit-card">
+      <h2><a href="{Path(C2_ARTICLE_PATH).name}">{title}</a></h2>
+      <p>Case #32 — Izzy Fried / Fox2Sierra. Existing benchmark analysis and the Expertise Ledger record of UWE multi-layer stratification.</p>
+      <a href="../cases/{case['slug']}.html">View benchmark record →</a>
+    </article>
+  </main>
+  {render_footer()}
+</body>
+</html>"""
+    write_file("c2/index.html", index)
+
+
 def build_seo_assets():
     # 1. Sitemap.xml
     urls = [
         f"{BASE_URL}/index.html",
         f"{BASE_URL}/domains/index.html",
         f"{BASE_URL}/cases/index.html",
+        f"{BASE_URL}/c2/index.html",
         f"{BASE_URL}/c2/officer.html",
+        f"{BASE_URL}/{C2_ARTICLE_PATH}",
         f"{BASE_URL}/vendors/index.html",
         f"{BASE_URL}/hal/index.html",
     ]
@@ -2823,7 +3369,7 @@ def build_seo_assets():
 
     sitemap_entries = "\n".join(f"""  <url>
     <loc>{u}</loc>
-    <lastmod>2026-10-24</lastmod>
+<lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>{'1.0' if u.endswith('index.html') and 'cases/' not in u and 'domains/' not in u else ('0.9' if 'c2/' in u else '0.8')}</priority>
   </url>""" for u in urls)
@@ -2841,12 +3387,139 @@ Sitemap: {BASE_URL}/sitemap.xml
 """
     write_file("robots.txt", robots)
 
+def purge_stale_cases(docs_root):
+    cases_dir = (Path(docs_root) / "cases").resolve()
+    if cases_dir.exists():
+        for p in cases_dir.glob("[0-9][0-9]-*.html"):
+            rp = p.resolve()
+            if rp.is_relative_to(cases_dir) and not p.is_symlink() and p.name != "index.html":
+                try:
+                    p.unlink()
+                except OSError as e:
+                    raise ValueError(f"Failed to purge stale case file {p}: {e}")
+
+TOKEN_RE = re.compile(r"^[A-Z][A-Z0-9]{1,2}: [A-Z]{2}-[A-Z]{2}-[A-Z]{2}$")
+UW_SF_RE = re.compile(r"\bUW[SF]\b")
+ALLOWED_TYPES = {
+    "OEM", "Frontline Cluster", "Research Source", "Strategic Architect",
+    "Military Trial Center", "Defense Think-Tank", "Strategic Source", "Defense Force Source"
+}
+ALLOWED_DOMAINS = {"UAV", "UCV", "UGV", "USV", "UUV", "UOV", "C2"}
+ALLOWED_COLLISIONS = {
+    "UAV: AI-CP-HL": {"04-waverider-corvus", "05-sickle-wing"},
+    "UOV: LM-CA-HR": {"10-orbital-guardian", "31-spm-kondratyuk"},
+    "UUV: CV-IS-HQ": {"11-lockheed-lamprey", "29-fitburg-sentinel"},
+    "UGV: GL-DC-DR": {"14-knds-centurio", "24-lurtz-kill-zone"},
+    "UGV: GL-EM-DR": {"17-frodo-ugv", "27-rusi-rasputitsa"},
+    "UAV: AC-RE-AQ": {"23-lpp-jwi4000", "25-stat-caylus-b2lt"},
+}
+
+def validate_uwe_integrity(cases, vendors, domains, docs_root):
+    if len(cases) != 32:
+        raise ValueError(f"Expected 32 cases, found {len(cases)}")
+    if len({c["slug"] for c in cases}) != 32:
+        raise ValueError("Duplicate case slug detected")
+    if len(vendors) != 30:
+        raise ValueError(f"Expected 30 vendors, found {len(vendors)}")
+    if len({v["slug"] for v in vendors}) != 30:
+        raise ValueError("Duplicate vendor slug detected")
+    if len(domains) != 6 or {d["code"] for d in domains} != ALLOWED_DOMAINS - {"C2"}:
+        raise ValueError("Expected the six physical domains, with C2 classified separately")
+
+    domain_members = [slug for d in domains for slug in d["cases"]]
+    physical_cases = {c["slug"] for c in cases if c["domain"] != "C2"}
+    if set(domain_members) != physical_cases or len(domain_members) != len(physical_cases):
+        raise ValueError("Physical-domain membership must cover each physical case exactly once")
+    case_domains = {c["slug"]: c["domain"] for c in cases}
+    for d in domains:
+        if any(case_domains[slug] != d["code"] for slug in d["cases"]):
+            raise ValueError(f"Incorrect case assignment in domain {d['code']}")
+
+    for idx, c in enumerate(cases):
+        prefix = f"{idx + 1:02d}-"
+        if not c["slug"].startswith(prefix):
+            raise ValueError(f"""Case {c["slug"]} does not start with sequential prefix {prefix}""")
+
+    vendor_slugs = {v["slug"] for v in vendors}
+    for v in vendors:
+        v_type = v.get("type")
+        if v_type not in ALLOWED_TYPES:
+            raise ValueError(f"""Vendor {v["slug"]} has invalid type: {v_type}""")
+
+    used_vendors = set()
+    token_to_slugs = {}
+    for c in cases:
+        v_slug = c.get("vendor_slug")
+        if v_slug not in vendor_slugs:
+            raise ValueError(f"""Case {c["slug"]} references unknown vendor {v_slug}""")
+        used_vendors.add(v_slug)
+
+        if c["domain"] not in ALLOWED_DOMAINS:
+            raise ValueError(f"""Case {c["slug"]} has invalid domain: {c["domain"]}""")
+
+        tok = c.get("token", "")
+        if not TOKEN_RE.match(tok):
+            raise ValueError(f"""Case {c["slug"]} has malformed token: {tok}""")
+        if tok.split(":")[0] != c["domain"]:
+            raise ValueError(f"""Case {c["slug"]} token prefix {tok.split(":")[0]} != domain {c["domain"]}""")
+
+        if tok not in token_to_slugs:
+            token_to_slugs[tok] = []
+        token_to_slugs[tok].append(c["slug"])
+
+    orphan_vendors = vendor_slugs - used_vendors
+    if orphan_vendors:
+        raise ValueError(f"Orphan vendors found without any associated cases: {orphan_vendors}")
+
+    for tok, slugs in token_to_slugs.items():
+        if len(slugs) > 1:
+            if tok not in ALLOWED_COLLISIONS:
+                raise ValueError(f"Unauthorized token collision for {tok}: {slugs}")
+            if set(slugs) != ALLOWED_COLLISIONS[tok]:
+                raise ValueError(f"Collision mismatch for {tok}: expected {ALLOWED_COLLISIONS[tok]}, got {set(slugs)}")
+
+    for tok, expected_slugs in ALLOWED_COLLISIONS.items():
+        if tok not in token_to_slugs:
+            raise ValueError(f"Declared collision token {tok} does not occur in cases")
+        if set(token_to_slugs[tok]) != expected_slugs:
+            raise ValueError(f"Declared collision {tok} mismatch in cases")
+
+    cases_dir = (Path(docs_root) / "cases").resolve()
+    generated_case_files = list(cases_dir.glob("[0-9][0-9]-*.html"))
+    if len(generated_case_files) != 32:
+        raise ValueError(f"Expected 32 generated case files, found {len(generated_case_files)}")
+    for rel_path in ("c2/index.html", C2_ARTICLE_PATH):
+        if not (Path(docs_root) / rel_path).is_file():
+            raise ValueError(f"Missing C2 article page: {rel_path}")
+
+    for p in Path(docs_root).rglob("*"):
+        if not p.is_file() or p.suffix.lower() not in {".html", ".xml", ".txt", ".js", ".json", ".css"}:
+            continue
+        try:
+            content = p.read_text(encoding="utf-8", errors="ignore")
+        except Exception as e:
+            raise ValueError(f"Failed to read {p}: {e}")
+
+        m = UW_SF_RE.search(content)
+        if m:
+            snippet = content[max(0, m.start() - 25):min(len(content), m.end() + 25)].replace("\n", " ")
+            if "UWE-concept-proof" not in snippet:
+                raise ValueError(f"Forbidden acronym leak in {p}: ...{snippet}...")
+
+        if "/home/hills/" in content:
+            idx = content.find("/home/hills/")
+            snippet = content[max(0, idx - 20):min(len(content), idx + 40)].replace("\n", " ")
+            raise ValueError(f"Workspace path leak in {p}: ...{snippet}...")
+
+    print("🛡️ [INTEGRITY CHECK PASSED] All 32 cases, 30 vendors, 6 physical domains, C2 articles and docs/ validated with zero leaks.")
+
 def main():
     print("=" * 65)
     print("🚀 Building Unmanned Warfare Engine (UWE) Documentation Portal")
     print(f"📁 Target Output: {DOCS}")
     print("=" * 65)
     
+    purge_stale_cases(DOCS)
     generate_css()
     generate_js()
     build_index()
@@ -2854,9 +3527,11 @@ def main():
     build_case_pages()
     build_domains()
     build_c2_officer()
+    build_c2_articles()
     build_vendors()
     build_hal()
     build_seo_assets()
+    validate_uwe_integrity(CASES_DATA, VENDORS_DATA, DOMAINS_DATA, DOCS)
     
     print(f"\n✅ Build Complete! {len(CASES_DATA)} Cases, {len(DOMAINS_DATA)} Domains, C2 Officer Symbiosis, {len(VENDORS_DATA)} Vendors & HAL Registry Generated.")
     print("📊 All pages include Schema.org JSON-LD and pre-rendered static HTML.")

@@ -96,8 +96,11 @@ LinkedIn's editor and mobile app severely distort standard Markdown or HTML tabl
 ## 5. Technical Environment & Synchronization Tooling
 
 * **Local Workspace:** `/home/hills/Documents/UWS`
-* **GitHub Repository:** `https://github.com/sshill/UWE-concept-proof`
-* **GitHub Pages Portal:** `https://sshill.github.io/UWE-concept-proof/`
+* **GitHub Repository (Monorepo `main`):** `https://github.com/sshill/UWE-concept-proof`
+* **GitHub Pages Portal (`portal-release` ➔ `gh-pages`):** `https://sshill.github.io/UWE-concept-proof/`
+* **Release & Sealing Pipeline (`push_to_github.sh`):**
+  * `./push_to_github.sh + [msg]` — Local Git State Seal (Phase 5.2): `git add` + `git commit -m "[verified: antigravity]"`.
+  * `./push_to_github.sh ++` — Remote Release (Phase 5 Release): compiles `docs/`, syncs `portal-release` subtree, pushes `portal-release ➔ origin/gh-pages` and `main ➔ origin/main`.
 * **GitHub Projects Space:** `https://github.com/users/sshill/projects/1`
 * **Google Drive Sync:**
   * Remote Name: `GDdisk` (configured via `rclone` at `~/.config/rclone/rclone.conf`)

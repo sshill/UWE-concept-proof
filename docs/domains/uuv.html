@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UUV Domain Taxonomy | Unmanned Warfare Engine</title>
   <meta name="description" content="Unmanned Undersea Vehicles (Sub-Surface Robotics) — physical boundaries, equations of motion, 6-character matrix, and empirical benchmarks.">
-  <link rel="canonical" href="https://uwe-standard.github.io/domains/uuv.html">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/domains/uuv.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">13 Benchmarks</a>
-    <a href="../c2/officer.html" class="">C2 Officer Symbiosis</a>
+    <a href="../cases/index.html" class="">32 Benchmarks</a>
+    <a href="../c2/index.html" class="">C2 &amp; Articles</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="">HAL Registry</a>
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
@@ -156,7 +156,7 @@
     
 
     <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
-      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UUV (2 Cases)</h2>
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UUV (3 Cases)</h2>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UUV physical envelope:</p>
       <div>
         <article class="reddit-card case-item" data-domain="UUV" data-vendor="anduril" id="case-07">
@@ -254,6 +254,55 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="../cases/06-exail-usv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #06</a><a href="../cases/07-ghostshark-auv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #07</a>
       <a href="../cases/11-lockheed-lamprey.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UUV" data-vendor="fitburg" id="case-29">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-03</span>
+    <span>•</span>
+    <a href="../domains/uuv.html" class="badge badge-uuv">UUV</a>
+    <a href="../vendors/index.html#fitburg" class="badge badge-vendor">Fitburg Marine & Subsea Infrastructure Defense</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/29-fitburg-sentinel.html">Case #29: Fitburg Anchor Drag Critical Undersea Infrastructure Defense</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UUV: CV-IS-HQ</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UUV: Continental Shelf Seabed • C2 Autonomous Deployment • Battery & Fuel Cell • Seabed Infrastructure Defense & Cable Picket • Strategic Deterrence • Acoustic Underwater Modem & Optical Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#ISeabedAnchorMonitoring"><code>ISeabedAnchorMonitoring</code></a></div>
+    <div><em>"Seabed critical infrastructure defense robotics require ISeabedAnchorMonitoring and IHydroacousticInterceptionArray to detect and localize hostile commercial anchor-dragging attacks on subsea telecommunication cables and gas pipelines in real time."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Continuous Infrastructure Overwatch: autonomous crawling and loitering on the continental shelf provides 24/7 acoustic listening along fiber corridors.</li><li>Non-Attributable Threat Attribution: records acoustic signatures of dragging vessel anchors, proving deliberate sabotage vs maritime accidents.</li><li>Modular Seabed Interdiction: capable of releasing warning acoustic beacons, deploying cable-repair anchors, or marking sabotage platforms.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Extreme Hydrostatic Silt Sinking: prolonged stationary posture on loose seabed silt causes chassis subsidence, requiring buoyant ejection tanks.</li><li>Acoustic Communication Bandwidth: underwater acoustic modems provide under 10 kbps throughput, requiring onboard AI to process raw sonar contacts.</li><li>Commercial Trawler Snag Hazard: heavy bottom-trawling fishing nets can ensnare or displace the sentinel vehicle.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Codifies Subsea Critical Infrastructure Protection (CUI) in UWE: defending democratic digital subsea cables requires stationary, autonomous seabed sentinels.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d6h_9H4B" target="_blank" rel="noopener">Naval News / Critical Undersea Infrastructure Picket ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/07-ghostshark-auv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #07</a><a href="../cases/11-lockheed-lamprey.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #11</a><a href="../cases/28-south-china-reef.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #28</a>
+      <a href="../cases/29-fitburg-sentinel.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>

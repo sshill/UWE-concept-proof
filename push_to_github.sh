@@ -45,8 +45,7 @@ function seal_local() {
     fi
 
     echo "⚙️ Стейджинг змінених файлів..."
-    git add -u
-    git add .
+git add docs/ build_uwe_site.py push_to_github.sh test_build_uwe_site.py Expertise/ .gitignore AGENTS.md
 
     echo "💾 Фіксація коміту: '${commit_msg} [verified: antigravity]'..."
     git commit -m "${commit_msg} [verified: antigravity]"
@@ -58,19 +57,56 @@ function seal_local() {
 function publish_remote() {
     echo "🚀 [Phase 5 Release Gate] Запуск віддаленої публікації за маркером '++'..."
 
-    seal_local "${@}" "chore(release): pre-publish state seal"
-
-    echo ""
-    echo "🌐 [Крок 1/2] Публікація гілки веб-порталу 'portal-release' ➔ 'gh-pages'..."
-    if git rev-parse --verify portal-release >/dev/null 2>&1; then
-        git "push" origin portal-release:refs/heads/gh-pages
-        echo "✅ Гілка gh-pages успішно оновлена на GitHub."
-    else
-        echo "⚠️ Попередження: локальна гілка 'portal-release' не знайдена, пропускаємо крок 1."
+echo "⚙️ [Крок 1/5] Перевірка компіляції та цілісності веб-порталу docs/..."
+    if [[ -f "build_uwe_site.py" ]]; then
+        python3 -B build_uwe_site.py
     fi
 
     echo ""
-    echo "🏛️ [Крок 2/2] Публікація монорепозиторію 'main' ➔ 'origin/main'..."
+    echo "🧪 [Крок 2/5] Детерміновані регресійні тести порталу..."
+    if [[ -f "test_build_uwe_site.py" ]]; then
+        python3 -B -m unittest test_build_uwe_site
+    fi
+
+    echo ""
+    echo "🔒 [Крок 3/5] Локальне запечатування актуального стану в main..."
+    seal_local "${@}" "feat(portal): release empirical benchmarks and C2 architecture"
+
+    echo ""
+    echo "📦 [Крок 4/5] Створення актуального зліпка docs/ для гілки portal-release..."
+    local portal_tree
+    portal_tree=$(git write-tree --prefix=docs/)
+    local parent_arg=""
+    if git rev-parse --verify portal-release >/dev/null 2>&1; then
+        local current_portal_commit
+        current_portal_commit=$(git rev-parse portal-release)
+        parent_arg="-p ${current_portal_commit}"
+    fi
+    local portal_commit
+    portal_commit=$(git commit-tree "${portal_tree}" ${parent_arg} -m "feat(portal): release empirical benchmarks from docs/ [verified: antigravity]")
+    git update-ref refs/heads/portal-release "${portal_commit}"
+    echo "✅ Гілка portal-release оновлена до зліпка docs/ (коміт: $(git rev-parse --short portal-release))."
+
+    echo ""
+    echo "🛡️ [Крок 5/5-A] Збереження міграційного бекап-тегу для origin/main..."
+    if git rev-parse --verify origin/main >/dev/null 2>&1; then
+        local remote_sha
+        remote_sha=$(git rev-parse origin/main)
+        local tag_name="backup/origin-main-${remote_sha:0:7}"
+        if ! git rev-parse --verify "${tag_name}" >/dev/null 2>&1; then
+            echo "   • Створення тегу ${tag_name} (${remote_sha})..."
+            git tag "${tag_name}" "${remote_sha}"
+            git "push" origin "refs/tags/${tag_name}" || true
+        fi
+    fi
+
+    echo ""
+    echo "🌐 [Крок 5/5-B] Публікація гілки веб-порталу 'portal-release' ➔ 'gh-pages'..."
+    git "push" origin portal-release:refs/heads/gh-pages
+    echo "✅ Гілка gh-pages успішно оновлена на GitHub."
+
+    echo ""
+    echo "🏛️ [Крок 5/5-C] Публікація монорепозиторію 'main' ➔ 'origin/main'..."
     git "push" origin main:refs/heads/main --force-with-lease
     echo "✅ Гілка main успішно оновлена на GitHub."
 
