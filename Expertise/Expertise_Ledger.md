@@ -43,6 +43,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 32 | **Joint Cross-Domain Unmanned Operation (Izzy Fried / Fox2Sierra)** | [LinkedIn](https://lnkd.in/p/d9qXKrmm) / Izzy Fried | `C2: MB-HR-GW`<br>`UAV: AL-TC-DR`<br>`UGV: GL-EM-DR`<br>`USV: SL-PA-DR` | `ICrossDomainKillWebRouter` & `IMultiBearerCommsGateway` | Validates UWE 3-Tier Multi-Layer Architecture (MDO Strategic Intent ➔ UWE Meta-Layer Operational Engine ➔ CPS: HAL/EAL Execution); breaks proprietary point-to-point command silos by standardizing cross-domain kill-web routing, multi-bearer gateway resilience, and physical medium abstraction across air, ground, and maritime domains. | 2026-11-07 |
 | 33 | **Neuronautics AI Toroidal Propeller & Aeroacoustic Benchmark** | [FB Reel](https://www.facebook.com/reel/1391513959448828) / Serhii Pasevych | `UCV: MQ-EE-AR` | `IRotorcraftAeroacousticDynamics` & `IToroidalMorphingAeroelasticDrive` | Deconstructs the 75% vs 65% efficiency trade-off: doubled wetted area ($S_{\text{wet}}$) and low-Re viscous drag penalize profile power ($P_0$), but closed arch loop (Euler's elastica) reduces bending moment 3–4x, enabling ultrathin airfoils ($t/c \approx 4\text{--}5\%$) that halve $C_{d0}$ and fully recover the 15% efficiency penalty ($2 \times 0.5 = 1.0$); eliminates tip vortex core and BPF noise; enables bearingless aeroelastic pitch morphing and phase-locked wake coalescence in VTOL transitions. | 2026-11-13 |
 | 34 | **REGENT Seaglider (Viceroy Tri-Modal WIG)** | [FB Reel](https://www.facebook.com/reel/1091309223663639) / REGENT Craft | `USV: LG-VB-AS` | `ITriModalSeagliderTransitionDrive` & `IHeightStaticStabilityControl` | Deconstructs the "Float, Foil, Fly" tri-modal sequence: retractable hydrofoils break the water-resistance hump ($R_{\text{hump}}$), cutting drag by 70–80% and wave-slamming ($G_z$), before transitioning into pure ground-effect flight ($h/c < 0.5$) with 50% lower induced drag ($C_{Di}$) and $L/D > 22\text{--}25$; reveals center-of-pressure shift ($\Delta x_{cp}$) on foil retraction requiring microsecond blown-flap propeller slipstream compensation to prevent height instability ($dC_m/dh$) and porpoising at 100+ km/h. | 2026-11-16 |
+| 35 | **Hop Aero ROOK (Container-Launched Hypersonic Rocket)** | [FB Reel](https://www.facebook.com/reel/972173385834214) / Hop Aero | `UAV: HC-CR-AS` | `ISuborbitalVtvlCargoDrive` & `ITerrainAdaptiveLandingControl` | Validates UWE Law 2 ($C_4 \rightarrow C_3$ containerization) by replacing fixed strategic spaceport/runway infrastructure with standard 40-ft ISO shipping containers; suborbital parabolic trajectory (750 km / 15 min at Mach 5+) collapses contested logistics latency, but exposes physical bottlenecks: hoverslam throttle limits, rocket plume soil excavation/FOD on unprepared ground, and ballistic missile infrared/radar misidentification risks. | 2026-11-16 |
 
 ---
 
@@ -669,6 +670,30 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Saline Corrosion & High-Speed Cavitation:** Operating distributed electric nacelles in high-velocity sea spray ($300\text{ km/h}$) accelerates leading-edge erosion and demands hermetic IP68 motor sealing.
 * **Architectural Lesson for UWE:**
   * **Regulatory & Physical Decoupling:** Reclassifying high-speed coastal transit under the maritime WIG standard (IMO MSC/Circ.1054) rather than FAA aviation codes bypasses airport infrastructure bottlenecks; physically, tri-modal "Float, Foil, Fly" proves that combining hydrofoils (`F`) with ground effect (`G`) solves the hydrodynamic power barrier, validating the USV continuum in littoral archipelagic warfare.
+
+---
+
+## 32. Case Study #35: Hop Aero ROOK (Container-Launched Hypersonic Cargo Rocket)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/972173385834214) / Hop Aero
+* **Date Analyzed:** 2026-11-16
+* **UWE 6-Character Token:** `UAV: HC-CR-AS`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ISuborbitalVtvlCargoDrive` & `ITerrainAdaptiveLandingControl`
+  * **One-Sentence Definition:** *"Autonomous containerized suborbital cargo rockets require the ISuborbitalVtvlCargoDrive HAL contract to coordinate supersonic aerodynamic re-entry deceleration and deep-throttling gimbaled thrust vectoring in real time, executing terrain-relative navigation (TRN) for a zero-runway touchdown on unprepared ground within CEP < 5 meters."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Containerized Decoupled Infrastructure ($C_4 \rightarrow C_3$):** Packaging launch rail and erection hydraulics into a 40-ft ISO container decouples rocket operations from spaceports and runways, turning any commercial container vessel, rail spur, or forest clearing into an immediate hypersonic logistics pad.
+  * **Compressed Temporal Attrition (Mach 5+ / 15 min):** 750 km delivery in 900 seconds compresses operational latency from days/hours to minutes, bypassing maritime blockades, anti-access/area denial (A2/AD) bubbles, and contested ground choke points.
+  * **Decoupled Payload Integration:** Modular invariant payload bay (250 kg / 550 lbs) supports rapid swapping between Class VIII medical resupply, loitering munition (UCV) dispenser cartridges, or EW jammers without re-engineering the propulsion stage.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **The Hoverslam Throttling Trap:** Liquid rocket engines suffer hard lower throttle limits (rarely below 30–40% of max thrust). In a nearly dry vehicle ($m_{\text{dry}} \ll m_0$), minimum thrust exceeds landing weight ($T_{\text{min}} > m_{\text{dry}} g$), making hovering impossible and forcing a millisecond "suicide burn" (hoverslam) with zero room for sensor error.
+  * **Rocket Plume Excavation & Unprepared Surface FOD:** Impinging a multi-ton supersonic rocket plume ($>2500^\circ\text{C}$, $>2500\text{ m/s}$) onto raw dirt, gravel, or sand excavates deep craters, blasting supersonic rocks and debris back into the engine bell and TVC actuators.
+  * **Strategic Early-Warning Ambiguity:** High-altitude suborbital ballistic arcs emit massive infrared signatures identical to intermediate-range ballistic missiles (IRBM), risking false-positive alarms in early-warning constellations (SBIRS) and unintentional escalation.
+
+* **Architectural Lesson for UWE:**
+  * **Law 2 Microcosm & Terminal Physics:** Hop Aero proves that military rocket logistics succeed only when freed from $C_4$ strategic bases into standard $C_3$ intermodal logistics. However, terminal touchdown physics (hoverslam and blast craters) represent the primary failure envelope. In UWE doctrine, hypersonic ballistic stages are ideal as autonomous one-way or semi-reusable high-value carriers, but require specialized terrain-adaptive landing attenuation and thermal plume dispersion to operate reliably in raw tactical zones.
 
 
 
