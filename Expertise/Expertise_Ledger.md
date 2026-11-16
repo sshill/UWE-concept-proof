@@ -47,6 +47,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 36 | **Avidrone Aerospace (Tandem-Rotor Cargo UCV Fleet: 210TL & 740T)** | [FB Reel](https://www.facebook.com/reel/3237345289784878) / Defense Advancement | `UCV: TL-TH-MS`<br>`UCV: TL-EB-MS` | `ITandemRotorDynamics` & `IAutonomousCargoRelease` | Re-anchors rotor disc loading under UWE Article 2: tandem counter-rotating rotors double swept area and convert 100% engine shaft power into lift (saving 12–15% anti-torque tail rotor loss); differential collective pitch neutralizes severe longitudinal center-of-gravity shifts ($\Delta x_{cg}$); heavy fuel turbine (Jet A / JP-8 / Diesel) delivers 227 kg over 724 km for contested logistics without battery degradation. | 2026-11-16 |
 | 37 | **Oshen C-Star PC13 (Micro-USV Transatlantic Wingsail)** | [FB Reel](https://www.facebook.com/reel/1459370292730982) / Interesting Engineering | `USV: SW-MS-IS` | `IAutonomousWingsailNavigation` & `IPersistentOceanPicket` | First vessel to win the Microtransat Fully Autonomous Challenge (3,555 miles / 127 days, Gran Canaria to Barbados); validates micro-scale ($C_0$, 1.3m, 56 kg) hydrodynamic survivability in 30-ft swells via zero bending moments ($L^3$ scaling); decouples wind-driven propulsion from 52.5W solar avionics storage to deliver infinite oceanic loiter and persistent low-cost ASW/ocean-sentry screening. | 2026-11-16 |
 | 38 | **PRENEU Tactical UAS (MILVUS T400 & PANDION Q1200)** | [FB Reel](https://www.facebook.com/reel/2008703892980995) / Defense Advancement | `UAV: AL-EB-MS`<br>`UCV: CQ-EB-DR` | `IVtolTransitionDrive` & `IBallisticMunitionDropController` | Lift+Cruise VTOL eliminates tiltrotor mechanical failure, achieving 180 min endurance on 57Ah battery, but incurs a 15–20% parasitic lift-boom drag penalty ($\Delta C_{D0}$); 18-kg quadcopter integrates ultrasonic wind sensor feed-forwarding dynamic crossflow into hover attitude to achieve <5m CEP mortar drops from 150m without aerodynamic dive maneuvers. | 2026-11-16 |
+| 39 | **Airbus Flexrotor (Aerovel Tailsitter VTOL)** | [FB Reel](https://www.facebook.com/reel/1495653508676587) / Defense Advancement | `UAV: AL-IC-SL` | `ITailsitterTransitionDynamics` & `IAutonomousDeckRecoveryDrive` | Pure tailsitter layout eliminates lift-boom parasitic drag tax, using 100% of single 2.2m proprotor for hover and cruise; 28cc heavy-fuel engine delivers 12–32h endurance and 8kg payload (32% MTOW fraction) on 25kg airframe; 3.7x3.7m footprint enables autonomous shipboard operations without nets or catapults. | 2026-11-16 |
+
 
 
 ---
@@ -774,6 +776,38 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **Law of Decoupled Lethality across Heterogeneous Teams:** The Preneu ecosystem provides empirical proof of UWE Decoupled Lethality. Attempting to build an "all-in-one" armed VTOL creates an unviable compromise between lift-boom drag and munitions payload. True tactical superiority is achieved by pairing high-efficiency aerodynamic lift (`UAV: AL-EB-MS`) for persistent high-altitude ISR/relay screening with compact disc-loaded rotorcraft (`UCV: CQ-EB-DR`) for close-in kinetic delivery.
+
+---
+
+## 36. Case Study #39: Airbus Flexrotor (Aerovel Tailsitter VTOL)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1495653508676587) / Defense Advancement
+* **Date Analyzed:** 2026-11-16
+* **UWE 6-Character Token:** `UAV: AL-IC-SL`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ITailsitterTransitionDynamics` & `IAutonomousDeckRecoveryDrive`
+  * **One-Sentence Definitions:**
+    * *`ITailsitterTransitionDynamics`: "Tailsitter VTOL UAS architectures mandate the ITailsitterTransitionDynamics HAL contract to seamlessly arbitrate the continuous 90-degree pitch transition by blending proprotor cyclic pitch with wing elevon aerodynamic deflections, actively decoupling gyroscopic precession moments across the stall boundary."*
+    * *`IAutonomousDeckRecoveryDrive`: "Maritime expeditionary drone operations require the IAutonomousDeckRecoveryDrive HAL contract to synchronize high-precision vertical descent and docking into a 3.7x3.7m shipboard capture base, actively compensating for 6-DoF deck heave, roll, and pitch in Sea State 4+ environments."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Zero Parasite Boom Drag Tax (Clean Airframe Invariance):** Unlike Lift+Cruise architectures (e.g. MILVUS T400) which carry 4 inactive lift motors creating a 15–20% parasite drag penalty ($\Delta C_{D0}$), the tailsitter layout utilizes 100% of its single 2.2m proprotor for hover and cruise, achieving uncompromised aerodynamic glide efficiency ($L/D > 16$).
+  * **Hydrocarbon Energy Density ($12\text{k Wh/kg}$ vs $250\text{ Wh/kg}$):** Powered by a 28cc two-stroke engine running on heavy fuel or gasoline, the 25-kg airframe achieves 12 to 15 hours standard endurance and up to an unrefueled world record of 32+ hours.
+  * **Exceptional Useful Payload Fraction (32% of MTOW):** Lifts up to 8 kg of stabilized EO/IR gimbal, EW, or radar sensors on a 25 kg airframe (more than 5x the payload fraction of pure-battery VTOLs of the same weight class).
+  * **Expeditionary Runway-Independence ($3.7\times 3.7\text{ m}$ Footprint):** Vertical launch and recovery directly from tail landing gear eliminates catapults, skyhooks, or arresting nets, allowing operations from small naval vessels and austere outposts.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Hover Wing Sail Effect:** Standing vertically on its tail, the 3.0-meter fixed wing acts as a sail in crosswinds, generating strong overturning moments that require high cyclic pitch control authority and active elevon trim in the propwash.
+  * **Gyroscopic Precession in Transition:** Rapidly pitching the spinning 2.2m proprotor through 90 degrees generates cross-axis gyroscopic yaw torque ($\tau_{\text{gyro}} = I_{\text{rotor}} \cdot \vec{\omega}_{\text{spin}} \times \vec{\Omega}_{\text{pitch}}$) that must be continuously decoupled by the flight computer.
+  * **Mechanical Complexity of Geared Cyclic Rotor:** Single two-stroke cylinder torque pulses impose high vibrational loads on the proprotor gearbox and cyclic pitch swashplate mechanisms.
+
+* **Architectural Lesson for UWE:**
+  * **The Tailsitter Aerodynamic Frontier:** Proves that when tactical doctrine demands strategic endurance (>12 h) and heavy sensory payloads (>30% of MTOW) under a compact 25-kg envelope, single-proprotor tailsitters powered by internal combustion radically outperform electric Lift+Cruise multi-motor platforms by eliminating the dead-weight boom drag tax. The viability of the tailsitter configuration is purely software-defined, governed by the HAL layer that tames aerodynamically unstable transition dynamics.
+
+
+
+
+
 
 
 
