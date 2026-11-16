@@ -44,6 +44,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 33 | **Neuronautics AI Toroidal Propeller & Aeroacoustic Benchmark** | [FB Reel](https://www.facebook.com/reel/1391513959448828) / Serhii Pasevych | `UCV: MQ-EE-AR` | `IRotorcraftAeroacousticDynamics` & `IToroidalMorphingAeroelasticDrive` | Deconstructs the 75% vs 65% efficiency trade-off: doubled wetted area ($S_{\text{wet}}$) and low-Re viscous drag penalize profile power ($P_0$), but closed arch loop (Euler's elastica) reduces bending moment 3–4x, enabling ultrathin airfoils ($t/c \approx 4\text{--}5\%$) that halve $C_{d0}$ and fully recover the 15% efficiency penalty ($2 \times 0.5 = 1.0$); eliminates tip vortex core and BPF noise; enables bearingless aeroelastic pitch morphing and phase-locked wake coalescence in VTOL transitions. | 2026-11-13 |
 | 34 | **REGENT Seaglider (Viceroy Tri-Modal WIG)** | [FB Reel](https://www.facebook.com/reel/1091309223663639) / REGENT Craft | `USV: LG-VB-AS` | `ITriModalSeagliderTransitionDrive` & `IHeightStaticStabilityControl` | Deconstructs the "Float, Foil, Fly" tri-modal sequence: retractable hydrofoils break the water-resistance hump ($R_{\text{hump}}$), cutting drag by 70–80% and wave-slamming ($G_z$), before transitioning into pure ground-effect flight ($h/c < 0.5$) with 50% lower induced drag ($C_{Di}$) and $L/D > 22\text{--}25$; reveals center-of-pressure shift ($\Delta x_{cp}$) on foil retraction requiring microsecond blown-flap propeller slipstream compensation to prevent height instability ($dC_m/dh$) and porpoising at 100+ km/h. | 2026-11-16 |
 | 35 | **Hop Aero ROOK (Container-Launched Hypersonic Rocket)** | [FB Reel](https://www.facebook.com/reel/972173385834214) / Hop Aero | `UAV: HC-CR-AS` | `ISuborbitalVtvlCargoDrive` & `ITerrainAdaptiveLandingControl` | Validates UWE Law 2 ($C_4 \rightarrow C_3$ containerization) by replacing fixed strategic spaceport/runway infrastructure with standard 40-ft ISO shipping containers; suborbital parabolic trajectory (750 km / 15 min at Mach 5+) collapses contested logistics latency, but exposes physical bottlenecks: hoverslam throttle limits, rocket plume soil excavation/FOD on unprepared ground, and ballistic missile infrared/radar misidentification risks. | 2026-11-16 |
+| 36 | **Avidrone Aerospace (Tandem-Rotor Cargo UCV Fleet: 210TL & 740T)** | [FB Reel](https://www.facebook.com/reel/3237345289784878) / Defense Advancement | `UCV: TL-TH-MS`<br>`UCV: TL-EB-MS` | `ITandemRotorDynamics` & `IAutonomousCargoRelease` | Re-anchors rotor disc loading under UWE Article 2: tandem counter-rotating rotors double swept area and convert 100% engine shaft power into lift (saving 12–15% anti-torque tail rotor loss); differential collective pitch neutralizes severe longitudinal center-of-gravity shifts ($\Delta x_{cg}$); heavy fuel turbine (Jet A / JP-8 / Diesel) delivers 227 kg over 724 km for contested logistics without battery degradation. | 2026-11-16 |
 
 ---
 
@@ -694,6 +695,30 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **Law 2 Microcosm & Terminal Physics:** Hop Aero proves that military rocket logistics succeed only when freed from $C_4$ strategic bases into standard $C_3$ intermodal logistics. However, terminal touchdown physics (hoverslam and blast craters) represent the primary failure envelope. In UWE doctrine, hypersonic ballistic stages are ideal as autonomous one-way or semi-reusable high-value carriers, but require specialized terrain-adaptive landing attenuation and thermal plume dispersion to operate reliably in raw tactical zones.
+
+---
+
+## 33. Case Study #36: Avidrone Aerospace (Tandem-Rotor Cargo UCV Fleet: 210TL & 740T)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/3237345289784878) / Defense Advancement
+* **Date Analyzed:** 2026-11-16
+* **UWE 6-Character Tokens:** `UCV: TL-TH-MS` (740T) & `UCV: TL-EB-MS` (210TL)
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ITandemRotorDynamics` & `IAutonomousCargoRelease`
+  * **One-Sentence Definition:** *"Autonomous tandem-rotor copter systems require the ITandemRotorDynamics interface to continuously arbitrate differential collective pitch across counter-rotating rotor discs, compensating for rapid center-of-gravity shifts during the autonomous pickup and touch-and-go release of 227-kg tactical payloads on unprepared forward terrain."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **100% Useful Lift Power Conversion:** Counter-rotating tandem rotors cancel net torque aerodynamically, eliminating the conventional helicopter tail rotor that expends 12–15% of engine shaft power purely on anti-torque counteraction.
+  * **Lower Disc Loading vs Consumer Multirotors:** Utilizing two large-diameter rotor discs rather than 6–12 small multirotor propellers drastically reduces induced power losses ($P_i \propto 1/\sqrt{A}$), generating the high hover power efficiency required to lift 227 kg payloads on tactical fuel budgets.
+  * **Longitudinal Center-of-Gravity Invariance ($\Delta x_{cg}$):** Shifting sling loads or sloshing liquid cargo is trimmed via differential collective pitch between front and rear discs rather than parasitic aerodynamic trim tabs, maintaining vehicle stability across wide loading regimes.
+  * **Heavy Fuel Frontline Logistics:** The 740T gas turbine operates on standard battlefield heavy fuels (Jet A, JP-8, Diesel), eliminating forward lithium battery charging chokepoints and enabling rapid tactical turnaround.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Mechanical Complexity & Field Maintenance:** Dual swashplates, collective pushrods, synchronization cross-shafting, and reduction gearboxes introduce mechanical wear points and vulnerability to dust/sand ingestion in forward bases.
+  * **Rotor Wake Intermeshing & Vibrations:** Forward flight pushes the front rotor's downwash wake into the rear rotor disc, creating periodic aerodynamic interference, dynamic blade stress, and elevated acoustic signatures.
+
+* **Architectural Lesson for UWE:**
+  * **Kinematic Primacy of Rotorcraft in UCV Domain:** Re-confirms that vertical lift platforms governed by rotor disc loading ($V_{\text{stall}} = 0$) belong strictly to the **UCV** domain under Article 2 doctrine. Avidrone proves that when autonomous logistics scales beyond small tactical payloads (>50–200 kg), direct-drive electric multirotors fail due to induced power scaling laws, mandating high-efficiency disc-loaded rotorcraft (tandem or coaxial) and heavy-fuel turbine energy density.
 
 
 
