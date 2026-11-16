@@ -45,6 +45,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 34 | **REGENT Seaglider (Viceroy Tri-Modal WIG)** | [FB Reel](https://www.facebook.com/reel/1091309223663639) / REGENT Craft | `USV: LG-VB-AS` | `ITriModalSeagliderTransitionDrive` & `IHeightStaticStabilityControl` | Deconstructs the "Float, Foil, Fly" tri-modal sequence: retractable hydrofoils break the water-resistance hump ($R_{\text{hump}}$), cutting drag by 70–80% and wave-slamming ($G_z$), before transitioning into pure ground-effect flight ($h/c < 0.5$) with 50% lower induced drag ($C_{Di}$) and $L/D > 22\text{--}25$; reveals center-of-pressure shift ($\Delta x_{cp}$) on foil retraction requiring microsecond blown-flap propeller slipstream compensation to prevent height instability ($dC_m/dh$) and porpoising at 100+ km/h. | 2026-11-16 |
 | 35 | **Hop Aero ROOK (Container-Launched Hypersonic Rocket)** | [FB Reel](https://www.facebook.com/reel/972173385834214) / Hop Aero | `UAV: HC-CR-AS` | `ISuborbitalVtvlCargoDrive` & `ITerrainAdaptiveLandingControl` | Validates UWE Law 2 ($C_4 \rightarrow C_3$ containerization) by replacing fixed strategic spaceport/runway infrastructure with standard 40-ft ISO shipping containers; suborbital parabolic trajectory (750 km / 15 min at Mach 5+) collapses contested logistics latency, but exposes physical bottlenecks: hoverslam throttle limits, rocket plume soil excavation/FOD on unprepared ground, and ballistic missile infrared/radar misidentification risks. | 2026-11-16 |
 | 36 | **Avidrone Aerospace (Tandem-Rotor Cargo UCV Fleet: 210TL & 740T)** | [FB Reel](https://www.facebook.com/reel/3237345289784878) / Defense Advancement | `UCV: TL-TH-MS`<br>`UCV: TL-EB-MS` | `ITandemRotorDynamics` & `IAutonomousCargoRelease` | Re-anchors rotor disc loading under UWE Article 2: tandem counter-rotating rotors double swept area and convert 100% engine shaft power into lift (saving 12–15% anti-torque tail rotor loss); differential collective pitch neutralizes severe longitudinal center-of-gravity shifts ($\Delta x_{cg}$); heavy fuel turbine (Jet A / JP-8 / Diesel) delivers 227 kg over 724 km for contested logistics without battery degradation. | 2026-11-16 |
+| 37 | **Oshen C-Star PC13 (Micro-USV Transatlantic Wingsail)** | [FB Reel](https://www.facebook.com/reel/1459370292730982) / Interesting Engineering | `USV: SW-MS-IS` | `IAutonomousWingsailNavigation` & `IPersistentOceanPicket` | First vessel to win the Microtransat Fully Autonomous Challenge (3,555 miles / 127 days, Gran Canaria to Barbados); validates micro-scale ($C_0$, 1.3m, 56 kg) hydrodynamic survivability in 30-ft swells via zero bending moments ($L^3$ scaling); decouples wind-driven propulsion from 52.5W solar avionics storage to deliver infinite oceanic loiter and persistent low-cost ASW/ocean-sentry screening. | 2026-11-16 |
 
 ---
 
@@ -719,6 +720,30 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **Kinematic Primacy of Rotorcraft in UCV Domain:** Re-confirms that vertical lift platforms governed by rotor disc loading ($V_{\text{stall}} = 0$) belong strictly to the **UCV** domain under Article 2 doctrine. Avidrone proves that when autonomous logistics scales beyond small tactical payloads (>50–200 kg), direct-drive electric multirotors fail due to induced power scaling laws, mandating high-efficiency disc-loaded rotorcraft (tandem or coaxial) and heavy-fuel turbine energy density.
+
+---
+
+## 34. Case Study #37: Oshen C-Star PC13 (Micro-USV Transatlantic Wingsail)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1459370292730982) / Interesting Engineering
+* **Date Analyzed:** 2026-11-16
+* **UWE 6-Character Token:** `USV: SW-MS-IS`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IAutonomousWingsailNavigation` & `IPersistentOceanPicket`
+  * **One-Sentence Definition:** *"Autonomous micro-wingsail surface vessels mandate the IAutonomousWingsailNavigation HAL contract to dynamically coordinate rigid wingsail angle-of-attack and rudder deflection against local wind polars, enabling perpetual wind-propelled ocean transit and virtual-tether station-holding across extreme sea states with zero fuel expenditure."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Zero Wave-Bending Damage ($L^3$ Scale Invariance):** At 1.3 m length and 56 kg mass, structural bending moments under cresting waves ($M_b \propto \rho g L^3$) are virtually negligible, allowing the micro-hull to float over 9-meter breaking swells (Tropical Storm Dolly) where rigid large-displacement ships suffer severe structural fatigue.
+  * **Decoupled Kinetic vs Electrical Energy Harvesting:** Wind thrust powers infinite hydrodynamic propulsion, while a 52.5W solar array independently charges a 100Ah battery for low-power computing and communications, eliminating fuel logistics and battery capacity bottlenecks.
+  * **Persistent Low-Cost Maritime Picketing:** Acts as an ultra-low-cost, distributed acoustic/meteorological ocean sentry, closing coverage latency between satellite orbital passes and providing persistent gateway relays for subsurface UUVs.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Low Tactical Velocity (1.2–1.5 kts):** Speed is strictly governed by ambient trade winds; incapable of tactical sprint, rapid evasive maneuvers, or fast intercept missions.
+  * **Severe Marine Biofouling:** Over multi-month deployments (127 days), barnacles and algal growth severely degrade hydrodynamic hull drag and foul submerged water-temperature/acoustic sensor faces.
+  * **Commercial Shipping Collision Hazard:** Ultra-low radar cross-section (RCS) renders the micro-hull invisible to commercial ship radars without continuous active AIS transponders, creating collision hazards in dense shipping channels.
+
+* **Architectural Lesson for UWE:**
+  * **Micro-Scale Hydrodynamic Invariance in USV Domain:** Validates the $C_0$ tier within the **USV** continuum. While high-speed combat USVs (*Magura V5*, *Sea Baby*) prioritize kinetic sprint ($>40\text{ kts}$) and heavy warheads for littoral interdiction, micro-wingsail vessels provide sovereign distributed oceanic endurance ($>100\text{ days}$), proving that energy harvesting and extreme miniaturization ($L < 2\text{ m}$) defeat open-ocean attrition at near-zero unit cost.
 
 
 
