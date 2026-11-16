@@ -55,6 +55,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 
 
 
+| 44 | **ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter)** | [FB Reel](https://www.facebook.com/reel/1773414080378754) / ZIYAN Technology | `UCV: HL-EB-DR` | `IAutonomousCargoWinchDrive` & `IHelicopterRotorDynamics` | Single main rotor helicopter (2.18m diameter, 4 blades, 45kg MTOW) delivers 15–21kg payload via high Figure of Merit (FM >= 0.72) and 6,000m ceiling, outperforming multirotors in high-altitude mountain logistics; modular C2 design enables tool-free field assembly (10 min) and pickup transport; automated winch eliminates touchdown in rugged terrain; mechanical single points of failure (swashplate/tail rotor) and tail rotor power tax (10–15%) require scheduled maintenance and HAL pendulum swing damping. | 2026-11-16 |
+
 ---
 
 ## 2. Standardized Entry Template for `/exprt`
@@ -907,6 +909,31 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **The Autonomous CASEVAC Archetype & Disc Loading Limits:** Avilus Grille validates the operational necessity of replacing multimillion-dollar crewed helicopters (UH-60 Black Hawk) with attritable autonomous heavy-lift rotorcraft for tactical evacuation in dense air defense bubbles. However, it exposes the hard limits of pure lithium electro-chemistry: lifting 750 kg on batteries restricts operational depth to <25 km. In UWE doctrine, scaling autonomous medevac beyond the forward contact line to brigade/corps rear facilities demands transition to hybrid turbogenerators or Lift+Cruise aerodynamic wings to escape the disc loading energy penalty.
+
+---
+
+## 41. Case Study #44: ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1773414080378754) / ZIYAN Technology
+* **Date Analyzed:** 2026-11-16
+* **UWE 6-Character Token:** `UCV: HL-EB-DR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IAutonomousCargoWinchDrive` & `IHelicopterRotorDynamics`
+  * **One-Sentence Definition:** *"Tactical unmanned cargo helicopters deploying slung loads require the IAutonomousCargoWinchDrive and IHelicopterRotorDynamics HAL contracts to feed forward cable pendulum oscillation vectors into cyclic swashplate trim, active-damping swinging loads during 6,000m high-altitude hover while autonomously managing emergency cable cutoffs and Level 8 crosswind yaw compensation."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Aerodynamic Figure of Merit ($\text{FM} \ge 0.72$):** A single 2.18m 4-blade rotor disc generates drastically lower disc loading ($DL = MTOW / A_{\text{disc}} \approx 12\text{ kg/m}^2$) than multirotors of comparable weight, lifting 15–21 kg payloads (up to 46% payload fraction) on battery power.
+  * **High-Altitude Mountain Envelope (6,000 m Ceiling):** The high blade area ratio and variable collective pitch maintain air density lift at extreme altitudes where fixed-pitch multirotors stall or suffer motor burnout.
+  * **Modular $C_2$ Logistics Footprint:** Tool-free quick-release rotor blades, detachable tail boom, and folding landing gear collapse the airframe into an ultra-compact package ($1.1\text{ m}$ fuselage) for transport in pickup trucks and rapid 10-minute field assembly.
+  * **Precision Standoff Winch Delivery:** Automated winch hoist delivers supplies directly to jagged mountain terrain, tree canopies, or trenches without landing.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Mechanical Single Points of Failure (SPOF):** Swashplate linkages, cyclic pitch bearings, reduction gearing, and tail rotor drive shaft introduce mechanical wear with zero redundancy (N-0 failure tolerance).
+  * **Tail Rotor Power Tax & Obstacle Risk:** The tail rotor expends 10–15% of battery power purely on anti-torque counteraction and is vulnerable to brush or ground strikes during low hover.
+  * **Battery Operational Radius (~20 km):** A 13 kg lithium battery pack restricts full-load radius to ~20 km, requiring frequent battery swapping in forward logistics loops.
+
+* **Architectural Lesson for UWE:**
+  * **Kinematic Primacy of Single-Rotor Helicopters in Tactical Logistics:** Validates UWE Article 2 doctrine: For vertical cargo lift between 15–50 kg in high-altitude mountain environments, single-rotor variable-pitch helicopters (`UCV: HL`) dramatically outperform multirotors (`UCV: CQ`) in aerodynamic efficiency ($\text{FM}$) and altitude ceiling (6,000 m), though requiring scheduled mechanical maintenance over solid-state multirotors.
 
 
 
