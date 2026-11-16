@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unmanned Warfare Engine (UWE) — Cyber-Physical Robotics Standard</title>
-  <meta name="description" content="Autonomous warfare doctrine, 6-character cyber-physical matrix, and 17 empirical platform benchmarks replacing legacy STANAG 4670. Authored by Serhii Khylevych.">
+  <meta name="description" content="Autonomous warfare doctrine, 6-character cyber-physical matrix, and 32 empirical platform benchmarks replacing legacy STANAG 4670. Authored by Serhii Khylevych.">
   <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/index.html">
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
@@ -37,8 +37,8 @@
   <nav class="nav-links">
     <a href="index.html" class="active">Hub</a>
     <a href="domains/index.html" class="">Taxonomy & Domains</a>
-    <a href="cases/index.html" class="">17 Benchmarks</a>
-    <a href="c2/officer.html" class="">C2 Officer Symbiosis</a>
+    <a href="cases/index.html" class="">32 Benchmarks</a>
+    <a href="c2/index.html" class="">C2 &amp; Articles</a>
     <a href="vendors/index.html" class="">Vendors & OEMs</a>
     <a href="hal/index.html" class="">HAL Registry</a>
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
@@ -78,7 +78,7 @@
     <!-- Top Telemetry KPI Counters Ribbon -->
     <div class="kpi-grid">
       <div class="kpi-card">
-        <div class="kpi-num">17</div>
+        <div class="kpi-num">32</div>
         <div class="kpi-label">Empirical Benchmarks</div>
         <div class="kpi-sub">Flight & field tests analyzed</div>
       </div>
@@ -88,7 +88,7 @@
         <div class="kpi-sub">Air, Copter, Ground, Sea, Subsea, Orbit</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-num">15</div>
+        <div class="kpi-num">30</div>
         <div class="kpi-label">Defense Primes & Labs</div>
         <div class="kpi-sub">Western OEMs & frontline developers</div>
       </div>
@@ -102,14 +102,14 @@
     <!-- Cross-Domain Operational Spectrum Bar -->
     <div class="spectrum-wrap">
       <div class="spectrum-head">
-        <strong style="font-size:0.95rem; color:#fff;">📊 Cross-Domain Operational Spectrum (17 Empirical Benchmarks)</strong>
+        <strong style="font-size:0.95rem; color:#fff;">📊 Cross-Domain Operational Spectrum (32 Empirical Benchmarks)</strong>
         <span style="font-size:0.8rem; color:var(--text-muted);">Click bar segment to filter cases</span>
       </div>
       <div class="spectrum-bar">
-        <div class="spec-seg" data-domain-filter="UAV" style="width:41.18%; background:#3fb950;" title="UAV Air: 7 cases (41.2%)"></div><div class="spec-seg" data-domain-filter="UCV" style="width:11.76%; background:#d29922;" title="UCV Copter: 2 cases (11.8%)"></div><div class="spec-seg" data-domain-filter="UGV" style="width:23.53%; background:#bc8cff;" title="UGV Ground: 4 cases (23.5%)"></div><div class="spec-seg" data-domain-filter="UUV" style="width:11.76%; background:#58a6ff;" title="UUV Subsea: 2 cases (11.8%)"></div><div class="spec-seg" data-domain-filter="USV" style="width:5.88%; background:#38bdf8;" title="USV Surface: 1 cases (5.9%)"></div><div class="spec-seg" data-domain-filter="UOV" style="width:5.88%; background:#ff7b72;" title="UOV Orbital: 1 cases (5.9%)"></div>
+        <div class="spec-seg" data-domain-filter="UAV" style="width:41%; background:#3fb950;" title="UAV Air: 13 cases (40.6%)"></div><div class="spec-seg" data-domain-filter="UCV" style="width:10%; background:#d29922;" title="UCV Copter: 3 cases (9.4%)"></div><div class="spec-seg" data-domain-filter="UGV" style="width:22%; background:#bc8cff;" title="UGV Ground: 7 cases (21.9%)"></div><div class="spec-seg" data-domain-filter="UUV" style="width:9%; background:#58a6ff;" title="UUV Subsea: 3 cases (9.4%)"></div><div class="spec-seg" data-domain-filter="USV" style="width:9%; background:#38bdf8;" title="USV Surface: 3 cases (9.4%)"></div><div class="spec-seg" data-domain-filter="UOV" style="width:6%; background:#ff7b72;" title="UOV Orbital: 2 cases (6.2%)"></div><div class="spec-seg" data-domain-filter="C2" style="width:3%; background:#ec4899;" title="C2 C2/Cloud: 1 cases (3.1%)"></div>
       </div>
       <div class="spectrum-legend">
-        <span class="legend-item"><span class="legend-dot" style="background:#3fb950;"></span> UAV Air (41.2%)</span><span class="legend-item"><span class="legend-dot" style="background:#d29922;"></span> UCV Copter (11.8%)</span><span class="legend-item"><span class="legend-dot" style="background:#bc8cff;"></span> UGV Ground (23.5%)</span><span class="legend-item"><span class="legend-dot" style="background:#58a6ff;"></span> UUV Subsea (11.8%)</span><span class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> USV Surface (5.9%)</span><span class="legend-item"><span class="legend-dot" style="background:#ff7b72;"></span> UOV Orbital (5.9%)</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#3fb950;"></span> UAV Air (40.6%)</span><span class="legend-item"><span class="legend-dot" style="background:#d29922;"></span> UCV Copter (9.4%)</span><span class="legend-item"><span class="legend-dot" style="background:#bc8cff;"></span> UGV Ground (21.9%)</span><span class="legend-item"><span class="legend-dot" style="background:#58a6ff;"></span> UUV Subsea (9.4%)</span><span class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> USV Surface (9.4%)</span><span class="legend-item"><span class="legend-dot" style="background:#ff7b72;"></span> UOV Orbital (6.2%)</span><span class="legend-item"><span class="legend-dot" style="background:#ec4899;"></span> C2 C2/Cloud (3.1%)</span>
       </div>
     </div>
 
@@ -264,24 +264,24 @@
     <div style="margin-bottom:2rem;">
       <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
         <h2 style="font-size:1.4rem; margin:0;">
-          🔬 17 Empirical Platform Benchmarks & Architectural Mapping
+          🔬 32 Empirical Platform Benchmarks & Architectural Mapping
         </h2>
-        <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">17</strong> of 17 platforms</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">32</strong> of 32 platforms</span>
       </div>
       <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.25rem;">
         Scientific-practical stress-testing of western OEMs, Ukrainian frontline prototypes, and global aerospace systems against the 4 Invariant Laws of UWE.
       </p>
 
-      <input type="text" id="case-search" class="search-bar" placeholder="Search 17 benchmarks by platform, token, HAL contract, or vendor (e.g., 'Anduril', 'coaxial', 'MQ-25', 'IVtol')...">
+      <input type="text" id="case-search" class="search-bar" placeholder="Search 32 benchmarks by platform, token, HAL contract, or vendor (e.g., 'Anduril', 'coaxial', 'MQ-25', 'IVtol')...">
       
       <div class="filter-group-label">Filter by Physical Medium Domain:</div>
       <div class="filter-pills">
-        <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains (17)</span><span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (7)</span><span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (2)</span><span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (4)</span><span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (2)</span><span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (1)</span><span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (1)</span>
+        <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Categories (32)</span><span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (13)</span><span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (3)</span><span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (7)</span><span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (3)</span><span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (3)</span><span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (2)</span><span class="filter-pill domain-pill" data-domain-filter="C2">C2 C2/Cloud (1)</span>
       </div>
 
       <div class="filter-group-label">Filter by Defense-Tech OEM / Developer:</div>
       <div class="filter-pills">
-        <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (15)</span><span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril Industries (2)</span><span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing Defense, Space & Security (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (Skunk Works) (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail Marine (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE Systems & Certo Aerospace (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX Automation (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda Aircraft Company (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Ukrainian Frontline Defense-Tech & Robotics (2)</span><span class="filter-pill vendor-pill" data-vendor-filter="knds">KNDS France & Germany (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="tekever">TEKEVER (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="haps-consortium">Stratospheric Defense & HAPS Aerospace (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA & Skunk Works Experimental (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Defense Aerospace Research (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Next-Gen Hypersonic Consortium (1)</span>
+        <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (30)</span><span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril Industries (2)</span><span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing Defense, Space & Security (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (Skunk Works) (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail Marine (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE Systems & Certo Aerospace (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX Automation (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda Aircraft Company (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Ukrainian Frontline Defense-Tech & Robotics (2)</span><span class="filter-pill vendor-pill" data-vendor-filter="knds">KNDS France & Germany (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="tekever">TEKEVER (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="haps-consortium">Stratospheric Defense & HAPS Aerospace (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA & Skunk Works Experimental (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Defense Aerospace Research (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Next-Gen Hypersonic Consortium (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="vantage-aerospace">Vantage Aerospace / Northrop Grumman Legacy (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="petrel-tech">Petrel Technologies & Sustainable Skylines (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="tusas-aselsan">Turkish Aerospace (TUSAŞ) & ASELSAN (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="defpulse-coalition">Ukrainian Drone Coalition & DefPulse (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="stratonex">Stratonex Robotics (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="lpp-praha">LPP Praha (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="lurtz-hmt">Patrick Lurtz / European MilTech Architecture (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="stat-caylus">French Army STAT & Caylus Urban Combat Center (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="kashmir-sentinel">Choudhary Tactical / Border Surveillance Consortium (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="rusi-analysis">RUSI & Frontline Operational Analysis (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="south-china-reef">PLAN / Indo-Pacific Strategic Analysis (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="fitburg">Fitburg Marine & Subsea Infrastructure Defense (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="philippine-carrier">Philippine Armed Forces / Littoral Defense (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="spm-group">SPM Group & Ukrainian Space Cluster (1)</span><span class="filter-pill vendor-pill" data-vendor-filter="fox2sierra">Fox2Sierra & Tactical Edge Command (1)</span>
       </div>
 
       <div id="cases-feed">
@@ -1115,6 +1115,741 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="cases/14-knds-centurio.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #14</a>
       <a href="cases/17-frodo-ugv.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="vantage-aerospace" id="case-18">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-25</span>
+    <span>•</span>
+    <a href="domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="vendors/index.html#vantage-aerospace" class="badge badge-vendor">Vantage Aerospace / Northrop Grumman Legacy</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/18-vantage-tacitframe.html">Case #18: Vantage Tacitframe / 'The Whale' (Tacit Blue Legacy)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AL-TR-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Low-Observable • C2 Light Tactical / Dispersed • Turbofan Powerplant • Reconnaissance & C4ISR • Resilient Defense • Low Probability of Intercept MESH/AESA</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IContinuousCurvatureStealthDynamics"><code>IContinuousCurvatureStealthDynamics</code></a></div>
+    <div><em>"Unmanned continuous-curvature low-observable airframes mandate IContinuousCurvatureStealthDynamics to eliminate cockpit canopy radar cavity reflections and govern digital fly-by-wire stability across unstable faceted-curvature planforms."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Continuous-Curvature Gaussian Shaping: eliminates pilot cockpit canopy, removing radar cavity retro-reflection and freeing 30% airframe internal volume for fuel and AESA apertures.</li><li>360° All-Aspect Low RCS: faceted-curvature shielding minimizes radar return across VHF to Ku bands, enabling survivable loiter over hostile airspace.</li><li>Conformal Sensor Integration: replaces bulky drag-inducing spherical chin gimbals with flush conformal sapphire apertures and side-looking radar tiles.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Aerodynamic Brick Instability: low lift-to-drag ratio and unstable yaw/pitch dynamics require continuous high-cadence (>80 Hz) digital fly-by-wire corrections.</li><li>Internal Volume Packaging Constraints: thermal buildup in tightly packed composite payload bays demands active heat exchangers.</li><li>High Unit Production Complexity: complex compound curves elevate tooling and composite curing costs compared to tubular airframes.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates Law of Kinematic Primacy: eliminating the human pilot allows pure continuous-curvature aerodynamic stealth, decoupling carrier survival from external pods.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1092850673159459" target="_blank" rel="noopener">Facebook Reel / Tactical Low-Observable Aerodynamics ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a><a href="cases/13-fury-ghostbat.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #13</a>
+      <a href="cases/18-vantage-tacitframe.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="petrel-tech" id="case-19">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-25</span>
+    <span>•</span>
+    <a href="domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="vendors/index.html#petrel-tech" class="badge badge-vendor">Petrel Technologies & Sustainable Skylines</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/19-petrel-aero-sky.html">Case #19: Petrel Technologies AERO Sky Drone Mothership</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AL-TH-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Lift • C2 Light Airfield • Turboprop / Heavy Fuel • Mothership Carrier & FPV Air-Drop • Tactical Escort & Deep Penetration • Airborne MESH Relay</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IAirborneMothershipCarrier"><code>IAirborneMothershipCarrier</code></a></div>
+    <div><em>"Airborne drone mothership carriers mandate IAirborneMothershipCarrier and IAirborneMeshRelayGateway to manage dynamic center-of-gravity shifts during multi-UAV drop salvos while maintaining high-altitude COFDM data routing to deployed sub-munitions."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Endurance Multiplier: fixed-wing cruise (L/D ≈ 12-15) transports tactical strike copters 40-60 km deep, overcoming multirotor battery limits.</li><li>High-Altitude Relay Node: loitering mothership acts as a line-of-sight RF relay, eliminating terrain masking and low-altitude EW shadow zones.</li><li>Rapid Air-Drop Deployment: internal payload bay dispenses strike swarms at high altitude with zero launch battery consumption.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Single Point of Failure: loss or electronic blinding of the mothership severs C2 links for all tethered strike drones simultaneously.</li><li>Acoustic and Radar Vulnerability: loitering at 2-3 km altitude exposes the mothership to medium-range air defense systems.</li><li>Drop Separation Turbulence: wake turbulence from mothership wings risks destabilizing lightweight copters during ejection.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates Law of Hierarchical Containerization: nested carrier-subcarrier architectures extend tactical strike depth without expensive heavy strategic airframes.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/4466377780286509" target="_blank" rel="noopener">Facebook Reel / Mothership Air-Drop Demonstration ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/01-honda-evtol.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #01</a><a href="cases/13-fury-ghostbat.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #13</a><a href="cases/21-tactical-ucv-spectrum.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #21</a>
+      <a href="cases/19-petrel-aero-sky.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="tusas-aselsan" id="case-20">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-25</span>
+    <span>•</span>
+    <a href="domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="vendors/index.html#tusas-aselsan" class="badge badge-vendor">Turkish Aerospace (TUSAŞ) & ASELSAN</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/20-tusas-aksungur.html">Case #20: TUSAŞ Aksungur Maritime ASW UCAV (aselBUOY Gateway)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AT-PS-DS</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Medium-Altitude • C3 Heavy Runway • Twin Turbodiesel • ASW Subsea Sonobuoy Drop & Acoustic Gateway • Maritime Border Screen • Multi-Band SATCOM & Tactical Line-of-Sight</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IAswSonobuoyAcousticGateway"><code>IAswSonobuoyAcousticGateway</code></a></div>
+    <div><em>"Maritime patrol UCAVs acting as cross-domain acoustic nodes require IAswSonobuoyAcousticGateway and ISubseaAcousticDataFusion to deploy sonobuoy fields, maintain low-latency hydroacoustic telemetry, and calculate target depth horizons."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Cross-Domain Air-to-Subsea Gateway: deploys aselBUOY 100P sonobuoys, bridging pelagic acoustic signals directly into the theater air C2 mesh.</li><li>50+ Hour Diurnal Patrol Persistence: twin PD-170 turbodiesel engines burn kerosene/heavy fuel efficiently, providing continuous maritime choke-point coverage.</li><li>750 kg Multi-Mission Payload Bay: simultaneously carries sonobuoy launcher pods, maritime search radar, and lightweight ASW torpedoes.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Acoustic Horizon Transmission Loss: shallow surface thermoclines can distort and attenuate sonobuoy acoustic signals in coastal waters.</li><li>Radar Cross-Section Vulnerability: large 24m straight-wing planform is detectable by naval air defense radars at 100+ km range.</li><li>Turbodiesel Cold-Soak Ceiling Limits: operating near 30,000 ft in icing conditions risks fuel freezing and turbocharger intercooler clogging.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates Cross-Domain Heterogeneous Kill Web: persistent fixed-wing UAS serve as indispensable acoustic relay anchors for undersea warfare.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dW53c44c" target="_blank" rel="noopener">LinkedIn / Naval News ASW Sonobuoy Drop ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/07-ghostshark-auv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #07</a><a href="cases/11-lockheed-lamprey.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #11</a><a href="cases/12-mq25-stingray.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #12</a>
+      <a href="cases/20-tusas-aksungur.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UCV" data-vendor="defpulse-coalition" id="case-21">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-26</span>
+    <span>•</span>
+    <a href="domains/ucv.html" class="badge badge-ucv">UCV</a>
+    <a href="vendors/index.html#defpulse-coalition" class="badge badge-vendor">Ukrainian Drone Coalition & DefPulse</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/21-tactical-ucv-spectrum.html">Case #21: Ukrainian Tactical Strike UCV Fleet Spectrum</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UCV: HQ-TE-IR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UCV: High-Speed Multirotor Munition • C1 Hand/Tube Deployable • High C-Rate Lithium Electric • Terminal Kinetic Strike & Fiber-Guided Interception • Attritable Frontline Assault • Zero-RF Fiber / Edge-AI Optical</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#ITerminalOpticalFiberGuidance"><code>ITerminalOpticalFiberGuidance</code></a></div>
+    <div><em>"Tactical combat copters operating in contested EW environments require ITerminalOpticalFiberGuidance and IHighGTerminalSprint to execute 450 km/h kinematic dives and optical contrast terminal locks without RF emission."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Kinetic Sprint Sprint Interception: sprint speeds reaching 450 km/h (P1-Sun) break the evasive maneuvers of fixed-wing reconnaissance drones.</li><li>Zero-RF Fiber Munition: 10-25 km fiber-optic spools (Zhakh/Khyzhak) bypass intense EW and radar jammer umbrellas completely.</li><li>Edge-AI Optical Terminal Lock: auto-tracking algorithms (Vyriy PRO) execute terminal homing without pilot RF tether.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Extreme C-Rate Discharge: high-speed dash pulls 40-60C from lithium cells, causing voltage drop and short 3-5 minute flight times.</li><li>Fiber Spool Snag Risk: unspooling wire can shear on tree branches, wire obstacles, or vehicle sharp edges during low-level transit.</li><li>Aerodynamic Parasitic Drag: exposed quadcopter arms and payloads cause severe parasite drag power scaling at speeds >200 km/h.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Demolishes 'FPV' slang: copter munitions are specialized cyber-physical UCVs differentiated by kinetic intercept velocity, fiber resilience, and edge autonomy.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d9d2z_V8" target="_blank" rel="noopener">LinkedIn / Frontline UCV Spectrum Analysis ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/09-capstone-coaxial.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #09</a><a href="cases/15-tekever-ar6.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #15</a><a href="cases/23-lpp-jwi4000.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #23</a>
+      <a href="cases/21-tactical-ucv-spectrum.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="stratonex" id="case-22">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-26</span>
+    <span>•</span>
+    <a href="domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="vendors/index.html#stratonex" class="badge badge-vendor">Stratonex Robotics</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/22-stratonex-varan.html">Case #22: Stratonex VARAN Heavy Attrition UGV</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: WM-LE-PQ</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Wheeled Medium • C2 Light Transport • Low-Cost Electric • Towing & Frontline Logistics (500kg/1t) • Attritable Mass • Passive Optical/RF</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IActiveGeometrySuspension"><code>IActiveGeometrySuspension</code></a></div>
+    <div><em>"Low-cost high-payload ground robotics require IActiveGeometrySuspension and IPassiveVisualOdometry to adjust chassis ground clearance over mud and ruts while navigating without active ELINT-emitting sensors."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Extreme Attritable Economy: built with commodity components and structural timber/sheet metal to ensure cheap replacement under mass artillery.</li><li>Passive Stealth Navigation: replaces active LIDAR and radar emitters with passive stereoscopic optical odometry to avoid enemy radio reconnaissance.</li><li>High Towing Ratio: 500 kg onboard payload plus 1,000 kg towing drawbar allows remote ammunition supply to forward firing trenches.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Quasi-Static Geometry Linkage: motorized lever arm suspension increases mechanical stress points in viscous clay/black soil.</li><li>Unarmored Hull Vulnerability: commodity construction offers zero protection against mortar shell fragments and FPV shaped charges.</li><li>Open-Loop Actuator Torque Stalls: deep soil ruts stall low-voltage electric gearboxes without closed-loop current monitoring.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates Law of Attritable Mass: frontline ground combat requires disposable, software-governed transport carriers costing less than single precision munitions.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dDrYcfbn" target="_blank" rel="noopener">Defence Blog / Industrial Prototype ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a>
+      <a href="cases/22-stratonex-varan.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="lpp-praha" id="case-23">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-10-26</span>
+    <span>•</span>
+    <a href="domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="vendors/index.html#lpp-praha" class="badge badge-vendor">LPP Praha</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/23-lpp-jwi4000.html">Case #23: LPP JWI-4000 High-Ceiling C-UAS Interceptor</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AC-RE-AQ</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric C-UAS Interceptor • C1 Hand-Deployable / Tube • Rocket/Electric Hybrid • Kinetic & Blast Interception • Point Air Defense • ASTERIX Radar Cueing & Optical Lock</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IAirborneInterceptionDynamics"><code>IAirborneInterceptionDynamics</code></a></div>
+    <div><em>"Dedicated vertical-launch C-UAS interceptors mandate IAirborneInterceptionDynamics and IAsterixRadarCueingGateway to execute 35 m/s vertical sprints to 4,000m ceiling and govern terminal blast fragmentation at 130+ m/s closure rates."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>4,000m Vertical Interception Ceiling: reaches high-altitude Orlan/Supercam reconnaissance drones far above handheld MANPADS envelopes.</li><li>ASTERIX Protocol Integration: directly ingests NATO standard radar tracks for autonomous midcourse flight vectoring.</li><li>Thermobaric Blast Expansion: 1.8 kg thermobaric warhead compensates for sensor latency and terminal miss distance at high closure velocities.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>V^3 Aerodynamic Power Penalty: drag power scales cubically with velocity, exhausting battery reserves within 3-4 minutes of high-speed climb.</li><li>Terminal Optical Glint: direct sun alignment or low-contrast cloud horizons can temporarily blind the forward optical tracker.</li><li>High Acceleration G-Forces: rapid climb and pull-up impose high structural loads on composite control fins.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates Kinetic Interception Physics: defeating strategic reconnaissance drones requires dedicated vertical sprint interceptors rather than retrofitted quadcopters.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d6DutPRP" target="_blank" rel="noopener">LinkedIn / LPP Technical Specification ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="cases/13-fury-ghostbat.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #13</a><a href="cases/21-tactical-ucv-spectrum.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #21</a>
+      <a href="cases/23-lpp-jwi4000.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="lurtz-hmt" id="case-24">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-01</span>
+    <span>•</span>
+    <a href="domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="vendors/index.html#lurtz-hmt" class="badge badge-vendor">Patrick Lurtz / European MilTech Architecture</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/24-lurtz-kill-zone.html">Case #24: Autonomous Kill Zone & HMT Architecture (Patrick Lurtz)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GL-DC-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Ground Land • C2 Tactical Footprint • Hybrid Powertrain • Combined Arms Kinetic Defense • Deep Kill-Web Integration • Low-Cadence Human Intent Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IHumanMachineIntentGateway"><code>IHumanMachineIntentGateway</code></a></div>
+    <div><em>"Combined arms human-machine teaming architectures require IHumanMachineIntentGateway and IDynamicKillWebRouting to decouple high-frequency 300+ APM robotic vehicle reflexes from low-cadence (2-3 CPM) human commander lethal authorizations."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Cognitive Bandwidth Decoupling: human operators provide mission rules of engagement (ROE) while edge AI executes microsecond pathfinding and weapon stabilization.</li><li>Kill Zone Depth Multiplication: dispersed UGVs form 5-10 km autonomous screen lines, absorbing enemy reconnaissance without risking crewed armor.</li><li>Heterogeneous Sensor Fusion: merges acoustic gunfire detectors, seismic sensors, and thermal vision into unified target queues.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>RF Interception in Electronic Contested Zones: high-bandwidth video backhauls broadcast vehicle positions to enemy SIGINT.</li><li>Adversarial Visual Deception: smoke screens, decoy thermal flares, and camouflage netting can spoof edge object-detection models.</li><li>Mechanical Logistics Strain: multi-axle tracked and wheeled robotic fleets require high spare parts and field recovery capacity.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Establishes HMT Control Layer in UWE: humans command intent at doctrinal cadence; machines execute physics at microsecond edge loops.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d7ptMX9P" target="_blank" rel="noopener">LinkedIn / Tactical Kill Zone Doctrine ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="cases/14-knds-centurio.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #14</a><a href="cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a>
+      <a href="cases/24-lurtz-kill-zone.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="stat-caylus" id="case-25">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-01</span>
+    <span>•</span>
+    <a href="domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="vendors/index.html#stat-caylus" class="badge badge-vendor">French Army STAT & Caylus Urban Combat Center</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/25-stat-caylus-b2lt.html">Case #25: French Army STAT Caylus C-UAS B2LT</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AC-RE-AQ</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric C-UAS • C1 Hand-Deployable • Rocket/Turbine Hybrid • Hard-Kill Kinetic Interception • Urban & Littoral Defense • Local Radar & Acoustic Cueing</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IKineticHitToKillAutonomy"><code>IKineticHitToKillAutonomy</code></a></div>
+    <div><em>"Tube-launched anti-drone interceptors require IKineticHitToKillAutonomy and IAcousticVectorGuidance to execute terminal 30G intercept burns, colliding directly with agile maneuvering copters at microsecond control loops."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Zero Collateral Damage Hard-Kill: direct kinetic body-to-body impact destroys hostile multirotors without explosive fragmentation in populated areas.</li><li>Rapid Tube Deployment: pneumatic cold-gas launch clears container in <0.2s before rocket motor ignition.</li><li>Omnidirectional Threat Response: 360° launch capability with zero turret slew latency protects forward command posts.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Miss Distance Zero-Tolerance: kinetic impact requires sub-10 cm guidance accuracy; any aerodynamic buffeting causes complete miss.</li><li>Single-Target Engagement: each tube intercepts exactly one drone, making defensive salvos vulnerable to mass swarm saturation.</li><li>Propellant Smoke Trail: solid rocket motor exhaust provides optical back-azimuth revealing launcher position.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates Point Defense Kinematics: defeating saturation multirotor raids mandates tube-launched kinetic interceptors integrated into local acoustic cueing grids.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d6h_9H4B" target="_blank" rel="noopener">LinkedIn / STAT B2LT Urban Field Trials ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/13-fury-ghostbat.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #13</a><a href="cases/21-tactical-ucv-spectrum.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #21</a><a href="cases/23-lpp-jwi4000.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #23</a>
+      <a href="cases/25-stat-caylus-b2lt.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UAV" data-vendor="kashmir-sentinel" id="case-26">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-02</span>
+    <span>•</span>
+    <a href="domains/uav.html" class="badge badge-uav">UAV</a>
+    <a href="vendors/index.html#kashmir-sentinel" class="badge badge-vendor">Choudhary Tactical / Border Surveillance Consortium</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/26-kashmir-sentinel.html">Case #26: Kashmir Border Swarm Sentinel AESA</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UAV: AM-TD-RA</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UAV: Atmospheric Mountainous • C2 Short Takeoff • Turboprop / Heavy Fuel • Forward Radar Picket & Swarm Interdiction • Mountain Border Defense • Active AESA Radar & MESH Gateway</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IMountainousAesaOverwatch"><code>IMountainousAesaOverwatch</code></a></div>
+    <div><em>"Mountain border surveillance UAS require IMountainousAesaOverwatch and ITerrainMaskingClutterRejection to isolate micro-UAV radar cross-sections (<0.01 m²) against steep alpine ground clutter while maintaining MESH links through deep valleys."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Alpine Clutter Suppression: pulse-Doppler AESA radar filters mountain face ground reflections, detecting low-flying stealth copters.</li><li>Valley MESH Repeater: airborne loiter altitude provides line-of-sight communications over steep ridgelines, un-masking isolated border outposts.</li><li>High-Density Swarm Cueing: tracks up to 128 individual airborne contacts simultaneously and directs defensive interceptors.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Severe High-Altitude Density Altitude: thin mountain air at 4,000-5,000m degrades propeller thrust and increases stall speeds.</li><li>Extreme Katabatic Wind Turbulence: violent mountain downdrafts challenge airframe structural margins and gimbal stabilization.</li><li>RF Radiation Vulnerability: active AESA radar emissions illuminate the picket platform to enemy anti-radiation missiles.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Enforces Kinematic Primacy in Alpine medium: border interdiction in rugged relief requires elevated radar picket nodes to eliminate valley radar shadows.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dMhG2277" target="_blank" rel="noopener">LinkedIn / Tactical Mountain Border Defense ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/03-stealth-ucav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #03</a><a href="cases/15-tekever-ar6.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #15</a><a href="cases/20-tusas-aksungur.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #20</a>
+      <a href="cases/26-kashmir-sentinel.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="rusi-analysis" id="case-27">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-02</span>
+    <span>•</span>
+    <a href="domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="vendors/index.html#rusi-analysis" class="badge badge-vendor">RUSI & Frontline Operational Analysis</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/27-rusi-rasputitsa.html">Case #27: RUSI Frontline Rasputitsa Ground Dynamics</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GL-EM-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Ground Land • C2 Heavy Transport • Hybrid Diesel-Electric • Logistics Sustainment & Mine Breaching • Frontline Environmental Survival • Wideband Starlink/COFDM</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IBekkerViscousSoilAdhesion"><code>IBekkerViscousSoilAdhesion</code></a></div>
+    <div><em>"Heavy autonomous ground logistics vehicles require IBekkerViscousSoilAdhesion and IDifferentialTorqueVectoring to dynamically modulate wheel slip between 15% and 25%, preventing sinkage and catastrophic soil shear failure in deep rasputitsa mud."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Continuous Mud Mobility: algorithmic traction control prevents wheel spin-down, maintaining forward momentum through 50 cm clay ruts.</li><li>Distributed All-Wheel Power: independent electric hub motors deliver instant micro-torque adjustments across 6 or 8 traction contact patches.</li><li>Autonomous Convoy Tethering: leader-follower visual tracking allows single manned lead vehicles to guide multiple robotic supply platforms.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Belly Drag Immobilization: soft mud buildup under flat hull belly plates creates vacuum suction, neutralizing wheel normal force.</li><li>Radiator & Intake Clay Clogging: viscous soil spray clogs hybrid engine cooling radiators, inducing thermal overheating shutdowns.</li><li>Extreme Mechanical Attrition: abrasive quartz sand and clay slurry destroy axle bearings, seals, and brake pads within 100-200 operating hours.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Confirms Environmental Abstraction Layer (EAL): frontline robotic supremacy is determined by soil shear mechanics and environmental durability, not laboratory autonomy software.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dr6p8uU9" target="_blank" rel="noopener">RUSI / Frontline Rasputitsa Operational Assessment ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a>
+      <a href="cases/27-rusi-rasputitsa.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="USV" data-vendor="south-china-reef" id="case-28">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-03</span>
+    <span>•</span>
+    <a href="domains/usv.html" class="badge badge-usv">USV</a>
+    <a href="vendors/index.html#south-china-reef" class="badge badge-vendor">PLAN / Indo-Pacific Strategic Analysis</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/28-south-china-reef.html">Case #28: South China Sea Artificial Reef Interdiction USV</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>USV: PM-DE-AR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">USV: Planing/Semi-Displacement Maritime • C3 Heavy Slipway • Diesel Waterjet • Littoral Interdiction & Harbor Defense • Asymmetric Sea Denial • Anti-Jam Satellite & Line-of-Sight MESH</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IShallowReefHydrodynamics"><code>IShallowReefHydrodynamics</code></a></div>
+    <div><em>"Littoral strike and patrol surface robotics require IShallowReefHydrodynamics and IWaveImpactDamping to execute 45+ knot high-speed sprints across shallow coral atolls while damping 5G wave slap shocks on sensitive mast optronics."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Shallow-Draft Atoll Navigation: waterjet propulsion draws under 0.8m of water, navigating shallow lagoons impassable to frigates.</li><li>High-Speed Wave Impact Attenuation: carbon-reinforced stepped hull planes efficiently at Sea State 3, providing rapid reaction to island incursions.</li><li>Integrated Kinetic Defense: mounts remote weapon stations with dual anti-air FPV interceptors and anti-ship missile canisters.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Waterjet Coral Ingestion: suspended coral rubble and seaweed in shallow lagoons risk clogging waterjet intake grates, causing impeller cavitation.</li><li>Extreme Tropical Saline Corrosion: 35°C water and 90% humidity accelerate salt crystallization and galvanization in composite-aluminum joints.</li><li>Satellite Jamming Vulnerability: open-ocean operations depend heavily on satellite downlinks, making vessels vulnerable to regional GNSS/COMSAT spoofing.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Validates Littoral Hydrodynamic Primacy: shallow-water maritime denial demands shallow-draft waterjet hulls with robust shock-mounted sensor masts.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d9d2z_V8" target="_blank" rel="noopener">Defense One / Indo-Pacific Littoral Analysis ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/06-exail-usv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #06</a><a href="cases/29-fitburg-sentinel.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #29</a><a href="cases/30-philippine-carrier.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #30</a>
+      <a href="cases/28-south-china-reef.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UUV" data-vendor="fitburg" id="case-29">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-03</span>
+    <span>•</span>
+    <a href="domains/uuv.html" class="badge badge-uuv">UUV</a>
+    <a href="vendors/index.html#fitburg" class="badge badge-vendor">Fitburg Marine & Subsea Infrastructure Defense</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/29-fitburg-sentinel.html">Case #29: Fitburg Anchor Drag Critical Undersea Infrastructure Defense</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UUV: CV-IS-HQ</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UUV: Continental Shelf Seabed • C2 Autonomous Deployment • Battery & Fuel Cell • Seabed Infrastructure Defense & Cable Picket • Strategic Deterrence • Acoustic Underwater Modem & Optical Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#ISeabedAnchorMonitoring"><code>ISeabedAnchorMonitoring</code></a></div>
+    <div><em>"Seabed critical infrastructure defense robotics require ISeabedAnchorMonitoring and IHydroacousticInterceptionArray to detect and localize hostile commercial anchor-dragging attacks on subsea telecommunication cables and gas pipelines in real time."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Continuous Infrastructure Overwatch: autonomous crawling and loitering on the continental shelf provides 24/7 acoustic listening along fiber corridors.</li><li>Non-Attributable Threat Attribution: records acoustic signatures of dragging vessel anchors, proving deliberate sabotage vs maritime accidents.</li><li>Modular Seabed Interdiction: capable of releasing warning acoustic beacons, deploying cable-repair anchors, or marking sabotage platforms.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Extreme Hydrostatic Silt Sinking: prolonged stationary posture on loose seabed silt causes chassis subsidence, requiring buoyant ejection tanks.</li><li>Acoustic Communication Bandwidth: underwater acoustic modems provide under 10 kbps throughput, requiring onboard AI to process raw sonar contacts.</li><li>Commercial Trawler Snag Hazard: heavy bottom-trawling fishing nets can ensnare or displace the sentinel vehicle.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Codifies Subsea Critical Infrastructure Protection (CUI) in UWE: defending democratic digital subsea cables requires stationary, autonomous seabed sentinels.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d6h_9H4B" target="_blank" rel="noopener">Naval News / Critical Undersea Infrastructure Picket ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/07-ghostshark-auv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #07</a><a href="cases/11-lockheed-lamprey.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #11</a><a href="cases/28-south-china-reef.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #28</a>
+      <a href="cases/29-fitburg-sentinel.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="USV" data-vendor="philippine-carrier" id="case-30">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-04</span>
+    <span>•</span>
+    <a href="domains/usv.html" class="badge badge-usv">USV</a>
+    <a href="vendors/index.html#philippine-carrier" class="badge badge-vendor">Philippine Armed Forces / Littoral Defense</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/30-philippine-carrier.html">Case #30: Philippine Dual-Carrier Chokepoint Saturation USV</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>USV: SM-DE-AR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">USV: Surface Marine • C2 Tactical Footprint • Twin Diesel / Surface Piercing • Chokepoint Interdiction & Swarm Strike • Asymmetric Strait Defense • Redundant SATCOM & High-Speed Optical MESH</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IChokepointSwarmSaturation"><code>IChokepointSwarmSaturation</code></a></div>
+    <div><em>"Maritime chokepoint interdiction USVs mandate IChokepointSwarmSaturation and ICoordinatedPincerAttack to synchronize high-speed multi-axis swarm strikes across narrow island straits, overwhelming warship close-in weapons systems (CIWS)."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Narrow Strait Geographic Multiplier: operating within island straits (Luzon/Mindoro) eliminates open-ocean transit penalties, concentrating mass.</li><li>Multi-Axis Pincer Saturation: coordinates 12-24 surface strike drones to attack large capital ships simultaneously from 360° azimuths.</li><li>Low Radar Cross-Section Stealth: wave-piercing low-freeboard hull reflects radar beams upward, delaying optical/radar detection until 3-4 km range.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Close-In Autocannon Degradation: 30mm naval autocannons and helicopter-fired rockets can destroy lead surface drones in clear daylight.</li><li>Island Terrain RF Masking: steep coastal mountains block line-of-sight command relays, requiring airborne UAV or high-elevation repeaters.</li><li>Surface Sea State Limits: Sea State 4+ waves (>2.5m) significantly reduce maximum sprint speed and risk capsizing small 6-8m hulls.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Proves the Law of Asymmetric Chokepoint Denial: small autonomous surface fleets operating in archipelagic straits can neutralize multimillion-dollar naval strike groups.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dMhG2277" target="_blank" rel="noopener">USNI News / Philippine Maritime Littoral Defense ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/06-exail-usv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #06</a><a href="cases/28-south-china-reef.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #28</a><a href="cases/29-fitburg-sentinel.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #29</a>
+      <a href="cases/30-philippine-carrier.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UOV" data-vendor="spm-group" id="case-31">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-05</span>
+    <span>•</span>
+    <a href="domains/uov.html" class="badge badge-uov">UOV</a>
+    <a href="vendors/index.html#spm-group" class="badge badge-vendor">SPM Group & Ukrainian Space Cluster</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/31-spm-kondratyuk.html">Case #31: SPM Group Kondratyuk 1.0 FEU LEO ADR Hunter</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UOV: LM-CA-HR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UOV: Low Earth Orbit (LEO 400-800km) • C2 SmallSat / ESPA Ring • Chemical Monopropellant & Reaction Wheels • Active Debris Removal & Co-Planar Intercept • Orbital Shield & Counter-Space • Radiation-Hardened Laser Cross-Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IRendezvousProximityOperations"><code>IRendezvousProximityOperations</code></a></div>
+    <div><em>"Unmanned orbital vehicles require IRendezvousProximityOperations and INonCooperativeDockingCapture to compute Clohessy-Wiltshire relative trajectory burns within sub-centimeter tolerances and grapple tumbling non-cooperative orbital targets without creating debris clouds."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Non-Cooperative Tumbling Capture: robotic tentacles and visual LIDAR track tumbling spent rocket stages, securing latch without docking ports.</li><li>Dual-Use Counter-Space Capability: identical proximity flight laws enable peaceful debris de-orbiting and neutralization of hostile reconnaissance satellites.</li><li>Precision Micro-Thruster Pulse: cold-gas / monopropellant thrusters deliver millinewton impulse bits for safe close-in orbital approach.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Finite Delta-V Budget: 350-500 m/s total ΔV restricts missions to 1-2 major co-planar targets; inclination changes are impossible without refueling.</li><li>Space Radiation Single-Event Upsets: intense cosmic rays and solar flares can flip memory bits in commercial grade edge processors.</li><li>Collision Cascade Risk (Kessler Syndrome): any guidance thruster failure during docking risks generating thousands of high-velocity debris fragments.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Establishes Orbital Regime in UWE: space vehicles (UOV) operate strictly under orbital mechanics laws (Kepler, Clohessy-Wiltshire) where altitude and inclination dictate energy, not aerodynamic endurance.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/d9d2z_V8" target="_blank" rel="noopener">SPM Group Technical Whitepaper / Orbital Demonstration ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/10-orbital-guardian.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #10</a><a href="cases/04-waverider-corvus.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #04</a><a href="cases/16-rq81-diana.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #16</a>
+      <a href="cases/31-spm-kondratyuk.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="C2" data-vendor="fox2sierra" id="case-32">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-06</span>
+    <span>•</span>
+    <a href="c2/index.html" class="badge badge-c2">C2</a>
+    <a href="vendors/index.html#fox2sierra" class="badge badge-vendor">Fox2Sierra & Tactical Edge Command</a>
+  </div>
+  <h2 class="card-title">
+    <a href="cases/32-izzy-fried-c2.html">Case #32: Izzy Fried & Fox2Sierra Joint Multi-Domain C2</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>C2: MB-HR-GW</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">C2: Multi-Domain Orchestration • C4 Operational Cloud & Tactical Edge • Distributed Cloud Compute & Battery Pack • Joint Operation Mission Commander & Target Handoff • Human-Machine Swarm Shield • Resilient Wideband MESH / Starlink / COFDM Gateway</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="hal/index.html#IMultiDomainSwarmOrchestration"><code>IMultiDomainSwarmOrchestration</code></a></div>
+    <div><em>"Operational command-and-control clouds require IMultiDomainSwarmOrchestration and IAlgorithmicTargetHandoff to synchronize heterogeneous robotic platforms (UAV air cover + UGV ground screen + USV naval picket) while enforcing human-in-the-loop lethal weapon fire authorization."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Cross-Domain Kill-Chain Compression: compresses sensor-to-shooter latency from 15-20 minutes to under 5 seconds across Air, Ground, and Naval robotic units.</li><li>Dynamic Task Allocation: edge AI dynamically reassigns missions when individual drones are shot down or jammed, maintaining continuous perimeter defense.</li><li>Human Commander Scalability: single human officer commands 50-100 heterogeneous autonomous vehicles through declarative high-level intent.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Network Disruption Susceptibility: catastrophic C4ISR collapse occurs if all wideband satellite and terrestrial MESH relays are simultaneously jammed.</li><li>Algorithmic Exploitation: adversarial machine learning attacks (optical decoys, ghost targets) can saturate C2 target allocation queues.</li><li>Bandwidth Chokepoints: real-time streaming of dozens of high-definition video feeds saturates tactical radio links in contested frontline sectors.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Codifies the Ultimate UWE Synthesis: autonomous warfare supremacy is achieved not by individual platforms, but by the software-defined C2 cloud binding heterogeneous robotic domains into a unified algorithmic shield.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dMhG2277" target="_blank" rel="noopener">LinkedIn / Joint Autonomous Force Operation Analysis ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="cases/13-fury-ghostbat.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #13</a><a href="cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a><a href="cases/21-tactical-ucv-spectrum.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #21</a><a href="cases/24-lurtz-kill-zone.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #24</a>
+      <a href="cases/32-izzy-fried-c2.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>

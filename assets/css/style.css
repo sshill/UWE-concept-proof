@@ -86,6 +86,7 @@ header.top-nav {
 .badge-uuv { background: #0c2340; color: #58a6ff; border-color: #1f6feb; }
 .badge-usv { background: var(--cyan-bg); color: var(--cyan); border-color: #0284c7; }
 .badge-uov { background: #361608; color: #ff7b72; border-color: #d03801; }
+.badge-c2 { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border-color: rgba(99, 102, 241, 0.4); }
 .badge-vendor { background: var(--surface-alt); color: var(--text-muted); border-color: var(--border); }
 .badge-hal { background: #161b22; color: #a5d6ff; border-color: #388bfd; font-family: var(--code-font); }
 
