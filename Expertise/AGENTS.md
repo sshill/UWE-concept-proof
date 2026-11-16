@@ -121,6 +121,20 @@ Filter the platform through the Four Invariant Laws of UWE:
      - `Expertise/comments/<TargetID>_<PlatformName>_UA.md`
      - `Expertise/comments/<TargetID>_<PlatformName>_EN.md`
    * In chat, render comments inside raw text code blocks (` ```text ... ``` `) so the UI copy button grabs clean, platform-compliant text.
+3. **Mandatory Character-by-Character Token Annotations:**
+   * Directly beneath the classification header and 6-character token, every public comment MUST provide a structured, bulleted breakdown decoding each character of the 3 octets, following the canonical Oshen C-Star benchmark:
+     ```text
+     🏷️ CLASSIFICATION UNDER UWE STANDARD (Unmanned Warfare Engine):
+     [DOMAIN]: [OCTET1]-[OCTET2]-[OCTET3]
+
+     • [Char 1] ([Full Horizon/Domain Name]) — [Physical constraint / ground truth].
+     • [Char 2] ([Full Container/Chassis Name]) — [Logistics tier / kinematics].
+     • [Char 3] ([Full Powerplant Name]) — [Power delivery / energy architecture].
+     • [Char 4] ([Full Mission Name]) — [Combat payload / operational role].
+     • [Char 5] ([Full Doctrine Name]) — [Tactical employment / autonomy regime].
+     • [Char 6] ([Full Comms Name]) — [RF / mesh / optical / dead-reckoning link].
+     ```
+   * For dual-token platforms (e.g. carrier + parasite), provide separate labeled annotation blocks for each token.
 
 ### Block 5: Internal Architectural Codification
 Immediately persist findings into [`Expertise_Ledger.md`](file:///home/hills/Documents/UWS/Expertise/Expertise_Ledger.md):
