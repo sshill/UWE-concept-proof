@@ -59,6 +59,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 
 | 45 | **TENCORE MAT1LDA 8×8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV)** | [FB Post](https://www.facebook.com/DefenderMediaUA/posts/pfbid027psMxGoouoi9zz1qTHi8PeRkb8ncYocy1LerB4Z1xTbhAWh9ks4DuWWBpqNMo1ekl) / Defender Media | `UGV: GM-IT-AR`<br>`UGV: GL-EC-DR` | `IAmphibiousTransitionDrive` & `IMotherChildDeploymentGateway` | Validates the hierarchical Mothership-Parasite archetype in unmanned ground warfare; MAT1LDA 8×8 (petrol ICE, side pontoons, 500kg land/400kg water payload, 160km range) handles riverine transit and bypasses water barriers, deploying TerMIT 2.0 (tracked electric combat UGV, 300kg payload, RPV-18 thermobaric launchers or minelaying) directly onto contested beachheads; decouples long-range amphibious logistics from silent tactical assault; slip-sinkage transition on muddy riverbanks and skid-steer tire scrub require HAL predictive torque trim and ramp latch stabilization. | 2026-11-16 |
 
+| 46 | **NODRICS MAT1LDA 8×8 (Amphibious Logistics & CASEVAC UGV)** | [FB Reel](https://www.facebook.com/reel/904767382590697) / Mezha.net | `UGV: GM-IL-AR` | `IAmphibiousLogisticsDrive` & `ICasEvacStabilityController` | Validates internal combustion engine energy density ($12\text{k Wh/kg}$ vs $250\text{ Wh/kg}$) breaking battery exhaustion in contested amphibious logistics; 8x8 wheeled sealed hull with side pontoons carries 500kg land / 400kg water payload across riverine channels (160km land / 50km water range); modular open frame provides rapid field interchange between bulk ammunition containers and enclosed CASEVAC casualty stretchers; TENCORE AI KIT with visual-inertial odometry enables dead-reckoning autonomous transit and return-to-base under dense EW; water-to-bank egress traction collapse ($F_N \rightarrow 0$) and skid-steer shock profile mandate HAL torque crossfading and casualty jerk clamping. | 2026-11-17 |
+
 ---
 
 ## 2. Standardized Entry Template for `/exprt`
@@ -963,6 +965,31 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **The Hierarchical Mother-Child Archetype in Unmanned Ground Warfare:** Validates UWE Law 2 (Hierarchical Containerization) and Law 3 (Hardware Abstraction & Decoupled Lethality). Single "universal" ground robots are a doctrinal failure: a tracked combat robot lacks the range and buoyancy for 100+ km riverine transit, while a heavy wheeled amphibious carrier lacks the low ground pressure and low silhouette for forward trench assault. Tencore's pairing of `UGV: GM-IT-AR` (Amphibious Carrier) and `UGV: GL-EC-DR` (Tracked Strike Parasite) provides empirical proof that combined-arms unmanned superiority requires layered carrier-parasite hierarchies.
+
+---
+
+## 43. Case Study #46: NODRICS MAT1LDA 8×8 (Amphibious Tactical Logistics & CASEVAC UGV)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/904767382590697) / Mezha.net
+* **Date Analyzed:** 2026-11-17
+* **UWE 6-Character Token:** `UGV: GM-IL-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IAmphibiousLogisticsDrive` & `ICasEvacStabilityController`
+  * **One-Sentence Definition:** *"Amphibious logistics and CASEVAC UGVs require IAmphibiousLogisticsDrive and ICasEvacStabilityController to crossfade 8x8 wheel torque into buoyancy during water-bank transitions, clamping pitch/roll shocks to preserve casualty hemodynamic stability."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Hydrocarbon Energy Density ($12\text{,000 Wh/kg}$ vs $250\text{ Wh/kg}$):** Petrol ICE eliminates battery exhaustion under severe water-drag resistance power ($P \propto V^3$), delivering 160 km land / 50 km water range without battery charging delays in forward combat zones.
+  * **8×8 Sealed Displacement Hull & Integrated Pontoons:** All-wheel drive combined with side pontoon buoyancy enables swimming with 400 kg cargo across rivers, lakes, and marshes without pontoon bridges.
+  * **Modular Payload Decoupling (Law 3):** Open-frame chassis accepts quick-swap cargo containers for 500 kg ammunition/supplies or casualty evacuation litters for crossing water barriers within the Golden Hour.
+  * **TENCORE AI KIT Autonomous Navigation:** Onboard visual-inertial odometry executes pre-planned routes and return-to-base maneuvers under total GNSS denial and wideband RF jamming.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Riverbank Egress Traction Deficit:** Water buoyancy severely reduces wheel normal downforce ($F_N \rightarrow 0$) during water-to-mud transition, creating wheel slip ($s \rightarrow 1$) and beaching risks on steep clay banks.
+  * **ICE Acoustic & Thermal Signature:** Internal combustion engine produces acoustic noise and a hot exhaust plume (>200°C), elevating detection risks from thermal reconnaissance drones.
+  * **Skid-Steer Drivetrain Scrubbing & Deck Jerk:** Non-steered 8x8 layout induces lateral tire scrub and abrupt yaw angular jerks that jeopardize wounded stabilization during CASEVAC unless smoothed by HAL acceleration filtering.
+
+* **Architectural Lesson for UWE:**
+  * **The Amphibious Logistics-Energy Paradigm:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality). In contested riverine and wet-terrain operational corridors (Dnipro islands, floodplains, rasputitsa), electric UGVs suffer range collapse due to high water-drag resistance power ($P \propto V^3$) and lack of frontline recharging infrastructure. Liquid hydrocarbon powertrains (`Powerplant: I`) remain physically mandatory for operational-depth logistics (>50 km water / 150+ km land), while modularity ensures the same invariant amphibious chassis serves alternately as a 500 kg ammunition mule or a stabilized CASEVAC transport.
 
 
 
