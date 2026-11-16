@@ -57,6 +57,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 
 | 44 | **ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter)** | [FB Reel](https://www.facebook.com/reel/1773414080378754) / ZIYAN Technology | `UCV: HL-EB-DR` | `IAutonomousCargoWinchDrive` & `IHelicopterRotorDynamics` | Single main rotor helicopter (2.18m diameter, 4 blades, 45kg MTOW) delivers 15–21kg payload via high Figure of Merit (FM >= 0.72) and 6,000m ceiling, outperforming multirotors in high-altitude mountain logistics; modular C2 design enables tool-free field assembly (10 min) and pickup transport; automated winch eliminates touchdown in rugged terrain; mechanical single points of failure (swashplate/tail rotor) and tail rotor power tax (10–15%) require scheduled maintenance and HAL pendulum swing damping. | 2026-11-16 |
 
+| 45 | **TENCORE MAT1LDA 8×8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV)** | [FB Post](https://www.facebook.com/DefenderMediaUA/posts/pfbid027psMxGoouoi9zz1qTHi8PeRkb8ncYocy1LerB4Z1xTbhAWh9ks4DuWWBpqNMo1ekl) / Defender Media | `UGV: GM-IT-AR`<br>`UGV: GL-EC-DR` | `IAmphibiousTransitionDrive` & `IMotherChildDeploymentGateway` | Validates the hierarchical Mothership-Parasite archetype in unmanned ground warfare; MAT1LDA 8×8 (petrol ICE, side pontoons, 500kg land/400kg water payload, 160km range) handles riverine transit and bypasses water barriers, deploying TerMIT 2.0 (tracked electric combat UGV, 300kg payload, RPV-18 thermobaric launchers or minelaying) directly onto contested beachheads; decouples long-range amphibious logistics from silent tactical assault; slip-sinkage transition on muddy riverbanks and skid-steer tire scrub require HAL predictive torque trim and ramp latch stabilization. | 2026-11-16 |
+
 ---
 
 ## 2. Standardized Entry Template for `/exprt`
@@ -934,6 +936,33 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **Kinematic Primacy of Single-Rotor Helicopters in Tactical Logistics:** Validates UWE Article 2 doctrine: For vertical cargo lift between 15–50 kg in high-altitude mountain environments, single-rotor variable-pitch helicopters (`UCV: HL`) dramatically outperform multirotors (`UCV: CQ`) in aerodynamic efficiency ($\text{FM}$) and altitude ceiling (6,000 m), though requiring scheduled mechanical maintenance over solid-state multirotors.
+
+---
+
+## 42. Case Study #45: TENCORE MAT1LDA 8×8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV)
+
+* **Target Source:** [FB Post](https://www.facebook.com/DefenderMediaUA/posts/pfbid027psMxGoouoi9zz1qTHi8PeRkb8ncYocy1LerB4Z1xTbhAWh9ks4DuWWBpqNMo1ekl) / Defender Media
+* **Date Analyzed:** 2026-11-16
+* **UWE 6-Character Tokens:**
+  * **MAT1LDA 8×8 (Carrier):** `UGV: GM-IT-AR`
+  * **TerMIT 2.0 (Parasite):** `UGV: GL-EC-DR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IAmphibiousTransitionDrive` & `IMotherChildDeploymentGateway`
+  * **One-Sentence Definition:** *"Amphibious robotic mother-carriers require the IAmphibiousTransitionDrive and IMotherChildDeploymentGateway HAL contracts to dynamically trim all-wheel 8x8 skid-steer torque against loss of ground normal force during water entry and muddy riverbank egress, while coordinating automated deck latching and roll-pitch stabilization during the deployment of tracked combat effectors."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Decoupled Operational vs Tactical Energy:** MAT1LDA uses an internal combustion engine (petrol) to deliver high energy density and 160 km land / 50 km water range without battery exhaustion, while TerMIT 2.0 uses electric battery drive for silent, low-thermal forward assault and minelaying.
+  * **Amphibious Riverine & Wetland Access:** 8x8 all-wheel drive with sealed buoyancy hull and side pontoons allows crossing rivers, estuaries, and bogs (400 kg water / 500 kg land payload) where conventional UGVs sink or require combat engineering bridges.
+  * **Mothership-Parasite Doctrine:** Transports the tracked combat unit across contested water barriers without risking human crews, deploying TerMIT 2.0 directly onto enemy shores for thermobaric assault (RPV-18) or minelaying.
+  * **AI Autopilot for EW Navigation:** Onboard AI cruise control with visual/inertial odometry enables TerMIT and MAT1LDA to complete mission routes even under total GPS and RF jamming.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Riverbank Egress Traction Collapse:** Buoyancy sharply reduces wheel downforce ($F_N \rightarrow 0$) during water-to-mud transition, creating severe wheel slip and beaching hazards on steep clay banks.
+  * **ICE Acoustic & Infrared Plume:** Petrol combustion engine generates significant acoustic noise and an exhaust thermal plume, exposing water crossings to thermal sensor detection and ATGM strikes.
+  * **Skid-Steer Tire Scrub & Drive Train Stress:** Non-steered 8x8 layout induces massive lateral tire scrub and torque spikes on dry paved terrain.
+
+* **Architectural Lesson for UWE:**
+  * **The Hierarchical Mother-Child Archetype in Unmanned Ground Warfare:** Validates UWE Law 2 (Hierarchical Containerization) and Law 3 (Hardware Abstraction & Decoupled Lethality). Single "universal" ground robots are a doctrinal failure: a tracked combat robot lacks the range and buoyancy for 100+ km riverine transit, while a heavy wheeled amphibious carrier lacks the low ground pressure and low silhouette for forward trench assault. Tencore's pairing of `UGV: GM-IT-AR` (Amphibious Carrier) and `UGV: GL-EC-DR` (Tracked Strike Parasite) provides empirical proof that combined-arms unmanned superiority requires layered carrier-parasite hierarchies.
 
 
 
