@@ -41,6 +41,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 30 | **Philippine Carriers: Archipelagic Trap vs Pelagic Screen (Dr. KJ Choo)** | [LinkedIn](https://lnkd.in/p/dwM_UmJC) / Dr. KJ Choo | `FAC: C4-CV-SK`<br>`FAC: C4-CV-CT`<br>`USV: SM-DE-AR` | `ILittoralChokepointSaturationEngine` & `IDeepSeaAscentLatencyModeler` & `IPelagicCarrierScreeningGateway` | Deconstructs CNS Liaoning archipelagic entrapment (Basilan Strait/Sulu Sea) vs USS Theodore Roosevelt pelagic defense (Philippine Sea); validates UWE 300-second chokepoint saturation (Oman archetype) against STOBAR launch deficit (90-120s per J-15); quantifies abyssal seabed sentinel ("донні ждуни") ascent latency (t_ascent = h / v_climb >= 22-45 min at 4-6 km depth) that decouples deep munitions from 30+ knot carrier maneuvers. | 2026-11-06 |
 | 31 | **LEO Mega-Constellation ADR & Software-Defined Orbital Machine (SPM Group)** | [LinkedIn](https://www.linkedin.com/groups/2946743/) | `UOV: LM-CA-HR` | `IOrbitalManeuverDeltaVController` & `IDistributedNodalMeshGateway` | Validates the Kondratyuk Constellation Paradigm (1929) and Falcon Equivalent Unit (1.0 FEU); deconstructs the failure of legacy mass tiers (CubeSat to Heavy) in contested 50,000+ satellite LEO; establishes autonomous nodal edge evasion (<100ms) and multi-domain orbital coordination. | 2026-11-07 |
 | 32 | **Joint Cross-Domain Unmanned Operation (Izzy Fried / Fox2Sierra)** | [LinkedIn](https://lnkd.in/p/d9qXKrmm) / Izzy Fried | `C2: MB-HR-GW`<br>`UAV: AL-TC-DR`<br>`UGV: GL-EM-DR`<br>`USV: SL-PA-DR` | `ICrossDomainKillWebRouter` & `IMultiBearerCommsGateway` | Validates UWE 3-Tier Multi-Layer Architecture (MDO Strategic Intent ➔ UWE Meta-Layer Operational Engine ➔ CPS: HAL/EAL Execution); breaks proprietary point-to-point command silos by standardizing cross-domain kill-web routing, multi-bearer gateway resilience, and physical medium abstraction across air, ground, and maritime domains. | 2026-11-07 |
+| 33 | **Neuronautics AI Toroidal Propeller & Aeroacoustic Benchmark** | [FB Reel](https://www.facebook.com/reel/1391513959448828) / Serhii Pasevych | `UCV: MQ-EE-AR` | `IRotorcraftAeroacousticDynamics` & `IToroidalMorphingAeroelasticDrive` | Deconstructs the 75% vs 65% efficiency trade-off: doubled wetted area ($S_{\text{wet}}$) and low-Re viscous drag penalize profile power ($P_0$), but closed arch loop (Euler's elastica) reduces bending moment 3–4x, enabling ultrathin airfoils ($t/c \approx 4\text{--}5\%$) that halve $C_{d0}$ and fully recover the 15% efficiency penalty ($2 \times 0.5 = 1.0$); eliminates tip vortex core and BPF noise; enables bearingless aeroelastic pitch morphing and phase-locked wake coalescence in VTOL transitions. | 2026-11-13 |
+| 34 | **REGENT Seaglider (Viceroy Tri-Modal WIG)** | [FB Reel](https://www.facebook.com/reel/1091309223663639) / REGENT Craft | `USV: LG-VB-AS` | `ITriModalSeagliderTransitionDrive` & `IHeightStaticStabilityControl` | Deconstructs the "Float, Foil, Fly" tri-modal sequence: retractable hydrofoils break the water-resistance hump ($R_{\text{hump}}$), cutting drag by 70–80% and wave-slamming ($G_z$), before transitioning into pure ground-effect flight ($h/c < 0.5$) with 50% lower induced drag ($C_{Di}$) and $L/D > 22\text{--}25$; reveals center-of-pressure shift ($\Delta x_{cp}$) on foil retraction requiring microsecond blown-flap propeller slipstream compensation to prevent height instability ($dC_m/dh$) and porpoising at 100+ km/h. | 2026-11-16 |
 
 ---
 
@@ -620,6 +622,53 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 * **Validation (🟢):** Confirms UWE 3-Tier Multi-Layer Architecture (MDO Strategic Intent ➔ UWE Meta-Layer Operational Engine ➔ CPS: HAL/EAL Execution) across air, ground, and maritime domains.
 * **Vulnerability (🔴):** Proprietary point-to-point command links create vendor lock-in and collapse under multi-domain EW.
 * **Architectural Lesson:** Validates UWE Multi-Layer Stratification; heterogeneous swarms require unified HAL abstraction rather than bespoke C2 integration.
+
+---
+
+## 30. Case Study #33: Neuronautics AI Toroidal Propeller Benchmark
+
+* **Target Source:** [Facebook Reel](https://www.facebook.com/reel/1391513959448828) / Serhii Pasevych
+* **Date Analyzed:** 2026-11-13
+* **UWE 6-Character Token:** `UCV: MQ-EE-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IRotorcraftAeroacousticDynamics` & `IToroidalMorphingAeroelasticDrive`
+  * **One-Sentence Definition:** *"Toroidal rotor architectures require IRotorcraftAeroacousticDynamics and IToroidalMorphingAeroelasticDrive to arbitrate tip vortex dissipation vs low-Re viscous drag, recovering the 15% hover deficit via pre-stressed arch mechanics (Euler's elastica) enabling ultrathin foils ($t/c \approx 4\text{--}5\%$), bearingless pitch morphing, and phase-locked wake coalescence."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Tip Vortex Dissipation:** Closed arch loop eliminates discrete tips; spreads vorticity into a curved sheet, dropping noise 4–6 dBA and shifting tonal BPF peaks (200–800 Hz) into broadband white noise (>2 kHz) attenuating within 40–50 m.
+  * **Arch Load Sharing & Thin-Foil Recovery:** Closed loop acts as an arch truss (Euler's elastica), dropping bending loads 3–4x vs open cantilevers; enables ultrathin composite foils ($t/c \approx 4\text{--}5\%$) halving profile drag ($C_{d0}$ from 0.030 to 0.015), neutralizing doubled wetted area ($2 \times 0.5 = 1.0$) and recovering the 15% efficiency deficit.
+  * **Bearingless Pitch Morphing:** Anisotropic composite tailoring ($[0^\circ / \pm 45^\circ]$) or superelastic Nitinol enables root-driven cyclic/collective pitch morphing without mechanical bearings.
+  * **Wake Coalescence:** Phase-locked clustering ($\Delta \psi = 90^\circ/180^\circ$) merges slipstreams into a unified virtual shroud, suppressing upwash fountain losses.
+
+* **Engineering Vulnerabilities & Rotor Constraints (🔴):**
+  * **Gyroscopic Precession Cross-Coupling ($I_{zz}$):** Outer perimeter mass doubles polar inertia ($I_{zz}$), raising gyroscopic moments ($\vec{M}_{\text{gyro}} = I_{zz}(\vec{\Omega} \times \vec{\omega}_{\text{tilt}})$) by 50–70% during VTOL tilt; mandates reinforced motor bearings and tilt servos.
+  * **Centrifugal Ballooning:** High RPM (>12,000) generates severe radial tension; demands continuous $0^\circ$ fiber loops and expansion-tolerant root anchor sockets.
+  * **Acoustic Ringing:** Closed loops can exhibit resonant flutter; requires Constrained Layer Damping (CLD viscoelastic film) between composite plies.
+* **Architectural Lesson for UWE:**
+  * **3D-Printed Failure vs Composite Supremacy:** FDM 3D printing forces thick profiles ($t/c > 12\%$) due to polymer weakness, causing an aerodynamic collapse ($S_{\text{wet}} \times 2$ plus high $C_{d0}$); aerospace composites reverse this via arch mechanics, yielding razor-thin foils ($t/c \approx 4\%$) that achieve full efficiency parity while delivering absolute acoustic masking.
+
+---
+
+## 31. Case Study #34: REGENT Seaglider (Viceroy Tri-Modal WIG)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1091309223663639) / REGENT Craft
+* **Date Analyzed:** 2026-11-16
+* **UWE 6-Character Token:** `USV: LG-VB-AS`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ITriModalSeagliderTransitionDrive` & `IHeightStaticStabilityControl`
+  * **One-Sentence Definition:** *"Tri-modal ground-effect seagliders require ITriModalSeagliderTransitionDrive to crossfade hydrodynamic foil lift to aerodynamic wing ground-effect lift ($L_{\text{foil}} \rightarrow L_{\text{aero}}$), coordinating distributed propeller blown-flap angles to neutralize violent pitch trim divergence ($\Delta x_{cp}$) and prevent height instability ($dC_m/dh$) during foil retraction at 100+ km/h."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Ground-Effect Induced Drag Halving:** Flying in close ground effect ($h/c < 0.5$) prevents downwash and dissipates wingtip vortices, boosting cruise $L/D > 22\text{--}25$ (vs $14\text{--}16$ for commercial aircraft) and reaching $300\text{ km/h}$ on battery storage.
+  * **Hydrofoil Solution to the $R_{\text{hump}}$ Barrier:** Conventional WIG craft suffer massive water drag humps ($R_{\text{hump}}$ at 60–120 km/h); deployable hydrofoils lift the hull cleanly at 30–75 km/h, slashing water drag by 70–80% and eliminating wave-slamming accelerations ($G_z$).
+  * **Distributed Electric Blown Flaps (DEP):** 8–12 wing-mounted electric propellers blow directly across full-span flaps, preventing stall and providing control authority at low speeds.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Center-of-Pressure Transition Shift ($\Delta x_{cp}$):** Withdrawing hydrofoils transfers vehicle support from hydrodynamic struts to aerodynamic wings, triggering a pitching moment divergence that requires microsecond blown-flap and propeller torque arbitration.
+  * **Ground Effect Pitch-Height Coupling ($dC_m/dh$):** Aerodynamic pitch instability in close ground proximity requires continuous (>100 Hz) radar/lidar surface-tracking to prevent porpoising or wave-crest impact in Sea State 3+.
+  * **Saline Corrosion & High-Speed Cavitation:** Operating distributed electric nacelles in high-velocity sea spray ($300\text{ km/h}$) accelerates leading-edge erosion and demands hermetic IP68 motor sealing.
+* **Architectural Lesson for UWE:**
+  * **Regulatory & Physical Decoupling:** Reclassifying high-speed coastal transit under the maritime WIG standard (IMO MSC/Circ.1054) rather than FAA aviation codes bypasses airport infrastructure bottlenecks; physically, tri-modal "Float, Foil, Fly" proves that combining hydrofoils (`F`) with ground effect (`G`) solves the hydrodynamic power barrier, validating the USV continuum in littoral archipelagic warfare.
 
 
 

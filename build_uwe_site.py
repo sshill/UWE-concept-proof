@@ -12,9 +12,9 @@ sys.dont_write_bytecode = True
 
 WORKSPACE = Path(__file__).resolve().parent
 DOCS = WORKSPACE / "docs"
-BASE_URL = "https://uwe-standard.github.io"
+BASE_URL = "https://sshill.github.io/UWE-concept-proof"
 
-# 13 Empirical Platform Benchmarks Metadata & Deep Cyber-Physical Content
+# 17 Empirical Platform Benchmarks Metadata & Deep Cyber-Physical Content
 CASES_DATA = [
     {
         "id": "01",
@@ -366,6 +366,114 @@ CASES_DATA = [
         ],
         "lesson": "Validates the Closed UWE Aerial Containment Triad: 1) Kinetic Dogfighter (Fury), 2) Modular Sensor Anchor (MQ-28), 3) Persistent Energy Hub (MQ-25 Tanker) sustaining 24/7 robotic borders.",
         "related": ["03-stealth-ucav", "04-waverider-corvus", "12-mq25-stingray"]
+    },
+    {
+        "id": "14",
+        "slug": "14-knds-centurio",
+        "domain": "UGV",
+        "name": "KNDS CENTURIO Tactical UGV",
+        "token": "UGV: GL-DC-DR",
+        "token_full": "UGV: Ground Land • C2 Light Tactical (2.8t trailer) • Diesel Hydrostatic Drive (60 kW) • ARX20/30 Autocannon RWS • Combined Arms Fire Support • Resilient LOS RF & Fiber-Optic Spool",
+        "hal": "IAllWheelSteeringKinematics",
+        "hal_def": "Tactical all-wheel-steer robotic platforms require IAllWheelSteeringKinematics and IHydrostaticTractionControl to coordinate independent four-wheel angles and hydraulic displacement, eliminating skid-steer scrubbing losses and holding 60% slopes, while IRemoteWeaponStationStabilization isolates 20mm/30mm autocannon recoil impulses.",
+        "vendor": "KNDS France & Germany",
+        "vendor_slug": "knds",
+        "date": "2026-10-20",
+        "source_name": "Facebook Reel / Defense Advancement",
+        "source_url": "https://www.facebook.com/reel/945299761633386",
+        "advantages": [
+            "4WS Kinematic Primacy: 4-wheel independent steering eliminates lateral tire scrubbing, saving 35–40% traction energy during turns and enabling diagonal crab-crawling.",
+            "Hydrostatic Crawl Torque: 60 kW diesel hydrostatic drive provides high low-speed torque without mechanical clutch wear, climbing 60% grades with intrinsic hydrostatic braking.",
+            "Zero-Line Fiber-Optic Tethering: deployable optical spool provides unjammable, high-bandwidth telemetry and instant weapon trigger control in dense EW environments."
+        ],
+        "vulnerabilities": [
+            "Hydrostatic Line Shrapnel Sensitivity: 250–350 bar centralized hydraulic circuits risk instant systemic pressure collapse upon fragment penetration; requires ballistic skirts.",
+            "Prominent Acoustic and Thermal IR Profile: 60 kW diesel engine exhaust and oil cooling radiators create elevated infrared and acoustic signatures.",
+            "High Gross Weight: at 2.8 tonnes, extraction requires dedicated recovery prime movers if immobilized."
+        ],
+        "lesson": "Validates the Law of Decoupled Lethality in ground combat: the invariant 2.8t 4WS chassis serves as a mobile carrier decoupled from kinetic autocannon or sapper payloads.",
+        "related": ["02-slimak-ugv", "08-unex-artillery", "17-frodo-ugv"]
+    },
+    {
+        "id": "15",
+        "slug": "15-tekever-ar6",
+        "domain": "UCV",
+        "name": "TEKEVER AR6 Heavy-Lift UAS",
+        "token": "UCV: CL-PL-DR",
+        "token_full": "UCV: Rotorcraft Disc-Loaded • C2 Light Tactical (600kg MTOW) • Piston Engine Digital Displacement Fluid Power • Heavy Logistics (200kg / 500km) • Forward Force Support • Anti-Jam & GNSS-Denied",
+        "hal": "IDigitalDisplacementHydraulicDrive",
+        "hal_def": "Heavy-lift fluid-power multirotor platforms require IDigitalDisplacementHydraulicDrive to execute sub-20ms digital valve sequencing across distributed hydraulic rotor hubs, converting liquid fuel energy density into microsecond differential thrust while decoupling heavy cargo dynamics under GNSS denial.",
+        "vendor": "TEKEVER",
+        "vendor_slug": "tekever",
+        "date": "2026-10-20",
+        "source_name": "LinkedIn / German Army Logistics Validation",
+        "source_url": "https://lnkd.in/p/d9Ztc8D8",
+        "advantages": [
+            "Breaking the Multirotor Specific Energy Bottleneck: liquid fuel (12,000 Wh/kg) driving digital hydraulics delivers 200+ kg payload over 500 km range in a pure VTOL footprint.",
+            "Digital Fluid Power Simplicity: eliminates failure-prone mechanical transmissions, swashplates, and pitch pushrods in favor of high-speed digital hydraulic valves.",
+            "Frontline GLOC Resupply: enables non-line-of-sight autonomous artillery shell, ammunition, and battery delivery across interdicted frontline corridors without crew exposure."
+        ],
+        "vulnerabilities": [
+            "Continuous Acoustic and Thermal Profile: internal combustion engine creates a continuous acoustic signature and thermal exhaust plume vulnerable to SHORAD.",
+            "Hydraulic Water Hammer Fatigue: rapid digital valve cycling induces hydraulic pressure transients in flexible hoses, demanding pulsation dampers and telemetry monitoring.",
+            "High Rotor Disc Downwash: heavy disc loading creates violent dust and debris downwash during forward unprepared site landings."
+        ],
+        "lesson": "Establishes the fluid-power heavy-lift standard within UCV: pure battery power is restricted to tactical micro-strike, while operational sustainment mandates fluid-power density.",
+        "related": ["01-honda-evtol", "09-capstone-coaxial"]
+    },
+    {
+        "id": "16",
+        "slug": "16-rq81-diana",
+        "domain": "UAV",
+        "name": "'RQ-81 Diana' / Solar HAPS Architecture",
+        "token": "UAV: AL-ER-DO",
+        "token_full": "UAV: Atmospheric Stratospheric (20km) • C2 Modular Wing-Box • Solar Photovoltaic + Secondary Battery • Persistent C4ISR Overwatch • Strategic Defense • Optical Laser ISL & MESH",
+        "hal": "ISolarDiurnalEnergyManagement",
+        "hal_def": "Stratospheric solar pseudo-satellite platforms require ISolarDiurnalEnergyManagement and IAeroelasticFlutterSuppression to balance solar harvesting against nocturnal gravitational descent while actively damping aerodynamic gust-induced limit-cycle flutter across flexible wings.",
+        "vendor": "Stratospheric Defense & HAPS Aerospace",
+        "vendor_slug": "haps-consortium",
+        "date": "2026-10-20",
+        "source_name": "Facebook Reel / US NextGen Airpower (Unverified Spec)",
+        "source_url": "https://www.facebook.com/reel/1080077671497853",
+        "advantages": [
+            "Persistent Stratospheric Station-Keeping: operating at 65,000 ft (20 km) in the stratospheric wind minimum allows unattenuated solar harvesting and multi-month persistence.",
+            "Stationary Regional Persistence: provides stationary persistence over tactical theaters with microsecond optical/RF ground latency and zero rocket launch costs.",
+            "Laser Cross-Link Gateway: serves as a high-bandwidth optical laser relay bridging terrestrial drone swarms directly to orbital defense constellations."
+        ],
+        "vulnerabilities": [
+            "Physics Debunking: optical line-of-sight horizon at 20 km is ~505 km (maximum theoretical area ~800,000 km², less than 8% of the US landmass, debunking viral clickbait claims).",
+            "Nocturnal Energy Deficit: low 7% air density requires climbing to 70,000 ft during daylight and descending to 50,000 ft at night to trade potential energy for aerodynamic lift.",
+            "Tropospheric Jet Stream Flutter: ultra-high-aspect-ratio flexible wings risk catastrophic limit-cycle flutter when traversing turbulent 35,000 ft jet streams."
+        ],
+        "lesson": "Demarcates the boundary between aerodynamic pseudo-satellites (UAV: AL-ER-DO) and true orbital platforms (UOV); enforces physical rigor over CGI military entertainment tropes.",
+        "related": ["03-stealth-ucav", "04-waverider-corvus", "10-orbital-guardian"]
+    },
+    {
+        "id": "17",
+        "slug": "17-frodo-ugv",
+        "domain": "UGV",
+        "name": "НРК «Фродо» 6x6 Universal Tactical UGV",
+        "token": "UGV: GL-EM-DR",
+        "token_full": "UGV: Ground Land • C2 Tactical (500-700kg gross) • Electric Quick-Swap Battery • Multi-Mission (200-400kg / CASEVAC / Buriya Turret) • Tactical Force Support • Multi-Bearer Starlink/Silvus/ELRS",
+        "hal": "IIndependent6x6TractionControl",
+        "hal_def": "High-speed tactical ground robotics platforms require IIndependent6x6TractionControl and IAdaptiveClearanceSuspension to redistribute torque under single-wheel loss (N-1) and modulate ground clearance (170-330mm) for 40 km/h FPV evasion, while IMultiBearerTacticalGateway manages seamless C2 failover under dense EW.",
+        "vendor": "Ukrainian Frontline Defense-Tech & Robotics",
+        "vendor_slug": "frontline-ua",
+        "date": "2026-10-24",
+        "source_name": "Facebook Reel / Taurus UGV Company, 5th Assault Brigade",
+        "source_url": "https://www.facebook.com/reel/2263655697790308",
+        "advantages": [
+            "40 km/h Sprint Velocity as Kinetic Active Defense: cuts open-ground kill zone exposure time by 70% and breaks the terminal guidance intercept angle of enemy FPV strike drones.",
+            "6x6 Wheel Mesh with N-1 Redundancy: independent suspension across all 6 wheels provides mobility across shell craters and allows mission completion even after single-wheel combat loss.",
+            "Adaptive Clearance & Quick-Swap Battery: modulates height (170–330 mm) for terrain concealment or obstacle clearing; modular batteries swap in minutes supporting 150 km range."
+        ],
+        "vulnerabilities": [
+            "High-Speed Dynamic Suspension Fatigue: rough terrain sprint at 40 km/h induces extreme dynamic shock loads (G_z > 4–6g) requiring continuous vibration telemetry.",
+            "Visual Silhouette at Max Clearance: full 330 mm elevation raises center of gravity and increases side visual detection profile.",
+            "Battery Mass vs Ballistic Armor Trade-off: preserving 40 km/h agility limits passive armor thickness, making dynamic speed the primary defensive shield."
+        ],
+        "lesson": "Codifies Kinetic Evasion as the frontline survivability standard in UGV:GL; demonstrates the value of co-designing tactical robotics with combat units (5th Assault Brigade).",
+        "related": ["02-slimak-ugv", "08-unex-artillery", "14-knds-centurio"]
     }
 ]
 
@@ -377,7 +485,10 @@ VENDORS_DATA = [
     {"slug": "bae-falconworks", "name": "BAE Systems & Certo Aerospace", "origin": "UK", "platforms": ["CAPSTONE Coaxial Heavy-Lift UCV"], "focus": "Coaxial rotorcraft disc loading, 50% structural payload fraction, naval frigate deck operations."},
     {"slug": "unex", "name": "UNEX Automation", "origin": "Belgium / Ukraine", "platforms": ["ABRIS Amphibious Prime Mover"], "focus": "Heavy electric all-terrain logistics, robotic artillery towing, Bekker soil traction management."},
     {"slug": "honda", "name": "Honda Aircraft Company", "origin": "Japan / USA", "platforms": ["Honda eVTOL (GT-HEV)"], "focus": "Decoupled Lift+Cruise aerodynamics, gas turbine hybrid-electric powertrains, inter-city logistics."},
-    {"slug": "frontline-ua", "name": "Ukrainian Frontline Defense-Tech", "origin": "Ukraine", "platforms": ["НРК SlimAk UGV", "Combat Multirotors", "Black Sea USVs"], "focus": "Asymmetric robotic warfare, articulated mud-conforming chassis, electronic warfare resilience, kinetic field prototyping."},
+    {"slug": "frontline-ua", "name": "Ukrainian Frontline Defense-Tech & Robotics", "origin": "Ukraine", "platforms": ["НРК SlimAk UGV", "НРК «Фродо» 6x6 UGV", "Buriya Stabilized Turret", "Black Sea USVs"], "focus": "Asymmetric robotic warfare, articulated mud-conforming chassis, 40 km/h kinetic evasion, multi-bearer C2, electronic warfare resilience."},
+    {"slug": "knds", "name": "KNDS France & Germany", "origin": "France / Germany", "platforms": ["CENTURIO Tactical UGV", "PHOBOS Chassis", "ARX20/30 RWS"], "focus": "Tactical all-wheel-steer combat robotics, hydrostatic traction drives, high-recoil remote weapon stations, zero-line fiber-optic telemetry."},
+    {"slug": "tekever", "name": "TEKEVER", "origin": "Portugal / UK", "platforms": ["AR6 Heavy-Lift UAS", "AR5 Life Ray", "AR4 Evolution"], "focus": "Fluid-power multirotors, digital displacement hydraulics, long-range maritime and tactical logistics UAS."},
+    {"slug": "haps-consortium", "name": "Stratospheric Defense & HAPS Aerospace", "origin": "USA / International", "platforms": ["'RQ-81 Diana' HAPS (Unverified Spec)", "Solar Stratospheric Relays", "Laser Cross-Link Nodes"], "focus": "High-altitude pseudo-satellites (HAPS), solar diurnal energy balancing, aeroelastic flutter suppression, non-orbital persistence."},
     {"slug": "nextgen-arsenal", "name": "NextGen Arsenal", "origin": "International", "platforms": ["Orbital Guardian ADR Hunter"], "focus": "Active Debris Removal, proximity operations (RPO), non-cooperative tumbling target capture, dual-use counter-space."},
     {"slug": "darpa", "name": "DARPA & Skunk Works Experimental", "origin": "USA", "platforms": ["Mach 6 Hypersonic Waverider (Corvus)"], "focus": "Hypersonic aerothermodynamics, compression lift waveriders, laser communications through plasma sheaths."},
     {"slug": "global-aerospace", "name": "Defense Aerospace Research", "origin": "USA / Global", "platforms": ["Transonic / Supersonic Stealth UCAV"], "focus": "Tailless blended wing-body stealth, internal weapons bays, aerothermal boundary layer dynamics."},
@@ -391,23 +502,23 @@ DOMAINS_DATA = [
         "medium": "Atmospheric Airspace (0 to 30 km)",
         "governing_laws": "Aerodynamic Lift-to-Drag (L/D), Mach number shock detachment, boundary-layer aerothermodynamics, wing loading.",
         "legacy_trap": "STANAG 4670 & DoD MTOW/HALE/MALE classifications rely on arbitrary weight and altitude boxes, ignoring kinetic threat omission limits and FPV interceptor speeds.",
-        "cases": ["01-honda-evtol", "03-stealth-ucav", "04-waverider-corvus", "05-sickle-wing", "12-mq25-stingray", "13-fury-ghostbat"]
+        "cases": ["01-honda-evtol", "03-stealth-ucav", "04-waverider-corvus", "05-sickle-wing", "12-mq25-stingray", "13-fury-ghostbat", "16-rq81-diana"]
     },
     {
         "code": "UCV",
-        "name": "Unmanned Copter Vehicles (Combat Multirotors & Coaxials)",
-        "medium": "Low-Altitude Disc-Loaded Aerodynamics",
-        "governing_laws": "Rotor disc loading (T/A), zero stall speed (V_stall = 0), momentum theory, advancing/retreating blade flapping dynamics.",
+        "name": "Unmanned Copter Vehicles (Combat Multirotors, Coaxials & Fluid-Power Heavy-Lift)",
+        "medium": "Low-Altitude Disc-Loaded Aerodynamics & Fluid Power",
+        "governing_laws": "Rotor disc loading (T/A), zero stall speed (V_stall = 0), momentum theory, advancing/retreating blade flapping dynamics, digital displacement fluid power.",
         "legacy_trap": "Conflating combat rotorcraft with hobbyist slang ('FPV'). FPV is a pilot screen mode, not a cyber-physical combat aircraft category.",
-        "cases": ["09-capstone-coaxial"]
+        "cases": ["09-capstone-coaxial", "15-tekever-ar6"]
     },
     {
         "code": "UGV",
         "name": "Unmanned Ground Vehicles (Tactical Robotics & Prime Movers)",
         "medium": "Terrestrial & Amphibious Terrain",
-        "governing_laws": "Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios.",
+        "governing_laws": "Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios, kinetic evasion velocity.",
         "legacy_trap": "Amateur slang ('vozyk', 'cart') and marketing claims of 10-tonne towing based on electric motor kW while ignoring soil shear failure in mud.",
-        "cases": ["02-slimak-ugv", "08-unex-artillery"]
+        "cases": ["02-slimak-ugv", "08-unex-artillery", "14-knds-centurio", "17-frodo-ugv"]
     },
     {
         "code": "UUV",
@@ -457,7 +568,9 @@ VALIDATION_DATA = {
                 {"id": "05", "slug": "05-sickle-wing", "name": "Sickle Wing", "insight": "Hypersonic flight eliminates mechanical hinges in favor of fluidic thrust vectoring."},
                 {"id": "06", "slug": "06-exail-usv", "name": "Exail USV", "insight": "Persistent ocean denial demands wave-piercing displacement, not fragile planing."},
                 {"id": "08", "slug": "08-unex-artillery", "name": "UNEX ABRIS", "insight": "Towing capacity in mud is bounded by Bekker soil shear, not motor kW."},
-                {"id": "09", "slug": "09-capstone-coaxial", "name": "CAPSTONE Coaxial", "insight": "Zero stall speed and disc loading strictly define UCV copter physics."}
+                {"id": "09", "slug": "09-capstone-coaxial", "name": "CAPSTONE Coaxial", "insight": "Zero stall speed and disc loading strictly define UCV copter physics."},
+                {"id": "14", "slug": "14-knds-centurio", "name": "KNDS CENTURIO UGV", "insight": "4WS steering kinematics eliminate lateral tire scrubbing, conserving 35-40% traction energy."},
+                {"id": "17", "slug": "17-frodo-ugv", "name": "НРК «Фродо» 6x6 UGV", "insight": "40 km/h sprint velocity acts as active kinetic defense breaking FPV intercept angles."}
             ]
         },
         {
@@ -471,7 +584,9 @@ VALIDATION_DATA = {
                 {"id": "07", "slug": "07-ghostshark-auv", "name": "Ghost Shark XL-AUV", "insight": "C3 heavy slipway footprint allows 12-mine capacity without strategic nuclear docks."},
                 {"id": "10", "slug": "10-orbital-guardian", "name": "Orbital Guardian", "insight": "C2 ESPA rideshare class (150-300kg) dictates upper-stage dispenser interfaces."},
                 {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Stingray", "insight": "C4 CATOBAR carrier-basing requires arresting gear and bow catapult compatibility."},
-                {"id": "13", "slug": "13-fury-ghostbat", "name": "Anduril Fury / MQ-28", "insight": "C2 dispersed runway operations enable distributed survivable air combat mass."}
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Anduril Fury / MQ-28", "insight": "C2 dispersed runway operations enable distributed survivable air combat mass."},
+                {"id": "15", "slug": "15-tekever-ar6", "name": "TEKEVER AR6 UAS", "insight": "C2 tactical footprint delivers 200kg cargo over 500km without C3/C4 strategic runway lock."},
+                {"id": "17", "slug": "17-frodo-ugv", "name": "НРК «Фродо» 6x6", "insight": "C2 tactical trailer footprint enables 6x6 crater mobility and quick-swap battery logistics."}
             ]
         },
         {
@@ -485,7 +600,10 @@ VALIDATION_DATA = {
                 {"id": "10", "slug": "10-orbital-guardian", "name": "Orbital Guardian", "insight": "Dual-use hardware: ADR debris capture and offensive ASAT use identical HAL contracts."},
                 {"id": "11", "slug": "11-lockheed-lamprey", "name": "Lamprey MMAUV", "insight": "24 cu ft modular bay separates effector lethality from host vehicle transport."},
                 {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Tanker", "insight": "Decoupled Cobham ARS pod transforms carrier strike aircraft into persistent refuelers."},
-                {"id": "13", "slug": "13-fury-ghostbat", "name": "Fury CCA", "insight": "Conformal bay decouples kinetic airframe from AIM-120/AIM-9X munitions."}
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Fury CCA", "insight": "Conformal bay decouples kinetic airframe from AIM-120/AIM-9X munitions."},
+                {"id": "14", "slug": "14-knds-centurio", "name": "KNDS CENTURIO", "insight": "Invariant 2.8t 4WS PHOBOS chassis decouples from ARX20/30 autocannon or sapper modules."},
+                {"id": "15", "slug": "15-tekever-ar6", "name": "TEKEVER AR6 UAS", "insight": "Invariant fluid-power rotorcraft platform decouples heavy cargo from flight control stabilization."},
+                {"id": "17", "slug": "17-frodo-ugv", "name": "НРК «Фродо» UGV", "insight": "Invariant 6x6 chassis decouples from 'Buriya' stabilized turret or CASEVAC payloads."}
             ]
         },
         {
@@ -500,7 +618,11 @@ VALIDATION_DATA = {
                 {"id": "07", "slug": "07-ghostshark-auv", "name": "Ghost Shark", "insight": "Token UUV: PT-RM-DA encodes 1000m pelagic depth and multi-mine salvo mission."},
                 {"id": "10", "slug": "10-orbital-guardian", "name": "Orbital Guardian", "insight": "Token UOV: LM-CA-HR sets LEO orbit, chemical propulsion, and RPO grappling."},
                 {"id": "12", "slug": "12-mq25-stingray", "name": "MQ-25 Stingray", "insight": "Token UAV: AI-TF-DR defines CATOBAR tanker escort doctrine microsecond routing."},
-                {"id": "13", "slug": "13-fury-ghostbat", "name": "Fury CCA", "insight": "Token UAV: AL-TC-DR establishes transonic air superiority and Lattice OS edge mesh."}
+                {"id": "13", "slug": "13-fury-ghostbat", "name": "Fury CCA", "insight": "Token UAV: AL-TC-DR establishes transonic air superiority and Lattice OS edge mesh."},
+                {"id": "14", "slug": "14-knds-centurio", "name": "KNDS CENTURIO", "insight": "Token UGV: GL-DC-DR encodes diesel hydrostatic drive and fiber-optic tether link."},
+                {"id": "15", "slug": "15-tekever-ar6", "name": "TEKEVER AR6", "insight": "Token UCV: CL-PL-DR establishes fluid-power heavy logistics and anti-jam profile."},
+                {"id": "16", "slug": "16-rq81-diana", "name": "Solar HAPS", "insight": "Token UAV: AL-ER-DO defines stratospheric diurnal solar persistence and laser cross-links."},
+                {"id": "17", "slug": "17-frodo-ugv", "name": "НРК «Фродо»", "insight": "Token UGV: GL-EM-DR sets 6x6 electric quick-swap logistics and multi-bearer C2."}
             ]
         }
     ],
@@ -514,7 +636,9 @@ VALIDATION_DATA = {
                 {"id": "02", "slug": "02-slimak-ugv", "name": "SlimAk UGV", "insight": "Articulated chassis eliminates wheel scrubbing in deep frontline viscous mud."},
                 {"id": "04", "slug": "04-waverider-corvus", "name": "Mach 6 Waverider", "insight": "IThermalPlasmaLink commands aft laser to bypass Mach 6 RF plasma blackout."},
                 {"id": "06", "slug": "06-exail-usv", "name": "Exail DriX USV", "insight": "Drop-keel lowers acoustic payload below surface aeration in Sea State 5."},
-                {"id": "08", "slug": "08-unex-artillery", "name": "UNEX ABRIS", "insight": "Bekker soil slip traction controller prevents wheel spin-down in clay soils."}
+                {"id": "08", "slug": "08-unex-artillery", "name": "UNEX ABRIS", "insight": "Bekker soil slip traction controller prevents wheel spin-down in clay soils."},
+                {"id": "16", "slug": "16-rq81-diana", "name": "Solar HAPS", "insight": "Gravitational battery maneuver trades potential energy for lift during diurnal solar deficit."},
+                {"id": "17", "slug": "17-frodo-ugv", "name": "НРК «Фродо» 6x6", "insight": "Variable 170-330mm ground clearance and N-1 wheel tolerance negotiate shell craters."}
             ]
         },
         {
@@ -1037,7 +1161,7 @@ def render_header(active_nav="home", depth=0):
   <nav class="nav-links">
     <a href="{rel}index.html" class="{'active' if active_nav=='home' else ''}">Hub</a>
     <a href="{rel}domains/index.html" class="{'active' if active_nav=='domains' else ''}">Taxonomy & Domains</a>
-    <a href="{rel}cases/index.html" class="{'active' if active_nav=='cases' else ''}">13 Benchmarks</a>
+    <a href="{rel}cases/index.html" class="{'active' if active_nav=='cases' else ''}">{len(CASES_DATA)} Benchmarks</a>
     <a href="{rel}c2/officer.html" class="{'active' if active_nav=='c2' else ''}">C2 Officer Symbiosis</a>
     <a href="{rel}vendors/index.html" class="{'active' if active_nav=='vendors' else ''}">Vendors & OEMs</a>
     <a href="{rel}hal/index.html" class="{'active' if active_nav=='hal' else ''}">HAL Registry</a>
@@ -1055,6 +1179,74 @@ def render_footer():
     </p>
   </div>
 </footer>"""
+
+def render_spectrum_bar():
+    colors = {
+        "UAV": "#3fb950",
+        "UCV": "#d29922",
+        "UGV": "#bc8cff",
+        "UUV": "#58a6ff",
+        "USV": "#38bdf8",
+        "UOV": "#ff7b72",
+    }
+    domain_names = {
+        "UAV": "Air",
+        "UCV": "Copter",
+        "UGV": "Ground",
+        "UUV": "Subsea",
+        "USV": "Surface",
+        "UOV": "Orbital",
+    }
+    total = len(CASES_DATA)
+    segs = []
+    legends = []
+    for d in DOMAINS_DATA:
+        code = d["code"]
+        cnt = len([c for c in CASES_DATA if c["domain"] == code])
+        pct = (cnt / total) * 100 if total > 0 else 0
+        color = colors.get(code, "#8b949e")
+        short_name = domain_names.get(code, code)
+        segs.append(f'<div class="spec-seg" data-domain-filter="{code}" style="width:{pct:.2f}%; background:{color};" title="{code} {short_name}: {cnt} cases ({pct:.1f}%)"></div>')
+        legends.append(f'<span class="legend-item"><span class="legend-dot" style="background:{color};"></span> {code} {short_name} ({pct:.1f}%)</span>')
+    
+    return f"""<div class="spectrum-wrap">
+      <div class="spectrum-head">
+        <strong style="font-size:0.95rem; color:#fff;">📊 Cross-Domain Operational Spectrum ({total} Empirical Benchmarks)</strong>
+        <span style="font-size:0.8rem; color:var(--text-muted);">Click bar segment to filter cases</span>
+      </div>
+      <div class="spectrum-bar">
+        {"".join(segs)}
+      </div>
+      <div class="spectrum-legend">
+        {"".join(legends)}
+      </div>
+    </div>"""
+
+def render_filter_pills():
+    total = len(CASES_DATA)
+    total_vendors = len(VENDORS_DATA)
+    domain_names = {
+        "UAV": "Air",
+        "UCV": "Copter",
+        "UGV": "Ground",
+        "UUV": "Subsea",
+        "USV": "Surface",
+        "UOV": "Orbital",
+    }
+    d_pills = [f'<span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains ({total})</span>']
+    for d in DOMAINS_DATA:
+        code = d["code"]
+        cnt = len([c for c in CASES_DATA if c["domain"] == code])
+        short_name = domain_names.get(code, code)
+        d_pills.append(f'<span class="filter-pill domain-pill" data-domain-filter="{code}">{code} {short_name} ({cnt})</span>')
+    
+    v_pills = [f'<span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors ({total_vendors})</span>']
+    for v in VENDORS_DATA:
+        slug = v["slug"]
+        cnt = len([c for c in CASES_DATA if c["vendor_slug"] == slug])
+        v_pills.append(f'<span class="filter-pill vendor-pill" data-vendor-filter="{slug}">{v["name"]} ({cnt})</span>')
+        
+    return "".join(d_pills), "".join(v_pills)
 
 def render_case_card(case, depth=0):
     rel = "../" * depth
@@ -1113,6 +1305,8 @@ def render_case_card(case, depth=0):
 </article>"""
 def build_index():
     cases_html = "\n".join(render_case_card(c, depth=0) for c in CASES_DATA)
+    domain_pills_html, vendor_pills_html = render_filter_pills()
+    spectrum_bar_html = render_spectrum_bar()
     
     # Generate Laws HTML
     laws_html = ""
@@ -1184,7 +1378,7 @@ def build_index():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unmanned Warfare Engine (UWE) — Cyber-Physical Robotics Standard</title>
-  <meta name="description" content="Autonomous warfare doctrine, 6-character cyber-physical matrix, and 13 empirical platform benchmarks replacing legacy STANAG 4670. Authored by Serhii Khylevych.">
+  <meta name="description" content="Autonomous warfare doctrine, 6-character cyber-physical matrix, and {len(CASES_DATA)} empirical platform benchmarks replacing legacy STANAG 4670. Authored by Serhii Khylevych.">
   <link rel="canonical" href="{BASE_URL}/index.html">
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
@@ -1227,7 +1421,7 @@ def build_index():
     <!-- Top Telemetry KPI Counters Ribbon -->
     <div class="kpi-grid">
       <div class="kpi-card">
-        <div class="kpi-num">13</div>
+        <div class="kpi-num">{len(CASES_DATA)}</div>
         <div class="kpi-label">Empirical Benchmarks</div>
         <div class="kpi-sub">Flight & field tests analyzed</div>
       </div>
@@ -1237,7 +1431,7 @@ def build_index():
         <div class="kpi-sub">Air, Copter, Ground, Sea, Subsea, Orbit</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-num">12</div>
+        <div class="kpi-num">{len(VENDORS_DATA)}</div>
         <div class="kpi-label">Defense Primes & Labs</div>
         <div class="kpi-sub">Western OEMs & frontline developers</div>
       </div>
@@ -1249,28 +1443,7 @@ def build_index():
     </div>
 
     <!-- Cross-Domain Operational Spectrum Bar -->
-    <div class="spectrum-wrap">
-      <div class="spectrum-head">
-        <strong style="font-size:0.95rem; color:#fff;">📊 Cross-Domain Operational Spectrum (13 Empirical Benchmarks)</strong>
-        <span style="font-size:0.8rem; color:var(--text-muted);">Click bar segment to filter cases</span>
-      </div>
-      <div class="spectrum-bar">
-        <div class="spec-seg" data-domain-filter="UAV" style="width:46.15%; background:#3fb950;" title="UAV Fixed-Wing & Hypersonic: 6 cases (46.2%)"></div>
-        <div class="spec-seg" data-domain-filter="UCV" style="width:7.69%; background:#d29922;" title="UCV Copter Combat: 1 case (7.7%)"></div>
-        <div class="spec-seg" data-domain-filter="UGV" style="width:15.38%; background:#bc8cff;" title="UGV Ground Robotics: 2 cases (15.4%)"></div>
-        <div class="spec-seg" data-domain-filter="UUV" style="width:15.38%; background:#58a6ff;" title="UUV Subsea Robotics: 2 cases (15.4%)"></div>
-        <div class="spec-seg" data-domain-filter="USV" style="width:7.69%; background:#38bdf8;" title="USV Surface Vessels: 1 case (7.7%)"></div>
-        <div class="spec-seg" data-domain-filter="UOV" style="width:7.69%; background:#ff7b72;" title="UOV Counter-Space: 1 case (7.7%)"></div>
-      </div>
-      <div class="spectrum-legend">
-        <span class="legend-item"><span class="legend-dot" style="background:#3fb950;"></span> UAV Air (46.2%)</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#d29922;"></span> UCV Copter (7.7%)</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#bc8cff;"></span> UGV Ground (15.4%)</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#58a6ff;"></span> UUV Subsea (15.4%)</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> USV Surface (7.7%)</span>
-        <span class="legend-item"><span class="legend-dot" style="background:#ff7b72;"></span> UOV Orbital (7.7%)</span>
-      </div>
-    </div>
+    {spectrum_bar_html}
 
     <!-- C2 Cyber-Physical Officer Spotlight Banner -->
     <section class="reddit-card" style="border:1px solid #1f6feb; background:linear-gradient(135deg, rgba(31, 111, 235, 0.12) 0%, rgba(22, 27, 34, 0.95) 100%); margin-bottom:2rem; padding:1.5rem;">
@@ -1329,46 +1502,28 @@ def build_index():
       {postulates_html}
     </section>
 
-    <!-- 13 Empirical Case Studies Section -->
+    <!-- Empirical Case Studies Section -->
     <div style="margin-bottom:2rem;">
       <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
         <h2 style="font-size:1.4rem; margin:0;">
-          🔬 13 Empirical Platform Benchmarks & Architectural Mapping
+          🔬 {len(CASES_DATA)} Empirical Platform Benchmarks & Architectural Mapping
         </h2>
-        <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">13</strong> of 13 platforms</span>
+        <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">{len(CASES_DATA)}</strong> of {len(CASES_DATA)} platforms</span>
       </div>
       <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.25rem;">
         Scientific-practical stress-testing of western OEMs, Ukrainian frontline prototypes, and global aerospace systems against the 4 Invariant Laws of UWE.
       </p>
 
-      <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor (e.g., 'Anduril', 'coaxial', 'MQ-25', 'IVtol')...">
+      <input type="text" id="case-search" class="search-bar" placeholder="Search {len(CASES_DATA)} benchmarks by platform, token, HAL contract, or vendor (e.g., 'Anduril', 'coaxial', 'MQ-25', 'IVtol')...">
       
       <div class="filter-group-label">Filter by Physical Medium Domain:</div>
       <div class="filter-pills">
-        <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains (13)</span>
-        <span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (6)</span>
-        <span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (1)</span>
-        <span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (2)</span>
-        <span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (2)</span>
-        <span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (1)</span>
-        <span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (1)</span>
+        {domain_pills_html}
       </div>
 
       <div class="filter-group-label">Filter by Defense-Tech OEM / Developer:</div>
       <div class="filter-pills">
-        <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (12)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril (2)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE / Certo (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Frontline UA (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Aerospace Res. (1)</span>
-        <span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Hypersonic (1)</span>
+        {vendor_pills_html}
       </div>
 
       <div id="cases-feed">
@@ -1421,7 +1576,7 @@ def build_case_pages():
   {render_header("cases", depth=1)}
   <div class="container" style="max-width:900px;">
     <div style="margin-bottom:1.5rem;">
-      <a href="index.html" style="font-size:0.9rem;">← Back to All 13 Benchmarks</a>
+      <a href="index.html" style="font-size:0.9rem;">← Back to All {len(CASES_DATA)} Benchmarks</a>
     </div>
 
     <article class="reddit-card">
@@ -1488,13 +1643,14 @@ def build_case_pages():
 
 def build_cases_index():
     cases_html = "\n".join(render_case_card(c, depth=1) for c in CASES_DATA)
+    domain_pills_html, vendor_pills_html = render_filter_pills()
     html = f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empirical Case Studies Registry (13 Validated Platforms) | UWE</title>
-  <meta name="description" content="Cumulative registry of all 13 empirical defense-tech systems analyzed under the Unmanned Warfare Engine (UWE) framework.">
+  <title>Empirical Case Studies Registry ({len(CASES_DATA)} Validated Platforms) | UWE</title>
+  <meta name="description" content="Cumulative registry of all {len(CASES_DATA)} empirical defense-tech systems analyzed under the Unmanned Warfare Engine (UWE) framework.">
   <link rel="canonical" href="{BASE_URL}/cases/index.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -1502,41 +1658,23 @@ def build_cases_index():
   {render_header("cases", depth=1)}
   <div class="container">
     <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
-      <h1 class="hero-title" style="font-size:1.85rem; margin:0;">Empirical Platform Benchmarks (13 Cases)</h1>
-      <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">13</strong> of 13 platforms</span>
+      <h1 class="hero-title" style="font-size:1.85rem; margin:0;">Empirical Platform Benchmarks ({len(CASES_DATA)} Cases)</h1>
+      <span style="font-size:0.85rem; color:var(--text-muted);">Showing <strong id="visible-count" style="color:#fff;">{len(CASES_DATA)}</strong> of {len(CASES_DATA)} platforms</span>
     </div>
     <p style="color:var(--text-muted); margin-bottom:1.5rem;">
       Cross-referencing western OEMs, frontline Ukrainian prototypes, and aerospace systems against the 4 Invariant Laws of UWE.
     </p>
 
-    <input type="text" id="case-search" class="search-bar" placeholder="Search 13 benchmarks by platform, token, HAL contract, or vendor...">
+    <input type="text" id="case-search" class="search-bar" placeholder="Search {len(CASES_DATA)} benchmarks by platform, token, HAL contract, or vendor...">
     
     <div class="filter-group-label">Filter by Physical Medium Domain:</div>
     <div class="filter-pills">
-      <span class="filter-pill domain-pill active" data-domain-filter="ALL">All Domains (13)</span>
-      <span class="filter-pill domain-pill" data-domain-filter="UAV">UAV Air (6)</span>
-      <span class="filter-pill domain-pill" data-domain-filter="UCV">UCV Copter (1)</span>
-      <span class="filter-pill domain-pill" data-domain-filter="UGV">UGV Ground (2)</span>
-      <span class="filter-pill domain-pill" data-domain-filter="UUV">UUV Subsea (2)</span>
-      <span class="filter-pill domain-pill" data-domain-filter="USV">USV Surface (1)</span>
-      <span class="filter-pill domain-pill" data-domain-filter="UOV">UOV Orbital (1)</span>
+      {domain_pills_html}
     </div>
 
     <div class="filter-group-label">Filter by Defense-Tech OEM / Developer:</div>
     <div class="filter-pills">
-      <span class="filter-pill vendor-pill active" data-vendor-filter="ALL">All Vendors (12)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="anduril">Anduril (2)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="boeing">Boeing (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="lockheed-martin">Lockheed Martin (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="exail">Exail (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="bae-falconworks">BAE / Certo (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="unex">UNEX (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="honda">Honda (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="frontline-ua">Frontline UA (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="nextgen-arsenal">NextGen Arsenal (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="darpa">DARPA (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="global-aerospace">Aerospace Res. (1)</span>
-      <span class="filter-pill vendor-pill" data-vendor-filter="hypersonic-consortium">Hypersonic (1)</span>
+      {vendor_pills_html}
     </div>
 
     <div id="cases-feed">
@@ -2720,7 +2858,7 @@ def main():
     build_hal()
     build_seo_assets()
     
-    print("\n✅ Build Complete! 13 Cases, 6 Domains, C2 Officer Symbiosis, Vendors & HAL Registry Generated.")
+    print(f"\n✅ Build Complete! {len(CASES_DATA)} Cases, {len(DOMAINS_DATA)} Domains, C2 Officer Symbiosis, {len(VENDORS_DATA)} Vendors & HAL Registry Generated.")
     print("📊 All pages include Schema.org JSON-LD and pre-rendered static HTML.")
 
 if __name__ == "__main__":
