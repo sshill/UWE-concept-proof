@@ -63,6 +63,10 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 
 | 47 | **Naval Group UCUV Demonstrator (France DGA)** | [LinkedIn](https://lnkd.in/p/dMKGwNFp) / Tim De Zitter | `UUV: CB-RA-HQ` | `ISubseaCombatTrimmingDrive` & `IVariableBallastTrimController` | Deconstructs continental shelf depth envelope (150m) and 10-day endurance at 3 kts (~720 nmi travel) distinguishing linear range from tactical combat radius; kinetic weapon ejection (torpedo / naval mine salvo) creates instantaneous positive buoyancy transient ($\Delta B = +m_{\text{weapon}}$) requiring microsecond variable ballast compensation and control-surface crossfading to prevent broaching; sensor/compute hotel load (Steeris autonomy, active sonars, VBT pumps) constitutes >50% of energy budget at creep speeds, mandating dynamic edge power micro-throttling. | 2026-11-18 |
 
+| 48 | **Sentinel Corebreak (Airborne Directed-Energy Air Superiority Platform)** | [FB Reel](https://www.facebook.com/reel/1424523013068659) / US NextGen Airpower | `UAV: AL-TD-HR` | `IDirectedEnergyAeroOpticsDrive` & `IThermalEnergyLoadManager` | Deconstructs CGI claim of "no reload"; high-energy laser (30–35% efficiency) generating 150 kW beam yields ~300 kW waste heat requiring PCM thermal storage with discrete regeneration cycles, establishing a hard reload limit; transonic turret induces boundary layer turbulence and OPD wavefront aberrations requiring adaptive optics. | 2026-11-18 |
+
+| 49 | **XQ-45 Fibertailor & French Valkyrie (Dassault Rafale F5 UCAV Benchmark)** | [FB Reel](https://www.facebook.com/reel/4065861937048538) / US NextGen Airpower | `UAV: AL-TK-WR` | `IAeroelasticLoadLimiter` & `ILoyalWingmanFormationDrive` | Deconstructs 15-G maneuver claims; removing pilot eliminates human G-LOC (~9G) but subjects airframe to Boyd's Ps collapse ($C_{Di} \propto 15^2 = 225$), bleeding Mach 1.4 into stall in seconds; 15G exerts 60t load on a 4t airframe, shattering light composite wings; contextualizes French sovereign benchmark (Dassault Rafale F5 UCAV, announced Oct 2024, derived from nEUROn) prioritizing survivable deep strike over US low-cost attritable Valkyrie doctrine. | 2026-11-18 |
+
 ---
 
 ## 2. Standardized Entry Template for `/exprt`
@@ -1017,6 +1021,52 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **The Subsea Lethality-Displacement Envelope:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality). Autonomous subsea combat assets cannot be evaluated by commercial "endurance" metrics alone; weapon separation physics ($\Delta B$) and hotel loads dictate actual combat radius. Continental Shelf specialization ($150\text{m}$, `Horizon: C`) yields optimal payload fractions for littoral sea denial, provided HAL dynamically manages weapon-release ballast compensation.
+
+---
+
+## 45. Case Study #48: Sentinel Corebreak (Directed-Energy Air Superiority Platform)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1424523013068659) / US NextGen Airpower
+* **Date Analyzed:** 2026-11-18
+* **UWE 6-Character Token:** `UAV: AL-TD-HR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IDirectedEnergyAeroOpticsDrive` & `IThermalEnergyLoadManager`
+  * **One-Sentence Definition:** *"Airborne directed-energy airframes require IDirectedEnergyAeroOpticsDrive and IThermalEnergyLoadManager to dynamically compensate for transonic aero-optical boundary layer wavefront distortion around rotating beam turrets while micro-regulating engine bleed-air and phase-change thermal sinks to dump megawatts of laser waste heat without violating airframe drag envelopes."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Speed-of-Light Interception:** Zero time-of-flight ($t_{\text{fly}} = 0$) at tactical ranges negates kinematic evasion of high-G hostile missiles and loitering munitions.
+  * **VLO Profile Preservation:** Replacing external/bay kinetic missile racks with internal fiber laser emitters maintains an uncompromised radar cross-section (VLO) without weapons-bay radar blooming.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Thermal Saturation & "Reload" Physics:** 30–35% electrical efficiency for a 150 kW beam dumps ~300 kW of waste heat. Convective cooling at high altitude is inadequate, forcing reliance on phase-change material (PCM) heat sinks. Once thermal storage saturates, weapons cease firing until regeneration completes — establishing a hard thermodynamic "reload" cycle.
+  * **Transonic Aero-Optics Jitter:** Protruding rotating turrets create supersonic shock waves and turbulent boundary layers, inducing Optical Path Difference (OPD) aberrations that degrade beam focal intensity ($1/R^2$) unless mitigated by dynamic adaptive optics.
+  * **Radiator Parasitic Drag:** Deploying external heat exchangers or ram-air scoops imposes severe parasitic drag spikes ($\Delta C_{D0}$), degrading cruise speed and combat radius.
+
+* **Architectural Lesson for UWE:**
+  * **The Thermodynamic-Optic Interdiction Limit:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality). Directed energy weapons eliminate ammunition logistics mass but transfer the physical constraint entirely into thermodynamics and aero-optics. True "infinite ammo" is a marketing myth; an airborne DEW platform's combat persistence is strictly bounded by the rate of waste heat dissipation and wavefront boundary-layer correction.
+
+---
+
+## 46. Case Study #49: XQ-45 Fibertailor & French Valkyrie (Dassault Rafale F5 UCAV Benchmark)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/4065861937048538) / US NextGen Airpower
+* **Date Analyzed:** 2026-11-18
+* **UWE 6-Character Token:** `UAV: AL-TK-WR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IAeroelasticLoadLimiter` & `ILoyalWingmanFormationDrive`
+  * **One-Sentence Definition:** *"Autonomous supersonic CCAs require IAeroelasticLoadLimiter and ILoyalWingmanFormationDrive to clamp control deflections against catastrophic wing root bending moments during extreme G-transients, preserving Boyd Ps to prevent energy bleeding and stall during maneuvering."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Omitting the Biological Envelope:** Removing cockpit and life support saves 1.5–2.0 tons empty mass for fuel and sensors, unlocking agile maneuvers free from human G-LOC (~9G).
+  * **French Sovereign CCA Benchmark:** France officially launched its sovereign loyal wingman program on Oct 8, 2024 (Dassault UCAV companion for Rafale F5, inheriting nEUROn stealth flight heritage) for A2/AD penetration, SEAD/DEAD, and AASM/ASN4G strike.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **The 15-G Induced Drag Collapse (Boyd's $P_s$ Crash):** Pulling 15-G demands high $C_L$. Induced drag spikes quadratically ($C_{Di} \propto C_L^2 \propto 15^2 = 225$), plunging specific excess power ($P_s = V \frac{T - D}{W}$) deep negative. The airframe bleeds Mach 1.4 into a stall within 1–2 seconds unless propelled by extreme rocket thrust.
+  * **15-G Wing Root Bending Structural Fracture:** A 4-ton airframe pulling 15-G experiences a 60-ton normal load ($600\text{ kN}$). Composite wings "weighing less than a motorcycle" (<200 kg) cannot withstand this root bending moment, fracturing under interlaminar shear and transonic aeroelastic flutter.
+  * **Supersonic Fuel Mass Contradiction:** A 1,500-mile range at Mach 1.4 requires a fuel mass fraction of $\ge 50\%$ (several tons of jet fuel), physically precluding ultra-light wing structures.
+
+* **Architectural Lesson for UWE:**
+  * **The Energy-Maneuverability Boundary in Autonomous Air Combat:** Validates UWE Law 1 (Kinematic Primacy) and Law 4 (Dual-Read Cognitive Synchronization). Removing human physiology does not abolish aerodynamic energy conservation ($P_s$) or aeroelastic structural boundaries ($M_b$). Autonomous CCAs cannot sustain arbitrary G-loads without bleeding combat energy. France's doctrine (Rafale F5 + Dassault UCAV) wisely prioritizes survivability, stealth, and high-rate sensor fusion over sci-fi 15-G marketing claims.
 
 
 
