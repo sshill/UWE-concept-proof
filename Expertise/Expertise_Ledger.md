@@ -61,6 +61,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 
 | 46 | **NODRICS MAT1LDA 8×8 (Amphibious Logistics & CASEVAC UGV)** | [FB Reel](https://www.facebook.com/reel/904767382590697) / Mezha.net | `UGV: GM-IL-AR` | `IAmphibiousLogisticsDrive` & `ICasEvacStabilityController` | Validates internal combustion engine energy density ($12\text{k Wh/kg}$ vs $250\text{ Wh/kg}$) breaking battery exhaustion in contested amphibious logistics; 8x8 wheeled sealed hull with side pontoons carries 500kg land / 400kg water payload across riverine channels (160km land / 50km water range); modular open frame provides rapid field interchange between bulk ammunition containers and enclosed CASEVAC casualty stretchers; TENCORE AI KIT with visual-inertial odometry enables dead-reckoning autonomous transit and return-to-base under dense EW; water-to-bank egress traction collapse ($F_N \rightarrow 0$) and skid-steer shock profile mandate HAL torque crossfading and casualty jerk clamping. | 2026-11-17 |
 
+| 47 | **Naval Group UCUV Demonstrator (France DGA)** | [LinkedIn](https://lnkd.in/p/dMKGwNFp) / Tim De Zitter | `UUV: CB-RA-HQ` | `ISubseaCombatTrimmingDrive` & `IVariableBallastTrimController` | Deconstructs continental shelf depth envelope (150m) and 10-day endurance at 3 kts (~720 nmi travel) distinguishing linear range from tactical combat radius; kinetic weapon ejection (torpedo / naval mine salvo) creates instantaneous positive buoyancy transient ($\Delta B = +m_{\text{weapon}}$) requiring microsecond variable ballast compensation and control-surface crossfading to prevent broaching; sensor/compute hotel load (Steeris autonomy, active sonars, VBT pumps) constitutes >50% of energy budget at creep speeds, mandating dynamic edge power micro-throttling. | 2026-11-18 |
+
 ---
 
 ## 2. Standardized Entry Template for `/exprt`
@@ -989,7 +991,32 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Skid-Steer Drivetrain Scrubbing & Deck Jerk:** Non-steered 8x8 layout induces lateral tire scrub and abrupt yaw angular jerks that jeopardize wounded stabilization during CASEVAC unless smoothed by HAL acceleration filtering.
 
 * **Architectural Lesson for UWE:**
-  * **The Amphibious Logistics-Energy Paradigm:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality). In contested riverine and wet-terrain operational corridors (Dnipro islands, floodplains, rasputitsa), electric UGVs suffer range collapse due to high water-drag resistance power ($P \propto V^3$) and lack of frontline recharging infrastructure. Liquid hydrocarbon powertrains (`Powerplant: I`) remain physically mandatory for operational-depth logistics (>50 km water / 150+ km land), while modularity ensures the same invariant amphibious chassis serves alternately as a 500 kg ammunition mule or a stabilized CASEVAC transport.
+  * **The Amphibious Logistics-Energy Paradigm:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality). In contested riverine corridors, electric UGVs suffer range collapse due to water-drag resistance ($P \propto V^3$). Liquid hydrocarbon powertrains (`Powerplant: I`) remain physically mandatory for operational-depth amphibious logistics (>50 km water / 150+ km land), while modularity ensures the same chassis serves alternately for ammunition supply or stabilized CASEVAC.
+
+---
+
+## 44. Case Study #47: Naval Group UCUV Combat Demonstrator (France DGA)
+
+* **Target Source:** [LinkedIn](https://lnkd.in/p/dMKGwNFp) / Tim De Zitter
+* **Date Analyzed:** 2026-11-18
+* **UWE 6-Character Token:** `UUV: CB-RA-HQ`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ISubseaCombatTrimmingDrive` & `IVariableBallastTrimController`
+  * **One-Sentence Definition:** *"Uncrewed Combat Underwater Vehicles require ISubseaCombatTrimmingDrive and IVariableBallastTrimController to crossfade control-surface hydrodynamics with high-rate variable ballast compensation upon kinetic weapon ejection (ΔB = +m_weapon), counteracting pitch transients while micro-throttling Steeris hotel loads to preserve multi-day acoustic stealth loiter."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Continental Shelf Mass Optimization:** Limiting maximum operating depth to 150m dramatically reduces hull wall thickness and pressure hull mass fraction compared to 1000m+ pelagic drones (Ghost Shark), freeing internal volume and mass for weapon modules (15–18t displacement).
+  * **Closed-Cycle Acoustic Stealth:** Pure electrical battery storage eliminates diesel snorting, heat plumes, and acoustic cavitation, sustaining continuous low-speed (3 kts) stealth loiter.
+  * **Decoupled Combat Payload:** Open modular payload bay allows configuring the invariant 11.7m hull for anti-submarine strike (MU90 torpedoes), offensive sea denial (mine laying), or long-range ISR.
+  * **Steeris Autonomous Edge Command:** Onboard mission autonomy executes acoustic signature classification and tactical maneuvers without vulnerable surface RF/tether links.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Weapon Ejection Buoyancy Transient:** Discharging a 300kg torpedo or mine salvo instantly generates positive buoyancy ($\Delta B = +m_{\text{weapon}}$). Without high-rate variable ballast tank (VBT) flooding and fast hydroplane trim, the vehicle suffers pitch-up and risk of surface broaching.
+  * **Hotel Load Parasitic Drain:** At 3 kts, propulsion power is low ($P \propto V^3$), but hotel loads (sonar processing, Steeris compute, navigation, pumps) consume 50%+ of energy, collapsing the 10-day endurance if sensors run at full duty cycles.
+  * **Hydrodynamic Drag Asymmetry:** External weapon shutters or mine hatches introduce parasitic drag ($\Delta C_{D0}$), shifting trim across speed variations.
+
+* **Architectural Lesson for UWE:**
+  * **The Subsea Lethality-Displacement Envelope:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality). Autonomous subsea combat assets cannot be evaluated by commercial "endurance" metrics alone; weapon separation physics ($\Delta B$) and hotel loads dictate actual combat radius. Continental Shelf specialization ($150\text{m}$, `Horizon: C`) yields optimal payload fractions for littoral sea denial, provided HAL dynamically manages weapon-release ballast compensation.
 
 
 
