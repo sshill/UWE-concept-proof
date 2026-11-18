@@ -68,6 +68,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 49 | **XQ-45 Fibertailor & French Valkyrie (Dassault Rafale F5 UCAV Benchmark)** | [FB Reel](https://www.facebook.com/reel/4065861937048538) / US NextGen Airpower | `UAV: AL-TK-WR` | `IAeroelasticLoadLimiter` & `ILoyalWingmanFormationDrive` | Deconstructs 15-G maneuver claims; removing pilot eliminates human G-LOC (~9G) but subjects airframe to Boyd's Ps collapse ($C_{Di} \propto 15^2 = 225$), bleeding Mach 1.4 into stall in seconds; 15G exerts 60t load on a 4t airframe, shattering light composite wings; contextualizes French sovereign benchmark (Dassault Rafale F5 UCAV, announced Oct 2024, derived from nEUROn) prioritizing survivable deep strike over US low-cost attritable Valkyrie doctrine. | 2026-11-18 |
 
 | 50 | **Vyriy SLAVIC (Tactical Reconnaissance Copter / Sovereign Mavic Alternative)** | [FB Reel](https://www.facebook.com/reel/2607037159801948) / Гаряча Зона / Vyriy Industries | `UCV: CB-ER-DR` | `IVisualInertialOdometryNav` & `ISolidStateBatteryManagement` | Solves frontline "Kill-Zone Expansion" doctrine; 40,000 mAh solid-state battery (350–400 Wh/kg vs 220 Wh/kg in commercial Li-Ion) yields up to 90–120 min loiter and 30 km radius, allowing crews to launch from safe tactical depth (15–20 km behind FLOT); proprietary data protocol eliminates Chinese DJI AeroScope tracking; Visual-Inertial Odometry (VIO) enables GNSS-denied drift-free hover; native telemetry integration into DELTA, Kropyva, and VEZHA. | 2026-11-18 |
+| 51 | **Canister Arrow (Tube-Launched Micro-UAV)** | [FB Reel](https://www.facebook.com/reel/1614862140287826) / Energy Book | `UAV: AC-CE-AR` | `ITubeLaunchTransitionDrive` & `IFoldingWingAerodynamicControl` | Tube-launched micro-canister eliminates frontline operator exposure; spring-loaded folding wings provide fixed-wing glide ($L/D \approx 8\text{--}10$) and loiter endurance over multirotor battery drain; rear folding pusher prop protects blades during launch, leaving nose clear for payload; Meta AI badge evaluated as C2PA false positive on physical carbon twill and FDM airframe. | 2026-11-18 |
 
 ---
 
@@ -1093,6 +1094,30 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **The Kill-Zone Standoff Principle:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization). Frontline tactical reconnaissance cannot rely on consumer toy metrics or unencrypted commercial radio protocols. When the lethal envelope expands, tactical multirotors must transition from handheld toys ($C_0$) to squad-level endurance tools ($C_1$, `Container: B`) powered by solid-state chemistry (`Powerplant: E`) and optical dead-reckoning (`Doctrine: D`, `Comms: R`) to preserve human operator survivability.
+
+---
+
+## 48. Case Study #51: Canister Arrow (Tube-Launched Micro-UAV)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1614862140287826) / Energy Book
+* **Date Analyzed:** 2026-11-18
+* **UWE 6-Character Token:** `UAV: AC-CE-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ITubeLaunchTransitionDrive` & `IFoldingWingAerodynamicControl`
+  * **One-Sentence Definition:** *"Tube-launched canister micro-UAVs require ITubeLaunchTransitionDrive and IFoldingWingAerodynamicControl to orchestrate the sub-second transition from tube ejection to closed-loop aerodynamic control."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Canister Rapid Ejection (5–10s Launch Readiness):** Eliminates prolonged frontline exposure of FPV crews, allowing deployment directly from trenches or armored vehicles.
+  * **Fixed-Wing Aerodynamic Efficiency ($L/D \approx 8\text{--}10$):** Fixed-wing glide breaks multirotor battery exhaustion, extending loiter time and strike radius.
+  * **Protected Pusher Architecture:** Rear folding propeller protects blades during tube transit, leaving nose bay free for modular payloads.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Wing Deployment Dynamic Shock:** Requires microsecond mechanical latching upon tube exit; asymmetrical wing lock triggers instant aerodynamic roll departure.
+  * **Pusher Aeroacoustic BPF Signature:** Operating in the turbulent wake behind the cylindrical fuselage creates discrete acoustic harmonics.
+  * **Payload Caliber Limit (50–60mm):** Hard geometric constraints limit shaped-charge jet diameter, restricting lethality primarily to unarmored targets.
+
+* **Architectural Lesson for UWE:**
+  * **The Canister Deployment Invariant:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization). Frontline loitering strike platforms benefit exponentially from modular tube containerization ($C_0/C_1$), decoupling operator survival from launch setup time and replacing open-air multirotor vulnerability with instant pneumatic/spring ejection.
 
 
 
