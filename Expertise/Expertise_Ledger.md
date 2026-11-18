@@ -67,6 +67,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 
 | 49 | **XQ-45 Fibertailor & French Valkyrie (Dassault Rafale F5 UCAV Benchmark)** | [FB Reel](https://www.facebook.com/reel/4065861937048538) / US NextGen Airpower | `UAV: AL-TK-WR` | `IAeroelasticLoadLimiter` & `ILoyalWingmanFormationDrive` | Deconstructs 15-G maneuver claims; removing pilot eliminates human G-LOC (~9G) but subjects airframe to Boyd's Ps collapse ($C_{Di} \propto 15^2 = 225$), bleeding Mach 1.4 into stall in seconds; 15G exerts 60t load on a 4t airframe, shattering light composite wings; contextualizes French sovereign benchmark (Dassault Rafale F5 UCAV, announced Oct 2024, derived from nEUROn) prioritizing survivable deep strike over US low-cost attritable Valkyrie doctrine. | 2026-11-18 |
 
+| 50 | **Vyriy SLAVIC (Tactical Reconnaissance Copter / Sovereign Mavic Alternative)** | [FB Reel](https://www.facebook.com/reel/2607037159801948) / Гаряча Зона / Vyriy Industries | `UCV: CB-ER-DR` | `IVisualInertialOdometryNav` & `ISolidStateBatteryManagement` | Solves frontline "Kill-Zone Expansion" doctrine; 40,000 mAh solid-state battery (350–400 Wh/kg vs 220 Wh/kg in commercial Li-Ion) yields up to 90–120 min loiter and 30 km radius, allowing crews to launch from safe tactical depth (15–20 km behind FLOT); proprietary data protocol eliminates Chinese DJI AeroScope tracking; Visual-Inertial Odometry (VIO) enables GNSS-denied drift-free hover; native telemetry integration into DELTA, Kropyva, and VEZHA. | 2026-11-18 |
+
 ---
 
 ## 2. Standardized Entry Template for `/exprt`
@@ -1067,6 +1069,30 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **The Energy-Maneuverability Boundary in Autonomous Air Combat:** Validates UWE Law 1 (Kinematic Primacy) and Law 4 (Dual-Read Cognitive Synchronization). Removing human physiology does not abolish aerodynamic energy conservation ($P_s$) or aeroelastic structural boundaries ($M_b$). Autonomous CCAs cannot sustain arbitrary G-loads without bleeding combat energy. France's doctrine (Rafale F5 + Dassault UCAV) wisely prioritizes survivability, stealth, and high-rate sensor fusion over sci-fi 15-G marketing claims.
+
+---
+
+## 47. Case Study #50: Vyriy SLAVIC (Tactical Reconnaissance Copter / Sovereign Mavic Alternative)
+
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/2607037159801948) / Гаряча Зона / Vyriy Industries
+* **Date Analyzed:** 2026-11-18
+* **UWE 6-Character Token:** `UCV: CB-ER-DR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IVisualInertialOdometryNav` & `ISolidStateBatteryManagement`
+  * **One-Sentence Definition:** *"Tactical reconnaissance multirotors require IVisualInertialOdometryNav and ISolidStateBatteryManagement to sustain drift-free visual-inertial hover in GNSS-denied corridors while optimizing solid-state battery thermal discharge to break the 90-minute endurance barrier and protect crews from kill-zone counter-battery tracking."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Kill-Zone Expansion Standoff:** 30 km radius and 90–120 min endurance allow crews to launch from 15–20 km behind the contact line, escaping the lethal forward kill-zone that endangered Mavic 3 pilots.
+  * **Solid-State Chemistry ($350\text{--}400\text{ Wh/kg}$):** 40,000 mAh pack yields 3x the loiter duration of standard Li-Ion pouch cells, stable winter discharge, and puncture fire resilience.
+  * **Anti-AeroScope Sovereign Security:** Eliminates DJI DroneID telemetry leakage, preventing pilot coordinate interception and post-crash flight-log extraction.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Logistics Footprint of Directional Tracker Mast:** Sustaining 30 km telemetry requires an elevated ground station with pan-tilt directional antennas, increasing deployment time and visual/thermal position profile.
+  * **Visual-Inertial Odometry (VIO) Night Drift:** Featureless terrain in zero-illumination nights or dense fog causes optical flow integration drift, requiring radio beacon triangulation to maintain station.
+  * **Component Sourcing Dependencies:** While frame, firmware, and controllers are Ukrainian, core motors and optical zoom sensors remain dependent on external supply chains.
+
+* **Architectural Lesson for UWE:**
+  * **The Kill-Zone Standoff Principle:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization). Frontline tactical reconnaissance cannot rely on consumer toy metrics or unencrypted commercial radio protocols. When the lethal envelope expands, tactical multirotors must transition from handheld toys ($C_0$) to squad-level endurance tools ($C_1$, `Container: B`) powered by solid-state chemistry (`Powerplant: E`) and optical dead-reckoning (`Doctrine: D`, `Comms: R`) to preserve human operator survivability.
 
 
 
