@@ -70,6 +70,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 50 | **Vyriy SLAVIC (Tactical Reconnaissance Copter / Sovereign Mavic Alternative)** | [FB Reel](https://www.facebook.com/reel/2607037159801948) / Гаряча Зона / Vyriy Industries | `UCV: CB-ER-DR` | `IVisualInertialOdometryNav` & `ISolidStateBatteryManagement` | Solves frontline "Kill-Zone Expansion" doctrine; 40,000 mAh solid-state battery (350–400 Wh/kg vs 220 Wh/kg in commercial Li-Ion) yields up to 90–120 min loiter and 30 km radius, allowing crews to launch from safe tactical depth (15–20 km behind FLOT); proprietary data protocol eliminates Chinese DJI AeroScope tracking; Visual-Inertial Odometry (VIO) enables GNSS-denied drift-free hover; native telemetry integration into DELTA, Kropyva, and VEZHA. | 2026-11-18 |
 | 51 | **Canister Arrow (Tube-Launched Micro-UAV)** | [FB Reel](https://www.facebook.com/reel/1614862140287826) / Energy Book | `UAV: AC-CE-AR` | `ITubeLaunchTransitionDrive` & `IFoldingWingAerodynamicControl` | Tube-launched micro-canister eliminates frontline operator exposure; spring-loaded folding wings provide fixed-wing glide ($L/D \approx 8\text{--}10$) and loiter endurance over multirotor battery drain; rear folding pusher prop protects blades during launch, leaving nose clear for payload; Meta AI badge evaluated as C2PA false positive on physical carbon twill and FDM airframe. | 2026-11-18 |
 | 52 | **RoverTech ZMIY Droid 12.7 (Combat UGV / Elevating RCWS)** | [FB Reel](https://www.facebook.com/reel/1614141370078662) / Defense Advancement | `UGV: GL-EC-DR` | `IElevatingWeaponStation` & `ISkidSteerRecoilCompensator` | Eliminates personnel exposure in the forward kill-zone; elevating pantograph mast enables defilade fire control behind trench parapets and berms, cutting vehicle cross-section by 70%; 12.7x99mm M2 Browning delivers 18 kJ kinetic impact for counter-material suppression; electric wheel hub braking absorbs 35 N·s recoil impulse; skid-steer chevron tires ensure mud traction at the cost of high pivot turn friction. | 2026-11-18 |
+| 53 | **Nebesa Aerospace NEBESA (Suborbital Spaceplane)** | [Militarnyi](https://militarnyi.com/uk/news/predstavyly-suborbitalny-bezpilotnyk-nebesa/) / Future Forces Forum | `UAV: HD-LR-PS` | `ISuborbitalTransitionDrive` & `IBlendedReactionAerodynamicControl` | Validates "Runway to Space" paradigm by replacing fixed vertical spaceports ($C_4$) with standard runways/roads ($C_2/C_3$); suborbital hop to 110 km (above Kármán line) at Mach 3.5 collapses strategic reconnaissance latency and bypasses conventional air-defense interceptor ceilings (PAC-2/S-400); combined airbreathing + 9 kN liquid rocket propulsion (RÁMUS I) optimizes propellant mass; dynamic pressure collapse ($q \rightarrow 0$) mandates blended RCS and thermal barrier management. | 2026-11-18 |
 
 ---
 
@@ -1143,6 +1144,30 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 * **Architectural Lesson for UWE:**
   * **The Defilade Fire Superiority Law:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality). Static trench combat is lethal for manned crews; robotic weapon stations must exploit mechanical articulation (elevating pantographs) to achieve asymmetric defilade engagement, decoupling weapon line-of-sight from hull exposure.
+
+---
+
+## 50. Case Study #53: Nebesa Aerospace NEBESA Suborbital Spaceplane
+
+* **Target Source:** [Militarnyi](https://militarnyi.com/uk/news/predstavyly-suborbitalny-bezpilotnyk-nebesa/) / Future Forces Forum 2026 Prague
+* **Date Analyzed:** 2026-11-18
+* **UWE 6-Character Token:** `UAV: HD-LR-PS`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ISuborbitalTransitionDrive` & `IBlendedReactionAerodynamicControl`
+  * **One-Sentence Definition:** *"Horizontal-takeoff suborbital spaceplanes require ISuborbitalTransitionDrive and IBlendedReactionAerodynamicControl to orchestrate combined turbojet-to-rocket ascent and crossfade elevons with reaction thrusters at 110 km apogee."*
+
+* **Physical Advantages & Validations (🟢):**
+  * **Runway to Space Infrastructure Decoupling:** Replaces fixed vertical spaceports ($C_4$) with standard 1,500–2,000 m paved runways or highways ($C_2/C_3$), dispersing suborbital operations across standard military and civilian airfields.
+  * **Dual-Regime Combined Propulsion:** Airbreathing turbojet climb to 10–12 km saves up to 35% oxidizer mass; 9 kN 3D-printed liquid rocket engine (RÁMUS I) ignites in rarefied atmosphere, achieving optimal specific impulse ($I_{sp}$).
+  * **Suborbital Reconnaissance Standoff:** 110 km apogee and Mach 3.5 velocity exceed kinematic engagement ceilings of theater air-defense systems (Patriot PAC-2, S-300, S-400), ensuring survivable high-altitude observation.
+
+* **Engineering Vulnerabilities & Platform Constraints (🔴):**
+  * **Dynamic Pressure Collapse ($q \rightarrow 0$):** In the 100–110 km exo-atmospheric apex, aerodynamic elevons lose control authority; stabilization relies strictly on reaction control thrusters (RCS) or reaction wheels to prevent tumbling upon atmospheric re-entry.
+  * **Aerothermodynamic Heat Loads at Mach 3.5+:** Re-entry shock stagnation temperatures exceed 500–700°C on wing leading edges and nosecone, requiring specialized titanium/carbon-carbon thermal barrier composites.
+  * **Airspace Deconfliction:** High vertical climb and dive rates punch through civil flight corridors (FL300–FL400), mandating real-time C4ISR coordination to prevent mid-air hazards.
+
+* **Architectural Lesson for UWE:**
+  * **The Suborbital Runway-Decoupling Law:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization). Decoupling exo-atmospheric access from multibillion-dollar vertical launch infrastructure through winged horizontal ascent transforms suborbital flight into an agile, survivable tactical asset, but introduces severe control crossfading requirements between aerofoil lift and reaction-control physics.
 
 
 
