@@ -16,7 +16,7 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">32 Benchmarks</a>
+    <a href="../cases/index.html" class="">54 Benchmarks</a>
     <a href="../c2/index.html" class="">C2 &amp; Articles</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="">HAL Registry</a>
@@ -168,7 +168,7 @@
     
 
     <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
-      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UGV (7 Cases)</h2>
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UGV (11 Cases)</h2>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UGV physical envelope:</p>
       <div>
         <article class="reddit-card case-item" data-domain="UGV" data-vendor="frontline-ua" id="case-02">
@@ -511,6 +511,202 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="../cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="../cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a>
       <a href="../cases/27-rusi-rasputitsa.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="tencore" id="case-45">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-16</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#tencore" class="badge badge-vendor">TENCORE</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/45-tencore-mat1lda.html">Case #45: TENCORE MAT1LDA 8x8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GM-IT-AR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Terrestrial & Water Amphibious • Medium 8x8 Armored Hull • Internal Combustion Petrol Engine • Tactical Robotic Carrier / Minelaying • Autonomous Route Autopilot • Anti-Jam Radio & MESH Gateway</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IAmphibiousTransitionDrive"><code>IAmphibiousTransitionDrive</code></a></div>
+    <div><em>"Amphibious robotic mother-carriers require IAmphibiousTransitionDrive and IMotherChildDeploymentGateway to dynamically trim all-wheel 8x8 skid-steer torque against loss of ground normal force during water entry and muddy riverbank egress, while coordinating automated deck latching and roll-pitch stabilization during deployment of tracked combat effectors."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Decoupled Operational vs Tactical Energy: MAT1LDA uses an internal combustion engine to deliver high energy density and 160 km land / 50 km water range, while TerMIT 2.0 uses electric battery drive for silent, low-thermal assault and minelaying.</li><li>Amphibious Riverine & Wetland Access: 8x8 all-wheel drive with sealed buoyancy hull and side pontoons allows crossing rivers, estuaries, and bogs where conventional UGVs sink or require combat engineering bridges.</li><li>Mothership-Parasite Doctrine: transports tracked combat unit across contested water barriers without risking human crews, deploying TerMIT 2.0 directly onto enemy shores for assault or minelaying.</li><li>AI Autopilot for EW Navigation: onboard AI cruise control with visual/inertial odometry enables TerMIT and MAT1LDA to complete mission routes even under total GPS and RF jamming.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Riverbank Egress Traction Collapse: buoyancy sharply reduces wheel downforce during water-to-mud transition, creating severe wheel slip and beaching hazards on steep clay banks.</li><li>ICE Acoustic & Infrared Plume: petrol combustion engine generates significant acoustic noise and an exhaust thermal plume, exposing water crossings to thermal sensor detection and ATGM strikes.</li><li>Skid-Steer Tire Scrub & Drive Train Stress: non-steered 8x8 layout induces massive lateral tire scrub and torque spikes on dry paved terrain.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> The Hierarchical Mother-Child Archetype in Unmanned Ground Warfare: single universal ground robots are a doctrinal failure; combining an amphibious carrier (UGV: GM-IT-AR) with a tracked strike parasite (UGV: GL-EC-DR) proves combined-arms robotic superiority requires layered hierarchies.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/DefenderMediaUA/posts/pfbid027psMxGoouoi9zz1qTHi8PeRkb8ncYocy1LerB4Z1xTbhAWh9ks4DuWWBpqNMo1ekl" target="_blank" rel="noopener">Facebook Post / Defender Media ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="../cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="../cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a>
+      <a href="../cases/45-tencore-mat1lda.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="nodrics" id="case-46">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-17</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#nodrics" class="badge badge-vendor">NODRICS</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/46-nodrics-mat1lda.html">Case #46: NODRICS MAT1LDA 8x8 (Amphibious Tactical Logistics & CASEVAC UGV)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GM-IL-AR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Terrestrial & Water Amphibious • Medium 8x8 Sealed Hull • Internal Combustion Petrol Engine • Frontline Amphibious Logistics & CASEVAC • Autonomous Waypoint Navigation • Encrypted Anti-Jam RF & MESH</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IAmphibiousLogisticsDrive"><code>IAmphibiousLogisticsDrive</code></a></div>
+    <div><em>"Amphibious logistics and CASEVAC UGVs require IAmphibiousLogisticsDrive and ICasEvacStabilityController to crossfade 8x8 wheel torque into buoyancy during water-bank transitions, clamping pitch/roll shocks to preserve casualty hemodynamic stability."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Hydrocarbon Energy Density (12,000 Wh/kg vs 250 Wh/kg): petrol ICE eliminates battery exhaustion under severe water-drag resistance power, delivering 160 km land / 50 km water range without battery charging delays.</li><li>8x8 Sealed Displacement Hull & Pontoons: all-wheel drive combined with side pontoon buoyancy enables swimming with 400 kg cargo across rivers, lakes, and marshes without pontoon bridges.</li><li>Modular Payload Decoupling: open-frame chassis accepts quick-swap cargo containers for 500 kg ammunition/supplies or casualty evacuation litters for crossing water barriers within the Golden Hour.</li><li>TENCORE AI KIT Autonomous Navigation: onboard visual-inertial odometry executes pre-planned routes and return-to-base maneuvers under total GNSS denial and wideband RF jamming.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Riverbank Egress Traction Deficit: water buoyancy severely reduces wheel normal downforce during water-to-mud transition, creating wheel slip and beaching risks on steep clay banks.</li><li>ICE Acoustic & Thermal Signature: internal combustion engine produces acoustic noise and a hot exhaust plume (>200°C), elevating detection risks from thermal reconnaissance drones.</li><li>Skid-Steer Drivetrain Scrubbing & Deck Jerk: non-steered 8x8 layout induces lateral tire scrub and abrupt yaw angular jerks that jeopardize wounded stabilization unless smoothed by HAL acceleration filtering.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> The Amphibious Logistics-Energy Paradigm: in contested riverine corridors, electric UGVs suffer range collapse due to water-drag resistance; liquid hydrocarbon powertrains remain mandatory for operational-depth amphibious logistics (>50 km water / 150+ km land).
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/904767382590697" target="_blank" rel="noopener">Facebook Reel / Mezha.net ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="../cases/08-unex-artillery.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #08</a><a href="../cases/45-tencore-mat1lda.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #45</a>
+      <a href="../cases/46-nodrics-mat1lda.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="rovertech" id="case-52">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-18</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#rovertech" class="badge badge-vendor">RoverTech Frontline Cluster</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/52-rovertech-zmiy.html">Case #52: RoverTech ZMIY Droid 12.7 (Combat UGV / Elevating RCWS)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GL-EC-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Terrestrial Ground Mud • Light 4x4 Armored Wheeled Chassis • Electric Battery Drive • Combat Heavy Machine Gun Fire Support • Defilade Pantograph Engagement • Digital Encrypted Direct Radio Datalink</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IElevatingWeaponStation"><code>IElevatingWeaponStation</code></a></div>
+    <div><em>"Combat ground robotic platforms require IElevatingWeaponStation and ISkidSteerRecoilCompensator to coordinate pantograph elevation for defilade firing while crossfading wheel brake torques to absorb 12.7mm recoil without chassis pitching."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Defilade Pantograph Geometry: elevating mast keeps the armored chassis hidden behind trenches and berms, exposing only barrel and optics, cutting visual/radar cross-section by 70%.</li><li>12.7x99mm Heavy Firepower: delivers up to 18 kJ muzzle energy for counter-material defeat through field fortifications at 1,500m standoff.</li><li>AI Ballistic Auto-Tracking: Stronghold AI automated target acquisition eliminates human hand-tremor under combat stress.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Recoil Tipping Moments: burst-firing 12.7mm (.50 BMG) generates 35 N*s impulse; elevated pantograph creates high tipping leverage requiring dynamic wheel lock.</li><li>Skid-Steer Tire Scrubbing: chevron lugs provide extreme mud bite but induce severe lateral scrubbing, consuming up to 45% power on hard-pack turns.</li><li>Elevated Mast Vulnerability: raised sensor and gun assembly presents a high-priority vertical profile for hostile snipers and FPV counter-attacks.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> The Defilade Fire Superiority Law: static trench combat is lethal for manned crews; robotic weapon stations must exploit mechanical articulation (elevating pantographs) to achieve asymmetric defilade engagement, decoupling weapon line-of-sight from hull exposure.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1614141370078662" target="_blank" rel="noopener">Facebook Reel / Defense Advancement ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="../cases/14-knds-centurio.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #14</a><a href="../cases/17-frodo-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #17</a>
+      <a href="../cases/52-rovertech-zmiy.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UGV" data-vendor="bair-miltech" id="case-55">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-18</span>
+    <span>•</span>
+    <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+    <a href="../vendors/index.html#bair-miltech" class="badge badge-vendor">BAIR MilTech Architecture</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/55-bair-arkhan.html">Case #55: BAIR ARKHAN Autonomous Defense System (Mothership-Parasite Concept)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UGV: GT-DC-MR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UGV: Terrestrial Heavy Tracked • Armored Tracked Carrier / Base • Heavy Diesel Generator & Electric Drive • Multi-Domain Robotic Docking & Mother Base • Multi-Domain Heterogeneous Swarm Coordination • Encrypted Tactical MESH & Satellite Gateway</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IMothershipSwarmCarrier"><code>IMothershipSwarmCarrier</code></a></div>
+    <div><em>"Integrated air-ground defense ecosystems require IMothershipSwarmCarrier and IHeterogeneousDockingManager to coordinate precision autonomous docking, automated battery hot-swapping or high-current charging, and distributed sensor fusion across heterogeneous carrier, quadrupedal, and aerial nodes in GNSS-denied environments."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Hierarchical Containerization (UWE Law 2): division into a protected heavy tracked mothership (C3) and attritable parasites (C1) protects generators and servers, moving light robots without depleting small batteries on march.</li><li>Omnidirectional Tri-Domain Sensor Fusion: aerial drone provides high-altitude look-down C4ISR across 5-10 km; quadruped scouts blind corners and trenches; tracked carrier provides kinetic armor and long-range comms.</li><li>Automated Force Multiplication: decouples human operators from the front line, transforming a single ground vehicle into an autonomous reconnaissance and perimeter interdiction hub.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Legged Robotics Energy Trap (CoT 1.5-3.0): quadruped robots burn excessive power maintaining balance even at standstill; operational radius rarely exceeds 3-5 km, making carrier battery recharge latency a critical bottleneck.</li><li>Rotor Downwash Interference on Mobile Carrier: launching multirotors directly from carrier roof induces severe ground-effect turbulence and hull reflection, requiring mechanical guide cradles or magnetic locks.</li><li>Open RF Jamming Vulnerability: unhardened 2.4/5.8 GHz communication links between carrier and parasites are easily severed under front-line EW, mandating optical tether or edge VIO/SLAM navigation.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> The Heterogeneous Carrier-Parasite Symbiosis Law: in attrition warfare, disparate kinematic nodes (tracks, legs, rotors) are viable only when bound into an integrated symbiosis where the heavy carrier absorbs logistical overhead, freeing lightweight edge nodes to execute specialized tactical actions.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1654555996099911" target="_blank" rel="noopener">Facebook Reel / BAIR MilTech ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/02-slimak-ugv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #02</a><a href="../cases/14-knds-centurio.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #14</a><a href="../cases/45-tencore-mat1lda.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #45</a>
+      <a href="../cases/55-bair-arkhan.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case #44: ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter) | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter) (UCV: HL-EB-DR). Physical advantages, failure modes, and HAL contract IAutonomousCargoWinchDrive.">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/cases/44-ziyan-greywhale-g1.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "UWE Case #44: ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter) \u2014 Cyber-Physical Architectural Analysis",
+  "description": "Empirical evaluation of ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter) (UCV: HL-EB-DR) under Hardware Abstraction Layer IAutonomousCargoWinchDrive. Kinematic Primacy of Single-Rotor Helicopters in Tactical Logistics: for vertical cargo lift between 15-50 kg in high-altitude mountain environments, single-rotor variable-pitch helicopters dramatically outperform multirotors in aerodynamic efficiency and ceiling.",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "datePublished": "2026-11-16",
+  "url": "https://sshill.github.io/UWE-concept-proof/cases/44-ziyan-greywhale-g1.html",
+  "keywords": [
+    "UCV",
+    "UCV: HL-EB-DR",
+    "IAutonomousCargoWinchDrive",
+    "ZIYAN Technology",
+    "UWE Standard",
+    "STANAG 4670 replacement"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="active">54 Benchmarks</a>
+    <a href="../c2/index.html" class="">C2 &amp; Articles</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 54 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: 2026-11-16</span>
+        <span>•</span>
+        <a href="../domains/ucv.html" class="badge badge-ucv">UCV</a>
+        <a href="../vendors/index.html#ziyan-technology" class="badge badge-vendor">ZIYAN Technology</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #44: ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter)
+      </h1>
+      
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>UCV: HL-EB-DR</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">UCV: Single-Rotor Helicopter Disc • Heavy Cargo Fuselage • Electric Battery Storage • Autonomous Standoff Winch Resupply • Autonomous Pendulum-Damped Flight • Encrypted Direct Radio Datalink</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#IAutonomousCargoWinchDrive"><code>IAutonomousCargoWinchDrive</code></a></div>
+        <div style="line-height:1.5;"><em>"Tactical unmanned cargo helicopters deploying slung loads require IAutonomousCargoWinchDrive and IHelicopterRotorDynamics to feed forward cable pendulum oscillation vectors into cyclic swashplate trim, active-damping swinging loads during 6,000m high-altitude hover while autonomously managing crosswind yaw compensation."</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points"><li>Aerodynamic Figure of Merit (FM >= 0.72): single 2.18m 4-blade rotor disc generates drastically lower disc loading (~12 kg/m^2) than multirotors, lifting 15-21 kg payloads on battery power.</li><li>High-Altitude Mountain Envelope (6,000 m Ceiling): high blade area ratio and variable collective pitch maintain air density lift at extreme altitudes where fixed-pitch multirotors stall.</li><li>Modular C2 Logistics Footprint: tool-free quick-release rotor blades, detachable tail boom, and folding gear collapse airframe into an ultra-compact package for pickup transport and 10-minute field assembly.</li><li>Precision Standoff Winch Delivery: automated winch hoist delivers supplies directly to jagged mountain terrain, tree canopies, or trenches without landing.</li></ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points"><li>Mechanical Single Points of Failure: swashplate linkages, cyclic pitch bearings, reduction gearing, and tail rotor drive shaft introduce mechanical wear with zero redundancy.</li><li>Tail Rotor Power Tax & Obstacle Risk: tail rotor expends 10-15% of battery power purely on anti-torque counteraction and is vulnerable to brush or ground strikes during low hover.</li><li>Battery Operational Radius (~20 km): 13 kg lithium battery pack restricts full-load radius to ~20 km, requiring frequent battery swapping in forward logistics loops.</li></ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> Kinematic Primacy of Single-Rotor Helicopters in Tactical Logistics: for vertical cargo lift between 15-50 kg in high-altitude mountain environments, single-rotor variable-pitch helicopters dramatically outperform multirotors in aerodynamic efficiency and ceiling.
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="https://www.facebook.com/reel/1773414080378754" target="_blank" rel="noopener">Facebook Reel / ZIYAN Technology ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>ZIYAN Technology</strong></div>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/reel/1773414080378754" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        <p style="margin:0.25rem 0;"><a href="09-capstone-coaxial.html" class="badge badge-hal">Case #09 Study →</a></p><p style="margin:0.25rem 0;"><a href="15-tekever-ar6.html" class="badge badge-hal">Case #15 Study →</a></p><p style="margin:0.25rem 0;"><a href="36-avidrone-tandem.html" class="badge badge-hal">Case #36 Study →</a></p>
+      </div>
+    </article>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

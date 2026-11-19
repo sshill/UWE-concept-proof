@@ -877,9 +877,606 @@ CASES_DATA = [
             "Network Disruption Susceptibility: catastrophic C4ISR collapse occurs if all wideband satellite and terrestrial MESH relays are simultaneously jammed.",
             "Algorithmic Exploitation: adversarial machine learning attacks (optical decoys, ghost targets) can saturate C2 target allocation queues.",
             "Bandwidth Chokepoints: real-time streaming of dozens of high-definition video feeds saturates tactical radio links in contested frontline sectors."
-        ],
+],
         "lesson": "Codifies the Ultimate UWE Synthesis: autonomous warfare supremacy is achieved not by individual platforms, but by the software-defined C2 cloud binding heterogeneous robotic domains into a unified algorithmic shield.",
         "related": ["13-fury-ghostbat", "17-frodo-ugv", "21-tactical-ucv-spectrum", "24-lurtz-kill-zone"]
+    },
+    {
+        "id": "34",
+        "slug": "34-regent-seaglider",
+        "domain": "USV",
+        "name": "REGENT Seaglider (Viceroy Tri-Modal WIG)",
+        "token": "USV: LG-VB-AS",
+        "token_full": "USV: Littoral Ground-Effect • High-Speed Glider Hull • Distributed Electric Vectoring • Maritime High-Speed Transport • Autonomous Coastal Infiltration • Satellite & Coastal AIS / Mesh",
+        "hal": "ITriModalSeagliderTransitionDrive",
+        "hal_def": "Tri-modal ground-effect seagliders require ITriModalSeagliderTransitionDrive to crossfade hydrodynamic foil lift to aerodynamic wing ground-effect lift, coordinating distributed propeller blown-flap angles to neutralize violent pitch trim divergence and prevent height instability during foil retraction at 100+ km/h.",
+        "vendor": "REGENT Craft",
+        "vendor_slug": "regent-craft",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / REGENT Craft",
+        "source_url": "https://www.facebook.com/reel/1091309223663639",
+        "advantages": [
+            "Ground-Effect Induced Drag Halving: flying in close ground effect (h/c < 0.5) eliminates downwash and tip vortices, boosting cruise L/D > 22-25 and reaching 300 km/h on battery power.",
+            "Hydrofoil R_hump Solution: deployable hydrofoils lift the hull cleanly at 30-75 km/h, slashing water drag by 70-80% and eliminating wave-slamming accelerations in Sea State 3.",
+            "Distributed Electric Propulsion (DEP): 8-12 wing-mounted electric propellers blow directly across full-span flaps, preventing stall and providing robust low-speed control authority."
+        ],
+        "vulnerabilities": [
+            "Center-of-Pressure Transition Shift: withdrawing hydrofoils transfers vehicle support from water struts to wings, triggering pitching moment divergence that requires microsecond blown-flap torque arbitration.",
+            "Ground Effect Pitch-Height Coupling: aerodynamic pitch instability close to water demands continuous (>100 Hz) radar/lidar surface-tracking to prevent porpoising.",
+            "Saline Corrosion & Cavitation: operating distributed nacelles in high-velocity sea spray accelerates leading-edge erosion, demanding hermetic IP68 motor sealing."
+        ],
+        "lesson": "Regulatory & Physical Decoupling: classifying high-speed coastal transit under maritime WIG standards (IMO MSC/Circ.1054) rather than FAA aviation codes bypasses airport infrastructure, while tri-modal hydrofoil-WIG physics conquers the hydrodynamic power barrier.",
+        "related": ["06-exail-usv", "28-south-china-reef", "30-philippine-carrier"]
+    },
+    {
+        "id": "35",
+        "slug": "35-hopaero-rook",
+        "domain": "UAV",
+        "name": "Hop Aero ROOK (Container-Launched Hypersonic Cargo Rocket)",
+        "token": "UAV: HC-CR-AS",
+        "token_full": "UAV: Hypersonic Suborbital Trajectory • Containerized Vertical-Launch Airframe • Chemical Rocket Engine • Tactical High-Priority Cargo Delivery • Autonomous Terminal Decoupling • Satellite & Terrain-Relative Guidance",
+        "hal": "ISuborbitalVtvlCargoDrive",
+        "hal_def": "Autonomous containerized suborbital cargo rockets require ISuborbitalVtvlCargoDrive to coordinate supersonic aerodynamic re-entry deceleration and deep-throttling gimbaled thrust vectoring in real time, executing terrain-relative navigation for zero-runway touchdown on unprepared ground within CEP < 5 meters.",
+        "vendor": "Hop Aero",
+        "vendor_slug": "hop-aero",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Hop Aero",
+        "source_url": "https://www.facebook.com/reel/972173385834214",
+        "advantages": [
+            "Containerized Decoupled Infrastructure (C4 to C3): packaging launch rail and erection hydraulics into a 40-ft ISO container decouples rocket operations from spaceports and runways, turning container ships or clearings into instant launchpads.",
+            "Compressed Temporal Attrition: 750 km delivery in 900 seconds compresses operational latency from hours to minutes, bypassing maritime blockades, A2/AD bubbles, and ground choke points.",
+            "Decoupled Payload Integration: modular 250 kg payload bay supports rapid swapping between medical resupply, loitering munition dispenser cartridges, or EW packages without propulsion redesign."
+        ],
+        "vulnerabilities": [
+            "The Hoverslam Throttling Trap: liquid rocket engines have hard lower throttle limits (30-40%); in a nearly dry vehicle, minimum thrust exceeds landing weight, forcing a millisecond suicide burn with zero hover margin.",
+            "Rocket Plume Excavation: impinging a multi-ton supersonic rocket plume (>2500 m/s, >2500°C) onto raw dirt or sand blasts craters and debris back into the engine bell and TVC actuators.",
+            "Strategic Early-Warning Ambiguity: high-altitude suborbital ballistic arcs emit massive infrared plumes identical to IRBMs, risking false alarms in early-warning constellations."
+        ],
+        "lesson": "Law 2 Microcosm & Terminal Physics: military rocket logistics succeed only when freed from C4 strategic bases into standard C3 intermodal logistics, though terminal landing physics dictates survivability.",
+        "related": ["04-waverider-corvus", "10-orbital-guardian", "31-spm-kondratyuk"]
+    },
+    {
+        "id": "36",
+        "slug": "36-avidrone-tandem",
+        "domain": "UCV",
+        "name": "Avidrone Aerospace Tandem-Rotor Cargo UCV (740T & 210TL)",
+        "token": "UCV: TL-TH-MS",
+        "token_full": "UCV: Tactical Tandem-Rotor Disc • Heavy Logistics Airframe • Turboshaft Heavy-Fuel Engine • Heavy Tactical Cargo Resupply • Semi-Autonomous Mission Flight • MESH & Satellite Command Link",
+        "hal": "ITandemRotorDynamics",
+        "hal_def": "Autonomous tandem-rotor copter systems require ITandemRotorDynamics to continuously arbitrate differential collective pitch across counter-rotating rotor discs, compensating for rapid center-of-gravity shifts during autonomous pickup and release of 227-kg tactical payloads on unprepared forward terrain.",
+        "vendor": "Avidrone Aerospace",
+        "vendor_slug": "avidrone-aerospace",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Defense Advancement",
+        "source_url": "https://www.facebook.com/reel/3237345289784878",
+        "advantages": [
+            "100% Useful Lift Power Conversion: counter-rotating tandem rotors cancel net torque aerodynamically, eliminating the tail rotor that wastes 12-15% of engine shaft power.",
+            "Lower Disc Loading vs Multirotors: two large-diameter rotor discs drastically reduce induced power losses vs multirotor propellers, delivering the hover efficiency needed to lift 227 kg payloads.",
+            "Longitudinal Center-of-Gravity Invariance: shifting sling loads or sloshing liquid cargo is trimmed via differential collective pitch between rotors rather than parasite trim tabs.",
+            "Heavy Fuel Frontline Logistics: the 740T gas turbine operates on standard battlefield Jet A / JP-8 / Diesel, eliminating forward battery charging bottlenecks."
+        ],
+        "vulnerabilities": [
+            "Mechanical Complexity & Maintenance: dual swashplates, collective pushrods, synchronization cross-shafting, and gearboxes introduce mechanical wear points in dusty frontline conditions.",
+            "Rotor Wake Intermeshing Vibrations: forward flight pushes front rotor wake into the rear disc, creating periodic aerodynamic interference and dynamic blade stress."
+        ],
+        "lesson": "Kinematic Primacy of Rotorcraft in UCV: confirms that vertical lift platforms governed by disc loading belong strictly to UCV; when cargo exceeds 50-200 kg, multirotors fail due to induced power scaling, mandating large disc-loaded rotorcraft.",
+        "related": ["09-capstone-coaxial", "15-tekever-ar6", "21-tactical-ucv-spectrum"]
+    },
+    {
+        "id": "37",
+        "slug": "37-oshen-cstar",
+        "domain": "USV",
+        "name": "Oshen C-Star PC13 (Micro-USV Transatlantic Wingsail)",
+        "token": "USV: SW-MS-IS",
+        "token_full": "USV: Surface Wave Boundary • Micro-Scale Wingsail Hull • Wind Propulsion & Solar Buffer • Persistent Ocean Sensor Picket • Persistent Autonomous Station-Keeping • Satellite Iridium IoT & AIS Link",
+        "hal": "IAutonomousWingsailNavigation",
+        "hal_def": "Autonomous micro-wingsail surface vessels mandate IAutonomousWingsailNavigation to dynamically coordinate rigid wingsail angle-of-attack and rudder deflection against local wind polars, enabling perpetual wind-propelled ocean transit and virtual-tether station-holding across extreme sea states with zero fuel expenditure.",
+        "vendor": "Oshen Ltd",
+        "vendor_slug": "oshen-ltd",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Interesting Engineering",
+        "source_url": "https://www.facebook.com/reel/1459370292730982",
+        "advantages": [
+            "Zero Wave-Bending Damage (L^3 Scale Invariance): at 1.3m length and 56 kg mass, structural bending moments under cresting waves are virtually negligible, riding 9-meter breaking swells where large displacement ships suffer fatigue.",
+            "Decoupled Kinetic vs Electrical Energy Harvesting: wind thrust powers infinite hydrodynamic propulsion, while a 52.5W solar array independently charges a 100Ah battery for compute and telemetry.",
+            "Persistent Low-Cost Maritime Picketing: acts as an ultra-low-cost, distributed acoustic and meteorological ocean sentry, bridging latency gaps between satellite passes and providing gateway relays for subsurface UUVs."
+        ],
+        "vulnerabilities": [
+            "Low Tactical Velocity (1.2-1.5 kts): speed is strictly bounded by ambient trade winds; incapable of tactical sprint, rapid evasive maneuvers, or fast intercept missions.",
+            "Severe Marine Biofouling: multi-month deployments (127 days) allow barnacles and algae to foul hydrodynamic hull surfaces and submerged acoustic sensor faces.",
+            "Commercial Shipping Collision Hazard: ultra-low radar cross-section renders the micro-hull invisible to commercial ship radars without continuous active AIS transponders."
+        ],
+        "lesson": "Micro-Scale Hydrodynamic Invariance in USV: validates the C0 tier within the USV continuum; micro-wingsail vessels provide sovereign distributed oceanic endurance (>100 days), proving extreme miniaturization defeats open-ocean attrition at near-zero unit cost.",
+        "related": ["06-exail-usv", "28-south-china-reef", "30-philippine-carrier"]
+    },
+    {
+        "id": "38",
+        "slug": "38-preneu-tactical",
+        "domain": "UAV",
+        "name": "PRENEU Tactical UAS (MILVUS T400 Lift+Cruise & PANDION Q1200)",
+        "token": "UAV: AL-EB-MS",
+        "token_full": "UAV: Atmospheric Low-Altitude • Lift+Cruise Hybrid Airframe • Electric Battery Storage • Tactical ISR & Forward Screening • Autonomous Mission Autopilot • Encrypted Tactical MESH & Satellite Link",
+        "hal": "IVtolTransitionDrive",
+        "hal_def": "Lift+Cruise tactical UAS architectures require IVtolTransitionDrive to arbitrate progressive aerodynamic handoff between vertical-lift quad rotors and fixed-wing pusher propulsion across the stall transition envelope, preventing roll-yaw cross-coupling during wing loading.",
+        "vendor": "PRENEU",
+        "vendor_slug": "preneu",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Defense Advancement",
+        "source_url": "https://www.facebook.com/reel/2008703892980995",
+        "advantages": [
+            "Decoupled Lift+Cruise Transition Safety: quad vertical-lift rotors isolate hover lift from horizontal cruise pusher propulsion, eliminating tiltrotor mechanical swashplate/nacelle failure modes.",
+            "High Aspect Ratio Battery Endurance: 4.15m fixed-wing airframe delivers 180 min (3 h) loiter endurance and 50+ km operational radius on pure chemical battery storage.",
+            "Closed-Loop Ballistic Drop Compensation: dedicated ultrasonic wind sensor feeds dynamic crossflow drift into the flight controller, achieving <5m CEP from 150m AGL without dive maneuvers."
+        ],
+        "vulnerabilities": [
+            "Parasitic Lift-Boom Drag Tax: in horizontal cruise, the 4 inactive vertical motors and carbon boom structures generate a 15-20% parasitic drag penalty, restricting cruise velocity.",
+            "Chemical Storage Payload Bottleneck: with a 9 kg battery pack on a 25 kg MTOW, the 1.5 kg payload strictly bounds sensor optics to lightweight gimbals.",
+            "Hover Exposure of Strike Multirotor: hovering at 150m AGL for 30+ seconds to stabilize wind-compensated drops exposes the multirotor to acoustic detection and small-arms fire."
+        ],
+        "lesson": "Law of Decoupled Lethality across Heterogeneous Teams: pairing high-efficiency aerodynamic lift (UAV: AL-EB-MS) for persistent ISR screening with compact disc-loaded rotorcraft (UCV: CQ-EB-DR) for kinetic delivery outperforms all-in-one compromises.",
+        "related": ["01-honda-evtol", "13-fury-ghostbat", "19-petrel-aero-sky"]
+    },
+    {
+        "id": "39",
+        "slug": "39-airbus-flexrotor",
+        "domain": "UAV",
+        "name": "Airbus Flexrotor (Aerovel Tailsitter VTOL)",
+        "token": "UAV: AL-IC-SL",
+        "token_full": "UAV: Atmospheric Low-Altitude • Tailsitter VTOL Fixed-Wing Airframe • Internal Combustion Heavy Fuel Engine • Expeditionary Tactical ISR & Screening • Autonomous Transition & Flight Control • Line-of-Sight & Satellite Comms",
+        "hal": "ITailsitterTransitionDynamics",
+        "hal_def": "Tailsitter VTOL UAS architectures mandate ITailsitterTransitionDynamics to seamlessly arbitrate the continuous 90-degree pitch transition by blending proprotor cyclic pitch with wing elevon aerodynamic deflections, actively decoupling gyroscopic precession moments across the stall boundary.",
+        "vendor": "Airbus & Aerovel",
+        "vendor_slug": "airbus-aerovel",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Defense Advancement",
+        "source_url": "https://www.facebook.com/reel/1495653508676587",
+        "advantages": [
+            "Zero Parasite Boom Drag Tax: unlike Lift+Cruise craft carrying inactive lift motors, the tailsitter utilizes 100% of its single 2.2m proprotor for hover and cruise, achieving clean glide efficiency (L/D > 16).",
+            "Hydrocarbon Energy Density: powered by a 28cc two-stroke engine running on heavy fuel or gasoline, the 25-kg airframe achieves 12 to 15 hours standard endurance and up to 32+ hours world-record loiter.",
+            "Exceptional Useful Payload Fraction (32% of MTOW): lifts up to 8 kg of stabilized EO/IR gimbal, EW, or radar sensors on a 25 kg airframe.",
+            "Expeditionary Runway-Independence: vertical launch and recovery directly from a 3.7x3.7m footprint eliminates catapults or nets, allowing operations from small naval vessels and austere posts."
+        ],
+        "vulnerabilities": [
+            "Hover Wing Sail Effect: standing vertically on its tail, the 3.0-meter fixed wing acts as a sail in crosswinds, demanding high cyclic pitch authority and active elevon trim in propwash.",
+            "Gyroscopic Precession in Transition: rapidly pitching the spinning 2.2m proprotor through 90 degrees generates cross-axis gyroscopic yaw torque that flight computers must decouple.",
+            "Vibrational Stress on Geared Swashplate: single two-stroke cylinder torque pulses impose high vibrational loads on proprotor gearbox and cyclic pitch swashplates."
+        ],
+        "lesson": "The Tailsitter Aerodynamic Frontier: single-proprotor tailsitters powered by internal combustion radically outperform electric Lift+Cruise multi-motor platforms by eliminating dead-weight boom drag, governed by software-defined transition HALs.",
+        "related": ["01-honda-evtol", "18-vantage-tacitframe", "20-tusas-aksungur"]
+    },
+    {
+        "id": "40",
+        "slug": "40-solaris-one",
+        "domain": "UOV",
+        "name": "Solaris One (Titan-Scale GEO Surveillance Satellite Benchmark)",
+        "token": "UOV: GS-SL-MD",
+        "token_full": "UOV: Geostationary Orbit (35,786 km) • Strategic Structural Platform • Solar Photovoltaic & Electric Propulsion • Hemispheric Optical & RF Surveillance • Autonomous Multi-Aperture Coordination • Deep-Space Laser Inter-Satellite Gateway",
+        "hal": "ISparseApertureInterferometryDrive",
+        "hal_def": "Geostationary strategic orbital surveillance architectures mandate ISparseApertureInterferometryDrive to synthesize multi-aperture optical wavefronts across distributed structural segments, enabling coherent image reconstruction while compensating for inter-segment optical path differences.",
+        "vendor": "World Titan Forces Research",
+        "vendor_slug": "world-titan-forces",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / World Titan Forces",
+        "source_url": "https://www.facebook.com/reel/1085319637452189",
+        "advantages": [
+            "Continuous Hemispheric Persistence: orbiting at GEO (35,786 km), a single platform maintains uninterrupted optical and RF line-of-sight across ~42% of the globe, eliminating handover latency.",
+            "Diffraction-Limited Aperture Thresholds: under the Rayleigh criterion, an effective aperture of D ~21.8m yields 1.0m ground resolution, while D ~436m provides 0.05m tactical resolution."
+        ],
+        "vulnerabilities": [
+            "Structural Impossibility of Monolithic 20 km Disc: differential gravity gradient torques across a 20-km monolithic disc and severe thermal expansion gradients destroy optical diffraction coherence.",
+            "Solar Radiation Pressure Torques: a 20-km disc catches over 1.4 kN of continuous solar radiation pressure, overwhelming traditional reaction wheels and thrusters.",
+            "Prohibitive Delta-V for Maneuvering: relocating or re-inclining an ultra-massive structure incurs astronomical propellant mass ratios, leaving the megastructure an unmaneuverable target for ASAT effectors."
+        ],
+        "lesson": "Kondratyuk SPM Paradigm vs Monolithic CGI: monolithic orbital megastructures are an engineering and survivability dead end; resilient strategic surveillance demands a distributed sparse-aperture array of synchronized, disaggregated nodes across GEO, MEO, and LEO.",
+        "related": ["10-orbital-guardian", "31-spm-kondratyuk"]
+    },
+    {
+        "id": "41",
+        "slug": "41-chaklun-uav",
+        "domain": "UAV",
+        "name": "Chaklun (Tactical Reconnaissance Fixed-Wing UAS)",
+        "token": "UAV: AH-EB-AR",
+        "token_full": "UAV: Atmospheric Low-Altitude • Hand-Launched EPP Flying Wing Airframe • Electric Battery Storage • Tactical Forward Reconnaissance • Autonomous Radio-Silent Dead-Reckoning • Autonomous Optical Navigation & RF Silence",
+        "hal": "IRadioSilentDeadReckoningNav",
+        "hal_def": "Tactical reconnaissance fixed-wing UAS operating under complete GNSS and RF datalink denial mandate IRadioSilentDeadReckoningNav to maintain 3D trajectory tracking and autonomous return-to-base via Pitot-static airspeed and 6-DoF inertial sensor fusion without emitting radio-frequency signatures.",
+        "vendor": "Chaklun Aviation Frontline Cluster",
+        "vendor_slug": "chaklun-aviation",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Defense Advancement & Ukraine Defense Portal",
+        "source_url": "https://www.facebook.com/reel/2318493582236910",
+        "advantages": [
+            "Ultra-Low Radar Cross Section (RCS): monolithic expanded polypropylene (EPP) construction with minimal metallic internal structure yields exceptionally low radar signature, evading tactical air defenses at operational altitudes.",
+            "Zero Logistics Footprint: hand-launch capability eliminates catapults or cleared runways; belly landing on unpaved ground eliminates nets and parachutes, enabling instantaneous frontline redeployment.",
+            "Aerodynamic Glide Efficiency: fixed-wing high-wing pusher architecture achieves 60-120 min endurance and 50-100+ km operational mission routes on battery power alone."
+        ],
+        "vulnerabilities": [
+            "Dead-Reckoning Wind Drift Accumulation: long-duration flight under GNSS denial accumulates position drift from unmeasured crosswind gusts, requiring periodic optical flow corrections.",
+            "Belly Landing Abrasion: repeated landings on frozen soil, gravel, or asphalt degrade the lower EPP fuselage skin and camera ports.",
+            "Lightweight Sensor Limitations: compact backpack footprint limits payload to micro-gimbals or fixed cameras, relying on airframe banking for off-axis coverage."
+        ],
+        "lesson": "The Attrition-Resistant Tactical Scout Archetype: in dense EW environments, survivability does not stem from complex frequency-hopping alone, but from the physical ability to cut all transmissions, navigate purely on onboard physics-based sensor fusion, and absorb physical punishment.",
+        "related": ["16-rq81-diana", "18-vantage-tacitframe", "26-kashmir-sentinel"]
+    },
+    {
+        "id": "42",
+        "slug": "42-intelligent-energy-soar",
+        "domain": "UAV",
+        "name": "Intelligent Energy IE-SOAR (Hydrogen Fuel Cell UAV Systems)",
+        "token": "UAV: AL-HL-DR",
+        "token_full": "UAV: Atmospheric Low-Altitude • Fixed-Wing / Multirotor Airframe • Hydrogen Fuel Cell Hybrid Powerplant • Long-Endurance Tactical Standoff ISR • Autonomous Powerpath Arbitration • Line-of-Sight & Direct Radio Datalink",
+        "hal": "IPemFuelCellHybridDrive",
+        "hal_def": "Lightweight hydrogen fuel cell hybrid UAV powerplants mandate IPemFuelCellHybridDrive to dynamically arbitrate microsecond transient power sharing between steady-state PEM fuel cell stack and high-C-rate lithium buffer batteries, preventing cathode starvation during peak VTOL and gust loads while regulating airflow stoichiometry.",
+        "vendor": "Intelligent Energy",
+        "vendor_slug": "intelligent-energy",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Defense Advancement",
+        "source_url": "https://www.facebook.com/reel/1033114216185690",
+        "advantages": [
+            "Gravimetric Energy Density Multiplier (700-1000 Wh/kg): integrated PEM stack with 350-bar carbon cylinder yields 3-4x usable specific energy of lithium batteries, extending multirotor hover to 2-3+ hours and fixed-wing loiter to 8-15+ hours.",
+            "Rapid Operational Turnaround (< 3 min): swapping or quick-filling the 350-bar cylinder takes under 3 minutes, eliminating 60-120 minute forward battery charging downtime.",
+            "Acoustic & Thermal Stealth Invariance: near-silent electric motors with warm water vapor exhaust (55-65°C) rather than 400-600°C ICE exhaust, drastically degrading detection by IRST and MANPADS thermal seekers."
+        ],
+        "vulnerabilities": [
+            "Low Volumetric Energy Density & Parasite Drag: gaseous hydrogen at 350 bar has low density (~24 g/L); storing adequate fuel mass requires bulky cylinders that expand fuselage diameter and parasite drag.",
+            "Transient Response Throttle Lag: PEM fuel cells cannot match millisecond transient spikes (up to 8 kW) demanded by VTOL transitions or gust stabilization, making a lithium buffer pack strictly mandatory.",
+            "Frontline H2 Supply Chain Bottleneck: ultra-pure hydrogen (Grade 5.0, 99.999%) compressed to 350-500 bar is entirely absent from frontline tactical logistics, requiring dedicated base infrastructure."
+        ],
+        "lesson": "The Standoff C4ISR Niche vs Zero-Line Attrition: hydrogen fuel cells deliver unmatched silent endurance for standoff C4ISR orbits and maritime pickets, but the logistical burden of 350-bar hydrogen leaves lithium batteries and heavy-fuel ICE generators as the primary frontline tactical powerpaths.",
+        "related": ["01-honda-evtol", "16-rq81-diana", "20-tusas-aksungur"]
+    },
+    {
+        "id": "43",
+        "slug": "43-avilus-grille",
+        "domain": "UCV",
+        "name": "Avilus Grille (Heavy-Lift Autonomous MEDEVAC eVTOL)",
+        "token": "UCV: CL-EB-DR",
+        "token_full": "UCV: Coaxial Heavy-Lift Multirotor • Heavy Airframe / Stretcher Capsule • Electric Battery Storage • Autonomous Combat CASEVAC & Extraction • Autonomous Flight & Attitude Clamping • Encrypted Direct Radio Datalink",
+        "hal": "ICoaxialRotorFailureTolerantDynamics",
+        "hal_def": "Heavy-lift autonomous medical evacuation rotorcraft mandate ICoaxialRotorFailureTolerantDynamics and IAutonomousCasEvacAttitudeControl to dynamically redistribute coaxial motor thrust during motor/ESC failures while enforcing physiological acceleration limits (G_z, G_y <= 1.2g) and attitude clamping to preserve casualty hemodynamics.",
+        "vendor": "Avilus GmbH",
+        "vendor_slug": "avilus-gmbh",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / Defense Advancement",
+        "source_url": "https://www.facebook.com/reel/1812626446539196",
+        "advantages": [
+            "Zero-Risk Battlefield Extraction in the Golden Hour: eliminates human flight crew risk in hostile low-altitude air defense bubbles; extracts wounded within the critical 60-minute window across minefields and severed ground lines.",
+            "Coaxial Hexacopter Thrust Redundancy: 12 rotors configured in 6 coaxial pairs with independent inverters provide N-1 and N-2 failure tolerance, allowing safe recovery upon rotor or ESC failure.",
+            "Enclosed Climate-Controlled Capsule with Biometric Telemetry: protects casualties from fragments, rotor downwash, and hypothermia while live biometric transmission enables pre-arrival triage by rear surgeons.",
+            "Intermodal C3 ISO Container Logistics: disassembles to fit inside a standard 20-ft ISO container; two soldiers can assemble the drone tool-free in under 15 minutes."
+        ],
+        "vulnerabilities": [
+            "Severe Battery Energy Density & Range Ceiling: pure battery storage limits operational radius to ~25 km outbound + ~25 km return and 20-45 min flight time at 750 kg MTOW.",
+            "Acoustic & Radar Cross-Section Signature: 7.8-meter diameter rotorcraft with 12 spinning blades generates a massive acoustic footprint (audible from 2-3 km) and prominent radar micro-Doppler modulation.",
+            "Downwash Hazards in Unprepared LZs: 750 kg MTOW on a high-disc-loading footprint generates intense downwash winds (>20 m/s), creating brownout conditions that blind sensors and endanger ground crews."
+        ],
+        "lesson": "The Autonomous CASEVAC Archetype & Disc Loading Limits: validates replacing crewed helicopters with attritable heavy-lift rotorcraft for tactical evacuation, but exposes the limits of lithium chemistry; scaling medevac beyond 25 km demands hybrid turbogenerators or fixed wings.",
+        "related": ["09-capstone-coaxial", "15-tekever-ar6", "21-tactical-ucv-spectrum"]
+    },
+    {
+        "id": "44",
+        "slug": "44-ziyan-greywhale-g1",
+        "domain": "UCV",
+        "name": "ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter)",
+        "token": "UCV: HL-EB-DR",
+        "token_full": "UCV: Single-Rotor Helicopter Disc • Heavy Cargo Fuselage • Electric Battery Storage • Autonomous Standoff Winch Resupply • Autonomous Pendulum-Damped Flight • Encrypted Direct Radio Datalink",
+        "hal": "IAutonomousCargoWinchDrive",
+        "hal_def": "Tactical unmanned cargo helicopters deploying slung loads require IAutonomousCargoWinchDrive and IHelicopterRotorDynamics to feed forward cable pendulum oscillation vectors into cyclic swashplate trim, active-damping swinging loads during 6,000m high-altitude hover while autonomously managing crosswind yaw compensation.",
+        "vendor": "ZIYAN Technology",
+        "vendor_slug": "ziyan-technology",
+        "date": "2026-11-16",
+        "source_name": "Facebook Reel / ZIYAN Technology",
+        "source_url": "https://www.facebook.com/reel/1773414080378754",
+        "advantages": [
+            "Aerodynamic Figure of Merit (FM >= 0.72): single 2.18m 4-blade rotor disc generates drastically lower disc loading (~12 kg/m^2) than multirotors, lifting 15-21 kg payloads on battery power.",
+            "High-Altitude Mountain Envelope (6,000 m Ceiling): high blade area ratio and variable collective pitch maintain air density lift at extreme altitudes where fixed-pitch multirotors stall.",
+            "Modular C2 Logistics Footprint: tool-free quick-release rotor blades, detachable tail boom, and folding gear collapse airframe into an ultra-compact package for pickup transport and 10-minute field assembly.",
+            "Precision Standoff Winch Delivery: automated winch hoist delivers supplies directly to jagged mountain terrain, tree canopies, or trenches without landing."
+        ],
+        "vulnerabilities": [
+            "Mechanical Single Points of Failure: swashplate linkages, cyclic pitch bearings, reduction gearing, and tail rotor drive shaft introduce mechanical wear with zero redundancy.",
+            "Tail Rotor Power Tax & Obstacle Risk: tail rotor expends 10-15% of battery power purely on anti-torque counteraction and is vulnerable to brush or ground strikes during low hover.",
+            "Battery Operational Radius (~20 km): 13 kg lithium battery pack restricts full-load radius to ~20 km, requiring frequent battery swapping in forward logistics loops."
+        ],
+        "lesson": "Kinematic Primacy of Single-Rotor Helicopters in Tactical Logistics: for vertical cargo lift between 15-50 kg in high-altitude mountain environments, single-rotor variable-pitch helicopters dramatically outperform multirotors in aerodynamic efficiency and ceiling.",
+        "related": ["09-capstone-coaxial", "15-tekever-ar6", "36-avidrone-tandem"]
+    },
+    {
+        "id": "45",
+        "slug": "45-tencore-mat1lda",
+        "domain": "UGV",
+        "name": "TENCORE MAT1LDA 8x8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV)",
+        "token": "UGV: GM-IT-AR",
+        "token_full": "UGV: Terrestrial & Water Amphibious • Medium 8x8 Armored Hull • Internal Combustion Petrol Engine • Tactical Robotic Carrier / Minelaying • Autonomous Route Autopilot • Anti-Jam Radio & MESH Gateway",
+        "hal": "IAmphibiousTransitionDrive",
+        "hal_def": "Amphibious robotic mother-carriers require IAmphibiousTransitionDrive and IMotherChildDeploymentGateway to dynamically trim all-wheel 8x8 skid-steer torque against loss of ground normal force during water entry and muddy riverbank egress, while coordinating automated deck latching and roll-pitch stabilization during deployment of tracked combat effectors.",
+        "vendor": "TENCORE",
+        "vendor_slug": "tencore",
+        "date": "2026-11-16",
+        "source_name": "Facebook Post / Defender Media",
+        "source_url": "https://www.facebook.com/DefenderMediaUA/posts/pfbid027psMxGoouoi9zz1qTHi8PeRkb8ncYocy1LerB4Z1xTbhAWh9ks4DuWWBpqNMo1ekl",
+        "advantages": [
+            "Decoupled Operational vs Tactical Energy: MAT1LDA uses an internal combustion engine to deliver high energy density and 160 km land / 50 km water range, while TerMIT 2.0 uses electric battery drive for silent, low-thermal assault and minelaying.",
+            "Amphibious Riverine & Wetland Access: 8x8 all-wheel drive with sealed buoyancy hull and side pontoons allows crossing rivers, estuaries, and bogs where conventional UGVs sink or require combat engineering bridges.",
+            "Mothership-Parasite Doctrine: transports tracked combat unit across contested water barriers without risking human crews, deploying TerMIT 2.0 directly onto enemy shores for assault or minelaying.",
+            "AI Autopilot for EW Navigation: onboard AI cruise control with visual/inertial odometry enables TerMIT and MAT1LDA to complete mission routes even under total GPS and RF jamming."
+        ],
+        "vulnerabilities": [
+            "Riverbank Egress Traction Collapse: buoyancy sharply reduces wheel downforce during water-to-mud transition, creating severe wheel slip and beaching hazards on steep clay banks.",
+            "ICE Acoustic & Infrared Plume: petrol combustion engine generates significant acoustic noise and an exhaust thermal plume, exposing water crossings to thermal sensor detection and ATGM strikes.",
+            "Skid-Steer Tire Scrub & Drive Train Stress: non-steered 8x8 layout induces massive lateral tire scrub and torque spikes on dry paved terrain."
+        ],
+        "lesson": "The Hierarchical Mother-Child Archetype in Unmanned Ground Warfare: single universal ground robots are a doctrinal failure; combining an amphibious carrier (UGV: GM-IT-AR) with a tracked strike parasite (UGV: GL-EC-DR) proves combined-arms robotic superiority requires layered hierarchies.",
+        "related": ["02-slimak-ugv", "08-unex-artillery", "17-frodo-ugv"]
+    },
+    {
+        "id": "46",
+        "slug": "46-nodrics-mat1lda",
+        "domain": "UGV",
+        "name": "NODRICS MAT1LDA 8x8 (Amphibious Tactical Logistics & CASEVAC UGV)",
+        "token": "UGV: GM-IL-AR",
+        "token_full": "UGV: Terrestrial & Water Amphibious • Medium 8x8 Sealed Hull • Internal Combustion Petrol Engine • Frontline Amphibious Logistics & CASEVAC • Autonomous Waypoint Navigation • Encrypted Anti-Jam RF & MESH",
+        "hal": "IAmphibiousLogisticsDrive",
+        "hal_def": "Amphibious logistics and CASEVAC UGVs require IAmphibiousLogisticsDrive and ICasEvacStabilityController to crossfade 8x8 wheel torque into buoyancy during water-bank transitions, clamping pitch/roll shocks to preserve casualty hemodynamic stability.",
+        "vendor": "NODRICS",
+        "vendor_slug": "nodrics",
+        "date": "2026-11-17",
+        "source_name": "Facebook Reel / Mezha.net",
+        "source_url": "https://www.facebook.com/reel/904767382590697",
+        "advantages": [
+            "Hydrocarbon Energy Density (12,000 Wh/kg vs 250 Wh/kg): petrol ICE eliminates battery exhaustion under severe water-drag resistance power, delivering 160 km land / 50 km water range without battery charging delays.",
+            "8x8 Sealed Displacement Hull & Pontoons: all-wheel drive combined with side pontoon buoyancy enables swimming with 400 kg cargo across rivers, lakes, and marshes without pontoon bridges.",
+            "Modular Payload Decoupling: open-frame chassis accepts quick-swap cargo containers for 500 kg ammunition/supplies or casualty evacuation litters for crossing water barriers within the Golden Hour.",
+            "TENCORE AI KIT Autonomous Navigation: onboard visual-inertial odometry executes pre-planned routes and return-to-base maneuvers under total GNSS denial and wideband RF jamming."
+        ],
+        "vulnerabilities": [
+            "Riverbank Egress Traction Deficit: water buoyancy severely reduces wheel normal downforce during water-to-mud transition, creating wheel slip and beaching risks on steep clay banks.",
+            "ICE Acoustic & Thermal Signature: internal combustion engine produces acoustic noise and a hot exhaust plume (>200°C), elevating detection risks from thermal reconnaissance drones.",
+            "Skid-Steer Drivetrain Scrubbing & Deck Jerk: non-steered 8x8 layout induces lateral tire scrub and abrupt yaw angular jerks that jeopardize wounded stabilization unless smoothed by HAL acceleration filtering."
+        ],
+        "lesson": "The Amphibious Logistics-Energy Paradigm: in contested riverine corridors, electric UGVs suffer range collapse due to water-drag resistance; liquid hydrocarbon powertrains remain mandatory for operational-depth amphibious logistics (>50 km water / 150+ km land).",
+        "related": ["02-slimak-ugv", "08-unex-artillery", "45-tencore-mat1lda"]
+    },
+    {
+        "id": "47",
+        "slug": "47-navalgroup-ucuv",
+        "domain": "UUV",
+        "name": "Naval Group UCUV Combat Demonstrator (France DGA)",
+        "token": "UUV: CB-RA-HQ",
+        "token_full": "UUV: Continental Shelf (100-200m) • Large Displacement Submersible Hull • Rechargeable Electric Battery Storage • Anti-Submarine & Surface Torpedo Strike • Autonomous Acoustic Tracking & Target Attack • Acoustic Modem & Low-Probability Intercept RF",
+        "hal": "ISubseaCombatTrimmingDrive",
+        "hal_def": "Uncrewed Combat Underwater Vehicles require ISubseaCombatTrimmingDrive and IVariableBallastTrimController to crossfade control-surface hydrodynamics with high-rate variable ballast compensation upon kinetic weapon ejection, counteracting pitch transients while micro-throttling Steeris hotel loads to preserve multi-day acoustic stealth loiter.",
+        "vendor": "Naval Group",
+        "vendor_slug": "naval-group",
+        "date": "2026-11-18",
+        "source_name": "LinkedIn / Tim De Zitter",
+        "source_url": "https://lnkd.in/p/dMKGwNFp",
+        "advantages": [
+            "Continental Shelf Mass Optimization: limiting maximum depth to 150m dramatically reduces hull wall thickness and pressure hull mass fraction vs 1000m+ pelagic drones, freeing internal volume and mass for weapon modules.",
+            "Closed-Cycle Acoustic Stealth: pure electrical battery storage eliminates diesel snorting, heat plumes, and acoustic cavitation, sustaining continuous low-speed (3 kts) stealth loiter.",
+            "Decoupled Combat Payload: open modular payload bay allows configuring the invariant 11.7m hull for anti-submarine strike (MU90 torpedoes), offensive sea denial (mine laying), or long-range ISR.",
+            "Steeris Autonomous Edge Command: onboard mission autonomy executes acoustic signature classification and tactical maneuvers without vulnerable surface RF or tether links."
+        ],
+        "vulnerabilities": [
+            "Weapon Ejection Buoyancy Transient: discharging a 300kg torpedo or mine salvo instantly generates positive buoyancy; without high-rate variable ballast flooding, the vehicle suffers pitch-up and surface broaching.",
+            "Hotel Load Parasitic Drain: at 3 kts, propulsion power is low, but hotel loads (sonar processing, compute, pumps) consume 50%+ of energy, collapsing 10-day endurance if sensors run at full duty cycles.",
+            "Hydrodynamic Drag Asymmetry: external weapon shutters or mine hatches introduce parasitic drag, shifting trim across speed variations."
+        ],
+        "lesson": "The Subsea Lethality-Displacement Envelope: autonomous subsea combat assets cannot be evaluated by commercial endurance metrics alone; weapon separation physics and hotel loads dictate actual combat radius, with continental shelf specialization optimizing littoral sea denial.",
+        "related": ["07-ghostshark-auv", "11-lockheed-lamprey", "29-fitburg-sentinel"]
+    },
+    {
+        "id": "48",
+        "slug": "48-sentinel-corebreak",
+        "domain": "UAV",
+        "name": "Sentinel Corebreak (Directed-Energy Air Superiority Platform)",
+        "token": "UAV: AL-TD-HR",
+        "token_full": "UAV: Atmospheric Low-Altitude • High-Aspect Tactical Airframe • Turbofan / Heavy Generator Powerplant • Directed-Energy Tactical Interception • Autonomous Swarm Interceptor / Hunter • High-Bandwidth Resilient Tactical Datalink",
+        "hal": "IDirectedEnergyAeroOpticsDrive",
+        "hal_def": "Airborne directed-energy airframes require IDirectedEnergyAeroOpticsDrive and IThermalEnergyLoadManager to dynamically compensate for transonic aero-optical boundary layer wavefront distortion around rotating beam turrets while micro-regulating engine bleed-air and phase-change thermal sinks to dump megawatts of laser waste heat without violating drag envelopes.",
+        "vendor": "US NextGen Airpower Research",
+        "vendor_slug": "nextgen-airpower",
+        "date": "2026-11-18",
+        "source_name": "Facebook Reel / US NextGen Airpower",
+        "source_url": "https://www.facebook.com/reel/1424523013068659",
+        "advantages": [
+            "Speed-of-Light Interception: zero time-of-flight at tactical ranges negates kinematic evasion of high-G hostile missiles and loitering munitions.",
+            "VLO Profile Preservation: replacing external/bay kinetic missile racks with internal fiber laser emitters maintains an uncompromised radar cross-section without weapons-bay radar blooming."
+        ],
+        "vulnerabilities": [
+            "Thermal Saturation & Reload Physics: 30-35% electrical efficiency for a 150 kW beam dumps ~300 kW waste heat; once phase-change material heat sinks saturate, weapons cease firing until regeneration completes.",
+            "Transonic Aero-Optics Jitter: protruding rotating turrets create supersonic shock waves and turbulent boundary layers, inducing Optical Path Difference aberrations that degrade focal intensity.",
+            "Radiator Parasitic Drag: deploying external heat exchangers or ram-air scoops imposes severe parasitic drag spikes, degrading cruise speed and combat radius."
+        ],
+        "lesson": "The Thermodynamic-Optic Interdiction Limit: directed energy weapons eliminate ammunition logistics mass but transfer physical constraints entirely into thermodynamics and aero-optics; combat persistence is strictly bounded by waste heat dissipation and wavefront correction.",
+        "related": ["03-stealth-ucav", "13-fury-ghostbat", "23-lpp-jwi4000"]
+    },
+    {
+        "id": "49",
+        "slug": "49-xq45-fibertailor",
+        "domain": "UAV",
+        "name": "XQ-45 Fibertailor & French Valkyrie (Dassault Rafale F5 UCAV Benchmark)",
+        "token": "UAV: AL-TK-WR",
+        "token_full": "UAV: Atmospheric Low-Altitude • Tailless Supersonic Stealth Airframe • Turbofan Jet Engine • Kinetic Strike & SEAD / DEAD • Wingman Manned-Unmanned Teaming • Wideband Resilient Tactical MESH Link",
+        "hal": "IAeroelasticLoadLimiter",
+        "hal_def": "Autonomous supersonic CCAs require IAeroelasticLoadLimiter and ILoyalWingmanFormationDrive to clamp control deflections against catastrophic wing root bending moments during extreme G-transients, preserving Boyd Ps to prevent energy bleeding and stall during maneuvering.",
+        "vendor": "Dassault Aviation & French Air Force",
+        "vendor_slug": "dassault-aviation",
+        "date": "2026-11-18",
+        "source_name": "Facebook Reel / US NextGen Airpower",
+        "source_url": "https://www.facebook.com/reel/4065861937048538",
+        "advantages": [
+            "Omitting the Biological Envelope: removing cockpit and life support saves 1.5-2.0 tons empty mass for fuel and sensors, unlocking agile maneuvers free from human G-LOC (~9G).",
+            "French Sovereign CCA Benchmark: France officially launched its sovereign loyal wingman program for Rafale F5, inheriting nEUROn stealth flight heritage for A2/AD penetration, SEAD/DEAD, and nuclear strike escort."
+        ],
+        "vulnerabilities": [
+            "The 15-G Induced Drag Collapse: pulling 15-G demands high C_L, causing induced drag to spike quadratically (C_Di ~ C_L^2 ~ 225) and plunging specific excess power negative, bleeding Mach 1.4 into a stall within seconds.",
+            "15-G Wing Root Bending Structural Fracture: a 4-ton airframe pulling 15-G experiences a 60-ton normal load (600 kN); composite wings under 200 kg cannot withstand this bending moment, fracturing under interlaminar shear.",
+            "Supersonic Fuel Mass Contradiction: a 1,500-mile range at Mach 1.4 requires a fuel mass fraction of >=50%, physically precluding ultra-light wing structures."
+        ],
+        "lesson": "The Energy-Maneuverability Boundary in Autonomous Air Combat: removing human physiology does not abolish aerodynamic energy conservation (P_s) or aeroelastic structural boundaries (M_b); France's doctrine wisely prioritizes survivability, stealth, and sensor fusion over unviable 15-G marketing claims.",
+        "related": ["03-stealth-ucav", "05-sickle-wing", "13-fury-ghostbat"]
+    },
+    {
+        "id": "50",
+        "slug": "50-vyriy-slavic",
+        "domain": "UCV",
+        "name": "Vyriy SLAVIC (Tactical Reconnaissance Copter / Sovereign Mavic Alternative)",
+        "token": "UCV: CB-ER-DR",
+        "token_full": "UCV: Compact Quadrotor Multirotor • Backpack Tactical Airframe • Solid-State Electric Battery Pack • Tactical Forward Reconnaissance • Dead-Reckoning & Optical Odometry • Directional Encrypted Tactical RF Link",
+        "hal": "IVisualInertialOdometryNav",
+        "hal_def": "Tactical reconnaissance multirotors require IVisualInertialOdometryNav and ISolidStateBatteryManagement to sustain drift-free visual-inertial hover in GNSS-denied corridors while optimizing solid-state battery thermal discharge to break the 90-minute endurance barrier and protect crews from kill-zone counter-battery tracking.",
+        "vendor": "Vyriy Industries Frontline Cluster",
+        "vendor_slug": "vyriy-industries",
+        "date": "2026-11-18",
+        "source_name": "Facebook Reel / Гаряча Зона / Vyriy Industries",
+        "source_url": "https://www.facebook.com/reel/2607037159801948",
+        "advantages": [
+            "Kill-Zone Expansion Standoff: 30 km radius and 90-120 min endurance allow crews to launch from 15-20 km behind the contact line, escaping the lethal forward kill-zone that endangered Mavic 3 pilots.",
+            "Solid-State Chemistry (350-400 Wh/kg): 40,000 mAh pack yields 3x loiter duration of standard Li-Ion pouch cells, stable winter discharge, and puncture fire resilience.",
+            "Anti-AeroScope Sovereign Security: eliminates DJI DroneID telemetry leakage, preventing pilot coordinate interception and post-crash flight-log extraction."
+        ],
+        "vulnerabilities": [
+            "Logistics Footprint of Directional Tracker Mast: sustaining 30 km telemetry requires an elevated ground station with pan-tilt directional antennas, increasing deployment time and position profile.",
+            "Visual-Inertial Odometry Night Drift: featureless terrain in zero-illumination nights or dense fog causes optical flow integration drift, requiring radio beacon triangulation to maintain station.",
+            "Component Sourcing Dependencies: while frame, firmware, and controllers are sovereign, core motors and optical zoom sensors remain dependent on external supply chains."
+        ],
+        "lesson": "The Kill-Zone Standoff Principle: frontline tactical reconnaissance cannot rely on consumer toy metrics or unencrypted protocols; when the lethal envelope expands, tactical multirotors must transition from handheld toys to squad-level endurance tools powered by solid-state chemistry and optical odometry.",
+        "related": ["09-capstone-coaxial", "21-tactical-ucv-spectrum", "41-chaklun-uav"]
+    },
+    {
+        "id": "51",
+        "slug": "51-canister-arrow",
+        "domain": "UAV",
+        "name": "Canister Arrow (Tube-Launched Micro-UAV)",
+        "token": "UAV: AC-CE-AR",
+        "token_full": "UAV: Atmospheric Low-Altitude • Canister Tube-Launched Folding Airframe • Cold-Gas Pneumatic & Electric Propulsion • Precision Loitering Strike Munition • Autonomous Launch Decoupling & Terminal Lock • Encrypted Anti-Jam Radio Link",
+        "hal": "ITubeLaunchTransitionDrive",
+        "hal_def": "Tube-launched canister micro-UAVs require ITubeLaunchTransitionDrive and IFoldingWingAerodynamicControl to orchestrate the sub-second transition from tube ejection to closed-loop aerodynamic control.",
+        "vendor": "Energy Book Tactical Systems",
+        "vendor_slug": "energy-book",
+        "date": "2026-11-18",
+        "source_name": "Facebook Reel / Energy Book",
+        "source_url": "https://www.facebook.com/reel/1614862140287826",
+        "advantages": [
+            "Canister Rapid Ejection (5-10s Launch Readiness): eliminates prolonged frontline exposure of FPV crews, allowing deployment directly from trenches or armored vehicles.",
+            "Fixed-Wing Aerodynamic Efficiency: fixed-wing glide breaks multirotor battery exhaustion, extending loiter time and strike radius.",
+            "Protected Pusher Architecture: rear folding propeller protects blades during tube transit, leaving nose bay free for modular payloads."
+        ],
+        "vulnerabilities": [
+            "Wing Deployment Dynamic Shock: requires microsecond mechanical latching upon tube exit; asymmetrical wing lock triggers instant aerodynamic roll departure.",
+            "Pusher Aeroacoustic BPF Signature: operating in the turbulent wake behind the cylindrical fuselage creates discrete acoustic harmonics.",
+            "Payload Caliber Limit (50-60mm): hard geometric constraints limit shaped-charge jet diameter, restricting lethality primarily to unarmored targets."
+        ],
+        "lesson": "The Canister Deployment Invariant: frontline loitering strike platforms benefit exponentially from modular tube containerization, decoupling operator survival from launch setup time and replacing open-air multirotor vulnerability with instant pneumatic ejection.",
+        "related": ["23-lpp-jwi4000", "25-stat-caylus-b2lt", "41-chaklun-uav"]
+    },
+    {
+        "id": "52",
+        "slug": "52-rovertech-zmiy",
+        "domain": "UGV",
+        "name": "RoverTech ZMIY Droid 12.7 (Combat UGV / Elevating RCWS)",
+        "token": "UGV: GL-EC-DR",
+        "token_full": "UGV: Terrestrial Ground Mud • Light 4x4 Armored Wheeled Chassis • Electric Battery Drive • Combat Heavy Machine Gun Fire Support • Defilade Pantograph Engagement • Digital Encrypted Direct Radio Datalink",
+        "hal": "IElevatingWeaponStation",
+        "hal_def": "Combat ground robotic platforms require IElevatingWeaponStation and ISkidSteerRecoilCompensator to coordinate pantograph elevation for defilade firing while crossfading wheel brake torques to absorb 12.7mm recoil without chassis pitching.",
+        "vendor": "RoverTech Frontline Cluster",
+        "vendor_slug": "rovertech",
+        "date": "2026-11-18",
+        "source_name": "Facebook Reel / Defense Advancement",
+        "source_url": "https://www.facebook.com/reel/1614141370078662",
+        "advantages": [
+            "Defilade Pantograph Geometry: elevating mast keeps the armored chassis hidden behind trenches and berms, exposing only barrel and optics, cutting visual/radar cross-section by 70%.",
+            "12.7x99mm Heavy Firepower: delivers up to 18 kJ muzzle energy for counter-material defeat through field fortifications at 1,500m standoff.",
+            "AI Ballistic Auto-Tracking: Stronghold AI automated target acquisition eliminates human hand-tremor under combat stress."
+        ],
+        "vulnerabilities": [
+            "Recoil Tipping Moments: burst-firing 12.7mm (.50 BMG) generates 35 N*s impulse; elevated pantograph creates high tipping leverage requiring dynamic wheel lock.",
+            "Skid-Steer Tire Scrubbing: chevron lugs provide extreme mud bite but induce severe lateral scrubbing, consuming up to 45% power on hard-pack turns.",
+            "Elevated Mast Vulnerability: raised sensor and gun assembly presents a high-priority vertical profile for hostile snipers and FPV counter-attacks."
+        ],
+        "lesson": "The Defilade Fire Superiority Law: static trench combat is lethal for manned crews; robotic weapon stations must exploit mechanical articulation (elevating pantographs) to achieve asymmetric defilade engagement, decoupling weapon line-of-sight from hull exposure.",
+        "related": ["02-slimak-ugv", "14-knds-centurio", "17-frodo-ugv"]
+    },
+    {
+        "id": "53",
+        "slug": "53-nebesa-spaceplane",
+        "domain": "UAV",
+        "name": "Nebesa Aerospace NEBESA Suborbital Spaceplane",
+        "token": "UAV: HD-LR-PS",
+        "token_full": "UAV: High-Altitude Suborbital • Delta-Wing Spaceplane Airframe • Liquid Rocket & Airbreathing Turbojet Hybrid • Reconnaissance & Fast Re-Entry Interceptor • Pre-Planned Ballistic Orbit • Autonomous Inertial Space Tracking",
+        "hal": "ISuborbitalTransitionDrive",
+        "hal_def": "Horizontal-takeoff suborbital spaceplanes require ISuborbitalTransitionDrive and IBlendedReactionAerodynamicControl to orchestrate combined turbojet-to-rocket ascent and crossfade elevons with reaction thrusters at 110 km apogee.",
+        "vendor": "Nebesa Aerospace",
+        "vendor_slug": "nebesa-aerospace",
+        "date": "2026-11-18",
+        "source_name": "Militarnyi / Future Forces Forum 2026 Prague",
+        "source_url": "https://militarnyi.com/uk/news/predstavyly-suborbitalny-bezpilotnyk-nebesa/",
+        "advantages": [
+            "Runway to Space Infrastructure Decoupling: replaces fixed vertical spaceports with standard 1,500-2,000 m paved runways or highways, dispersing suborbital operations across standard military and civilian airfields.",
+            "Dual-Regime Combined Propulsion: airbreathing turbojet climb to 10-12 km saves up to 35% oxidizer mass; 9 kN 3D-printed liquid rocket engine ignites in rarefied atmosphere, achieving optimal specific impulse.",
+            "Suborbital Reconnaissance Standoff: 110 km apogee and Mach 3.5 velocity exceed kinematic engagement ceilings of theater air-defense systems, ensuring survivable high-altitude observation."
+        ],
+        "vulnerabilities": [
+            "Dynamic Pressure Collapse (q -> 0): in the 100-110 km exo-atmospheric apex, aerodynamic elevons lose control authority; stabilization relies strictly on reaction control thrusters or reaction wheels.",
+            "Aerothermodynamic Heat Loads at Mach 3.5+: re-entry shock stagnation temperatures exceed 500-700°C on wing leading edges and nosecone, requiring specialized titanium/carbon-carbon thermal barrier composites.",
+            "Airspace Deconfliction: high vertical climb and dive rates punch through civil flight corridors, mandating real-time C4ISR coordination to prevent mid-air hazards."
+        ],
+        "lesson": "The Suborbital Runway-Decoupling Law: decoupling exo-atmospheric access from multibillion-dollar vertical launch infrastructure through winged horizontal ascent transforms suborbital flight into an agile, survivable tactical asset.",
+        "related": ["04-waverider-corvus", "05-sickle-wing", "35-hopaero-rook"]
+    },
+    {
+        "id": "54",
+        "slug": "54-skyx-flyingfish",
+        "domain": "UAV",
+        "name": "Changsha Nighthawk SkyX Triphibious Bionic Flying Fish Drone",
+        "token": "UAV: AC-LE-SR",
+        "token_full": "UAV: Atmospheric Low-Altitude • Convertible Triphibious Biomimetic Airframe • Liquid/Electric Dual-Regime Power • Subsea Loiter & Fast Aerial Reconnaissance • Submerged Infiltration & Aerial Sprint • Acoustic / RF Dual-Medium Comms",
+        "hal": "ITransMediumTransitionDrive",
+        "hal_def": "Trans-medium triphibious robotic vehicles mandate ITransMediumTransitionDrive and IBiomimeticMorphingWingControl to crossfade motor torque across the 800:1 water-air density ratio, lock morphing wings in 2.0s during surface breach, and compensate for water-shedding trim shifts.",
+        "vendor": "Changsha Nighthawk Technology",
+        "vendor_slug": "changsha-nighthawk",
+        "date": "2026-11-18",
+        "source_name": "Facebook Reel / CGTN Europe / Changsha Nighthawk",
+        "source_url": "https://www.facebook.com/reel/1433213258697820",
+        "advantages": [
+            "800:1 Density Ratio Wing Morphing: folding wings flush against hydrodynamic fuselage slashes underwater drag, enabling 50 km/h subsea dash; 2.0s deployment restores full aerodynamic cruise in air.",
+            "Triphibious Mission Continuity: bridges 3 domains with 60 min aerial flight (96 km/h), 30 min subsea loitering, and indefinite zero-power surface floating.",
+            "Stealthy Submerged Sleeper Posture: lurking submerged beneath surface chop completely defeats airborne counter-UAS radars, thermal imaging pods, and visual tracking."
+        ],
+        "vulnerabilities": [
+            "Water Breach Adhesion & Pitch Trim Shift: surface tension adhesion and water clingage add 10-15% deadweight during breach; wing lock delays exceeding 2.0s induce fatal aerodynamic stalls into the water.",
+            "Subsurface RF Blackout & Inertial Drift: GHz radio frequencies attenuate to zero in seawater; submerged navigation relies on dead-reckoning which accumulates position errors without GNSS fixes.",
+            "Rotary Wing Seal Degradation: articulated wing morphing hinges face cyclic hydrostatic pressure, marine biofouling, and abrasive sand, risking catastrophic short-circuits upon seal failure."
+        ],
+        "lesson": "The Cross-Medium Trans-Density Law: single invariant airframes cannot bridge the 800:1 water-air density ratio without mechanical shape transformation; triphibious supremacy requires active kinematic morphing and dedicated dual-regime propulsion.",
+        "related": ["07-ghostshark-auv", "34-regent-seaglider", "37-oshen-cstar"]
+    },
+    {
+        "id": "55",
+        "slug": "55-bair-arkhan",
+        "domain": "UGV",
+        "name": "BAIR ARKHAN Autonomous Defense System (Mothership-Parasite Concept)",
+        "token": "UGV: GT-DC-MR",
+        "token_full": "UGV: Terrestrial Heavy Tracked • Armored Tracked Carrier / Base • Heavy Diesel Generator & Electric Drive • Multi-Domain Robotic Docking & Mother Base • Multi-Domain Heterogeneous Swarm Coordination • Encrypted Tactical MESH & Satellite Gateway",
+        "hal": "IMothershipSwarmCarrier",
+        "hal_def": "Integrated air-ground defense ecosystems require IMothershipSwarmCarrier and IHeterogeneousDockingManager to coordinate precision autonomous docking, automated battery hot-swapping or high-current charging, and distributed sensor fusion across heterogeneous carrier, quadrupedal, and aerial nodes in GNSS-denied environments.",
+        "vendor": "BAIR MilTech Architecture",
+        "vendor_slug": "bair-miltech",
+        "date": "2026-11-18",
+        "source_name": "Facebook Reel / BAIR MilTech",
+        "source_url": "https://www.facebook.com/reel/1654555996099911",
+        "advantages": [
+            "Hierarchical Containerization (UWE Law 2): division into a protected heavy tracked mothership (C3) and attritable parasites (C1) protects generators and servers, moving light robots without depleting small batteries on march.",
+            "Omnidirectional Tri-Domain Sensor Fusion: aerial drone provides high-altitude look-down C4ISR across 5-10 km; quadruped scouts blind corners and trenches; tracked carrier provides kinetic armor and long-range comms.",
+            "Automated Force Multiplication: decouples human operators from the front line, transforming a single ground vehicle into an autonomous reconnaissance and perimeter interdiction hub."
+        ],
+        "vulnerabilities": [
+            "Legged Robotics Energy Trap (CoT 1.5-3.0): quadruped robots burn excessive power maintaining balance even at standstill; operational radius rarely exceeds 3-5 km, making carrier battery recharge latency a critical bottleneck.",
+            "Rotor Downwash Interference on Mobile Carrier: launching multirotors directly from carrier roof induces severe ground-effect turbulence and hull reflection, requiring mechanical guide cradles or magnetic locks.",
+            "Open RF Jamming Vulnerability: unhardened 2.4/5.8 GHz communication links between carrier and parasites are easily severed under front-line EW, mandating optical tether or edge VIO/SLAM navigation."
+        ],
+        "lesson": "The Heterogeneous Carrier-Parasite Symbiosis Law: in attrition warfare, disparate kinematic nodes (tracks, legs, rotors) are viable only when bound into an integrated symbiosis where the heavy carrier absorbs logistical overhead, freeing lightweight edge nodes to execute specialized tactical actions.",
+        "related": ["02-slimak-ugv", "14-knds-centurio", "45-tencore-mat1lda"]
     }
 ]
 
@@ -913,7 +1510,29 @@ VENDORS_DATA = [
     {"slug": "fitburg", "name": "Fitburg Marine & Subsea Infrastructure Defense", "origin": "Europe / Baltic", "type": "OEM", "platforms": ["Critical Undersea Infrastructure Sentinel", "Seabed Cable Picketers"], "focus": "Continental shelf infrastructure defense, anchor-drag acoustic sabotage detection, stationary seabed sentinels."},
     {"slug": "philippine-carrier", "name": "Philippine Armed Forces / Littoral Defense", "origin": "Philippines", "type": "Defense Force Source", "platforms": ["Chokepoint Saturation USV", "Archipelagic Strike Swarms"], "focus": "Asymmetric chokepoint interdiction, archipelagic strait defense, 360-degree multi-axis swarm saturation, low-RCS wave-piercing hulls."},
     {"slug": "spm-group", "name": "SPM Group & Ukrainian Space Cluster", "origin": "Ukraine", "type": "OEM", "platforms": ["Kondratyuk 1.0 FEU ADR Hunter", "RPO Orbital Platforms"], "focus": "Active Debris Removal (ADR), Low Earth Orbit rendezvous and proximity operations (RPO), non-cooperative tumbling target capture."},
-    {"slug": "fox2sierra", "name": "Fox2Sierra & Tactical Edge Command", "origin": "USA / International", "type": "Strategic Architect", "platforms": ["Joint Multi-Domain C2 Cloud", "Edge Mission Commander"], "focus": "Cross-domain kill-chain orchestration, Air-Ground-Sea heterogeneous swarm fusion, microsecond sensor-to-shooter handoffs."}
+{"slug": "fox2sierra", "name": "Fox2Sierra & Tactical Edge Command", "origin": "USA / International", "type": "Strategic Architect", "platforms": ["Joint Multi-Domain C2 Cloud", "Edge Mission Commander"], "focus": "Cross-domain kill-chain orchestration, Air-Ground-Sea heterogeneous swarm fusion, microsecond sensor-to-shooter handoffs."},
+    {"slug": "regent-craft", "name": "REGENT Craft", "origin": "USA", "type": "OEM", "platforms": ["REGENT Viceroy Seaglider"], "focus": "Tri-modal wing-in-ground-effect craft, deployable hydrofoils, distributed electric propulsion blown flaps."},
+    {"slug": "hop-aero", "name": "Hop Aero", "origin": "USA", "type": "OEM", "platforms": ["Hop Aero ROOK Cargo Rocket"], "focus": "Container-launched suborbital cargo rockets, supersonic VTVL re-entry, terrain-relative terminal touchdown."},
+    {"slug": "avidrone-aerospace", "name": "Avidrone Aerospace", "origin": "Canada / USA", "type": "OEM", "platforms": ["Avidrone 740T", "Avidrone 210TL"], "focus": "Tandem-rotor disc dynamics, gas turbine heavy-fuel cargo rotorcraft, automated slung-load pickup."},
+    {"slug": "oshen-ltd", "name": "Oshen Ltd", "origin": "UK", "type": "OEM", "platforms": ["Oshen C-Star PC13"], "focus": "Micro-scale autonomous wingsail USVs, perpetual wind-propelled ocean transit, distributed acoustic sentinels."},
+    {"slug": "preneu", "name": "PRENEU", "origin": "South Korea", "type": "OEM", "platforms": ["MILVUS T400", "PANDION Q1200"], "focus": "Lift+Cruise tactical hybrid UAS, closed-loop wind-compensated ballistic munition drops, sovereign flight controllers."},
+    {"slug": "airbus-aerovel", "name": "Airbus & Aerovel", "origin": "France / USA", "type": "OEM", "platforms": ["Airbus Flexrotor VTOL"], "focus": "Single-proprotor tailsitter VTOL UAS, two-stroke heavy-fuel endurance, small shipboard automated recovery."},
+    {"slug": "world-titan-forces", "name": "World Titan Forces Research", "origin": "International", "type": "Research Source", "platforms": ["Solaris One GEO Platform"], "focus": "Theoretical geostationary megastructures, sparse-aperture optical interferometry, solar radiation pressure dynamics."},
+    {"slug": "chaklun-aviation", "name": "Chaklun Aviation Frontline Cluster", "origin": "Ukraine", "type": "Frontline Cluster", "platforms": ["Chaklun Tactical Reconnaissance UAV"], "focus": "Hand-launched EPP flying wings, complete radio-silent dead-reckoning navigation, low-RCS front-line scouting."},
+    {"slug": "intelligent-energy", "name": "Intelligent Energy", "origin": "UK", "type": "OEM", "platforms": ["IE-SOAR Hydrogen Fuel Cell Modules"], "focus": "Lightweight open-cathode PEM fuel cells, 350-bar composite hydrogen storage, hybrid battery power arbitration."},
+    {"slug": "avilus-gmbh", "name": "Avilus GmbH", "origin": "Germany", "type": "OEM", "platforms": ["Avilus Grille MEDEVAC eVTOL"], "focus": "Autonomous heavy-lift CASEVAC coaxial hexacopters, physiological G-clamping, ISO container field deployment."},
+    {"slug": "ziyan-technology", "name": "ZIYAN Technology", "origin": "China / International", "type": "OEM", "platforms": ["Grey Whale G1 Cargo Helicopter"], "focus": "Modular single-rotor electric cargo helicopters, automated standoff winch hoisting, high-altitude mountain envelopes."},
+    {"slug": "tencore", "name": "TENCORE", "origin": "Ukraine", "type": "OEM", "platforms": ["MAT1LDA 8x8 Amphibious Carrier", "TerMIT 2.0 Tracked UGV"], "focus": "Amphibious all-wheel-drive mothership carriers, mother-parasite tactical deployment, riverine combat engineering."},
+    {"slug": "nodrics", "name": "NODRICS", "origin": "Ukraine", "type": "OEM", "platforms": ["NODRICS MAT1LDA 8x8 Logistics UGV"], "focus": "Internal combustion amphibious tactical supply, heavy water-drag propulsion, stabilized casualty evacuation."},
+    {"slug": "naval-group", "name": "Naval Group", "origin": "France", "type": "OEM", "platforms": ["Naval Group UCUV Demonstrator"], "focus": "Uncrewed combat underwater vehicles, continental shelf sea denial, heavy torpedo ejection ballast trim control."},
+    {"slug": "nextgen-airpower", "name": "US NextGen Airpower Research", "origin": "USA", "type": "Research Source", "platforms": ["Sentinel Corebreak Directed-Energy Platform"], "focus": "Airborne high-energy laser interdiction, transonic aero-optical boundary layer correction, phase-change thermal management."},
+    {"slug": "dassault-aviation", "name": "Dassault Aviation & French Air Force", "origin": "France", "type": "OEM", "platforms": ["Rafale F5 Loyal Wingman UCAV"], "focus": "Supersonic tailless stealth CCAs, nEUROn flight heritage, manned-unmanned teaming, aeroelastic load limiting."},
+    {"slug": "vyriy-industries", "name": "Vyriy Industries Frontline Cluster", "origin": "Ukraine", "type": "Frontline Cluster", "platforms": ["Vyriy SLAVIC Tactical Reconnaissance Copter"], "focus": "Solid-state battery multirotors, sovereign encrypted digital datalinks, anti-AeroScope pilot security."},
+    {"slug": "energy-book", "name": "Energy Book Tactical Systems", "origin": "International", "type": "Research Source", "platforms": ["Canister Arrow Tube-Launched Micro-UAV"], "focus": "Pneumatic canister tube-launch, sub-second folding-wing deployment, protected pusher propeller loitering munitions."},
+    {"slug": "rovertech", "name": "RoverTech Frontline Cluster", "origin": "Ukraine", "type": "Frontline Cluster", "platforms": ["ZMIY Droid 12.7 Combat UGV"], "focus": "Elevating pantograph remote weapon stations, defilade 12.7mm heavy fire support, skid-steer recoil compensation."},
+    {"slug": "nebesa-aerospace", "name": "Nebesa Aerospace", "origin": "Czech Republic / Ukraine", "type": "OEM", "platforms": ["NEBESA Suborbital Spaceplane"], "focus": "Horizontal-takeoff suborbital spaceplanes, combined turbojet-rocket propulsion, blended aerodynamic/reaction controls."},
+    {"slug": "changsha-nighthawk", "name": "Changsha Nighthawk Technology", "origin": "China", "type": "OEM", "platforms": ["SkyX Bionic Flying Fish Triphibious Drone"], "focus": "Trans-medium triphibious morphing wing robotics, 800:1 water-air density transition, stealth subsea loitering."},
+    {"slug": "bair-miltech", "name": "BAIR MilTech Architecture", "origin": "International", "type": "Research Source", "platforms": ["BAIR ARKHAN Autonomous Defense System"], "focus": "Heterogeneous carrier-parasite defense symbiosis, autonomous docking/charging stations, multi-domain edge AI fusion."}
 ]
 
 DOMAINS_DATA = [
@@ -923,7 +1542,14 @@ DOMAINS_DATA = [
         "medium": "Atmospheric Airspace (0 to 30 km)",
         "governing_laws": "Aerodynamic Lift-to-Drag (L/D), Mach number shock detachment, boundary-layer aerothermodynamics, wing loading.",
         "legacy_trap": "STANAG 4670 & DoD MTOW/HALE/MALE classifications rely on arbitrary weight and altitude boxes, ignoring kinetic threat omission limits and FPV interceptor speeds.",
-        "cases": ["01-honda-evtol", "03-stealth-ucav", "04-waverider-corvus", "05-sickle-wing", "12-mq25-stingray", "13-fury-ghostbat", "16-rq81-diana", "18-vantage-tacitframe", "19-petrel-aero-sky", "20-tusas-aksungur", "23-lpp-jwi4000", "25-stat-caylus-b2lt", "26-kashmir-sentinel"]
+        "cases": [
+            "01-honda-evtol", "03-stealth-ucav", "04-waverider-corvus", "05-sickle-wing",
+            "12-mq25-stingray", "13-fury-ghostbat", "16-rq81-diana", "18-vantage-tacitframe",
+            "19-petrel-aero-sky", "20-tusas-aksungur", "23-lpp-jwi4000", "25-stat-caylus-b2lt",
+            "26-kashmir-sentinel", "35-hopaero-rook", "38-preneu-tactical", "39-airbus-flexrotor",
+            "41-chaklun-uav", "42-intelligent-energy-soar", "48-sentinel-corebreak",
+            "49-xq45-fibertailor", "51-canister-arrow", "53-nebesa-spaceplane", "54-skyx-flyingfish"
+        ]
     },
     {
         "code": "UCV",
@@ -931,7 +1557,10 @@ DOMAINS_DATA = [
         "medium": "Low-Altitude Disc-Loaded Aerodynamics & Fluid Power",
         "governing_laws": "Rotor disc loading (T/A), zero stall speed (V_stall = 0), momentum theory, advancing/retreating blade flapping dynamics, digital displacement fluid power.",
         "legacy_trap": "Conflating combat rotorcraft with hobbyist slang ('FPV'). FPV is a pilot screen mode, not a cyber-physical combat aircraft category.",
-        "cases": ["09-capstone-coaxial", "15-tekever-ar6", "21-tactical-ucv-spectrum"]
+        "cases": [
+            "09-capstone-coaxial", "15-tekever-ar6", "21-tactical-ucv-spectrum",
+            "36-avidrone-tandem", "43-avilus-grille", "44-ziyan-greywhale-g1", "50-vyriy-slavic"
+        ]
     },
     {
         "code": "UGV",
@@ -939,7 +1568,11 @@ DOMAINS_DATA = [
         "medium": "Terrestrial & Amphibious Terrain",
         "governing_laws": "Bekker-Wong soil mechanics, drawbar pull (F_pull = μ * m * g), ground pressure (kg/cm²), rolling resistance, steering slip ratios, kinetic evasion velocity.",
         "legacy_trap": "Amateur slang ('vozyk', 'cart') and marketing claims of 10-tonne towing based on electric motor kW while ignoring soil shear failure in mud.",
-        "cases": ["02-slimak-ugv", "08-unex-artillery", "14-knds-centurio", "17-frodo-ugv", "22-stratonex-varan", "24-lurtz-kill-zone", "27-rusi-rasputitsa"]
+        "cases": [
+            "02-slimak-ugv", "08-unex-artillery", "14-knds-centurio", "17-frodo-ugv",
+            "22-stratonex-varan", "24-lurtz-kill-zone", "27-rusi-rasputitsa",
+            "45-tencore-mat1lda", "46-nodrics-mat1lda", "52-rovertech-zmiy", "55-bair-arkhan"
+        ]
     },
     {
         "code": "UUV",
@@ -947,7 +1580,9 @@ DOMAINS_DATA = [
         "medium": "Sub-surface Hydrospace (0 to 11,000m)",
         "governing_laws": "Hydrostatic pressure gradient (1 atm / 10m), acoustic transmission loss, acoustic cavitation, boundary-layer drag, parasitic energy harvesting.",
         "legacy_trap": "Classifying submersibles by geometric hull form factors (torpedo vs box) rather than physical Depth Horizons (D0 to D5) and acoustic signatures.",
-        "cases": ["07-ghostshark-auv", "11-lockheed-lamprey", "29-fitburg-sentinel"]
+        "cases": [
+            "07-ghostshark-auv", "11-lockheed-lamprey", "29-fitburg-sentinel", "47-navalgroup-ucuv"
+        ]
     },
     {
         "code": "USV",
@@ -955,7 +1590,10 @@ DOMAINS_DATA = [
         "medium": "Ocean Surface Boundary Layer (Air-Sea Interface)",
         "governing_laws": "Froude number, wave-piercing slender hull dynamics, Sea State (Beaufort scale) vertical g-shock limits, transverse metacentric height (GM_T).",
         "legacy_trap": "Using fragile recreational planing speedboats for open-ocean missions; high vertical g-shocks (>6g) destroy gimbal sensors and break hulls in Sea State 4+.",
-        "cases": ["06-exail-usv", "28-south-china-reef", "30-philippine-carrier"]
+        "cases": [
+            "06-exail-usv", "28-south-china-reef", "30-philippine-carrier",
+            "34-regent-seaglider", "37-oshen-cstar"
+        ]
     },
     {
         "code": "UOV",
@@ -963,11 +1601,11 @@ DOMAINS_DATA = [
         "medium": "Low Earth Orbit & Cislunar Space (160 to 36,000 km)",
         "governing_laws": "Keplerian two-body celestial mechanics, Clohessy-Wiltshire relative equations, Tsiolkovsky rocket equation ΔV limits, solar radiation pressure.",
         "legacy_trap": "Sci-fi free-flight orbital tropes: changing orbital inclination by 15° at LEO costs ~2,000 m/s ΔV, locking chemical hunters into narrow co-planar targets.",
-        "cases": ["10-orbital-guardian", "31-spm-kondratyuk"],
+        "cases": ["10-orbital-guardian", "31-spm-kondratyuk", "40-solaris-one"],
         "axis_legend": {
-            "octet_1": "Orbital Regime & Container Tier (L: Low Earth Orbit / M: Medium Tactical / S: Sun-Synchronous)",
-            "octet_2": "Propulsion & Mission (C: Chemical Reaction Thruster / A: Active Debris Removal / RPO)",
-            "octet_3": "Doctrine & Comms (H: High-Survivability Space Shield / R: Radiation-Hardened Cross-Link)"
+            "octet_1": "Orbital Regime & Container Tier (L: Low Earth Orbit / M: Medium Tactical / S: Sun-Synchronous / G: Geostationary Orbit)",
+            "octet_2": "Propulsion & Mission (C: Chemical Reaction Thruster / S: Solar Photovoltaic / A: Active Debris Removal / RPO)",
+            "octet_3": "Doctrine & Comms (H: High-Survivability Space Shield / M: Multi-Aperture Coordination / R: Radiation-Hardened / D: Deep-Space Gateway)"
         }
     }
 ]
@@ -3415,13 +4053,13 @@ ALLOWED_COLLISIONS = {
 }
 
 def validate_uwe_integrity(cases, vendors, domains, docs_root):
-    if len(cases) != 32:
-        raise ValueError(f"Expected 32 cases, found {len(cases)}")
-    if len({c["slug"] for c in cases}) != 32:
+    if len(cases) != 54:
+        raise ValueError(f"Expected 54 cases, found {len(cases)}")
+    if len({c["slug"] for c in cases}) != 54:
         raise ValueError("Duplicate case slug detected")
-    if len(vendors) != 30:
-        raise ValueError(f"Expected 30 vendors, found {len(vendors)}")
-    if len({v["slug"] for v in vendors}) != 30:
+    if len(vendors) != 52:
+        raise ValueError(f"Expected 52 vendors, found {len(vendors)}")
+    if len({v["slug"] for v in vendors}) != 52:
         raise ValueError("Duplicate vendor slug detected")
     if len(domains) != 6 or {d["code"] for d in domains} != ALLOWED_DOMAINS - {"C2"}:
         raise ValueError("Expected the six physical domains, with C2 classified separately")
@@ -3435,10 +4073,10 @@ def validate_uwe_integrity(cases, vendors, domains, docs_root):
         if any(case_domains[slug] != d["code"] for slug in d["cases"]):
             raise ValueError(f"Incorrect case assignment in domain {d['code']}")
 
-    for idx, c in enumerate(cases):
-        prefix = f"{idx + 1:02d}-"
+    for c in cases:
+        prefix = f"{c['id']}-"
         if not c["slug"].startswith(prefix):
-            raise ValueError(f"""Case {c["slug"]} does not start with sequential prefix {prefix}""")
+            raise ValueError(f"""Case {c["slug"]} does not start with ID prefix {prefix}""")
 
     vendor_slugs = {v["slug"] for v in vendors}
     for v in vendors:
@@ -3486,8 +4124,8 @@ def validate_uwe_integrity(cases, vendors, domains, docs_root):
 
     cases_dir = (Path(docs_root) / "cases").resolve()
     generated_case_files = list(cases_dir.glob("[0-9][0-9]-*.html"))
-    if len(generated_case_files) != 32:
-        raise ValueError(f"Expected 32 generated case files, found {len(generated_case_files)}")
+    if len(generated_case_files) != 54:
+        raise ValueError(f"Expected 54 generated case files, found {len(generated_case_files)}")
     for rel_path in ("c2/index.html", C2_ARTICLE_PATH):
         if not (Path(docs_root) / rel_path).is_file():
             raise ValueError(f"Missing C2 article page: {rel_path}")
@@ -3511,7 +4149,7 @@ def validate_uwe_integrity(cases, vendors, domains, docs_root):
             snippet = content[max(0, idx - 20):min(len(content), idx + 40)].replace("\n", " ")
             raise ValueError(f"Workspace path leak in {p}: ...{snippet}...")
 
-    print("🛡️ [INTEGRITY CHECK PASSED] All 32 cases, 30 vendors, 6 physical domains, C2 articles and docs/ validated with zero leaks.")
+    print("🛡️ [INTEGRITY CHECK PASSED] All 54 cases, 52 vendors, 6 physical domains, C2 articles and docs/ validated with zero leaks.")
 
 def main():
     print("=" * 65)
