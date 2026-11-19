@@ -16,7 +16,7 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">32 Benchmarks</a>
+    <a href="../cases/index.html" class="">54 Benchmarks</a>
     <a href="../c2/index.html" class="">C2 &amp; Articles</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="">HAL Registry</a>
@@ -168,7 +168,7 @@
     
 
     <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
-      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UCV (3 Cases)</h2>
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UCV (7 Cases)</h2>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UCV physical envelope:</p>
       <div>
         <article class="reddit-card case-item" data-domain="UCV" data-vendor="bae-falconworks" id="case-09">
@@ -315,6 +315,202 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="../cases/09-capstone-coaxial.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #09</a><a href="../cases/15-tekever-ar6.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #15</a><a href="../cases/23-lpp-jwi4000.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #23</a>
       <a href="../cases/21-tactical-ucv-spectrum.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UCV" data-vendor="avidrone-aerospace" id="case-36">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-16</span>
+    <span>•</span>
+    <a href="../domains/ucv.html" class="badge badge-ucv">UCV</a>
+    <a href="../vendors/index.html#avidrone-aerospace" class="badge badge-vendor">Avidrone Aerospace</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/36-avidrone-tandem.html">Case #36: Avidrone Aerospace Tandem-Rotor Cargo UCV (740T & 210TL)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UCV: TL-TH-MS</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UCV: Tactical Tandem-Rotor Disc • Heavy Logistics Airframe • Turboshaft Heavy-Fuel Engine • Heavy Tactical Cargo Resupply • Semi-Autonomous Mission Flight • MESH & Satellite Command Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#ITandemRotorDynamics"><code>ITandemRotorDynamics</code></a></div>
+    <div><em>"Autonomous tandem-rotor copter systems require ITandemRotorDynamics to continuously arbitrate differential collective pitch across counter-rotating rotor discs, compensating for rapid center-of-gravity shifts during autonomous pickup and release of 227-kg tactical payloads on unprepared forward terrain."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>100% Useful Lift Power Conversion: counter-rotating tandem rotors cancel net torque aerodynamically, eliminating the tail rotor that wastes 12-15% of engine shaft power.</li><li>Lower Disc Loading vs Multirotors: two large-diameter rotor discs drastically reduce induced power losses vs multirotor propellers, delivering the hover efficiency needed to lift 227 kg payloads.</li><li>Longitudinal Center-of-Gravity Invariance: shifting sling loads or sloshing liquid cargo is trimmed via differential collective pitch between rotors rather than parasite trim tabs.</li><li>Heavy Fuel Frontline Logistics: the 740T gas turbine operates on standard battlefield Jet A / JP-8 / Diesel, eliminating forward battery charging bottlenecks.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Mechanical Complexity & Maintenance: dual swashplates, collective pushrods, synchronization cross-shafting, and gearboxes introduce mechanical wear points in dusty frontline conditions.</li><li>Rotor Wake Intermeshing Vibrations: forward flight pushes front rotor wake into the rear disc, creating periodic aerodynamic interference and dynamic blade stress.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Kinematic Primacy of Rotorcraft in UCV: confirms that vertical lift platforms governed by disc loading belong strictly to UCV; when cargo exceeds 50-200 kg, multirotors fail due to induced power scaling, mandating large disc-loaded rotorcraft.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/3237345289784878" target="_blank" rel="noopener">Facebook Reel / Defense Advancement ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/09-capstone-coaxial.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #09</a><a href="../cases/15-tekever-ar6.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #15</a><a href="../cases/21-tactical-ucv-spectrum.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #21</a>
+      <a href="../cases/36-avidrone-tandem.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UCV" data-vendor="avilus-gmbh" id="case-43">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-16</span>
+    <span>•</span>
+    <a href="../domains/ucv.html" class="badge badge-ucv">UCV</a>
+    <a href="../vendors/index.html#avilus-gmbh" class="badge badge-vendor">Avilus GmbH</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/43-avilus-grille.html">Case #43: Avilus Grille (Heavy-Lift Autonomous MEDEVAC eVTOL)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UCV: CL-EB-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UCV: Coaxial Heavy-Lift Multirotor • Heavy Airframe / Stretcher Capsule • Electric Battery Storage • Autonomous Combat CASEVAC & Extraction • Autonomous Flight & Attitude Clamping • Encrypted Direct Radio Datalink</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#ICoaxialRotorFailureTolerantDynamics"><code>ICoaxialRotorFailureTolerantDynamics</code></a></div>
+    <div><em>"Heavy-lift autonomous medical evacuation rotorcraft mandate ICoaxialRotorFailureTolerantDynamics and IAutonomousCasEvacAttitudeControl to dynamically redistribute coaxial motor thrust during motor/ESC failures while enforcing physiological acceleration limits (G_z, G_y <= 1.2g) and attitude clamping to preserve casualty hemodynamics."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Zero-Risk Battlefield Extraction in the Golden Hour: eliminates human flight crew risk in hostile low-altitude air defense bubbles; extracts wounded within the critical 60-minute window across minefields and severed ground lines.</li><li>Coaxial Hexacopter Thrust Redundancy: 12 rotors configured in 6 coaxial pairs with independent inverters provide N-1 and N-2 failure tolerance, allowing safe recovery upon rotor or ESC failure.</li><li>Enclosed Climate-Controlled Capsule with Biometric Telemetry: protects casualties from fragments, rotor downwash, and hypothermia while live biometric transmission enables pre-arrival triage by rear surgeons.</li><li>Intermodal C3 ISO Container Logistics: disassembles to fit inside a standard 20-ft ISO container; two soldiers can assemble the drone tool-free in under 15 minutes.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Severe Battery Energy Density & Range Ceiling: pure battery storage limits operational radius to ~25 km outbound + ~25 km return and 20-45 min flight time at 750 kg MTOW.</li><li>Acoustic & Radar Cross-Section Signature: 7.8-meter diameter rotorcraft with 12 spinning blades generates a massive acoustic footprint (audible from 2-3 km) and prominent radar micro-Doppler modulation.</li><li>Downwash Hazards in Unprepared LZs: 750 kg MTOW on a high-disc-loading footprint generates intense downwash winds (>20 m/s), creating brownout conditions that blind sensors and endanger ground crews.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> The Autonomous CASEVAC Archetype & Disc Loading Limits: validates replacing crewed helicopters with attritable heavy-lift rotorcraft for tactical evacuation, but exposes the limits of lithium chemistry; scaling medevac beyond 25 km demands hybrid turbogenerators or fixed wings.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1812626446539196" target="_blank" rel="noopener">Facebook Reel / Defense Advancement ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/09-capstone-coaxial.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #09</a><a href="../cases/15-tekever-ar6.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #15</a><a href="../cases/21-tactical-ucv-spectrum.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #21</a>
+      <a href="../cases/43-avilus-grille.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UCV" data-vendor="ziyan-technology" id="case-44">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-16</span>
+    <span>•</span>
+    <a href="../domains/ucv.html" class="badge badge-ucv">UCV</a>
+    <a href="../vendors/index.html#ziyan-technology" class="badge badge-vendor">ZIYAN Technology</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/44-ziyan-greywhale-g1.html">Case #44: ZIYAN Grey Whale G1 (Modular Heavy-Load Cargo Unmanned Helicopter)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UCV: HL-EB-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UCV: Single-Rotor Helicopter Disc • Heavy Cargo Fuselage • Electric Battery Storage • Autonomous Standoff Winch Resupply • Autonomous Pendulum-Damped Flight • Encrypted Direct Radio Datalink</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IAutonomousCargoWinchDrive"><code>IAutonomousCargoWinchDrive</code></a></div>
+    <div><em>"Tactical unmanned cargo helicopters deploying slung loads require IAutonomousCargoWinchDrive and IHelicopterRotorDynamics to feed forward cable pendulum oscillation vectors into cyclic swashplate trim, active-damping swinging loads during 6,000m high-altitude hover while autonomously managing crosswind yaw compensation."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Aerodynamic Figure of Merit (FM >= 0.72): single 2.18m 4-blade rotor disc generates drastically lower disc loading (~12 kg/m^2) than multirotors, lifting 15-21 kg payloads on battery power.</li><li>High-Altitude Mountain Envelope (6,000 m Ceiling): high blade area ratio and variable collective pitch maintain air density lift at extreme altitudes where fixed-pitch multirotors stall.</li><li>Modular C2 Logistics Footprint: tool-free quick-release rotor blades, detachable tail boom, and folding gear collapse airframe into an ultra-compact package for pickup transport and 10-minute field assembly.</li><li>Precision Standoff Winch Delivery: automated winch hoist delivers supplies directly to jagged mountain terrain, tree canopies, or trenches without landing.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Mechanical Single Points of Failure: swashplate linkages, cyclic pitch bearings, reduction gearing, and tail rotor drive shaft introduce mechanical wear with zero redundancy.</li><li>Tail Rotor Power Tax & Obstacle Risk: tail rotor expends 10-15% of battery power purely on anti-torque counteraction and is vulnerable to brush or ground strikes during low hover.</li><li>Battery Operational Radius (~20 km): 13 kg lithium battery pack restricts full-load radius to ~20 km, requiring frequent battery swapping in forward logistics loops.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> Kinematic Primacy of Single-Rotor Helicopters in Tactical Logistics: for vertical cargo lift between 15-50 kg in high-altitude mountain environments, single-rotor variable-pitch helicopters dramatically outperform multirotors in aerodynamic efficiency and ceiling.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/1773414080378754" target="_blank" rel="noopener">Facebook Reel / ZIYAN Technology ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/09-capstone-coaxial.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #09</a><a href="../cases/15-tekever-ar6.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #15</a><a href="../cases/36-avidrone-tandem.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #36</a>
+      <a href="../cases/44-ziyan-greywhale-g1.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UCV" data-vendor="vyriy-industries" id="case-50">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-18</span>
+    <span>•</span>
+    <a href="../domains/ucv.html" class="badge badge-ucv">UCV</a>
+    <a href="../vendors/index.html#vyriy-industries" class="badge badge-vendor">Vyriy Industries Frontline Cluster</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/50-vyriy-slavic.html">Case #50: Vyriy SLAVIC (Tactical Reconnaissance Copter / Sovereign Mavic Alternative)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UCV: CB-ER-DR</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UCV: Compact Quadrotor Multirotor • Backpack Tactical Airframe • Solid-State Electric Battery Pack • Tactical Forward Reconnaissance • Dead-Reckoning & Optical Odometry • Directional Encrypted Tactical RF Link</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#IVisualInertialOdometryNav"><code>IVisualInertialOdometryNav</code></a></div>
+    <div><em>"Tactical reconnaissance multirotors require IVisualInertialOdometryNav and ISolidStateBatteryManagement to sustain drift-free visual-inertial hover in GNSS-denied corridors while optimizing solid-state battery thermal discharge to break the 90-minute endurance barrier and protect crews from kill-zone counter-battery tracking."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Kill-Zone Expansion Standoff: 30 km radius and 90-120 min endurance allow crews to launch from 15-20 km behind the contact line, escaping the lethal forward kill-zone that endangered Mavic 3 pilots.</li><li>Solid-State Chemistry (350-400 Wh/kg): 40,000 mAh pack yields 3x loiter duration of standard Li-Ion pouch cells, stable winter discharge, and puncture fire resilience.</li><li>Anti-AeroScope Sovereign Security: eliminates DJI DroneID telemetry leakage, preventing pilot coordinate interception and post-crash flight-log extraction.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Logistics Footprint of Directional Tracker Mast: sustaining 30 km telemetry requires an elevated ground station with pan-tilt directional antennas, increasing deployment time and position profile.</li><li>Visual-Inertial Odometry Night Drift: featureless terrain in zero-illumination nights or dense fog causes optical flow integration drift, requiring radio beacon triangulation to maintain station.</li><li>Component Sourcing Dependencies: while frame, firmware, and controllers are sovereign, core motors and optical zoom sensors remain dependent on external supply chains.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> The Kill-Zone Standoff Principle: frontline tactical reconnaissance cannot rely on consumer toy metrics or unencrypted protocols; when the lethal envelope expands, tactical multirotors must transition from handheld toys to squad-level endurance tools powered by solid-state chemistry and optical odometry.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://www.facebook.com/reel/2607037159801948" target="_blank" rel="noopener">Facebook Reel / Гаряча Зона / Vyriy Industries ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/09-capstone-coaxial.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #09</a><a href="../cases/21-tactical-ucv-spectrum.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #21</a><a href="../cases/41-chaklun-uav.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #41</a>
+      <a href="../cases/50-vyriy-slavic.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case #41: Chaklun (Tactical Reconnaissance Fixed-Wing UAS) | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of Chaklun (Tactical Reconnaissance Fixed-Wing UAS) (UAV: AH-EB-AR). Physical advantages, failure modes, and HAL contract IRadioSilentDeadReckoningNav.">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/cases/41-chaklun-uav.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "UWE Case #41: Chaklun (Tactical Reconnaissance Fixed-Wing UAS) \u2014 Cyber-Physical Architectural Analysis",
+  "description": "Empirical evaluation of Chaklun (Tactical Reconnaissance Fixed-Wing UAS) (UAV: AH-EB-AR) under Hardware Abstraction Layer IRadioSilentDeadReckoningNav. The Attrition-Resistant Tactical Scout Archetype: in dense EW environments, survivability does not stem from complex frequency-hopping alone, but from the physical ability to cut all transmissions, navigate purely on onboard physics-based sensor fusion, and absorb physical punishment.",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "datePublished": "2026-11-16",
+  "url": "https://sshill.github.io/UWE-concept-proof/cases/41-chaklun-uav.html",
+  "keywords": [
+    "UAV",
+    "UAV: AH-EB-AR",
+    "IRadioSilentDeadReckoningNav",
+    "Chaklun Aviation Frontline Cluster",
+    "UWE Standard",
+    "STANAG 4670 replacement"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="active">54 Benchmarks</a>
+    <a href="../c2/index.html" class="">C2 &amp; Articles</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 54 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: 2026-11-16</span>
+        <span>•</span>
+        <a href="../domains/uav.html" class="badge badge-uav">UAV</a>
+        <a href="../vendors/index.html#chaklun-aviation" class="badge badge-vendor">Chaklun Aviation Frontline Cluster</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #41: Chaklun (Tactical Reconnaissance Fixed-Wing UAS)
+      </h1>
+      
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>UAV: AH-EB-AR</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">UAV: Atmospheric Low-Altitude • Hand-Launched EPP Flying Wing Airframe • Electric Battery Storage • Tactical Forward Reconnaissance • Autonomous Radio-Silent Dead-Reckoning • Autonomous Optical Navigation & RF Silence</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#IRadioSilentDeadReckoningNav"><code>IRadioSilentDeadReckoningNav</code></a></div>
+        <div style="line-height:1.5;"><em>"Tactical reconnaissance fixed-wing UAS operating under complete GNSS and RF datalink denial mandate IRadioSilentDeadReckoningNav to maintain 3D trajectory tracking and autonomous return-to-base via Pitot-static airspeed and 6-DoF inertial sensor fusion without emitting radio-frequency signatures."</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points"><li>Ultra-Low Radar Cross Section (RCS): monolithic expanded polypropylene (EPP) construction with minimal metallic internal structure yields exceptionally low radar signature, evading tactical air defenses at operational altitudes.</li><li>Zero Logistics Footprint: hand-launch capability eliminates catapults or cleared runways; belly landing on unpaved ground eliminates nets and parachutes, enabling instantaneous frontline redeployment.</li><li>Aerodynamic Glide Efficiency: fixed-wing high-wing pusher architecture achieves 60-120 min endurance and 50-100+ km operational mission routes on battery power alone.</li></ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points"><li>Dead-Reckoning Wind Drift Accumulation: long-duration flight under GNSS denial accumulates position drift from unmeasured crosswind gusts, requiring periodic optical flow corrections.</li><li>Belly Landing Abrasion: repeated landings on frozen soil, gravel, or asphalt degrade the lower EPP fuselage skin and camera ports.</li><li>Lightweight Sensor Limitations: compact backpack footprint limits payload to micro-gimbals or fixed cameras, relying on airframe banking for off-axis coverage.</li></ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> The Attrition-Resistant Tactical Scout Archetype: in dense EW environments, survivability does not stem from complex frequency-hopping alone, but from the physical ability to cut all transmissions, navigate purely on onboard physics-based sensor fusion, and absorb physical punishment.
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="https://www.facebook.com/reel/2318493582236910" target="_blank" rel="noopener">Facebook Reel / Defense Advancement & Ukraine Defense Portal ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>Chaklun Aviation Frontline Cluster</strong></div>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/reel/2318493582236910" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        <p style="margin:0.25rem 0;"><a href="16-rq81-diana.html" class="badge badge-hal">Case #16 Study →</a></p><p style="margin:0.25rem 0;"><a href="18-vantage-tacitframe.html" class="badge badge-hal">Case #18 Study →</a></p><p style="margin:0.25rem 0;"><a href="26-kashmir-sentinel.html" class="badge badge-hal">Case #26 Study →</a></p>
+      </div>
+    </article>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

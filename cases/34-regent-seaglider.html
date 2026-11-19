@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case #34: REGENT Seaglider (Viceroy Tri-Modal WIG) | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of REGENT Seaglider (Viceroy Tri-Modal WIG) (USV: LG-VB-AS). Physical advantages, failure modes, and HAL contract ITriModalSeagliderTransitionDrive.">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/cases/34-regent-seaglider.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "UWE Case #34: REGENT Seaglider (Viceroy Tri-Modal WIG) \u2014 Cyber-Physical Architectural Analysis",
+  "description": "Empirical evaluation of REGENT Seaglider (Viceroy Tri-Modal WIG) (USV: LG-VB-AS) under Hardware Abstraction Layer ITriModalSeagliderTransitionDrive. Regulatory & Physical Decoupling: classifying high-speed coastal transit under maritime WIG standards (IMO MSC/Circ.1054) rather than FAA aviation codes bypasses airport infrastructure, while tri-modal hydrofoil-WIG physics conquers the hydrodynamic power barrier.",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "datePublished": "2026-11-16",
+  "url": "https://sshill.github.io/UWE-concept-proof/cases/34-regent-seaglider.html",
+  "keywords": [
+    "USV",
+    "USV: LG-VB-AS",
+    "ITriModalSeagliderTransitionDrive",
+    "REGENT Craft",
+    "UWE Standard",
+    "STANAG 4670 replacement"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="active">54 Benchmarks</a>
+    <a href="../c2/index.html" class="">C2 &amp; Articles</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 54 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: 2026-11-16</span>
+        <span>•</span>
+        <a href="../domains/usv.html" class="badge badge-usv">USV</a>
+        <a href="../vendors/index.html#regent-craft" class="badge badge-vendor">REGENT Craft</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #34: REGENT Seaglider (Viceroy Tri-Modal WIG)
+      </h1>
+      
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>USV: LG-VB-AS</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">USV: Littoral Ground-Effect • High-Speed Glider Hull • Distributed Electric Vectoring • Maritime High-Speed Transport • Autonomous Coastal Infiltration • Satellite & Coastal AIS / Mesh</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#ITriModalSeagliderTransitionDrive"><code>ITriModalSeagliderTransitionDrive</code></a></div>
+        <div style="line-height:1.5;"><em>"Tri-modal ground-effect seagliders require ITriModalSeagliderTransitionDrive to crossfade hydrodynamic foil lift to aerodynamic wing ground-effect lift, coordinating distributed propeller blown-flap angles to neutralize violent pitch trim divergence and prevent height instability during foil retraction at 100+ km/h."</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points"><li>Ground-Effect Induced Drag Halving: flying in close ground effect (h/c < 0.5) eliminates downwash and tip vortices, boosting cruise L/D > 22-25 and reaching 300 km/h on battery power.</li><li>Hydrofoil R_hump Solution: deployable hydrofoils lift the hull cleanly at 30-75 km/h, slashing water drag by 70-80% and eliminating wave-slamming accelerations in Sea State 3.</li><li>Distributed Electric Propulsion (DEP): 8-12 wing-mounted electric propellers blow directly across full-span flaps, preventing stall and providing robust low-speed control authority.</li></ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points"><li>Center-of-Pressure Transition Shift: withdrawing hydrofoils transfers vehicle support from water struts to wings, triggering pitching moment divergence that requires microsecond blown-flap torque arbitration.</li><li>Ground Effect Pitch-Height Coupling: aerodynamic pitch instability close to water demands continuous (>100 Hz) radar/lidar surface-tracking to prevent porpoising.</li><li>Saline Corrosion & Cavitation: operating distributed nacelles in high-velocity sea spray accelerates leading-edge erosion, demanding hermetic IP68 motor sealing.</li></ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> Regulatory & Physical Decoupling: classifying high-speed coastal transit under maritime WIG standards (IMO MSC/Circ.1054) rather than FAA aviation codes bypasses airport infrastructure, while tri-modal hydrofoil-WIG physics conquers the hydrodynamic power barrier.
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="https://www.facebook.com/reel/1091309223663639" target="_blank" rel="noopener">Facebook Reel / REGENT Craft ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>REGENT Craft</strong></div>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/reel/1091309223663639" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        <p style="margin:0.25rem 0;"><a href="06-exail-usv.html" class="badge badge-hal">Case #06 Study →</a></p><p style="margin:0.25rem 0;"><a href="28-south-china-reef.html" class="badge badge-hal">Case #28 Study →</a></p><p style="margin:0.25rem 0;"><a href="30-philippine-carrier.html" class="badge badge-hal">Case #30 Study →</a></p>
+      </div>
+    </article>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

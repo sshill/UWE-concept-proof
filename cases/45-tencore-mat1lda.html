@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case #45: TENCORE MAT1LDA 8x8 &amp; TerMIT 2.0 (Amphibious Carrier &amp; Combat UGV) | UWE Architectural Benchmark</title>
+  <meta name="description" content="Technical audit of TENCORE MAT1LDA 8x8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV) (UGV: GM-IT-AR). Physical advantages, failure modes, and HAL contract IAmphibiousTransitionDrive.">
+  <link rel="canonical" href="https://sshill.github.io/UWE-concept-proof/cases/45-tencore-mat1lda.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "UWE Case #45: TENCORE MAT1LDA 8x8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV) \u2014 Cyber-Physical Architectural Analysis",
+  "description": "Empirical evaluation of TENCORE MAT1LDA 8x8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV) (UGV: GM-IT-AR) under Hardware Abstraction Layer IAmphibiousTransitionDrive. The Hierarchical Mother-Child Archetype in Unmanned Ground Warfare: single universal ground robots are a doctrinal failure; combining an amphibious carrier (UGV: GM-IT-AR) with a tracked strike parasite (UGV: GL-EC-DR) proves combined-arms robotic superiority requires layered hierarchies.",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Khylevych",
+    "jobTitle": "Systems Architect",
+    "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+  },
+  "datePublished": "2026-11-16",
+  "url": "https://sshill.github.io/UWE-concept-proof/cases/45-tencore-mat1lda.html",
+  "keywords": [
+    "UGV",
+    "UGV: GM-IT-AR",
+    "IAmphibiousTransitionDrive",
+    "TENCORE",
+    "UWE Standard",
+    "STANAG 4670 replacement"
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top-nav">
+  <div class="nav-brand">
+    <a href="../index.html" style="color:#fff; font-weight:700;">⚡ UWE Standard</a>
+  </div>
+  <nav class="nav-links">
+    <a href="../index.html" class="">Hub</a>
+    <a href="../domains/index.html" class="">Taxonomy & Domains</a>
+    <a href="../cases/index.html" class="active">54 Benchmarks</a>
+    <a href="../c2/index.html" class="">C2 &amp; Articles</a>
+    <a href="../vendors/index.html" class="">Vendors & OEMs</a>
+    <a href="../hal/index.html" class="">HAL Registry</a>
+    <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
+  </nav>
+</header>
+  <div class="container" style="max-width:900px;">
+    <div style="margin-bottom:1.5rem;">
+      <a href="index.html" style="font-size:0.9rem;">← Back to All 54 Benchmarks</a>
+    </div>
+
+    <article class="reddit-card">
+      <div class="card-meta">
+        <span>Author: <strong>Serhii Khylevych</strong></span>
+        <span>•</span>
+        <span>Date: 2026-11-16</span>
+        <span>•</span>
+        <a href="../domains/ugv.html" class="badge badge-ugv">UGV</a>
+        <a href="../vendors/index.html#tencore" class="badge badge-vendor">TENCORE</a>
+      </div>
+      <h1 class="hero-title" style="font-size:1.85rem; margin-bottom:1rem;">
+        Case #45: TENCORE MAT1LDA 8x8 & TerMIT 2.0 (Amphibious Carrier & Combat UGV)
+      </h1>
+      
+
+      <div class="token-banner">
+        <div><strong>Monolithic 6-Character UWE Token:</strong> <code>UGV: GM-IT-AR</code></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.35rem;">UGV: Terrestrial & Water Amphibious • Medium 8x8 Armored Hull • Internal Combustion Petrol Engine • Tactical Robotic Carrier / Minelaying • Autonomous Route Autopilot • Anti-Jam Radio & MESH Gateway</div>
+      </div>
+
+      <div class="hal-box">
+        <div class="hal-title">⚙️ Tested Hardware Abstraction Layer (HAL) Contract: <a href="../hal/index.html#IAmphibiousTransitionDrive"><code>IAmphibiousTransitionDrive</code></a></div>
+        <div style="line-height:1.5;"><em>"Amphibious robotic mother-carriers require IAmphibiousTransitionDrive and IMotherChildDeploymentGateway to dynamically trim all-wheel 8x8 skid-steer torque against loss of ground normal force during water entry and muddy riverbank egress, while coordinating automated deck latching and roll-pitch stabilization during deployment of tracked combat effectors."</em></div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">1. Cyber-Physical Kinematic & Energy Analysis</h3>
+      <div class="pros-cons-grid">
+        <div class="col-pro">
+          <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+          <ul class="points"><li>Decoupled Operational vs Tactical Energy: MAT1LDA uses an internal combustion engine to deliver high energy density and 160 km land / 50 km water range, while TerMIT 2.0 uses electric battery drive for silent, low-thermal assault and minelaying.</li><li>Amphibious Riverine & Wetland Access: 8x8 all-wheel drive with sealed buoyancy hull and side pontoons allows crossing rivers, estuaries, and bogs where conventional UGVs sink or require combat engineering bridges.</li><li>Mothership-Parasite Doctrine: transports tracked combat unit across contested water barriers without risking human crews, deploying TerMIT 2.0 directly onto enemy shores for assault or minelaying.</li><li>AI Autopilot for EW Navigation: onboard AI cruise control with visual/inertial odometry enables TerMIT and MAT1LDA to complete mission routes even under total GPS and RF jamming.</li></ul>
+        </div>
+        <div class="col-con">
+          <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+          <ul class="points"><li>Riverbank Egress Traction Collapse: buoyancy sharply reduces wheel downforce during water-to-mud transition, creating severe wheel slip and beaching hazards on steep clay banks.</li><li>ICE Acoustic & Infrared Plume: petrol combustion engine generates significant acoustic noise and an exhaust thermal plume, exposing water crossings to thermal sensor detection and ATGM strikes.</li><li>Skid-Steer Tire Scrub & Drive Train Stress: non-steered 8x8 layout induces massive lateral tire scrub and torque spikes on dry paved terrain.</li></ul>
+        </div>
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">2. Doctrinal Takeaway for Unmanned Warfare</h3>
+      <div class="lesson-box">
+        <strong>💡 Architectural Lesson for UWE:</strong> The Hierarchical Mother-Child Archetype in Unmanned Ground Warfare: single universal ground robots are a doctrinal failure; combining an amphibious carrier (UGV: GM-IT-AR) with a tracked strike parasite (UGV: GL-EC-DR) proves combined-arms robotic superiority requires layered hierarchies.
+      </div>
+
+      <h3 style="color:#58a6ff; margin-top:1.5rem;">3. Primary Proofs & OSINT Verification</h3>
+      <div class="citation-box" style="margin-bottom:1.5rem;">
+        <div>
+          <div><strong>Primary OSINT Evidence:</strong> <a href="https://www.facebook.com/DefenderMediaUA/posts/pfbid027psMxGoouoi9zz1qTHi8PeRkb8ncYocy1LerB4Z1xTbhAWh9ks4DuWWBpqNMo1ekl" target="_blank" rel="noopener">Facebook Post / Defender Media ↗</a></div>
+          <div style="margin-top:0.35rem; font-size:0.8rem; color:var(--text-muted);">Hardware Platform Manufacturer: <strong>TENCORE</strong></div>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/DefenderMediaUA/posts/pfbid027psMxGoouoi9zz1qTHi8PeRkb8ncYocy1LerB4Z1xTbhAWh9ks4DuWWBpqNMo1ekl" target="_blank" rel="noopener" class="badge badge-hal">Open External Source ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+        <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
+        <p style="margin:0.25rem 0;"><a href="02-slimak-ugv.html" class="badge badge-hal">Case #02 Study →</a></p><p style="margin:0.25rem 0;"><a href="08-unex-artillery.html" class="badge badge-hal">Case #08 Study →</a></p><p style="margin:0.25rem 0;"><a href="17-frodo-ugv.html" class="badge badge-hal">Case #17 Study →</a></p>
+      </div>
+    </article>
+  </div>
+  <footer class="page-footer">
+  <div class="container">
+    <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Architecting a software-defined containment line and automated interdiction shield for the Free World.<br>
+      Strict adherence to physical laws, hardware abstraction, and cyber-physical matrices. Local Kyiv wartime conditions.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

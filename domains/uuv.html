@@ -16,7 +16,7 @@
   <nav class="nav-links">
     <a href="../index.html" class="">Hub</a>
     <a href="../domains/index.html" class="active">Taxonomy & Domains</a>
-    <a href="../cases/index.html" class="">32 Benchmarks</a>
+    <a href="../cases/index.html" class="">54 Benchmarks</a>
     <a href="../c2/index.html" class="">C2 &amp; Articles</a>
     <a href="../vendors/index.html" class="">Vendors & OEMs</a>
     <a href="../hal/index.html" class="">HAL Registry</a>
@@ -156,7 +156,7 @@
     
 
     <div style="margin-top:2.5rem; border-top:2px solid var(--border); padding-top:1.5rem;">
-      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UUV (3 Cases)</h2>
+      <h2 style="font-size:1.35rem; margin-bottom:1rem;">🔬 Empirical Benchmarks in UUV (4 Cases)</h2>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Empirical validation of platforms operating within the UUV physical envelope:</p>
       <div>
         <article class="reddit-card case-item" data-domain="UUV" data-vendor="anduril" id="case-07">
@@ -303,6 +303,55 @@
       <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
       <a href="../cases/07-ghostshark-auv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #07</a><a href="../cases/11-lockheed-lamprey.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #11</a><a href="../cases/28-south-china-reef.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #28</a>
       <a href="../cases/29-fitburg-sentinel.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
+    </div>
+  </div>
+</article>
+<article class="reddit-card case-item" data-domain="UUV" data-vendor="naval-group" id="case-47">
+  <div class="card-meta">
+    <span>Posted by <strong>Serhii Khylevych</strong> (Systems Architect)</span>
+    <span>•</span>
+    <span>2026-11-18</span>
+    <span>•</span>
+    <a href="../domains/uuv.html" class="badge badge-uuv">UUV</a>
+    <a href="../vendors/index.html#naval-group" class="badge badge-vendor">Naval Group</a>
+  </div>
+  <h2 class="card-title">
+    <a href="../cases/47-navalgroup-ucuv.html">Case #47: Naval Group UCUV Combat Demonstrator (France DGA)</a>
+  </h2>
+  
+  <div class="token-banner">
+    <div><strong>UWE Token:</strong> <code>UUV: CB-RA-HQ</code></div>
+    <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">UUV: Continental Shelf (100-200m) • Large Displacement Submersible Hull • Rechargeable Electric Battery Storage • Anti-Submarine & Surface Torpedo Strike • Autonomous Acoustic Tracking & Target Attack • Acoustic Modem & Low-Probability Intercept RF</div>
+  </div>
+
+  <div class="hal-box">
+    <div class="hal-title">⚙️ Tested HAL Contract: <a href="../hal/index.html#ISubseaCombatTrimmingDrive"><code>ISubseaCombatTrimmingDrive</code></a></div>
+    <div><em>"Uncrewed Combat Underwater Vehicles require ISubseaCombatTrimmingDrive and IVariableBallastTrimController to crossfade control-surface hydrodynamics with high-rate variable ballast compensation upon kinetic weapon ejection, counteracting pitch transients while micro-throttling Steeris hotel loads to preserve multi-day acoustic stealth loiter."</em></div>
+  </div>
+
+  <div class="pros-cons-grid">
+    <div class="col-pro">
+      <h4>🟢 Physical Superiority (Compliance with Law of Kinematics)</h4>
+      <ul class="points"><li>Continental Shelf Mass Optimization: limiting maximum depth to 150m dramatically reduces hull wall thickness and pressure hull mass fraction vs 1000m+ pelagic drones, freeing internal volume and mass for weapon modules.</li><li>Closed-Cycle Acoustic Stealth: pure electrical battery storage eliminates diesel snorting, heat plumes, and acoustic cavitation, sustaining continuous low-speed (3 kts) stealth loiter.</li><li>Decoupled Combat Payload: open modular payload bay allows configuring the invariant 11.7m hull for anti-submarine strike (MU90 torpedoes), offensive sea denial (mine laying), or long-range ISR.</li><li>Steeris Autonomous Edge Command: onboard mission autonomy executes acoustic signature classification and tactical maneuvers without vulnerable surface RF or tether links.</li></ul>
+    </div>
+    <div class="col-con">
+      <h4>🔴 Engineering Vulnerabilities & Cyber-Physical Limits</h4>
+      <ul class="points"><li>Weapon Ejection Buoyancy Transient: discharging a 300kg torpedo or mine salvo instantly generates positive buoyancy; without high-rate variable ballast flooding, the vehicle suffers pitch-up and surface broaching.</li><li>Hotel Load Parasitic Drain: at 3 kts, propulsion power is low, but hotel loads (sonar processing, compute, pumps) consume 50%+ of energy, collapsing 10-day endurance if sensors run at full duty cycles.</li><li>Hydrodynamic Drag Asymmetry: external weapon shutters or mine hatches introduce parasitic drag, shifting trim across speed variations.</li></ul>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <strong>💡 Architectural Lesson for UWE:</strong> The Subsea Lethality-Displacement Envelope: autonomous subsea combat assets cannot be evaluated by commercial endurance metrics alone; weapon separation physics and hotel loads dictate actual combat radius, with continental shelf specialization optimizing littoral sea denial.
+  </div>
+
+  <div class="citation-box">
+    <div>
+      <strong>OSINT Source:</strong> <a href="https://lnkd.in/p/dMKGwNFp" target="_blank" rel="noopener">LinkedIn / Tim De Zitter ↗</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:0.8rem; color:var(--text-muted);">Related Triad:</span>
+      <a href="../cases/07-ghostshark-auv.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #07</a><a href="../cases/11-lockheed-lamprey.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #11</a><a href="../cases/29-fitburg-sentinel.html" class="badge badge-hal" style="margin-right:0.35rem;">🔗 Case #29</a>
+      <a href="../cases/47-navalgroup-ucuv.html" class="badge" style="background:var(--accent); color:#fff;">Full Study →</a>
     </div>
   </div>
 </article>
