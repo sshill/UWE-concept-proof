@@ -70,8 +70,8 @@ To fix this, the Unmanned Warfare Engine (UWE) provides the Universal Procuremen
 🎯 ARCHETYPE VI: SQUAD RECONNAISSANCE, BASTION UGV & C-UAS
 • AeroVironment | Puma 3 AE | UAV: AC-EB-AR | Hand-launched tactical UAS with Mantis i45 gimbal and deep-stall recovery.
 • Teledyne FLIR | Black Hornet 4 | UCV: CQ-EB-AR | 70g nano-rotorcraft delivering covert squad-level thermal reconnaissance.
-• Honeywell | T-Hawk MAV | UCV: CD-EB-AR | Shrouded ducted-fan micro-VTOL for urban hover-and-stare inspection.
-• General Dynamics | MUTT Air Scout | UAV: AC-EB-AR | Tethered robotic aerial scout linked directly to 8x8 UGV prime mover.
+• Honeywell | T-Hawk MAV | UCV: CD-PI-AR | Fuel-injected ducted-fan micro-VTOL for urban hover-and-stare inspection.
+• General Dynamics | MUTT 8x8 UGV | UGV: GM-HE-MR | 8x8 tactical transport UGV providing silent-watch power and squad carriage.
 • Raytheon / RTX | Coyote Block 2/3 | UAV: AC-TE-AQ | Canister-launched jet interceptor for kinetic defeat of Group 1-3 swarms.
 
 💡 THE BOTTOM LINE FOR DEFENSE PROCUREMENT:

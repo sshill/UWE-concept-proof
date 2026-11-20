@@ -79,13 +79,13 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 59 | **Aero Sentinel G2 (Aero Sol)** | [Aero Sentinel G2](https://aero-sentinel.com/sentinel-g2/) | `UCV: CQ-EB-AR` | `IRotorcraftAeroacousticDynamics` | 3.5kg tactical quadcopter; ultra-low acoustic signature (<29 dB at 200m) and 80 min loiter; validates silent squad ISTAR; proves KTTS market graphic misattributed generic fixed-wing MALE to multirotor. | 2026-11-20 |
 | 60 | **Eurodrone MALE RPAS (Airbus)** | [Airbus Eurodrone](https://www.airbus.com/en/products-services/defence/uas/eurodrone) | `UAV: AM-TD-DR` | `ITwinTurbopropFlightDirector` | Sovereign European twin-turboprop MALE (10t MTOW); non-ITAR open architecture and civil airspace integration provide 24/7 uncompromised theater ISTAR without ITAR export controls. | 2026-11-20 |
 | 61 | **Taranis UCAV (BAE Systems)** | [BAE Systems Taranis](https://www.baesystems.com/en/product/taranis) | `UAV: AL-TK-WR` | `ITaillessLowObservableFlightControl` | British tailless flying wing stealth strike demonstrator; Adour turbofan jet engine with serpentine recessed inlet achieves low all-aspect RCS for intercontinental deep strike. | 2026-11-20 |
-| 62 | **MUTT Tactical Air Scout (General Dynamics)** | [GDLS MUTT Systems](https://www.gdls.com/mutt/) | `UAV: AC-EB-AR` | `ITetheredExpeditionaryScout` | Organic UGV-tethered tactical reconnaissance node; solves 1:1 operator payload burden by linking aerial sensor directly to 8x8 robotic prime mover. | 2026-11-20 |
+| 62 | **MUTT 8x8 Tactical UGV (General Dynamics)** | [GDLS MUTT Systems](https://www.gdls.com/mutt/) | `UGV: GM-HE-MR` | `ISquadSupportUtilityKinematics` | Multi-utility 8x8 hybrid-electric tactical transport UGV; provides 1,200 lb payload carriage, exportable silent-watch power, and squad follow-me autonomy. | 2026-11-20 |
 | 63 | **MQ-9B SkyGuardian (General Atomics)** | [GA-ASI MQ-9B](https://www.ga-asi.com/remotely-piloted-aircraft/mq-9b-skyguardian) | `UAV: AM-TD-DR` | `ITurbopropHighAltitudeDirector` | 40+ hr maritime/overland endurance with turboprop reliability; SATCOM BLOS command establishes benchmark for persistent theater ISR. | 2026-11-20 |
-| 64 | **Hermes 900 StarLiner (Elbit Systems)** | [Elbit Hermes 900](https://elbitsystems.com/product/hermes-900-starliner/) | `UAV: AM-PD-DR` | `ICivilAirspaceCertificationGovernor` | STANAG 4671 certified MALE with heavy fuel piston engine; integrates into non-segregated civilian airspace for theater surveillance. | 2026-11-20 |
-| 65 | **T-Hawk MAV (Honeywell Aerospace)** | [Honeywell T-Hawk](https://aerospace.honeywell.com/) | `UCV: CD-EB-AR` | `IDuctedFanHoverDirector` | Micro ducted-fan backpackable VTOL; shrouded rotor enables close-quarters urban hover-and-stare and explosive ordnance inspection. | 2026-11-20 |
-| 66 | **RQ-170 Sentinel (Lockheed Martin)** | [Lockheed Martin Skunk Works](https://www.lockheedmartin.com/en-us/who-we-are/business-areas/aeronautics/skunk-works.html) | `UAV: AH-TR-SS` | `IStealthFlyingWingDirector` | Low-observable stealth flying wing penetrating ISR asset; passive sensor integration and tailless aerodynamics bypass modern integrated air defense. | 2026-11-20 |
+| 64 | **Hermes 900 StarLiner (Elbit Systems)** | [Elbit Hermes 900 StarLiner](https://www.elbitsystems.com/blog/the-star-in-the-sky-elbit-systems-hermes-900-starliner) | `UAV: AM-PD-DR` | `ICivilAirspaceCertificationGovernor` | STANAG 4671 certified MALE with heavy fuel piston engine; integrates into non-segregated civilian airspace for theater surveillance. | 2026-11-20 |
+| 65 | **T-Hawk MAV (Honeywell Aerospace)** | [Honeywell T-Hawk MAV](https://static1.squarespace.com/static/54f8af0ce4b087f9c65cf093/t/550826d4e4b0aae83a29f16b/1426597588911/T-Hawk+MAV.pdf) | `UCV: CD-PI-AR` | `IDuctedFanHoverDirector` | Micro ducted-fan backpackable VTOL; fuel-injected piston engine enables close-quarters urban hover-and-stare and explosive ordnance inspection. | 2026-11-20 |
+| 66 | **RQ-170 Sentinel (Lockheed Martin)** | [Air & Space Forces RQ-170](https://www.airandspaceforces.com/weapons/rq-170/) | `UAV: AH-TR-SS` | `IStealthFlyingWingDirector` | Low-observable stealth flying wing penetrating ISR asset; passive sensor integration and tailless aerodynamics bypass modern integrated air defense. | 2026-11-20 |
 | 67 | **Heron TP Eitan (IAI)** | [IAI Heron TP](https://www.iai.co.il/p/heron-tp) | `UAV: AH-TD-SS` | `IStrategicHeavyTurbopropDirector` | Strategic MALE/HALE platform (5,400kg MTOW); PT6A turboprop powers all-weather multi-mission ELINT/COMINT at 45,000 ft. | 2026-11-20 |
-| 68 | **FVR-90 Tactical UAS (L3Harris)** | [L3Harris FVR-90](https://www.l3harris.com/all-capabilities/fvr-90-tactical-uas) | `UAV: AL-HE-DR` | `IHeldRotaryWingTransitionDirector` | Hybrid Quadrotor eVTOL + heavy fuel pusher prop; runway-independent long-endurance tactical maritime/expeditionary ISR. | 2026-11-20 |
+| 68 | **FVR-90 Tactical UAS (L3Harris)** | [Inside Unmanned Systems FVR-90](https://insideunmannedsystems.com/the-trusted-disruptor-up-close-with-l3harris-and-the-fvr-90/) | `UAV: AL-HE-DR` | `IHeldRotaryWingTransitionDirector` | Hybrid Quadrotor eVTOL + heavy fuel pusher prop; runway-independent long-endurance tactical maritime/expeditionary ISR. | 2026-11-20 |
 | 69 | **MQ-4C Triton (Northrop Grumman)** | [Northrop Grumman MQ-4C](https://www.northropgrumman.com/what-we-do/air/mq-4c-triton) | `UAV: AH-TR-SS` | `IStrategicMaritimeWideAreaSurveillance` | High-altitude long-endurance (HALE) maritime patrol asset; 360-degree AESA radar and 24-hr persistence over oceanic theaters. | 2026-11-20 |
 | 70 | **Coyote Block 2/3 C-UAS (Raytheon)** | [RTX Coyote C-UAS](https://www.rtx.com/raytheon/what-we-do/counter-uas/coyote) | `UAV: AC-TE-AQ` | `IKineticAirInterceptorDirector` | Tube-launched jet/rocket propelled C-UAS loitering interceptor; RF seeker and proximity warhead for defeat of Group 1-3 drone swarms. | 2026-11-20 |
 | 71 | **Skeldar V-200 (Saab AB)** | [UMS Skeldar V-200](https://umskeldar.aero/skeldar-v-200/) | `UCV: HL-PD-DR` | `INavalRotaryWingGovernor` | Heavy-fuel maritime VTOL helicopter; automated shipboard deck operations, radar and multi-sensor payload for offshore patrol vessels. | 2026-11-20 |
@@ -1370,19 +1370,19 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 ---
 
-### Case Study #62: MUTT Tactical Air Scout (General Dynamics Land Systems)
+### Case Study #62: MUTT 8x8 Tactical UGV (General Dynamics Land Systems)
 * **Target Source:** [GDLS MUTT Systems](https://www.gdls.com/mutt/)
 * **Date Analyzed:** 2026-11-20
-* **UWE 6-Character Token:** `UAV: AC-EB-AR`
-* **Hardware Abstraction Layer (HAL) Contract:** `ITetheredExpeditionaryScout`
-* **The HAL One-Sentence Definition:** A tethered and free-flight aerial node coordination interface that exchanges power, secure micro-wire telemetry, and high-vantage situational awareness with an unmanned ground vehicle platform.
+* **UWE 6-Character Token:** `UGV: GM-HE-MR`
+* **Hardware Abstraction Layer (HAL) Contract:** `ISquadSupportUtilityKinematics` & `IHybridElectricPowertrainManager`
+* **The HAL One-Sentence Definition:** An 8x8 skid-steer and hybrid-electric powertrain governor managing dynamic wheel torque vectoring, dismounted squad tethered/optical follow-me navigation, and exportable silent-watch power distribution.
 * **Physical Advantages (🟢):**
-  * Continuous power feed from ground vehicle battery/generator, eliminating aerial flight endurance limits.
-  * Zero-RF emission tethered data link immune to electronic jamming.
+  * Massive 1,200 lb (544 kg) payload capacity and 8x8 mobility relieving soldier physical overburden.
+  * Hybrid-electric architecture providing 3+ kW exportable power and silent electric crawl capability.
 * **Engineering Vulnerabilities & Tactical Limits (🔴):**
-  * Tether snag risk in dense forested or urban terrain.
-  * Strict physical altitude and velocity tether tethering constraints.
-* **Architectural Lesson for UWE:** Bridges cross-domain UGV-UAV operations; proves UWE Law 2 (Hierarchical Containerization) where a C3 ground carrier acts as the physical power and communications bastion for C1 aerial sensors.
+  * Skid-steer kinematics induce severe tire scrubbing resistance and energy loss on high-friction surfaces.
+  * Visual/tether squad follow-me modes vulnerable to line-of-sight obstruction in complex wooded or rubble terrain.
+* **Architectural Lesson for UWE:** Validates the exact UGV tactical transport archetype; demonstrates that ground logistics carriers must act as mobile energy bastions (C2/C3 containerization) providing exportable power and organic payload transport for infantry squads.
 
 ---
 
@@ -1403,7 +1403,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ---
 
 ### Case Study #64: Hermes 900 StarLiner (Elbit Systems)
-* **Target Source:** [Elbit Hermes 900](https://elbitsystems.com/product/hermes-900-starliner/)
+* **Target Source:** [Elbit Systems StarLiner](https://www.elbitsystems.com/blog/the-star-in-the-sky-elbit-systems-hermes-900-starliner)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UAV: AM-PD-DR`
 * **Hardware Abstraction Layer (HAL) Contract:** `ICivilAirspaceCertificationGovernor`
@@ -1419,23 +1419,23 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ---
 
 ### Case Study #65: T-Hawk MAV (Honeywell Aerospace)
-* **Target Source:** [Honeywell T-Hawk](https://aerospace.honeywell.com/)
+* **Target Source:** [Honeywell T-Hawk MAV](https://static1.squarespace.com/static/54f8af0ce4b087f9c65cf093/t/550826d4e4b0aae83a29f16b/1426597588911/T-Hawk+MAV.pdf)
 * **Date Analyzed:** 2026-11-20
-* **UWE 6-Character Token:** `UCV: CD-EB-AR`
-* **Hardware Abstraction Layer (HAL) Contract:** `IDuctedFanHoverDirector`
-* **The HAL One-Sentence Definition:** A compact ducted-fan flight control law stabilizing an axial hover duct with directional guide vanes under high ground-effect turbulence.
+* **UWE 6-Character Token:** `UCV: CD-PI-AR`
+* **Hardware Abstraction Layer (HAL) Contract:** `IDuctedFanHoverDirector` & `IFuelInjectedPistonGovernor`
+* **The HAL One-Sentence Definition:** A compact ducted-fan flight control law stabilizing an axial hover duct and electronic fuel-injected piston engine under high ground-effect turbulence.
 * **Physical Advantages (🟢):**
   * Shrouded ducted-fan rotor provides safe operations around personnel and obstacles in confined urban corridors.
-  * Rapid stationary hover-and-stare for explosive ordnance and perimeter inspection.
+  * Electronic fuel injection (ECU) on 2-stroke gasoline engine delivers 50-minute hover loiter and all-weather operation (-7°C to 49°C).
 * **Engineering Vulnerabilities & Tactical Limits (🔴):**
-  * High acoustic signature in hover due to high rotor tip speeds and duct resonance.
-  * Very limited forward airspeed and sensitivity to crosswinds >10 m/s.
-* **Architectural Lesson for UWE:** Codifies the ducted-fan micro-VTOL archetype; exposes the market graphic mistake of presenting Honeywell as a fixed-wing MALE manufacturer.
+  * Severe acoustic signature (75 dBA at 100m) from high tip-speed ducted fan and 2-stroke piston exhaust.
+  * Forward airspeed capped at 40 knots; high fuel consumption compared to electric micro-rotors.
+* **Architectural Lesson for UWE:** Codifies the fuel-injected ducted-fan tactical UCV class; demonstrates that while ducted fans provide hover safety in urban canyons, their acoustic profile demands standoff deployment compared to silent electric multirotors.
 
 ---
 
 ### Case Study #66: RQ-170 Sentinel (Lockheed Martin Skunk Works)
-* **Target Source:** [Lockheed Martin Skunk Works](https://www.lockheedmartin.com/en-us/who-we-are/business-areas/aeronautics/skunk-works.html)
+* **Target Source:** [Air & Space Forces RQ-170](https://www.airandspaceforces.com/weapons/rq-170/)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UAV: AH-TR-SS`
 * **Hardware Abstraction Layer (HAL) Contract:** `IStealthFlyingWingDirector`
@@ -1467,7 +1467,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ---
 
 ### Case Study #68: FVR-90 Tactical UAS (L3Harris Technologies)
-* **Target Source:** [L3Harris FVR-90](https://www.l3harris.com/all-capabilities/fvr-90-tactical-uas)
+* **Target Source:** [Inside Unmanned Systems FVR-90](https://insideunmannedsystems.com/the-trusted-disruptor-up-close-with-l3harris-and-the-fvr-90/)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UAV: AL-HE-DR`
 * **Hardware Abstraction Layer (HAL) Contract:** `IHeldRotaryWingTransitionDirector`
