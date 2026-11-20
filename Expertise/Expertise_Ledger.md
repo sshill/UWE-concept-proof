@@ -86,13 +86,13 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 66 | **RQ-170 Sentinel (Lockheed Martin)** | [Air & Space Forces RQ-170](https://www.airandspaceforces.com/weapons/rq-170/) | `UAV: AH-TR-SS` | `IStealthFlyingWingDirector` | Low-observable stealth flying wing penetrating ISR asset; passive sensor integration and tailless aerodynamics bypass modern integrated air defense. | 2026-11-20 |
 | 67 | **Heron TP Eitan (IAI)** | [IAI Heron TP](https://www.iai.co.il/p/heron-tp) | `UAV: AH-TD-SS` | `IStrategicHeavyTurbopropDirector` | Strategic MALE/HALE platform (5,400kg MTOW); PT6A turboprop powers all-weather multi-mission ELINT/COMINT at 45,000 ft. | 2026-11-20 |
 | 68 | **FVR-90 Tactical UAS (L3Harris)** | [Inside Unmanned Systems FVR-90](https://insideunmannedsystems.com/the-trusted-disruptor-up-close-with-l3harris-and-the-fvr-90/) | `UAV: AL-HE-DR` | `IHeldRotaryWingTransitionDirector` | Hybrid Quadrotor eVTOL + heavy fuel pusher prop; runway-independent long-endurance tactical maritime/expeditionary ISR. | 2026-11-20 |
-| 69 | **MQ-4C Triton (Northrop Grumman)** | [Northrop Grumman MQ-4C](https://www.northropgrumman.com/what-we-do/air/mq-4c-triton) | `UAV: AH-TR-SS` | `IStrategicMaritimeWideAreaSurveillance` | High-altitude long-endurance (HALE) maritime patrol asset; 360-degree AESA radar and 24-hr persistence over oceanic theaters. | 2026-11-20 |
-| 70 | **Coyote Block 2/3 C-UAS (Raytheon)** | [RTX Coyote C-UAS](https://www.rtx.com/raytheon/what-we-do/counter-uas/coyote) | `UAV: AC-TE-AQ` | `IKineticAirInterceptorDirector` | Tube-launched jet/rocket propelled C-UAS loitering interceptor; RF seeker and proximity warhead for defeat of Group 1-3 drone swarms. | 2026-11-20 |
-| 71 | **Skeldar V-200 (Saab AB)** | [UMS Skeldar V-200](https://umskeldar.aero/skeldar-v-200/) | `UCV: HL-PD-DR` | `INavalRotaryWingGovernor` | Heavy-fuel maritime VTOL helicopter; automated shipboard deck operations, radar and multi-sensor payload for offshore patrol vessels. | 2026-11-20 |
+| 69 | **MQ-4C Triton (Northrop Grumman)** | [Northrop Grumman Triton](https://www.northropgrumman.com/what-we-do/aircraft/triton) | `UAV: AH-TR-SS` | `IStrategicMaritimeWideAreaSurveillance` | High-altitude long-endurance (HALE) maritime patrol asset; 360-degree AESA radar and 24-hr persistence over oceanic theaters. | 2026-11-20 |
+| 70 | **Coyote Block 2/3 C-UAS (Raytheon)** | [RTX Coyote C-UAS](https://www.rtx.com/raytheon/what-we-do/integrated-air-and-missile-defense/coyote#gdpr) | `UAV: AC-TE-AQ` | `IKineticAirInterceptorDirector` | Tube-launched jet/rocket propelled C-UAS loitering interceptor; RF seeker and proximity warhead for defeat of Group 1-3 drone swarms. | 2026-11-20 |
+| 71 | **Skeldar V-200 (Saab AB)** | [UMS Skeldar V-200](https://umskeldar.aero/unmanned-vtol-system-v-200-skeldar/) | `UCV: HL-PD-DR` | `INavalRotaryWingGovernor` | Heavy-fuel maritime VTOL helicopter; automated shipboard deck operations, radar and multi-sensor payload for offshore patrol vessels. | 2026-11-20 |
 | 72 | **Bell V-247 Vigilant (Textron / Bell)** | [Bell V-247 Vigilant](https://www.bellflight.com/products/bell-v-247) | `UAV: AT-TD-DR` | `ITiltrotorTransitionDirector` | Shipboard expeditionary tiltrotor (13t MTOW); combines helicopter VTOL agility with 300-knot cruise speed and 11-hr loiter. | 2026-11-20 |
 | 73 | **Black Hornet 4 (Teledyne FLIR)** | [Teledyne FLIR Black Hornet 4](https://www.flir.com/products/black-hornet-4/) | `UCV: CQ-EB-AR` | `INanoRotorcraftAeroacousticDynamics` | 70g personal reconnaissance nano-UAV; 30-min loiter, thermal imaging, near-zero audible signature for dismounted soldier situational awareness. | 2026-11-20 |
-| 74 | **Heavy-Lift Cargo Octocopter (EchoBlue)** | [EchoBlue Systems](https://echoblue.co.uk/) | `UCV: CL-EB-MS` | `IHeavyLiftMultirotorPowerBus` | Coaxial heavy-payload multirotor logistics platform; electric multi-pack battery for autonomous forward line resupply. | 2026-11-20 |
-| 75 | **Airpack 50 Mountain eVTOL (BonV Aero)** | [BonV Aero Airpack 50](https://www.bonvaero.com/) | `UCV: CL-EB-MS` | `IHighAltitudeCargoDeliveryGovernor` | Extreme high-altitude eVTOL logistics platform; tested at 14,000+ ft in the Himalayas to deliver 50kg payloads across forward mountain posts. | 2026-11-20 |
+| 74 | **Heavy-Lift Cargo Octocopter (EchoBlue)** | [EchoBlue Tech Showcase](https://www.tiktok.com/@echobluetechshowcase/video/7697961589735017750) | `UCV: CL-EB-MS` | `IHeavyLiftMultirotorPowerBus` | Coaxial heavy-payload multirotor logistics platform; electric multi-pack battery for autonomous forward line resupply. | 2026-11-20 |
+| 75 | **AirOrca Mountain Heavy-Lift eVTOL (BonV Aero)** | [BonV Aero AirOrca](https://bonvaero.com/products/airorca/) | `UCV: CL-EB-MS` | `IHighAltitudeCargoDeliveryGovernor` | Autonomous heavy-payload logistics eVTOL; lifts 30kg at 19,024 ft (Umling La pass, Himalayas) for extreme-altitude forward logistics. | 2026-11-20 |
 | 76 | **Puma 3 AE Tactical UAS (AeroVironment)** | [AeroVironment Puma 3 AE](https://www.avinc.com/uas/puma-ae) | `UAV: AC-EB-AR` | `IHandLaunchedAeroDynamicsDirector` | Man-portable hand-launched tactical UAS; smart Mantis i45 gimbal, maritime water-landing capability, and robust digital data link. | 2026-11-20 |
 
 ---
@@ -1483,7 +1483,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ---
 
 ### Case Study #69: MQ-4C Triton (Northrop Grumman)
-* **Target Source:** [Northrop Grumman MQ-4C](https://www.northropgrumman.com/what-we-do/air/mq-4c-triton)
+* **Target Source:** [Northrop Grumman Triton](https://www.northropgrumman.com/what-we-do/aircraft/triton)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UAV: AH-TR-SS`
 * **Hardware Abstraction Layer (HAL) Contract:** `IStrategicMaritimeWideAreaSurveillance`
@@ -1499,7 +1499,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ---
 
 ### Case Study #70: Coyote Block 2/3 C-UAS (Raytheon / RTX)
-* **Target Source:** [RTX Coyote C-UAS](https://www.rtx.com/raytheon/what-we-do/counter-uas/coyote)
+* **Target Source:** [RTX Coyote C-UAS](https://www.rtx.com/raytheon/what-we-do/integrated-air-and-missile-defense/coyote#gdpr)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UAV: AC-TE-AQ`
 * **Hardware Abstraction Layer (HAL) Contract:** `IKineticAirInterceptorDirector`
@@ -1515,7 +1515,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ---
 
 ### Case Study #71: Skeldar V-200 Maritime VTOL (Saab AB / UMS Skeldar)
-* **Target Source:** [UMS Skeldar V-200](https://umskeldar.aero/skeldar-v-200/)
+* **Target Source:** [UMS Skeldar V-200](https://umskeldar.aero/unmanned-vtol-system-v-200-skeldar/)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UCV: HL-PD-DR`
 * **Hardware Abstraction Layer (HAL) Contract:** `INavalRotaryWingGovernor`
@@ -1563,7 +1563,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ---
 
 ### Case Study #74: Heavy-Lift Tactical Cargo Octocopter (EchoBlue Systems)
-* **Target Source:** [EchoBlue Systems](https://echoblue.co.uk/)
+* **Target Source:** [EchoBlue Tech Showcase](https://www.tiktok.com/@echobluetechshowcase/video/7697961589735017750)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UCV: CL-EB-MS`
 * **Hardware Abstraction Layer (HAL) Contract:** `IHeavyLiftMultirotorPowerBus`
@@ -1578,17 +1578,17 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 
 ---
 
-### Case Study #75: Airpack 50 Mountain Heavy-Lift eVTOL (BonV Aero)
-* **Target Source:** [BonV Aero Airpack 50](https://www.bonvaero.com/)
+### Case Study #75: AirOrca Mountain Heavy-Lift eVTOL (BonV Aero)
+* **Target Source:** [BonV Aero AirOrca](https://bonvaero.com/products/airorca/)
 * **Date Analyzed:** 2026-11-20
 * **UWE 6-Character Token:** `UCV: CL-EB-MS`
 * **Hardware Abstraction Layer (HAL) Contract:** `IHighAltitudeCargoDeliveryGovernor`
 * **The HAL One-Sentence Definition:** An extreme-altitude propulsion and battery thermal governor compensating for thin air density ($\rho \le 0.8\text{ kg/m}^3$) and sub-zero cell degradation during mountain logistics sorties.
 * **Physical Advantages (🟢):**
-  * Proven 50 kg payload capacity at extreme high-altitude forward posts (14,000+ ft in the Himalayas).
-  * High-torque brushless motor powertrain designed specifically for low-density air aerodynamics.
+  * Proven high-altitude heavy-lift performance, lifting 30 kg at 19,024 ft (Umling La pass, Himalayas).
+  * Fully autonomous logistics flight control tailored for defense resupply across extreme mountain terrain.
 * **Engineering Vulnerabilities & Tactical Limits (🔴):**
-  * Severe battery capacity reduction in sub-zero alpine conditions requiring active cell heating.
+  * Severe battery capacity reduction in sub-zero alpine conditions requiring active cell thermal conditioning.
   * Mountain turbulence and sudden katabatic winds challenge stability margins during ridge landings.
 * **Architectural Lesson for UWE:** Codifies high-altitude alpine eVTOL operations; validates that thermal and aerodynamic density degradation models must be integrated into the autonomous HAL flight envelope.
 

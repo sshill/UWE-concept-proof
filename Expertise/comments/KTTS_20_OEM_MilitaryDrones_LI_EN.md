@@ -65,7 +65,7 @@ To fix this, the Unmanned Warfare Engine (UWE) provides the Universal Procuremen
 
 📦 ARCHETYPE V: HEAVY CARGO & ALPINE EVTOL
 • EchoBlue Systems | Cargo Octocopter | UCV: CL-EB-MS | Coaxial multirotor for autonomous front-line resupply corridors.
-• BonV Aero | Airpack 50 | UCV: CL-EB-MS | High-altitude multirotor delivering 50 kg payloads at 14,000+ ft in Himalayas.
+• BonV Aero | AirOrca | UCV: CL-EB-MS | Extreme-altitude multirotor lifting 30 kg at 19,024 ft in Himalayas.
 
 🎯 ARCHETYPE VI: SQUAD RECONNAISSANCE, BASTION UGV & C-UAS
 • AeroVironment | Puma 3 AE | UAV: AC-EB-AR | Hand-launched tactical UAS with Mantis i45 gimbal and deep-stall recovery.
