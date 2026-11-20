@@ -59,18 +59,22 @@ To fix this, the Unmanned Warfare Engine (UWE) provides the Universal Procuremen
 
 ---
 
-## [PART 4/4] (874 chars)
+## [PART 4/4] (1228 chars)
 ```text
 [PART 4/4]
 
-📦 ARCHETYPE V: HEAVY CARGO & EXTREME-ALTITUDE eVTOL
-• BonV Aero | Airpack 50 | UCV: CL-EB-MS | High-altitude heavy-lift multirotor carrying 50 kg at 10,000+ ft Himalayan altitudes.
-• EchoBlue Ltd. | Cargo Octocopter | UCV: CL-EB-MS | Heavy industrial multirotor for rapid tactical resupply across severed ground communication lines.
+📦 ARCHETYPE V: HEAVY CARGO & ALPINE EVTOL
+• EchoBlue Systems | Cargo Octocopter | UCV: CL-EB-MS | Coaxial multirotor for autonomous front-line resupply corridors.
+• BonV Aero | Airpack 50 | UCV: CL-EB-MS | High-altitude multirotor delivering 50 kg payloads at 14,000+ ft in Himalayas.
 
-🎯 ARCHETYPE VI: SQUAD RECONNAISSANCE & TACTICAL MUNITIONS
-• AeroVironment | Puma 3 AE | UAV: AC-EB-AR | Hand-launched, waterproof frontline tactical workhorse with smart water-landing recovery.
-• Teledyne FLIR | Black Hornet 4 | UCV: CQ-EB-AR | 33-gram pocket nano-rotorcraft delivering covert squad-level micro-reconnaissance.
-• Honeywell | T-Hawk MAV | UCV: CD-EB-AR | Ducted-fan vertical airframe for squad-level hover-and-stare inspection in urban canyons.
-• General Dynamics | MUTT Air Scout | UAV: AC-EB-AR | Tethered robotic scout tethered to mechanized combat vehicles.
-• Raytheon (RTX) | Coyote Block 2/3 | UAV: AC-TE-AQ | Canister-launched jet sprint interceptor for hard-kill C-UAS swarm defense.
+🎯 ARCHETYPE VI: SQUAD RECONNAISSANCE, BASTION UGV & C-UAS
+• AeroVironment | Puma 3 AE | UAV: AC-EB-AR | Hand-launched tactical UAS with Mantis i45 gimbal and deep-stall recovery.
+• Teledyne FLIR | Black Hornet 4 | UCV: CQ-EB-AR | 70g nano-rotorcraft delivering covert squad-level thermal reconnaissance.
+• Honeywell | T-Hawk MAV | UCV: CD-EB-AR | Shrouded ducted-fan micro-VTOL for urban hover-and-stare inspection.
+• General Dynamics | MUTT Air Scout | UAV: AC-EB-AR | Tethered robotic aerial scout linked directly to 8x8 UGV prime mover.
+• Raytheon / RTX | Coyote Block 2/3 | UAV: AC-TE-AQ | Canister-launched jet interceptor for kinetic defeat of Group 1-3 swarms.
+
+💡 THE BOTTOM LINE FOR DEFENSE PROCUREMENT:
+Operational superiority is not won by buying isolated airframes. It requires defining the Software-Defined HAL Architecture first, and ordering standardized effectors integrated into an autonomous orchestration cloud.
 ```
+
