@@ -158,3 +158,21 @@ When codifying a validated platform into `Expertise_Ledger.md`, immediately sync
 2. **NO Amateur Military Slang:** Never use terms like *vozyk*, *cart*, *FPV* (as a vehicle class), *kamikaze-drone* (it is an OWM decorator on an invariant chassis).
 3. **NO Inline Evaluation:** Zero `python -c` or `bash -c`. Use structured scripts or standard git inspect commands.
 4. **NO Silent Lost Insights:** Every link analyzed MUST update `Expertise_Ledger.md`. No analysis is thrown away.
+
+---
+
+## 5. Automated Intelligence & OEM Verification Tooling (UWE OEM Finder)
+
+The cyber-physical expertise workflow integrates autonomous OEM discovery and multi-tier source validation via the UWE OEM Finder engine:
+
+1. **Dedicated MCP Server (`uwe-oem-finder`):**
+   * `find_oem_specifications`: Autonomous retrieval and audit of physical vehicle parameters (kinematics, mass, range, endurance, powerplant) matching `[Platform]` and `[Vendor]`.
+   * `validate_source_url`: Hardened Pinned-IP stream downloader enforcing strict anti-SSRF policies, private network blocking, DNS-rebinding immunity, Gzip-bomb limits (10 MB), and wall-clock deadlines (10s).
+2. **Autonomous Query Protocol:**
+   * Queries MUST be formed strictly as `[Model] [Manufacturer]` without biasing the search with unverified or obsolete URLs from amateur notes.
+   * Direct OEM URLs and PDF brochures are primary targets; unverified claims must be cross-checked against physical laws.
+3. **Dual-Tier Source Hierarchy (Fallback Architecture):**
+   * **Tier 1 (OEM Primary):** Direct manufacturer domain or verified PDF product brochure cataloged in `oem_registry.json`.
+   * **Tier 2 (Authoritative Defense Media Fallback):** When OEM sites enforce WAF geo-blocking (HTTP 403) or platforms are out of production, fallback to authoritative technical defense publications (*Naval News*, *Defense Express*, *Airforce Technology*, *Unmanned Systems Technology*).
+4. **Antigravity Skill Binding:**
+   * Governed by `.agents/skills/uwe-oem-finder/SKILL.md` and configured via `~/.gemini/config/mcp_config.json`.
