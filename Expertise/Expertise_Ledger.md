@@ -99,6 +99,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 79 | **NATO Undersea & CUI Programs vs. UWE** | [NATO CUI Briefing](https://lnkd.in/p/dbZrdis2) | `UUV: CD-EB-DR` & `UUV: AD-EB-MR` | `ISubseaDepthHorizonGovernor` & `IBenthicSeabedDrive` | Deconstruction of NATO CUI/REPMUS undersea initiatives against UWE subsea doctrine; DPE-MTC depth matrix, Cossack Pirnachka paradigm, benthic hard-contact crawling vs. fluid hovering, and heterogeneous triad. | 2026-11-21 |
 | 80 | **Kızılelma Unmanned Fighter Jet (Baykar)** | [Defence Industry Europe](https://defence-industry.eu/baykar-delivers-turkiyes-first-kizilelma-unmanned-fighter-jets-for-active-service/) | `UAV: AH-TK-AS` | `IUnmannedFighterFlightDirector` & `IBvrWeaponsReleaseGovernor` | First serial unmanned fighter jet in active service; Aselsan MURAD AESA radar, BVR GÖKDOĞAN missile air combat, relaxed static stability canard-delta layout, and human 9G limit removal. | 2026-11-21 |
 | 81 | **X-BAT Tailsitter Fighter (Shield AI)** | [FB Reel](https://www.facebook.com/reel/1121953140321799) | `UAV: AH-TK-AS` | `ITailsitterJetVtolGovernor` & `IMobileCradleRecoveryDirector` | Group 5 autonomous stealth jet tailsitter; F110 afterburning turbofan with AVEN thrust vectoring, 25-ton mobile TEL recovery trailer, side-capture approach to eliminate hot gas ingestion, and zero-dynamic-pressure attitude stability. | 2026-11-21 |
+| 82 | **Transformable Rotor-Wing VTOL (THOR / Stop-Rotor)** | [FB Post](https://www.facebook.com/story.php?story_fbid=122124290331369735&id=61591092073863&post_id=61591092073863_122124290331369735) | `UAV: AL-ER-AR` | `IStoppedRotorTransitionGovernor` & `IAeroelasticResonanceDamper` | Stop-rotor / samara transformable VTOL; wide-chord propeller acting as rotating hover rotor and locked fixed wing, zero dead-weight airframe, retreating airfoil inversion dilemma, and gyroscopic cross-coupling damping. | 2026-11-21 |
 
 
 
@@ -1712,6 +1713,27 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **The Infrastructure Trap & Zero Divert Capability:** Discarding landing gear shifts total operational risk onto the bespoke 25-ton recovery trailer. Damaged trailer or low fuel prevents landing at conventional airfields.
   * **Hover Fuel Burn Rate (SFC Penalty):** Turbofan thrust-specific fuel consumption in near-maximum or reheat hover drains hundreds of pounds of fuel per minute, severely penalizing tactical loiter if docking is delayed.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization): attempting to force a Group 5 fighter jet into a zero-infrastructure tailsitter envelope creates severe aerodynamic crosswind and thermal recirculation penalties that cannot be completely eliminated by software alone; true operational resilience requires balancing vehicle-level mechanical independence against external ground infrastructure complexity.
+
+---
+
+### Case Study #82: Transformable Rotor-Wing / Stop-Rotor VTOL (Wide-Blade Propeller as Rotating Rotor & Fixed Wing)
+* **Target Source:** [FB Post](https://www.facebook.com/story.php?story_fbid=122124290331369735&id=61591092073863&post_id=61591092073863_122124290331369735)
+* **Date Analyzed:** 2026-11-21
+* **UWE 6-Character Token:** `UAV: AL-ER-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IStoppedRotorTransitionGovernor` & `IAeroelasticResonanceDamper`
+  * **The HAL One-Sentence Definition:** *"Stop-rotor VTOL platforms employing wide-chord propeller blades as deployable fixed wings require IStoppedRotorTransitionGovernor to synchronize rotor deceleration, 180-degree retreating-blade pitch inversion, and zero-backlash electromechanical locking, governed by IAeroelasticResonanceDamper to suppress gyroscopic cross-coupling torques across the trans-rotational conversion corridor."*
+* **Physical Advantages (🟢):**
+  * **Zero Dead-Weight Architecture:** 100% of aerodynamic surface area is utilized in both flight regimes; eliminates redundant VTOL motors, carbon booms, and escwiring (saving 15–25% empty airframe weight).
+  * **High Disc-Loading Static Thrust:** Wide-chord blades (high solidity $\sigma = Bc/\pi R$) maximize low-speed static thrust in hover, enabling runway-independent vertical launch from tight footprints.
+  * **Cruise Power Reduction:** Shifting from hover power ($P_{\text{hover}} \propto T^{1.5}$) to fixed-wing glide ($L/D > 10\text{--}14$) slashes battery discharge rate by ~65%, multiplying flight endurance.
+  * **Samara Autorotation Recovery:** Total power bus failure allows unlocking the blades to autorotate like a natural sycamore seed, ensuring survivable terminal descent (<4 m/s) without a parachute.
+* **Engineering Vulnerabilities & Aeromechanical Trade-offs (🔴):**
+  * **Airfoil Inversion Dilemma:** When locked, the retreating blade meets airflow backward. Without 180° pitch inversion, symmetrical airfoils must be used, capping $L/D$ at ~8–10 (40–50% penalty).
+  * **Gyroscopic Resonance Corridor:** Spin-down in forward airflow triggers severe cross-coupling ($\vec{\tau} = I \vec{\Omega} \times \vec{\omega}$) and 1/rev flutter during conversion.
+  * **Low Aspect Ratio Drag Tax:** Wide-chord blades locked as wings yield $AR \approx 2\text{--}4$. High induced drag ($C_{Di} \propto 1/AR$) penalizes climb and glide endurance.
+  * **Mechanical Locking Stress:** High-speed stopping at 90.0° requires precision detent pins and electromagnetic braking to absorb angular momentum.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy): aerodynamic multipurpose integration (rotor = wing) eliminates the empty mass penalty of hybrid VTOLs, but incurs physical compromises (symmetrical airfoils, low $AR$, gyroscopic transition moments) that mandate active HAL conversion governors.
 
 
 
