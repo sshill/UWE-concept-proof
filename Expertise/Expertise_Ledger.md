@@ -106,6 +106,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 86 | **General Atomics FQ-42 Vengeance (CCA)** | [FB Post](https://www.facebook.com/story.php?story_fbid=1433195322347855&id=100069722016667) | `UAV: AT-TC-HR` | `ITransonicCavityWeaponSeparationGovernor` & `IModularAirframeMassBalanceController` | USAF Collaborative Combat Aircraft (Gambit Core); transonic internal bay Rossiter mode suppression, 2x AIM-120 AMRAAM MUM-T forward node. | 2026-11-21 |
 | 87 | **Quantum-Systems Reliant (Recon-to-Bomber)** | [LinkedIn](https://lnkd.in/p/dZvSCED9) / Dave Sharpin | `UAV: AL-HS-DR` | `IVtolTransitionDrive` & `IAsymmetricStoresRelease` | Hybrid eVTOL recon-to-bomber evolution (45kg MTOW, >10h loiter, 160km range); 9kg mixed wing stores (82mm mortar + 40mm grenades); asymmetric roll trim and pylon parasitic drag ($\Delta C_{D0}$). | 2026-11-21 |
 | 88 | **Airbus Bird of Prey (Do-DT25 & Frankenburg)** | [FB Reel](https://www.facebook.com/reel/1797724578260958) | `UAV: AL-TK-DR` | `IAirborneInterceptionDynamics` & `IMicroMissileSeparationGovernor` | Reusable high-subsonic jet interceptor (160kg MTOW, 550 km/h); 8x Frankenburg Mark I micro-missiles countering Shahed swarms; breaks asymmetric air defense cost curve. | 2026-11-21 |
+| 89 | **Bell HSVTOL / SPRINT X-76 (Stop-Fold Rotor)** | [FB Reel](https://www.facebook.com/reel/2297744850789231) | `UAV: AT-TD-AR` | `IStopFoldRotorTransitionGovernor` & `IConvertibleEngineClutchPowerManager` | High-speed convertible VTOL (10-25t MTOW, 450 kts); stop-fold rotor drag/parasitic mass trade-offs; convertible engine clutch vs decoupled UAS fleet. | 2026-11-21 |
 
 ---
 
@@ -1845,6 +1846,23 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Short Micro-Missile Reach ($R_{\text{eff}} \approx 1.5\text{ km}$):** Frankenburg Mark I relies on close-in launch, mandating high-precision fire control vectoring to prevent target fly-by.
   * **Pylon Parasitic Drag Tax:** Carrying 8 external underwing missiles and launch rails increases zero-lift drag ($\Delta C_{D0}$), trimming loiter endurance to 40–50 min during high-g maneuvers.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): counter-swarm air defense cannot rely on static ground SAMs; it physically demands distributed software-defined jet interceptor screens networked into tactical battle management systems (Airbus IBMS / UWE C2) deploying low-cost micro-effectors.
+
+### Case Study #89: Bell HSVTOL / DARPA SPRINT (Stop-Fold Rotor & Convertible Propulsion Architecture)
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/2297744850789231) / DetailFuse & Bell Textron
+* **Date Analyzed:** 2026-11-21
+* **UWE 6-Character Token:** `UAV: AT-TD-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IStopFoldRotorTransitionGovernor` & `IConvertibleEngineClutchPowerManager` & `IAeroelasticBladeFlutterDamper`
+  * **The HAL One-Sentence Definition:** *"High-speed convertible vertical lift aircraft operating under IStopFoldRotorTransitionGovernor and IConvertibleEngineClutchPowerManager dynamically crossfade turboshaft rotor drive torque into turbofan core exhaust thrust while managing microsecond clutch decoupling, aeroelastic blade aero-brake deceleration, and pylon aerodynamic stowage across the high-dynamic-pressure transition corridor."*
+* **Physical Advantages (🟢):**
+  * **Dual-Flight Envelope Conquest:** Combines low disc loading helicopter vertical hover with 400–450 knot (Mach 0.65–0.75) jet cruise, breaking the legacy tiltrotor 300-knot compressibility limit.
+  * **Runway-Independent Strategic Speed:** Enables runway-independent insertion into contested theater depths without requiring vulnerable 2,000m paved runways.
+  * **Hover Fuel Efficiency vs Pure Jet VTOL:** Large diameter rotors achieve Figure of Merit (FM > 0.75), using 70% less fuel in hover than Harrier/F-35B direct jet lift.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Severe Parasitic Deadweight Penalty (25–35% $M_{\text{empty}}$):** Stop-fold rotor hubs, blade latching mechanisms, and heavy clutches constitute pure deadweight during jet cruise, severely penalizing payload and range.
+  * **Convertible Single-Engine Clutch Dilemma:** Transmitting 5,000–10,000 shp through mechanical decoupling clutches creates immense thermal shock, gearbox mass equivalent to a second engine, and catastrophic single points of failure.
+  * **Transition Corridor Aeroelastic Flutter:** Stopping flexible rotor blades in a 200–250 knot dynamic airflow risks violent aeroelastic flutter and blade-fuselage clashing during the 15–30 second stowage sequence.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): multi-mode "Swiss Army Knife" convertible platforms represent an over-engineered Wunderwaffe dead end; in attrition warfare, decoupled fleets of catapult-launched jet interceptors (`UAV: AL-TK-DR`) paired with dedicated eVTOL cargo carriers (`UCV: CL-EB-MS`) deliver superior survivability, lower cost, and zero parasitic conversion mass.
 
 
 
