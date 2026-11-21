@@ -161,18 +161,24 @@ When codifying a validated platform into `Expertise_Ledger.md`, immediately sync
 
 ---
 
-## 5. Automated Intelligence & OEM Verification Tooling (UWE OEM Finder)
+## 5. Automated Intelligence & OEM Verification Tooling (UWE OEM Finder & MCP Web Search)
 
-The cyber-physical expertise workflow integrates autonomous OEM discovery and multi-tier source validation via the UWE OEM Finder engine:
+The cyber-physical expertise workflow integrates autonomous OEM discovery, search grounding, and multi-tier source validation via dual MCP servers:
 
-1. **Dedicated MCP Server (`uwe-oem-finder`):**
+1. **Autonomous Search Layer (`mcp-web-search`):**
+   * Standard stdio JSON-RPC 2.0 MCP server (`mcp_web_search.py`) powered by Gemini 2.5 Flash Google Search Grounding (`GEMINI_API_KEY`).
+   * Tools: `mcp_web_search` (general search) and `mcp_oem_search` (MilTech OEM search).
+   * Skill binding: `.agents/skills/mcp-web-search/SKILL.md`.
+2. **Dedicated Validation & Audit Layer (`uwe-oem-finder`):**
    * `find_oem_specifications`: Autonomous retrieval and audit of physical vehicle parameters (kinematics, mass, range, endurance, powerplant) matching `[Platform]` and `[Vendor]`.
    * `validate_source_url`: Hardened Pinned-IP stream downloader enforcing strict anti-SSRF policies, private network blocking, DNS-rebinding immunity, Gzip-bomb limits (10 MB), and wall-clock deadlines (10s).
-2. **Autonomous Query Protocol:**
+3. **Autonomous Query Protocol:**
    * Queries MUST be formed strictly as `[Model] [Manufacturer]` without biasing the search with unverified or obsolete URLs from amateur notes.
    * Direct OEM URLs and PDF brochures are primary targets; unverified claims must be cross-checked against physical laws.
-3. **Dual-Tier Source Hierarchy (Fallback Architecture):**
+4. **Dual-Tier Source Hierarchy (Fallback Architecture):**
    * **Tier 1 (OEM Primary):** Direct manufacturer domain or verified PDF product brochure cataloged in `oem_registry.json`.
    * **Tier 2 (Authoritative Defense Media Fallback):** When OEM sites enforce WAF geo-blocking (HTTP 403) or platforms are out of production, fallback to authoritative technical defense publications (*Naval News*, *Defense Express*, *Airforce Technology*, *Unmanned Systems Technology*).
-4. **Antigravity Skill Binding:**
-   * Governed by `.agents/skills/uwe-oem-finder/SKILL.md` and configured via `~/.gemini/config/mcp_config.json`.
+5. **Antigravity Tooling & Pinned IP Pipeline:**
+   * Configured via `~/.gemini/config/mcp_config.json`.
+   * Candidate URLs discovered via `mcp_oem_search` must pass `validate_source_url` before fetching.
+
