@@ -103,8 +103,8 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 83 | **JetQuad AB5 Micro-Turbine (FusionFlight)** | [FB Reel](https://www.facebook.com/reel/999434699888530) | `UCV: CL-TL-AR` | `IMicroTurbineVectorHoverGovernor` & `ISupersonicPlumeGroundEffectMitigator` | Wingless micro-turbine sprint logistics drone; 4x micro-turbojets (200 hp), 450 km/h dash to compress FPV/EW intercept window, mechanical thrust vectoring bypassing 1500ms spool latency, and high disc-loading hover penalty. | 2026-11-21 |
 | 84 | **Nomad Box-Wing eVTOL (Orb Aerospace)** | [FB Reel](https://www.facebook.com/reel/1092687230097417) | `UAV: AL-HL-AR` | `IBoxWingVtolTransitionGovernor` & `IPrandtlAerodynamicStallMitigator` | Closed-loop box-wing (PrandtlPlane) eVTOL; 20-30% induced drag reduction, high structural rigidity for compact span and austere basing, severe hover crosswind sail area, and rotor downwash impingement on lower surfaces. | 2026-11-21 |
 | 85 | **Heavy Walking Spider Excavator (Iron Mantis / Menzi Muck Class)** | [FB Reel](https://www.facebook.com/reel/956304350433548) | `UGV: GH-DE-DR` | `ISpiderLegKinematicsGovernor` & `IProportionalHydraulicLoadBalancer` | Articulated multi-legged walking hydraulic chassis (Schreitbagger); discrete claw footholds for extreme mountain slopes (>40°), active auto-leveling, remote C2 engineering, low transit speed, and high hydraulic load. | 2026-11-21 |
-
-
+| 86 | **General Atomics FQ-42 Vengeance (CCA)** | [FB Post](https://www.facebook.com/story.php?story_fbid=1433195322347855&id=100069722016667) | `UAV: AT-TC-HR` | `ITransonicCavityWeaponSeparationGovernor` & `IModularAirframeMassBalanceController` | USAF Collaborative Combat Aircraft (Gambit Core); transonic internal bay Rossiter mode suppression, 2x AIM-120 AMRAAM MUM-T forward node. | 2026-11-21 |
+| 87 | **Quantum-Systems Reliant (Recon-to-Bomber)** | [LinkedIn](https://lnkd.in/p/dZvSCED9) / Dave Sharpin | `UAV: AL-HS-DR` | `IVtolTransitionDrive` & `IAsymmetricStoresRelease` | Hybrid eVTOL recon-to-bomber evolution (45kg MTOW, >10h loiter, 160km range); 9kg mixed wing stores (82mm mortar + 40mm grenades); asymmetric roll trim and pylon parasitic drag ($\Delta C_{D0}$). | 2026-11-21 |
 
 ---
 
@@ -1812,6 +1812,22 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Autopilot Mass-Balance & Trim Sensitivity:** Missile release shifts center-of-gravity ($\vec{x}_{\text{cg}}$); requires algorithmic recalculation to prevent rate saturation.
   * **Fixed Airfield Dependency ($C_3$):** 5–6 ton MTOW requires paved runways (>1,500 m), exposing deployment to standoff missile strikes.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): air superiority in attrition warfare mandates abstracting aircraft into an invariant industrial common core (Gambit Core) with deterministic HAL contracts governing transonic bay aeroacoustics and mass balancing.
+
+### Case Study #87: Quantum-Systems Reliant Armed Strike eVTOL (Recon-to-Bomber Transformation)
+* **Target Source:** [LinkedIn Post](https://lnkd.in/p/dZvSCED9) / Dave Sharpin & Quantum-Systems
+* **Date Analyzed:** 2026-11-21
+* **UWE 6-Character Token:** `UAV: AL-HS-DR` (Evolution from `UAV: AL-HR-DR` recon baseline)
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IVtolTransitionDrive` & `IAsymmetricStoresRelease` & `IBallisticMunitionDropController`
+  * **The HAL One-Sentence Definition:** *"Long-range hybrid-electric tactical strike UAVs operating under IVtolTransitionDrive and IAsymmetricStoresRelease dynamically crossfade vertical rotor torque and aerodynamic elevon authority while calculating continuous ballistic release vectors (CCRP) for external gravity stores, executing microsecond feedforward trim compensation to counteract lateral rolling moments and parasitic drag imbalances during mixed 82mm mortar and 40mm grenade drop sequences across contested littoral and terrestrial combat zones."*
+* **Physical Advantages (🟢):**
+  * **Aerodynamic Lift-to-Drag Superiority:** Fixed-wing cruise achieves $L/D \approx 14\text{--}18$, yielding $>10\text{ hours}$ loiter and 160+ km radius on hybrid power, breaking multirotor battery limits.
+  * **Recon-to-Bomber Decoupled Lethality:** Rapid field interchange transforms passive ISR payload bays into kinetic bomb racks carrying up to 9 kg external munitions (82mm mortar + 40mm grenades).
+  * **Runway-Independent Footprint:** Vertical eVTOL launch requires only a 10×10m clearing, eliminating catapults, arrestor nets, and vulnerable paved airfields.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Parasitic Pylon Drag Overhead:** External munitions and hardpoints disrupt laminar flow, increasing zero-lift drag by 25–35% ($\Delta C_{D0} > 0.015$) and cutting clean cruise endurance.
+  * **Asymmetric Release Trim Dynamics:** Releasing a 3.5kg mortar round from a single wing generates an instant rolling moment ($\Delta M_{\text{roll}}$), requiring microsecond feedforward flight control trim.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): frontline attrition makes single-role recon UAVs uneconomical; the invariant airframe must support software-defined transformation into precision bombers under unified HAL ballistic drop contracts.
 
 
 
