@@ -105,6 +105,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 85 | **Heavy Walking Spider Excavator (Iron Mantis / Menzi Muck Class)** | [FB Reel](https://www.facebook.com/reel/956304350433548) | `UGV: GH-DE-DR` | `ISpiderLegKinematicsGovernor` & `IProportionalHydraulicLoadBalancer` | Articulated multi-legged walking hydraulic chassis (Schreitbagger); discrete claw footholds for extreme mountain slopes (>40°), active auto-leveling, remote C2 engineering, low transit speed, and high hydraulic load. | 2026-11-21 |
 | 86 | **General Atomics FQ-42 Vengeance (CCA)** | [FB Post](https://www.facebook.com/story.php?story_fbid=1433195322347855&id=100069722016667) | `UAV: AT-TC-HR` | `ITransonicCavityWeaponSeparationGovernor` & `IModularAirframeMassBalanceController` | USAF Collaborative Combat Aircraft (Gambit Core); transonic internal bay Rossiter mode suppression, 2x AIM-120 AMRAAM MUM-T forward node. | 2026-11-21 |
 | 87 | **Quantum-Systems Reliant (Recon-to-Bomber)** | [LinkedIn](https://lnkd.in/p/dZvSCED9) / Dave Sharpin | `UAV: AL-HS-DR` | `IVtolTransitionDrive` & `IAsymmetricStoresRelease` | Hybrid eVTOL recon-to-bomber evolution (45kg MTOW, >10h loiter, 160km range); 9kg mixed wing stores (82mm mortar + 40mm grenades); asymmetric roll trim and pylon parasitic drag ($\Delta C_{D0}$). | 2026-11-21 |
+| 88 | **Airbus Bird of Prey (Do-DT25 & Frankenburg)** | [FB Reel](https://www.facebook.com/reel/1797724578260958) | `UAV: AL-TK-DR` | `IAirborneInterceptionDynamics` & `IMicroMissileSeparationGovernor` | Reusable high-subsonic jet interceptor (160kg MTOW, 550 km/h); 8x Frankenburg Mark I micro-missiles countering Shahed swarms; breaks asymmetric air defense cost curve. | 2026-11-21 |
 
 ---
 
@@ -1828,6 +1829,22 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Parasitic Pylon Drag Overhead:** External munitions and hardpoints disrupt laminar flow, increasing zero-lift drag by 25–35% ($\Delta C_{D0} > 0.015$) and cutting clean cruise endurance.
   * **Asymmetric Release Trim Dynamics:** Releasing a 3.5kg mortar round from a single wing generates an instant rolling moment ($\Delta M_{\text{roll}}$), requiring microsecond feedforward flight control trim.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): frontline attrition makes single-role recon UAVs uneconomical; the invariant airframe must support software-defined transformation into precision bombers under unified HAL ballistic drop contracts.
+
+### Case Study #88: Airbus Bird of Prey (Do-DT25 & Frankenburg Mark I C-UAS)
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1797724578260958) / The Manav Podcast & Airbus
+* **Date Analyzed:** 2026-11-21
+* **UWE 6-Character Token:** `UAV: AL-TK-DR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IAirborneInterceptionDynamics` & `IMicroMissileSeparationGovernor` & `ICounterUasTargetTrackGovernor`
+  * **The HAL One-Sentence Definition:** *"High-subsonic attritable air defense interceptor UAS operating under IAirborneInterceptionDynamics and IMicroMissileSeparationGovernor dynamically crossfades aerodynamic pitch/yaw steering with IBMS networked sensor cues to intercept low-altitude Shahed-class targets at 550 km/h, executing microsecond safe weapon separation sequences for salvo launches of up to eight Frankenburg Mark I solid-fuel micro-missiles across contested airspace."*
+* **Physical Advantages (🟢):**
+  * **Asymmetric Cost-Curve Inversion:** Counters $20k–$50k Shahed-136 drones with reusable jet platforms firing attritable micro-missiles, preserving multi-million-dollar SAM stockpiles (Patriot/IRIS-T).
+  * **High-Subsonic Intercept Kinematics ($V \approx 550\text{ km/h}$):** Micro-turbojet provides speed margin to execute stern-chase intercepts and close tactical kill corridors across 60 min loiter windows.
+  * **Runway-Independent C2 Logistics:** Catapult rail launch and parachute recovery enable austere basing without prepared airfields.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Short Micro-Missile Reach ($R_{\text{eff}} \approx 1.5\text{ km}$):** Frankenburg Mark I relies on close-in launch, mandating high-precision fire control vectoring to prevent target fly-by.
+  * **Pylon Parasitic Drag Tax:** Carrying 8 external underwing missiles and launch rails increases zero-lift drag ($\Delta C_{D0}$), trimming loiter endurance to 40–50 min during high-g maneuvers.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): counter-swarm air defense cannot rely on static ground SAMs; it physically demands distributed software-defined jet interceptor screens networked into tactical battle management systems (Airbus IBMS / UWE C2) deploying low-cost micro-effectors.
 
 
 
