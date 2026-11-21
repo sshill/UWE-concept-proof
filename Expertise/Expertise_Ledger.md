@@ -101,6 +101,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 81 | **X-BAT Tailsitter Fighter (Shield AI)** | [FB Reel](https://www.facebook.com/reel/1121953140321799) | `UAV: AH-TK-AS` | `ITailsitterJetVtolGovernor` & `IMobileCradleRecoveryDirector` | Group 5 autonomous stealth jet tailsitter; F110 afterburning turbofan with AVEN thrust vectoring, 25-ton mobile TEL recovery trailer, side-capture approach to eliminate hot gas ingestion, and zero-dynamic-pressure attitude stability. | 2026-11-21 |
 | 82 | **Transformable Rotor-Wing VTOL (THOR / Stop-Rotor)** | [FB Post](https://www.facebook.com/story.php?story_fbid=122124290331369735&id=61591092073863&post_id=61591092073863_122124290331369735) | `UAV: AL-ER-AR` | `IStoppedRotorTransitionGovernor` & `IAeroelasticResonanceDamper` | Stop-rotor / samara transformable VTOL; wide-chord propeller acting as rotating hover rotor and locked fixed wing, zero dead-weight airframe, retreating airfoil inversion dilemma, and gyroscopic cross-coupling damping. | 2026-11-21 |
 | 83 | **JetQuad AB5 Micro-Turbine (FusionFlight)** | [FB Reel](https://www.facebook.com/reel/999434699888530) | `UCV: CL-TL-AR` | `IMicroTurbineVectorHoverGovernor` & `ISupersonicPlumeGroundEffectMitigator` | Wingless micro-turbine sprint logistics drone; 4x micro-turbojets (200 hp), 450 km/h dash to compress FPV/EW intercept window, mechanical thrust vectoring bypassing 1500ms spool latency, and high disc-loading hover penalty. | 2026-11-21 |
+| 84 | **Nomad Box-Wing eVTOL (Orb Aerospace)** | [FB Reel](https://www.facebook.com/reel/1092687230097417) | `UAV: AL-HL-AR` | `IBoxWingVtolTransitionGovernor` & `IPrandtlAerodynamicStallMitigator` | Closed-loop box-wing (PrandtlPlane) eVTOL; 20-30% induced drag reduction, high structural rigidity for compact span and austere basing, severe hover crosswind sail area, and rotor downwash impingement on lower surfaces. | 2026-11-21 |
 
 
 
@@ -1756,6 +1757,24 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Thermal Soil Excavation & Compressor FOD:** 700°C supersonic downwash melts asphalt and blasts soil/gravel back into compressor intakes, causing catastrophic FOD on unprepared launch sites.
   * **Extreme Acoustic & Infrared Exposure:** 130 dB screaming noise and blazing thermal plume make the drone an unmistakable target for IR MANPADS.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction): wingless micro-turbine platforms cannot compete with multirotors on hover efficiency or ISR persistence, but establish a unique niche in **ultra-fast sprint logistics** (450 km/h) that bypasses C-UAS intercept windows; survival depends on HAL vectoring governors bypassing turbine mechanical latency.
+
+### Case Study #84: Orb Aerospace Nomad (Box-Wing eVTOL Aircraft)
+* **Target Source:** [FB Reel / The Manav Podcast](https://www.facebook.com/reel/1092687230097417)
+* **Date Analyzed:** 2026-11-21
+* **UWE 6-Character Token:** `UAV: AL-HL-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IBoxWingVtolTransitionGovernor` & `IPrandtlAerodynamicStallMitigator`
+  * **The HAL One-Sentence Definition:** *"Box-wing VTOL architectures require IBoxWingVtolTransitionGovernor to manage continuous aerodynamic handoff between vertical lift thrust and dual closed-loop lifting surfaces while IPrandtlAerodynamicStallMitigator prevents catastrophic pitching moments caused by differential boundary layer separation between fore and aft wing elements."*
+* **Physical Advantages (🟢):**
+  * **PrandtlPlane Induced Drag Reduction:** The closed box-wing geometry eliminates free wingtip vortices, redistributing circulation over a closed loop to reduce induced drag ($C_{Di}$) by 20–30% relative to a cantilever monoplane of equivalent span.
+  * **Closed Structural Loop Rigidity:** Structural interconnects between lower fore wing and upper aft wing convert bending moments into tension/compression couples, yielding high torsional stiffness and enabling lighter composite spar layups.
+  * **Compact Logistics Footprint ($C_2/C_3$):** Achieving monoplane aerodynamic efficiency at reduced wingspan allows the aircraft to fit inside standard tactical transport containers or C-130 cargo bays without wing detachment.
+  * **Hybrid-Electric Energy Decoupling:** Integrating a hybrid generator/fuel-cell energy bus breaks the LiPo specific energy bottleneck ($250\text{ Wh/kg}$), targeting up to 1,000 nautical miles of range and 500 lb (227 kg) tactical payload.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Severe Crosswind Sail Area ($q \approx 0$):** High lateral wetted area from vertical tip endplates and staggered tandem wings creates massive side-force in crosswinds during hover, demanding extreme cyclic or vectoring authority to prevent drift.
+  * **Rotor Downwash Impingement:** Downwash from upper lift thrusters impinges directly onto lower wing surfaces, generating negative lift / download penalties (up to 12–15% thrust loss) in hover.
+  * **Deep Stall & Pitching Moment Non-Linearity:** At high angles of attack ($\alpha$), the fore wing downwash and wake can cause abrupt stall of the upper aft wing, triggering severe pitch-up instability ($dC_m/d\alpha > 0$).
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization): the box-wing layout bridges the gap between VTOL runway independence and fixed-wing cruise efficiency, slashing induced drag by 20–30% within a compact logistics footprint ($C_2/C_3$). However, its viability in austere tactical environments depends entirely on HAL algorithms actively mitigating hover crosswind sail forces and managing fore/aft wing stall dynamics during high-$\alpha$ transition.
 
 
 
