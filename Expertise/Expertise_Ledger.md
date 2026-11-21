@@ -107,6 +107,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 87 | **Quantum-Systems Reliant (Recon-to-Bomber)** | [LinkedIn](https://lnkd.in/p/dZvSCED9) / Dave Sharpin | `UAV: AL-HS-DR` | `IVtolTransitionDrive` & `IAsymmetricStoresRelease` | Hybrid eVTOL recon-to-bomber evolution (45kg MTOW, >10h loiter, 160km range); 9kg mixed wing stores (82mm mortar + 40mm grenades); asymmetric roll trim and pylon parasitic drag ($\Delta C_{D0}$). | 2026-11-21 |
 | 88 | **Airbus Bird of Prey (Do-DT25 & Frankenburg)** | [FB Reel](https://www.facebook.com/reel/1797724578260958) | `UAV: AL-TK-DR` | `IAirborneInterceptionDynamics` & `IMicroMissileSeparationGovernor` | Reusable high-subsonic jet interceptor (160kg MTOW, 550 km/h); 8x Frankenburg Mark I micro-missiles countering Shahed swarms; breaks asymmetric air defense cost curve. | 2026-11-21 |
 | 89 | **Bell HSVTOL / SPRINT X-76 (Stop-Fold Rotor)** | [FB Reel](https://www.facebook.com/reel/2297744850789231) | `UAV: AT-TD-AR` | `IStopFoldRotorTransitionGovernor` & `IConvertibleEngineClutchPowerManager` | High-speed convertible VTOL (10-25t MTOW, 450 kts); stop-fold rotor drag/parasitic mass trade-offs; convertible engine clutch vs decoupled UAS fleet. | 2026-11-21 |
+| 91 | **XDOWN STUD (Small Tactical Unmanned Drone)** | [LinkedIn](https://lnkd.in/p/dS2sQAtA) & [Defence Blog](https://defence-blog.com/u-s-startup-shows-hand-launched-stud-drone-striking-a-target/) | `UAV: AB-EK-DR` | `IHandLaunchThrowDetectionGovernor` & `IHighSpeedTerminalInterceptorDrive` | Group 1 tactical hand-launched strike drone (2.36–2.7 kg, 305 km/h / 165 kts, 64 km range); solves rotary FPV drag/speed limits; backpack containerization ($C_1$, 8 units/rucksack, 120/pallet) with <1-2s throw-to-fly transition; BLOOPER UGV/USV canister launcher; edge-AI autonomous terminal guidance. | 2026-11-21 |
 
 ---
 
@@ -1863,6 +1864,25 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Convertible Single-Engine Clutch Dilemma:** Transmitting 5,000–10,000 shp through mechanical decoupling clutches creates immense thermal shock, gearbox mass equivalent to a second engine, and catastrophic single points of failure.
   * **Transition Corridor Aeroelastic Flutter:** Stopping flexible rotor blades in a 200–250 knot dynamic airflow risks violent aeroelastic flutter and blade-fuselage clashing during the 15–30 second stowage sequence.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): multi-mode "Swiss Army Knife" convertible platforms represent an over-engineered Wunderwaffe dead end; in attrition warfare, decoupled fleets of catapult-launched jet interceptors (`UAV: AL-TK-DR`) paired with dedicated eVTOL cargo carriers (`UCV: CL-EB-MS`) deliver superior survivability, lower cost, and zero parasitic conversion mass.
+
+---
+
+### Case Study #91: XDOWN STUD (Small Tactical Unmanned Drone / High-Speed Hand-Launched Kinetic Strike Interceptor)
+* **Target Source:** [LinkedIn Post](https://lnkd.in/p/dS2sQAtA) / Alexander Balan & [Defence Blog](https://defence-blog.com/u-s-startup-shows-hand-launched-stud-drone-striking-a-target/) (Emily Ryan Miller)
+* **Date Analyzed:** 2026-11-21
+* **UWE 6-Character Token:** `UAV: AB-EK-DR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IHandLaunchThrowDetectionGovernor` & `IHighSpeedTerminalInterceptorDrive` & `IDeployableFinActuator`
+  * **The HAL One-Sentence Definition:** *"Hand-launched tactical strike micro-aerospace interceptors operating under IHandLaunchThrowDetectionGovernor and IHighSpeedTerminalInterceptorDrive autonomously identify kinematic human throw separation, initiate millisecond fin deployment and high-RPM motor spin-up to transition from zero airspeed into a 165-knot aerodynamic intercept corridor with edge-vision terminal guidance."*
+* **Physical Advantages (🟢):**
+  * **Transonic-Sprint Aerodynamic Efficiency vs. Rotary FPV Drag:** Ultra-compact cross-section (8x8 cm) minimizes frontal wetted area, allowing sprint at 165 knots (305 km/h) over 64 km. Overcomes the drag wall ($D \propto V^2$) that caps rotary FPVs below 140–160 km/h.
+  * **Instantaneous Throw-to-Fly Deployment ($C_1$ Logistics):** Eliminates catapults and rails. Operators grab and throw by hand, transitioning from backpack to stabilized flight within 2.0 s (8–12 units per soldier rucksack).
+  * **Decoupled Terminal Autonomy:** Replaces manual FPV goggle piloting with onboard edge-AI computer vision, defeating tactical RF jamming and pilot cognitive exhaustion.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Aerodynamic Power Tax at Sprint Speeds ($P \propto V^3$):** Overcoming dynamic pressure ($q \approx 4,400\text{ Pa}$) at 305 km/h requires ~500W electric power, bounding endurance to 17 min.
+  * **Hand-Launch Stall Window:** 2-second transition between human throw ($10\text{–}15\text{ m/s}$) and stabilized motor spin-up ($V_{\text{cruise}} \ge 45\text{ m/s}$) risks gust stall if release velocity is insufficient.
+  * **Micro-Payload Limits:** Payload capped at 1.7 lbs (0.77 kg) requires sub-meter CEP terminal precision for hard-target defeat.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization): frontline C-UAS interdiction and tactical strike cannot rely on hobbyist multirotors ("FPV") due to aerodynamic drag collapse at speed. High-speed, low-frontal-area aerodynamic interceptors (`UAV: AB-EK-DR`) packed into $C_1$ squad rucksacks provide the required sprint velocities (>300 km/h) to reliably intercept hostile loitering munitions (Shahed) and reconnaissance drones without heavy runway infrastructure.
 
 
 
