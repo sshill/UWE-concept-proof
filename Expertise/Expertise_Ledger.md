@@ -102,6 +102,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 82 | **Transformable Rotor-Wing VTOL (THOR / Stop-Rotor)** | [FB Post](https://www.facebook.com/story.php?story_fbid=122124290331369735&id=61591092073863&post_id=61591092073863_122124290331369735) | `UAV: AL-ER-AR` | `IStoppedRotorTransitionGovernor` & `IAeroelasticResonanceDamper` | Stop-rotor / samara transformable VTOL; wide-chord propeller acting as rotating hover rotor and locked fixed wing, zero dead-weight airframe, retreating airfoil inversion dilemma, and gyroscopic cross-coupling damping. | 2026-11-21 |
 | 83 | **JetQuad AB5 Micro-Turbine (FusionFlight)** | [FB Reel](https://www.facebook.com/reel/999434699888530) | `UCV: CL-TL-AR` | `IMicroTurbineVectorHoverGovernor` & `ISupersonicPlumeGroundEffectMitigator` | Wingless micro-turbine sprint logistics drone; 4x micro-turbojets (200 hp), 450 km/h dash to compress FPV/EW intercept window, mechanical thrust vectoring bypassing 1500ms spool latency, and high disc-loading hover penalty. | 2026-11-21 |
 | 84 | **Nomad Box-Wing eVTOL (Orb Aerospace)** | [FB Reel](https://www.facebook.com/reel/1092687230097417) | `UAV: AL-HL-AR` | `IBoxWingVtolTransitionGovernor` & `IPrandtlAerodynamicStallMitigator` | Closed-loop box-wing (PrandtlPlane) eVTOL; 20-30% induced drag reduction, high structural rigidity for compact span and austere basing, severe hover crosswind sail area, and rotor downwash impingement on lower surfaces. | 2026-11-21 |
+| 85 | **Heavy Walking Spider Excavator (Iron Mantis / Menzi Muck Class)** | [FB Reel](https://www.facebook.com/reel/956304350433548) | `UGV: GH-DE-DR` | `ISpiderLegKinematicsGovernor` & `IProportionalHydraulicLoadBalancer` | Articulated multi-legged walking hydraulic chassis (Schreitbagger); discrete claw footholds for extreme mountain slopes (>40°), active auto-leveling, remote C2 engineering, low transit speed, and high hydraulic load. | 2026-11-21 |
 
 
 
@@ -1775,6 +1776,24 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Rotor Downwash Impingement:** Downwash from upper lift thrusters impinges directly onto lower wing surfaces, generating negative lift / download penalties (up to 12–15% thrust loss) in hover.
   * **Deep Stall & Pitching Moment Non-Linearity:** At high angles of attack ($\alpha$), the fore wing downwash and wake can cause abrupt stall of the upper aft wing, triggering severe pitch-up instability ($dC_m/d\alpha > 0$).
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization): the box-wing layout bridges the gap between VTOL runway independence and fixed-wing cruise efficiency, slashing induced drag by 20–30% within a compact logistics footprint ($C_2/C_3$). However, its viability in austere tactical environments depends entirely on HAL algorithms actively mitigating hover crosswind sail forces and managing fore/aft wing stall dynamics during high-$\alpha$ transition.
+
+### Case Study #85: Heavy Walking Spider Excavator (Iron Mantis / Menzi Muck Class)
+* **Target Source:** [FB Reel / Thais love peace](https://www.facebook.com/reel/956304350433548)
+* **Date Analyzed:** 2026-11-21
+* **UWE 6-Character Token:** `UGV: GH-DE-DR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ISpiderLegKinematicsGovernor` & `IProportionalHydraulicLoadBalancer`
+  * **The HAL One-Sentence Definition:** *"High-altitude walking spider engineering platforms require ISpiderLegKinematicsGovernor to coordinate multi-degree-of-freedom hydraulic leg articulation for autonomous slope leveling and gait stability while IProportionalHydraulicLoadBalancer dynamically modulates valve-bank flow to prevent tipping under extreme digging reactions on shear inclines."*
+* **Physical Advantages (🟢):**
+  * **Discrete Foothold Alpine Kinematics:** 4 independent multi-axis hydraulic legs with claw/pad terminals allow discrete contact point selection, preventing continuous soil shear and rock-face landslides where tracked or wheeled vehicles suffer catastrophic rollover.
+  * **Active Multi-Axis Self-Leveling:** Articulated legs self-level the cab and turntable on slopes up to 45°, maintaining steady gravitational vertical alignment for high-torque excavation and rock drilling.
+  * **Chasm & Trench Straddling:** Hydraulic extension enables stepping over 1.2–2.4 m vertical barriers, straddling 3–4 m crevasses, and wading through 1.5 m mountain torrents.
+  * **Remote Digital C2 Decoupling:** Electro-hydraulic proportional valve telemetry enables fully teleoperated or autonomous operations, isolating human operators from rockfall, avalanches, and direct fire hazards.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Severe Transit Velocity Penalty ($V \approx 1\text{--}5\text{ km/h}$):** Stepping kinematics are extremely slow; long-distance deployment demands dedicated heavy transport flatbed trailers ($C_3/C_4$).
+  * **High Hydraulic Power Drain & Thermal Exposure:** Multi-actuator continuous stabilization operates hydraulic circuits at high duty cycle (>300 bar), resulting in heavy diesel fuel consumption and pronounced infrared signature.
+  * **Extreme Seal & Actuator Mechanical Stress:** Articulated pivot joints and hydraulic cylinder seals operate in abrasive granite dust and sub-zero temperatures, causing seal wear and fluid leaks under high shock loads.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction): in extreme alpine and fissure terrain where wheeled and tracked platforms fail, articulated walking hydraulic kinematics (*Schreitbagger*) provide the sole viable physical interface for combat engineering and fortification; effective high-risk operation depends on HAL dynamic load balancing algorithms decoupling multi-axis chassis leveling from high-torque digging reactions.
 
 
 
