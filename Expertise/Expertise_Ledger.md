@@ -113,6 +113,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 94 | **Splash Industries Typhoon USV** | [FB Reel](https://www.facebook.com/reel/1087863540688091) | `USV: PW-PL-AQ` | `IUnderwayWellDeckDocking` & `IVelocityMatchingApproachDrive` | 11-ft (3.35m) high-speed waterjet USV (>50–70 kts); autonomous underway well-deck resupply of USS Essex (LHD 2) at RIMPAC 2026; Bernoulli hull suction & standing surge compensation; passive edge-optical pose estimation without RF/GNSS. | 2026-11-22 |
 | 95 | **NATO / EDA / New Space Economy (Drone Warfare Landscape)** | [LinkedIn](https://lnkd.in/p/dH9HVkep) | `C2: MB-HR-GW`<br>`UAV: AI-TF-DR`<br>`UCV: CQ-HE-AR` | `ICrossDomainKillWebRouter` & `IDecoupledLethalityGovernor` | Doctrinal audit of Western tactical drone landscape; 4 points of convergence (FPV as view format, autonomy != immunity, TCO, multi-bearer comms); 5 critical gaps (rejection of C-UAS as obsolete silo, flat taxonomy trap vs HAL, peacetime complement myth, lack of C0-C4 containerization). | 2026-11-22 |
 | 96 | **A Tale of Two Markets (FitzGerald / Boyle)** | [LinkedIn](https://lnkd.in/p/dvdsTXja) & [War on the Rocks](https://warontherocks.com/cogs-of-war/a-tale-of-two-markets-a-dickensian-take-on-the-coming-years-in-defense-tech/) | `C2: MB-HR-GW`<br>`HAL: IP-DL-CR` | `IHardwareAbstractionLayerGovernor` & `ITotalAttritionEconomicsEngine` | Doctrinal critique of defense acquisition; exposes 'product contracts' winner-take-all trap, Valley of Death, lobbying vs engineering; solved via UWE HAL & Decoupled Lethality, C0-C4 containerization, frontline attrition physics, in-flight dynamic retargeting, and 6-char algorithmic audit. | 2026-11-22 |
+| 97 | **Experimental Single-Wheel Gyro UGV** | [FB Reel](https://www.facebook.com/reel/1396489555451389) / Syber Monday | `UGV: WM-1E-PR` | `ISingleWheelDynamicBalancingGovernor` & `IKinematicTractionMarginController` | Single-wheel self-balancing tactical UGV (<100kg, Class 1); proves continuous wheeled rolling eliminates quadruped reciprocating inertia tax (CoT << 0.2 vs 0.8-1.5); 3-5x payload fraction and zero-radius turn; alpine scree slope (>35°-45°, tanθ > μ) identified as sole legitimate legged niche. | 2026-11-22 |
 
 ---
 
@@ -1985,6 +1986,26 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Eradicating C-UAS Silos:** Eliminates static functional boxes via in-flight edge retargeting, where all assets are natively kinematic-ready against aggressive UAS.
   * **6-Character Algorithmic Audit:** Destroys cronyism and lobbying through machine-verifiable physical tokens.
 * **Architectural Lesson for UWE:** Validates UWE Law 2 (Hierarchical Containerization) and Law 3 (Hardware Abstraction & Decoupled Lethality): Western defense tech cannot bridge the chasm between venture hype and industrial scaling within legacy procurement frameworks. The solution is not better lobbying, but a paradigm shift to open HAL standards, commodity chassis containerization, and frontline attrition physics.
+
+---
+
+### Case Study #97: Experimental Single-Wheel Gyro UGV vs. Legged Robotic Walkers
+* **Target Source:** [FB Reel 1396489555451389](https://www.facebook.com/reel/1396489555451389) / Syber Monday
+* **Date Analyzed:** 2026-11-22
+* **UWE 6-Character Token:** `UGV: WM-1E-PR`
+* **Contrast Benchmark Token (Quadruped Dog):** `UGV: LH-1E-PR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ISingleWheelDynamicBalancingGovernor` & `IKinematicTractionMarginController`
+  * **The HAL One-Sentence Definition:** *"Single-wheel dynamically balanced tactical UGVs operating under ISingleWheelDynamicBalancingGovernor and IKinematicTractionMarginController decouple payload mass from leg articulation friction by utilizing continuous rotational momentum and reaction-mass attitude compensation, achieving a fivefold reduction in Cost of Transport (CoT) over quadrupedal walkers until terrain incline exceeds surface friction traction limits (\(\mu < \tan\theta\))."*
+* **Physical Advantages (🟢):**
+  * **No Reciprocating Dead-Stroke:** Continuous wheel rotation eliminates the 60–75% energy waste inherent in quadrupedal stance/swing limb acceleration. Cost of transport $\text{CoT} \ll 0.2$ vs $0.8–1.5$ for legged robotics.
+  * **Extreme Payload Ratio:** Allows 3–5× greater useful payload mass (armor, optics, EW, or warhead) on identical battery capacity ($E$).
+  * **Agile Kinematic Envelope:** Instantaneous zero-radius yaw rotation ($\dot{\psi}$) and high sprint velocity, breaking FPV drone tracking angles in urban and trench sectors.
+* **Engineering Vulnerabilities / Trade-offs (🔴):**
+  * **Inverted Pendulum Falloff Risk:** Relies on active motor torque to sustain upright equilibrium; power loss results in instantaneous airframe collapse.
+  * **The Alpine Traction Ceiling:** When terrain slope exceeds tire traction ($\tan\theta > \mu$), rolling fails into wheel-spin; multi-point legged crawlers (`L`) remain the sole viable architecture for extreme rocky cliffs and loose scree.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) in the UGV domain under the canonical `[WP]-[DE]-[TC]` matrix. Demolishes commercial marketing claims of legged "robot dogs" as universal combat platforms. Continuous wheeled rolling (`W`) is physically superior in 95% of operational scenarios, restricting legged kinematics (`L`) strictly to extreme alpine incline niches.
+
 
 
 
