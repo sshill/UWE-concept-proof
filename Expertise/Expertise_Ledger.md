@@ -1903,6 +1903,25 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **RF Control Vulnerability:** Reliance on unshielded wireless C2 leaves the platform susceptible to EW severance unless backed by tethered or optical follow-me modes.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): tracked robotic chassis solve forward trench fire suppression without crew casualties, but tactical survivability in modern drone-dense warfare mandates hybrid electric silent-watch drive and automated edge fire control rather than pure legacy diesel skid-steer architecture.
 
+---
+
+### Case Study #93: General Dynamics / Bluefin Robotics Knifefish SMCM UUV
+* **Target Source:** [YouTube Shorts](https://www.youtube.com/shorts/DsgURzHglfk) / AiTelly
+* **Date Analyzed:** 2026-11-22
+* **UWE 6-Character Token:** `UUV: CV-RL-HU`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IVectoredThrustDrive` & `IBroadbandSyntheticApertureSonar` & `ISedimentPenetrationClassifier`
+  * **The HAL One-Sentence Definition:** *"Autonomous mine-hunting undersea platforms operating under IVectoredThrustDrive and IBroadbandSyntheticApertureSonar dynamically coordinate gimbaled ducted-thruster pitch and yaw deflections with Doppler Velocity Log trackline corrections, stabilizing 2.5–3.0 knot survey velocity and sub-degree attitude hold to enable Low-Frequency Broadband (LFBB) synthetic aperture acoustic penetration of seabed sediment and edge classification of buried ordnance."*
+* **Physical Advantages (🟢):**
+  * **Buried Mine Classification via LFBB Resonance:** Exploits low-frequency broadband acoustic pulses that penetrate seabed sediment and excite structural acoustic resonance inside metallic/composite mine casings, reliably classifying buried and volume mines missed by standard high-frequency sonars.
+  * **Vectored-Thrust Maneuvering Efficiency:** Gimbaled ducted thruster provides low-speed (2.5 kt) yaw and pitch control without external hydrodynamic control fins, slashing parasitic boundary-layer drag and eliminating fin entanglement with marine growth or tether lines.
+  * **Decoupling Manned Fleet from Minefields:** Replaces multibillion-dollar manned MCM ships and diver teams in lethal mine zones with an autonomous, dispensable, standoff robotic vector operating tens of nautical miles ahead of the fleet.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Active Acoustic Beacon Signature:** Emitting powerful low-frequency broadband acoustic pulses illuminates the vehicle across entire littoral basins, making Knifefish an easily detectable beacon for hostile passive sonar arrays and torpedoes.
+  * **Launch and Recovery (LARS) Sea State Fragility:** Handling an 800–900 kg, 6-meter delicate torpedo body in Sea State 3+ from high-freeboard warships risks severe hull impact damage during crane deployment.
+  * **Hydroacoustic Bandwidth Throttling:** Submerged acoustic modems provide only low-baud telemetry; gigabytes of raw broadband SAS imagery cannot be transmitted in real time, creating an operational latency where minefield confirmation occurs only after vehicle recovery and physical memory retrieval.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): subsea mine warfare cannot rely on legacy high-frequency visual/acoustic sonars that fail against sediment-buried threats. The platform must abstract the sensor array into a high-energy structural acoustic transceiver while using gimbaled thrust vectoring to maintain sub-degree trackline stabilization. Furthermore, demining operations must be doctrinally decoupled into separate **Detection/Classification** (`UUV: CV-RL-HU`) and **Kinetic Neutralization** (`OWM / Micro-UUV`) assets to prevent wasting multimillion-dollar multi-sensor platforms on single-target detonations.
+
 
 
 

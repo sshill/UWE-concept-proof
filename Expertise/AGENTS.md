@@ -143,12 +143,9 @@ Immediately persist findings into [`Expertise_Ledger.md`](file:///home/hills/Doc
 * Primary HAL interface tested.
 * Architectural lesson derived (gap detected in legacy standards, physical law validated).
 
-### Block 6: Web Portal Synchronization & Codification
-When codifying a validated platform into `Expertise_Ledger.md`, immediately sync its benchmark definition into `build_uwe_site.py` (`CASES_DATA` array):
-1. Append/update case dict: `id`, `slug`, `domain`, `name`, `token`, `hal`, `hal_def`, `vendor`, `advantages`, `vulnerabilities`, `lesson`, `related`.
-2. Verify token uniqueness against `ALLOWED_COLLISIONS`.
-3. Re-compile portal via `python3 build_uwe_site.py` ensuring `validate_uwe_integrity()` passes.
-4. Seal repository state via `./push_to_github.sh +` (Phase 5.2 Git State Seal Gate).
+### Block 6: Web Portal Synchronization Policy (Deprecated for Expertise Cases)
+* **Architectural Rule:** `build_uwe_site.py` is **NOT** modified during standard expertise case processing (`/exprt`). Do NOT sync individual cases into `build_uwe_site.py` or re-compile the web portal during per-case codification.
+* **Scope of Case Codification:** Confined strictly to `Expertise/comments/<ID>_<Platform>_*.md` and `Expertise/Expertise_Ledger.md`. Portal builds occur exclusively during dedicated portal-release passes.
 
 ---
 
@@ -158,6 +155,7 @@ When codifying a validated platform into `Expertise_Ledger.md`, immediately sync
 2. **NO Amateur Military Slang:** Never use terms like *vozyk*, *cart*, *FPV* (as a vehicle class), *kamikaze-drone* (it is an OWM decorator on an invariant chassis).
 3. **NO Inline Evaluation:** Zero `python -c` or `bash -c`. Use structured scripts or standard git inspect commands.
 4. **NO Silent Lost Insights:** Every link analyzed MUST update `Expertise_Ledger.md`. No analysis is thrown away.
+5. **NO Portal Sync in /exprt:** Do NOT modify `build_uwe_site.py` or execute portal builds during case expertise processing.
 
 ---
 
