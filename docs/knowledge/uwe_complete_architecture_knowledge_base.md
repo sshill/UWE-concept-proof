@@ -231,8 +231,9 @@ $$\vec{\Theta}_{\text{airframe}} = \Big[ SOH_{\text{batt}},\, R_{\text{int}},\, 
 |---|---|---|---|---|
 | `UGV: GL-EB-DW` | THeMIS / Воля-Е | Milrem / UA | Окопи, важкий чорнозем | Дизель-генератор + LiFePO4 / MESH модем |
 | `UGV: GB-EA-HA` | Модуль «Шабля» | ТрО / Brave1 (UA) | Стаціонарна засідка | Батарея 24 В, режим сну <5 мА / Провід/радіо |
-| `USV: SL-PA-MO` | Magura V5 / Sea Baby | ГУР / СБУ (UA) | Морська акваторія, 50 вузлів| Бензиновий ДВЗ + водомет / Starlink + Kymeta |
-| `USV: ST-EL-DR` | Saildrone Voyager | Saildrone (США) | Відкритий океан, Sea State 6| Жорстке вітрило + сонячні батареї / Iridium |
+| `USV: PT-PK-WS` | Magura V5 / Sea Baby | ГУР / СБУ (UA) | Морська акваторія, 50 вузлів| Бензиновий ДВЗ + водомет / Starlink + Kymeta |
+| `USV: WT-SS-PS` | Saildrone Voyager | Saildrone (США) | Відкритий океан, Sea State 6| Жорстке вітрило + сонячні батареї / Iridium |
+
 | `UUV: UT-EB-SQ` | HUGIN 6000 / REMUS | Kongsberg / HII | Глибини 200–6000 м | Напівпровідниковий Li-ion / HiPAP сонар |
 | `UUV: UB-EA-MA` | Толока (TLK-150) | Brave1 (Україна) | Прибережні мілководдя 0–30м | Електромотор + батарея / Оптоволокно / GPS буй|
 
