@@ -110,7 +110,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 91 | **XDOWN STUD (Small Tactical Unmanned Drone)** | [LinkedIn](https://lnkd.in/p/dS2sQAtA) & [Defence Blog](https://defence-blog.com/u-s-startup-shows-hand-launched-stud-drone-striking-a-target/) | `UAV: AB-EK-DR` | `IHandLaunchThrowDetectionGovernor` & `IHighSpeedTerminalInterceptorDrive` | Group 1 tactical hand-launched strike drone (2.36–2.7 kg, 305 km/h / 165 kts, 64 km range); solves rotary FPV drag/speed limits; backpack containerization ($C_1$, 8 units/rucksack, 120/pallet) with <1-2s throw-to-fly transition; BLOOPER UGV/USV canister launcher; edge-AI autonomous terminal guidance. | 2026-11-21 |
 | 92 | **Howe & Howe / ARDEC Scorpion RS2 (Combat UGV)** | [FB Reel](https://www.facebook.com/reel/1958126931561451) / Military Mechanics | `UGV: TL-3D-AR` | `IRecoilDynamicStabilizationGovernor` & `IElevatedRwsBallisticDirector` | Tracked combat robot (1.5–2.0t, Class 3, continuous rubber tracks); .50 cal (12.7mm) M2 RCWS; ultra-low ground pressure ($0.16\text{ kg/cm}^2$, $P=\text{L}$) vs skid-steer friction tax; diesel IR signature vulnerability. | 2026-11-22 |
 | 93 | **General Dynamics Knifefish SMCM UUV** | [YouTube Shorts](https://www.youtube.com/shorts/DsgURzHglfk) / AiTelly | `UUV: CV-RL-HU` | `IVectoredThrustDrive` & `IBroadbandSyntheticApertureSonar` | Autonomous surface-mine countermeasure UUV (800kg, 6m); gimbaled ducted thruster without rudders; LFBB synthetic aperture acoustic penetration of seabed sediment classifying buried naval mines; acoustic beacon detectability. | 2026-11-22 |
-| 94 | **Splash Industries Typhoon USV** | [FB Reel](https://www.facebook.com/reel/1087863540688091) | `USV: SP-PL-AQ` | `IUnderwayWellDeckDocking` & `IVelocityMatchingApproachDrive` | 11-ft (3.35m) high-speed waterjet USV (>50–70 kts); autonomous underway well-deck resupply of USS Essex (LHD 2) at RIMPAC 2026; Bernoulli hull suction & standing surge compensation; passive edge-optical pose estimation without RF/GNSS. | 2026-11-22 |
+| 94 | **Splash Industries Typhoon USV** | [FB Reel](https://www.facebook.com/reel/1087863540688091) | `USV: PW-PL-AQ` | `IUnderwayWellDeckDocking` & `IVelocityMatchingApproachDrive` | 11-ft (3.35m) high-speed waterjet USV (>50–70 kts); autonomous underway well-deck resupply of USS Essex (LHD 2) at RIMPAC 2026; Bernoulli hull suction & standing surge compensation; passive edge-optical pose estimation without RF/GNSS. | 2026-11-22 |
 
 ---
 
@@ -1930,7 +1930,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
 ### Case Study #94: Splash Industries Typhoon USV (Autonomous Underway Well-Deck Resupply)
 * **Target Source:** [FB Reel](https://www.facebook.com/reel/1087863540688091)
 * **Date Analyzed:** 2026-11-22
-* **UWE 6-Character Token:** `USV: SP-PL-AQ`
+* **UWE 6-Character Token:** `USV: PW-PL-AQ`
 * **Hardware Abstraction Layer (HAL) Contracts:**
   * **Core Interfaces:** `IUnderwayWellDeckDocking` & `IVelocityMatchingApproachDrive` & `IWaterjetThrustVectoring`
   * **The HAL One-Sentence Definition:** *"High-speed logistics uncrewed surface vessels operating under IVelocityMatchingApproachDrive and IUnderwayWellDeckDocking dynamically match relative 3-axis velocity vectors with a moving capital warship, counteracting stern-gate wake turbulence, Bernoulli hull suction, and flooded well-deck surge dynamics via microsecond waterjet reversing bucket deflection and edge-optical pose estimation without human teleoperation."*
@@ -1942,7 +1942,7 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Hydrodynamic Bernoulli Suction & Well-Deck Surging:** Entering a confined well-deck behind a moving ship subjects an 11-ft craft to intense cross-flow currents, boundary-layer suction toward hull walls, and surging standing waves that can cause broaching or slamming.
   * **Planing Hull Sea State Ceiling:** Ultra-high speeds (>50 kts) on an 11-ft hull are strictly bounded by Sea State ($G_z \propto V^2$); vertical shock accelerations in Sea State 4+ risk sensor damage or delamination.
   * **Payload Mass Constraints:** Compact 11-foot footprint restricts internal payload mass, requiring high-frequency sortie rotations to transfer meaningful tonnage.
-* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): naval logistics cannot rely on manual coxswain operations in contested littorals. Autonomy must master the complex multi-body hydrodynamic interactions (`IUnderwayWellDeckDocking`) of ship-to-ship resupply at speed. By abstracting the hull as an autonomous high-speed surface carrier (`USV: SP-PL-AQ`), naval forces achieve distributed, resilient supply lines that bypass manned vessel vulnerabilities.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): naval logistics cannot rely on manual coxswain operations in contested littorals. Autonomy must master the complex multi-body hydrodynamic interactions (`IUnderwayWellDeckDocking`) of ship-to-ship resupply at speed. By abstracting the hull as an autonomous high-speed surface carrier (`USV: PW-PL-AQ`), naval forces achieve distributed, resilient supply lines that bypass manned vessel vulnerabilities.
 
 
 

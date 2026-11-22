@@ -4,13 +4,13 @@
 # Mode: Autonomous Underway Well-Deck Resupply (USS Essex LHD 2, RIMPAC 2026)
 
 CLASSIFICATION UNDER UWE STANDARD (Unmanned Warfare Engine):
-USV: SP-PL-AQ
+USV: PW-PL-AQ
 
-• S (Surface) — marine boundary layer, 11-foot (3.35 m) planing stealth hull.
-• P (Portable) — ultracompact C1/C2 logistics footprint, trailer/slipway transport.
-• P (Piston Waterjet) — high-output marine gasoline ICE, waterjet with reversing bucket.
-• L (Logistics) — autonomous underway replenishment (UNREP) and payload transfer.
-• A (Autonomous Docking) — adaptive relative velocity matching and well-deck ingress (L4).
+• P (Planing Monohull) — high-speed V-bottom planing hull, 11-foot (3.35 m) length, >50–70 kts sprint (>130 km/h).
+• W (Well-Deck / Amphibious Dock) — containerization tier C3/C4, autonomous underway ingress into flooded warship well-decks (LHD/LPD).
+• P (Petrol ICE + Waterjet) — high-output marine gasoline ICE with waterjet and reversing bucket thrust vectoring.
+• L (Logistics / UNREP) — autonomous cargo/ammo resupply and underway replenishment.
+• A (Autonomous Docking) — adaptive relative velocity matching and underway well-deck docking (L4).
 • Q (Quiet / RF-Silent) — passive optical/LiDAR edge sensor fusion, zero-RF/GNSS dependence.
 
 CORE CYBER-PHYSICAL ADVANTAGE:
