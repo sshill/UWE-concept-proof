@@ -108,6 +108,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 88 | **Airbus Bird of Prey (Do-DT25 & Frankenburg)** | [FB Reel](https://www.facebook.com/reel/1797724578260958) | `UAV: AL-TK-DR` | `IAirborneInterceptionDynamics` & `IMicroMissileSeparationGovernor` | Reusable high-subsonic jet interceptor (160kg MTOW, 550 km/h); 8x Frankenburg Mark I micro-missiles countering Shahed swarms; breaks asymmetric air defense cost curve. | 2026-11-21 |
 | 89 | **Bell HSVTOL / SPRINT X-76 (Stop-Fold Rotor)** | [FB Reel](https://www.facebook.com/reel/2297744850789231) | `UAV: AT-TD-AR` | `IStopFoldRotorTransitionGovernor` & `IConvertibleEngineClutchPowerManager` | High-speed convertible VTOL (10-25t MTOW, 450 kts); stop-fold rotor drag/parasitic mass trade-offs; convertible engine clutch vs decoupled UAS fleet. | 2026-11-21 |
 | 91 | **XDOWN STUD (Small Tactical Unmanned Drone)** | [LinkedIn](https://lnkd.in/p/dS2sQAtA) & [Defence Blog](https://defence-blog.com/u-s-startup-shows-hand-launched-stud-drone-striking-a-target/) | `UAV: AB-EK-DR` | `IHandLaunchThrowDetectionGovernor` & `IHighSpeedTerminalInterceptorDrive` | Group 1 tactical hand-launched strike drone (2.36–2.7 kg, 305 km/h / 165 kts, 64 km range); solves rotary FPV drag/speed limits; backpack containerization ($C_1$, 8 units/rucksack, 120/pallet) with <1-2s throw-to-fly transition; BLOOPER UGV/USV canister launcher; edge-AI autonomous terminal guidance. | 2026-11-21 |
+| 92 | **Howe & Howe / ARDEC Scorpion RS2 (Combat UGV)** | [FB Reel](https://www.facebook.com/reel/1958126931561451) / Military Mechanics | `UGV: TL-3D-AR` | `IRecoilDynamicStabilizationGovernor` & `IElevatedRwsBallisticDirector` | Tracked combat robot (1.5–2.0t, Class 3, continuous rubber tracks); .50 cal (12.7mm) M2 RCWS; ultra-low ground pressure ($0.16\text{ kg/cm}^2$, $P=\text{L}$) vs skid-steer friction tax; diesel IR signature vulnerability. | 2026-11-22 |
 
 ---
 
@@ -1883,6 +1884,24 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Hand-Launch Stall Window:** 2-second transition between human throw ($10\text{–}15\text{ m/s}$) and stabilized motor spin-up ($V_{\text{cruise}} \ge 45\text{ m/s}$) risks gust stall if release velocity is insufficient.
   * **Micro-Payload Limits:** Payload capped at 1.7 lbs (0.77 kg) requires sub-meter CEP terminal precision for hard-target defeat.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 2 (Hierarchical Containerization): frontline C-UAS interdiction and tactical strike cannot rely on hobbyist multirotors ("FPV") due to aerodynamic drag collapse at speed. High-speed, low-frontal-area aerodynamic interceptors (`UAV: AB-EK-DR`) packed into $C_1$ squad rucksacks provide the required sprint velocities (>300 km/h) to reliably intercept hostile loitering munitions (Shahed) and reconnaissance drones without heavy runway infrastructure.
+
+---
+
+### Case Study #92: Howe & Howe / ARDEC Scorpion RS2 (Combat UGV & .50 Cal RCWS)
+* **Target Source:** [FB Reel](https://www.facebook.com/reel/1958126931561451) / Military Mechanics
+* **Date Analyzed:** 2026-11-22
+* **UWE 6-Character Token:** `UGV: TL-3D-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `IRecoilDynamicStabilizationGovernor` & `ITrackedChassisTractionManager` & `IElevatedRwsBallisticDirector`
+  * **The HAL One-Sentence Definition:** *"Tracked combat robotic weapon platforms operating under IRecoilDynamicStabilizationGovernor and IElevatedRwsBallisticDirector dynamically synchronize track brake clamping and suspension damping with automatic weapon burst cycles, countering 12.7mm high-cadence recoil moments (M_pitch) to preserve point-target fire precision across unprepared off-road soils."*
+* **Physical Advantages (🟢):**
+  * **Ultra-Low Ground Pressure vs. Mud Flotation:** Continuous rubber tracks distribute 1.5–2.0t MTOW across ~11,200 cm² contact area, yielding ~0.16 kg/cm² ground pressure (lower than human foot), guaranteeing flotation in mud/snow where wheeled armor bogs down.
+  * **Direct Fire Standoff Suppression:** Integrates .50 cal (12.7mm) M2 Browning RCWS delivering 18 kJ muzzle energy out to 1,500m, suppressing light armor while removing operators from direct line of fire.
+* **Engineering Vulnerabilities & Tactical Penalties (🔴):**
+  * **Thermal & Acoustic Exposure:** Diesel ICE exhaust (>400°C) and mechanical roar (>85 dB at 100m) render the chassis an easy target for thermal FPV hunter-killer drones in night operations.
+  * **Skid-Steer Lateral Friction Tax:** Zero-radius pivot turns in clay or mud consume 50–60% of engine power in lateral track scrubbing, accelerating track de-tracking under high-dynamic maneuvers.
+  * **RF Control Vulnerability:** Reliance on unshielded wireless C2 leaves the platform susceptible to EW severance unless backed by tethered or optical follow-me modes.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): tracked robotic chassis solve forward trench fire suppression without crew casualties, but tactical survivability in modern drone-dense warfare mandates hybrid electric silent-watch drive and automated edge fire control rather than pure legacy diesel skid-steer architecture.
 
 
 
