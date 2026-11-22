@@ -111,6 +111,7 @@ Every entry records the physical medium, UWE Token, tested HAL contract, and arc
 | 92 | **Howe & Howe / ARDEC Scorpion RS2 (Combat UGV)** | [FB Reel](https://www.facebook.com/reel/1958126931561451) / Military Mechanics | `UGV: TL-3D-AR` | `IRecoilDynamicStabilizationGovernor` & `IElevatedRwsBallisticDirector` | Tracked combat robot (1.5–2.0t, Class 3, continuous rubber tracks); .50 cal (12.7mm) M2 RCWS; ultra-low ground pressure ($0.16\text{ kg/cm}^2$, $P=\text{L}$) vs skid-steer friction tax; diesel IR signature vulnerability. | 2026-11-22 |
 | 93 | **General Dynamics Knifefish SMCM UUV** | [YouTube Shorts](https://www.youtube.com/shorts/DsgURzHglfk) / AiTelly | `UUV: CV-RL-HU` | `IVectoredThrustDrive` & `IBroadbandSyntheticApertureSonar` | Autonomous surface-mine countermeasure UUV (800kg, 6m); gimbaled ducted thruster without rudders; LFBB synthetic aperture acoustic penetration of seabed sediment classifying buried naval mines; acoustic beacon detectability. | 2026-11-22 |
 | 94 | **Splash Industries Typhoon USV** | [FB Reel](https://www.facebook.com/reel/1087863540688091) | `USV: PW-PL-AQ` | `IUnderwayWellDeckDocking` & `IVelocityMatchingApproachDrive` | 11-ft (3.35m) high-speed waterjet USV (>50–70 kts); autonomous underway well-deck resupply of USS Essex (LHD 2) at RIMPAC 2026; Bernoulli hull suction & standing surge compensation; passive edge-optical pose estimation without RF/GNSS. | 2026-11-22 |
+| 95 | **NATO / EDA / New Space Economy (Drone Warfare Landscape)** | [LinkedIn](https://lnkd.in/p/dH9HVkep) | `C2: MB-HR-GW`<br>`UAV: AI-TF-DR`<br>`UCV: CQ-HE-AR` | `ICrossDomainKillWebRouter` & `IDecoupledLethalityGovernor` | Doctrinal audit of Western tactical drone landscape; 4 points of convergence (FPV as view format, autonomy != immunity, TCO, multi-bearer comms); 5 critical gaps (rejection of C-UAS as obsolete silo, flat taxonomy trap vs HAL, peacetime complement myth, lack of C0-C4 containerization). | 2026-11-22 |
 
 ---
 
@@ -1943,6 +1944,26 @@ When processing a new link via `/exprt <URL>`, append the findings using this fo
   * **Planing Hull Sea State Ceiling:** Ultra-high speeds (>50 kts) on an 11-ft hull are strictly bounded by Sea State ($G_z \propto V^2$); vertical shock accelerations in Sea State 4+ risk sensor damage or delamination.
   * **Payload Mass Constraints:** Compact 11-foot footprint restricts internal payload mass, requiring high-frequency sortie rotations to transfer meaningful tonnage.
 * **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy) and Law 3 (Hardware Abstraction & Decoupled Lethality): naval logistics cannot rely on manual coxswain operations in contested littorals. Autonomy must master the complex multi-body hydrodynamic interactions (`IUnderwayWellDeckDocking`) of ship-to-ship resupply at speed. By abstracting the hull as an autonomous high-speed surface carrier (`USV: PW-PL-AQ`), naval forces achieve distributed, resilient supply lines that bypass manned vessel vulnerabilities.
+
+---
+
+### Case Study #95: NATO / EDA / New Space Economy "Drone Warfare: The Tactical Landscape" (Doctrinal Audit)
+* **Target Source:** [LinkedIn](https://lnkd.in/p/dH9HVkep) / New Space Economy (NATO, DIANA, EDA, EP)
+* **Date Analyzed:** 2026-11-22
+* **UWE 6-Character Tokens:** `C2: MB-HR-GW` / `UAV: AI-TF-DR` / `UCV: CQ-HE-AR`
+* **Hardware Abstraction Layer (HAL) Contracts:**
+  * **Core Interfaces:** `ICrossDomainKillWebRouter` & `IDecoupledLethalityGovernor`
+  * **The HAL One-Sentence Definition:** *"Cross-domain tactical kill-web orchestration frameworks operating under ICrossDomainKillWebRouter and IDecoupledLethalityGovernor translate multi-tier uncrewed assets into standardized HAL primitives, dynamically matching target telemetry (TTT) and prioritizing aggressive UAS interdiction in-flight without static C-UAS silos."*
+* **Physical Advantages & Doctrinal Convergences (🟢):**
+  * **De-noising "FPV":** Footnote confirms *"FPV describes the pilot's view, not a level of autonomy"*, converging with UWE Article 2.
+  * **Autonomy is Not Immunity:** Explicitly states AI does not confer EW immunity; vision degrades under smoke, fog, and obscurants.
+  * **Total Cost of Ownership:** Replaces unit-price marketing with full life-cycle economics (training, data links, C2, batteries).
+* **Engineering Vulnerabilities & Doctrinal Gaps (🔴):**
+  * **C-UAS as an Obsolete Silo:** Isolates anti-drone defense into a separate static box; UWE focuses all fleet dynamics against aggressive UAS while decoupling mission targets dynamically in-flight.
+  * **Flat Descriptive Taxonomy:** Descriptive buckets violate Decoupled Lethality; ignores modularity between airframe chassis and mission kits.
+  * **Missing Hardware Abstraction Layer:** Lacks HAL/TTT abstraction, leaving C2 bound to proprietary vendor silos and human-in-the-loop latency.
+  * **Peacetime "Complement" Fallacy:** Underestimates drone swarm attrition economics ($1k drone vs $5M artillery), which fundamentally displace heavy legacy systems in the Kill Zone.
+* **Architectural Lesson for UWE:** Validates UWE Law 1 (Kinematic Primacy), Law 2 (Hierarchical Containerization), and Law 3 (Hardware Abstraction & Decoupled Lethality): Western defense consensus is transitioning toward UWE reality (abandoning "FPV" as a class and rejecting AI immunity), but remains crippled by flat peacetime categorization and the artificial isolation of "C-UAS". UWE resolves this by defining fleet kinematic responsiveness directly against aggressive UAS as the baseline, with software-defined in-flight mission retargeting managed via open HAL interfaces.
 
 
 
