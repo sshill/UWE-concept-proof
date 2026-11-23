@@ -2135,6 +2135,34 @@ ul.points li { margin-bottom: 0.4rem; }
 .filter-pill { background: var(--surface); border: 1px solid var(--border); padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.82rem; color: var(--text-muted); cursor: pointer; transition: all 0.15s ease; }
 .filter-pill:hover, .filter-pill.active { background: var(--surface-alt); color: #fff; border-color: var(--accent); }
 .filter-pill.active { background: #1f2937; color: var(--accent); font-weight: 600; }
+.nav-links a.active-cta { color: #58a6ff; font-weight: 600; border: 1px solid rgba(88, 166, 255, 0.4); padding: 0.25rem 0.65rem; border-radius: 4px; background: rgba(88, 166, 255, 0.08); transition: all 0.15s ease; }
+.nav-links a.active-cta:hover, .nav-links a.active-cta.active { background: rgba(88, 166, 255, 0.2); border-color: #58a6ff; color: #fff; text-decoration: none; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.25rem; font-size: 0.95rem; font-weight: 600; border-radius: 6px; text-decoration: none; transition: all 0.15s ease; cursor: pointer; }
+.btn-primary { background: #238636; color: #fff; border: 1px solid rgba(240, 246, 252, 0.1); }
+.btn-primary:hover { background: #2ea043; color: #fff; text-decoration: none; }
+.btn-secondary { background: var(--surface-alt); color: var(--text-main); border: 1px solid var(--border); }
+.btn-secondary:hover { background: #30363d; color: #fff; border-color: var(--border-light); text-decoration: none; }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.service-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.15s ease, transform 0.15s ease; }
+.service-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.service-header { border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; margin-bottom: 1rem; }
+.service-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin: 0.25rem 0; }
+.service-scope { font-size: 0.9rem; color: #c9d1d9; line-height: 1.5; margin-bottom: 1rem; }
+.service-deliverables { background: var(--surface-alt); border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+.service-deliverables strong { color: var(--text-main); }
+.service-format { border-top: 1px dashed var(--border); padding-top: 0.75rem; font-size: 0.85rem; color: #58a6ff; font-weight: 600; font-family: var(--code-font); }
+.gov-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+.gov-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid #58a6ff; border-radius: 6px; padding: 1.25rem; }
+.gov-card h4 { margin: 0 0 0.5rem 0; font-size: 1.05rem; color: #fff; }
+.gov-card p { margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+.workflow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.workflow-step { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; position: relative; }
+.step-num { font-family: var(--code-font); font-size: 0.85rem; color: #3fb950; font-weight: 700; text-transform: uppercase; margin-bottom: 0.35rem; }
+.step-title { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 0.5rem 0; }
+.step-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+.inquiry-box { background: linear-gradient(135deg, rgba(31, 111, 235, 0.1) 0%, rgba(22, 27, 34, 0.95) 100%); border: 1px solid #1f6feb; border-radius: 8px; padding: 2rem; margin: 2rem 0; }
+.legal-card { background: var(--surface-alt); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+.tag-pill { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
 footer.page-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 3rem; }
 """
     write_file("assets/css/style.css", css)
@@ -2230,7 +2258,8 @@ def render_header(active_nav="home", depth=0):
     <a href="{rel}cases/index.html" class="{'active' if active_nav=='cases' else ''}">{len(CASES_DATA)} Benchmarks</a>
     <a href="{rel}c2/index.html" class="{'active' if active_nav=='c2' else ''}">C2 &amp; Articles</a>
     <a href="{rel}vendors/index.html" class="{'active' if active_nav=='vendors' else ''}">Vendors & OEMs</a>
-    <a href="{rel}hal/index.html" class="{'active' if active_nav=='hal' else ''}">HAL Registry</a>
+<a href="{rel}hal/index.html" class="{'active' if active_nav=='hal' else ''}">HAL Registry</a>
+    <a href="{rel}consulting.html" class="{'active active-cta' if active_nav=='consulting' else 'active-cta'}">Advisory &amp; Consulting</a>
     <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener">Author Profile ↗</a>
   </nav>
 </header>"""
@@ -2588,8 +2617,8 @@ def build_index():
       {postulates_html}
     </section>
 
-    <!-- Empirical Case Studies Section -->
-    <div style="margin-bottom:2rem;">
+<!-- Empirical Case Studies Section -->
+    <div id="benchmarks" style="margin-bottom:2rem;">
       <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">
         <h2 style="font-size:1.4rem; margin:0;">
           🔬 {len(CASES_DATA)} Empirical Platform Benchmarks & Architectural Mapping
@@ -3296,6 +3325,285 @@ def build_hal():
 </html>"""
     write_file("hal/index.html", html)
 
+def build_consulting():
+    print("\n🔹 Generating B2B Advisory & Consulting Landing Page...")
+    jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "B2B Systems Architecture & Engineering Advisory",
+        "provider": {
+            "@type": "Person",
+            "name": "Serhii Khylevych",
+            "jobTitle": "Principal Systems Architect",
+            "url": "https://ua.linkedin.com/in/serhii-khylevych-aa152322"
+        },
+        "description": "End-to-end systems architecture, multi-tier Hardware Abstraction Layer (HAL) design, and operational rollout consulting for autonomous platforms across air, ground, maritime, and orbital domains.",
+        "areaServed": ["US", "EU", "UK", "NATO Allied Markets"],
+        "serviceType": "Autonomous Cyber-Physical Systems Architecture",
+        "url": f"{BASE_URL}/consulting.html"
+    }
+
+    html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advisory &amp; Consulting | Systems Architecture &amp; HAL Design | UWE</title>
+  <meta name="description" content="End-to-end B2B systems architecture, Hardware Abstraction Layer (HAL) design, and MVP-to-industrial rollout advisory for autonomous defense robotics by Serhii Khylevych.">
+  <link rel="canonical" href="{BASE_URL}/consulting.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+{json.dumps(jsonld, indent=2)}
+  </script>
+</head>
+<body>
+  {render_header("consulting", depth=0)}
+  <div class="container">
+    <!-- Block 1: Hero Section -->
+    <div class="hero-box">
+      <div style="margin-bottom:1rem;">
+        <span class="tag-pill" style="border-color:#58a6ff; color:#58a6ff; background:rgba(88, 166, 255, 0.1); font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">
+          🛡️ B2B SYSTEMS ARCHITECTURE &amp; ENGINEERING ADVISORY
+        </span>
+      </div>
+      <h1 class="hero-title" style="margin-top:0.5rem; font-size:2.3rem;">
+        From Physics-Validated Prototypes to Industrial-Scale Autonomous Systems
+      </h1>
+      <p class="hero-subtitle" style="font-size:1.15rem; line-height:1.6; max-width:960px;">
+        End-to-end systems architecture, multi-tier Hardware Abstraction Layer (HAL) design, and operational rollout consulting for autonomous platforms across air, ground, maritime, and orbital domains.
+      </p>
+      
+      <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.25rem 0 1.75rem 0;">
+        <span class="tag-pill">🔒 Strict NDA Compliance</span>
+        <span class="tag-pill">📊 Open-Source &amp; Client Data Only</span>
+        <span class="tag-pill">⚡ 20+ Years Principal Architecture</span>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
+        <a href="#contact" class="btn btn-primary" style="font-size:1rem; padding:0.75rem 1.4rem;">Request Architecture Briefing →</a>
+        <a href="index.html#benchmarks" class="btn btn-secondary" style="font-size:1rem; padding:0.75rem 1.4rem;">Explore Empirical Benchmarks</a>
+      </div>
+    </div>
+
+    <!-- Block 2: Track Record & Trust Metrics -->
+    <div class="kpi-grid">
+      <div class="kpi-card highlight">
+        <div class="kpi-num" style="color:#58a6ff;">20+ Years</div>
+        <div class="kpi-label">Mission-Critical Architecture</div>
+        <div class="kpi-sub">Enterprise telecom, NTN/LEO satellite networks, SDR/MANET &amp; autonomous cyber-physical systems</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">$45M+</div>
+        <div class="kpi-label">Portfolios Delivered &amp; Scaled</div>
+        <div class="kpi-sub">Proven track record in scaling complex engineering from initial concept to multi-site industrial replication</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">{len(CASES_DATA)}</div>
+        <div class="kpi-label">Empirically Benchmarked</div>
+        <div class="kpi-sub">Physics-based stress-testing across 6 physical domains against kinematic, thermodynamic &amp; EW limits</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num" style="color:#3fb950;">100%</div>
+        <div class="kpi-label">IP Protection &amp; Zero Classified Data</div>
+        <div class="kpi-sub">Strict mutual NDA execution using Client proprietary specifications and public scientific/OSINT benchmarks</div>
+      </div>
+    </div>
+
+    <!-- Block 3: Core Advisory & Engineering Services -->
+    <div style="margin:3rem 0 2rem 0;">
+      <div style="border-bottom:1px solid var(--border); padding-bottom:0.75rem; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.6rem; color:#fff; margin:0 0 0.4rem 0;">Full-Lifecycle Architectural &amp; Rollout Capabilities</h2>
+        <p style="color:var(--text-muted); font-size:1rem; margin:0;">
+          Practical systems engineering designed to eliminate kinematic bottlenecks, prevent costly hardware redesigns, and ensure survivability in contested environments.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-header">
+              <span class="badge badge-uav">TIER 1 ARCHITECTURE</span>
+              <h3 class="service-title">Multi-Tier Systems Architecture &amp; HAL Design</h3>
+            </div>
+            <p class="service-scope">
+              End-to-end architectural blueprint across all system layers—from physical chassis kinematics and Hardware Abstraction Layers (HAL) to onboard Edge-AI, resilient SDR/MANET communications, and multi-domain C2 orchestration.
+            </p>
+            <div class="service-deliverables">
+              <strong>Deliverables:</strong> System Architecture Document (SAD), HAL interface contracts, telemetry &amp; control loop latency budgets, failure-mode isolation matrices.
+            </div>
+          </div>
+          <div class="service-format">
+            Fixed-Scope Project (2–4 weeks) • Starting from $4,000
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-header">
+              <span class="badge badge-ucv">TIER 2 INDUSTRIALIZATION</span>
+              <h3 class="service-title">MVP-to-Industrial Rollout Roadmap</h3>
+            </div>
+            <p class="service-scope">
+              Bridging the gap between a working field prototype (MVP) and repeatable industrial mass production. Eliminating fragile bespoke dependencies, standardizing modular payloads, and structuring scalable software-hardware pipelines.
+            </p>
+            <div class="service-deliverables">
+              <strong>Deliverables:</strong> Industrialization &amp; Scaling Roadmap, Bill-of-Materials (BoM) architectural optimization, modular containerization strategy (C0–C4 logistics alignment).
+            </div>
+          </div>
+          <div class="service-format">
+            Phased Milestone Delivery • Starting from $5,000
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-header">
+              <span class="badge badge-usv">TIER 3 ENVIRONMENT ADAPTATION</span>
+              <h3 class="service-title">Market &amp; Tactical Environment Adaptation</h3>
+            </div>
+            <p class="service-scope">
+              Stress-testing and adapting commercial or dual-purpose platforms for harsh, denied, degraded, intermittent, and limited-bandwidth (DDIL) operational environments, as well as commercial market viability.
+            </p>
+            <div class="service-deliverables">
+              <strong>Deliverables:</strong> Environmental Abstraction Layer (EAL) specification, EW/GNSS-denied resilience audit, kinematic trade-off study, and regulatory/market fit assessment.
+            </div>
+          </div>
+          <div class="service-format">
+            Targeted Audit / Trade-Off Study • Starting from $3,500
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-header">
+              <span class="badge badge-ugv">TIER 4 EXECUTIVE GOVERNANCE</span>
+              <h3 class="service-title">Fractional Principal Systems Architect</h3>
+            </div>
+            <p class="service-scope">
+              Ongoing executive-level technical governance for R&amp;D teams, OEMs, and venture-backed engineering startups. Direct participation in design reviews, vendor evaluations, and architectural decision-making.
+            </p>
+            <div class="service-deliverables">
+              <strong>Deliverables:</strong> Weekly architecture review sessions, continuous technical due diligence, direct advisory access for CTOs and lead engineers.
+            </div>
+          </div>
+          <div class="service-format">
+            Monthly Advisory Retainer • $4,000 – $7,500 / month
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 4: Methodology & Data Governance -->
+    <div style="margin:3rem 0 2rem 0;">
+      <div style="border-bottom:1px solid var(--border); padding-bottom:0.75rem; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.6rem; color:#fff; margin:0 0 0.4rem 0;">Data Governance, NDA &amp; Export Control Compliance</h2>
+        <p style="color:var(--text-muted); font-size:1rem; margin:0;">
+          Engineered for seamless legal and financial onboarding with international corporations across the US, EU, UK, and allied markets.
+        </p>
+      </div>
+
+      <div class="gov-grid">
+        <div class="gov-card">
+          <h4>1. Strict Information Boundaries</h4>
+          <p>
+            All analytical modeling, simulations, and architectural recommendations are derived exclusively from Client-provided confidential specifications (under NDA) and publicly available physics, academic literature, and OSINT benchmarks. No restricted or classified third-party data is ever accessed or utilized.
+          </p>
+        </div>
+        <div class="gov-card" style="border-left-color:#3fb950;">
+          <h4>2. Client IP Ownership</h4>
+          <p>
+            Upon milestone completion, 100% of custom architectural specifications, HAL schemas, and mathematical models produced during the engagement transfer unconditionally to the Client.
+          </p>
+        </div>
+        <div class="gov-card" style="border-left-color:#bc8cff;">
+          <h4>3. Transparent B2B Contracting</h4>
+          <p>
+            Engagements are executed under standard Master Services Agreements (MSA) and Mutual NDAs, supported by milestone-based invoicing (SWIFT USD / SEPA EUR) and formal Certificates of Completion.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 5: Engagement Workflow -->
+    <div style="margin:3rem 0 2rem 0;">
+      <div style="border-bottom:1px solid var(--border); padding-bottom:0.75rem; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.6rem; color:#fff; margin:0 0 0.4rem 0;">Engagement Workflow</h2>
+        <p style="color:var(--text-muted); font-size:1rem; margin:0;">
+          A deterministic, low-overhead four-step process from initial discovery to validated architectural handover.
+        </p>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-step">
+          <div class="step-num">Step 01</div>
+          <h4 class="step-title">Initial Discovery &amp; Mutual NDA</h4>
+          <p class="step-desc">
+            30-minute technical scoping call to align on system objectives, physical domain constraints, and sign a Mutual Non-Disclosure Agreement.
+          </p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-num">Step 02</div>
+          <h4 class="step-title">Architectural Scoping &amp; Plan</h4>
+          <p class="step-desc">
+            Definition of exact engineering deliverables, timeline, and fixed-price milestones (with standard 50% upfront / 50% upon delivery billing).
+          </p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-num">Step 03</div>
+          <h4 class="step-title">Deep-Dive Modeling &amp; Design</h4>
+          <p class="step-desc">
+            Execution of kinematic/cyber-physical analysis, HAL contract specification, or rollout architecture based on your team's inputs.
+          </p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-num">Step 04</div>
+          <h4 class="step-title">Handover &amp; Engineering Briefing</h4>
+          <p class="step-desc">
+            Delivery of comprehensive technical documentation, simulation matrices, and a live Q&amp;A walkthrough with your R&amp;D leadership.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 6: Direct Inquiry & Legal Footer -->
+    <div id="contact" class="inquiry-box">
+      <div style="max-width:800px;">
+        <span class="badge badge-uav" style="font-size:0.8rem; margin-bottom:0.5rem;">DIRECT ARCHITECTURAL ENGAGEMENT</span>
+        <h2 style="font-size:1.85rem; color:#fff; margin:0.5rem 0 0.75rem 0;">
+          Ready to Stress-Test or Scale Your System Architecture?
+        </h2>
+        <p style="color:#c9d1d9; font-size:1.05rem; line-height:1.6; margin-bottom:1.5rem;">
+          Direct communication with Principal Systems Architect <strong>Serhii Khylevych</strong>. No sales intermediaries or business-development overhead.
+        </p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; margin-bottom:2rem;">
+          <a href="mailto:hillmtz@gmail.com?subject=UWE%20Architecture%20Briefing%20Inquiry" class="btn btn-primary" style="font-size:1rem; padding:0.75rem 1.5rem;">
+            ✉️ Schedule Briefing via Email
+          </a>
+          <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:1rem; padding:0.75rem 1.5rem;">
+            Connect on LinkedIn ↗
+          </a>
+        </div>
+
+        <div class="legal-card">
+          <div style="font-weight:700; color:#fff; margin-bottom:0.4rem; font-size:0.95rem;">
+            🏢 Legal &amp; Billing Entity (International Banking Compliance)
+          </div>
+          <div><strong>Service Provider:</strong> Private Entrepreneur (PE) Serhii Khylevych (Ukraine, Group 3 Tax Entity — Export of Engineering &amp; IT Consulting Services)</div>
+          <div><strong>Accepted Currencies:</strong> USD (SWIFT wire transfer), EUR (SEPA wire transfer)</div>
+          <div style="margin-top:0.4rem; color:var(--text-muted); font-size:0.8rem;">
+            <em>Compliance Statement:</em> All advisory services constitute intellectual systems engineering and non-classified architectural consulting. Engagements operate strictly on non-restricted technical and open-source data under mutual NDA.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {render_footer()}
+</body>
+</html>"""
+    write_file("consulting.html", html)
+
 def build_c2_officer():
     print("\n🔹 Generating C2 Officer Human-Machine Symbiosis Whitepaper Page...")
     
@@ -3997,8 +4305,9 @@ def build_seo_assets():
         f"{BASE_URL}/c2/index.html",
         f"{BASE_URL}/c2/officer.html",
         f"{BASE_URL}/{C2_ARTICLE_PATH}",
-        f"{BASE_URL}/vendors/index.html",
+f"{BASE_URL}/vendors/index.html",
         f"{BASE_URL}/hal/index.html",
+        f"{BASE_URL}/consulting.html",
     ]
     for d in DOMAINS_DATA:
         urls.append(f"{BASE_URL}/domains/{d['code'].lower()}.html")
@@ -4168,6 +4477,7 @@ def main():
     build_c2_articles()
     build_vendors()
     build_hal()
+    build_consulting()
     build_seo_assets()
     validate_uwe_integrity(CASES_DATA, VENDORS_DATA, DOMAINS_DATA, DOCS)
     

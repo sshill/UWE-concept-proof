@@ -114,6 +114,17 @@ class TestSiteBuild(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Incorrect case assignment"):
             site.validate_uwe_integrity(site.CASES_DATA, site.VENDORS_DATA, domains, self.docs)
 
+    def test_consulting_page_and_navigation(self):
+        self.assertTrue((self.docs / "consulting.html").is_file())
+        consulting_page = self.pages[self.docs / "consulting.html"]
+        self.assertIn("index.html#benchmarks", consulting_page.links)
+        self.assertIn(self.docs / "index.html", self.pages)
+        self.assertIn("benchmarks", self.pages[self.docs / "index.html"].ids)
+        index_page = self.pages[self.docs / "index.html"]
+        self.assertIn("consulting.html", index_page.links)
+        sitemap = (self.docs / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn(f"{site.BASE_URL}/consulting.html", sitemap)
+
 
 if __name__ == "__main__":
     unittest.main()
