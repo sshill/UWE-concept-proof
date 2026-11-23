@@ -65,25 +65,37 @@ To seamlessly integrate Command & Control nodes into UWE algorithmic processing,
 $$\mathbf{C2: [C_x R_y] - [T_c R_c] - [E_w A_c]}$$
 
 ### 5.1 Octet 1: `[C_x R_y]` — Logistics Containerization & Cyber-Officer Rank
-* **`C_x` (Containerization):** `0` (Wearable C0) · `1` (Man-Portable C1) · `2` (Light Mobile C2) · `3` (Heavy TEU C3) · `4` (Deep Bunker C4) · `O` (Orbital Space UOV).
-* **`R_y` (Cyber-Officer Rank 1..6):** `1` (Tactical Cell Operator, high APM) · `2` (Platoon Officer) · `3` (Strike Coordinator) · `4` (Fleet Commander, Moore-Plumley CPM 2–3, Zero-Human FLOT) · `5` (Cross-Domain Architect) · `6` (Strategic Theater Commander, Sovereign Mandate).
+* **`C_x` (Containerization):** `0` (Wearable C0) · `1` (Man-Portable C1) · `2` (Light Mobile C2) · `3` (Heavy TEU & Manned Surface Craft C3 — includes naval vessels with shelf fiber umbilicals / tethered buoys) · `4` (Deep Hardened Underground Bunker C4) · `A` (Airborne Command Post / ПКП — E-4B, E-6B, BACN E-11A, E-7) · `O` (Orbital Space Station UOV).
+* **`R_y` (Cyber-Officer Rank 1..6):** `1` (Tactical Operator) · `2` (Platoon Officer) · `3` (Strike Coordinator) · `4` (Fleet Commander, Moore-Plumley CPM 2–3) · `5` (Cross-Domain Architect) · `6` (Strategic Theater Commander, Sovereign Mandate).
 
-### 5.2 Octet 2: `[T_c R_c]` — C2 Dual-Stack Comms
-* **`T_c` (Generation Tier):** `O` (Old Plan: TDM/Voiceband ТЧ/ІКМ) · `B` (Base Plan: L3 Pipe) · `N` (Next-Gen: 5G NR/NTN) · `M` (Multi-Tier Hybrid Hub).
-* **`R_c` (Resilience Policy):** `S` (Simplex) · `D` (Dual-Homed) · `R` (Resilient ATSSS Multipath) · `Z` (Zero-RF Physical Optical) · `C` (Cognitive Cloaked).
+### 5.2 Octet 2: `[T_c R_c]` — Generation Tier & Backbone Integration Layer
+* **`T_c` (Generation Tier):** `O` (Old Plan: TDM Voiceband ТЧ/ІКМ) · `B` (Base Plan: L3 Pipe) · `N` (Next-Gen: 5G NR/NTN & AESA) · `M` (Multi-Tier Hybrid Hub).
+* **`R_c` (Backbone Integration & Data Center Federation):**
+  - `T` (Tactical Edge): Isolated local autonomous field mesh.
+  - `O` (Operational Backbone): Resilient connection of field units to fixed military/commercial backbone.
+  - `S` (Strategic Backbone): Direct integration into national/allied fixed fiber grid (NDBB / JADC2).
+  - `C` (Clustered Federation): Federation of distributed data centers & C4 cloud nodes into a unified resilient cluster.
+  - `G` (Global Sovereign Cloud): Cross-domain space-air-ground-sea federated matrix.
 
-### 5.3 Octet 3: `[E_w A_c]` — Cyber-EW Warfare & Autonomous Survival Horizon
-* **`E_w` (Cyber-EW Capability & DDoS Threshold):** `Z` (Zero-RF Line-Drop) · `D` (Detection / Цукорок) · `B` (Barrage Dome eBPF) · `S` (Selective Smart Spot Spatial Nulls) · `F` (Fake Spoofing & Zero-Trust) · `I` (Intrusion Silicon Terabit Armor).
-* **`A_c` (AI Compute & Survival Horizon upon Uplink Severance):** `H` (Hours, 4–12h, C0 NPU) · `D` (Days, 24–72h, C1 SoC) · `W` (Weeks, 1–3w, C2 GPU) · `M` (Months, 1–6m, C3 Tensor Rack) · `Y` (Years/Decades, C4 Deep Bunker Supercomputer) · `O` (Orbital Station-Keeping, Space AI 5–15+ years).
+### 5.3 Octet 3: `[E_w A_c]` — Cumulative EW Lifecycle & Cyber-Compute Profile
+* **`E_w` (Cumulative EW Lifecycle):** `D` (Detection) · `B` (Barrage) · `P` (Direction Finding) · `M` (Demodulation/Mask) · `S` (Selective Spot) · `R` (Protocol Decoding) · `F` (Spoofing) · `I` (Network Intrusion).
+* **`A_c` (Cyber-Security, DDoS Scale, Optical Line & Survival Horizon — 6 Symbols):**
+  - `Z` (Zero-RF Micro-Fiber): SmartNIC wire-drop (10–40 Gbps line flood), 4–12h NPU survival.
+  - `D` (Tactical CWDM 1310/1550 nm): 10–50 Mbps UDP filter, 24–72h SoC autonomous survival.
+  - `B` (Armored 4–8 ch CWDM): 100–500 Mbps eBPF drop, 1–3w GPU survival.
+  - `S` (Dense DWDM + EDFA): 10–50 Gbps WAF/nulls, 1–6m Tensor Rack.
+  - `F` (Coherent ROADM 100G–400G+): 100–500 Gbps Zero-Trust isolation, 1–2y Cloud cluster.
+  - `I` (Multi-Core Fiber MCF + QKD): >1–10 Tbps silicon armor, multi-decade/orbital station-keeping.
 
 ### 5.4 Token Examples in UWE Fleet Orchestration:
-* `C2: 01-OS-DH` — Trench soldier: $C_0$ wearable, Rank 1, Old Plan simplex, detection-only, hours survival.
-* `C2: 24-MR-SW` — Fleet Commander Mobile CP: $C_2$ 4x4, Rank 4 (CPM 2–3), Multi-Tier Resilient ATSSS, Selective smart jamming, weeks standalone.
-* `C2: 46-NZ-IY` — Strategic Deep Bunker: $C_4$, Rank 6, Next-Gen Zero-RF remote antenna feed, Top-level Intrusion, decades standalone.
+* `C2: 01-OT-DZ` — Trench soldier: Wearable $C_0$, Rank 1, Old Plan, Tactical local mesh, Detection-only EW (`D`), Zero-RF micro-spool (`Z`).
+* `C2: 24-MO-SB` — Fleet Commander 4x4 CP: Mobile $C_2$, Rank 4, Multi-Tier, Operational backbone, Selective smart EW (`S`), Armored CWDM / GPU (`B`).
+* `C2: A5-MS-FF` — Airborne Command Post (BACN/E-11A): Airborne $A$, Rank 5, Multi-Tier, Strategic backbone link, Spoofing EW (`F`), Coherent ROADM optical relay (`F`).
+* `C2: 46-NC-II` — Strategic Deep Bunker: Bunker $C_4$, Rank 6, Next-Gen, Clustered Data Center Federation, Intrusion EW (`I`), Multi-Core Fiber + QKD (`I`).
 
 ---
 
-## 6. The Cumulative Cyber-EW Lifecycle Continuum
+## 6. The Cumulative Cyber-EW Lifecycle Continuum (Character 5: `E_w`)
 
 Electronic warfare is a cumulative continuum where higher phases strictly depend on the full execution of preceding phases:
 1. **Phase 1: Detection (`D`)** — Energy intercept and RSSI threshold trigger («Цукорок»).
@@ -97,7 +109,7 @@ Electronic warfare is a cumulative continuum where higher phases strictly depend
 
 ---
 
-## 7. The Cyber-Security, DDoS Resilience & Optical Fiber Continuum
+## 7. The Cyber-Security, DDoS Resilience & Optical Fiber Continuum (Character 6: `A_c`)
 
 ### 7.1 `Z`: Zero-RF / Pure Optical (Line-Speed Flooding & Single-Mode Micro-Fiber)
 * **Optical Medium:** Single-mode micro-fiber (80/165 µm or 50/125 µm), BiDi laser. Ultra-light disposable micro-spools.
@@ -145,6 +157,18 @@ Across the 55+ empirical benchmarks of the UWE cycle, C2 and C4ISR appeared unde
      - `CD` = Counter-Drone Containment & Airspace Governance.
      - `MO` = Multi-Domain Orchestration (Joint Air-Ground-Sea-Space Solver).
      - `SR` = Sovereign Resilient Cloud (`ICounterUasArbitrationEngine` & `ISwarmOrchestrator`).
+
+### 8.2 UxS-to-C4 Cross-Domain Taxonomy & Dual-Token Gateway Matrix
+
+Robotic platforms (UxS) that serve as airborne repeaters, littoral optical/mesh routers, or subsea gateways receive a **Dual Token** (`[UxS Primary Token] + [C2 Gateway Token]`):
+
+| UxS Domain & Tier | UxS Comms (6th Char) | Compatible C2 Container ($C_x$) | Gateway Translation Role | Dual-Token Example |
+|---|:---:|:---:|---|---|
+| **Tactical UAV** (C0–C1) | `W` (Wideband Mesh) | `C1` (Man-Portable Edge) | Forward airborne SDR mesh repeater | `UAV: AI-CP-HW` + `C2: 12-BT-SD` |
+| **High-Altitude UAV** (C3–C4) | `W` / `S` (Satcom/AESA) | `A` (Airborne CP / ПКП) | BACN high-altitude theater gateway | `UAV: SA-HP-MW` + `C2: A5-MS-FF` |
+| **Tactical UGV** (C1–C2) | `F` (Fiber-Optic) | `C1` / `C2` (Light Mobile) | Micro-spool to field mesh tether bridge | `UGV: TT-EH-DF` + `C2: 23-BO-SB` |
+| **Heavy USV** (C2–C3) | `W` / `S` (Starlink/LEO) | `C3` (Manned/Floating Node) | Littoral surface hub & subsea-to-RF gateway | `USV: PO-EL-SW` + `C2: 34-MR-SF` |
+| **Shelf/Littoral UUV** (C2–C3) | `A` (Acoustic) / `F` (STFOC) | `C2` / `C3` (Shelf Gateway) | Subsea acoustic-to-optical seabed node | `UUV: DP-EM-TF` + `C2: 24-MO-DZ` |
 
 C2 is not a seventh physical domain: it is the **software-defined cognitive meta-layer and high-speed orchestration bus** governing all six physical domains of the Unmanned Warfare Engine.
 ---
