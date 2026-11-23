@@ -126,5 +126,24 @@ class TestSiteBuild(unittest.TestCase):
         self.assertIn(f"{site.BASE_URL}/consulting.html", sitemap)
 
 
+def test_consulting_extra(self):
+    index_page = self.pages[self.docs / "index.html"]
+    self.assertIn("consulting.html#contact", index_page.links)
+    for case in site.CASES_DATA:
+        slug = case["slug"]
+        case_page = self.pages[self.docs / "cases" / f"{slug}.html"]
+        self.assertIn("../consulting.html#contact", case_page.links)
+    consulting_html = (self.docs / "consulting.html").read_text(encoding="utf-8")
+    self.assertIn("hillmtz@gmail.com", consulting_html)
+    self.assertIn("contact-email", consulting_html)
+    self.assertIn("UWE Systems Architecture &amp; Advisory", consulting_html)
+    self.assertNotIn("wartime", consulting_html.lower())
+    self.assertNotIn("interdiction shield", consulting_html.lower())
+    sitemap = (self.docs / "sitemap.xml").read_text(encoding="utf-8")
+    self.assertIn("<priority>0.9</priority>", sitemap)
+
+TestSiteBuild.test_consulting_extra = test_consulting_extra
+
+
 if __name__ == "__main__":
     unittest.main()

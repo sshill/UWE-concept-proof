@@ -2264,7 +2264,17 @@ def render_header(active_nav="home", depth=0):
   </nav>
 </header>"""
 
-def render_footer():
+def render_footer(is_consulting=False):
+    if is_consulting:
+        return """<footer class="page-footer">
+  <div class="container">
+    <p><strong>UWE Systems Architecture &amp; Advisory</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#8b949e;">
+      Independent Systems Architecture, Hardware Abstraction Layers (HAL), and Engineering Advisory.<br>
+      Strict adherence to physical laws, deterministic control contracts, and intellectual property protection.
+    </p>
+  </div>
+</footer>"""
     return """<footer class="page-footer">
   <div class="container">
     <p><strong>Unmanned Warfare Engine (UWE)</strong> — Authored by <strong>Serhii Khylevych</strong>, Systems Architect.</p>
@@ -2572,9 +2582,27 @@ def build_index():
       <p style="margin:0 0 1rem 0; color:#c9d1d9; font-size:0.95rem; line-height:1.6;">
         Beyond "twitch-reflexes": The <strong>Moore-Plumley paradigm</strong>, <strong>APM (300–400)</strong> motor control vs. <strong>CPM (2–3)</strong> sovereign lethal will, the <strong>STDFUA</strong> real-time biometric fail-safe, and the <em>"I Shoot As I Think"</em> zero translation latency doctrine.
       </p>
-      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+<div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
         <a href="c2/officer.html" class="badge badge-uav" style="font-size:0.88rem; padding:0.45rem 0.9rem; text-decoration:none;">Read C2 Symbiosis Whitepaper →</a>
         <a href="https://www.linkedin.com/pulse/cyber-physical-officer-human-machine-symbiosis-engine-khylevych-pkjff" target="_blank" rel="noopener" style="color:#8b949e; font-size:0.85rem; text-decoration:none;">View Official Pulse Article ↗</a>
+      </div>
+    </section>
+
+    <!-- B2B Advisory Callout Banner -->
+    <section class="advisory-callout" style="border:1px solid rgba(88, 166, 255, 0.3); background:rgba(13, 17, 23, 0.8); border-radius:8px; padding:1.25rem 1.5rem; margin-bottom:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div style="max-width:720px;">
+        <span class="badge badge-uav" style="font-size:0.75rem; margin-bottom:0.4rem;">ENGINEERING ADVISORY &amp; ARCHITECTURE AUDIT</span>
+        <h3 style="margin:0.25rem 0 0.4rem 0; font-size:1.15rem; color:#fff;">
+          Developing an Autonomous Platform or Scaling Production?
+        </h3>
+        <p style="margin:0; font-size:0.9rem; color:var(--text-muted); line-height:1.5;">
+          Get independent systems architecture review, Hardware Abstraction Layer (HAL) design, and cyber-physical stress-testing under strict NDA.
+        </p>
+      </div>
+      <div>
+        <a href="consulting.html#contact" class="btn btn-primary" style="font-size:0.9rem; padding:0.6rem 1.2rem; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; white-space:nowrap;">
+          Request Architecture Briefing →
+        </a>
       </div>
     </section>
 
@@ -2752,9 +2780,25 @@ def build_case_pages():
         </div>
       </div>
 
-      <div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
+<div style="background:var(--surface-alt); padding:1rem; border-radius:6px; border:1px solid var(--border);">
         <h4 style="margin:0 0 0.5rem 0; color:#fff; font-size:0.9rem;">Cross-Domain Ecosystem Pairings:</h4>
         {related_links}
+      </div>
+
+      <!-- Advisory / Architecture Briefing Callout -->
+      <div style="margin-top:2rem; padding:1.25rem 1.5rem; background:linear-gradient(135deg, rgba(88, 166, 255, 0.08) 0%, rgba(22, 27, 34, 0.95) 100%); border:1px solid rgba(88, 166, 255, 0.3); border-radius:6px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div style="max-width:680px;">
+          <div style="font-size:0.75rem; font-weight:700; color:var(--accent-blue, #58a6ff); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;">Systems Architecture &amp; HAL Advisory</div>
+          <div style="font-size:1.05rem; font-weight:700; color:#fff;">Developing a similar platform or integrating autonomous subsystems?</div>
+          <p style="margin:0.25rem 0 0 0; font-size:0.85rem; color:var(--text-muted); line-height:1.4;">
+            Engage Principal Systems Architect <strong>Serhii Khylevych</strong> for independent kinematic validation, HAL interface design, and cyber-physical stress-testing under mutual NDA.
+          </p>
+        </div>
+        <div>
+          <a href="../consulting.html#contact" class="btn btn-primary" style="font-size:0.88rem; padding:0.55rem 1.1rem; text-decoration:none; white-space:nowrap; display:inline-block;">
+            Request Architecture Briefing →
+          </a>
+        </div>
       </div>
     </article>
   </div>
@@ -3576,13 +3620,19 @@ def build_consulting():
           Direct communication with Principal Systems Architect <strong>Serhii Khylevych</strong>. No sales intermediaries or business-development overhead.
         </p>
 
-        <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; margin-bottom:2rem;">
+<div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; margin-bottom:1rem;">
           <a href="mailto:hillmtz@gmail.com?subject=UWE%20Architecture%20Briefing%20Inquiry" class="btn btn-primary" style="font-size:1rem; padding:0.75rem 1.5rem;">
             ✉️ Schedule Briefing via Email
           </a>
           <a href="https://ua.linkedin.com/in/serhii-khylevych-aa152322" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:1rem; padding:0.75rem 1.5rem;">
             Connect on LinkedIn ↗
           </a>
+        </div>
+
+        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); padding:0.5rem 0.85rem; border-radius:6px; font-family:monospace; font-size:0.95rem; color:#fff; margin-bottom:1.5rem;">
+          <span style="color:var(--text-muted); font-family:sans-serif; font-size:0.85rem;">Direct Email:</span>
+          <strong id="contact-email">hillmtz@gmail.com</strong>
+          <button type="button" onclick="navigator.clipboard.writeText('hillmtz@gmail.com'); this.innerText='✓ Copied'; setTimeout(()=>this.innerText='Copy', 2000);" style="background:var(--accent-blue, #58a6ff); border:none; color:#fff; padding:0.25rem 0.6rem; border-radius:4px; cursor:pointer; font-size:0.8rem; margin-left:0.5rem; font-family:sans-serif;">Copy</button>
         </div>
 
         <div class="legal-card">
@@ -3599,7 +3649,7 @@ def build_consulting():
     </div>
 
   </div>
-  {render_footer()}
+  {render_footer(is_consulting=True)}
 </body>
 </html>"""
     write_file("consulting.html", html)
@@ -4316,9 +4366,9 @@ f"{BASE_URL}/vendors/index.html",
 
     sitemap_entries = "\n".join(f"""  <url>
     <loc>{u}</loc>
-<lastmod>2026-11-08</lastmod>
+<lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>{'1.0' if u.endswith('index.html') and 'cases/' not in u and 'domains/' not in u else ('0.9' if 'c2/' in u else '0.8')}</priority>
+<priority>{'1.0' if u.endswith('index.html') and 'cases/' not in u and 'domains/' not in u else ('0.9' if 'c2/' in u or 'consulting.html' in u else '0.8')}</priority>
   </url>""" for u in urls)
 
     sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
